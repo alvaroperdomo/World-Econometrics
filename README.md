@@ -18,3 +18,29 @@ Un uso importante del análisis de series de tiempo ha sido para el desarrollo d
 * Primer Bullet.
 * Segundo Bullet.
 * Tercer Bullet.
+
+## Metodología y requerimientos
+
+El curso inicia con una introducción y explicación general de la metodología, requerimientos y herramientas computacionales a emplear. Luego, XXXX.
+
+### R
+
+Se puede intalar una versión **stable** desde [CRAN](https://cran.r-project.org/package=fpp3).
+
+``` r
+install.packages('fpp3', dependencies = TRUE)
+```
+
+## Dirigido a
+
+Los contenidos presentados en este curso están dirigidos a estudiantes y profesionales de diferentes disciplinas que requieran aprender y/o fortalecer sus conocimientos en análisis de series de tiempo en RStudio, tales como:
+
+* Estudiantes de pregrado y posgrado en economía.
+* XXX.
+* XXX. 
+* XXX.
+
+## Sección 1 - Análisis Univariado (ARIMA)
+
+En esta sección se presenta 
+
