@@ -50,7 +50,7 @@ En esta sección se presenta
 
 | Subsecciones                                                                                        | Alcance                                                                                                        | Dedicación,<br>5.5 horas  | 
 |-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
-| [Pruebas de Raíz Unitaria](Section01/WhatIsLTWB)                                                    | Explicación general de la filosofía detrás de las pruebas de raíz unitaria                                     |             3.5           | 
+| [Pruebas de Raíz Unitaria](Seccion01/Seccion01_01)                                                  | Explicación general de la filosofía detrás de las pruebas de raíz unitaria                                     |             3.5           | 
 | [Estimación de modelos ARIMA](Section01/Requirement)                                                | Explicación acerca de la metododología para estimar un modelo ARIMA.                                           |              1            | 
 | [Principales pruebas de Validación de los Modelos ARIMA](Section01/CaseStudy)                       | Explicación de las pruebas de validación de un modelo ARIMA                                                    |              1            | 
 
