@@ -1,6 +1,9 @@
 ## Pruebas de Raíz Unitaria
 
-Las pruebas de raíz unitaroa que se van a analizar son
+Para esta sección hat que instalar el paquete urca:
+``` r
+install.packages('urca', dependencies = TRUE)
+```
 
 | Subsecciones                                                                                        | Alcance                                                              | Dedicación,<br>5.5 horas  | 
 |-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|:-------------------------:|
