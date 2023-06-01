@@ -2,7 +2,7 @@
 
 Para esta sección hat que instalar el paquete urca:
 ``` r
-install.packages('urca', dependencies = TRUE)
+install.packages('fUnitRoots', dependencies = TRUE)
 ```
 
 | Subsecciones                                                                                        | Alcance                                                              | Dedicación,<br>5.5 horas  | 
