@@ -1,6 +1,6 @@
 ## Pruebas de Raíz Unitaria
 
-Para esta sección hat que instalar el paquete funitroots:<br>https://cran.r-project.org/web/packages/fUnitRoots/fUnitRoots.pdf</sub><br><br></div>
+Para esta sección hay que instalar el paquete [fUnitRoots](https://cran.r-project.org/web/packages/fUnitRoots/index.html)
 
 ``` r
 install.packages('fUnitRoots', dependencies = TRUE)
