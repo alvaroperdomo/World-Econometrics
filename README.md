@@ -48,6 +48,14 @@ Los contenidos presentados en este curso están dirigidos a estudiantes y profes
 
 En esta sección se presenta 
 
+
+| Subsecciones                                                                                        | Alcance                                                                                                        | Dedicación,<br>5.30 horas | 
+|-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
+| [Pruebas de Raíz Unitaria](Section01/WhatIsLTWB)                                                    | Explicación general de la filosofía detrás de las pruebas de raíz unitaria                                     |             3.30          | 
+| [Estimaciones ARIMA](Section01/Requirement)                                                         | Explicación acerca de la metododología para estimar un modelo ARIMA.                                           |             1.00          | 
+| [Pruebas de Validación](Section01/CaseStudy)                                                        | Explicación de las pruebas de validación de un modelo ARIMA                                                   |             1.00          | 
+
+
 ## Sección 2 - Análisis Multivariado (VAR y VEC)
 
 En esta sección se presenta 
