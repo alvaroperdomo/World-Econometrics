@@ -1,7 +1,7 @@
 ### Análisis Aplicado de Series de Tiempo: 
 # Entendiendo un Mundo en Desarrollo
 #### Duración del curso: XXXX horas
-_Bienvenido al curso Análisis Aplicado de Series de Tiempo: Entendiendo un Mundo en Desarrollo_. En este curso aprenderá a hacer análisis de series de tiempo en _RStudio_ tomando como referencia la base de datos de desarrollo económico del Banco Mundial. De esta forma, aprenderá los principales entresijos de esta herramienta econométrica de una forma interesante.
+_Bienvenido al curso Análisis Aplicado de Series de Tiempo: Entendiendo un Mundo en Desarrollo_. En este curso aprenderá a hacer análisis de series de tiempo en [RStudio](https://posit.co/download/rstudio-desktop/) tomando como referencia los [Indicadores de Desarrollo Económico del Banco Mundial](https://databank.bancomundial.org/reports.aspx?source=world-development-indicators). De esta forma, aprenderá los principales entresijos de esta herramienta econométrica de una forma interesante.
 
 Este curso ha sido dividido en diferentes secciones y actividades secuenciales, a través de las cuales el estudiante desarrollará diferentes habilidades computacionales y analíticas, que podrá aplicar en el análisis de casos de estudio propios.
 
@@ -23,8 +23,11 @@ Un uso importante del análisis de series de tiempo ha sido para el desarrollo d
 
 El curso inicia con una introducción y explicación general de la metodología, requerimientos y herramientas computacionales a emplear. Luego, XXXX.
 
-### R (!!Esta sección es de prueba!! Nada se queda)
+## R (!!Esta sección es de prueba!! Nada se queda)
 A las personas que no utilizan regularmente R se les recomienda hacer de antemano los tutoriales de https://learnr.numbat.space/
+
+## La Base de Datos del Banco Mundial 
+La base de datos del Banco Mundial se puede consultar en 
 
 ## Dirigido a
 
