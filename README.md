@@ -48,3 +48,7 @@ Los contenidos presentados en este curso están dirigidos a estudiantes y profes
 
 En esta sección se presenta 
 
+## Sección 2 - Análisis Multivariado (VAR y VEC)
+
+En esta sección se presenta 
+
