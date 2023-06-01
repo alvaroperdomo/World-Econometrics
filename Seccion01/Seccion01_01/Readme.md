@@ -3,7 +3,7 @@
 Para esta sección hay que instalar el paquete [fUnitRoots](https://cran.r-project.org/web/packages/fUnitRoots/index.html)
 
 ``` r
-install.packages('fUnitRoots', dependencies = TRUE)
+install.packages('fUnitRoots')
 ```
 
 | Subsecciones                                                                                        | Alcance                                                              | Dedicación,<br>5.5 horas  | 
