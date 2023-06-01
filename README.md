@@ -33,8 +33,7 @@ Se puede intalar una versión **stable** desde [CRAN](https://cran.r-project.org
 install.packages('fpp3', dependencies = TRUE)
 ```
 
-A las personas que no utilizan regularmente R se les recomienda hacer de antemano los tutoriales de
-</a><sub><br>https://www.learnr.numbat.space
+A las personas que no utilizan regularmente R se les recomienda hacer de antemano los tutoriales de </a><sub><br>https://www.learnr.numbat.space
 
 learnr.numbat.space.
 
