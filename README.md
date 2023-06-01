@@ -23,13 +23,17 @@ Un uso importante del análisis de series de tiempo ha sido para el desarrollo d
 
 El curso inicia con una introducción y explicación general de la metodología, requerimientos y herramientas computacionales a emplear. Luego, XXXX.
 
-### R
+### R (!!Esta sección es de prueba!! Nada se queda)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/fpp3)](https://cran.r-project.org/package=fpp3)
 
 Se puede intalar una versión **stable** desde [CRAN](https://cran.r-project.org/package=fpp3).
 
 ``` r
 install.packages('fpp3', dependencies = TRUE)
 ```
+
+A las personas que no utilizan regularmente R se les recomienda hacer de antemano los tutoriales de learnr.numbat.space.
 
 ## Dirigido a
 
