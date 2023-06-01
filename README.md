@@ -48,15 +48,21 @@ Los contenidos presentados en este curso están dirigidos a estudiantes y profes
 
 En esta sección se presenta 
 
-
-| Subsecciones                                                                                        | Alcance                                                                                                        | Dedicación,<br>5.30 horas | 
+| Subsecciones                                                                                        | Alcance                                                                                                        | Dedicación,<br>5.5 horas  | 
 |-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
-| [Pruebas de Raíz Unitaria](Section01/WhatIsLTWB)                                                    | Explicación general de la filosofía detrás de las pruebas de raíz unitaria                                     |             3.30          | 
-| [Estimaciones ARIMA](Section01/Requirement)                                                         | Explicación acerca de la metododología para estimar un modelo ARIMA.                                           |             1.00          | 
-| [Pruebas de Validación](Section01/CaseStudy)                                                        | Explicación de las pruebas de validación de un modelo ARIMA                                                   |             1.00          | 
+| [Pruebas de Raíz Unitaria](Section01/WhatIsLTWB)                                                    | Explicación general de la filosofía detrás de las pruebas de raíz unitaria                                     |             3.5           | 
+| [Estimación de modelos ARIMA](Section01/Requirement)                                                | Explicación acerca de la metododología para estimar un modelo ARIMA.                                           |              1            | 
+| [Principales pruebas de Validación de los Modelos ARIMA](Section01/CaseStudy)                       | Explicación de las pruebas de validación de un modelo ARIMA                                                    |              1            | 
 
 
 ## Sección 2 - Análisis Multivariado (VAR y VEC)
 
 En esta sección se presenta 
 
+| Subsecciones                                                                                        | Alcance                                                                                                        | Dedicación,<br>5.5 horas  | 
+|-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
+| [Estimación de modelos VAR](Section01/Requirement)                                                  | Explicación acerca de la metododología para estimar un modelo VAR.                                             |              1            | 
+| [Principales pruebas de Validación de los Modelos VAR](Section01/CaseStudy)                         | Explicación de las pruebas de validación de un modelo VAR                                                      |              1            | 
+| [Prueba de Cointegración de Johansen](Section01/Requirement)                                        | Explicación acerca de la prueba de Cointegración de Johansen.                                                  |             0.5           | 
+| [Estimación de modelos VEC](Section01/Requirement)                                                  | Explicación acerca de la metododología para estimar un modelo VEC.                                             |             1.5           | 
+| [Principales pruebas de Validación de los Modelos VEC](Section01/CaseStudy)                         | Explicación de las pruebas de validación de un modelo VEC                                                      |             1.5           | 
