@@ -42,6 +42,11 @@ Los contenidos presentados en este curso están dirigidos a estudiantes y profes
 
 En esta sección se presenta 
 
+| Subsecciones                                                                                        | Alcance                                                                                                        | Dedicación,<br> 2 horas  | 
+|-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
+| [Series de tiempo](Seccion01/Seccion01_01)                                                          | +++++++++++++++++++++++++++++++++++++++++++++++++++++++                                                        |             1.5           | 
+| [Los Indicadores de Desarrollo Económico del Banco Mundial](Seccion01/Seccion02_01)                 | ++++++++++++++++++++++++++++++++++++++++++++++++++++++                                                         |             0.5           | 
+
 ## Sección 2 - Análisis Univariado (ARIMA)
 
 En esta sección se presenta 
