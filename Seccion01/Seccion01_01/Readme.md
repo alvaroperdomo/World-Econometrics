@@ -21,8 +21,13 @@ $\forall x \in X, \quad \exists y \leq \epsilon$
 
 Las raíces de la ecuación $x^2=2$ son $x=\sqrt{2}$ y $x=-\sqrt{2}$; 
 en general, las raíces de $ax^2+bx+c=0$, con $a\neq0$, vienen dadas 
-por la fórmula 
-$x=\frac{-b\pm\sqrt{b^2-4 a c}}{2a}$
+por la fórmula $x=\frac{-b\pm\sqrt{b^2-4 a c}}{2a}$
+
+$\alpha, \Alpha, \beta, \Beta, \gamma, \Gamma, \pi, \Pi, \phi, \varphi, \mu, \Phi$
+
+$\cos (2\theta) = \cos^2 \theta - \sin^2 \theta$
+
+$\lim\limits_{x \to \infty} \exp(-x) = 0$
 
 ### Una matriz con subíndices
 $$
