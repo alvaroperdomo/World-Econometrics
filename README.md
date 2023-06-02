@@ -42,10 +42,10 @@ Los contenidos presentados en este curso están dirigidos a estudiantes y profes
 
 En esta sección se presenta 
 
-| Subsecciones                                                                                        | Alcance                                                                                                        | Dedicación,<br>5.5 horas  | 
+| Subsecciones                                                                                        | Alcance                                                                                                        | Dedicación,<br> 6 horas  | 
 |-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
-| [Introducción](Seccion01/Seccion01_01)                                                              | Introducción al análisis univariado de series de tiempo                                                        |             3.5           | 
-| [Pruebas de Raíz Unitaria](Seccion01/Seccion01_01)                                                  | Explicación general de la filosofía detrás de las pruebas de raíz unitaria                                     |             3.5           | 
+| [Introducción](Seccion01/Seccion01_01)                                                              | Introducción al análisis univariado de series de tiempo                                                        |             2.5           | 
+| [Pruebas de Raíz Unitaria](Seccion01/Seccion01_01)                                                  | Explicación general de la filosofía detrás de las pruebas de raíz unitaria                                     |             1.5           | 
 | [Estimación de modelos ARIMA](Section01/Requirement)                                                | Explicación acerca de la metododología para estimar un modelo ARIMA.                                           |              1            | 
 | [Principales pruebas de Validación de los Modelos ARIMA](Section01/CaseStudy)                       | Explicación de las pruebas de validación de un modelo ARIMA                                                    |              1            | 
 
@@ -56,6 +56,7 @@ En esta sección se presenta
 
 | Subsecciones                                                                                        | Alcance                                                                                                        | Dedicación,<br>5.5 horas  | 
 |-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
+| [Introducción](Seccion01/Seccion01_01)                                                              | Introducción al análisis multivariado de series de tiempo                                                      |             2.5           | 
 | [Estimación de modelos VAR](Section01/Requirement)                                                  | Explicación acerca de la metododología para estimar un modelo VAR.                                             |              1            | 
 | [Principales pruebas de Validación de los Modelos VAR](Section01/CaseStudy)                         | Explicación de las pruebas de validación de un modelo VAR                                                      |              1            | 
 | [Prueba de Cointegración de Johansen](Section01/Requirement)                                        | Explicación acerca de la prueba de Cointegración de Johansen.                                                  |             0.5           | 
