@@ -39,6 +39,18 @@ $x^\frac{1}{2}$
 
 $x = a_0 + \cfrac{1}{a_1 + \cfrac{1}{a_2 + \cfrac{1}{a_3 + \cfrac{1}{a_4} } } }$
 
+$\sqrt{\frac{a}{b}}$
+
+$\sqrt[n]{1+x+x^2+x^3+\dots+x^n}$
+
+$\sqrt[a]{b}$
+
+$\displaystyle\sum_{i=1}^{10} t_i$
+
+$\int_0^\infty \mathrm{e}^{-x} \mathrm{d}x$
+
+$\langle f \rangle, \lfloor g \rfloor, \lceil h \rceil, \ulcorner i \urcorner, / j \backslash$
+
 ### Una matriz con subíndices
 $$
 \left(\begin{array}{ccc}
