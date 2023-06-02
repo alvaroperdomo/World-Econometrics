@@ -17,12 +17,12 @@ Una variable discreta 𝑦 es una variable aleatoria (es decir, estocástica) si
 # CODIGOS PARA FORMULAS (no va en el texto)
 $y_t$
 
-Las raíces de la ecuación $x^2= 2$ son $x=\sqrt{ 2}$ y $x=-\sqrt{2} $; 
-en general, las raíces de $ax^2+bx+c=0$, con $a\neq 0$, vienen dadas 
+$\forall x \in X, \quad \exists y \leq \epsilon$
+
+Las raíces de la ecuación $x^2=2$ son $x=\sqrt{2}$ y $x=-\sqrt{2}$; 
+en general, las raíces de $ax^2+bx+c=0$, con $a\neq0$, vienen dadas 
 por la fórmula 
-$$
-$x=\frac{-b\pm\sqrt{b^2-4 a c}}{2a}
-$$
+$x=\frac{-b\pm\sqrt{b^2-4 a c}}{2a}$
 
 ### Una matriz con subíndices
 $$
