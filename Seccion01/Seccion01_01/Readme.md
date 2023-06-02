@@ -1,16 +1,9 @@
-## Pruebas de Raíz Unitaria
+## Series de Tiempo
 
-Para esta sección hay que instalar el paquete [fUnitRoots](https://cran.r-project.org/web/packages/fUnitRoots/index.html)
+Una serie de tiempo es una secuencia de observaciones sobre una variable tomada a intervalos discretos en el tiempo. Donde estos intervalos discretos tienen la misma unidad de medida; es decir, están igualmente distanciados.
 
-``` r
-install.packages('fUnitRoots')
-```
+Una característica intrínseca de una serie tiempo es que, por lo general, las observaciones adyacentes son dependientes.
 
-| Subsecciones                                                                                        | Alcance                                                              | Dedicación,<br>5.5 horas  | 
-|-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|:-------------------------:|
-| [La Prueba ADF: _Prueba Aumentada de Dickey Fuller_](Section01/WhatIsLTWB)                          | Explicación general de la prueba                                     |             1.5           | 
-| [La Prueba KPSS: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_](Section01/Requirement)          | Explicación general de la prueba                                     |             0.5           |   
-| [La Prueba ERZ: _Prueba de Elliott, Rothenberg y Stock_](Section01/Requirement)                     | Explicación general de la prueba                                     |             0.5           |  
-| [La Prueba ZA: _Prueba de Zivot y Andrews_](Section01/CaseStudy)                                    | Explicación general de la prueba                                     |             0.5           |       
+El análisis de series tiempo (o en otras palabras, la econometría de series de tiempo) se refiere al manejo de técnicas para el análisis de esta dependencia. Esto requiere el desarrollo de modelos estocásticos y dinámicos para datos de series de tiempo y el uso aplicado de dichos modelos.
 
-
+Un uso importante del análisis de series de tiempo ha sido para el desarrollo de modelos dinámicos multivariados que permitan representar las relaciones conjuntas entre diversas variables a lo largo del tiempo
