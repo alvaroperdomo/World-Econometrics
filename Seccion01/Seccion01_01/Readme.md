@@ -29,6 +29,16 @@ $\cos (2\theta) = \cos^2 \theta - \sin^2 \theta$
 
 $\lim\limits_{x \to \infty} \exp(-x) = 0$
 
+$x \equiv a$
+
+$k_{n+1} = n^2 + k_n^2 - k_{n-1}$
+
+$\frac{\frac{1}{x}+\frac{1}{y}}{y-z}$
+
+$x^\frac{1}{2}$
+
+$x = a_0 + \cfrac{1}{a_1 + \cfrac{1}{a_2 + \cfrac{1}{a_3 + \cfrac{1}{a_4} } } }$
+
 ### Una matriz con subíndices
 $$
 \left(\begin{array}{ccc}
