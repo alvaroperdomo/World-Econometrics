@@ -18,9 +18,6 @@ El curso inicia con una introducción y explicación general de la metodología,
 ## R (!!Esta sección es de prueba!! Nada se queda)
 A las personas que no utilizan regularmente R se les recomienda hacer de antemano los tutoriales de https://learnr.numbat.space/
 
-## La Base de Datos del Banco Mundial 
-La base de datos del Banco Mundial se puede consultar en 
-
 ## Dirigido a
 
 Los contenidos presentados en este curso están dirigidos a estudiantes y profesionales de diferentes disciplinas que requieran aprender y/o fortalecer sus conocimientos en análisis de series de tiempo en RStudio, tales como:
