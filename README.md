@@ -3,7 +3,7 @@
 #### Duración del curso: XXXX horas
 _Bienvenido al curso Análisis Aplicado de Series de Tiempo: Entendiendo un Mundo en Desarrollo_. En este curso aprenderá a hacer análisis de series de tiempo utilizando [RStudio](https://posit.co/download/rstudio-desktop/). Durante el desarrollo del curso se tomara como referencia la base de datos del Banco Mundial [Indicadores de Desarrollo Económico](https://databank.bancomundial.org/reports.aspx?source=world-development-indicators) con el fin de aprender los principales entresijos de esta herramienta econométrica de una forma interesante.
 
-Este curso ha sido dividido en dos secciones principales, a través de las cuales el estudiante desarrollará diferentes habilidades computacionales y analíticas, que podrá aplicar en el análisis de casos de estudio propios.
+Este curso ha sido dividido en tres secciones principales, a través de las cuales el estudiante desarrollará diferentes habilidades computacionales y analíticas, que podrá aplicar en el análisis de casos de estudio propios.
 
 Una serie de tiempo es una secuencia de observaciones sobre una variable tomada a intervalos discretos en el tiempo. Donde estos intervalos discretos tienen la misma unidad de medida; es decir, están igualmente distanciados.
 
@@ -38,19 +38,23 @@ Los contenidos presentados en este curso están dirigidos a estudiantes y profes
 * XXX. 
 * XXX.
 
-## Sección 1 - Análisis Univariado (ARIMA)
+## Sección 1 - Las Series de Tiempo y la Base de Datos del Banco Mundial
+
+En esta sección se presenta 
+
+## Sección 2 - Análisis Univariado (ARIMA)
 
 En esta sección se presenta 
 
 | Subsecciones                                                                                        | Alcance                                                                                                        | Dedicación,<br> 6 horas  | 
 |-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
 | [Introducción](Seccion01/Seccion01_01)                                                              | Introducción al análisis univariado de series de tiempo                                                        |             2.5           | 
-| [Pruebas de Raíz Unitaria](Seccion01/Seccion01_01)                                                  | Explicación general de la filosofía detrás de las pruebas de raíz unitaria                                     |             1.5           | 
+| [Pruebas de Raíz Unitaria](Seccion01/Seccion02_01)                                                  | Explicación general de la filosofía detrás de las pruebas de raíz unitaria                                     |             1.5           | 
 | [Estimación de modelos ARIMA](Section01/Requirement)                                                | Explicación acerca de la metododología para estimar un modelo ARIMA.                                           |              1            | 
 | [Principales pruebas de Validación de los Modelos ARIMA](Section01/CaseStudy)                       | Explicación de las pruebas de validación de un modelo ARIMA                                                    |              1            | 
 
 
-## Sección 2 - Análisis Multivariado (VAR y VEC)
+## Sección 3 - Análisis Multivariado (VAR y VEC)
 
 En esta sección se presenta 
 
