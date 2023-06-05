@@ -35,7 +35,7 @@ En esta sección se presenta
 | Subsecciones                                                                                        | Alcance                                                                                                        | Dedicación,<br> 2 horas  | 
 |-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
 | [01. Series de tiempo](Seccion01/Seccion01_01)                                                      | ++++++++++++++++++++ +++++++++++++++++ ++++++++++++++++++                                                       |             1.5           | 
-| [02. Los Indicadores de Desarrollo Económico del Banco Mundial](Seccion01/Seccion02_01)             |                                                        |             0.5           | 
+| [02. Los Indicadores de Desarrollo Económico del Banco Mundial](Seccion01/Seccion01_02)             |                                                        |             0.5           | 
 
 ## Sección 2 - Análisis Univariado (ARIMA)
 
