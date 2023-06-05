@@ -8,12 +8,13 @@ Si se desea tener un acceso rápido a la misma utilizando R se puede descargar e
 install.packages('WDI')
 ```
 
+### Buscando los datos
 Se pueden buscar datos utilizando palabras clave en **WDIsearch**. Por ejemplo, si se requieren los datos del Producto Interno Bruto copie:
 ``` r
 WDIsearch('gdp')
 ```
 
-Y obtendrá como respuuesta:
+Y obtendrá como respuesta:
 
 ``` r
 > WDIsearch('gdp')[1:10,]
@@ -28,4 +29,58 @@ Y obtendrá como respuuesta:
  [8,] "BN.TRF.CURR.CD.ZS"    "Net current transfers (% of GDP)"                                        
  [9,] "BNCABFUNDCD_"         "Current Account Balance, %GDP"                                           
 [10,] "BX.KLT.DINV.WD.GD.ZS" "Foreign direct investment, net inflows (% of GDP)" 
+```
+
+**WDIsearch** busca todas las variables en cuya definición este la palabla en cuestión, por lo que se requeriria buscar un concepto más específico. Por ejemplo, si está buscando el PIB per cápita en dólares constantes, mejor busque
+
+``` r
+WDIsearch('gdp.*capita.*constant')
+     indicator           name                                                 
+[1,] "GDPPCKD"           "GDP per Capita, constant US$, millions"             
+[2,] "NY.GDP.PCAP.KD"    "GDP per capita (constant 2000 US$)"                 
+[3,] "NY.GDP.PCAP.KN"    "GDP per capita (constant LCU)"                      
+[4,] "NY.GDP.PCAP.PP.KD" "GDP per capita, PPP (constant 2005 international $)"
+```
+
+### Descargando y utilizando los datos
+
+Descargue la serie desee para los países requeridos:
+
+``` r
+dat = WDI(indicator='NY.GDP.PCAP.KD', country=c('MX','CA','US'), start=1960, end=2012)
+```
+
+Nota: puede usar **country='all'** para descargar datos de todos los países disponibles. También puede descargar varios indicadores a la vez.
+
+Visualice los datos:
+``` r
+head(dat)
+  iso2c country NY.GDP.PCAP.KD year
+1    CA  Canada       9374.883 1960
+2    CA  Canada       9479.824 1961
+3    CA  Canada       9967.366 1962
+4    CA  Canada      10290.362 1963
+5    CA  Canada      10774.653 1964
+6    CA  Canada      11283.606 1965
+```
+
+Grafique los datos:
+``` r
+library(ggplot2)
+ggplot(dat, aes(year, NY.GDP.PCAP.KD, color=country)) + geom_line() +
+    xlab('Años') + ylab('PIB per cápita')
+```
+
+### Renombramiento Automático
+Si el vector que proporciona a WDI tiene nombre, la función cambiará automáticamente el nombre de las columnas cuando sea posible.
+``` r
+dat <- WDI(indicator = c("pib_per_capita" = "NY.GDP.PCAP.KD", "poblacion" = "SP.POP.TOTL"))
+head(dat)
+iso2c    country year pib_per_capita poblacion
+1    1A Arab World 2005       5378.379  316264728
+2    1A Arab World 2006       5594.899  323773264
+3    1A Arab World 2007       5711.663  331653797
+4    1A Arab World 2008       5898.516  339825483
+5    1A Arab World 2009       5782.422  348145094
+6    1A Arab World 2010       5916.330  356508908
 ```
