@@ -91,5 +91,5 @@ iso2c    country year pib_per_capita poblacion
 5    1A Arab World 2009       5782.422  348145094
 6    1A Arab World 2010       5916.330  356508908
 ```
-| [Anterior Sección: 01-01. Series de tiempo](../../Seccion01_01) | [Inicio](../../Readme.md) | [Siguiente Sección: 02-01. Introducción Análisis Univariado](../../Seccion02_01) | 
-|-----------------------------------------------------------------|---------------------------|----------------------------------------------------------------------------------|
+| [Anterior Sección: 01-01. Series de tiempo](../../Seccion01_01/README.md) | [Inicio](../../Readme.md) | [Siguiente Sección: 02-01. Introducción Análisis Univariado](../../Seccion02_01/Readme.md) | 
+|---------------------------------------------------------------------------|---------------------------|---------------------------------------------------------------------------------------------------|
