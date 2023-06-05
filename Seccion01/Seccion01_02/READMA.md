@@ -8,6 +8,8 @@ Si se desea tener un acceso rápido a la misma utilizando R se puede descargar e
 install.packages('WDI')
 ```
 
+_El paquete **WDI** busca y descargue datos de más de 40 bases de datos alojadas por el Banco Mundial, incluidos los Indicadores de desarrollo mundial ('WDI'), Estadísticas de deuda internacional, Doing Business, Índice de capital humano e Índice de pobreza subnacional_
+
 ### Buscando los datos
 Se pueden buscar datos utilizando palabras clave en **WDIsearch**. Por ejemplo, si se requieren los datos del Producto Interno Bruto copie:
 ``` r
