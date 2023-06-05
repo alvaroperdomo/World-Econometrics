@@ -52,7 +52,12 @@ Descargue la serie desee para los países requeridos:
 dat = WDI(indicator='NY.GDP.PCAP.KD', country=c('MX','CA','US'), start=1960, end=2012)
 ```
 
-Nota: puede usar **country='all'** para descargar datos de todos los países disponibles. También puede descargar varios indicadores a la vez.
+Nota: puede usar **country='all'** para descargar datos de todos los países disponibles. También puede descargar varios indicadores a la vez. Por ejemplo,
+``` r
+WDI(country = "all", indicator = "NY.GDP.PCAP.KD", start = 1960, end = NULL, extra = FALSE, cache = NULL, latest = NULL, language = "es")
+```
+
+* end = NULL_ significa que sólo se van a tomar en cuenta 5 años
 
 Visualice los datos:
 ``` r
