@@ -43,8 +43,8 @@ En esta sección se presenta
 
 | Subsecciones                                                                                        | Alcance                                                                                                        | Dedicación,<br> 6 horas  | 
 |-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
-| [01. Introducción](Seccion01/Seccion01_01)                                                          | Introducción al análisis univariado de series de tiempo                                                        |             2.5           | 
-| [02. Pruebas de Raíz Unitaria](Seccion01/Seccion02_01)                                              | Explicación general de la filosofía detrás de las pruebas de raíz unitaria                                     |             1.5           | 
+| [01. Introducción](Seccion01/Seccion01_01/README.md)                                                          | Introducción al análisis univariado de series de tiempo                                                        |             2.5           | 
+| [02. Pruebas de Raíz Unitaria](Seccion01/Seccion02_01/README.md)                                              | Explicación general de la filosofía detrás de las pruebas de raíz unitaria                                     |             1.5           | 
 | [03. Estimación de Modelos ARIMA](Section01/Requirement)                                            | Explicación acerca de la metododología de Box-Jenkins para estimar un modelo ARIMA.                            |              1            | 
 | [04. Principales pruebas de validación de los Modelos ARIMA](Section01/CaseStudy)                   | Explicación de las pruebas de validación de un modelo ARIMA                                                    |              1            | 
 
