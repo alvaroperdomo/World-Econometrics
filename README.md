@@ -9,6 +9,7 @@ Este curso ha sido dividido en tres secciones principales, a través de las cual
 ## Objetivos generales
 
 * Explicar y aplicar los principales fundamentos para un análisis de series de tiempo.
+* Estudiar los modelos de series de tiemo más relevantes
 * Explicar la construcción y análisis de modelos de series de tiempo univeariados y multivariados.
 
 ## Metodología y requerimientos
