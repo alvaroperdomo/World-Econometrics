@@ -8,7 +8,7 @@ Formalmente, si $E(x)$ es el valor medio teórico de $x$, entonces la secuencia 
 
 ## Los procesos estacionarios
 Un proceso estocástico que tiene una media y una varianza finita es estacionario en covarianza si para todo $t$ y $t-s$,
-1) 𝐸(𝑦_𝑡 )=𝐸(𝑦_(𝑡−𝑠))=𝜇 (Media constante)
+1) $E(y_t)=E(y_{t-s})= \miu$  (Media constante)
 2) 𝐸 [(𝑦_𝑡− 𝜇)^2 ]=𝐸〖(𝑦_(𝑡−𝑠)− 𝜇)〗^2  = 𝜎_𝑦^2(Varianza constante)
 3) 𝐸 [(𝑦_𝑡−𝜇) (𝑦_(𝑡−𝑠)−𝜇)]=𝐸[(𝑦_(𝑡−𝑗)−𝜇) (𝑦_(𝑡−𝑗−𝑠)−𝜇)]=𝛾_𝑠(autocovarianzas de la misma amplitud constante) donde 𝜇, 𝜎_𝑦^2, y 𝛾_𝑠 son todas constantes.
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9e7de65f-925c-4d51-abfd-0df692fe95ec)
