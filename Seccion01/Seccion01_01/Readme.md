@@ -15,6 +15,8 @@ Un uso importante del análisis de series de tiempo ha sido para el desarrollo d
 ### ¿Qué es una variable discreta aleatoria?
 Una variable discreta $y$ es una variable aleatoria (es decir, estocástica) si, para cualquier número real $r$, existe una probabilidad $p(y\leq r)$ de que $y$ tome un valor menor o igual a $r$. 
 
+| [Siguiente Sección: 02. Los Indicadores de Desarrollo Económico del Banco Mundial](../../Seccion01_02) | [Inicio](../../Readme.md) |
+|--------------------------------------------------------------------------------------------------------|---------------------------|
 
 # CODIGOS PARA FORMULAS (no va en el texto)
 $y_t$
