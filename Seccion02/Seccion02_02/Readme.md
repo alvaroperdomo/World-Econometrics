@@ -33,12 +33,23 @@ Los valores críticos de la prueba dependen de si se incluye una tendencia en la
 * Si hay un intercepto pero no una tendencia, los valores críticos son precisamente los mismos de la prueba de Dickey-Fuller. En esencia, utiliza los valores críticos de Dickey-Fuller como si no hubiera un intercepto en el proceso generador de datos. 
 * Si hay una tendencia, los valores críticos dependen del valor de $\alpha$ seleccionado para construir la variable $\tilde{y_t}$. Elliott, Rothenberg y Stock (1996) informan que el valor de $\alpha$ que parece proporcionar la mejor potencia global es $\alpha=(1-\displaystyle\frac{7}{t})$  para el caso de un intercepto y  $\alpha=(1-\displaystyle\frac{13.5}{t})$ si hay un intercepto y una tendencia. 
 
+### Prueba de Kwiatkowski, Phillips, Schmidt y Shin - KPSS
 
+Dado que la potencia de las pruebas de raíz unitaria no es particularmente alta, también puede ser interesante aplicar pruebas en donde la hipótesis nula es de estacionariedad, para evitar que podamos concluir erróneamente que una serie de tiempo tiene una raíz unitaria debido a las propiedades estadísticas de la prueba aumentada de Dickey-Fuller.
+Una prueba que toma la estacionariedad como hipótesis nula es la de Kwiatkowski, Phillips, Schmidt y Shin (1992) [KPSS]. 
 
+La prueba KPSS se basa en la idea de descomponer una serie de tiempo en la suma de :
+* una tendencia determinística $\delta_t$, 
+* un paseo aleatorio $S_t$ o tendencia estocástica (es decir, $S_t=\sum_{i=1}^{t} \varepsilon_i$
+* 
+*     $ 𝑆_𝑡=∑_(𝑖=1)^𝑡▒𝜀_𝑖 =𝑆_(𝑡−1)+𝜀_𝑡 con 𝑆_𝑡=0) y 
+* un proceso de error estacionario $u_t$. 
 
+es decir, 𝑦_𝑡=𝛿𝑡+𝑆_𝑡+𝑢_𝑡
 
-
-
+Cuando la varianza de 𝜀_𝑡, denotada como 𝜎^2, es igual a cero, el compo-nente de paseo aleatorio 𝑆_𝑡 se vuelve una constante por lo que la serie de tiempo 𝑦_𝑡=𝛿𝑡+𝑆_𝑡+𝑢_𝑡 en este caso es estacionaria. 
+La hipótesis nula de estacionariedad que se va a probar en la KPSS está dada por 𝜎^2=0.
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5f4afdc6-1dbd-47b5-9589-d28cf3b50c5b)
 
 ## Pruebas de Raíz Unitaria en R
 
