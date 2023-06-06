@@ -1,4 +1,13 @@
 ## Pruebas de Raíz Unitaria
+Tradicionalmente la prueba más utilizada es la **Prueba Aumentada de Dickey-Fuller - ADF**
+
+En esta prueba David Dickey y Wayne Fuller proponen estimar
+
+$$y_t = a_0 + \gamma y_{t-1} +\sum_{i = 2}^{p} \beta_i y_{t-i+1} + a_2 t + \varepsilon_t$$
+
+
+
+## Pruebas de Raíz Unitaria en R
 
 Para esta sección hay que instalar el paquete [fUnitRoots](https://cran.r-project.org/web/packages/fUnitRoots/index.html)
 
