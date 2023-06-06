@@ -1,4 +1,5 @@
 ## Pruebas de Raíz Unitaria
+### Prueba Aumentada de Dickey-Fuller - ADF
 Tradicionalmente la prueba más utilizada es la **Prueba Aumentada de Dickey-Fuller - ADF**
 
 Esta prueba consiste en estimar estas tres especificaciones
@@ -12,6 +13,16 @@ En las cuales se debe contrastar la hipótesis nula $\gamma=0$. Para escoger la 
 **Anotación 1:** Si el valor estimado de $\gamma \notin [-2,0]$, entonces no es necesario hacer prueba de raíz unitaria porque la serie es explosiva
 
 **Anotación 2:** La prueba ADF esta sesgada hacía el no rechazo de la hipótesis nula $\gamma=0$. Por lo tanto, es aconsejable complementar el análisis con hipótesis de más potencia o que tengan el sesgo opuesto. 
+
+### Prueba de Mínimos Cuadrados Generalizados de Dickey-Fuller (DF-GLS)
+Elliott, Rothenberg y Stock (1996) muestran que es posible mejorar el poder de la prueba al estimar el modelo utilizando algo cercano a las primeras diferencias. 
+
+Considere el modelo de tendencia estacionaria: $y_t=a_0+a_2t+B(L) \varepsilon_t$. En lugar de crear la primera diferencia de $y_t$, Elliott, Rothenberg y Stock preseleccionan una constante cercana a 1, digamos $\alpha$, y restan $\alpha y_{t-1}$  de $y_t$ para obtener $\tilde{y_t}=a_0+a_2 t - \alpha a_0 - \alpha a_2 (t-1) + e_t$
+
+𝑦 ̃_𝑡=𝑎_0+𝑎_2 𝑡−𝛼𝑎_0−𝛼𝑎_2 (𝑡−1)+𝑒_𝑡 para 𝑡=2,…,𝑇 donde 𝑦 ̃_𝑡=𝑦_𝑡−𝛼𝑦_(𝑡−1) y 𝑒_𝑡 es un término de error estacionario.
+Para 𝑡=1, la diferencia no es factible por lo que se asume 𝑦 ̃_1=𝑦_1. 
+
+
 
 
 ## Pruebas de Raíz Unitaria en R
