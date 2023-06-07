@@ -40,9 +40,7 @@ Una prueba que toma la estacionariedad como hipótesis nula es la de Kwiatkowski
 
 La prueba KPSS se basa en la idea de descomponer una serie de tiempo en la suma de :
 * una tendencia determinística $\delta_t$, 
-* un paseo aleatorio $S_t$ o tendencia estocástica 
-##### (En otras parabras, $S_t=\sum{_{i=1}^{t}} \varepsilon_i$
-##### $S_t= S_{t-1} + \varepsilon_t$ con $S_t=0$) y  
+* un paseo aleatorio $S_t$ o tendencia estocástica (en otras palabras, $S_t=\displaystyle\sum_{i=1}^{t} \varepsilon_i = S_{t-1} + \varepsilon_t$ con $S_t=0$), y  
 * un proceso de error estacionario $u_t$. 
 
 Es decir, $$y_t = \delta t + S_t + u_t$$
@@ -52,12 +50,13 @@ Cuando la varianza de $varepsilon_t$, denotada como $\sigma^2$, es igual a cero,
 La hipótesis nula de estacionariedad que se va a probar en la KPSS está dada por $\sigma^2=0$.
 
 En Kwiatkowski, Phillips, Schmidt y Shin (1992), el estadístico de prueba se calcula como 
-$$\hat{\eta}=\displaystyle\frac{1}{T^2 s^2(l)} \sum_{i=1}^T (\sum_{i=1}^t \hat{e_i})^2$$ 
+$$\hat{\eta}=\displaystyle\frac{1}{T^2 s^2(l)} \displaystyle\sum_{i=1}^T (\displaystyle\sum_{i=1}^t \hat{e_i})^2$$ 
 
 donde los residuos $\hat{e_t}$ provienen de la regresión auxiliar $y_t= \hat{\tau} + hat{\delta} t + hat{e_t}$ y $s^2(l)$ es una estimación de la varianza de largo plazo  $\sigma^2=\displaystyle\lim_{T \to \infty} \displaystyle\frac{E[S_T^2]}{T} $
 
-𝜎^2=lim┬(𝑇→∞)⁡〖𝐸[𝑆_𝑇^2 ]/𝑇〗.
-Siguiendo a Phillips (1987) y Phillips y Perron (1988), 𝑠^2 (𝑙) se estima co-mo 𝑠^2 (𝑙)=(∑_(𝑡=1)^𝑇▒𝑒 ̂_𝑡^2 )/𝑇+2[∑_(𝑗=1)^𝑙▒〖𝑤(𝑗,𝑙) ∑_(𝑡=𝑗+1)^𝑇▒〖𝑒 ̂_𝑡 𝑒 ̂_(𝑡−𝑗) 〗〗]/𝑇 donde:
+Siguiendo a Phillips (1987) y Phillips y Perron (1988), $s^2(l)$ se estima como $s^2(l)=\displaystyle\sum_{t=1}^T\hat{e_t}^2$ 
+
+𝑠^2 (𝑙)=(∑_(𝑡=1)^𝑇▒𝑒 ̂_𝑡^2 )/𝑇+2[∑_(𝑗=1)^𝑙▒〖𝑤(𝑗,𝑙) ∑_(𝑡=𝑗+1)^𝑇▒〖𝑒 ̂_𝑡 𝑒 ̂_(𝑡−𝑗) 〗〗]/𝑇 donde:
 Las ponderaciones 𝑤(𝑗,𝑙) se pueden establecer iguales a 𝑤(𝑗,𝑙)=1−𝑗/(𝑙+1) ver Newey y West (1987), aunque también son posibles otras ponderaciones. 
 La longitud de rezago 𝑙 generalmente se establece proporcional a 𝑇^(1/3), basados en Newey y West (1994).
 
