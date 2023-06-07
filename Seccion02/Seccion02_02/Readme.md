@@ -111,14 +111,40 @@ Como ejemplo, considere la situación en la que hay un cambio único en la media
 La secuencia se formó:
 * Simulando 100 valores distribuidos normalmente e independientemente para la secuencia { $\varepsilon_t$ }.  
 * Asumiendo $y_0=0$. 
-* Los siguientes 100 valores en la secuencia fueron generados usando la fórmula: $y_t=0.5y_{t-1}+ \varepsilon_t + D_L$ donde $D_L=$ 
+* Los siguientes 100 valores en la secuencia fueron generados usando la fórmula: $y_t=0.5y_{t-1}+ \varepsilon_t + D_L$ donde 
 
-$D_L= \left{0 para 3$
+$$
+D_L=\begin{array}{ccc}
+0 & \text{para  } t=1,...,50 \\
+3 & \text{para  } t=51,...,100 \\
+\end{array}
+$$
 
 El subíndice $L$ indica que el nivel de la variable dummy $D_L$ cambia. 
 ##### En la práctica, el cambio estructural puede no ser tan evidente como se muestra en la figura de arriba.
 
+Sin embargo, ésta es útil para ilustrar el problema de usar una prueba de Dickey-Fuller: 
+* La línea recta del gráfico es la mejor estimación de M.C.O ($y_t=a_0+a_2t+e_t$, donde $a_0<0$ y $a_2>0$) plantea erróneamente que la serie tiene una tendencia determinista. 
+* La forma correcta de estimar $y_t=0.5y_{t-1}+\varepsilon_t+D_L$ es un modelo AR(1) en el que se permita  que la intersección cambie al incluir la variable dummy $D_L$. 
+* Sin embargo, suponga que se estima la ecuación: $y_t=a_0+a_1y_{t-1}+e_t+D_L$. Como se puede inferir de la figura, el valor estimado de $a_1$ está necesariamente sesgado hacia 1. 
 
+La razón de este sesgo ascendente es que:
+* el valor estimado de $a_1$ captura la propiedad de que los valores "bajos" de $y_t$ (es decir, aquellos que fluctúan alrededor de 0) están seguidos por otros valores "bajos" y 
+* los valores "altos" (es decir, aquellos que fluctúan alrededor de una media de 6) son seguidos por otros valores "altos". 
+
+Para una demostración formal, tenga en cuenta que a medida que $a_1$ se acerca a 1, $y_t=a_0+a_1y_{t-1}+e_t$ se acerca a un paseo aleatorio con intercepto. Sabemos que la solución del paseo aleatorio con intercepto incluye una tendencia determinista; es decir,  $y_t=y_0+a_0t+\displaystyle\sum_{i=1}^t \varepsilon_i$
+
+Por lo tanto, la ecuación mal especificada $y_t=a_0+a_1y_{t-1}+e_t$ tenderá a imitar la línea de tendencia mostrada en la figura de arriba a sesgando $a_1$ hacia 1. Este sesgo en $a_1$ significa que la prueba ADF está sesgada hacia la aceptación de la hipótesis nula de una raíz unitaria, aunque la serie es estacionaria dentro de cada uno de los subperíodos.
+
+Por supuesto, un proceso de raíz unitaria también puede exhibir un cambio estructural. La figura de abajo simula un paseo aleatorio con un cambio estructural que se produce en $t=51$. 
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/452c868c-1da9-447c-be1d-bb36eb69e366)
+
+Esta segunda simulación utilizó:
+* Los mismos 100 valores para la secuencia { $\varepsilon_t$ } y 
+* la condición inicial $y_0=2$. 
+* Las 100 realizaciones siguientes de la secuencia $y_t$ se construyeron como $y_t=y_{t-1}+\varepsilon_t+D_P$ donde $D_P$ es una variable dummy de pulso tal que en el periodo 51 $D_P(51)=4$  y en todos los demás valores $D_P=0$.
+Aquí, el subíndice $P$ se refiere al hecho de que hay un único pulso en la variable dummy. 
 
 
 ## Pruebas de Raíz Unitaria en R
