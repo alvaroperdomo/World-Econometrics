@@ -98,7 +98,7 @@ Siguiendo a Phillips (1987) y Phillips y Perron (1988), $s^2(l)$ se estima como 
 
 La distribución asintótica del estadístico de prueba $\hat{\eta}$, tal como se explica en Kwiatkowski, Phillips, Schmidt y Shin (1992) depende de si la serie tiene tendencia o no.
 
-### Prueba de Perron
+### El cambio estructural
 
 Al realizar pruebas de raíz unitaria, se debe tener especial cuidado si se sospecha que ha ocurrido un cambio estructural. 
 
@@ -145,6 +145,51 @@ Esta segunda simulación utilizó:
 * la condición inicial $y_0=2$. 
 * Las 100 realizaciones siguientes de la secuencia $y_t$ se construyeron como $y_t=y_{t-1}+\varepsilon_t+D_P$ donde $D_P$ es una variable dummy de pulso tal que en el periodo 51 $D_P(51)=4$  y en todos los demás valores $D_P=0$.
 Aquí, el subíndice $P$ se refiere al hecho de que hay un único pulso en la variable dummy. 
+
+En un proceso de raíz unitaria, un único pulso en la dummy tendrá un efecto permanente en el nivel de la secuencia { $y_t$ }. En $t=51$, el pulso en la dummy es equivalente a un choque \varepsilon_{t+51}$ de cuatro unidades adicionales. 
+
+Por lo tanto, el choque de una sola vez a $D_P(51)$ tiene un efecto permanente en el valor medio de la secuencia para $t \ge 51$. 
+
+Este sesgo en las pruebas de Dickey-Fuller se confirmó en un experimento de Monte Carlo. 
+
+Perron (1989) generó 10.000 repeticiones de un proceso de la misma naturaleza que $y_t=0.5y_{t-1}+\varepsilon_t+D_L$. * Cada replica la formó:
+* generando 100 valores distribuidos normalmente e independientemente para la secuencia { $\varepsilon_t }. 
+* Para cada una de las 10,000 series replicadas, usó MCO para estimar una regresión en la forma de $y_t=a_0+a_1y_{t-1}+e_t$. 
+
+Perron descubrió que los valores estimados de $a_1$ estaban sesgados hacia 1. Además, el sesgo se hizo más pronunciado a medida que aumentaba la magnitud del cambio.
+
+## Prueba de Perron
+Volviendo a las dos gráficas de arriba, puede haber casos en los que a ojo sin ayuda no se puede detectar fácilmente la diferencia entre los tipos alternativos de secuencias. 
+
+Un procedimiento econométrico para probar las raíces unitarias en presencia de una cambio estructural implica dividir la muestra en dos partes y usar las pruebas ADF en cada parte. 
+
+El problema con este procedimiento es que los grados de libertad para cada una de las regresiones resultantes disminuyen. 
+
+Perron (1989) desarrolla un procedimiento formal para probar la presencia de raíz unitaria cuando hay un cambio estructural en el período de tiempo $t=\tau+1$. 
+
+Considere la hipótesis nula de un salto de una sola vez en el nivel de un proceso de raíz unitaria frente a la hipótesis alternativa de un cambio de una sola vez en el intercepto de un proceso estacionario en tendencia. 
+Formalmente, dejemos que las hipótesis nula y alternativa sean:
+* $H_0: y_t= a_0 + y_{t-1}+ \mu_1 D_P + \varepsilon_t$ donde 
+
+$$
+D_P=\begin{array}{ccc}
+1 & \text{si  } t= \tau+1 \\
+0 & \text{si  } t \ne \tau+1 \\
+\end{array}
+$$
+
+* $H_1: y_t= a_0 + a_2t+ \mu_2 D_L + \varepsilon_t$ donde 
+
+$$
+D_L=\begin{array}{ccc}
+1 & \text{si  } t \gt \tau \\
+0 & \text{si  } t \le \tau \\
+\end{array}
+$$
+
+Bajo la hipótesis nula, { $y_t$ }  es un proceso de raíz unitaria con un salto de una sola vez en el nivel de la secuencia en el período $t=/tau+1. 
+
+Bajo la hipótesis alternativa, { $y_t$ }   es una tendencia estacionaria con un salto de una sola vez en el intercepto. 
 
 
 ## Pruebas de Raíz Unitaria en R
