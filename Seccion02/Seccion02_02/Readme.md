@@ -191,6 +191,13 @@ Bajo la hipótesis nula, { $y_t$ }  es un proceso de raíz unitaria con un salto
 
 Bajo la hipótesis alternativa, { $y_t$ }   es una tendencia estacionaria con un salto de una sola vez en el intercepto. 
 
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/3b118e20-4f18-4cfb-907b-6ee107a30d44)
+
+La figura de arriba puede ayudar a visualizar las dos hipótesis:
+* Simulando $y_t=0.2+y_{t-1}+\mu_1 D_P(51) + \varepsilon_t$ y usando 100 realizaciones para la secuencia { $\varepsiton_t$ }, la línea discontinua errática representa la trayectoria en el tiempo de { $y_t$ }  bajo $H_0$. Antes y después del salto en el periodo 51, la secuencia { $y_t$ }  sigue el mismo paseo aleatorio con intercepto. 
+* $H_1$  postula que la secuencia { $y_t$ }  es estacionaria alrededor de la línea de tenden-cia discontinua. Hasta $t=\tau$, { $y_t$ }  es estacionaria alrededor de $a_0+a_2t$, y comenzando en $\tau+1$, $y_t$ es estacionaria alrededor de $a_0+a_2t+\mu_2$. Como lo ilustra la línea continua, hay un aumento de una sola vez en el intercepto de la tendencia si $\mu_2 \gt 0$.
+
+
 
 ## Pruebas de Raíz Unitaria en R
 
