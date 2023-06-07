@@ -52,14 +52,13 @@ La hipótesis nula de estacionariedad que se va a probar en la KPSS está dada p
 En Kwiatkowski, Phillips, Schmidt y Shin (1992), el estadístico de prueba se calcula como 
 $$\hat{\eta}=\displaystyle\frac{1}{T^2 s^2(l)} \displaystyle\sum_{i=1}^T (\displaystyle\sum_{i=1}^t \hat{e_i})^2$$ 
 
-donde los residuos $\hat{e_t}$ provienen de la regresión auxiliar $y_t= \hat{\tau} + hat{\delta} t + hat{e_t}$ y $s^2(l)$ es una estimación de la varianza de largo plazo  $\sigma^2=\displaystyle\lim_{T \to \infty} \displaystyle\frac{E[S_T^2]}{T} $
+donde los residuos $\hat{e_t}$ provienen de la regresión auxiliar $y_t= \hat{\tau} + \hat{\delta} t + \hat{e_t}$ y $s^2(l)$ es una estimación de la varianza de largo plazo  $\sigma^2=\displaystyle\lim_{T \to \infty} \displaystyle\frac{E[S_T^2]}{T} $
 
-Siguiendo a Phillips (1987) y Phillips y Perron (1988), $s^2(l)$ se estima como $s^2(l)=\displaystyle\sum_{t=1}^T\hat{e_t}^2$ 
+Siguiendo a Phillips (1987) y Phillips y Perron (1988), $s^2(l)$ se estima como $s^2(l)=\displaystyle\frac{\displaystyle\sum_{t=1}^T\hat{e_t}^2}{T} + \frac{2\displaystyle\sum_{j=1}^lw(j,l)\displaystyle\sum_{t=j+1}^T\hat{e_t}\hat{e_{t-j}}}{T}$ donde:
+* Las ponderaciones $w(j,l)$ se pueden establecer iguales a $w(j,l)=1-\frac{j}{l+1}$ ver Newey y West (1987), aunque también son posibles otras ponderaciones. 
+* La longitud de rezago l generalmente se establece proporcional a $T^{1/3}$, basados en Newey y West (1994).
 
-𝑠^2 (𝑙)=(∑_(𝑡=1)^𝑇▒𝑒 ̂_𝑡^2 )/𝑇+2[∑_(𝑗=1)^𝑙▒〖𝑤(𝑗,𝑙) ∑_(𝑡=𝑗+1)^𝑇▒〖𝑒 ̂_𝑡 𝑒 ̂_(𝑡−𝑗) 〗〗]/𝑇 donde:
-Las ponderaciones 𝑤(𝑗,𝑙) se pueden establecer iguales a 𝑤(𝑗,𝑙)=1−𝑗/(𝑙+1) ver Newey y West (1987), aunque también son posibles otras ponderaciones. 
-La longitud de rezago 𝑙 generalmente se establece proporcional a 𝑇^(1/3), basados en Newey y West (1994).
-
+La distribución asintótica del estadístico de prueba $\hat{\eta}$, tal como se explica en Kwiatkowski, Phillips, Schmidt y Shin (1992) depende de si la serie tiene tendencia o no.
 
 ## Pruebas de Raíz Unitaria en R
 
