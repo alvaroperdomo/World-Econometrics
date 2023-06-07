@@ -1,4 +1,29 @@
 ## Pruebas de Raíz Unitaria
+### Prueba de Dickey-Fuller - DF
+La ecuación $y_t = a_1 y_{t-1} + \varepsilon_t$ tiene raíz unitaria si $a_1=1$. 
+
+Note que si resta $y_{t-1}$ a ambos lados de la ecuación original se obtiene $\Delta y_t = \gamma y_{t-1} + \varepsilon_t$ donde $\gamma=a_1-1$
+
+Por supuesto, probar la hipótesis $a_1=1$ es equivalente a probar la hipótesis $\gamma=0$. 
+
+Dickey y Fuller (1979) consideran tres ecuaciones de regresión diferentes que pueden usarse para probar la presencia de una raíz unitaria:
+1) $\Delta y_t = \gamma y_{t-1} + \varepsilon_t$ **(Modelo de Paseo Aleatorio)**
+2) $\Delta y_t = a_0 + \gamma y_{t-1} + \varepsilon_t$ **(Modelo de Paseo Aleatorio con Intercepto)**
+3) $\Delta y_t = a_0 + \gamma y_{t-1} + a_2t + \varepsilon_t$ **(Modelo de Paseo Aleatorio con Intercepto y Tendencia Lineal)**
+
+La diferencia entre las tres regresiones se refiere a la presencia de los elementos deterministas $a_0$ y $a_2t$. 
+
+La hipótesis de interés en todas las regresiones es si $\gamma=0$. Cuando esto ocurre, la secuencia { $y_t$ } contiene una raíz unitaria. 
+
+La prueba implica estimar una (o más) de las ecuaciones anteriores utilizando MCO para obtener el valor estimado de $\gamma$ y el error estándar asociado. 
+
+La comparación del estadístico $t$ resultante con el valor apropiado informado en las tablas de Dickey-Fuller permite al investigador determinar si acepta o rechaza la hipótesis nula $\gamma=0$. 
+
+Tenga en cuenta que los valores críticos de los estadísticos $t$ dependen de si se incluye una intercepto y/o una tendencia temporal en la regresión. 
+
+En su estudio de Monte Carlo, Dickey y Fuller (1979) encontraron que los valores críticos para $\gamma=0$ dependen de la forma de la regresión y del tamaño de la muestra. Los estadísticos llamados $\tau$, $\tau_\mu$ y $\tau_\tau$ son los estadísticos apropiados para usar en $\Delta y_t = \gamma y_{t-1} + \varepsilon_t$, $\Delta y_t = a_0 + \gamma y_{t-1} + \varepsilon_t$ y $\Delta y_t = a_0 + \gamma y_{t-1} + a_2t + \varepsilon_t$ y respectivamente.
+
+
 ### Prueba Aumentada de Dickey-Fuller - ADF
 Tradicionalmente la prueba más utilizada es la **Prueba Aumentada de Dickey-Fuller - ADF**
 
