@@ -23,6 +23,19 @@ Tenga en cuenta que los valores críticos de los estadísticos $t$ dependen de s
 
 En su estudio de Monte Carlo, Dickey y Fuller (1979) encontraron que los valores críticos para $\gamma=0$ dependen de la forma de la regresión y del tamaño de la muestra. Los estadísticos llamados $\tau$, $\tau_\mu$ y $\tau_\tau$ son los estadísticos apropiados para usar en $\Delta y_t = \gamma y_{t-1} + \varepsilon_t$, $\Delta y_t = a_0 + \gamma y_{t-1} + \varepsilon_t$ y $\Delta y_t = a_0 + \gamma y_{t-1} + a_2t + \varepsilon_t$ y respectivamente.
 
+Dickey y Fuller (1981) proporcionan tres estadísticos $F$ adicionales (llamados $\phi_1$, $\phi_2$  y $\phi_3$) para probar hipótesis conjuntas sobre los coeficientes. 
+* La hipótesis nula $\gamma=a_0=0$ se prueba usando el estadístico $\phi_1$. 
+* la hipótesis nula $\gamma=a_0=a_2=0$ se prueba usando el estadístico $\phi_2$, y 
+* la hipótesis nula $\gamma=a_2=0$ se prueba usando el estadístico $\phi_3$. 
+
+Los estadísticos $\phi_1$, $\phi_2$, y $\phi_3$ se construyen exactamente de la misma manera que las pruebas $F$: $$\phi_i=\frac{\frac{SRC(restringido)-SRC(no restringido)}{r}}{\frac{SRC(no restringido)}{(T-k)}}$$
+donde
+* $SRC(restringido)$ y $SRC(no restringido)$: es la suma de los residuos al cuadrado de los modelos restringido y no restringido, respectivamente.
+* $r$: es el número de restricciones
+* $T$: es el número de observaciones utilizables
+* $k$: es el número de parámetros estimados en el modelo sin restricciones
+* $T-k$: es el número de grados de libertad en el modelo sin restricciones.
+
 
 ### Prueba Aumentada de Dickey-Fuller - ADF
 Tradicionalmente la prueba más utilizada es la **Prueba Aumentada de Dickey-Fuller - ADF**
