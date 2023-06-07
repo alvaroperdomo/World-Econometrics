@@ -40,16 +40,27 @@ Una prueba que toma la estacionariedad como hipótesis nula es la de Kwiatkowski
 
 La prueba KPSS se basa en la idea de descomponer una serie de tiempo en la suma de :
 * una tendencia determinística $\delta_t$, 
-* un paseo aleatorio $S_t$ o tendencia estocástica (es decir, $S_t=\sum_{i=1}^{t} \varepsilon_i$
-* 
-*     $ 𝑆_𝑡=∑_(𝑖=1)^𝑡▒𝜀_𝑖 =𝑆_(𝑡−1)+𝜀_𝑡 con 𝑆_𝑡=0) y 
+* un paseo aleatorio $S_t$ o tendencia estocástica 
+##### (En otras parabras, $S_t=\sum{_{i=1}^{t}} \varepsilon_i$
+##### $S_t= S_{t-1} + \varepsilon_t$ con $S_t=0$) y  
 * un proceso de error estacionario $u_t$. 
 
-es decir, 𝑦_𝑡=𝛿𝑡+𝑆_𝑡+𝑢_𝑡
+Es decir, $$y_t = \delta t + S_t + u_t$$
 
-Cuando la varianza de 𝜀_𝑡, denotada como 𝜎^2, es igual a cero, el compo-nente de paseo aleatorio 𝑆_𝑡 se vuelve una constante por lo que la serie de tiempo 𝑦_𝑡=𝛿𝑡+𝑆_𝑡+𝑢_𝑡 en este caso es estacionaria. 
-La hipótesis nula de estacionariedad que se va a probar en la KPSS está dada por 𝜎^2=0.
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5f4afdc6-1dbd-47b5-9589-d28cf3b50c5b)
+Cuando la varianza de $varepsilon_t$, denotada como $\sigma^2$, es igual a cero, el componente de paseo aleatorio $S_t$ se vuelve una constante por lo que la serie de tiempo $y_t = \delta t + u_t$ en este caso es estacionaria. 
+
+La hipótesis nula de estacionariedad que se va a probar en la KPSS está dada por $\sigma^2=0$.
+
+En Kwiatkowski, Phillips, Schmidt y Shin (1992), el estadístico de prueba se calcula como 
+$$\hat{\eta}=\displaystyle\frac{1}{T^2 s^2(l)} \sum_{i=1}^T (\sum_{i=1}^t \hat{e_i})^2$$ 
+
+donde los residuos $\hat{e_t}$ provienen de la regresión auxiliar $y_t= \hat{\tau} + hat{\delta} t + hat{e_t}$ y $s^2(l)$ es una estimación de la varianza de largo plazo  $\sigma^2=\displaystyle\lim_{T \to \infty} \displaystyle\frac{E[S_T^2]}{T} $
+
+𝜎^2=lim┬(𝑇→∞)⁡〖𝐸[𝑆_𝑇^2 ]/𝑇〗.
+Siguiendo a Phillips (1987) y Phillips y Perron (1988), 𝑠^2 (𝑙) se estima co-mo 𝑠^2 (𝑙)=(∑_(𝑡=1)^𝑇▒𝑒 ̂_𝑡^2 )/𝑇+2[∑_(𝑗=1)^𝑙▒〖𝑤(𝑗,𝑙) ∑_(𝑡=𝑗+1)^𝑇▒〖𝑒 ̂_𝑡 𝑒 ̂_(𝑡−𝑗) 〗〗]/𝑇 donde:
+Las ponderaciones 𝑤(𝑗,𝑙) se pueden establecer iguales a 𝑤(𝑗,𝑙)=1−𝑗/(𝑙+1) ver Newey y West (1987), aunque también son posibles otras ponderaciones. 
+La longitud de rezago 𝑙 generalmente se establece proporcional a 𝑇^(1/3), basados en Newey y West (1994).
+
 
 ## Pruebas de Raíz Unitaria en R
 
