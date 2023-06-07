@@ -108,6 +108,17 @@ Como ejemplo, considere la situación en la que hay un cambio único en la media
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5e70a54a-0564-4c7a-bde3-9812c475657d)
 
+La secuencia se formó:
+* Simulando 100 valores distribuidos normalmente e independientemente para la secuencia { $\varepsilon_t$ }.  
+* Asumiendo $y_0=0$. 
+* Los siguientes 100 valores en la secuencia fueron generados usando la fórmula: $y_t=0.5y_{t-1}+ \varepsilon_t + D_L$ donde $D_L=$ 
+
+$D_L= \left{0 para 3$
+
+El subíndice $L$ indica que el nivel de la variable dummy $D_L$ cambia. 
+##### En la práctica, el cambio estructural puede no ser tan evidente como se muestra en la figura de arriba.
+
+
 
 
 ## Pruebas de Raíz Unitaria en R
