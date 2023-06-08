@@ -77,6 +77,11 @@ library(ggplot2)
 ggplot(dat, aes(year, NY.GDP.PCAP.KD, color=country)) + geom_line() +
     xlab('Años') + ylab('PIB per cápita')
 ```
+Otra opción (HAY QUE REVISAR
+
+``` r
+plot.ts(NY.GDP.PCAP.KD)
+```
 
 ### Renombramiento Automático
 Si el vector que proporciona a WDI tiene nombre, la función cambiará automáticamente el nombre de las columnas cuando sea posible.
