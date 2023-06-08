@@ -77,10 +77,11 @@ library(ggplot2)
 ggplot(dat, aes(year, NY.GDP.PCAP.KD, color=country)) + geom_line() +
     xlab('Años') + ylab('PIB per cápita')
 ```
-Otra opción (HAY QUE REVISAR
+Otra opción (HAY QUE REVISAR)
 
 ``` r
 plot.ts(NY.GDP.PCAP.KD)
+plot(NY.GDP.PCAP.KD)
 ```
 
 ### Renombramiento Automático
