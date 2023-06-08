@@ -220,6 +220,37 @@ Si encuentra un estadístico $t$ mayor que el valor crítico calculado por Perro
 
 La metodología es bastante general, ya que también puede permitir un cambio único en el intercepto o un cambio único tanto en la media como en el intercepto. 
 
+Por ejemplo, es posible probar la hipótesis nula de un cambio permanente en el intercepto frente a la alternativa de un cambio en la pendiente de la tendencia.  
+
+$H_0: y_t= a_0 + y_{t-1} + \mu_2 D_L + \varepsilon_t$ donde 
+
+$$
+D_L=\begin{array}{ccc}
+1 & \text{para  } t \gt tau \\
+0 & \text{para  } t \le tau \\
+\end{array}
+$$
+
+$H_1: y_t= a_0 + a_2t + \mu_3 D_T + \varepsilon_t$ donde
+
+$$
+D_D=\begin{array}{ccc}
+t-\tau & \text{para  } t \gt \tau \\
+0 & \text{para  } t \le \tau \\
+\end{array}
+$$
+
+En  $H_0$, la secuencia { $y_t } se genera por $\Delta y_t = a_0 + \varepsilon_t$ hasta el período $\tau$ y por  $\Delta y_t = a_0 + \mu_2 + \varepsilon_t$ a partir de entonces. 
+
+Si $\mu_2 \gt 0$, la magnitud del intercepto aumenta para $t \gt \tau$. 
+
+De manera similar, se produce una reducción en el intercepto si $\mu_2 \lt 0$.
+
+En $H_1$  se postula una serie estacionaria en tendencia con un cambio uniforme en la pendiente de la tendencia a partir de $t \gt tau$:
+* positivo si $\mu_3 \gt 0$ y 
+* negativo si $\mu_3 \lt 0$ 
+
+
 
 
 
