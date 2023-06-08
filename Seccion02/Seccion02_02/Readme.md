@@ -234,7 +234,7 @@ $$
 $H_1: y_t= a_0 + a_2t + \mu_3 D_T + \varepsilon_t$ donde
 
 $$
-D_D=\begin{array}{ccc}
+D_T=\begin{array}{ccc}
 t-\tau & \text{para  } t \gt \tau \\
 0 & \text{para  } t \le \tau \\
 \end{array}
@@ -249,6 +249,31 @@ De manera similar, se produce una reducción en el intercepto si $\mu_2 \lt 0$.
 En $H_1$  se postula una serie estacionaria en tendencia con un cambio uniforme en la pendiente de la tendencia a partir de $t \gt tau$:
 * positivo si $\mu_3 \gt 0$ y 
 * negativo si $\mu_3 \lt 0$ 
+
+Para ser aún más general, es posible combinar las dos hipótesis previamente analizadas:
+
+$H_0: y_t= a_0 + y_{t-1} + \mu_1 D_P + \mu_2 D_L + \varepsilon_t$
+
+$H_1: y_t= a_0 + a_2t + \mu_2 D_L + \mu_3 D_T + \varepsilon_t$
+
+Nuevamente, el procedimiento implica combinar las hipótesis nula y alternativa en una sola ecuación. Considere $H_0: y_t= a_0 + a_1 y_{t-1} + \mu_1 D_P + \mu_2 D_L + \mu_3 D_T + \varepsilon_t$ 
+
+Compare el estadístico $t$ de la estimación de $a_1$ con el valor crítico calculado por Perron (1989). Si los errores de esta regresión no parecen ser ruido blanco, estime la ecuación en la forma de una prueba aumentada de Dickey-Fuller. El estadístico 𝑡 para la hipótesis nula $a_1=1$ puede compararse con los valores críticos calculados por Perron (1989)
+
+## Prueba de Zivot y Andrews
+Se debe tener cuidado al usar el procedimiento de Perron, ya que supone que la fecha del cambio estructural es conocida. 
+
+Zivot y Andrews (1992) muestran que si el momento de cambio estructural es erróneo y se aplica la prueba de Perron, entonces aumenta la probabilidad de que se rechace la presencia de raíz unitaria en momentos en que esta realmente existe. 
+
+Por lo tanto, Zivot y Andrews (1992) proponen una prueba de raíz unita-ria que calcula endógenamente el momento del cambio estructural
+Ante ello, plantean el siguiente procedimiento:
+
+**Paso 1:** Calcule el estadístico $t$ para verificar la hipótesis nula $a_1=0$  (es decir, la hipótesis nula de raíz unitaria) para todos los momentos ($\tau$) y para todos los posibles tipos de cambio estructural.
+Para el caso de cambio estructural en media y pendiente. $\Delta y_t= a_0 + a_1 y_{t-1} + a_2t + \mu_2 D_L + \mu_3 D_T + \displaystyle\sum_{i = 1}^{p} \beta_i \Delta y_{t-i} +  \varepsilon_t$
+
+**Paso 2:** Escoja el estadístico $|t|$ más alto (es decir, el menos favorable a aceptar $H_0$) y compárelo con los valores críticos propuestos por Zivot y Andrews.
+
+**Paso 3:** Si se rechaza $H_0$, se concluye que no existe raíz unitaria. En caso contrario, se debe identificar el mejor modelo de cambio estructural utilizando la prueba iterativa de Chow.
 
 
 
