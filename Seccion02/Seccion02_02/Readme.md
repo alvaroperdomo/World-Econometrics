@@ -210,7 +210,7 @@ El problema econométrico es determinar si una serie observada se modela mejor c
 
 Perron generó 5000 series de acuerdo con $H_1$ usando valores de $\lambda$ que van de 0 a 1 en incrementos de 0.1. Para cada valor de $\lambda$, estimó cada una de las regresiones y calculó la distribución muestral de $a_1$. 
 
-Los valores críticos son idénticos a los estadísticos de Dickey-Fuller cuando $\lambda=0$ y $\lambda=1$; en efecto, no hay cambio estructural a menos que $\gt 0 \lambda=0 \lt 1$. 
+Los valores críticos son idénticos a los estadísticos de Dickey-Fuller cuando $\lambda=0$ y $\lambda=1$; en efecto, no hay cambio estructural a menos que $0 \lt \lambda \lt 1$. 
 
 La diferencia máxima entre los dos estadísticos se produce cuando $\lambda=0.5$. 
 
@@ -240,7 +240,7 @@ t-\tau & \text{para  } t \gt \tau \\
 \end{array}
 $$
 
-En  $H_0$, la secuencia { $y_t } se genera por $\Delta y_t = a_0 + \varepsilon_t$ hasta el período $\tau$ y por  $\Delta y_t = a_0 + \mu_2 + \varepsilon_t$ a partir de entonces. 
+En  $H_0$, la secuencia { $y_t$ } se genera por $\Delta y_t = a_0 + \varepsilon_t$ hasta el período $\tau$ y por  $\Delta y_t = a_0 + \mu_2 + \varepsilon_t$ a partir de entonces. 
 
 Si $\mu_2 \gt 0$, la magnitud del intercepto aumenta para $t \gt \tau$. 
 
