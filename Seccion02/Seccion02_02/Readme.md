@@ -114,10 +114,12 @@ La secuencia se formó:
 * Los siguientes 100 valores en la secuencia fueron generados usando la fórmula: $y_t=0.5y_{t-1}+ \varepsilon_t + D_L$ donde 
 
 $$
-D_L=\begin{array}{ccc}
+D_L=\left\[\
+\begin{array}{ll}
 0 & \text{para  } t=1,...,50 \\
-3 & \text{para  } t=51,...,100 \\
+3 & \text{para  } t=51,...,100
 \end{array}
+\right.
 $$
 
 El subíndice $L$ indica que el nivel de la variable dummy $D_L$ cambia. 
@@ -172,19 +174,23 @@ Formalmente, dejemos que las hipótesis nula y alternativa sean:
 * $H_0: y_t= a_0 + y_{t-1}+ \mu_1 D_P + \varepsilon_t$ donde 
 
 $$
-D_P=\begin{array}{ccc}
+D_P=\left\[\
+\begin{array}{ccc}
 1 & \text{si  } t= \tau+1 \\
 0 & \text{si  } t \ne \tau+1 \\
 \end{array}
+\right.
 $$
 
 * $H_1: y_t= a_0 + a_2t+ \mu_2 D_L + \varepsilon_t$ donde 
 
 $$
-D_L=\begin{array}{ccc}
+D_L=\left\[\
+\begin{array}{ccc}
 1 & \text{si  } t \gt \tau \\
 0 & \text{si  } t \le \tau \\
 \end{array}
+\right.
 $$
 
 Bajo la hipótesis nula, { $y_t$ }  es un proceso de raíz unitaria con un salto de una sola vez en el nivel de la secuencia en el período $t=/tau+1. 
@@ -225,19 +231,23 @@ Por ejemplo, es posible probar la hipótesis nula de un cambio permanente en el 
 $H_0: y_t= a_0 + y_{t-1} + \mu_2 D_L + \varepsilon_t$ donde 
 
 $$
-D_L=\begin{array}{ccc}
+D_L=\left\[\
+\begin{array}{ccc}
 1 & \text{para  } t \gt tau \\
 0 & \text{para  } t \le tau \\
 \end{array}
+\right.
 $$
 
 $H_1: y_t= a_0 + a_2t + \mu_3 D_T + \varepsilon_t$ donde
 
 $$
-D_T=\begin{array}{ccc}
+D_T=\left\[\
+\begin{array}{ccc}
 t-\tau & \text{para  } t \gt \tau \\
 0 & \text{para  } t \le \tau \\
 \end{array}
+\right.
 $$
 
 En  $H_0$, la secuencia { $y_t$ } se genera por $\Delta y_t = a_0 + \varepsilon_t$ hasta el período $\tau$ y por  $\Delta y_t = a_0 + \mu_2 + \varepsilon_t$ a partir de entonces. 
