@@ -41,8 +41,25 @@ donde
 La prueba se va a hacer con respecto al **PIB per cápita de Colombia** utilizando el siguiente código:
 
 ``` r
-install.packages('WDI')
+unitrootTest(x, lags = 1, type = c("nc", "c", "ct"), title = NULL,
+description = NULL)
 ```
+
+
+| **Argumentos**          | **Descripción**                                                                                                | 
+|-------------------------|----------------------------------------------------------------------------------------------------------------|
+| **description**         | cadena de caracteres que permite una breve descripción                                                         | 
+| **lags**                | el número máximo de rezagos utilizados en la prueba                                                            |
+| **title**               | el número máximo de rezagos utilizados en la prueba                                                            |
+
+
+title a character string which allows for a project title.
+type a character string describing the type of the unit root regression. Valid choices
+are "nc" for a regression with no intercept (constant) nor time trend, and "c" for
+a regression with an intercept (constant) but no time trend, "ct" for a regression
+with an intercept (constant) and a time trend. The default is "c".
+x a numeric vector or time series object.
+
 
 ### Prueba Aumentada de Dickey-Fuller - ADF
 Tradicionalmente la prueba más utilizada es la **Prueba Aumentada de Dickey-Fuller - ADF**
