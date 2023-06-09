@@ -51,11 +51,18 @@ unitrootTest(x, lags = 1, type = c("nc", "c", "ct"), title = NULL, description =
 | **type**                | cadena de caracteres que describa el tipo de regresión de raíz unitaria. Las opciones válidas son:             |
 |                         | **"nc"** para una regresión sin intercepto (constante) ni tendencia temporal                                   |
 |                         | **"c"** para una regresión con intercepto (constante) pero sin tendencia temporal - **PREDETERMINADO**         |
-|                         | **"ct"** para una regresión con intercepto (constante) y una tendencia de tiempo                               |
+|                         | **"ct"** para una regresión con intercepto (constante) y con tendencia temporal                                |
 | **title**               | caracteres que permite darle un título a la prueba                                                             |
 | **description**         | cadena de caracteres que permite una breve descripción                                                         | 
 
 La prueba se va a hacer con respecto al **PIB per cápita de Colombia** utilizando el siguiente código:
+
+``` r
+unitrootTest(x, lags = 1, type = c("nc"), title = "Modelo de Paseo Aleatorio", description = NULL)
+unitrootTest(x, lags = 1, type = c("c"), title = "Modelo de Paseo Aleatorio con Intercepto", description = NULL)
+unitrootTest(x, lags = 1, type = c("ct"), title = "Modelo de Paseo Aleatorio con Intercepto y Tendencia Lineal", description = NULL)
+
+```
 
 ### Prueba Aumentada de Dickey-Fuller - ADF
 Tradicionalmente la prueba más utilizada es la **Prueba Aumentada de Dickey-Fuller - ADF**
