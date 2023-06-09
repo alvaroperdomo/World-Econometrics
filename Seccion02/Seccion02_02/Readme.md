@@ -86,7 +86,9 @@ urdfTest(x, lags = 1, type = c("nc", "c", "ct"), doplot = TRUE)
 |                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                             |
 
 **Tercera Opción:** Utilice el comando **ur.df**
+``` r
 ur.df(x, type = c("none", "drift", "trend"), lags = 1, selectlags = c("Fixed", "AIC", "BIC"))
+```
 
 | **Argumentos**          | **Descripción**                                                                                                | 
 |-------------------------|----------------------------------------------------------------------------------------------------------------|
