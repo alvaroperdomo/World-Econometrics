@@ -360,10 +360,13 @@ Para el caso de cambio estructural en media y pendiente. $\Delta y_t= a_0 + a_1 
 
 ## Pruebas de Raíz Unitaria en R
 
-Para esta sección hay que instalar el paquete [fUnitRoots](https://cran.r-project.org/web/packages/fUnitRoots/index.html)
+Para esta sección hay que instalar los paquetes
+* [fUnitRoots](https://cran.r-project.org/web/packages/fUnitRoots/index.html)
+* [urca]((https://cran.r-project.org/web/packages/urca/index.html))
 
 ``` r
 install.packages('fUnitRoots')
+install.packages('urca')
 ```
 
 | Subsecciones                                                                                        | Alcance                                                              | Dedicación,<br>5.5 horas  | 
