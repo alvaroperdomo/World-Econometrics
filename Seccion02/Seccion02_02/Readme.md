@@ -1,5 +1,6 @@
 ## Pruebas de Raíz Unitaria
 ### Prueba de Dickey-Fuller - DF
+
 La ecuación $y_t = a_1 y_{t-1} + \varepsilon_t$ tiene raíz unitaria si $a_1=1$. 
 
 Note que si resta $y_{t-1}$ a ambos lados de la ecuación original se obtiene $\Delta y_t = \gamma y_{t-1} + \varepsilon_t$ donde $\gamma=a_1-1$
@@ -36,6 +37,12 @@ donde
 * $k$: es el número de parámetros estimados en el modelo sin restricciones
 * $T-k$: es el número de grados de libertad en el modelo sin restricciones.
 
+#### Aplicando la prueba DF en R
+La prueba se va a hacer con respecto al **PIB per cápita de Colombia** utilizando el siguiente código:
+
+``` r
+install.packages('WDI')
+```
 
 ### Prueba Aumentada de Dickey-Fuller - ADF
 Tradicionalmente la prueba más utilizada es la **Prueba Aumentada de Dickey-Fuller - ADF**
