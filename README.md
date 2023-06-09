@@ -23,12 +23,7 @@ A las personas que no utilizan regularmente R se les recomienda hacer de anteman
 
 ## Dirigido a
 
-Los contenidos presentados en este curso están dirigidos a estudiantes y profesionales de diferentes disciplinas que requieran aprender y/o fortalecer sus conocimientos en análisis de series de tiempo en RStudio, tales como:
-
-* Estudiantes de pregrado y posgrado en economía.
-* XXX.
-* XXX. 
-* XXX.
+Los contenidos presentados en este curso están dirigidos a estudiantes y profesionales de diferentes disciplinas que requieran aprender y/o fortalecer sus conocimientos en análisis de series de tiempo en RStudio.
 
 ## Sección 1 - Las Series de Tiempo y la Base de Datos del Banco Mundial
 
