@@ -38,24 +38,24 @@ donde
 * $T-k$: es el número de grados de libertad en el modelo sin restricciones.
 
 #### Aplicando la prueba DF en R
-La prueba se va a hacer con respecto al **PIB per cápita de Colombia** utilizando el siguiente código:
+La estructura para hacer la prueba DF es:
 
 ``` r
-unitrootTest(x, lags = 1, type = c("nc", "c", "ct"), title = NULL,
-description = NULL)
+unitrootTest(x, lags = 1, type = c("nc", "c", "ct"), title = NULL, description = NULL)
 ```
-
 
 | **Argumentos**          | **Descripción**                                                                                                | 
 |-------------------------|----------------------------------------------------------------------------------------------------------------|
-| **description**         | cadena de caracteres que permite una breve descripción                                                         | 
+| **x**                   | vector o variable de series de tiempo                                                                          |
 | **lags**                | el número máximo de rezagos utilizados en la prueba                                                            |
-| **title**               | caracteres que permite darle un título a la prueba                                                             |
 | **type**                | cadena de caracteres que describa el tipo de regresión de raíz unitaria. Las opciones válidas son:             |
 |                         | **"nc"** para una regresión sin intercepto (constante) ni tendencia temporal                                   |
 |                         | **"c"** para una regresión con intercepto (constante) pero sin tendencia temporal - **PREDETERMINADO**         |
 |                         | **"ct"** para una regresión con intercepto (constante) y una tendencia de tiempo                               |
-| **x**                   | vector o variable de series de tiempo                                                                          |
+| **title**               | caracteres que permite darle un título a la prueba                                                             |
+| **description**         | cadena de caracteres que permite una breve descripción                                                         | 
+
+La prueba se va a hacer con respecto al **PIB per cápita de Colombia** utilizando el siguiente código:
 
 ### Prueba Aumentada de Dickey-Fuller - ADF
 Tradicionalmente la prueba más utilizada es la **Prueba Aumentada de Dickey-Fuller - ADF**
