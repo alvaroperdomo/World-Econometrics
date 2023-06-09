@@ -29,19 +29,19 @@ Los contenidos presentados en este curso están dirigidos a estudiantes y profes
 
 En esta sección se presenta 
 
-| Subsecciones                                                                                        | Alcance                                                                                                        | Dedicación,<br> 2 horas  | 
+| Subsecciones                                                                                        | Alcance                                                                                                        | Dedicación,<br> 2 horas   | 
 |-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
-| [01. Series de tiempo](Seccion01/Seccion01_01/Readme.md)                                                      | ++++++++++++++++++++ +++++++++++++++++ ++++++++++++++++++                                                       |             1.5           | 
-| [02. Los Indicadores de Desarrollo Económico del Banco Mundial](Seccion01/Seccion01_02/Readme.md)             |                                                        |             0.5           | 
+| [01. Series de tiempo](Seccion01/Seccion01_01/Readme.md)                                            |++++++++++++++++++++ +++++++++++++++++ ++++++++++++++++++                                                       |             1.5           | 
+| [02. Los Indicadores de Desarrollo Económico del Banco Mundial](Seccion01/Seccion01_02/Readme.md)   |                                                                                                                |             0.5           | 
 
 ## Sección 2 - Análisis Univariado (ARIMA)
 
 En esta sección se presenta 
 
-| Subsecciones                                                                                        | Alcance                                                                                                        | Dedicación,<br> 6 horas  | 
+| Subsecciones                                                                                        | Alcance                                                                                                        | Dedicación,<br> 8 horas   | 
 |-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
-| [01. Introducción](Seccion01/Seccion01_01/README.md)                                                          | Introducción al análisis univariado de series de tiempo                                                        |             2.5           | 
-| [02. Pruebas de Raíz Unitaria](Seccion01/Seccion02_01/README.md)                                              | Explicación general de la filosofía detrás de las pruebas de raíz unitaria                                     |             1.5           | 
+| [01. Introducción](Seccion01/Seccion01_01/README.md)                                                | Introducción al análisis univariado de series de tiempo                                                        |             2.5           | 
+| [02. Pruebas de Raíz Unitaria](Seccion01/Seccion02_01/README.md)                                    | Explicación general de la filosofía detrás de las pruebas de raíz unitaria                                     |             3.5           | 
 | [03. Estimación de Modelos ARIMA](Section01/Requirement)                                            | Explicación acerca de la metododología de Box-Jenkins para estimar un modelo ARIMA.                            |              1            | 
 | [04. Principales pruebas de validación de los Modelos ARIMA](Section01/CaseStudy)                   | Explicación de las pruebas de validación de un modelo ARIMA                                                    |              1            | 
 
@@ -50,7 +50,7 @@ En esta sección se presenta
 
 En esta sección se presenta 
 
-| Subsecciones                                                                                        | Alcance                                                                                                        | Dedicación,<br>5.5 horas  | 
+| Subsecciones                                                                                        | Alcance                                                                                                        | Dedicación,<br> 5.5 horas | 
 |-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
 | [01. Introducción](Seccion01/Seccion01_01)                                                          | Introducción al análisis multivariado de series de tiempo                                                      |             2.5           | 
 | [02. Estimación de Modelos VAR](Section01/Requirement)                                              | Explicación acerca de la metododología para estimar un modelo VAR.                                             |              1            | 
