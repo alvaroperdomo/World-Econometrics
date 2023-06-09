@@ -37,9 +37,27 @@ donde
 * $k$: es el número de parámetros estimados en el modelo sin restricciones
 * $T-k$: es el número de grados de libertad en el modelo sin restricciones.
 
-#### Aplicando la prueba DF en R
+##### Aplicando las pruebas DF en R
+Dado la prueba ADF es una extensión de la prueba DF, entonces la aplicación de la prueba DF en R se explica después de que se explique la prueba ADF
 
-Para llevar a cabo la prueba DF ofrecemos dos opciones:
+### Prueba Aumentada de Dickey-Fuller - ADF
+Tradicionalmente la prueba más utilizada es la **Prueba Aumentada de Dickey-Fuller - ADF**
+
+Esta prueba consiste en estimar estas tres especificaciones
+
+1) $$\Delta y_t = \gamma y_{t-1} +\sum_{i = 2}^{p} \beta_i \Delta y_{t-i+1} + \varepsilon_t$$
+2) $$\Delta y_t = a_0 + \gamma y_{t-1} +\sum_{i = 2}^{p} \beta_i \Delta y_{t-i+1} + \varepsilon_t$$
+3) $$\Delta y_t = a_0 + \gamma y_{t-1} +\sum_{i = 2}^{p} \beta_i \Delta y_{t-i+1} + a_2 t + \varepsilon_t$$
+
+En las cuales se debe contrastar la hipótesis nula $\gamma=0$. Para escoger la especificación correcta, se debe tener en cuenta la significancia tanto de $a_0$ como de $t$ y el número de rezagos óptimos ($p$) dentro de las sumatorias se puede escoger utilizando el críterio de Akaike.
+
+**Anotación 1:** Si el valor estimado de $\gamma \notin [-2,0]$, entonces no es necesario hacer prueba de raíz unitaria porque la serie es explosiva
+
+**Anotación 2:** La prueba ADF esta sesgada hacía el no rechazo de la hipótesis nula $\gamma=0$. Por lo tanto, es aconsejable complementar el análisis con hipótesis de más potencia o que tengan el sesgo opuesto. 
+
+##### Aplicando las pruebas DF y ADF en R
+
+Para llevar a cabo la prueba DF ofrecemos tress opciones:
 
 **Primera Opción:** Utilice el comando **unitrootTest**
 La estructura para hacer la prueba DF es:
@@ -102,22 +120,6 @@ ur.df(x, type = c("none", "drift", "trend"), lags = 1, selectlags = c("Fixed", "
 |                         | **"Fixed"** el número de rezagos establecidos en la opción "lags" **PREDETERMINADO**                           |
 |                         | **"AIC"** criterio de selección de Akaike (el número máximo de rezagos analizados se establece en la opción "lags") |
 |                         | **"BIC"** criterio de selección Bayesiano (el número máximo de rezagos analizados se establece en la opción "lags") |
-
-
-### Prueba Aumentada de Dickey-Fuller - ADF
-Tradicionalmente la prueba más utilizada es la **Prueba Aumentada de Dickey-Fuller - ADF**
-
-Esta prueba consiste en estimar estas tres especificaciones
-
-1) $$\Delta y_t = \gamma y_{t-1} +\sum_{i = 2}^{p} \beta_i \Delta y_{t-i+1} + \varepsilon_t$$
-2) $$\Delta y_t = a_0 + \gamma y_{t-1} +\sum_{i = 2}^{p} \beta_i \Delta y_{t-i+1} + \varepsilon_t$$
-3) $$\Delta y_t = a_0 + \gamma y_{t-1} +\sum_{i = 2}^{p} \beta_i \Delta y_{t-i+1} + a_2 t + \varepsilon_t$$
-
-En las cuales se debe contrastar la hipótesis nula $\gamma=0$. Para escoger la especificación correcta, se debe tener en cuenta la significancia tanto de $a_0$ como de $t$ y el número de rezagos óptimos ($p$) dentro de las sumatorias se puede escoger utilizando el críterio de Akaike.
-
-**Anotación 1:** Si el valor estimado de $\gamma \notin [-2,0]$, entonces no es necesario hacer prueba de raíz unitaria porque la serie es explosiva
-
-**Anotación 2:** La prueba ADF esta sesgada hacía el no rechazo de la hipótesis nula $\gamma=0$. Por lo tanto, es aconsejable complementar el análisis con hipótesis de más potencia o que tengan el sesgo opuesto. 
 
 ### Prueba de Mínimos Cuadrados Generalizados de Dickey-Fuller (DF-GLS)
 Elliott, Rothenberg y Stock (1996) muestran que es posible mejorar el poder de la prueba al estimar el modelo utilizando algo cercano a las primeras diferencias. 
