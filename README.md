@@ -9,12 +9,12 @@ Este curso ha sido dividido en tres secciones principales, a través de las cual
 ## Objetivos generales
 
 * Explicar y aplicar los principales fundamentos para un análisis de series de tiempo.
-* Estudiar los modelos de series de tiemo más relevantes
-* Explicar la construcción y análisis de modelos de series de tiempo univeariados y multivariados.
+* Estudiar los modelos de series de tiempo más relevantes
+* Explicar la construcción y análisis de modelos de series de tiempo univariados y multivariados.
 
 ## Metodología y requerimientos
 
-El curso inicia con una introducción y explicación general de la metodología, requerimientos y herramientas computacionales a emplear. Luego, XXXX.
+El curso inicia con una introducción y explicación general de la metodología, requerimientos y herramientas computacionales a emplear. Luego, se desarrolla un ejercicio y posteriormente se deja un ejercicio para ser desarrollado por el alumno. Con respecto a este último se haran algunas preguntas de selección múltiple para evaluar si los conceptos principales han sido entendidos de forma apropiada por el alumno.
 
 ## R (!!Esta sección es de prueba!! Nada se queda)
 A las personas que no utilizan regularmente R se les recomienda hacer de antemano los tutoriales de https://learnr.numbat.space/
