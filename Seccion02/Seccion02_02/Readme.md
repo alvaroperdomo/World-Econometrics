@@ -158,6 +158,24 @@ Los valores críticos de la prueba dependen de si se incluye una tendencia en la
 * Si hay un intercepto pero no una tendencia, los valores críticos son precisamente los mismos de la prueba de Dickey-Fuller. En esencia, utiliza los valores críticos de Dickey-Fuller como si no hubiera un intercepto en el proceso generador de datos. 
 * Si hay una tendencia, los valores críticos dependen del valor de $\alpha$ seleccionado para construir la variable $\tilde{y_t}$. Elliott, Rothenberg y Stock (1996) informan que el valor de $\alpha$ que parece proporcionar la mejor potencia global es $\alpha=(1-\displaystyle\frac{7}{t})$  para el caso de un intercepto y  $\alpha=(1-\displaystyle\frac{13.5}{t})$ si hay un intercepto y una tendencia. 
 
+#### Aplicando las pruebas DF-GLS en R
+``` r
+ur.ers(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"),lag.max = 4)
+```
+
+| **Argumentos**          | **Descripción**                                                                                                                              | 
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| **x**                   | vector o variable de series de tiempo                                                                                                        |
+| **lag.max**             | esta opción puede significar dos cosas:                                                                                                      |
+|                         | el número máximo de rezagos utilizados para probar el truncamiento del rezago decendente para la "prueba P", utilizando el método Bayesiano  |                  
+|                         | el número máximo de diferencias rezagadas que se incluirán en la regresión de prueba para "DF-GLS"                                           |
+| **type**                | cadena de caracteres que describa el tipo de regresión de raíz unitaria. Las opciones válidas son:                                           |
+|                         | **"DF-GLS"** **PREDETERMINADO**                                                                                                              |
+|                         | **"P-test"**                                                                                                                                 |
+| **model**               | El modelo determinista utilizado para eliminar la tendencias:                                                                                | 
+|                         | **"constant"**                                                                                                                               |
+|                         | **"trend"**                                                                                                                                  |
+
 ### Prueba de Kwiatkowski, Phillips, Schmidt y Shin - KPSS
 
 Dado que la potencia de las pruebas de raíz unitaria no es particularmente alta, también puede ser interesante aplicar pruebas en donde la hipótesis nula es de estacionariedad, para evitar que podamos concluir erróneamente que una serie de tiempo tiene una raíz unitaria debido a las propiedades estadísticas de la prueba aumentada de Dickey-Fuller.
