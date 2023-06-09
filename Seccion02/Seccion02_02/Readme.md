@@ -182,7 +182,7 @@ urersTest(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"), lag.m
 |                         | **"TRUE"** para mostrar gráfico de diagnostico **PREDETERMINADO**                                                                            |
 |                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                                                           |
 
-**Segunda Opción:** Utilice el comando **unitrootTest**
+**Segunda Opción:** Utilice el comando **ur.ers**
 ``` r
 ur.ers(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"),lag.max = 4)
 ```
@@ -225,6 +225,42 @@ Siguiendo a Phillips (1987) y Phillips y Perron (1988), $s^2(l)$ se estima como 
 * La longitud de rezago l generalmente se establece proporcional a $T^{1/3}$, basados en Newey y West (1994).
 
 La distribución asintótica del estadístico de prueba $\hat{\eta}$, tal como se explica en Kwiatkowski, Phillips, Schmidt y Shin (1992) depende de si la serie tiene tendencia o no.
+
+##### Aplicando la prueba KPSS en R
+
+Para llevar a cabo la prueba DF ofrecemos dos opciones:
+
+**Primera Opción:** Utilice el comando **unitrootTest**
+
+``` r
+urkpssTest(x, type = c("mu", "tau"), lags = c("short", "long", "nil"), use.lag = NULL, doplot = TRUE)
+```
+| **Argumentos**          | **Descripción**                                                                                                                              | 
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| **x**                   | vector o variable de series de tiempo                                                                                                        |
+| **type**                | Las opciones válidas son:                                                                                                                    |
+|                         | **"mu"** **PREDETERMINADO**                                                                                                                  |
+|                         | **"tau"**                                                                                                                                    |
+| **lags**                | el máximo número de rezagos:                                                                                                                 |
+| **use.lag**             | cadena de caracteres que especifica el número de rezagos                                                                                     |
+| **doplot**              | indicador lógico, por defecto VERDADERO. ¿Debe mostrarse un gráfico de diagnóstico?                                                          | 
+|                         | **"TRUE"** para mostrar gráfico de diagnostico **PREDETERMINADO**                                                                            |
+|                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                                                           |
+
+**Segunda Opción:** Utilice el comando **ur.kpss*
+``` r
+ur.kpss(y, type = c("mu", "tau"), lags = c("short", "long", "nil"), use.lag = NULL)
+```
+
+| **Argumentos**          | **Descripción**                                                                                                                              | 
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| **x**                   | vector o variable de series de tiempo                                                                                                        |
+| **type**                | Las opciones válidas son:                                                                                                                    |
+|                         | **"mu"** **PREDETERMINADO**                                                                                                                  |
+|                         | **"tau"**                                                                                                                                    |
+| **lags**                | el máximo número de rezagos                                                                                                                  |
+| **use.lag**             | número de rezagos especificados por el usuario                                                                                               |
+
 
 ### El cambio estructural
 
