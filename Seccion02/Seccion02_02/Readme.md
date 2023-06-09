@@ -1,4 +1,22 @@
 ## Pruebas de Raíz Unitaria
+
+Para esta sección hay que instalar los paquetes
+* [fUnitRoots](https://cran.r-project.org/web/packages/fUnitRoots/index.html)
+* [urca](https://cran.r-project.org/web/packages/urca/index.html)
+
+``` r
+install.packages('fUnitRoots')
+install.packages('urca')
+```
+
+| Pruebas                                                                                 | Explicación general de la prueba|  Aplicación en R |
+|-----------------------------------------------------------------------------------------|:-------------------------------:|:----------------:|
+| Las Pruebas DF y ADF: _Pruebas de Dickey Fuller y Aumentada de Dickey Fuller_           |  X                              |             X    | 
+| La Prueba KPSS: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_                       |  X                              |             X    |   
+| La Prueba ERZ: _Prueba de Elliott, Rothenberg y Stock_                                  |  X                              |             X    |
+| Pruebas de Cambio Estructural - P: _Prueba de Perron y ZA: _Prueba de Zivot y Andrews_  |  X                              |             X    |
+
+
 ### Prueba de Dickey-Fuller - DF
 
 La ecuación $y_t = a_1 y_{t-1} + \varepsilon_t$ tiene raíz unitaria si $a_1=1$. 
@@ -357,22 +375,4 @@ Para el caso de cambio estructural en media y pendiente. $\Delta y_t= a_0 + a_1 
 
 
 
-
-## Pruebas de Raíz Unitaria en R
-
-Para esta sección hay que instalar los paquetes
-* [fUnitRoots](https://cran.r-project.org/web/packages/fUnitRoots/index.html)
-* [urca]((https://cran.r-project.org/web/packages/urca/index.html))
-
-``` r
-install.packages('fUnitRoots')
-install.packages('urca')
-```
-
-| Subsecciones                                                                                        | Alcance                                                              | Dedicación,<br>5.5 horas  | 
-|-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|:-------------------------:|
-| [La Prueba ADF: _Prueba Aumentada de Dickey Fuller_](Section01/WhatIsLTWB)                          | Explicación general de la prueba                                     |             1.5           | 
-| [La Prueba KPSS: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_](Section01/Requirement)          | Explicación general de la prueba                                     |             0.5           |   
-| [La Prueba ERZ: _Prueba de Elliott, Rothenberg y Stock_](Section01/Requirement)                     | Explicación general de la prueba                                     |             0.5           |  
-| [La Prueba ZA: _Prueba de Zivot y Andrews_](Section01/CaseStudy)                                    | Explicación general de la prueba                                     |             0.5           |       
 
