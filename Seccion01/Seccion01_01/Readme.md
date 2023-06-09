@@ -3,7 +3,7 @@
 ### ¿Qué es una serie de tiempo?
 Una serie de tiempo es una secuencia de observaciones sobre una variable tomada a intervalos discretos en el tiempo. Donde estos intervalos discretos tienen la misma unidad de medida; es decir, están igualmente distanciados.
 
-Como este es un curso básico de series de tiempo, el análisis sólo se va a hacer don series anuales de series de tiempo.
+##### Como este es un curso básico de series de tiempo, el mismo sólo se va a enfocar en series de tiempo anuales. Sin embargo, la mayor parte de lo aprendido también es aplicable a series de tiempo con diferente periodicidad.
 
 ### ¿En qué consiste el análisis de series de tiempo?
 Una característica intrínseca de una serie tiempo es que, por lo general, las observaciones adyacentes son dependientes.
