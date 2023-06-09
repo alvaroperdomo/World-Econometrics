@@ -159,6 +159,30 @@ Los valores críticos de la prueba dependen de si se incluye una tendencia en la
 * Si hay una tendencia, los valores críticos dependen del valor de $\alpha$ seleccionado para construir la variable $\tilde{y_t}$. Elliott, Rothenberg y Stock (1996) informan que el valor de $\alpha$ que parece proporcionar la mejor potencia global es $\alpha=(1-\displaystyle\frac{7}{t})$  para el caso de un intercepto y  $\alpha=(1-\displaystyle\frac{13.5}{t})$ si hay un intercepto y una tendencia. 
 
 #### Aplicando las pruebas DF-GLS en R
+
+Para llevar a cabo la prueba DF ofrecemos dos opciones:
+
+**Primera Opción:** Utilice el comando **unitrootTest**
+La estructura para hacer la prueba DF-GLS es:
+
+``` r
+urersTest(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"), lag.max = 4, doplot = TRUE)
+```
+
+| **Argumentos**          | **Descripción**                                                                                                                              | 
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| **x**                   | vector o variable de series de tiempo                                                                                                        |
+| **lag.max**             | esta opción puede significar dos cosas:                                                                                                      |
+|                         | el número máximo de rezagos utilizados para probar el truncamiento del rezago decendente para la "prueba P", utilizando el método Bayesiano  |   |                         | el número máximo de diferencias rezagadas que se incluirán en la regresión de prueba para "DF-GLS"                                           |
+| **model**               | El modelo determinista utilizado para eliminar la tendencias:                                                                                | 
+|                         | **"constant"**  **PREDETERMINADO**                                                                                                           |
+|                         | **"trend"**                                                                                                                                  |
+| **lag.max**             | el número máximo de rezagos utilizados en la prueba                                                                                          |
+| **doplot**              | indicador lógico, por defecto VERDADERO. ¿Debe mostrarse un gráfico de diagnóstico?                                                          | 
+|                         | **"TRUE"** para mostrar gráfico de diagnostico **PREDETERMINADO**                                                                            |
+|                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                                                           |
+
+**Segunda Opción:** Utilice el comando **unitrootTest**
 ``` r
 ur.ers(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"),lag.max = 4)
 ```
@@ -167,13 +191,12 @@ ur.ers(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"),lag.max =
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | **x**                   | vector o variable de series de tiempo                                                                                                        |
 | **lag.max**             | esta opción puede significar dos cosas:                                                                                                      |
-|                         | el número máximo de rezagos utilizados para probar el truncamiento del rezago decendente para la "prueba P", utilizando el método Bayesiano  |                  
-|                         | el número máximo de diferencias rezagadas que se incluirán en la regresión de prueba para "DF-GLS"                                           |
+|                         | el número máximo de rezagos utilizados para probar el truncamiento del rezago decendente para la "prueba P", utilizando el método Bayesiano  |   |                         | el número máximo de diferencias rezagadas que se incluirán en la regresión de prueba para "DF-GLS"                                           |
 | **type**                | cadena de caracteres que describa el tipo de regresión de raíz unitaria. Las opciones válidas son:                                           |
 |                         | **"DF-GLS"** **PREDETERMINADO**                                                                                                              |
 |                         | **"P-test"**                                                                                                                                 |
 | **model**               | El modelo determinista utilizado para eliminar la tendencias:                                                                                | 
-|                         | **"constant"**                                                                                                                               |
+|                         | **"constant"**     **PREDETERMINADO**                                                                                                        |
 |                         | **"trend"**                                                                                                                                  |
 
 ### Prueba de Kwiatkowski, Phillips, Schmidt y Shin - KPSS
