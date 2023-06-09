@@ -228,7 +228,7 @@ La distribución asintótica del estadístico de prueba $\hat{\eta}$, tal como s
 
 ##### Aplicando la prueba KPSS en R
 
-Para llevar a cabo la prueba DF ofrecemos dos opciones:
+Para llevar a cabo la prueba KPSS ofrecemos dos opciones:
 
 **Primera Opción:** Utilice el comando **unitrootTest**
 
@@ -449,7 +449,39 @@ Para el caso de cambio estructural en media y pendiente. $\Delta y_t= a_0 + a_1 
 
 **Paso 3:** Si se rechaza $H_0$, se concluye que no existe raíz unitaria. En caso contrario, se debe identificar el mejor modelo de cambio estructural utilizando la prueba iterativa de Chow.
 
+##### Aplicando la pruebas ZA en R
 
+Para llevar a cabo la prueba ZA ofrecemos dos opciones:
 
+**Primera Opción:** Utilice el comando **urzaTes**
+
+``` r
+urzaTest(x, model = c("intercept", "trend", "both"), lag, doplot = TRUE)
+```
+| **Argumentos**          | **Descripción**                                                                                                                              | 
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| **x**                   | vector o variable de series de tiempo                                                                                                        |
+| **model**               | cadena de caracteres que especifica si cambio estructural ocurre en                                                                          | 
+|                         | **"intercept"**: intercepto **PREDETERMINADO**                                                                                               |  
+|                         | **"trend**: tendencia                                                                                                                        |
+|                         | **"both"**: ambos                                                                                                                            |  
+| **lag**                 | el mayor número de variables diferenciadas endógenas rezagadas que se incluirán en la regresión de prueba.                                   |
+| **doplot**              | indicador lógico, por defecto VERDADERO. ¿Debe mostrarse un gráfico de diagnóstico?                                                          | 
+|                         | **"TRUE"** para mostrar gráfico de diagnostico **PREDETERMINADO**                                                                            |
+|                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                                                           |
+
+**Segunda Opción:** Utilice el comando **ur.za*
+``` r
+ur.za(x, model = c("intercept", "trend", "both"), lag=NULL)
+```
+
+| **Argumentos**          | **Descripción**                                                                                                                              | 
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| **x**                   | vector o variable de series de tiempo                                                                                                        |
+| **model**               | cadena de caracteres que especifica si cambio estructural ocurre en :                                                                        |
+|                         | **"intercept"**: intercepto **PREDETERMINADO**                                                                                               |  
+|                         | **"trend**: tendencia                                                                                                                        |
+|                         | **"both"**: ambos                                                                                                                            |  
+| **lag**                 | el mayor número de variables diferenciales endógenas rezagadas que se incluirán en la regresión de prueba                                    |
 
 
