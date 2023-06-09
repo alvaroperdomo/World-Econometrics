@@ -1,5 +1,13 @@
 ## Datasets o conjuntos de datos comunes  
 
+$$
+CE(p,y)=\left\[
+\begin{array}{ll}
+-\log(p) &\text{if }y=1 \\ 
+-\log(1-p) &\text{otherwise}.
+\end{array} 
+\right.
+$$
 
 # CODIGOS PARA FORMULAS (no va en el texto)
 $y_t$
