@@ -50,16 +50,12 @@ description = NULL)
 |-------------------------|----------------------------------------------------------------------------------------------------------------|
 | **description**         | cadena de caracteres que permite una breve descripción                                                         | 
 | **lags**                | el número máximo de rezagos utilizados en la prueba                                                            |
-| **title**               | el número máximo de rezagos utilizados en la prueba                                                            |
-
-
-title a character string which allows for a project title.
-type a character string describing the type of the unit root regression. Valid choices
-are "nc" for a regression with no intercept (constant) nor time trend, and "c" for
-a regression with an intercept (constant) but no time trend, "ct" for a regression
-with an intercept (constant) and a time trend. The default is "c".
-x a numeric vector or time series object.
-
+| **title**               | caracteres que permite darle un título a la prueba                                                             |
+| **type**                | cadena de caracteres que describa el tipo de regresión de raíz unitaria. Las opciones válidas son:             |
+|                         | **"nc"** para una regresión sin intercepto (constante) ni tendencia temporal                                   |
+|                         | **"c"** para una regresión con intercepto (constante) pero sin tendencia temporal - **PREDETERMINADO**         |
+|                         | **"ct"** para una regresión con intercepto (constante) y una tendencia de tiempo                               |
+| **x**                   | vector o variable de series de tiempo                                                                          |
 
 ### Prueba Aumentada de Dickey-Fuller - ADF
 Tradicionalmente la prueba más utilizada es la **Prueba Aumentada de Dickey-Fuller - ADF**
