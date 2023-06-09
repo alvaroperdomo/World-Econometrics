@@ -38,6 +38,10 @@ donde
 * $T-k$: es el número de grados de libertad en el modelo sin restricciones.
 
 #### Aplicando la prueba DF en R
+
+Para llevar a cabo la prueba DF ofrecemos dos opciones:
+
+**Primera Opción: Utilice el comando unitrootTest**
 La estructura para hacer la prueba DF es:
 
 ``` r
@@ -61,8 +65,30 @@ La prueba se va a hacer con respecto al **PIB per cápita de Colombia** utilizan
 unitrootTest(x, lags = 1, type = c("nc"), title = "Modelo de Paseo Aleatorio", description = NULL)
 unitrootTest(x, lags = 1, type = c("c"), title = "Modelo de Paseo Aleatorio con Intercepto", description = NULL)
 unitrootTest(x, lags = 1, type = c("ct"), title = "Modelo de Paseo Aleatorio con Intercepto y Tendencia Lineal", description = NULL)
-
 ```
+
+**Segunda Opción: Utilice el comando urdfTest**
+La estructura para hacer la prueba DF es:
+
+``` r
+urdfTest(x, lags = 1, type = c("nc", "c", "ct"), doplot = TRUE)
+```
+
+| **Argumentos**          | **Descripción**                                                                                                | 
+|-------------------------|----------------------------------------------------------------------------------------------------------------|
+| **x**                   | vector o variable de series de tiempo                                                                          |
+| **lags**                | el número máximo de rezagos utilizados en la prueba                                                            |
+| **type**                | cadena de caracteres que describa el tipo de regresión de raíz unitaria. Las opciones válidas son:             |
+|                         | **"nc"** para una regresión sin intercepto (constante) ni tendencia temporal                                   |
+|                         | **"c"** para una regresión con intercepto (constante) pero sin tendencia temporal - **PREDETERMINADO**         |
+|                         | **"ct"** para una regresión con intercepto (constante) y con tendencia temporal                                |
+| **title**               | caracteres que permite darle un título a la prueba                                                             |
+| **doplot**              | indicador lógico, por defecto VERDADERO. ¿Debe mostrarse un gráfico de diagnóstico?                            | 
+|                         | **"TRUE"** para mostrar gráfico de diagnoste **PREDETERMINADO**                                                |
+|                         | **"FALSE"** para no mostrar gráfico de diagnoste                                                               |
+
+**Tercera Opción: Utilice el comando ur.df**
+ur.df(y, type = c("none", "drift", "trend"), lags = 1, selectlags = c("Fixed", "AIC", "BIC"))
 
 ### Prueba Aumentada de Dickey-Fuller - ADF
 Tradicionalmente la prueba más utilizada es la **Prueba Aumentada de Dickey-Fuller - ADF**
