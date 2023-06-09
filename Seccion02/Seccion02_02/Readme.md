@@ -41,7 +41,7 @@ donde
 
 Para llevar a cabo la prueba DF ofrecemos dos opciones:
 
-**Primera Opción: Utilice el comando unitrootTest**
+**Primera Opción:** Utilice el comando **unitrootTest**
 La estructura para hacer la prueba DF es:
 
 ``` r
@@ -67,9 +67,8 @@ unitrootTest(x, lags = 1, type = c("c"), title = "Modelo de Paseo Aleatorio con 
 unitrootTest(x, lags = 1, type = c("ct"), title = "Modelo de Paseo Aleatorio con Intercepto y Tendencia Lineal", description = NULL)
 ```
 
-**Segunda Opción: Utilice el comando urdfTest**
+**Segunda Opción:** Utilice el comando **urdfTest**
 La estructura para hacer la prueba DF es:
-
 ``` r
 urdfTest(x, lags = 1, type = c("nc", "c", "ct"), doplot = TRUE)
 ```
@@ -82,13 +81,26 @@ urdfTest(x, lags = 1, type = c("nc", "c", "ct"), doplot = TRUE)
 |                         | **"nc"** para una regresión sin intercepto (constante) ni tendencia temporal                                   |
 |                         | **"c"** para una regresión con intercepto (constante) pero sin tendencia temporal - **PREDETERMINADO**         |
 |                         | **"ct"** para una regresión con intercepto (constante) y con tendencia temporal                                |
-| **title**               | caracteres que permite darle un título a la prueba                                                             |
 | **doplot**              | indicador lógico, por defecto VERDADERO. ¿Debe mostrarse un gráfico de diagnóstico?                            | 
-|                         | **"TRUE"** para mostrar gráfico de diagnoste **PREDETERMINADO**                                                |
-|                         | **"FALSE"** para no mostrar gráfico de diagnoste                                                               |
+|                         | **"TRUE"** para mostrar gráfico de diagnostico **PREDETERMINADO**                                              |
+|                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                             |
 
-**Tercera Opción: Utilice el comando ur.df**
-ur.df(y, type = c("none", "drift", "trend"), lags = 1, selectlags = c("Fixed", "AIC", "BIC"))
+**Tercera Opción:** Utilice el comando **ur.df**
+ur.df(x, type = c("none", "drift", "trend"), lags = 1, selectlags = c("Fixed", "AIC", "BIC"))
+
+| **Argumentos**          | **Descripción**                                                                                                | 
+|-------------------------|----------------------------------------------------------------------------------------------------------------|
+| **x**                   | vector o variable de series de tiempo                                                                          |
+| **lags**                | el número máximo de rezagos utilizados en la prueba                                                            |
+| **type**                | cadena de caracteres que describa el tipo de regresión de raíz unitaria. Las opciones válidas son:             |
+|                         | **"none"** para una regresión sin intercepto (constante) ni tendencia temporal                                 |
+|                         | **"drift"** para una regresión con intercepto (constante) pero sin tendencia temporal - **PREDETERMINADO**     |
+|                         | **"trend"** para una regresión con intercepto (constante) y con tendencia temporal                             |
+| **selectlags**          | Método escogido para la selección del número de rezagos:                                                       | 
+|                         | **"Fixed"** el número de rezagos establecidos en la opción "lags" **PREDETERMINADO**                           |
+|                         | **"AIC"** criterio de selección de Akaike (el número máximo de rezagos analizados se establece en la opción "lags") |
+|                         | **"BIC"** criterio de selección Bayesiano (el número máximo de rezagos analizados se establece en la opción "lags") |
+
 
 ### Prueba Aumentada de Dickey-Fuller - ADF
 Tradicionalmente la prueba más utilizada es la **Prueba Aumentada de Dickey-Fuller - ADF**
