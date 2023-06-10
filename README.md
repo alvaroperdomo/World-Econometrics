@@ -32,7 +32,7 @@ En esta sección se presenta
 | Subsecciones                                                                                            | Contenido                                                                                                                | Dedicación,<br> 2 horas   | 
 |---------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|:-------------------------:|
 | [01. Series de tiempo](Seccion01/Seccion01_01/Readme.md)                                                |¿Qué es una serie de tiempo?, ¿En qué consiste el análisis de series de tiempo?, ¿Qué es una variable discreta aleatoria? |             0.5           | 
-| [02. R y Los Indicadores de Desarrollo Económico del Banco Mundial](Seccion01/Seccion01_02/Readme.md)   |¿Cómo manipular los Indicadores de Desarrollo Económico del Banco Mundial en R                                            |             1.5           | 
+| [02. R y Los Indicadores de Desarrollo Económico del Banco Mundial](Seccion01/Seccion01_02/README.md)   |¿Cómo manipular los Indicadores de Desarrollo Económico del Banco Mundial en R                                            |             1.5           | 
 
 ## Sección 2 - Análisis Univariado (ARIMA)
 
