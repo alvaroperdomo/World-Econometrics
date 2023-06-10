@@ -16,45 +16,50 @@ Se pueden buscar datos utilizando palabras clave en **WDIsearch**. Por ejemplo, 
 WDIsearch('gdp')
 ```
 
-Y obtendrá como respuesta:
+Y obtendrá como respuesta todas las variables que tienen dentro dentro de su definición la palabra 'gdp'. Para sólo visualizar las 10 primeras variables de la lista, copie:
 
 ``` r
+WDIsearch('pib')[1:10,language = "es"]
+```
+Y obtendra:
+``` r
+
 > WDIsearch('gdp')[1:10,]
-      indicator              name                                                                      
- [1,] "BG.GSR.NFSV.GD.ZS"    "Trade in services (% of GDP)"                                            
- [2,] "BM.KLT.DINV.GD.ZS"    "Foreign direct investment, net outflows (% of GDP)"                      
- [3,] "BN.CAB.XOKA.GD.ZS"    "Current account balance (% of GDP)"                                      
- [4,] "BN.CUR.GDPM.ZS"       "Current account balance excluding net official capital grants (% of GDP)"
- [5,] "BN.GSR.FCTY.CD.ZS"    "Net income (% of GDP)"                                                   
- [6,] "BN.KLT.DINV.CD.ZS"    "Foreign direct investment (% of GDP)"                                    
- [7,] "BN.KLT.PRVT.GD.ZS"    "Private capital flows, total (% of GDP)"                                 
- [8,] "BN.TRF.CURR.CD.ZS"    "Net current transfers (% of GDP)"                                        
- [9,] "BNCABFUNDCD_"         "Current Account Balance, %GDP"                                           
-[10,] "BX.KLT.DINV.WD.GD.ZS" "Foreign direct investment, net inflows (% of GDP)" 
+                indicator                                                 name
+[1,]        5.51.01.10.gdp                                Per capita GDP growth
+[2,]       6.0.GDP_current                                      GDP (current $)
+[3,]        6.0.GDP_growth                                GDP growth (annual %)
+[4,]           6.0.GDP_usd                                GDP (constant 2005 $)
+[5,]    6.0.GDPpc_constant GDP per capita, PPP (constant 2011 international $) 
+[6,]     BG.GSR.NFSV.GD.ZS                         Trade in services (% of GDP)
+[7,]  BG.KAC.FNEI.GD.PP.ZS          Gross private capital flows (% of GDP, PPP)
+[8,]     BG.KAC.FNEI.GD.ZS               Gross private capital flows (% of GDP)
+[9,]  BG.KLT.DINV.GD.PP.ZS      Gross foreign direct investment (% of GDP, PPP)
+[10,]    BG.KLT.DINV.GD.ZS           Gross foreign direct investment (% of GDP)
 ```
 
 **WDIsearch** busca todas las variables en cuya definición este la palabla en cuestión, por lo que se requeriria buscar un concepto más específico. Por ejemplo, si está buscando el PIB per cápita en dólares constantes, mejor busque
 
 ``` r
-WDIsearch('gdp.*capita.*constant')
-     indicator           name                                                 
-[1,] "GDPPCKD"           "GDP per Capita, constant US$, millions"             
-[2,] "NY.GDP.PCAP.KD"    "GDP per capita (constant 2000 US$)"                 
-[3,] "NY.GDP.PCAP.KN"    "GDP per capita (constant LCU)"                      
-[4,] "NY.GDP.PCAP.PP.KD" "GDP per capita, PPP (constant 2005 international $)"
+> WDIsearch('gdp.*capita.*constant')
+                 indicator                                                 name
+[1,]     6.0.GDPpc_constant GDP per capita, PPP (constant 2011 international $) 
+[2,]       NY.GDP.PCAP.KD                   GDP per capita (constant 2015 US$)
+[3,]       NY.GDP.PCAP.KN                        GDP per capita (constant LCU)
+[4,]    NY.GDP.PCAP.PP.KD  GDP per capita, PPP (constant 2017 international $)
+[5,] NY.GDP.PCAP.PP.KD.87  GDP per capita, PPP (constant 1987 international $)
 ```
-
 ### Descargando y utilizando los datos
 
-Descargue la serie desee para los países requeridos:
+Descargue la serie desee para los países requeridos (por ejemplo, el PIB per cápita (a dólares constantes de 2015 en Máxico, Canada y los Estados Unidos):
 
 ``` r
-dat = WDI(indicator='NY.GDP.PCAP.KD', country=c('MX','CA','US'), start=1960, end=2012)
+dat = WDI(indicator='NY.GDP.PCAP.KD', country=c('MX','CA','US'), start=1960, end=2012, language = "es")
 ```
 
 Nota: puede usar **country='all'** para descargar datos de todos los países disponibles. También puede descargar varios indicadores a la vez. Por ejemplo,
 ``` r
-WDI(country = "all", indicator = "NY.GDP.PCAP.KD", start = 1960, end = NULL, extra = FALSE, cache = NULL, latest = NULL, language = "es")
+dat = WDI(country = "all", indicator = "NY.GDP.PCAP.KD", start = 1960, end = NULL, extra = FALSE, cache = NULL, latest = NULL, language = "es")
 ```
 
 * end = NULL_ significa que sólo se van a tomar en cuenta 5 años
