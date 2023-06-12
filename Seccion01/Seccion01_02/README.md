@@ -2,13 +2,13 @@
 "_Los Indicadores del Desarrollo Mundial son la principal colección de estadísticas internacionales sobre desarrollo que el Banco Mundial recopila de fuentes reconocidas oficialmente e incluyen estimaciones a nivel nacional, regional y mundial. Proporcionan acceso a casi 1600 indicadores para 217 economías, y algunas de las series cronológicas se remontan a más de 50 años. En la base de datos, los usuarios —analistas, encargados de formular políticas, académicos y todas las personas interesadas en la situación del mundo— pueden encontrar información relacionada con todos los aspectos del desarrollo, tanto actuales como históricos._" ([Banco Mundial](https://blogs.worldbank.org/es/opendata/guia-en-linea-para-los-indicadores-del-desarrollo-mundial-una-nueva-manera-de-encontrar-datos-sobre-el-desarrollo#:~:text=Los%20Indicadores%20del%20Desarrollo%20Mundial%20(WDI)%20son%20la%20principal%20colecci%C3%B3n,nivel%20nacional%2C%20regional%20y%20mundial.)) 
 
 La Base de Datos con los Indicadores de Desarrollo del Banco Mundial pueden consultarse en https://datos.bancomundial.org/.
-Si se desea tener un acceso rápido a la misma utilizando R se puede descargar el paquete [WDI]():
+Si se desea tener un acceso rápido a la misma utilizando R se puede hacer descargando el paquete [WDI]():
 
 ``` r
 install.packages('WDI')
 ```
 
-_El paquete **WDI** busca y descargue datos de más de 40 bases de datos alojadas por el Banco Mundial, incluidos los Indicadores de desarrollo mundial ('WDI'), Estadísticas de deuda internacional, Doing Business, Índice de capital humano e Índice de pobreza subnacional_
+_El paquete **WDI** busca y descarga información de más de 40 bases de datos alojadas por el Banco Mundial, incluidos los Indicadores de desarrollo mundial ('WDI'), estadísticas de deuda internacional, Doing Business, el índice de capital humano y el índice de pobreza subnacional_
 
 ### Buscando los datos
 Se pueden buscar datos utilizando palabras clave en **WDIsearch**. Por ejemplo, si se requieren los datos del Producto Interno Bruto copie:
@@ -16,7 +16,7 @@ Se pueden buscar datos utilizando palabras clave en **WDIsearch**. Por ejemplo, 
 WDIsearch('gdp')
 ```
 
-Y obtendrá como respuesta todas las variables que tienen dentro dentro de su definición la palabra 'gdp'. Para sólo visualizar las 10 primeras variables de la lista, copie:
+Y obtendrá como respuesta todas las variables que tienen dentro dentro de su definición la palabra 'gdp'. Son muchas variables que incluyen esta palabra, si sólo visualizar las 10 primeras variables de la lista, copie:
 
 ``` r
 WDIsearch('pib')[1:10,language = "es"]
@@ -38,7 +38,7 @@ Y obtendra:
 [10,]    BG.KLT.DINV.GD.ZS           Gross foreign direct investment (% of GDP)
 ```
 
-**WDIsearch** busca todas las variables en cuya definición este la palabla en cuestión, por lo que se requeriria buscar un concepto más específico. Por ejemplo, si está buscando el PIB per cápita en dólares constantes, mejor busque
+**WDIsearch** busca todas las variables en cuya definición este la palabra o palabras que digite, por lo que se requeriria buscar un concepto más específico puede utilizar varias palabras al respecto. Por ejemplo, si está buscando el PIB per cápita en dólares constantes, mejor busque
 
 ``` r
 > WDIsearch('gdp.*capita.*constant')
@@ -48,14 +48,18 @@ Y obtendra:
 [3,]       NY.GDP.PCAP.KN                        GDP per capita (constant LCU)
 [4,]    NY.GDP.PCAP.PP.KD  GDP per capita, PPP (constant 2017 international $)
 [5,] NY.GDP.PCAP.PP.KD.87  GDP per capita, PPP (constant 1987 international $)
+
+Observe como las variables de arriba incluyen en su definición los conceptos: "gdp", "capita" y "constant"
+
 ```
 ### Descargando y utilizando los datos
 
-Descargue la serie desee para los países requeridos (por ejemplo, el PIB per cápita (a dólares constantes de 2015 en Máxico, Canada y los Estados Unidos):
+Descargue la serie desee para los países requeridos (por ejemplo, el PIB per cápita a dólares constantes de 2015 en México, Canada y los Estados Unidos):
 
 ``` r
 dat = WDI(indicator='NY.GDP.PCAP.KD', country=c('MX','CA','US'), start=1960, end=2012, language = "es")
 ```
+Observe que con la orden language = "es" puede descargar la descripción de las variables en español, si no introdujera esta orden le saldría la información en inglés de forma predeterminada.
 
 Nota: puede usar **country='all'** para descargar datos de todos los países disponibles. También puede descargar varios indicadores a la vez. Por ejemplo,
 ``` r
