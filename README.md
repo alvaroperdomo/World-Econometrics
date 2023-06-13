@@ -2,22 +2,23 @@
 # Entendiendo un Mundo en Desarrollo
 Keywords: `Econometría` `Indicadores de Desarrollo Económico` `Banco Mundial`
 #### Duración del curso: XXXX horas
-Bienvenido al curso _Análisis Aplicado de Series de Tiempo: Entendiendo un Mundo en Desarrollo_. En este curso aprenderá a hacer análisis de series de tiempo utilizando [RStudio](https://posit.co/download/rstudio-desktop/). Durante el desarrollo del mismo se tomara como referencia la base de datos [Indicadores de Desarrollo Económico](https://databank.bancomundial.org/reports.aspx?source=world-development-indicators), propiedad del Banco Mundial, con el fin de aprender los principales entresijos de esta herramienta y metodología econométrica de una forma interesante.
+Bienvenido al curso _Análisis Aplicado de Series de Tiempo: Entendiendo un Mundo en Desarrollo_. En este curso aprenderá a hacer análisis básico de series de tiempo utilizando [RStudio](https://posit.co/download/rstudio-desktop/). Durante el desarrollo del mismo se tomara como referencia, para el desarrollo empírico, la base de datos del Banco Mundial [Indicadores de Desarrollo Económico](https://databank.bancomundial.org/reports.aspx?source=world-development-indicators), con el fin de aprender los principales entresijos de esta herramienta y metodología econométrica de una forma interesante.
 
-Este curso ha sido dividido en tres secciones principales, a través de las cuales el estudiante desarrollará diferentes habilidades computacionales y analíticas, que podrá aplicar en el análisis de casos de estudio propios.
+El curso esta dividido en tres secciones principales, a través de las cuales el estudiante desarrollará diferentes habilidades computacionales y analíticas, que podrá aplicar en el análisis de casos de estudio propios.
 
 ## Objetivos generales
 
 * Explicar y aplicar los principales fundamentos para un análisis de series de tiempo.
 * Estudiar los modelos de series de tiempo más relevantes
 * Explicar la construcción y análisis de modelos de series de tiempo univariados y multivariados.
+* Utilizar modelos de series de tiempo para desarrollar análisis de desarrollo económico
 
 ## Metodología y requerimientos
 
-El curso inicia con una introducción y explicación general de la metodología, requerimientos y herramientas computacionales a emplear. Luego, se desarrolla un ejercicio y posteriormente se deja un ejercicio para ser desarrollado por el alumno. Con respecto a este último se haran algunas preguntas de selección múltiple para evaluar si los conceptos principales han sido entendidos de forma apropiada por el alumno.
+El curso inicia con una introducción y explicación general de la metodología, requerimientos y herramientas computacionales a emplear. Luego, se desarrolla un ejercicio (o varios ejercicios) y posteriormente se deja un ejercicio para ser desarrollado por el alumno. Con respecto a este último se haran algunas preguntas de selección múltiple para evaluar si los conceptos principales han sido entendidos de forma apropiada.
 
 ## Requisitos
-Es deseable que las alumnos tengan aunque sea conocimientos básicos de R. Sin embargo, se van en el curso se van a proveer códigos completos de R para ser utilizados por parte de los alumnos.
+Es deseable que las alumnos tengan aunque sea conocimientos básicos de R y RStudio. Sin embargo, se van en el curso se van a proveer códigos completos de R para ser utilizados por parte de los alumnos.
 
 A las personas que no utilizan regularmente R se les recomienda hacer de antemano los tutoriales de https://learnr.numbat.space/
 
