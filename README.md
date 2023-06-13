@@ -15,7 +15,7 @@ El curso esta dividido en tres secciones principales, a través de las cuales el
 
 ## Metodología y requerimientos
 
-Cada sección del curso comienza con una introducción y explicación general de la metodología, requerimientos y herramientas computacionales a emplear. Luego, se desarrolla un ejercicio (o varios ejercicios) y posteriormente se deja un ejercicio para ser desarrollado por el alumno. Con respecto a este último se haran algunas preguntas de selección múltiple para evaluar si los conceptos principales han sido entendidos de forma apropiada.
+Cada sección del curso comienza con una introducción y explicación general de la metodología. Luego, se desarrolla un ejercicio (o varios ejercicios) y posteriormente se deja un ejercicio para ser desarrollado por el alumno. Con respecto a este último se haran algunas preguntas de selección múltiple para evaluar si los conceptos principales han sido entendidos de forma apropiada.
 
 ## Requisitos
 Es deseable que las alumnos tengan aunque sea conocimientos básicos de R y RStudio. Sin embargo, se van en el curso se van a proveer códigos completos de R para ser utilizados por parte de los alumnos.
