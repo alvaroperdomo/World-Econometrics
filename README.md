@@ -20,10 +20,6 @@ El curso esta dividido en tres secciones principales, a través de las cuales el
 * Explicar la construcción y análisis de modelos de series de tiempo univariados y multivariados.
 * Utilizar modelos de series de tiempo para desarrollar análisis de desarrollo económico
 
-## Metodología
-
-Cada sección del curso comienza con una introducción y explicación general de la herramientas econométricsa a utilizar. Luego, se desarrolla un ejercicio (o varios ejercicios) y posteriormente se deja un ejercicio para ser desarrollado por el alumno. Con respecto a este último se haran algunas preguntas de selección múltiple para evaluar si los conceptos principales han sido entendidos de forma apropiada.
-
 ## Requisitos
 Es deseable que las alumnos tengan aunque sea conocimientos básicos de R y RStudio. Sin embargo, se van en el curso se van a proveer códigos completos de R para ser utilizados por parte de los alumnos.
 
@@ -32,6 +28,13 @@ A las personas que no utilizan regularmente R se les recomienda hacer de anteman
 ## Dirigido a
 
 Los contenidos presentados en este curso están dirigidos a estudiantes y profesionales de diferentes disciplinas que requieran aprender y/o fortalecer sus conocimientos en análisis de series de tiempo en RStudio.
+## Metodología
+
+La primera sección del curso comienza con una explicación de lo que es el análisis de series de tiempo y las caracteristicas principales de la base de datos "Indicadores de Desarrollo Económico" del Banco Mundial. Posteriormente, se explica cómo se puede descargar y manipular esta base directamente desde R. Al final de la sección se hace una evaluación donde se hacen varias preguntas de selección múltiple con respecto a los conceptos voistos en la sección y con respecto a un ejercicio que el alumno debe desarrollar en R utilizando la base de datos del Banco Mundial (los códigos en R necesarios para el desarrollo del ejercicio serán explicados durante el desarrollo de la sección). 
+
+Las otras dos secciones del curso comienzan con una explicación general de la herramientas econométricas a utilizar. Luego, se desarrolla un ejercicio (o varios ejercicios) y posteriormente se deja un ejercicio para ser desarrollado por el alumno. Con respecto a este último se haran algunas preguntas de selección múltiple para evaluar si los conceptos principales han sido entendidos de forma apropiada.
+
+
 
 ## Sección 1 - Las Series de Tiempo, R y la Base de Datos del Banco Mundial
 
