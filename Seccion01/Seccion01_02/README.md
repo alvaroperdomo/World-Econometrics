@@ -11,15 +11,16 @@ install.packages('WDI')
 _El paquete **WDI** busca y descarga información de más de 40 bases de datos alojadas por el Banco Mundial, incluidos los Indicadores de desarrollo mundial ('WDI'), estadísticas de deuda internacional, Doing Business, el índice de capital humano y el índice de pobreza subnacional_
 
 ### Buscando los datos
-Se pueden buscar datos utilizando palabras clave en **WDIsearch**. Por ejemplo, si se requieren los datos del Producto Interno Bruto copie:
+Se pueden buscar datos utilizando el comando **WDIsearch**. Por ejemplo, si se requieren los datos del Producto Interno Bruto copie:
+
 ``` r
 WDIsearch('gdp')
 ```
 
-Y obtendrá como respuesta todas las variables que tienen dentro dentro de su definición la palabra 'gdp'. Son muchas variables que incluyen esta palabra, si sólo visualizar las 10 primeras variables de la lista, copie:
+Y obtendrá como respuesta todas las variables que tienen dentro dentro de su definición (name) la palabra 'gdp'. Son muchas las variables que incluyen "gdp" dentro de su nombre, por lo que si sólo desea visualizar las 10 primeras variables de la lista, copie:
 
 ``` r
-WDIsearch('pib')[1:10,language = "es"]
+WDIsearch('gdp')[1:10,]
 ```
 Y obtendra:
 ``` r
@@ -48,10 +49,13 @@ Y obtendra:
 [3,]       NY.GDP.PCAP.KN                        GDP per capita (constant LCU)
 [4,]    NY.GDP.PCAP.PP.KD  GDP per capita, PPP (constant 2017 international $)
 [5,] NY.GDP.PCAP.PP.KD.87  GDP per capita, PPP (constant 1987 international $)
-
+```
 Observe como las variables de arriba incluyen en su definición los conceptos: "gdp", "capita" y "constant"
 
-```
+Cuando se utiliza el comando **WDIsearch**, las principales opciones para incluir en el comando son
+
+
+
 ### Descargando y utilizando los datos
 
 Descargue la serie desee para los países requeridos (por ejemplo, el PIB per cápita a dólares constantes de 2015 en México, Canada y los Estados Unidos):
