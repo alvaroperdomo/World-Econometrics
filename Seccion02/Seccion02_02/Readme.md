@@ -84,16 +84,16 @@ La estructura para hacer la prueba DF es:
 unitrootTest(x, lags = 1, type = c("nc", "c", "ct"), title = NULL, description = NULL)
 ```
 
-| **Argumentos**          | **Descripción**                                                                                                | 
-|-------------------------|----------------------------------------------------------------------------------------------------------------|
-| **x**                   | vector o variable de series de tiempo                                                                          |
-| **lags**                | el número máximo de rezagos utilizados en la prueba                                                            |
-| **type**                | cadena de caracteres que describa el tipo de regresión de raíz unitaria. Las opciones válidas son:             |
-|                         | **"nc"** para una regresión sin intercepto (constante) ni tendencia temporal                                   |
-|                         | **"c"** para una regresión con intercepto (constante) pero sin tendencia temporal - **PREDETERMINADO**         |
-|                         | **"ct"** para una regresión con intercepto (constante) y con tendencia temporal                                |
-| **title**               | caracteres que permite darle un título a la prueba                                                             |
-| **description**         | cadena de caracteres que permite una breve descripción                                                         | 
+| **Argumentos**          | **Descripción**                                                                                                 | 
+|-------------------------|-----------------------------------------------------------------------------------------------------------------|
+| **x**                   | vector o variable de series de tiempo                                                                           |
+| **lags**                | el número máximo de rezagos utilizados en la prueba                                                             |
+| **type**                | cadena de caracteres que describa el tipo de regresión de raíz unitaria. Las opciones válidas son:              |
+|                         |  **"nc"** para una regresión sin intercepto (constante) ni tendencia temporal                                   |
+|                         |  **"c"** para una regresión con intercepto (constante) pero sin tendencia temporal - **_Opción Predeterminada_**|
+|                         |  **"ct"** para una regresión con intercepto (constante) y con tendencia temporal                                |
+| **title**               | caracteres que permite darle un título a la prueba                                                              |
+| **description**         | cadena de caracteres que permite una breve descripción                                                          | 
 
 La prueba se va a hacer con respecto al **PIB per cápita de Colombia** utilizando el siguiente código:
 
@@ -109,35 +109,35 @@ La estructura para hacer la prueba DF es:
 urdfTest(x, lags = 1, type = c("nc", "c", "ct"), doplot = TRUE)
 ```
 
-| **Argumentos**          | **Descripción**                                                                                                | 
-|-------------------------|----------------------------------------------------------------------------------------------------------------|
-| **x**                   | vector o variable de series de tiempo                                                                          |
-| **lags**                | el número máximo de rezagos utilizados en la prueba                                                            |
-| **type**                | cadena de caracteres que describa el tipo de regresión de raíz unitaria. Las opciones válidas son:             |
-|                         | **"nc"** para una regresión sin intercepto (constante) ni tendencia temporal                                   |
-|                         | **"c"** para una regresión con intercepto (constante) pero sin tendencia temporal - **PREDETERMINADO**         |
-|                         | **"ct"** para una regresión con intercepto (constante) y con tendencia temporal                                |
-| **doplot**              | indicador lógico, por defecto VERDADERO. ¿Debe mostrarse un gráfico de diagnóstico?                            | 
-|                         | **"TRUE"** para mostrar gráfico de diagnostico **PREDETERMINADO**                                              |
-|                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                             |
+| **Argumentos**          | **Descripción**                                                                                                 | 
+|-------------------------|-----------------------------------------------------------------------------------------------------------------|
+| **x**                   | vector o variable de series de tiempo                                                                           |
+| **lags**                | el número máximo de rezagos utilizados en la prueba                                                             |
+| **type**                | cadena de caracteres que describa el tipo de regresión de raíz unitaria. Las opciones válidas son:              |
+|                         | **"nc"** para una regresión sin intercepto (constante) ni tendencia temporal                                    |
+|                         | **"c"** para una regresión con intercepto (constante) pero sin tendencia temporal - **_Opción Predeterminada_** |
+|                         | **"ct"** para una regresión con intercepto (constante) y con tendencia temporal                                 |
+| **doplot**              | indicador lógico, por defecto VERDADERO. ¿Debe mostrarse un gráfico de diagnóstico?                             | 
+|                         | **"TRUE"** para mostrar gráfico de diagnostico **_Opción Predeterminada_**                                      |
+|                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                              |
 
 **Tercera Opción:** Utilice el comando **ur.df**
 ``` r
 ur.df(x, type = c("none", "drift", "trend"), lags = 1, selectlags = c("Fixed", "AIC", "BIC"))
 ```
 
-| **Argumentos**          | **Descripción**                                                                                                | 
-|-------------------------|----------------------------------------------------------------------------------------------------------------|
-| **x**                   | vector o variable de series de tiempo                                                                          |
-| **lags**                | el número máximo de rezagos utilizados en la prueba                                                            |
-| **type**                | cadena de caracteres que describa el tipo de regresión de raíz unitaria. Las opciones válidas son:             |
-|                         | **"none"** para una regresión sin intercepto (constante) ni tendencia temporal                                 |
-|                         | **"drift"** para una regresión con intercepto (constante) pero sin tendencia temporal - **PREDETERMINADO**     |
-|                         | **"trend"** para una regresión con intercepto (constante) y con tendencia temporal                             |
-| **selectlags**          | Método escogido para la selección del número de rezagos:                                                       | 
-|                         | **"Fixed"** el número de rezagos establecidos en la opción "lags" **PREDETERMINADO**                           |
-|                         | **"AIC"** criterio de selección de Akaike (el número máximo de rezagos analizados se establece en la opción "lags") |
-|                         | **"BIC"** criterio de selección Bayesiano (el número máximo de rezagos analizados se establece en la opción "lags") |
+| **Argumentos**          | **Descripción**                                                                                                      | 
+|-------------------------|----------------------------------------------------------------------------------------------------------------------|
+| **x**                   | vector o variable de series de tiempo                                                                                |
+| **lags**                | el número máximo de rezagos utilizados en la prueba                                                                  |
+| **type**                | cadena de caracteres que describa el tipo de regresión de raíz unitaria. Las opciones válidas son:                   |
+|                         | **"none"** para una regresión sin intercepto (constante) ni tendencia temporal                                       |
+|                         | **"drift"** para una regresión con intercepto (constante) pero sin tendencia temporal - **_Opción Predeterminada_**  |
+|                         | **"trend"** para una regresión con intercepto (constante) y con tendencia temporal                                   |
+| **selectlags**          | Método escogido para la selección del número de rezagos:                                                             | 
+|                         | **"Fixed"** el número de rezagos establecidos en la opción "lags" **_Opción Predeterminada_**                        |
+|                         | **"AIC"** criterio de selección de Akaike (el número máximo de rezagos analizados se establece en la opción "lags")  |
+|                         | **"BIC"** criterio de selección Bayesiano (el número máximo de rezagos analizados se establece en la opción "lags")  |
 
 ### Prueba de Mínimos Cuadrados Generalizados de Dickey-Fuller (DF-GLS)
 Elliott, Rothenberg y Stock (1996) muestran que es posible mejorar el poder de la prueba al estimar el modelo utilizando algo cercano a las primeras diferencias. 
@@ -175,11 +175,11 @@ urersTest(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"), lag.m
 | **lag.max**             | esta opción puede significar dos cosas:                                                                                                      |
 |                         | el número máximo de rezagos utilizados para probar el truncamiento del rezago decendente para la "prueba P", utilizando el método Bayesiano  |   |                         | el número máximo de diferencias rezagadas que se incluirán en la regresión de prueba para "DF-GLS"                                           |
 | **model**               | El modelo determinista utilizado para eliminar la tendencias:                                                                                | 
-|                         | **"constant"**  **PREDETERMINADO**                                                                                                           |
+|                         | **"constant"**  **_Opción Predeterminada_**                                                                                                  |
 |                         | **"trend"**                                                                                                                                  |
 | **lag.max**             | el número máximo de rezagos utilizados en la prueba                                                                                          |
 | **doplot**              | indicador lógico, por defecto VERDADERO. ¿Debe mostrarse un gráfico de diagnóstico?                                                          | 
-|                         | **"TRUE"** para mostrar gráfico de diagnostico **PREDETERMINADO**                                                                            |
+|                         | **"TRUE"** para mostrar gráfico de diagnostico **_Opción Predeterminada_**                                                                   |
 |                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                                                           |
 
 **Segunda Opción:** Utilice el comando **ur.ers**
@@ -193,10 +193,10 @@ ur.ers(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"),lag.max =
 | **lag.max**             | esta opción puede significar dos cosas:                                                                                                      |
 |                         | el número máximo de rezagos utilizados para probar el truncamiento del rezago decendente para la "prueba P", utilizando el método Bayesiano  |   |                         | el número máximo de diferencias rezagadas que se incluirán en la regresión de prueba para "DF-GLS"                                           |
 | **type**                | cadena de caracteres que describa el tipo de regresión de raíz unitaria. Las opciones válidas son:                                           |
-|                         | **"DF-GLS"** **PREDETERMINADO**                                                                                                              |
+|                         | **"DF-GLS"** ****_Opción Predeterminada_****                                                                                                 |
 |                         | **"P-test"**                                                                                                                                 |
 | **model**               | El modelo determinista utilizado para eliminar la tendencias:                                                                                | 
-|                         | **"constant"**     **PREDETERMINADO**                                                                                                        |
+|                         | **"constant"**     **_Opción Predeterminada_**                                                                                               |
 |                         | **"trend"**                                                                                                                                  |
 
 ### Prueba de Kwiatkowski, Phillips, Schmidt y Shin - KPSS
@@ -239,12 +239,12 @@ urkpssTest(x, type = c("mu", "tau"), lags = c("short", "long", "nil"), use.lag =
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | **x**                   | vector o variable de series de tiempo                                                                                                        |
 | **type**                | Las opciones válidas son:                                                                                                                    |
-|                         | **"mu"** **PREDETERMINADO**                                                                                                                  |
+|                         | **"mu"** **_Opción Predeterminada_**                                                                                                         |
 |                         | **"tau"**                                                                                                                                    |
 | **lags**                | el máximo número de rezagos:                                                                                                                 |
 | **use.lag**             | cadena de caracteres que especifica el número de rezagos                                                                                     |
 | **doplot**              | indicador lógico, por defecto VERDADERO. ¿Debe mostrarse un gráfico de diagnóstico?                                                          | 
-|                         | **"TRUE"** para mostrar gráfico de diagnostico **PREDETERMINADO**                                                                            |
+|                         | **"TRUE"** para mostrar gráfico de diagnostico **_Opción Predeterminada_**                                                                   |
 |                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                                                           |
 
 **Segunda Opción:** Utilice el comando **ur.kpss*
@@ -256,7 +256,7 @@ ur.kpss(y, type = c("mu", "tau"), lags = c("short", "long", "nil"), use.lag = NU
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | **x**                   | vector o variable de series de tiempo                                                                                                        |
 | **type**                | Las opciones válidas son:                                                                                                                    |
-|                         | **"mu"** **PREDETERMINADO**                                                                                                                  |
+|                         | **"mu"** **_Opción Predeterminada_**                                                                                                         |
 |                         | **"tau"**                                                                                                                                    |
 | **lags**                | el máximo número de rezagos                                                                                                                  |
 | **use.lag**             | número de rezagos especificados por el usuario                                                                                               |
@@ -462,12 +462,12 @@ urzaTest(x, model = c("intercept", "trend", "both"), lag, doplot = TRUE)
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | **x**                   | vector o variable de series de tiempo                                                                                                        |
 | **model**               | cadena de caracteres que especifica si cambio estructural ocurre en                                                                          | 
-|                         | **"intercept"**: intercepto **PREDETERMINADO**                                                                                               |  
+|                         | **"intercept"**: intercepto **_Opción Predeterminada_**                                                                                      |  
 |                         | **"trend**: tendencia                                                                                                                        |
 |                         | **"both"**: ambos                                                                                                                            |  
 | **lag**                 | el mayor número de variables diferenciadas endógenas rezagadas que se incluirán en la regresión de prueba.                                   |
 | **doplot**              | indicador lógico, por defecto VERDADERO. ¿Debe mostrarse un gráfico de diagnóstico?                                                          | 
-|                         | **"TRUE"** para mostrar gráfico de diagnostico **PREDETERMINADO**                                                                            |
+|                         | **"TRUE"** para mostrar gráfico de diagnostico **_Opción Predeterminada_**                                                                   |
 |                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                                                           |
 
 **Segunda Opción:** Utilice el comando **ur.za*
@@ -479,7 +479,7 @@ ur.za(x, model = c("intercept", "trend", "both"), lag=NULL)
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | **x**                   | vector o variable de series de tiempo                                                                                                        |
 | **model**               | cadena de caracteres que especifica si cambio estructural ocurre en :                                                                        |
-|                         | **"intercept"**: intercepto **PREDETERMINADO**                                                                                               |  
+|                         | **"intercept"**: intercepto **_Opción Predeterminada_**                                                                                      |  
 |                         | **"trend**: tendencia                                                                                                                        |
 |                         | **"both"**: ambos                                                                                                                            |  
 | **lag**                 | el mayor número de variables diferenciales endógenas rezagadas que se incluirán en la regresión de prueba                                    |
