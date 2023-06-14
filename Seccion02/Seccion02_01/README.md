@@ -8,7 +8,7 @@ Un proceso estocástico que tiene una media y una varianza finita es estacionari
 
 donde $\mu, \sigma_{y}^2$, y $\gamma_{s}$ son todas constantes.
 
-Un caso especial de un proceso estacionario que es importante tener en cosideración son los procesos ruido blanco.
+Un caso especial de un proceso estacionario que es importante tener en consideración son los procesos ruido blanco.
 
 ## Los procesos ruido blanco
 Una secuencia { $\varepsilon_t$ } es un proceso de **ruido blanco** si cada valor en la secuencia tiene una media de cero, una varianza constante, y no está correlacionado con todas las demás realizaciones. 
