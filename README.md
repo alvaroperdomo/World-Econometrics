@@ -6,6 +6,13 @@ Bienvenido al curso _Análisis Aplicado de Series de Tiempo: Entendiendo un Mund
 
 El curso esta dividido en tres secciones principales, a través de las cuales el estudiante desarrollará diferentes habilidades computacionales y analíticas, que podrá aplicar en el análisis de casos de estudio propios.
 
+| Secciones                                                                                               |   
+|---------------------------------------------------------------------------------------------------------|
+| 01. Las Series de Tiempo, R y la Base de Datos del Banco Mundial                                        | 
+| 02. Análisis Univariado (ARIMA))                                                                        | 
+| 03. Análisis Multivariado (VAR y VEC)                                                                   | 
+
+
 ## Objetivos generales
 
 * Explicar y aplicar los principales fundamentos para un análisis de series de tiempo.
@@ -13,9 +20,9 @@ El curso esta dividido en tres secciones principales, a través de las cuales el
 * Explicar la construcción y análisis de modelos de series de tiempo univariados y multivariados.
 * Utilizar modelos de series de tiempo para desarrollar análisis de desarrollo económico
 
-## Metodología y requerimientos
+## Metodología
 
-Cada sección del curso comienza con una introducción y explicación general de la metodología. Luego, se desarrolla un ejercicio (o varios ejercicios) y posteriormente se deja un ejercicio para ser desarrollado por el alumno. Con respecto a este último se haran algunas preguntas de selección múltiple para evaluar si los conceptos principales han sido entendidos de forma apropiada.
+Cada sección del curso comienza con una introducción y explicación general de la herramientas econométricsa a utilizar. Luego, se desarrolla un ejercicio (o varios ejercicios) y posteriormente se deja un ejercicio para ser desarrollado por el alumno. Con respecto a este último se haran algunas preguntas de selección múltiple para evaluar si los conceptos principales han sido entendidos de forma apropiada.
 
 ## Requisitos
 Es deseable que las alumnos tengan aunque sea conocimientos básicos de R y RStudio. Sin embargo, se van en el curso se van a proveer códigos completos de R para ser utilizados por parte de los alumnos.
@@ -26,7 +33,7 @@ A las personas que no utilizan regularmente R se les recomienda hacer de anteman
 
 Los contenidos presentados en este curso están dirigidos a estudiantes y profesionales de diferentes disciplinas que requieran aprender y/o fortalecer sus conocimientos en análisis de series de tiempo en RStudio.
 
-## Sección 1 - Las Series de Tiempo y la Base de Datos del Banco Mundial
+## Sección 1 - Las Series de Tiempo, R y la Base de Datos del Banco Mundial
 
 En esta sección se presenta 
 
