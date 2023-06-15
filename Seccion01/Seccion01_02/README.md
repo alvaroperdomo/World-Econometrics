@@ -41,26 +41,12 @@ Asuma que desea buscar los datos del Producto Interno Bruto per cápita por pari
    
 3) **Utilizando R:**
 
-   En este caso, en R se utiliza el comando **WDIsearch**. A partir de la instrucción 
-
-``` r
-?WDIsearch
-```
-o de la instrucción
-
-``` r
-help WDIsearch
-```
-puede obtener información acerca de como utilizar este comando. Sin embargo, a continuación se le ofrecen una serie de consejos que le ayudaran a descubrir de forma ágil el nombre de la variable que se esta buscando   
-
-#### Dentro del comando WDIsearch coloque, separados con un .*, palabras (en inglés) relacionadas con la variable que esta buscando.####
-
-Por ejemplo:
+#### Dentro del comando WDIsearch coloque, separados con un .*, palabras (en inglés) relacionadas con la variable que esta buscando (por ejemplo, gdp, capita y constant):####
 
 ``` r
 WDIsearch('gdp.*capita.*constant')
 ```
-Y  se obtiene:
+Obteniendo:
 ``` r
 > WDIsearch('gdp.*capita.*constant')
                  indicator                                                 name
@@ -80,7 +66,7 @@ WDIsearch('gdp')
 
 Obtendrá como respuesta todas las variables que tienen dentro dentro de su definición (name) la palabra 'gdp'. El problema con esta forma de visualizar los datos es que muchas las variables que incluyen "gdp" dentro de su nombre, por lo tanto la visualización de la información es demasiado engorrosa.
 
-Una forma más sencilla de ver la información es sólo visualizando un determinado número de variables de la lista, por ejemplo si sólo se desea visulaizar las 10 primeras variables de la lista, se utiliza el comando:
+Una forma más sencilla de ver la información es sólo visualizando un determinado número de variables de la lista, por ejemplo si sólo se desea visualizar las 10 primeras variables de la lista, se utiliza el comando:
 
 ``` r
 WDIsearch('gdp')[1:10,]
@@ -105,27 +91,38 @@ Y se obtiene:
 
 El problema es que no dentro de estas 10 primeras variables no se encuentra la variable requerida. 
 
-Por lo tanto, como se comento anteriormente, lo mejor es que entro del comando WDIsearch coloque, separados con un .*, palabras (en inglés) relacionadas con la variable que esta buscando. Por ejemplo, 
+A partir de la instrucción 
 
 ``` r
-> WDIsearch('gdp.*capita.*constant')
-                 indicator                                                 name
-[1,]     6.0.GDPpc_constant GDP per capita, PPP (constant 2011 international $) 
-[2,]       NY.GDP.PCAP.KD                   GDP per capita (constant 2015 US$)
-[3,]       NY.GDP.PCAP.KN                        GDP per capita (constant LCU)
-[4,]    NY.GDP.PCAP.PP.KD  GDP per capita, PPP (constant 2017 international $)
-[5,] NY.GDP.PCAP.PP.KD.87  GDP per capita, PPP (constant 1987 international $)
+?WDIsearch
 ```
-Observe como las variables de arriba incluyen en su definición los conceptos: "gdp", "capita" y "constant"
+o de la instrucción
 
-Cuando se utiliza el comando **WDIsearch**, las principales opciones para incluir en el comando son
-
-
+``` r
+help WDIsearch
+```
+puede obtener más información acerca de como utilizar este comando el comando **WDIsearch**.    
 
 ### Descargando y utilizando los datos
 
-Descargue la serie desee para los países requeridos (por ejemplo, el PIB per cápita en dólares constantes de 2015 en México, Canada y los Estados Unidos):
+Descargue la serie que desee para los países requeridos utilizando el comando **dat = WDI()**.
 
+WDI tiene el siguiente formato: **WDI(country = "xxx", indicator = "xxx", start = xxx, end = xxx, extra = xxx, cache = xxx, latest = xxx, language = "xxx")***
+
+| **Argumentos**          | **Descripción**                                                                                                                            | 
+|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| **country**             | Vector de países (códigos de caracteres [ISO-2](https://www.datosmundial.com/codigos-de-pais.php) por ejemplo "BR", "US", "CA") para los que se necesitan los datos. El uso de la opción "all" en lugar de los códigos ISO individuales extrae datos para cada país disponible.                                        |
+| **indicator**           | Vector de códigos de las variables que se desean descargar. Recuerde que el nombre de las variables se puede descargar utilizando el comando **WDIsearch()**. Si proporciona un vector con nombre, los indicadores se renombrarán automáticamente, por ejemplo: 'c('mujeres_sector_privado' = 'BI.PWK.PRVS.FE.ZS')' |
+| **start**               | Fecha de inicio, normalmente un año en formato de número entero. Debe ser de 1960 o superior.                                              |
+| **end**                 | Fecha de finalización, normalmente un año en formato de número entero. _Debe ser mayor que la fecha de 'start'_. Si es **'NULL'**, la fecha de finalización se establece en 5 años en el futuro.                                                                                                                      | 
+| **extra**               | **TRUE** returns extra variables. Por ejemplo: region, iso3c code, incomeLevel.                                                              |
+| **cache**               | **NULL** (opcional) una lista creada por **WDIcache()** para ser utilizada con el argumento **extra=TRUE**.                                |
+| **latest**              | Entero que indica el número de valores no-NA más recientes que se obtendrán. El valor predeterminado es **NULL**. Si se especifica, anula las fechas de inicio y finalización.                                                                                                                                       |
+| **language**            | Código ISO-2 en minúsculas que indica en qué idioma se deben proporcionar los caracteres. La lista de idiomas disponibles se puede consultar copiando en R el comando **WDI::languages_supported()**. **El valor predeterminado es inglés**.                                                                        |
+
+**Detalles:** Es factible solo specificar los argumentos **'indicador'** y **'country**, en cuyo caso **WDI()** devolverá datos desde 1960 hasta el último año disponible en el sitio web del Banco Mundial. También es posible obtener solo los valores no-NA más recientes, con **'latest'**.
+
+(por ejemplo, el PIB per cápita en dólares constantes de 2015 en México, Canada y los Estados Unidos) 
 ``` r
 dat = WDI(indicator='NY.GDP.PCAP.KD', country=c('MX','CA','US'), start=1960, end=2012, language = "es")
 ```
