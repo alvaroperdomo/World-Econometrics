@@ -21,7 +21,7 @@ El curso esta dividido en tres secciones principales, a través de las cuales el
 * Utilizar modelos de series de tiempo para desarrollar análisis de desarrollo económico
 
 ## Requisitos
-Es deseable que las alumnos tengan aunque sea conocimientos básicos de R y RStudio. Sin embargo, se van en el curso se van a proveer códigos completos de R para ser utilizados por parte de los alumnos.
+Es deseable que las alumnos tengan aunque sea conocimientos básicos de R. Sin embargo, en el curso se van a proveer códigos completos de R para ser utilizados por parte de los alumnos.
 
 A las personas que no utilizan regularmente R se les recomienda hacer de antemano los tutoriales de https://learnr.numbat.space/
 
