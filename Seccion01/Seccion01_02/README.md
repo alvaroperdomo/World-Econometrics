@@ -11,18 +11,82 @@ install.packages('WDI')
 _El paquete **WDI** busca y descarga información de más de 40 bases de datos alojadas por el Banco Mundial, incluidos los Indicadores de desarrollo mundial ('WDI'), estadísticas de deuda internacional, Doing Business, el índice de capital humano y el índice de pobreza subnacional_
 
 ### Buscando los datos
-Se pueden buscar datos utilizando el comando **WDIsearch**. Por ejemplo, si se requieren los datos del Producto Interno Bruto copie:
+A continuación se presenta un ejemplo didáctico que le sugerira ideas acerca de cómo buscar información en la base de datos Índicadores de Desarrollo Económico.
+
+Asuma que desea buscar los datos del Producto Interno Bruto per cápita por paridad del poder adquisitivo "PPA" a precios constantes. Para ello, primero tiene que identificar el nombre exacto de la variable dentro de la base de datos. Se le proponen dos opciones de busqueda:
+
+1) **Utilizando internet:**
+
+   * Dirijase a la dirección: https://datos.bancomundial.org/indicator
+   * Busque la variable deseada: Si utiliza el buscador al comienzo de la página, sea específico.
+   
+     Por ejemplo,
+     
+     * si sólo coloca PIB (ver figura de abajo) puede que ninguna de las opciones a escoger incluyan la variable requerida.
+       
+      ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/888b9892-66a4-4ac1-8e99-0dcb0395a497)
+
+     * si coloca PIB y PPA (ver figura de abajo) resulta más fácil que se le sugiera la variable requerida
+   
+      ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ab5ada61-8916-415e-9713-2af78c6f8f2a)
+
+     * Escoja con el _mouse_ la variable en cuestión "PIB, PPA ($ a precios internacionales constantes de 2011)" y será redirigido a la página de Internet donde se encuentra la variable en cuestión
+       
+     * Escoja con el _mouse_ la opción ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/d615bae3-bd1b-46e8-99cd-42f3566ef4f0) que se encuentra en la esquina superior derecha de la figura, y se desplegará la siguiente información
+       
+     ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4f57f0e3-d0f2-48c2-a31d-2d293544329b)
+   
+   * En la parte inferior del desplegable se encuentra el nombre de la variable: **NY.GDP.MKTP.PP.KD**
+
+   
+3) **Utilizando R:**
+
+   En este caso, en R se utiliza el comando **WDIsearch**. A partir de la instrucción 
+
+``` r
+?WDIsearch
+```
+o de la instrucción
+
+``` r
+help WDIsearch
+```
+puede obtener información acerca de como utilizar este comando. Sin embargo, a continuación se le ofrecen una serie de consejos que le ayudaran a descubrir de forma ágil el nombre de la variable que se esta buscando   
+
+#### Dentro del comando WDIsearch coloque, separados con un .*, palabras (en inglés) relacionadas con la variable que esta buscando.####
+
+Por ejemplo:
+
+``` r
+WDIsearch('gdp.*capita.*constant')
+```
+Y  se obtiene:
+``` r
+> WDIsearch('gdp.*capita.*constant')
+                 indicator                                                 name
+[1,]     6.0.GDPpc_constant GDP per capita, PPP (constant 2011 international $) 
+[2,]       NY.GDP.PCAP.KD                   GDP per capita (constant 2015 US$)
+[3,]       NY.GDP.PCAP.KN                        GDP per capita (constant LCU)
+[4,]    NY.GDP.PCAP.PP.KD  GDP per capita, PPP (constant 2017 international $)
+[5,] NY.GDP.PCAP.PP.KD.87  GDP per capita, PPP (constant 1987 international $)
+```
+Por lo tanto, la variable solicitada es **NY.GDP.PCAP.PP.KD**. Existe también la opción de tener la variable a precios constantes de 1987, pero generalmente se prefieren los precios constantes más recientes
+
+Observe que si sólo copia:
 
 ``` r
 WDIsearch('gdp')
 ```
 
-Y obtendrá como respuesta todas las variables que tienen dentro dentro de su definición (name) la palabra 'gdp'. Son muchas las variables que incluyen "gdp" dentro de su nombre, por lo que si sólo desea visualizar las 10 primeras variables de la lista, copie:
+Obtendrá como respuesta todas las variables que tienen dentro dentro de su definición (name) la palabra 'gdp'. El problema con esta forma de visualizar los datos es que muchas las variables que incluyen "gdp" dentro de su nombre, por lo tanto la visualización de la información es demasiado engorrosa.
+
+Una forma más sencilla de ver la información es sólo visualizando un determinado número de variables de la lista, por ejemplo si sólo se desea visulaizar las 10 primeras variables de la lista, se utiliza el comando:
 
 ``` r
 WDIsearch('gdp')[1:10,]
 ```
-Y obtendra:
+Y se obtiene:
+
 ``` r
 
 > WDIsearch('gdp')[1:10,]
@@ -39,7 +103,9 @@ Y obtendra:
 [10,]    BG.KLT.DINV.GD.ZS           Gross foreign direct investment (% of GDP)
 ```
 
-**WDIsearch** busca todas las variables en cuya definición este la palabra o palabras que digite, por lo que se requeriria buscar un concepto más específico puede utilizar varias palabras al respecto. Por ejemplo, si está buscando el PIB per cápita en dólares constantes, mejor busque
+El problema es que no dentro de estas 10 primeras variables no se encuentra la variable requerida. 
+
+Por lo tanto, como se comento anteriormente, lo mejor es que entro del comando WDIsearch coloque, separados con un .*, palabras (en inglés) relacionadas con la variable que esta buscando. Por ejemplo, 
 
 ``` r
 > WDIsearch('gdp.*capita.*constant')
@@ -58,7 +124,7 @@ Cuando se utiliza el comando **WDIsearch**, las principales opciones para inclui
 
 ### Descargando y utilizando los datos
 
-Descargue la serie desee para los países requeridos (por ejemplo, el PIB per cápita a dólares constantes de 2015 en México, Canada y los Estados Unidos):
+Descargue la serie desee para los países requeridos (por ejemplo, el PIB per cápita en dólares constantes de 2015 en México, Canada y los Estados Unidos):
 
 ``` r
 dat = WDI(indicator='NY.GDP.PCAP.KD', country=c('MX','CA','US'), start=1960, end=2012, language = "es")
