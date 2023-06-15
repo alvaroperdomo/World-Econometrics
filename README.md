@@ -9,7 +9,7 @@ El curso esta dividido en tres secciones principales, a través de las cuales el
 | Secciones                                                                                               |   
 |---------------------------------------------------------------------------------------------------------|
 | 01. Las Series de Tiempo, R y la Base de Datos del Banco Mundial                                        | 
-| 02. Análisis Univariado (ARIMA))                                                                        | 
+| 02. Análisis Univariado (ARIMA)                                                                         | 
 | 03. Análisis Multivariado (VAR y VEC)                                                                   | 
 
 
