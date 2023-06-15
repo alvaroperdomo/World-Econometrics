@@ -27,10 +27,11 @@ A las personas que no utilizan regularmente R se les recomienda hacer de anteman
 
 ## Dirigido a
 
-Los contenidos presentados en este curso están dirigidos a estudiantes y profesionales de diferentes disciplinas que requieran aprender y/o fortalecer sus conocimientos en análisis de series de tiempo en RStudio.
+Los contenidos presentados en este curso están dirigidos a estudiantes y profesionales de diferentes disciplinas que requieran aprender y/o fortalecer sus conocimientos en análisis de series de tiempo en R.
+
 ## Metodología
 
-La primera sección del curso comienza con una explicación de lo que es el análisis de series de tiempo y las caracteristicas principales de la base de datos "Indicadores de Desarrollo Económico" del Banco Mundial. Posteriormente, se explica cómo se puede descargar y manipular esta base directamente desde R. Al final de la sección se hace una evaluación donde se hacen varias preguntas de selección múltiple con respecto a los conceptos voistos en la sección y con respecto a un ejercicio que el alumno debe desarrollar en R utilizando la base de datos del Banco Mundial (los códigos en R necesarios para el desarrollo del ejercicio serán explicados durante el desarrollo de la sección). 
+La primera sección del curso comienza con una explicación de lo que es el análisis de series de tiempo y las caracteristicas principales de la base de datos "Indicadores de Desarrollo Económico" del Banco Mundial. Posteriormente, se explica cómo se puede descargar y manipular esta base directamente desde R. Al final de la sección se hace una evaluación donde se formuan varias preguntas de selección múltiple con respecto a los conceptos vistos en la sección y con respecto a un ejercicio que el alumno debe desarrollar en R utilizando la base de datos del Banco Mundial (los códigos en R necesarios para el desarrollo del ejercicio serán explicados durante el desarrollo de la sección). 
 
 Las otras dos secciones del curso comienzan con una explicación general de la herramientas econométricas a utilizar. Luego, se desarrolla un ejercicio (o varios ejercicios) y posteriormente se deja un ejercicio para ser desarrollado por el alumno. Con respecto a este último se haran algunas preguntas de selección múltiple para evaluar si los conceptos principales han sido entendidos de forma apropiada.
 
@@ -38,16 +39,12 @@ Las otras dos secciones del curso comienzan con una explicación general de la h
 
 ## Sección 1 - Las Series de Tiempo, R y la Base de Datos del Banco Mundial
 
-En esta sección se presenta 
-
 | Subsecciones                                                                                            | Contenido                                                                                                                | Dedicación,<br> 2 horas   | 
 |---------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|:-------------------------:|
 | [01. Series de tiempo](Seccion01/Seccion01_01/Readme.md)                                                |¿Qué es una serie de tiempo?, ¿En qué consiste el análisis de series de tiempo?, ¿Qué es una variable discreta aleatoria? |             0.5           | 
 | [02. R y Los Indicadores de Desarrollo Económico del Banco Mundial](Seccion01/Seccion01_02/README.md)   |¿Cómo manipular los Indicadores de Desarrollo Económico del Banco Mundial en R                                            |             1.5           | 
 
 ## Sección 2 - Análisis Univariado (ARIMA)
-
-En esta sección se presenta 
 
 | Subsecciones                                                                                        | Contenido                                                                                                      | Dedicación,<br> 8 horas   | 
 |-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
@@ -58,8 +55,6 @@ En esta sección se presenta
 
 
 ## Sección 3 - Análisis Multivariado (VAR y VEC)
-
-En esta sección se presenta 
 
 | Subsecciones                                                                                        | Contenido                                                                                                      | Dedicación,<br> 5.5 horas | 
 |-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
