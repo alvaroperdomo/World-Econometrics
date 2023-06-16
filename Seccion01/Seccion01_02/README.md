@@ -137,9 +137,15 @@ dat = WDI(country = "all", indicator = "NY.GDP.PCAP.KD", start = 1960, end = NUL
 
 * end = NULL_ significa que sólo se van a tomar en cuenta 5 años
 
-Visualice los datos:
+Visualice los datos con el comando :
+
 ``` r
 head(dat)
+```
+
+Y obtiene:
+
+``` r
   country iso2c iso3c year NY.GDP.PCAP.PP.KD
 1  Canadá    CA   CAN 2012          46126.51
 2  Canadá    CA   CAN 2011          45822.60
@@ -152,10 +158,14 @@ head(dat)
 Grafique los datos:
 ``` r
 library(ggplot2)
-ggplot(dat, aes(year, NY.GDP.PCAP.PP.KD, color=country)) + geom_line() + labs(subtitle="US$ de 2017", y="Dólares constante de 2017", x="Años", title="PIB per cápita PPA real", 
-       caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
+ggplot(dat, aes(year, NY.GDP.PCAP.PP.KD, color=country)) + geom_line() + labs(subtitle="US$ de 2017", y="Dólares constante de 2017", x="Años", title="PIB per cápita PPA real", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial") + scale_x_date(as.Date("2012"), end)
 ```
-?ggplot
+ggplot es una comando que tiene muchas opciones de ser utilizado, a continuación les comparto varias páginas de internet donde a partir de la replica podran obtener el gráfico que desean:
+
+* http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html
+* https://r-graph-gallery.com/ggplot2-package.html
+* https://r-graph-gallery.com/279-plotting-time-series-with-ggplot2.html
+* https://r-charts.com/evolution/time-series-ggplot2/
 
 
 Otra opción (HAY QUE REVISAR)
