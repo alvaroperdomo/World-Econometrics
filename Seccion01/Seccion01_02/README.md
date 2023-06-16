@@ -174,13 +174,6 @@ ggplot es una comando que tiene muchas opciones de ser utilizado, a continuació
 * https://r-charts.com/evolution/time-series-ggplot2/
 
 
-Otra opción (HAY QUE REVISAR)
-
-``` r
-plot.ts(NY.GDP.PCAP.KD)
-plot(NY.GDP.PCAP.KD)
-```
-
 ```
 | [Anterior Sección: 01-01. Series de tiempo](../../Seccion01_01/README.md) | [Inicio](../../Readme.md) | [Siguiente Sección: 02-01. Introducción Análisis Univariado](../Seccion01_02/README.md) | 
 |---------------------------------------------------------------------------|---------------------------|-----------------------------------------------------------------------------------------|
