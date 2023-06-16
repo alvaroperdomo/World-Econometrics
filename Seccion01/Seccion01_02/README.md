@@ -43,7 +43,7 @@ Asuma que desea buscar los datos del Producto Interno Bruto per cápita por pari
 
 #### Dentro del comando WDIsearch coloque, separados con los dos signos .*, palabras (en inglés) relacionadas con la variable que esta buscando. 
 
-Por ejemplo, dado que le interesa el Producto Interno Bruto per cápita por paridad del poder adquisitivo "PPA" a precios constante, utilice las palabras gdp, capita y constant:
+Por ejemplo, dado que le interesa el Producto Interno Bruto per cápita por paridad del poder adquisitivo "PPA" a precios constante, utilice las palabras gdp, capita y constant (en español, pib, cápita y constante):
 
 ``` r
 WDIsearch('gdp.*capita.*constant')
@@ -58,7 +58,7 @@ Obteniendo:
 [4,]    NY.GDP.PCAP.PP.KD  GDP per capita, PPP (constant 2017 international $)
 [5,] NY.GDP.PCAP.PP.KD.87  GDP per capita, PPP (constant 1987 international $)
 ```
-Por lo tanto, la variable solicitada es **NY.GDP.PCAP.PP.KD**. Existe también la opción de tener la variable a precios constantes de 1987, pero generalmente se prefieren los precios constantes más recientes
+Por lo tanto, la variable solicitada es **NY.GDP.PCAP.PP.KD**. Existe también la opción de tener la variable a precios constantes de 1987, pero generalmente las personas prefieren utilizar la variable con los precios constantes más recientes
 
 Observe que si sólo copia:
 
@@ -126,7 +126,7 @@ _Es factible solo specificar los argumentos **'indicador'** y **'country**, en c
 
 (por ejemplo, el PIB per cápita en dólares constantes de 2015 en México, Canada y los Estados Unidos) 
 ``` r
-dat = WDI(indicator='NY.GDP.PCAP.KD', country=c('MX','CA','US'), start=1960, end=2012, language = "es")
+dat = WDI(indicator='NY.GDP.PCAP.PP.KD', country=c('MX','CA','US'), start=1960, end=2012, language = "es")
 ```
 Observe que con la orden language = "es" puede descargar la descripción de las variables en español, si no introdujera esta orden le saldría la información en inglés de forma predeterminada.
 
@@ -140,21 +140,24 @@ dat = WDI(country = "all", indicator = "NY.GDP.PCAP.KD", start = 1960, end = NUL
 Visualice los datos:
 ``` r
 head(dat)
-  iso2c country NY.GDP.PCAP.KD year
-1    CA  Canada       9374.883 1960
-2    CA  Canada       9479.824 1961
-3    CA  Canada       9967.366 1962
-4    CA  Canada      10290.362 1963
-5    CA  Canada      10774.653 1964
-6    CA  Canada      11283.606 1965
+  country iso2c iso3c year NY.GDP.PCAP.PP.KD
+1  Canadá    CA   CAN 2012          46126.51
+2  Canadá    CA   CAN 2011          45822.60
+3  Canadá    CA   CAN 2010          44861.52
+4  Canadá    CA   CAN 2009          44003.62
+5  Canadá    CA   CAN 2008          45851.63
+6  Canadá    CA   CAN 2007          45888.48
 ```
 
 Grafique los datos:
 ``` r
 library(ggplot2)
-ggplot(dat, aes(year, NY.GDP.PCAP.KD, color=country)) + geom_line() +
-    xlab('Años') + ylab('PIB per cápita')
+ggplot(dat, aes(year, NY.GDP.PCAP.PP.KD, color=country)) + geom_line() + labs(subtitle="US$ de 2017", y="Dólares constante de 2017", x="Años", title="PIB per cápita PPA real", 
+       caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
 ```
+?ggplot
+
+
 Otra opción (HAY QUE REVISAR)
 
 ``` r
