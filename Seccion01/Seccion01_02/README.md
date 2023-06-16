@@ -43,7 +43,7 @@ Asuma que desea buscar los datos del Producto Interno Bruto per cápita por pari
 
 #### Dentro del comando WDIsearch coloque, separados con los dos signos .*, palabras (en inglés) relacionadas con la variable que esta buscando. 
 
-Por ejemplo, dado que le interesa el Producto Interno Bruto per cápita por paridad del poder adquisitivo "PPA" a precios constante, utilice las palabras gdp, capita y constant (en español, pib, cápita y constante):
+Por ejemplo, dado que le interesa el Producto Interno Bruto per cápita por paridad del poder adquisitivo "PPA" a precios constantes, utilice las palabras gdp, capita y constant (en español, pib, cápita y constante):
 
 ``` r
 WDIsearch('gdp.*capita.*constant')
@@ -113,7 +113,7 @@ WDI tiene el siguiente formato: **WDI(country = "xxx", indicator = "xxx", start 
 
 | **Argumentos**          | **Descripción**                                                                                                                            | 
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| **country**             | Vector de países (códigos de caracteres [ISO-2](https://www.datosmundial.com/codigos-de-pais.php) por ejemplo "BR", "US", "CA") para los que se necesitan los datos. El uso de la opción "all" en lugar de los códigos ISO individuales extrae datos para cada país disponible.                                        |
+| **country**             | Vector de países (códigos de caracteres [ISO-2](https://www.datosmundial.com/codigos-de-pais.php) por ejemplo "BR", "US", "CA") para los que se necesitan los datos. El uso de la opción **"all"** en lugar de los códigos ISO individuales extrae datos para cada país disponible.                                        |
 | **indicator**           | Vector de códigos de las variables que se desean descargar. Recuerde que el nombre de las variables se puede descargar utilizando el comando **WDIsearch()**. Si proporciona un vector con nombre, los indicadores se renombrarán automáticamente, por ejemplo: 'c('mujeres_sector_privado' = 'BI.PWK.PRVS.FE.ZS')' |
 | **start**               | Fecha de inicio, normalmente un año en formato de número entero. Debe ser de 1960 o superior.                                              |
 | **end**                 | Fecha de finalización, normalmente un año en formato de número entero. _Debe ser mayor que la fecha de 'start'_. Si es **'NULL'**, la fecha de finalización se establece en 5 años en el futuro.                                                                                                                      | 
@@ -124,20 +124,24 @@ WDI tiene el siguiente formato: **WDI(country = "xxx", indicator = "xxx", start 
 
 _Es factible solo specificar los argumentos **'indicador'** y **'country**, en cuyo caso **WDI()** devolverá datos desde 1960 hasta el último año disponible en el sitio web del Banco Mundial. También es posible obtener solo los valores no-NA más recientes, con **'latest'**._
 
-(por ejemplo, el PIB per cápita en dólares constantes de 2015 en México, Canada y los Estados Unidos) 
+Por ejemplo, vamos a descargar el PIB PPA a dólares constantes de 2017 y la población de México, Canada y los Estados Unidos en una base de datos llamada "dat":
+
 ``` r
-dat = WDI(indicator='NY.GDP.PCAP.PP.KD', country=c('MX','CA','US'), start=1960, end=2012, language = "es")
+dat = WDI(indicator= c("PIB_per_cápita_PPA_2017US" = "NY.GDP.PCAP.PP.KD", "poblacion" = "SP.POP.TOTL"), country=c('MX','CA','US'), start=1960, end=2012, language = "es")
 ```
-Observe que con la orden language = "es" puede descargar la descripción de las variables en español, si no introdujera esta orden le saldría la información en inglés de forma predeterminada.
+Visualice los datos
 
-Nota: puede usar **country='all'** para descargar datos de todos los países disponibles. También puede descargar varios indicadores a la vez. Por ejemplo,
+Note que en la pantalla _Environment_ de Rstudio aparece la base "dat" (ver figura de abajo) cuando esta ya se ha construido
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6d3547d6-7a8e-40ee-9ffb-c76d5e31e543)
+
+Si le da click a "dat" con el _mouse_ podra ver los datos en una ventana RStudio (ver figura de abajo), otra opción es copiando el comando **View()**:
 ``` r
-dat = WDI(country = "all", indicator = "NY.GDP.PCAP.KD", start = 1960, end = NULL, extra = FALSE, cache = NULL, latest = NULL, language = "es")
+View(dat)
 ```
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/0b7a37c1-1133-4dda-b301-47714fd5161a)
 
-* end = NULL_ significa que sólo se van a tomar en cuenta 5 años
-
-Visualice los datos con el comando :
+Igualmente, puede visualizar los primeros seis datos de la base de datos utilizando el comando **head()**:
 
 ``` r
 head(dat)
@@ -146,21 +150,23 @@ head(dat)
 Y obtiene:
 
 ``` r
-  country iso2c iso3c year NY.GDP.PCAP.PP.KD
-1  Canadá    CA   CAN 2012          46126.51
-2  Canadá    CA   CAN 2011          45822.60
-3  Canadá    CA   CAN 2010          44861.52
-4  Canadá    CA   CAN 2009          44003.62
-5  Canadá    CA   CAN 2008          45851.63
-6  Canadá    CA   CAN 2007          45888.48
+  country iso2c iso3c year PIB_per_cápita_PPA_2017US poblacion
+1  Canadá    CA   CAN 1960                        NA  17909356
+2  Canadá    CA   CAN 1961                        NA  18271000
+3  Canadá    CA   CAN 1962                        NA  18614000
+4  Canadá    CA   CAN 1963                        NA  18964000
+5  Canadá    CA   CAN 1964                        NA  19325000
+6  Canadá    CA   CAN 1965                        NA  19678000
 ```
 
 Grafique los datos:
 ``` r
 library(ggplot2)
-ggplot(dat, aes(year, NY.GDP.PCAP.PP.KD, color=country)) + geom_line() + labs(subtitle="US$ de 2017", y="Dólares constante de 2017", x="Años", title="PIB per cápita PPA real", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial") + scale_x_date(as.Date("2012"), end)
+ggplot(dat, aes(year, PIB_per_cápita_PPA_2017US, color=country)) + geom_line() + labs(subtitle="US$ de 2017", y="Dólares constante de 2017", x="Años", title="PIB per cápita PPA real", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial") + scale_x_date(as.Date("2012"), end)
 ```
-ggplot es una comando que tiene muchas opciones de ser utilizado, a continuación les comparto varias páginas de internet donde a partir de la replica podran obtener el gráfico que desean:
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/110de4f2-2beb-471a-9aa0-00e85377332e)
+
+ggplot es una comando que tiene muchas opciones de ser utilizado, a continuación les comparto varias páginas de internet donde a partir de la replica podran obtener el gráfico que desean, y una tabla donde se explican los argumento que hemos utilizado en **ggplot**:
 
 * http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html
 * https://r-graph-gallery.com/ggplot2-package.html
@@ -175,18 +181,6 @@ plot.ts(NY.GDP.PCAP.KD)
 plot(NY.GDP.PCAP.KD)
 ```
 
-### Renombramiento Automático
-Si el vector que proporciona a WDI tiene nombre, la función cambiará automáticamente el nombre de las columnas cuando sea posible.
-``` r
-dat <- WDI(indicator = c("pib_per_capita" = "NY.GDP.PCAP.KD", "poblacion" = "SP.POP.TOTL"))
-head(dat)
-iso2c    country year pib_per_capita poblacion
-1    1A Arab World 2005       5378.379  316264728
-2    1A Arab World 2006       5594.899  323773264
-3    1A Arab World 2007       5711.663  331653797
-4    1A Arab World 2008       5898.516  339825483
-5    1A Arab World 2009       5782.422  348145094
-6    1A Arab World 2010       5916.330  356508908
 ```
 | [Anterior Sección: 01-01. Series de tiempo](../../Seccion01_01/README.md) | [Inicio](../../Readme.md) | [Siguiente Sección: 02-01. Introducción Análisis Univariado](../Seccion01_02/README.md) | 
 |---------------------------------------------------------------------------|---------------------------|-----------------------------------------------------------------------------------------|
