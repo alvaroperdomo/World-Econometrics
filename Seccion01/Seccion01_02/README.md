@@ -173,8 +173,6 @@ ggplot es una comando que tiene muchas opciones de ser utilizado, a continuació
 * https://r-graph-gallery.com/279-plotting-time-series-with-ggplot2.html
 * https://r-charts.com/evolution/time-series-ggplot2/
 
-
-```
 | [Anterior Sección: 01-01. Series de tiempo](../../Seccion01_01/README.md) | [Inicio](../../Readme.md) | [Siguiente Sección: 02-01. Introducción Análisis Univariado](../Seccion01_02/README.md) | 
 |---------------------------------------------------------------------------|---------------------------|-----------------------------------------------------------------------------------------|
 
