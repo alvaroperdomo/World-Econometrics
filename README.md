@@ -47,7 +47,7 @@ Las otras dos secciones del curso comienzan con una explicación general de la h
 ## Sección 2 - Análisis Univariado (ARIMA)
 
 https://github.com/alvaroperdomo/World-Econometrics/tree/main/Seccion01/Seccion01_02
-https://github.com/alvaroperdomo/World-Econometrics/tree/main/Seccion01/Seccion01_02
+https://github.com/alvaroperdomo/World-Econometrics/tree/main/Seccion02/Seccion02_02
 
 | Subsecciones                                                                                        | Contenido                                                                                                      | Dedicación,<br> 8 horas   | 
 |-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
