@@ -18,8 +18,8 @@ Formalmente, si $E(x)$ es el valor medio teórico de $x$, entonces la secuencia 
 * $E(\varepsilon_{t}^2)=E(\varepsilon_{t-1}^2)= · · · =\sigma^2$ ó [ $\sigma_{\varepsilon_{t}}^2=\sigma_{\varepsilon_{t-1}}^2= · · · =\sigma^2$ ]
 * $E(\varepsilon_{t}\varepsilon_{t-s})=E(\varepsilon_{t-j}\varepsilon_{t-j-s})=0,  \forall j\neq s$ ó [ $\sigma_{\varepsilon_{t}\varepsilon_{t-s}}=\sigma_{\varepsilon_{t-j}\varepsilon_{t-j-s}}=0$ ]
 
-En el resto del curso, { $\varepsilon_t$ } siempre se referirá a un proceso de ruido blanco y 𝝈^𝟐 se referirá a la varianza de ese proceso. Cuando sea necesario hacer referencia a dos o más procesos de ruido blanco, se usarán símbolos como {𝜀_1𝑡} y {𝜀_2𝑡}. 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/40968b90-9e62-4751-a0c9-13beb0715a40)
+En el resto del curso, { $\varepsilon_t$ } siempre se referirá a un proceso de ruido blanco y $\sigma^2$  se referirá a la varianza de ese proceso. Cuando sea necesario hacer referencia a dos o más procesos de ruido blanco, se usarán símbolos como { $\varepsilon_{1t}$ } { $\varepsilon_{2t}$ }. 
+
 
 
 
