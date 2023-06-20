@@ -46,6 +46,9 @@ Las otras dos secciones del curso comienzan con una explicación general de la h
 
 ## Sección 2 - Análisis Univariado (ARIMA)
 
+https://github.com/alvaroperdomo/World-Econometrics/tree/main/Seccion01/Seccion01_02
+https://github.com/alvaroperdomo/World-Econometrics/tree/main/Seccion01/Seccion01_02
+
 | Subsecciones                                                                                        | Contenido                                                                                                      | Dedicación,<br> 8 horas   | 
 |-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
 | [01. Introducción](Seccion01/Seccion01_01/README.md)                                                | Introducción al análisis univariado de series de tiempo                                                        |             2.5           | 
