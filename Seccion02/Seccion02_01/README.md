@@ -18,6 +18,8 @@ Formalmente, si $E(x)$ es el valor medio teórico de $x$, entonces la secuencia 
 * $E(\varepsilon_{t}^2)=E(\varepsilon_{t-1}^2)= · · · =\sigma^2$ ó [ $\sigma_{\varepsilon_{t}}^2=\sigma_{\varepsilon_{t-1}}^2= · · · =\sigma^2$ ]
 * $E(\varepsilon_{t}\varepsilon_{t-s})=E(\varepsilon_{t-j}\varepsilon_{t-j-s})=0,  \forall j\neq s$ ó [ $\sigma_{\varepsilon_{t}\varepsilon_{t-s}}=\sigma_{\varepsilon_{t-j}\varepsilon_{t-j-s}}=0$ ]
 
+##### Observe que un proceso ruido blanco, es un caso particular de un proceso estacionario.  
+
 En el resto del curso, { $\varepsilon_t$ } siempre se referirá a un proceso de ruido blanco y $\sigma^2$  se referirá a la varianza de ese proceso. Cuando sea necesario hacer referencia a dos o más procesos de ruido blanco, se usarán símbolos como { $\varepsilon_{1t}$ } { $\varepsilon_{2t}$ }. 
 
 ## Los procesos ARMA
@@ -31,6 +33,18 @@ $$y_t=a_0+\sum_{i = 1}^{p}a_iy_{t-i}+\sum_{i = 0}^{q} \beta_i\varepsilon_{t-i}$$
 * Si $p=0$, obtenemos un proceso de media móvil de orden $q$: $MA(q)$. 
 
 ##### En un modelo $ARMA$, es perfectamente posible que $p$ y/o $q$ sean infinitos. 
+
+## Restricciones de estacionariedad para un modelo $AR(1)$
+
+Sea $y_t=a_0+a_1y_{t-1}+\varepsilon_t$ donde $\varepsilon_t$ es ruido blanco.
+
+Suponga que el proceso comenzó en el período $0$, de modo que $y_0$ es una condición inicial determinista. 
+
+La solución a esta ecuación es $$y_t=a_0\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0+\sum_{i = 0}^{t-1}\varepsilon_{t-i}$$
+
+
+
+
 
 
 
