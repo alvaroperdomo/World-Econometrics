@@ -45,9 +45,9 @@ La solución a esta ecuación es
 * $$y_t=a_0\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0+\sum_{i = 0}^{t-1}\varepsilon_{t-i}$$
 * $$y_{t+s}=a_0\sum_{i = 0}^{t+s-1}a_1^i+a_1^{t+s}y_0+\sum_{i = 0}^{t+s-1}\varepsilon_{t+s-i}$$
 
-Por lo tanto, esta ecuación es estacionaria si 
-1. $t$ es grande y
-2. $|a_1|<1$ 
+**Por lo tanto, esta ecuación es estacionaria si** 
+1. **$t$ es grande (por lo tanto, si una muestra es generada por un proceso que ha comen-zado recientemente, las realizaciones pueden no ser estacionarias) y**
+2. **$|a_1|<1$** 
 
 La prueba de esto es:
 
