@@ -20,7 +20,17 @@ Formalmente, si $E(x)$ es el valor medio teórico de $x$, entonces la secuencia 
 
 En el resto del curso, { $\varepsilon_t$ } siempre se referirá a un proceso de ruido blanco y $\sigma^2$  se referirá a la varianza de ese proceso. Cuando sea necesario hacer referencia a dos o más procesos de ruido blanco, se usarán símbolos como { $\varepsilon_{1t}$ } { $\varepsilon_{2t}$ }. 
 
+## Los procesos ARMA
+Es posible combinar un proceso de media móvil con un proceso autorregresivo para obtener un modelo autorregresivo de media móvil (_ARMA_). Por ejemplo, un modelo _ARMA(p,q)_, se escribe como:
 
+$$y_t=a_0+\sum_{i = 1}^{p}a_iy_{t-i}+\sum_{i = 0}^{q} \beta_i\varepsilon_{t-i}$$
+    
+* Seguimos la convención de normalizar unidades para que siempre $\beta_0=1$. 
+* Si las raíces características de esta ecuación están todas en el círculo unitario, { $y_t$ } se llama un modelo $ARMA(p,q)$. 
+* Si $q=0$, obtenemos un proceso autorregresivo de orden $p$: $AR(p)$. 
+* Si $p=0$, obtenemos un proceso de media móvil de orden $q$: $MA(q)$. 
+
+##### En un modelo $ARMA$, es perfectamente posible que $p$ y/o $q$ sean infinitos. 
 
 
 
