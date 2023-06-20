@@ -1,4 +1,4 @@
-Para llevar a cabo un análisis univariado de series de tiempo siguiendo la metodología de Box y Jenkins (). Se necesita que la variable a analizar sea estacionaria. 
+Para llevar a cabo un análisis univariado de series de tiempo siguiendo la metodología de Box y Jenkins (1976). Se necesita que la variable a analizar sea estacionaria. 
 
 ## Los procesos estacionarios
 Un proceso estocástico que tiene una media y una varianza finita es estacionario en covarianza si para todo $t$ y $t-s$,
@@ -58,6 +58,11 @@ El valor esperado de la misma es $$Ey_t=a_0\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0$$ y 
 (2) La varianza de $y_t$ es finita e independiente del tiempo: $$E(y_t-\mu)^2=E(\varepsilon_t+a_1\varepsilon_{t-1}+a_1^2\varepsilon_{t-2}+a_1^4\varepsilon_{t-4}+ …)^2=\sigma^2(1+a_1+a_1^2+a_1^4+ …)^2=\frac{\sigma^2}{1-a_1^2}$$ 
 
 (3) Las autovarianzas de $y_t$ son finitas e independientes del tiempo: $$E(y_t-\mu)(y_{t-s}-\mu)=E(\varepsilon_t+a_1\varepsilon_{t-1}+a_1^2\varepsilon_{t-2}+a_1^4\varepsilon_{t-4}+ …)(\varepsilon_{t-s}+a_1\varepsilon_{t-s-1}+a_1^2\varepsilon_{t-s-2}+a_1^4\varepsilon_{t-s-4}+ …)=\sigma^2a_1^s(1+a_1+a_1^2+a_1^4+ …)=\frac{\sigma^2a_1^s}{1-a_1^2}$$ 
+
+## Referencias
+BOX, George y JENKINS, Gwilym. _Time Series Analysis: Forecasting and Control_. (1975); 575 p.
+
+
 
 
 
