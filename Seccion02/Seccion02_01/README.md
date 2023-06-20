@@ -42,6 +42,8 @@ Suponga que el proceso comenzó en el período $0$, de modo que $y_0$ es una con
 
 La solución a esta ecuación es $$y_t=a_0\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0+\sum_{i = 0}^{t-1}\varepsilon_{t-i}$$
 
+Si $t$ es grande y $|a_1|$, podemos considerar el valor límite de $y_t$ en:
+
 
 
 
