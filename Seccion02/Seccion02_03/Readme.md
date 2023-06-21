@@ -16,14 +16,15 @@ En la práctica, nunca conocemos el verdadero proceso de generación de datos. S
 El primer paso podría ser comparar la _FAC_ muestral y la _FACP_ muestral con las de los diversos modelos teóricos. 
 
 #### La parte autorregresiva (AR) del proceso generador de datos (las _FACP_)
-El único pico grande en el rezago $1$ en la _FACP_ sugiere un modelo _AR(1)_.
+El único pico grande que se observa en el rezago $1$ de la _FACP_ sugiere un modelo _AR(1)_.
 
-Hay un pico considerable de $0.74$ en el rezago $1$, y todas las otras _FACP_ (excepto la del rezago $12$) son muy pequeñas. Las primeras tres _FAC_ son $r_1=0.74$, $r_2=0.58$ y $r_3=0.47$. 
+##### Sin embargo, si no conociéramos el verdadero proceso subyacente y estuvieramos utilizando datos mensuales, podríamos preocuparnos por la autocorrelación parcial significativa en el rezago _12_. Después de todo, con los datos men-suales, podríamos esperar alguna relación directa entre $y_t$ y $y_{t-12}_$.
 
-El patrón de decaimiento de la _FAC_ y  
+El pico es de $0.74$ en el rezago $1$, y todas las otras _FACP_ (excepto la del rezago $12$) son muy pequeñas. 
 
-#### La parte de media móvil (MA) del proceso generador de datos (las _FAC_)
 A partir de la figura de las _FACP_, se puede ver que todas las _FACP_ a excepción de la $\phi_{11}$ (y del desfase en el rezago $12$) son menores que $\frac{2}{\sqrt{}T}=0.2$ . 
 
-La caída progresiva de la _FAC_ y el único pico de la _FACP_ dan la impresión de un modelo _AR(1)_. Sin embargo, si no conociéramos el verdadero proceso subyacente y estuvieramos utilizando datos mensuales, podríamos preocuparnos por la autocorrelación parcial significativa en el rezago _12_. Después de todo, con los datos men-suales, podríamos esperar alguna relación directa entre $y_t$ y $y_{t-12}_$.
+#### La parte de media móvil (MA) del proceso generador de datos (las _FAC_)
+Las _FAC_ revelan una decaimieto progresivo (por ejemplo, las primeras tres _FAC_ son $r_1=0.74$, $r_2=0.58$ y $r_3=0.47$.) que no dan la idea de un proceso _MA_. 
+
 
