@@ -1,4 +1,4 @@
-# Análisis ARIMA (Metodología de Box y Jenkins)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/211a5160-5256-45f8-93ae-121ab9450cee)# Análisis ARIMA (Metodología de Box y Jenkins)
 
 Las autocovarianzas y autocorrelaciones sirven como herramientas útiles en el enfoque de Box y Jenkins (1976) para identificar y estimar modelos de series de tiempo. 
 
@@ -44,6 +44,9 @@ La tabla de abajo informa los resultados de las dos estimaciones
 | $\hat{\beta_{12}}$ (Error estándar) |                |-0.0325 (0.11)  | 
 | Criterio de Información de Akaike   |441.9           |443.9           | 
 | Criterio Bayesianode Schwartz       |444.5           |449.1           | 
+| Ljung-Box Estadístico Q para los residuos <br> (nivel de significancia en paréntesis)      |444.5           |449.1           | 
+
+
 
 
 
