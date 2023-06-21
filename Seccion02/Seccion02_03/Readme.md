@@ -27,4 +27,14 @@ A partir de la figura de las _FACP_, se puede ver que todas las _FACP_ a excepci
 #### La parte de media móvil (MA) del proceso generador de datos (las _FAC_)
 Las _FAC_ revelan una decaimieto progresivo (por ejemplo, las primeras tres _FAC_ son $r_1=0.74$, $r_2=0.58$ y $r_3=0.47$.) que no dan la idea de un proceso _MA_. 
 
+#### Análisis de la conjetura
+
+Aunque sabemos que los datos se generaron en realidad a partir de un proceso de _AR(1)_, es ilustrativo comparar las estimaciones de dos modelos diferentes. Suponga que estimamos un modelo _AR(1)_ e intentamos capturar el pico en el desfase _12_ con un coeficiente _MA_. Por lo tanto, consideramos los dos modelos tentativos:
+
+* **Modelo 1 - _AR(1)_:** $y_t=a_1y_{t-1}+\varepsilon_t$
+* **Modelo 2 - _ARMA(1,12)_:** $y_t=a_1y_{t-1}+\varepsilon_t+\beta_{12}\varepsilon_{t-12} $
+
+La tabla de abajo informa los resultados de las dos estimaciones
+
+
 
