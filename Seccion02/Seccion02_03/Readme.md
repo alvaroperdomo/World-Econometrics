@@ -1,4 +1,4 @@
-# Análisis ARIMA (Metodología de Box-Jentins)
+# Análisis ARIMA (Metodología de Box y Jenkins)
 
 Las autocovarianzas y autocorrelaciones sirven como herramientas útiles en el enfoque de Box y Jenkins (1976) para identificar y estimar modelos de series de tiempo. 
 
