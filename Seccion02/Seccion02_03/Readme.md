@@ -18,7 +18,7 @@ El primer paso podría ser comparar la _FAC_ muestral y la _FACP_ muestral con l
 #### La parte autorregresiva (AR) del proceso generador de datos (las _FACP_)
 El único pico grande que se observa en el rezago $1$ de la _FACP_ sugiere un modelo _AR(1)_.
 
-##### Sin embargo, si no conociéramos el verdadero proceso subyacente y estuvieramos utilizando datos mensuales, podríamos preocuparnos por la autocorrelación parcial significativa en el rezago _12_. Después de todo, con los datos men-suales, podríamos esperar alguna relación directa entre $y_t$ y $y_{t-12}_$.
+##### Sin embargo, si no conociéramos el verdadero proceso subyacente y estuvieramos utilizando datos mensuales, podríamos preocuparnos por la autocorrelación parcial significativa en el rezago _12_. Después de todo, con los datos mensuales, podríamos esperar alguna relación directa entre $y_t$ y $y_{t-12}$.
 
 El pico es de $0.74$ en el rezago $1$, y todas las otras _FACP_ (excepto la del rezago $12$) son muy pequeñas. 
 
