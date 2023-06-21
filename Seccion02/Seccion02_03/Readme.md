@@ -46,6 +46,16 @@ La tabla de abajo informa los resultados de las dos estimaciones
 | Criterio Bayesianode Schwartz             |444.5           |449.1           | 
 | Ljung-Box Estadístico Q para los residuos <br> (nivel de significancia en paréntesis)      |Q(8) = 6.43 (0.490)   <br> Q(16) = 15.86 (0.391)    <br> Q(24) = 21.74 (0.536) |Q(8) = 6.48 (0.485)  <br>  Q(16) = 15.75 (0.400)  <br>   Q(24) = 21.56 (0.547)          | 
 
+El coeficiente del Modelo 1 satisface la condición de estabilidad $|a_1|<0$ y tiene un error estándar bajo (el estadístico t asociada es mayor que $12$). Como una verificación de diagnóstico útil, dibujamos el correlograma de los residuos del modelo ajustado en la figura de abajo. 
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/bf030c21-940a-4842-9971-5a42410f7b52)
+
+Los estadísticos _Q_ de los residuos indican que:
+* cada una de las autocorrelaciones es menor que dos desviaciones estándar de cero.
+* como grupo, los rezagos $1$ a $8$, $1$ a $16$ y $1$ a $24$ no son significativamente diferentes de cero. 
+
+
+
 
 
 
