@@ -53,7 +53,7 @@ El coeficiente del Modelo 1 satisface la condición de estabilidad $|a_1|<0$ y t
 Los estadísticos _Q_ de los residuos indican que:
 * cada una de las autocorrelaciones es menor que dos desviaciones estándar de cero.
 * como grupo, los rezagos $1$ a $8$, $1$ a $16$ y $1$ a $24$ no son significativamente diferentes de cero. 
-
+Esta es una fuerte evidencia de que el modelo _AR(1)_ se ajusta bien con los datos. Después de todo, si las autocorrelaciones de los residuos fueran significativas, el modelo _AR(1)_ no usaría toda la información disponible sobre los movimientos en la secuencia { $y_t$ }
 
 
 
