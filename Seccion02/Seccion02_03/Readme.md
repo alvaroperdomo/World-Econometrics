@@ -39,7 +39,7 @@ La tabla de abajo informa los resultados de las dos estimaciones
 | Indicadores                               | Modelo 1       | Modelo 2       | 
 |-------------------------------------------|:--------------:|:--------------:|
 | Grados de Libertad                        |98              |97              | 
-| SRC (Suma de Residuos al Cuadrado         |85.10           |85.07           | 
+| SRC (Suma de Residuos al Cuadrado)        |85.10           |85.07           | 
 | $\hat{a_1}$  <br> (Error estándar)        |0.7904 <br> (0.0624) |0.7938 <br> (0.0643) | 
 | $\hat{\beta_{12}}$  <br> (Error estándar) |                |-0.0325 <br> (0.11)  | 
 | Criterio de Información de Akaike         |441.9           |443.9           | 
@@ -53,8 +53,20 @@ El coeficiente del Modelo 1 satisface la condición de estabilidad $|a_1|<0$ y t
 Los estadísticos _Q_ de los residuos indican que:
 * cada una de las autocorrelaciones es menor que dos desviaciones estándar de cero.
 * como grupo, los rezagos $1$ a $8$, $1$ a $16$ y $1$ a $24$ no son significativamente diferentes de cero. 
+
 Esta es una fuerte evidencia de que el modelo _AR(1)_ se ajusta bien con los datos. Después de todo, si las autocorrelaciones de los residuos fueran significativas, el modelo _AR(1)_ no usaría toda la información disponible sobre los movimientos en la secuencia { $y_t$ }
 
+Al examinar los resultados para el Modelo 2, observe que ambos modelos arrojan estimaciones similares para :
+* el coeficiente autorregresivo de primer orden y
+* el error estándar asociado. 
+
+Sin embargo, 
+* la estimación para $\beta_{12}\$ es de mala calidad;
+* el valor del estadístico t no es significativo y sugiere que debería eliminarse del modelo.
+  
+Además, la comparación de los valores del Criterio de Información de Akaike y del Criterio Bayesianode Schwartz de los dos modelos sugiere que los beneficios de reducir la Suma de Residuos al Cuadrado se ven superados por los efectos perjudiciales de la estimación de un parámetro adicional. 
+
+##### Todos estos indicadores apuntan a la elección del Modelo 1.
 
 
 
