@@ -68,7 +68,29 @@ Además, la comparación de los valores del Criterio de Información de Akaike y
 
 ##### Todos estos indicadores apuntan a la elección del Modelo 1.
 
+### Estimación de un modelo ARMA(1,1)
+
+Utilizemos un segundo ejemplo para ver cómo la función de autocorrelación muestral (_FAC_) y la función de autocorrelación parcial muestral (_FACP_) sirven para identificar un modelo _ARMA(1,1)_. 
+Se utilizó R para obtener 100 números aleatorios $\varepsilon_t$ distribuidos normalmente. Comenzando con $t=1$, los valores de $y_t$ se generaron usando la fórmula $y_{t-1}=-0.7y_{t-1}+\varepsilon_t+0.7\varepsilon_{t-1}$ y la condición inicial $y_0=0$ y $\varepsilon_0=0$. 
+
+Las figuras de abajo muestran la _FAC_ y la _FACP_ muestral. Estos nos dan idea de un _ARMA(1,1)_.
 
 
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/49d0c43b-c2a0-4f54-a68c-baa66931aafd)
 
+Sin embargo, si se desconoce el verdadero proceso de generación de datos, uno podría tener ciertas dudas acerca del modelo real. 
 
+Entonces, se pueden analizar diferentes modelos como los siguientes:
+
+* **Modelo 1 - _AR(1)_:** $y_t=a_1y_{t-1}+\varepsilon_t$
+* **Modelo 2 - _ARMA(1,1)_:** $y_t=a_1y_{t-1}+\varepsilon_t+\beta_{12}\varepsilon_{t-1}$
+* **Modelo 3 - _ARMA(2)_:** $y_t=a_1y_{t-1}+a_2y_{t-2}+\varepsilon_t$
+
+| Indicadores                               | Modelo 1           | Modelo 2           |Modelo 3            |
+|-------------------------------------------|:------------------:|:------------------:|:------------------:|
+| $\hat{a_1}$  <br> (Error estándar)        |-0.835 <br> (0.053) |-0.679 <br> (0.076) |-1.160 <br> (0.093) | 
+| $\hat{a_2}$  <br> (Error estándar)        |                    |                    |-0.378 <br> (0.092) |
+| $\hat{\beta_1}$  <br> (Error estándar)    |                    |-0.676 <br> (0.081) |                    |
+| Criterio de Información de Akaike         |496.5               |471.0               |482.8               |  
+| Criterio Bayesianode Schwartz             |499.0               |476.2               |487.9               |  
+| Ljung-Box Estadístico Q para los residuos <br> (nivel de significancia en paréntesis)      |Q(8) = 3.86 (0.695)   <br> Q(24) = 14.23 (0.892) | Q(8) = 26.19 (0.000)   <br> Q(24) = 41.10 (0.001) | Q(8) = 11.44 (0.057)   <br> Q(24) = 22.59 (0.424) | 
