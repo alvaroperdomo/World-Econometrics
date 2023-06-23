@@ -1,7 +1,20 @@
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/211a5160-5256-45f8-93ae-121ab9450cee)# Análisis ARIMA (Metodología de Box y Jenkins)
+# Análisis ARIMA (Metodología de Box y Jenkins)
 
-Las autocovarianzas y autocorrelaciones sirven como herramientas útiles en el enfoque de Box y Jenkins (1976) para identificar y estimar modelos de series de tiempo. 
+Box-Jenkins (1976) popularizaron un método de tres etapas para seleccionar el modelo apropiado con el fin de estimar y pronosticar una serie de tiempo univariada:
 
+1. **Identificación:** se examina visualmente el gráfico de tiempo de la serie, la función de autocorrelación (_FAC_) y la función de autocorrelación parcial (_FACP_).
+
+La trayectoria temporal de la secuencia { $y_t$ }  proporciona información sobre:
+* valores atípicos,
+* valores faltantes y
+* cambios estructurales en los datos.
+
+Las variables no estacionarias pueden tener una tendencia pronunciada o parecer serpentear sin una media o varianza constante a largo plazo. Los valores faltantes y los valores atípicos se pueden corregir en este punto. 
+
+2. **Estimación:** cada uno de los modelos tentativos se ajusta, y se examinan los diversos coeficientes $a_i$ y $\beta_i$ 𝛽_𝑖. El objetivo es seleccionar un modelo estacionario y parsimonioso que se ajuste bien
+3. **Verificación de diagnóstico:** para garantizar que los residuos del modelo estimado imiten un proceso de ruido blanco.
+
+Una comparación de las _FAC_ y las _FACP_ muestrales con las de varios procesos _ARMA_ teóricos puede sugerir varios modelos plausibles. Por medio de dos ejemplos sencillos, vamos a mostrar cómo se identifica el proceso generador de una variable.
 
 ### Estimación de un modelo AR(1)
 Utilizemos un ejemplo específico para ver cómo la función de autocorrelación muestral (_FAC_) y la función de autocorrelación parcial muestral (_FACP_) se pueden utilizar como ayuda para identificar un modelo _ARMA_. 
