@@ -92,5 +92,11 @@ Entonces, se pueden analizar diferentes modelos como los siguientes:
 | $\hat{a_2}$  <br> (Error estándar)        |                    |                    |-0.378 <br> (0.092) |
 | $\hat{\beta_1}$  <br> (Error estándar)    |                    |-0.676 <br> (0.081) |                    |
 | Criterio de Información de Akaike         |496.5               |471.0               |482.8               |  
-| Criterio Bayesianode Schwartz             |499.0               |476.2               |487.9               |  
+| Criterio Bayesiano de Schwartz            |499.0               |476.2               |487.9               |  
 | Ljung-Box Estadístico Q para los residuos <br> (nivel de significancia en paréntesis)      |Q(8) = 3.86 (0.695)   <br> Q(24) = 14.23 (0.892) | Q(8) = 26.19 (0.000)   <br> Q(24) = 41.10 (0.001) | Q(8) = 11.44 (0.057)   <br> Q(24) = 22.59 (0.424) | 
+
+Al examinar la tabla, note que todos los $\hat{a_1}$  son muy significativos; cada uno de los valores estimados se desvía al menos ocho desviaciones estándar de cero. Está claro que el modelo _AR(1)_ es inapropiado. Los estadísticos Q para el Modelo 1 indican que existe una autocorrelación significativa en los residuos. El modelo estimado _ARMA(1,1)_ no sufre este problema. Además, tanto el Criterio de Información de Akaike como el Criterio Bayesiano de Schwartz seleccionan el Modelo 2 sobre el Modelo 1.
+
+El mismo tipo de razonamiento indica que el Modelo 2 es preferible al Modelo 3. Tenga en cuenta que, para cada modelo, los coeficientes estimados son altamente significativos y las estimaciones puntuales implican convergencia. Aunque el estadístico Q en $24$ rezagos indica que estos dos modelos no tienen residuos correlacionados, el estadístico Q de $8$ rezagos indica una correlación serial en los residuos del Modelo 3. Por lo tanto, el modelo _AR(2)_ no capta la dinámica de corto plazo como lo hace el modelo _ARMA(1,1)_.  También tenga en cuenta que tanto el Criterio de Información de Akaike como el Criterio Bayesiano de Schwartz seleccionan el Modelo 2.
+
+
