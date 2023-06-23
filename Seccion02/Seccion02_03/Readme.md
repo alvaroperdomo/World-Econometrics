@@ -23,7 +23,9 @@ La trayectoria temporal de la serie proporciona información sobre:
 
 Así mismo, las variables no estacionarias pueden tener una tendencia pronunciada o parecer serpentear sin una media o varianza constante a largo plazo. Los valores faltantes y los valores atípicos se pueden corregir en este punto. 
 
-2. **ESTIMACIÓN:**
+La $FACP$ y la $FAC$ se utilizas para determinar los componentes $AR()$ y $MA()$ del Modelo $ARMA()$, respectivamente. Más adelante, en la sección de ejemplos, se puede ver más en detalle esta cuestión. 
+
+## 2. ESTIMACIÓN:
 Una idea fundamental en el enfoque de Box-Jenkins es el principio de parsimonia. La incorporación de coeficientes adicionales aumenta necesariamente el ajuste del modelo (por ejemplo, el valor del $R^2$ aumenta) pero al costo de reducir los grados de libertad. 
 
 Box y Jenkins argumentan que los modelos parsimoniosos producen mejores pronósticos que los modelos sobreparametrizados. Un modelo parsimonioso se adapta bien a los datos sin incorporar ningún coeficiente innecesario. 
@@ -40,7 +42,7 @@ La mayoría de los paquetes econométricos estiman los parámetros de un modelo 
 
 En tales circunstancias, agregar una o dos observaciones adicionales puede alterar en gran medida las estimaciones.
 
-3. **Verificación de diagnóstico:** para garantizar que los residuos del modelo estimado imiten un proceso de ruido blanco.
+## 3. VERIFICACIÓN de DIAGNOSTICO: 
 
 La práctica estándar es dibujar los residuos para buscar valores atípicos y evidencia de períodos en los que el modelo no se ajusta bien a los datos. Una práctica común es crear residuos estandarizados dividiendo cada residuo, $\varepsilon_t$ , por su desviación estándar estimada, $\sigma$. 
 
@@ -72,6 +74,7 @@ En tales circunstancias, generalmente es posible formular un modelo que tenga un
 
 De forma similar, un modelo puede estimarse sólo sobre una parte del conjunto de datos. El modelo estimado se puede usar para pronosticar los valores conocidos de la serie. La suma de los errores de pronóstico al cuadrado es una forma útil de comparar la idoneidad de los modelos alternativos. Los modelos con pronósticos pobres fuera de la muestra deben ser eliminados. 
 
+## 4. EJEMPLOS SIMULADOS: 
 Una comparación de las _FAC_ y las _FACP_ muestrales con las de varios procesos _ARMA_ teóricos puede sugerir varios modelos plausibles. Por medio de dos ejemplos sencillos, vamos a mostrar cómo se identifica el proceso generador de una variable.
 
 ### Estimación de un modelo AR(1)
