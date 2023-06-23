@@ -1,18 +1,29 @@
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/bb9f9fff-bdb6-4dd8-ba3a-957843549387)# Análisis ARIMA (Metodología de Box y Jenkins)
+# ANÁLISIS ARIMA (METODOLOGÍA DE BOX Y JENKINS)
 
-Box-Jenkins (1976) popularizaron un método de tres etapas para seleccionar el modelo apropiado con el fin de estimar y pronosticar una serie de tiempo univariada:
+Box-Jenkins (1976) popularizaron un método de tres etapas para seleccionar el modelo apropiado con el fin de estimar y pronosticar una serie de tiempo univariada. Esta metodología sólo es valida para aplicar en series estacionarias.
 
-1. **Identificación:** se examina visualmente el gráfico de tiempo de la serie, la función de autocorrelación (_FAC_) y la función de autocorrelación parcial (_FACP_).
+Las tres etapas son:
 
-La trayectoria temporal de la secuencia { $y_t$ }  proporciona información sobre:
+1. **Identificación:** Se examina visualmente
+   * el gráfico de tiempo de la serie,
+   * la función de autocorrelación ($FAC$)  y
+   * la función de autocorrelación parcial ($FACP$).
+
+2. **Estimación:** De acuerdo a la información de los gráficos, se plantean y se estiman modelos potenciales, se examinan los diferentes coeficientes $a_i$ y $\beta_i$ y se evaluan indicadores de parsimonia.
+
+3. **Verificación de diagnóstico:** Se garantiza que los residuos del modelo estimado imiten un proceso de ruido blanco.
+
+A continuación se revisa más en detalle cada uno de las etapas, posteriormente se plantean algunos ejemplos simulados y finalmente se desarrolla un ejemplo utilizando la basa de datos Indicadores de Desarrollo Económico del Banco Mundial.
+
+## 1. IDENTIFICACIÓN
+La trayectoria temporal de la serie proporciona información sobre:
 * valores atípicos,
 * valores faltantes y
 * cambios estructurales en los datos.
 
-Las variables no estacionarias pueden tener una tendencia pronunciada o parecer serpentear sin una media o varianza constante a largo plazo. Los valores faltantes y los valores atípicos se pueden corregir en este punto. 
+Así mismo, las variables no estacionarias pueden tener una tendencia pronunciada o parecer serpentear sin una media o varianza constante a largo plazo. Los valores faltantes y los valores atípicos se pueden corregir en este punto. 
 
-2. **Estimación:** cada uno de los modelos tentativos se ajusta, y se examinan los diversos coeficientes $a_i$ y $\beta_i$. El objetivo es seleccionar un modelo estacionario y parsimonioso que se ajuste bien
-
+2. **ESTIMACIÓN:**
 Una idea fundamental en el enfoque de Box-Jenkins es el principio de parsimonia. La incorporación de coeficientes adicionales aumenta necesariamente el ajuste del modelo (por ejemplo, el valor del $R^2$ aumenta) pero al costo de reducir los grados de libertad. 
 
 Box y Jenkins argumentan que los modelos parsimoniosos producen mejores pronósticos que los modelos sobreparametrizados. Un modelo parsimonioso se adapta bien a los datos sin incorporar ningún coeficiente innecesario. 
