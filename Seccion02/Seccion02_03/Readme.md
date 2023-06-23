@@ -1,4 +1,4 @@
-# ANÁLISIS ARIMA (METODOLOGÍA DE BOX Y JENKINS)
+# ANÁLISIS ARMA (METODOLOGÍA DE BOX Y JENKINS)
 
 Box-Jenkins (1976) popularizaron un método de tres etapas para seleccionar el modelo apropiado con el fin de estimar y pronosticar una serie de tiempo univariada. Esta metodología sólo es valida para aplicar en series estacionarias.
 
@@ -23,26 +23,22 @@ La trayectoria temporal de la serie proporciona información sobre:
 
 Así mismo, las variables no estacionarias pueden tener una tendencia pronunciada o parecer serpentear sin una media o varianza constante a largo plazo. Los valores faltantes y los valores atípicos se pueden corregir en este punto. 
 
-La $FACP$ y la $FAC$ se utilizas para determinar los componentes $AR()$ y $MA()$ del Modelo $ARMA()$, respectivamente. Más adelante, en la sección de ejemplos, se puede ver más en detalle esta cuestión. 
+La $FACP$ y la $FAC$ se utilizan para determinar los componentes $AR()$ y $MA()$ del Modelo $ARMA()$, respectivamente. Más adelante, en la sección de ejemplos, se puede ver más en detalle esta cuestión. 
 
 ## 2. ESTIMACIÓN:
-Una idea fundamental en el enfoque de Box-Jenkins es el principio de parsimonia. La incorporación de coeficientes adicionales aumenta necesariamente el ajuste del modelo (por ejemplo, el valor del $R^2$ aumenta) pero al costo de reducir los grados de libertad. 
+De acuerdo a los gráficos de las $FACP$ y $FAC$, se estiman varios potenciales modelos para luego ser comparados.
+
+Una idea fundamental en el enfoque de Box y Jenkins es el principio de parsimonia. La incorporación de coeficientes adicionales aumenta necesariamente el ajuste del modelo (por ejemplo, el valor del $R^2$ aumenta) pero al costo de reducir los grados de libertad. 
 
 Box y Jenkins argumentan que los modelos parsimoniosos producen mejores pronósticos que los modelos sobreparametrizados. Un modelo parsimonioso se adapta bien a los datos sin incorporar ningún coeficiente innecesario. 
 
-Un buen modelo se ajustará bien a los datos. 
-
 El $R^2$ y el promedio de la Suma de los Residuos al Cuadrado son medidas comunes de bondad de ajuste en estimaciones de Mínimos Cuadrados Ordinarios. El problema con estas medidas es que el ajuste necesariamente mejora a medida que se incluyen más parámetros en el modelo. 
 
-La parsimonia sugiere usar el Criterio de Información de Akaike y/o el Criterio Bayesiano de Schwartz como medidas más apropiadas del ajuste general del modelo. 
+La parsimonia sugiere usar el Criterio de Información de Akaike ($CIA$) y/o el Criterio Bayesiano de Schwartz ($CBS$) como medidas más apropiadas del ajuste general del modelo. 
 
-Además, tenga cuidado con las estimaciones que no convergen rápidamente. 
+##### Tenga cuidado con las estimaciones que no convergen rápidamente. La mayoría de los paquetes econométricos estiman los parámetros de un modelo $ARMA()$ utilizando un procedimiento de búsqueda no lineal. Si la búsqueda no converge rápidamente, es posible que los parámetros estimados sean inestables. En tales circunstancias, agregar una o dos observaciones adicionales puede alterar en gran medida las estimaciones.
 
-La mayoría de los paquetes econométricos estiman los parámetros de un modelo _ARMA_ utilizando un procedimiento de búsqueda no lineal. Si la búsqueda no logra converger rápidamente, es posible que los parámetros estimados sean inestables. 
-
-En tales circunstancias, agregar una o dos observaciones adicionales puede alterar en gran medida las estimaciones.
-
-## 3. VERIFICACIÓN de DIAGNOSTICO: 
+## 3. VERIFICACIÓN DE DIAGNOSTICO: 
 
 La práctica estándar es dibujar los residuos para buscar valores atípicos y evidencia de períodos en los que el modelo no se ajusta bien a los datos. Una práctica común es crear residuos estandarizados dividiendo cada residuo, $\varepsilon_t$ , por su desviación estándar estimada, $\sigma$. 
 
