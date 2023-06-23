@@ -42,7 +42,7 @@ La parsimonia sugiere usar el Criterio de Información de Akaike ($CIA$) y/o el 
 
 La práctica estándar es dibujar los residuos para buscar valores atípicos y evidencia de períodos en los que el modelo no se ajusta bien a los datos. Una práctica común es crear residuos estandarizados dividiendo cada residuo, $\varepsilon_t$ , por su desviación estándar estimada, $\sigma$. 
 
-Si los residuos se distribuyen normalmente, el gráfico de la serie $frac{\varepsilon_t}{\sigma}$ debe ser tal que no más del $5%$ quede fuera de la banda de $-1.96$ a $1.96$. 
+Si los residuos se distribuyen normalmente, el gráfico de la serie $\frac{\varepsilon_t}{\sigma}$ debe ser tal que no más del $5%$ quede fuera de la banda de $-1.96$ a $1.96$. 
 
 Si los residuos estandarizados parecen ser mucho más grandes en algunos períodos que en otros, puede ser evidencia de un cambio estructural. 
 
