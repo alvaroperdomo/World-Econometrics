@@ -112,4 +112,21 @@ Al examinar la tabla, note que todos los $\hat{a_1}$  son muy significativos; ca
 
 El mismo tipo de razonamiento indica que el Modelo 2 es preferible al Modelo 3. Tenga en cuenta que, para cada modelo, los coeficientes estimados son altamente significativos y las estimaciones puntuales implican convergencia. Aunque el estadístico Q en $24$ rezagos indica que estos dos modelos no tienen residuos correlacionados, el estadístico Q de $8$ rezagos indica una correlación serial en los residuos del Modelo 3. Por lo tanto, el modelo _AR(2)_ no capta la dinámica de corto plazo como lo hace el modelo _ARMA(1,1)_.  También tenga en cuenta que tanto el Criterio de Información de Akaike como el Criterio Bayesiano de Schwartz seleccionan el Modelo 2.
 
+Una idea fundamental en el enfoque de Box-Jenkins es el principio de parsimonia. La incorporación de coeficientes adicionales aumenta necesariamente el ajuste del modelo (por ejemplo, el valor del $R^2$ aumenta) pero al costo de reducir los grados de libertad. 
+
+Box y Jenkins argumentan que los modelos parsimoniosos producen mejores pro-nósticos que los modelos sobreparametrizados. Un modelo parsimonioso se adapta bien a los datos sin incorporar ningún coeficiente innecesario. 
+
+Un buen modelo se ajustará bien a los datos. 
+
+El $R^2$ y el promedio de la Suma de los Residuos al Cuadrado son medidas comunes de bondad de ajuste en estimaciones de Mínimos Cuadrados Ordinarios. El problema con estas medidas es que el ajuste necesariamente mejora a medida que se incluyen más parámetros en el modelo. 
+
+La parsimonia sugiere usar el Criterio de Información de Akaike y/o el Criterio Bayesiano de Schwartz como medidas más apropiadas del ajuste general del modelo. 
+
+Además, tenga cuidado con las estimaciones que no convergen rápidamente. 
+
+La mayoría de los paquetes econométricos estiman los parámetros de un modelo _ARMA_ utilizando un procedimiento de búsqueda no lineal. Si la búsqueda no logra converger rápidamente, es posible que los parámetros estimados sean inestables. 
+
+En tales circunstancias, agregar una o dos observaciones adicionales puede alterar en gran medida las estimaciones.
+
+
 
