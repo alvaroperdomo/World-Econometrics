@@ -59,7 +59,7 @@ Cualquier evidencia de correlación serial implica un movimiento sistemático en
 
 Para verificar la correlación en los residuos, construya la _FAC_ y la _FACP_ de los residuos del modelo estimado. Luego puede usar el estadístico Q de Ljung-Box para determinar si alguna o todas las autocorrelaciones o autocorrelaciones parciales de los residuos son estadísticamente significativas.
 
-#### Algunos programas econométricos informan el resultado de la prueba de Durbin-Watson como un control para la correlación serial de primer orden. Esta prueba está sesgada hacia la búsqueda de una correlación serial en presencia de variables dependientes rezagadas. Por lo tanto, generalmente no se usa en modelos $ARMA$.
+#### ANOTACIÓN: Algunos programas econométricos informan el resultado de la prueba de Durbin-Watson como un control para la correlación serial de primer orden. Esta prueba está sesgada hacia la búsqueda de una correlación serial en presencia de variables dependientes rezagadas. Por lo tanto, generalmente no se usa en modelos $ARMA$.
 
 Aunque no hay un nivel de significancia que se considere "más apropiado", desconfíe de cualquier modelo que arroje:
 
