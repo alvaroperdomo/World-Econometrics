@@ -1,4 +1,4 @@
-# Análisis ARIMA (Metodología de Box y Jenkins)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/bb9f9fff-bdb6-4dd8-ba3a-957843549387)# Análisis ARIMA (Metodología de Box y Jenkins)
 
 Box-Jenkins (1976) popularizaron un método de tres etapas para seleccionar el modelo apropiado con el fin de estimar y pronosticar una serie de tiempo univariada:
 
@@ -30,6 +30,36 @@ La mayoría de los paquetes econométricos estiman los parámetros de un modelo 
 En tales circunstancias, agregar una o dos observaciones adicionales puede alterar en gran medida las estimaciones.
 
 3. **Verificación de diagnóstico:** para garantizar que los residuos del modelo estimado imiten un proceso de ruido blanco.
+
+La práctica estándar es dibujar los residuos para buscar valores atípicos y evidencia de períodos en los que el modelo no se ajusta bien a los datos. Una práctica común es crear residuos estandarizados dividiendo cada residuo, $\varepsilon_t$ , por su desviación estándar estimada, $\sigma$. 
+
+Si los residuos se distribuyen normalmente, el gráfico de la serie $frac{\varepsilon_t}{\sigma}$ debe ser tal que no más del $5%$ quede fuera de la banda de $-1.96$ a $1.96$. 
+
+Si los residuos estandarizados parecen ser mucho más grandes en algunos períodos que en otros, puede ser evidencia de un cambio estructural. 
+
+Si todos los modelos _ARMA_ plausibles muestran evidencia de un mal ajuste durante una porción razonablemente larga de la muestra, es aconsejable considerar el uso de:
+* análisis de intervención,
+* análisis de función de transferencia o
+* cualquier otro de los métodos de estimación multivariante que veremos más adelante en el curso. 
+
+Si la varianza de los residuos está aumentando, una transformación logarítmica puede ser apropiada. Alternativamente, es posible que se desee mo-delar cualquier tendencia de la varianza utilizando las técnicas $ARCH$ (las cuales serán objeto de otro curso) 
+
+Es particularmente importante que los residuos de un modelo estimado no estén serialmente correlacionados. 
+
+Cualquier evidencia de correlación serial implica un movimiento sistemático en la secuencia { $y_t$ } que no es explicado por los coeficientes _ARMA_ incluidos en el modelo. Por lo tanto, cualquiera de los modelos tentativos que producen residuos no aleatorios debería eliminarse de la consideración. 
+
+Para verificar la correlación en los residuos, construya la _FAC_ y la _FACP_ de los residuos del modelo estimado. Luego puede usar el estadístico Q de Ljung-Box para determinar si alguna o todas las autocorrelaciones o autocorrelaciones parciales de los residuos son estadísticamente significativas.
+
+#### Algunos programas econométricos informan el resultado de la prueba de Durbin-Watson como un control para la correlación serial de primer orden. Esta prueba está sesgada hacia la búsqueda de una correlación serial en presencia de variables dependientes rezagadas. Por lo tanto, generalmente no se usa en modelos $ARMA$.
+
+Aunque no hay un nivel de significancia que se considere "más apropiado", desconfíe de cualquier modelo que arroje:
+
+1. varias correlaciones residuales que sean marginalmente significativas y
+2. un estadístico Q que apenas sea significativo al nivel del $10%$. 
+
+En tales circunstancias, generalmente es posible formular un modelo que tenga un mejor rendimiento.
+
+De forma similar, un modelo puede estimarse sólo sobre una parte del conjunto de datos. El modelo estimado se puede usar para pronosticar los valores conocidos de la serie. La suma de los errores de pronóstico al cuadrado es una forma útil de comparar la idoneidad de los modelos alternativos. Los modelos con pronósticos pobres fuera de la muestra deben ser eliminados. 
 
 Una comparación de las _FAC_ y las _FACP_ muestrales con las de varios procesos _ARMA_ teóricos puede sugerir varios modelos plausibles. Por medio de dos ejemplos sencillos, vamos a mostrar cómo se identifica el proceso generador de una variable.
 
