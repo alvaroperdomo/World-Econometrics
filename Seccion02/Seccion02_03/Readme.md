@@ -175,10 +175,12 @@ https://rpubs.com/palominoM/series
 
 El PIB per cápita es el producto interno bruto dividido por la población a mitad de año. Los datos están expresados en moneda local a precios constantes.
 
+``` r
 library(WDI)
 library(ggfortify)
 library(ggplot2)
 library(forecast)
+```
 
 dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
 co2ts<-ts(dat)
