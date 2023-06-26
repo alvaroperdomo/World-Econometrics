@@ -173,6 +173,14 @@ El mismo tipo de razonamiento indica que el Modelo 2 es preferible al Modelo 3. 
 
 El PIB per cápita es el producto interno bruto dividido por la población a mitad de año. Los datos están expresados en moneda local a precios constantes.
 
+library(WDI)
+dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
+library(ggplot2)
+ggplot(dat, aes(year, PIB_per_capita)) + geom_line() + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/d4bc2fad-ef6c-4721-bcd6-c20b8fd123de)
+
+
 
 
 
