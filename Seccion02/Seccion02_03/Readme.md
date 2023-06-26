@@ -176,19 +176,27 @@ https://rpubs.com/palominoM/series
 El PIB per cápita es el producto interno bruto dividido por la población a mitad de año. Los datos están expresados en moneda local a precios constantes.
 
 ``` r
+rm(list = ls())
 library(WDI)
+library(dplyr)
 library(ggfortify)
 library(ggplot2)
 library(forecast)
-```
-
 dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
-co2ts<-ts(dat)
-ggplot(dat, aes(year, PIB_per_capita)) + geom_line() + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
-
+ggplot(dat, aes(year, PIB_per_capita)) + geom_line() + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
+```
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/d4bc2fad-ef6c-4721-bcd6-c20b8fd123de)
 
-autoplot(co2ts, ts.colour = "blue", ts.linetype = "dashed")
+``` r
+dat_ <- dat %>% arrange(year)
+dat <- na.omit(dat_)
+PIBpc_ = subset(dat, select = c(PIB_per_capita))
+PIBpc <- ts(PIBpc_)
+autoplot(acf(PIBpc, plot = FALSE))
+```
+
+Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
+
 autoplot(acf(co2ts, plot = FALSE))
 autoplot(stl(co2ts, s.window = "periodic"), ts.colour = "blue")
 
