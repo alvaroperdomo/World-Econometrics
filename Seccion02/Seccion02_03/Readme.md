@@ -169,6 +169,11 @@ Al examinar la tabla, note que todos los $\hat{a_1}$ son muy significativos; cad
 
 El mismo tipo de razonamiento indica que el Modelo 2 es preferible al Modelo 3. Tenga en cuenta que, para cada modelo, los coeficientes estimados son altamente significativos y las estimaciones puntuales implican convergencia. Aunque el estadístico Q en $24$ rezagos indica que estos dos modelos no tienen residuos correlacionados, el estadístico Q de $8$ rezagos indica una correlación serial en los residuos del Modelo 3. Por lo tanto, el modelo $AR(2)$ no capta la dinámica de corto plazo como lo hace el modelo $ARMA(1,1)$.  También tenga en cuenta que tanto el Criterio de Información de Akaike como el Criterio Bayesiano de Schwartz seleccionan el Modelo 2.
 
+## EJEMPLO XXX
+
+El PIB per cápita es el producto interno bruto dividido por la población a mitad de año. Los datos están expresados en moneda local a precios constantes.
+
+
 
 
 
