@@ -171,14 +171,58 @@ El mismo tipo de razonamiento indica que el Modelo 2 es preferible al Modelo 3. 
 
 ## EJEMPLO XXX
 
+https://rpubs.com/palominoM/series
+
 El PIB per cápita es el producto interno bruto dividido por la población a mitad de año. Los datos están expresados en moneda local a precios constantes.
 
 library(WDI)
-dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
+library(ggfortify)
 library(ggplot2)
+library(forecast)
+
+dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
+co2ts<-ts(dat)
 ggplot(dat, aes(year, PIB_per_capita)) + geom_line() + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/d4bc2fad-ef6c-4721-bcd6-c20b8fd123de)
+
+autoplot(co2ts, ts.colour = "blue", ts.linetype = "dashed")
+autoplot(acf(co2ts, plot = FALSE))
+autoplot(stl(co2ts, s.window = "periodic"), ts.colour = "blue")
+
+ndiffs(co2ts)
+diff.co2ts<-autoplot(diff(co2ts), ts.linetype = "dashed", ts.colour = "darkmagenta")
+autoplot(acf(diff(co2ts), plot = FALSE))
+
+arima1<- Arima(co2ts, order=c(0,1,2)))
+arima2<- Arima(co2ts, order=c(1,1,0)))
+arima3<- Arima(co2ts, order=c(1,1,2))
+arima4<- Arima(co2ts, order=c(1,1,1)))
+arima5<- Arima(co2ts, order=c(0,1,1)))
+AIC(arima1,arima2,arima3,arima4,arima5)
+BIC(arima1,arima2,arima3,arima4,arima5)
+
+Aquí se puede apreciar que los ajustes que mejor AIC y BIC presentan son aquellas que solo tienen componente de médias móviles y no tienen componente autorregresiva, siendo ARIMA(0,1,1)el modelo que los test arrojan con un menor valor y por tanto con una mayor consideración. Una vez estimados los modelos y elegido el mejor de ellos, en este caso ARIMA(0,1,1), se procede a validarlo. Para ello en primer lugar se grafican los correlogramas de los residuos para comprobar que son ruido blanco:
+
+autoplot(acf(arima6$residuals, plot = FALSE))
+autoplot(pacf(arima6$residuals, plot = FALSE))
+
+Se puede apreciar en los correlogramas que no hay ningún rezago significativo (aparte del 0 del ACF, que es 1 por definición) que denote ningún tipo de estructura, por lo tanto podemos decir que los residuos son ruido blanco. Ahora, vamos a pintar también una serie de gráficas sobre los residuos:
+
+ggtsdiag(arima6)
+
+lb <- Box.test(arima6$residuals, type="Ljung-Box") # Test de Ljung-Box
+lb$p.value
+
+En R existe una función llamada auto.arima que puede calcular automáticamente cuál es la mejor combinación de órdenes para el modelo ARIMA:
+
+auto.arima(co2ts, stepwise = FALSE, approximation = FALSE)
+
+En este caso la función sugiere que el mejor modelo que representa a la serie sería un ARIMA(1,0,1) con tendencia, y que arroja un AIC de 81.16, siendo algo mejor al modelo que anteriormente habíamos visto, 83.83
+
+forecast1<-forecast(arima6, level = c(95), h = 50)
+autoplot(forecast1)
+
 
 
 
