@@ -173,8 +173,6 @@ El mismo tipo de razonamiento indica que el Modelo 2 es preferible al Modelo 3. 
 
 https://rpubs.com/palominoM/series
 
-El PIB per cápita es el producto interno bruto dividido por la población a mitad de año. Los datos están expresados en moneda local a precios constantes.
-
 ``` r
 rm(list = ls())
 library(WDI)
