@@ -190,7 +190,7 @@ Construcción propia a partir de los Indicadores de Desarrollo Económico del Ba
 dat_ <- dat %>% arrange(year)
 dat <- na.omit(dat_)
 PIBpc_ = subset(dat, select = c(PIB_per_capita))
-PIBpc <- ts(PIBpc_)
+PIBpc <- ts(PIBpc_, start=1960)
 autoplot(acf(PIBpc, plot = FALSE))
 autoplot(pacf(PIBpc, plot = FALSE))
 ```
