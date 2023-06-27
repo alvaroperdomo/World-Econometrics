@@ -162,7 +162,7 @@ Y obtiene:
 Grafique los datos:
 ``` r
 library(ggplot2)
-ggplot(dat, aes(year, PIB_per_cápita_PPA_2017US, color=country)) + geom_line() + labs(subtitle="US$ de 2017", y="Dólares constante de 2017", x="Años", title="PIB per cápita PPA real", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial") + scale_x_date(as.Date("2012"), end)
+ggplot(dat, aes(year, PIB_per_cápita_PPA_2017US, color=country)) + labs(subtitle="US$ de 2017", y="Dólares constante de 2017", x="Años", title="PIB per cápita PPA real", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial") + scale_x_date(as.Date("2012"), end)
 ```
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/110de4f2-2beb-471a-9aa0-00e85377332e)
 
@@ -172,6 +172,60 @@ ggplot es una comando que tiene muchas opciones de ser utilizado, a continuació
 * https://r-graph-gallery.com/ggplot2-package.html
 * https://r-graph-gallery.com/279-plotting-time-series-with-ggplot2.html
 * https://r-charts.com/evolution/time-series-ggplot2/
+
+## Ejercicio utilizando el PIB per cápita de colombia a precios constantes en pesos
+
+El PIB per cápita es el producto interno bruto dividido por la población a mitad de año. Los datos están expresados en moneda local a precios constantes.
+
+El comando rm(list = ls()) es útil para borrar bases de datos previas de la memoria del programa
+``` r
+rm(list = ls())
+```
+Llamamos a las dos librerias que se van a utilizar
+``` r
+library(WDI)
+library(ggplot2)
+```
+El siguiente comando lo utilizo para confirmar que la variable "NY.GDP.PCAP.KN" representa el PIB per cápita a precios constantes en moneda local
+``` r
+WDIsearch(string='NY.GDP.PCAP.KN', field='indicator')
+```
+Dando como resultado
+``` r
+    indicator                          name
+1 NY.GDP.PCAP.KN GDP per capita (constant LCU)
+```
+Llamamos la variable "NY.GDP.PCAP.KN" para Colombia y creamos la base de datos "dat" a partir de la información del Banco Mundial
+``` r
+dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
+```
+Hacemos una visualización rápida de los datos:
+``` r
+head(dat)
+```
+Obtenemos:
+``` r
+   country iso2c iso3c year PIB_per_capita
+1 Colombia    CO   COL 2022             NA
+2 Colombia    CO   COL 2021       17597659
+3 Colombia    CO   COL 2020       16082925
+4 Colombia    CO   COL 2019       17558668
+5 Colombia    CO   COL 2018       17330777
+6 Colombia    CO   COL 2017       17220832
+```
+Para más adelante, tome en cuenta que los datos estan organizados desde el último año hasta el primero y que al momento de hacer el ejercicio no se cuenta con el dato de 2022. 
+
+Se gráfican los datos:
+``` r
+ggplot(dat, aes(year, PIB_per_capita)) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
+Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
+```
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/681c14d8-e78a-48b9-b6a9-9bc12aea2e84)
+
+En el gráfico se visualizan los siguientes hechos estilizados que afectaron a la tasa de crecimiento del PIB:
+1) La crisis bancaria de comienzos de los 19802
+2) La crisis económica de 1998/1999
+3) La crisis economíca del Covid-19 en 2020
 
 | [Anterior Sección: 01-01. Series de tiempo](../../Seccion01_01/Readme.md) | [Inicio](../../Readme.md) | [Siguiente Sección: 02-01. Introducción Análisis Univariado](../Seccion02_01/Readme.md) | 
 |---------------------------------------------------------------------------|---------------------------|-----------------------------------------------------------------------------------------|
