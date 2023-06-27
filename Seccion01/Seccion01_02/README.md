@@ -223,7 +223,7 @@ Construcción propia a partir de los Indicadores de Desarrollo Económico del Ba
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/681c14d8-e78a-48b9-b6a9-9bc12aea2e84)
 
 En el gráfico se visualizan los siguientes hechos estilizados que afectaron a la tasa de crecimiento del PIB:
-1) La crisis bancaria de comienzos de los 19802
+1) La crisis bancaria de comienzos de los 1980s
 2) La crisis económica de 1998/1999
 3) La crisis economíca del Covid-19 en 2020
 
@@ -234,7 +234,7 @@ Para las siguientes secciones se van a seguir las siguientes acciones:
 dat_ <- dat %>% arrange(year)
 dat <- na.omit(dat_)
 ```
-Se va a crear la variable PIBpc que comienza en 1960
+2) Se va a crear la variable PIBpc que comienza en 1960
 ``` r
 PIBpc_ = subset(dat, select = c(PIB_per_capita))
 PIBpc <- ts(PIBpc_, start=1960)
