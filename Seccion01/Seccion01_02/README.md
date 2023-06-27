@@ -227,6 +227,19 @@ En el gráfico se visualizan los siguientes hechos estilizados que afectaron a l
 2) La crisis económica de 1998/1999
 3) La crisis economíca del Covid-19 en 2020
 
+Para las siguientes secciones se van a seguir las siguientes acciones:
+
+1) Se van a reordenar los datos del más antiguo al más reciente y se van a eliminar los años para los cuales no existe información para la variable de análisis,
+``` r
+dat_ <- dat %>% arrange(year)
+dat <- na.omit(dat_)
+```
+Se va a crear la variable PIBpc que comienza en 1960
+``` r
+PIBpc_ = subset(dat, select = c(PIB_per_capita))
+PIBpc <- ts(PIBpc_, start=1960)
+```
+
 | [Anterior Sección: 01-01. Series de tiempo](../../Seccion01_01/Readme.md) | [Inicio](../../Readme.md) | [Siguiente Sección: 02-01. Introducción Análisis Univariado](../Seccion02_01/Readme.md) | 
 |---------------------------------------------------------------------------|---------------------------|-----------------------------------------------------------------------------------------|
 
