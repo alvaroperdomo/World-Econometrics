@@ -488,6 +488,28 @@ ur.za(x, model = c("intercept", "trend", "both"), lag=NULL)
 
 ## Ejemplo utilizando el PIB per cápita de Colombia a precios constantes en pesos
 
+Retomamos parte del código de R que se había utilizado previamente 
+``` r
+rm(list = ls())
+library(WDI)
+library(dplyr)
+library(ggfortify)
+library(ggplot2)
+library(forecast)
+dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
+ggplot(dat, aes(year, PIB_per_capita)) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
+Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
+```
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/681c14d8-e78a-48b9-b6a9-9bc12aea2e84)
+
+A partir del gráfico se puede comenzar a inferir que la variable no tiene un comportamiento estacionario. Sin embargo, hay que recolectar más evidencia al respecto, para ello se visualiza la función de autocorrelación de la variable #PIBpc$ utilizando el siguiente comando: 
+
+Para el gráfico de la $FAC$ se ejecuta el comando
+``` r
+autoplot(acf(PIBpc, plot = FALSE))
+```
+Obteniendose
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ef5fe48f-b32e-448d-854f-876589b76e9e)
 
 # Referencias
 
