@@ -1,4 +1,4 @@
-## Pruebas de Raíz Unitaria
+# Pruebas de Raíz Unitaria
 
 Para esta sección hay que instalar los paquetes
 * [fUnitRoots](https://cran.r-project.org/web/packages/fUnitRoots/index.html)
@@ -485,6 +485,9 @@ ur.za(x, model = c("intercept", "trend", "both"), lag=NULL)
 |                         | **"trend**: tendencia                                                                                                                        |
 |                         | **"both"**: ambos                                                                                                                            |  
 | **lag**                 | el mayor número de variables diferenciales endógenas rezagadas que se incluirán en la regresión de prueba                                    |
+
+## Ejemplo utilizando el PIB per cápita de Colombia a precios constantes en pesos
+
 
 # Referencias
 
