@@ -496,20 +496,154 @@ library(dplyr)
 library(ggfortify)
 library(ggplot2)
 library(forecast)
+library(fUnitRoots)
+library(urca)
+
 dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
 ggplot(dat, aes(year, PIB_per_capita)) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
 Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
 ```
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/681c14d8-e78a-48b9-b6a9-9bc12aea2e84)
 
-A partir del gráfico se puede comenzar a inferir que la variable no tiene un comportamiento estacionario. Sin embargo, hay que recolectar más evidencia al respecto, para ello se visualiza la función de autocorrelación de la variable #PIBpc$ utilizando el siguiente comando: 
+A partir del gráfico se puede comenzar a inferir que la variable no tiene un comportamiento estacionario. Sin embargo, hay que recolectar más evidencia al respecto, para ello primero se visualiza la función de autocorrelación de la variable #PIBpc$ utilizando el siguiente comando: 
 
 Para el gráfico de la $FAC$ se ejecuta el comando
 ``` r
+dat_ <- dat %>% arrange(year)
+dat <- na.omit(dat_)
+PIBpc_ = subset(dat, select = c(PIB_per_capita))
+PIBpc <- ts(PIBpc_, start=1960)
 autoplot(acf(PIBpc, plot = FALSE))
 ```
 Obteniendose
+``` r
+> summary(ur_trend.df)
+
+############################################### 
+# Augmented Dickey-Fuller Test Unit Root Test # 
+############################################### 
+
+Test regression trend 
+
+
+Call:
+lm(formula = z.diff ~ z.lag.1 + 1 + tt + z.diff.lag)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1456590  -140786    16594   176377   898299 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)  
+(Intercept)  6.721e+05  2.968e+05   2.265   0.0283 *
+z.lag.1     -1.416e-01  6.714e-02  -2.109   0.0404 *
+tt           2.959e+04  1.394e+04   2.123   0.0392 *
+z.diff.lag1 -1.927e-01  1.679e-01  -1.148   0.2570  
+z.diff.lag2  5.828e-01  2.527e-01   2.307   0.0256 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 372600 on 46 degrees of freedom
+Multiple R-squared:  0.155,	Adjusted R-squared:  0.08154 
+F-statistic:  2.11 on 4 and 46 DF,  p-value: 0.09484
+
+
+Value of test-statistic is: -2.1093 3.2214 2.2795 
+
+Critical values for test statistics: 
+      1pct  5pct 10pct
+tau3 -4.04 -3.45 -3.15
+phi2  6.50  4.88  4.16
+phi3  8.73  6.49  5.47
+
+> summary(ur_drift.df)
+
+############################################### 
+# Augmented Dickey-Fuller Test Unit Root Test # 
+############################################### 
+
+Test regression drift 
+
+
+Call:
+lm(formula = z.diff ~ z.lag.1 + 1 + z.diff.lag)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1607110  -137422     -202   180687   938891 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)  
+(Intercept)  2.057e+05  2.068e+05   0.995   0.3249  
+z.lag.1     -4.082e-03  1.821e-02  -0.224   0.8236  
+z.diff.lag1 -2.266e-01  1.732e-01  -1.308   0.1973  
+z.diff.lag2  4.451e-01  2.531e-01   1.758   0.0852 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 386200 on 47 degrees of freedom
+Multiple R-squared:  0.07226,	Adjusted R-squared:  0.01304 
+F-statistic:  1.22 on 3 and 47 DF,  p-value: 0.3128
+
+
+Value of test-statistic is: -0.2241 2.4006 
+
+Critical values for test statistics: 
+      1pct  5pct 10pct
+tau2 -3.51 -2.89 -2.58
+phi1  6.70  4.71  3.86
+
+> summary(ur_none.df)
+
+############################################### 
+# Augmented Dickey-Fuller Test Unit Root Test # 
+############################################### 
+
+Test regression none 
+
+
+Call:
+lm(formula = z.diff ~ z.lag.1 - 1 + z.diff.lag)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1700811  -129976    31119   202167   914060 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)  
+z.lag.1      0.012818   0.006565   1.953   0.0567 .
+z.diff.lag1 -0.202519   0.171513  -1.181   0.2435  
+z.diff.lag2  0.419725   0.251809   1.667   0.1021  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 386200 on 48 degrees of freedom
+Multiple R-squared:  0.2787,	Adjusted R-squared:  0.2336 
+F-statistic: 6.183 on 3 and 48 DF,  p-value: 0.001222
+
+
+Value of test-statistic is: 1.9526 
+
+Critical values for test statistics: 
+     1pct  5pct 10pct
+tau1 -2.6 -1.95 -1.61
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ef5fe48f-b32e-448d-854f-876589b76e9e)
+
+El decaimiento continuo pero moderado de la $FAC$ da una idea de raíz unitaria. 
+
+A continuación se desarrollan pruebas de raíz unitaria:
+
+### Prueba ADF
+``` r
+ur_trend.df <- ur.df(y=PIBpc, type = c("trend"), lags = 10, selectlags = c("AIC"))
+ur_drift.df <- ur.df(PIBpc, type = c("drift"), lags = 10, selectlags = c("AIC"))
+ur_none.df <- ur.df(PIBpc, type = c("none"), lags = 10, selectlags = c("AIC"))
+
+summary(ur_trend.df)
+summary(ur_drift.df)
+summary(ur_none.df)
+```
+
 
 # Referencias
 
