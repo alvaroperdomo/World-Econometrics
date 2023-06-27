@@ -61,10 +61,13 @@ El valor esperado de la misma es $$Ey_t=a_0\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0$$ y 
 
 ## ¿Qué hacer si una serie no es estacionaria?
 
-Apliquele la transformación adecuada. Por ejemplo, saquele la primera diferencia a la serie original:
-* Si una serie $y_t$ es estacionaria, se dice que es integrada de orden $0$ y el modelo de serie que la identifica se le suele denotar como $ARMA(p,q)$ (o como $ARIMA(p,0,q)$) donde $p$ y $q$ son los componentes autorregresivo y de media móvil del modelo, respectivamente. 
-* Si una serie $y_t$ no es estacionaria, pero su primera diferencia $\Delta y_t = y_t-y_{t-1}$ si es estacionaria, se dice que es integrada de orden $1$ y el modelo de serie que la identifica se le suele denotar como $ARIMA(p,1,q)$
-* Si una serie $y_t$ y su primera diferencia $\Delta y_t$ no son estacionarias, pero su segunda diferencia $\Delta_2 y_t= \Delta y_t - \Delta y_{t-1}$ si es estacionaria, se dice que es integrada de orden $2$ y el modelo de serie que la identifica se le suele denotar como $ARIMA(p,2,q)$
+Apliquele la transformación adecuada. 
+
+1. Saquele la primera diferencia a la serie original:
+
+    * Si una serie $y_t$ es estacionaria, se dice que es integrada de orden $0$ y el modelo de serie que la identifica se le suele denotar como $ARMA(p,q)$ (o como $ARIMA(p,0,q)$) donde $p$ y $q$ son los componentes autorregresivo y de media móvil del modelo, respectivamente. 
+    * Si una serie $y_t$ no es estacionaria, pero su primera diferencia $\Delta y_t = y_t-y_{t-1}$ si es estacionaria, se dice que es integrada de orden $1$ y el modelo de serie que la identifica se le suele denotar como $ARIMA(p,1,q)$
+    * Si una serie $y_t$ y su primera diferencia $\Delta y_t$ no son estacionarias, pero su segunda diferencia $\Delta_2 y_t= \Delta y_t - \Delta y_{t-1}$ si es estacionaria, se dice que es integrada de orden $2$ y el modelo de serie que la identifica se le suele denotar como $ARIMA(p,2,q)$
 
 
 
