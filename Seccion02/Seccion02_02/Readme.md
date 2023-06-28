@@ -519,13 +519,17 @@ dat_ <- dat %>% arrange(year)
 dat <- na.omit(dat_)
 PIBpc_ = subset(dat, select = c(PIB_per_capita))
 PIBpc <- ts(PIBpc_, start=1960)
+C1PIBpc <- diff(PIBpc, differences = 1)
 autoplot(acf(PIBpc, plot = FALSE))
+autoplot(acf(C1PIBpc, plot = FALSE))
 ```
 Obteniendose
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ef5fe48f-b32e-448d-854f-876589b76e9e)
 
-El decaimiento continuo pero moderado de la $FAC$ da una idea de raíz unitaria. 
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6183adb4-ec1e-451e-82e1-0077ae8ee28c)
+
+El decaimiento continuo pero moderado de la $FAC$ de la variable $PIBpc$ da una idea de raíz unitaria. Por otro lado, la variable $C1PIBpc$ tiene un $FAC$ bajo desde el comienzo, dando así una idea de estacionariedad. 
 
 A continuación se desarrollan pruebas de raíz unitaria. Primero, para la variable $PIBpc$ y luego para la variable $C1PIBpc$:
 
