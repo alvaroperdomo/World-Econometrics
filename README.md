@@ -65,3 +65,6 @@ Las otras dos secciones del curso comienzan con una explicación general de la h
 | [04. Prueba de Cointegración de Johansen](Section01/Requirement)                                    | Explicación acerca de la prueba de Cointegración de Johansen.                                                  |             0.5           | 
 | [05. Estimación de Modelos VEC](Section01/Requirement)                                              | Explicación acerca de la metododología para estimar un modelo VEC.                                             |             1.5           | 
 | [06. Principales pruebas de validación de los Modelos VEC](Section01/CaseStudy)                     | Explicación de las pruebas de validación de un modelo VEC                                                      |             1.5           | 
+
+
+<div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/rcfdtools/R.TeachingResearchGuide/blob/main/CaseUse/.icons/IconCEHBotonCertificado.png" alt="R.LTWB" width="260" border="0" /></a></div>
