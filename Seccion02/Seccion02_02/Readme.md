@@ -787,13 +787,13 @@ critical values 4.26 5.64  6.79
 
 Dado que el PIBpc es una variable que presenta tendencia, entonces se decide testear dicha prueba. Los resultados de la misma son:
 
-| Estadistico   |  Valor      |  10%   |  5%    |   1%   |
-|---------------|:-----------:|:------:|:------:| :-----:|
-| $DF-GLS_\tau$ |  $175.4555$ | $4.17$ | $3.11$ | $1.95$ |
-| $P_\tau$      |  $12.9039$  | $6.79$ | $5.64$ | $4.26$ |
+| Estadistico   |  Valor     |  10%    |  5%     |   1%    |
+|---------------|:----------:|:-------:|:-------:| :------:|
+| $DF-GLS_\tau$ |  $-2.128$  | $-2.74$ | $-3.03$ | $-3.58$ |
+| $P_\tau$      |  $12.9039$ | $6.79$  | $5.64$  | $4.26$  |
 
 La variable es no estacionaria porque:
-* Con el estadistico $DF-GLS_\tau$: $175.4555>4.17$, no se rechaza la hipótesis nula de raíz unitaria
+* Con el estadistico $DF-GLS_\tau$: $-2.128$-2.74$, no se rechaza la hipótesis nula de raíz unitaria
 * Con el estadistico $P_\tau$: $12.9039>6.79$, no se rechaza la hipótesis nula de raíz unitaria
 
 ### Prueba KPSS
