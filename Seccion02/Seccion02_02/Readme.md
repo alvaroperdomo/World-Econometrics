@@ -664,9 +664,107 @@ En consecuencia, la variable es no estacionaria porque:
 
 ### Prueba KPSS
 ``` r
-urkpssTest(PIBpc, type = c("mu"), lags = c("short", "long", "nil"), use.lag = NULL, doplot = TRUE)
-urkpssTest(PIBpc, type = c("tau"), lags = c("short", "long", "nil"), use.lag = NULL, doplot = TRUE)
+kpss1m.kpss <- ur.kpss(PIBpc, type = c("mu"), lags = c("short"), use.lag = NULL)
+kpss2m.kpss <- ur.kpss(PIBpc, type = c("mu"), lags = c("long"), use.lag = NULL)
+kpss3m.kpss <- ur.kpss(PIBpc, type = c("mu"), lags = c("nil"), use.lag = NULL)
+kpss1t.kpss <- ur.kpss(PIBpc, type = c("tau"), lags = c("short"), use.lag = NULL)
+kpss2t.kpss <- ur.kpss(PIBpc, type = c("tau"), lags = c("long"), use.lag = NULL)
+kpss3t.kpss <- ur.kpss(PIBpc, type = c("tau"), lags = c("nil"), use.lag = NULL)
+
+summary(kpss1m.kpss)
+summary(kpss2m.kpss)
+summary(kpss3m.kpss)
+summary(kpss1t.kpss)
+summary(kpss2t.kpss)
+summary(kpss3t.kpss)
 ```
+Obteniendo
+``` r
+> summary(kpss1m.kpss)
+
+####################### 
+# KPSS Unit Root Test # 
+####################### 
+
+Test is of type: mu with 3 lags. 
+
+Value of test-statistic is: 1.555 
+
+Critical value for a significance level of: 
+                10pct  5pct 2.5pct  1pct
+critical values 0.347 0.463  0.574 0.739
+
+> summary(kpss2m.kpss)
+
+####################### 
+# KPSS Unit Root Test # 
+####################### 
+
+Test is of type: mu with 10 lags. 
+
+Value of test-statistic is: 0.6611 
+
+Critical value for a significance level of: 
+                10pct  5pct 2.5pct  1pct
+critical values 0.347 0.463  0.574 0.739
+
+> summary(kpss3m.kpss)
+
+####################### 
+# KPSS Unit Root Test # 
+####################### 
+
+Test is of type: mu with 0 lags. 
+
+Value of test-statistic is: 5.8294 
+
+Critical value for a significance level of: 
+                10pct  5pct 2.5pct  1pct
+critical values 0.347 0.463  0.574 0.739
+
+> summary(kpss1t.kpss)
+
+####################### 
+# KPSS Unit Root Test # 
+####################### 
+
+Test is of type: tau with 3 lags. 
+
+Value of test-statistic is: 0.2378 
+
+Critical value for a significance level of: 
+                10pct  5pct 2.5pct  1pct
+critical values 0.119 0.146  0.176 0.216
+
+> summary(kpss2t.kpss)
+
+####################### 
+# KPSS Unit Root Test # 
+####################### 
+
+Test is of type: tau with 10 lags. 
+
+Value of test-statistic is: 0.1297 
+
+Critical value for a significance level of: 
+                10pct  5pct 2.5pct  1pct
+critical values 0.119 0.146  0.176 0.216
+
+> summary(kpss3t.kpss)
+
+####################### 
+# KPSS Unit Root Test # 
+####################### 
+
+Test is of type: tau with 0 lags. 
+
+Value of test-statistic is: 0.8286 
+
+Critical value for a significance level of: 
+                10pct  5pct 2.5pct  1pct
+critical values 0.119 0.146  0.176 0.216
+```
+
 # Referencias
 
 * DICKEY, David y FULLER, Wayne. _Distribution of the Estimators for Autoregressive Time Series With a Unit Root_. Journal of the American Statistical Association, Vol. 74, No. 366 (June, 1979); p. 427-431 
