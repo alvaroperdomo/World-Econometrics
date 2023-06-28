@@ -650,11 +650,14 @@ Dado que en la prueba ADF con intercepto y tendencia, ambos terminos dieron sign
 
 | Estadistico | Valor      |  1%     |  5%     |  10%    |
 |-------------|:----------:|:-------:|:-------:|:-------:|
-| tau3        |  $-2.1093$ | $-4.04$ | $-3.45$ | $-3.15$ |
-| phi2        |  $3.2214$  |  $6.50$ |  $4.88$ |  $4.16$ |
-| phi3        |  $2.2795$  |  $8.73$ |  $6.49$ |  $5.47$ |
+| $\tau_\tau$ |  $-2.1093$ | $-4.04$ | $-3.45$ | $-3.15$ |
+| $\phi_2$    |  $3.2214$  |  $6.50$ |  $4.88$ |  $4.16$ |
+| $\phi_3$    |  $2.2795$  |  $8.73$ |  $6.49$ |  $5.47$ |
 
-
+En consecuencia, la variable es no estacionaria porque:
+* $\tau_\tau=-2.1093>-3.15$
+* $\phi_2=3.2214<4.16$
+* $\phi_3=2.2795<5.47$
 
 
 # Referencias
