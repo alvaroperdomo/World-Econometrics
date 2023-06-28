@@ -17,7 +17,7 @@ install.packages('urca')
 | Pruebas de Cambio Estructural - P: _Prueba de Perron y ZA: _Prueba de Zivot y Andrews_  |  X                              |             X    |
 
 
-### Prueba de Dickey-Fuller - DF
+## Prueba de Dickey-Fuller - DF
 
 La ecuación $y_t = a_1 y_{t-1} + \varepsilon_t$ tiene raíz unitaria si $a_1=1$. 
 
@@ -55,10 +55,10 @@ donde
 * $k$: es el número de parámetros estimados en el modelo sin restricciones
 * $T-k$: es el número de grados de libertad en el modelo sin restricciones.
 
-##### Aplicando las pruebas DF en R
+### Aplicando las pruebas DF en R
 Dado la prueba ADF es una extensión de la prueba DF, entonces la aplicación de la prueba DF en R se explica después de que se explique la prueba ADF
 
-### Prueba Aumentada de Dickey-Fuller - ADF
+## Prueba Aumentada de Dickey-Fuller - ADF
 Tradicionalmente la prueba más utilizada es la **Prueba Aumentada de Dickey-Fuller - ADF**
 
 Esta prueba consiste en estimar estas tres especificaciones
@@ -73,7 +73,7 @@ En las cuales se debe contrastar la hipótesis nula $\gamma=0$. Para escoger la 
 
 **Anotación 2:** La prueba ADF esta sesgada hacía el no rechazo de la hipótesis nula $\gamma=0$. Por lo tanto, es aconsejable complementar el análisis con hipótesis de más potencia o que tengan el sesgo opuesto. 
 
-##### Aplicando las pruebas DF y ADF en R
+### Aplicando las pruebas DF y ADF en R
 
 Para llevar a cabo la prueba DF ofrecemos tress opciones:
 
@@ -139,7 +139,7 @@ ur.df(x, type = c("none", "drift", "trend"), lags = 1, selectlags = c("Fixed", "
 |                         | **"AIC"** criterio de selección de Akaike (el número máximo de rezagos analizados se establece en la opción "lags")  |
 |                         | **"BIC"** criterio de selección Bayesiano (el número máximo de rezagos analizados se establece en la opción "lags")  |
 
-### Prueba de Mínimos Cuadrados Generalizados de Dickey-Fuller (DF-GLS)
+## Prueba de Mínimos Cuadrados Generalizados de Dickey-Fuller (DF-GLS)
 Elliott, Rothenberg y Stock (1996) muestran que es posible mejorar el poder de la prueba al estimar el modelo utilizando algo cercano a las primeras diferencias. 
 
 Considere el modelo de tendencia estacionaria: $y_t=a_0+a_2t+B(L) \varepsilon_t$. En lugar de crear la primera diferencia de $y_t$, Elliott, Rothenberg y Stock preseleccionan una constante cercana a 1, digamos $\alpha$, y restan $\alpha y_{t-1}$  de $y_t$ para obtener $\tilde{y_t}=a_0+a_2 t - \alpha a_0 - \alpha a_2 (t-1) + e_t$ pata $t=2,...,T$ donde $\tilde{y_t}=y_t-\alpha y_{t-1}$ y $e_t$ es un término de error estacionario.
@@ -158,7 +158,7 @@ Los valores críticos de la prueba dependen de si se incluye una tendencia en la
 * Si hay un intercepto pero no una tendencia, los valores críticos son precisamente los mismos de la prueba de Dickey-Fuller. En esencia, utiliza los valores críticos de Dickey-Fuller como si no hubiera un intercepto en el proceso generador de datos. 
 * Si hay una tendencia, los valores críticos dependen del valor de $\alpha$ seleccionado para construir la variable $\tilde{y_t}$. Elliott, Rothenberg y Stock (1996) informan que el valor de $\alpha$ que parece proporcionar la mejor potencia global es $\alpha=(1-\displaystyle\frac{7}{t})$  para el caso de un intercepto y  $\alpha=(1-\displaystyle\frac{13.5}{t})$ si hay un intercepto y una tendencia. 
 
-#### Aplicando las pruebas DF-GLS en R
+### Aplicando las pruebas DF-GLS en R
 
 Para llevar a cabo la prueba DF ofrecemos dos opciones:
 
@@ -203,7 +203,7 @@ ur.ers(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"),lag.max =
 |                         | **"constant"** - **_Opción Predeterminada_**                                                                                                 |
 |                         | **"trend"**                                                                                                                                  |
 
-### Prueba de Kwiatkowski, Phillips, Schmidt y Shin - KPSS
+## Prueba de Kwiatkowski, Phillips, Schmidt y Shin - KPSS
 
 Dado que la potencia de las pruebas de raíz unitaria no es particularmente alta, también puede ser interesante aplicar pruebas en donde la hipótesis nula es de estacionariedad, para evitar que podamos concluir erróneamente que una serie de tiempo tiene una raíz unitaria debido a las propiedades estadísticas de la prueba aumentada de Dickey-Fuller.
 Una prueba que toma la estacionariedad como hipótesis nula es la de Kwiatkowski, Phillips, Schmidt y Shin (1992) [KPSS]. 
@@ -230,7 +230,7 @@ Siguiendo a Phillips (1987) y Phillips y Perron (1988), $s^2(l)$ se estima como 
 
 La distribución asintótica del estadístico de prueba $\hat{\eta}$, tal como se explica en Kwiatkowski, Phillips, Schmidt y Shin (1992) depende de si la serie tiene tendencia o no.
 
-##### Aplicando la prueba KPSS en R
+### Aplicando la prueba KPSS en R
 
 Para llevar a cabo la prueba KPSS ofrecemos dos opciones:
 
@@ -269,7 +269,7 @@ ur.kpss(y, type = c("mu", "tau"), lags = c("short", "long", "nil"), use.lag = NU
 | **use.lag**             | número de rezagos especificados por el usuario                                                                                               |
 
 
-### El cambio estructural
+## El cambio estructural
 
 Al realizar pruebas de raíz unitaria, se debe tener especial cuidado si se sospecha que ha ocurrido un cambio estructural. 
 
@@ -456,7 +456,7 @@ Para el caso de cambio estructural en media y pendiente. $\Delta y_t= a_0 + a_1 
 
 **Paso 3:** Si se rechaza $H_0$, se concluye que no existe raíz unitaria. En caso contrario, se debe identificar el mejor modelo de cambio estructural utilizando la prueba iterativa de Chow.
 
-##### Aplicando la pruebas ZA en R
+### Aplicando la pruebas ZA en R
 
 Para llevar a cabo la prueba ZA ofrecemos dos opciones:
 
@@ -504,6 +504,7 @@ library(forecast)
 library(fUnitRoots)
 library(urca)
 
+
 dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
 ggplot(dat, aes(year, PIB_per_capita)) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
 Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
@@ -526,7 +527,7 @@ Obteniendose
 
 El decaimiento continuo pero moderado de la $FAC$ da una idea de raíz unitaria. 
 
-A continuación se desarrollan pruebas de raíz unitaria:
+A continuación se desarrollan pruebas de raíz unitaria. Primero, para la variable $PIBpc$ y luego para la variable $C1PIBpc$:
 
 ### Prueba ADF
 ``` r
@@ -1072,6 +1073,12 @@ Potential break point at position: 39
 | $ZA_{Trend}$     |  42                             | Si (dt al 1%)                                             |$-3.192$  | $-4.58$ | $-4.80$ | $-5.34$ |
 | $ZA_{Both}$      |  39                             | Si (du al 5% y dt al 0.1%)                                |$-3.9148$ | $-4.82$ | $-5.08$ | $-5.57$ |
 
+La variable es no estacionaria porque:
+* Con el estadistico $ZA_{Intercept}$: $-3.6435>-4.11$, no se rechaza la hipótesis nula de raíz unitaria
+* Con el estadistico $ZA_{Trend}$: $-3.192>-4.58$, no se rechaza la hipótesis nula de raíz unitaria
+* Con el estadistico $ZA_{Both}$: $-3.9148>-4.82$, no se rechaza la hipótesis nula de raíz unitaria
+
+Dado que practicamente en todas las pruebas se concluye que la variable $PIBpc$ tiene raíz unitaria, entonces se procerde a sacarle la primera diferencia para obtener la variable $\DeltaPIBpc$ y a esta aplicarle las mismas pruebas.
 
 # Referencias
 
