@@ -950,6 +950,129 @@ La variable es no estacionaria porque:
 * Cuando el número de rezagos es nil= $0$: $0.8286>0.216$, se rechaza la hipótesis nula de estacionariedad
 * Cuando el número de rezagosa es el establecido por la formula de Newey y West (1994)= $4$: $0.216>0.1994>0.176$, se rechaza la hipótesis nula de estacionariedad al 2.5%, 5% y 10% pero no al 1%
 
+### Prueba ZA
+``` r
+ZA1.za <- ur.za(PIBpc, model = c("intercept"), lag=NULL)
+ZA2.za <- ur.za(PIBpc, model = c("trend"), lag=NULL)
+ZA3.za <- ur.za(PIBpc, model = c("both"), lag=NULL)
+
+summary(ZA1.za)
+summary(ZA2.za)
+summary(ZA3.za)
+```
+Obteniendo
+``` r
+> summary(ZA1.za)
+> summary(ZA1.za)
+
+################################ 
+# Zivot-Andrews Unit Root Test # 
+################################ 
+
+
+Call:
+lm(formula = testmat)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1601711  -109518     5583   160822   893657 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 1.606e+06  4.139e+05   3.881 0.000273 ***
+y.l1        6.986e-01  8.273e-02   8.443 1.27e-11 ***
+trend       5.026e+04  1.384e+04   3.632 0.000604 ***
+du          7.467e+05  2.284e+05   3.269 0.001833 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 325900 on 57 degrees of freedom
+  (1 observation deleted due to missingness)
+Multiple R-squared:  0.9923,	Adjusted R-squared:  0.9919 
+F-statistic:  2445 on 3 and 57 DF,  p-value: < 2.2e-16
+
+
+Teststatistic: -3.6435 
+Critical values: 0.01= -5.34 0.05= -4.8 0.1= -4.58 
+
+Potential break point at position: 50 
+
+> summary(ZA2.za)
+
+################################ 
+# Zivot-Andrews Unit Root Test # 
+################################ 
+
+
+Call:
+lm(formula = testmat)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1773789  -118649    -1243   157165   722589 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 1.504e+06  4.429e+05   3.396  0.00125 ** 
+y.l1        7.280e-01  8.521e-02   8.544 8.66e-12 ***
+trend       4.305e+04  1.352e+04   3.183  0.00236 ** 
+dt          4.966e+04  1.826e+04   2.719  0.00866 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 334100 on 57 degrees of freedom
+  (1 observation deleted due to missingness)
+Multiple R-squared:  0.9919,	Adjusted R-squared:  0.9915 
+F-statistic:  2325 on 3 and 57 DF,  p-value: < 2.2e-16
+
+
+Teststatistic: -3.192 
+Critical values: 0.01= -4.93 0.05= -4.42 0.1= -4.11 
+
+Potential break point at position: 42 
+
+> summary(ZA3.za)
+
+################################ 
+# Zivot-Andrews Unit Root Test # 
+################################ 
+
+
+Call:
+lm(formula = testmat)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1834422   -94403    -2496   165996   513979 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  1.908e+06  4.627e+05   4.123 0.000125 ***
+y.l1         6.300e-01  9.451e-02   6.666 1.23e-08 ***
+trend        6.420e+04  1.694e+04   3.790 0.000370 ***
+du          -5.475e+05  2.252e+05  -2.432 0.018255 *  
+dt           7.178e+04  2.026e+04   3.543 0.000805 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 323800 on 56 degrees of freedom
+  (1 observation deleted due to missingness)
+Multiple R-squared:  0.9925,	Adjusted R-squared:  0.992 
+F-statistic:  1858 on 4 and 56 DF,  p-value: < 2.2e-16
+
+
+Teststatistic: -3.9148 
+Critical values: 0.01= -5.57 0.05= -5.08 0.1= -4.82 
+
+Potential break point at position: 39 
+```
+| Estadistico    | Año del cambio <br> estructural | Valor      |  10%    |  5%     |  1%     |
+|----------------|:-------------------------------:|:----------:|:-------:|:-------:|:-------:|
+| $ZA_Intercept$ |  50                             |  $-3.6435$ | $-4.11$ | $-4.42$ | $-4.93$ |
+| $ZA_Trend$     |  42                             |  $-3.192$  | $-4.58$ | $-4.80$ | $-5.34$ |
+| $$ZA_Both$     |  39                             |  $-3.9148$ | $-4.82$ | $-5.08$ | $-5.57$ |
+
+
 # Referencias
 
 * DICKEY, David y FULLER, Wayne. _Distribution of the Estimators for Autoregressive Time Series With a Unit Root_. Journal of the American Statistical Association, Vol. 74, No. 366 (June, 1979); p. 427-431 
