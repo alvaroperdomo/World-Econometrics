@@ -790,11 +790,11 @@ Dado que el PIBpc es una variable que presenta tendencia, entonces se decide tes
 | Estadistico   |  Valor     |  10%    |  5%     |   1%    |
 |---------------|:----------:|:-------:|:-------:| :------:|
 | $DF-GLS_\tau$ |  $-2.128$  | $-2.74$ | $-3.03$ | $-3.58$ |
-| $P_\tau$      |  $12.9039$ | $6.79$  | $5.64$  | $4.26$  |
+| $P_\tau$      |  $25.8748$ | $6.79$  | $5.64$  | $4.26$  |
 
 La variable es no estacionaria porque:
 * Con el estadistico $DF-GLS_\tau$: $-2.128$-2.74$, no se rechaza la hipótesis nula de raíz unitaria
-* Con el estadistico $P_\tau$: $12.9039>6.79$, no se rechaza la hipótesis nula de raíz unitaria
+* Con el estadistico $P_\tau$: $25.8748>6.79$, no se rechaza la hipótesis nula de raíz unitaria
 
 ### Prueba KPSS
 Vamos a aplicar las opciones de rezago de R. Sin embargo, no olviden que según  en Newey y West (1994) la longitud de rezago se establece proporcional a $T^{1/3}$, en decir $62^{1/3}=3.96=4$, en nuestro caso: .
