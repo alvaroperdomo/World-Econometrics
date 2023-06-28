@@ -1066,11 +1066,11 @@ Critical values: 0.01= -5.57 0.05= -5.08 0.1= -4.82
 
 Potential break point at position: 39 
 ```
-| Estadistico    | Año del cambio <br> estructural |¿Es estadisticamente significativo <br> el cambio estructural? | Valor    |  10%    |  5%     |  1%     |
-|----------------|:-------------------------------:|:-------------------------------------------------------------:|:--------:|:-------:|:-------:|:-------:|
-| $ZA_Intercept$ |  50                             | Si (du al $1%$)                                               |$-3.6435$ | $-4.11$ | $-4.42$ | $-4.93$ |
-| $ZA_Trend$     |  42                             | Si (dt al $1%$)                                               |$-3.192$  | $-4.58$ | $-4.80$ | $-5.34$ |
-| $ZA_Both$      |  39                             | Si (du al $5%$ y dt al $0.1%$)                                |$-3.9148$ | $-4.82$ | $-5.08$ | $-5.57$ |
+| Estadistico      | Año del cambio <br> estructural |¿Es estadisticamente significativo <br> el cambio estructural? | Valor    |  10%    |  5%     |  1%     |
+|------------------|:-------------------------------:|:-------------------------------------------------------------:|:--------:|:-------:|:-------:|:-------:|
+| $ZA_{Intercept}$ |  50                             | Si (du al $1%$)                                               |$-3.6435$ | $-4.11$ | $-4.42$ | $-4.93$ |
+| $ZA_{Trend}$     |  42                             | Si (dt al $1%$)                                               |$-3.192$  | $-4.58$ | $-4.80$ | $-5.34$ |
+| $ZA_{Both}$      |  39                             | Si (du al $5%$ y dt al $0.1%$)                                |$-3.9148$ | $-4.82$ | $-5.08$ | $-5.57$ |
 
 
 # Referencias
