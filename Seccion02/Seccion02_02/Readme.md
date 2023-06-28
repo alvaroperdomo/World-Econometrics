@@ -655,9 +655,9 @@ Dado que en la prueba ADF con intercepto y tendencia, ambos terminos dieron sign
 | $\phi_3$    |  $2.2795$  |  $8.73$ |  $6.49$ |  $5.47$ |
 
 En consecuencia, la variable es no estacionaria porque:
-* $\tau_\tau=-2.1093>-3.15$
-* $\phi_2=3.2214<4.16$
-* $\phi_3=2.2795<5.47$
+* $\tau_\tau=-2.1093>-3.15$, es decir, se rechaza $\gamma=0$
+* $\phi_2=3.2214<4.16$, es decir, se rechaza $\gamma=a_2=0$
+* $\phi_3=2.2795<5.47$, es decir, se rechaza $a_0=\gamma=a_2=0$
 
 
 # Referencias
