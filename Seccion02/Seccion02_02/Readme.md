@@ -764,6 +764,13 @@ Critical value for a significance level of:
                 10pct  5pct 2.5pct  1pct
 critical values 0.119 0.146  0.176 0.216
 ```
+Dado que el PIBpc es una variable que presenta tendencia, entonces se decide testear dicha prueba. Los resultados de la misma son:
+
+| Estadistico | Rezagos    | Valor      |  10%    |  5%     |  2.5%   |  1%     |
+|-------------|:----------:|:----------:|:-------:|:-------:|:-------:|:-------:|
+| $KPSS_\tau$ |  short=$3$ |  $0.2378$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
+| $KPSS_\tau$ |  long=$10$ |  $0.1297$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
+| $KPSS_\tau$ |  nil=$0$   |  $0.8286$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
 
 # Referencias
 
