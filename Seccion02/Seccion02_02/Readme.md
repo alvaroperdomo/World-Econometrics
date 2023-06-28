@@ -516,6 +516,25 @@ PIBpc <- ts(PIBpc_, start=1960)
 autoplot(acf(PIBpc, plot = FALSE))
 ```
 Obteniendose
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ef5fe48f-b32e-448d-854f-876589b76e9e)
+
+El decaimiento continuo pero moderado de la $FAC$ da una idea de raíz unitaria. 
+
+A continuación se desarrollan pruebas de raíz unitaria:
+
+### Prueba ADF
+``` r
+ur_trend.df <- ur.df(y=PIBpc, type = c("trend"), lags = 10, selectlags = c("AIC"))
+ur_drift.df <- ur.df(PIBpc, type = c("drift"), lags = 10, selectlags = c("AIC"))
+ur_none.df <- ur.df(PIBpc, type = c("none"), lags = 10, selectlags = c("AIC"))
+
+summary(ur_trend.df)
+summary(ur_drift.df)
+summary(ur_none.df)
+```
+Obteniendose
+
 ``` r
 > summary(ur_trend.df)
 
@@ -546,7 +565,6 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 372600 on 46 degrees of freedom
 Multiple R-squared:  0.155,	Adjusted R-squared:  0.08154 
 F-statistic:  2.11 on 4 and 46 DF,  p-value: 0.09484
-
 
 Value of test-statistic is: -2.1093 3.2214 2.2795 
 
@@ -580,7 +598,6 @@ z.diff.lag1 -2.266e-01  1.732e-01  -1.308   0.1973
 z.diff.lag2  4.451e-01  2.531e-01   1.758   0.0852 .
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
 Residual standard error: 386200 on 47 degrees of freedom
 Multiple R-squared:  0.07226,	Adjusted R-squared:  0.01304 
 F-statistic:  1.22 on 3 and 47 DF,  p-value: 0.3128
@@ -627,24 +644,8 @@ Value of test-statistic is: 1.9526
 Critical values for test statistics: 
      1pct  5pct 10pct
 tau1 -2.6 -1.95 -1.61
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ef5fe48f-b32e-448d-854f-876589b76e9e)
 
-El decaimiento continuo pero moderado de la $FAC$ da una idea de raíz unitaria. 
-
-A continuación se desarrollan pruebas de raíz unitaria:
-
-### Prueba ADF
-``` r
-ur_trend.df <- ur.df(y=PIBpc, type = c("trend"), lags = 10, selectlags = c("AIC"))
-ur_drift.df <- ur.df(PIBpc, type = c("drift"), lags = 10, selectlags = c("AIC"))
-ur_none.df <- ur.df(PIBpc, type = c("none"), lags = 10, selectlags = c("AIC"))
-
-summary(ur_trend.df)
-summary(ur_drift.df)
-summary(ur_none.df)
 ```
-
-
 # Referencias
 
 * DICKEY, David y FULLER, Wayne. _Distribution of the Estimators for Autoregressive Time Series With a Unit Root_. Journal of the American Statistical Association, Vol. 74, No. 366 (June, 1979); p. 427-431 
