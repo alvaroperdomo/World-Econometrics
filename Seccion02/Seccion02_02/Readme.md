@@ -520,6 +520,7 @@ dat <- na.omit(dat_)
 PIBpc_ = subset(dat, select = c(PIB_per_capita))
 PIBpc <- ts(PIBpc_, start=1960)
 C1PIBpc <- diff(PIBpc, differences = 1)
+
 autoplot(acf(PIBpc, plot = FALSE))
 autoplot(acf(C1PIBpc, plot = FALSE))
 ```
@@ -535,18 +536,23 @@ A continuación se desarrollan pruebas de raíz unitaria. Primero, para la varia
 
 ### Prueba ADF
 ``` r
-ur_trend.df <- ur.df(y=PIBpc, type = c("trend"), lags = 10, selectlags = c("AIC"))
-ur_drift.df <- ur.df(PIBpc, type = c("drift"), lags = 10, selectlags = c("AIC"))
-ur_none.df <- ur.df(PIBpc, type = c("none"), lags = 10, selectlags = c("AIC"))
-
-summary(ur_trend.df)
-summary(ur_drift.df)
-summary(ur_none.df)
+PIBpc_ur_trend.df <- ur.df(y=PIBpc, type = c("trend"), lags = 10, selectlags = c("AIC"))
+PIBpc_ur_drift.df <- ur.df(PIBpc, type = c("drift"), lags = 10, selectlags = c("AIC"))
+PIBpc_ur_none.df <- ur.df(PIBpc, type = c("none"), lags = 10, selectlags = c("AIC"))
+C1PIBpc_ur_trend.df <- ur.df(y=C1PIBpc, type = c("trend"), lags = 10, selectlags = c("AIC"))
+C1PIBpc_ur_drift.df <- ur.df(C1PIBpc, type = c("drift"), lags = 10, selectlags = c("AIC"))
+C1PIBpc_ur_none.df <- ur.df(C1PIBpc, type = c("none"), lags = 10, selectlags = c("AIC"))
+summary(PIBpc_ur_trend.df)
+summary(PIBpc_ur_drift.df)
+summary(PIBpc_ur_none.df)
+summary(C1PIBpc_ur_trend.df)
+summary(C1PIBpc_ur_drift.df)
+summary(C1PIBpc_ur_none.df)
 ```
 Obteniendose
 
 ``` r
-> summary(ur_trend.df)
+> summary(PIBpc_ur_trend.df)
 
 ############################################### 
 # Augmented Dickey-Fuller Test Unit Root Test # 
@@ -576,6 +582,7 @@ Residual standard error: 372600 on 46 degrees of freedom
 Multiple R-squared:  0.155,	Adjusted R-squared:  0.08154 
 F-statistic:  2.11 on 4 and 46 DF,  p-value: 0.09484
 
+
 Value of test-statistic is: -2.1093 3.2214 2.2795 
 
 Critical values for test statistics: 
@@ -584,7 +591,7 @@ tau3 -4.04 -3.45 -3.15
 phi2  6.50  4.88  4.16
 phi3  8.73  6.49  5.47
 
-> summary(ur_drift.df)
+> summary(PIBpc_ur_drift.df)
 
 ############################################### 
 # Augmented Dickey-Fuller Test Unit Root Test # 
@@ -608,6 +615,7 @@ z.diff.lag1 -2.266e-01  1.732e-01  -1.308   0.1973
 z.diff.lag2  4.451e-01  2.531e-01   1.758   0.0852 .
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
 Residual standard error: 386200 on 47 degrees of freedom
 Multiple R-squared:  0.07226,	Adjusted R-squared:  0.01304 
 F-statistic:  1.22 on 3 and 47 DF,  p-value: 0.3128
@@ -620,7 +628,7 @@ Critical values for test statistics:
 tau2 -3.51 -2.89 -2.58
 phi1  6.70  4.71  3.86
 
-> summary(ur_none.df)
+> summary(PIBpc_ur_none.df)
 
 ############################################### 
 # Augmented Dickey-Fuller Test Unit Root Test # 
@@ -654,22 +662,138 @@ Value of test-statistic is: 1.9526
 Critical values for test statistics: 
      1pct  5pct 10pct
 tau1 -2.6 -1.95 -1.61
+
+> summary(C1PIBpc_ur_trend.df)
+
+############################################### 
+# Augmented Dickey-Fuller Test Unit Root Test # 
+############################################### 
+
+Test regression trend 
+
+
+Call:
+lm(formula = z.diff ~ z.lag.1 + 1 + tt + z.diff.lag)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1668276  -153839     6537   182618   902756 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)   
+(Intercept)  1.171e+05  1.503e+05   0.779  0.44006   
+z.lag.1     -8.103e-01  2.433e-01  -3.330  0.00172 **
+tt           1.360e+03  3.938e+03   0.345  0.73141   
+z.diff.lag  -4.070e-01  2.502e-01  -1.626  0.11072   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 390100 on 46 degrees of freedom
+Multiple R-squared:  0.5222,	Adjusted R-squared:  0.491 
+F-statistic: 16.76 on 3 and 46 DF,  p-value: 1.697e-07
+
+
+Value of test-statistic is: -3.33 3.7229 5.5705 
+
+Critical values for test statistics: 
+      1pct  5pct 10pct
+tau3 -4.04 -3.45 -3.15
+phi2  6.50  4.88  4.16
+phi3  8.73  6.49  5.47
+
+> summary(C1PIBpc_ur_drift.df)
+
+############################################### 
+# Augmented Dickey-Fuller Test Unit Root Test # 
+############################################### 
+
+Test regression drift 
+
+
+Call:
+lm(formula = z.diff ~ z.lag.1 + 1 + z.diff.lag)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1633724  -152346     4888   175537   925463 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)   
+(Intercept)  1.619e+05  7.499e+04   2.159  0.03600 * 
+z.lag.1     -7.959e-01  2.375e-01  -3.351  0.00159 **
+z.diff.lag  -4.277e-01  2.407e-01  -1.777  0.08204 . 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 386400 on 47 degrees of freedom
+Multiple R-squared:  0.521,	Adjusted R-squared:  0.5006 
+F-statistic: 25.56 on 2 and 47 DF,  p-value: 3.08e-08
+
+
+Value of test-statistic is: -3.3514 5.6302 
+
+Critical values for test statistics: 
+      1pct  5pct 10pct
+tau2 -3.51 -2.89 -2.58
+phi1  6.70  4.71  3.86
+
+> summary(C1PIBpc_ur_none.df)
+
+############################################### 
+# Augmented Dickey-Fuller Test Unit Root Test # 
+############################################### 
+
+Test regression none 
+
+
+Call:
+lm(formula = z.diff ~ z.lag.1 - 1 + z.diff.lag)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1517487   -70050   120941   273898  1113094 
+
+Coefficients:
+           Estimate Std. Error t value Pr(>|t|)   
+z.lag.1     -0.4468     0.1804  -2.476  0.01685 * 
+z.diff.lag  -0.7150     0.2080  -3.437  0.00123 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 400900 on 48 degrees of freedom
+Multiple R-squared:  0.4747,	Adjusted R-squared:  0.4528 
+F-statistic: 21.68 on 2 and 48 DF,  p-value: 1.953e-07
+
+
+Value of test-statistic is: -2.4763 
+
+Critical values for test statistics: 
+     1pct  5pct 10pct
+tau1 -2.6 -1.95 -1.61
+
 ```
 
-Dado que en la prueba ADF con intercepto y tendencia, ambos terminos dieron significativos, entonces se decide testear dicha prueba. Los resultados de la misma son:
+Dado que en la prueba ADF con intercepto y tendencia de la variable $PIBpc$, ambos terminos dieron significativos, entonces se decidio testear la prueba ADF con intercepto y con tendencia. Dado que en la prueba ADF con intercepto de la variable $C1PIBpc$, el intercepto dio significativo, entonces se decidio testear la prueba ADF con intercepto. 
 
-| Estadistico | Valor      |  1%     |  5%     |  10%    |
-|-------------|:----------:|:-------:|:-------:|:-------:|
-| $\tau_\tau$ |  $-2.1093$ | $-4.04$ | $-3.45$ | $-3.15$ |
-| $\phi_2$    |  $3.2214$  |  $6.50$ |  $4.88$ |  $4.16$ |
-| $\phi_3$    |  $2.2795$  |  $8.73$ |  $6.49$ |  $5.47$ |
+Los resultados de la misma son:
+
+| Variable   | Estadistico | Valor      |  1%     |  5%     |  10%    |
+|------------|-------------|:----------:|:-------:|:-------:|:-------:|
+| $PIBpc$    | $\tau_\tau$ |  $-2.1093$ | $-4.04$ | $-3.45$ | $-3.15$ |
+| $PIBpc$    | $\phi_2$    |  $3.2214$  |  $6.50$ |  $4.88$ |  $4.16$ |
+| $PIBpc$    | $\phi_3$    |  $2.2795$  |  $8.73$ |  $6.49$ |  $5.47$ |
+| $C1PIBpc$  | $\tau_\mu$  |  $-3.3514$ | $-3.51$ | $-2.89$ | $-2.58$ |
+| $C1PIBpc$  | $\phi_1$    |  $5.6302$  |  $6.70$ |  $4.71$ |  $3.86$ |
 
 En consecuencia, la variable es no estacionaria porque:
-* $\tau_\tau=-2.1093>-3.15$, es decir, se rechaza $\gamma=0$
-* $\phi_2=3.2214<4.16$, es decir, se rechaza $\gamma=a_2=0$
-* $\phi_3=2.2795<5.47$, es decir, se rechaza $a_0=\gamma=a_2=0$
+* $\tau_\tau=**-2.1093**>-3.15$, es decir, no se rechaza $\gamma=0$
+* $\phi_2=**3.2214**<4.16$, es decir, no se rechaza $\gamma=a_2=0$
+* $\phi_3=**2.2795**<5.47$, es decir, no se rechaza $a_0=\gamma=a_2=0$
 
-
+Y la variable es estacionaria porque
+* $\tau_\mu=-3.51<**-3.3514**<-3.15$, es decir, $\gamma=0$ se rechaza al  y no se rechaza al 1% y se rechaza al 5% y 10%
+* $\phi_1=4.71<**5.6302**<6.70$, es decir, $\gamma=a_2=0$ se rechaza al  y no se rechaza al
+  
 ### Prueba DF-GLS
 ``` r
 DFGLS1c.ers <- ur.ers(PIBpc, type = c("DF-GLS"), model = c("constant"),lag.max = 4)
