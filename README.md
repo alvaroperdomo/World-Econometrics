@@ -23,6 +23,8 @@ El curso esta dividido en tres secciones principales, a través de las cuales el
 ## Requisitos
 Es deseable que las alumnos tengan aunque sea conocimientos básicos de R. Sin embargo, en el curso se van a proveer códigos completos de R para ser utilizados por parte de los alumnos.
 
+Es recomendable que los alumnos además de tener instalado [RStudio](https://posit.co/download/rstudio-desktop/) tengan instalado [Rtools](https://cran.r-project.org/bin/windows/Rtools/).
+
 A las personas que no utilizan regularmente R se les recomienda hacer de antemano los tutoriales de https://learnr.numbat.space/
 
 ## Dirigido a
