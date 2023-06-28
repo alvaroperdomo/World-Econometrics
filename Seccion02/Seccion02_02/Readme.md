@@ -663,20 +663,26 @@ En consecuencia, la variable es no estacionaria porque:
 * $\phi_3=2.2795<5.47$, es decir, se rechaza $a_0=\gamma=a_2=0$
 
 ### Prueba KPSS
+Vamos a aplicar las opciones de rezago de R. Sin embargo, no olviden que según  en Newey y West (1994) la longitud de rezago se establece proporcional a $T^{1/3}$, en decir $62^{1/3}=3.96=4$, en nuestro caso: .
+
 ``` r
 kpss1m.kpss <- ur.kpss(PIBpc, type = c("mu"), lags = c("short"), use.lag = NULL)
 kpss2m.kpss <- ur.kpss(PIBpc, type = c("mu"), lags = c("long"), use.lag = NULL)
 kpss3m.kpss <- ur.kpss(PIBpc, type = c("mu"), lags = c("nil"), use.lag = NULL)
+kpss4m.kpss <- ur.kpss(PIBpc, type = c("mu"), use.lag = 4)
 kpss1t.kpss <- ur.kpss(PIBpc, type = c("tau"), lags = c("short"), use.lag = NULL)
 kpss2t.kpss <- ur.kpss(PIBpc, type = c("tau"), lags = c("long"), use.lag = NULL)
 kpss3t.kpss <- ur.kpss(PIBpc, type = c("tau"), lags = c("nil"), use.lag = NULL)
+kpss4t.kpss <- ur.kpss(PIBpc, type = c("tau"), use.lag = 4)
 
 summary(kpss1m.kpss)
 summary(kpss2m.kpss)
 summary(kpss3m.kpss)
+summary(kpss4m.kpss)
 summary(kpss1t.kpss)
 summary(kpss2t.kpss)
 summary(kpss3t.kpss)
+summary(kpss4t.kpss)
 ```
 Obteniendo
 ``` r
@@ -717,6 +723,20 @@ critical values 0.347 0.463  0.574 0.739
 Test is of type: mu with 0 lags. 
 
 Value of test-statistic is: 5.8294 
+
+Critical value for a significance level of: 
+                10pct  5pct 2.5pct  1pct
+critical values 0.347 0.463  0.574 0.739
+
+> summary(kpss4m.kpss)
+
+####################### 
+# KPSS Unit Root Test # 
+####################### 
+
+Test is of type: mu with 4 lags. 
+
+Value of test-statistic is: 1.269 
 
 Critical value for a significance level of: 
                 10pct  5pct 2.5pct  1pct
@@ -763,14 +783,36 @@ Value of test-statistic is: 0.8286
 Critical value for a significance level of: 
                 10pct  5pct 2.5pct  1pct
 critical values 0.119 0.146  0.176 0.216
+
+> summary(kpss4t.kpss)
+
+####################### 
+# KPSS Unit Root Test # 
+####################### 
+
+Test is of type: tau with 4 lags. 
+
+Value of test-statistic is: 0.1994 
+
+Critical value for a significance level of: 
+                10pct  5pct 2.5pct  1pct
+critical values 0.119 0.146  0.176 0.216
+
 ```
 Dado que el PIBpc es una variable que presenta tendencia, entonces se decide testear dicha prueba. Los resultados de la misma son:
 
-| Estadistico | Rezagos    | Valor      |  10%    |  5%     |  2.5%   |  1%     |
-|-------------|:----------:|:----------:|:-------:|:-------:|:-------:|:-------:|
-| $KPSS_\tau$ |  short=$3$ |  $0.2378$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
-| $KPSS_\tau$ |  long=$10$ |  $0.1297$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
-| $KPSS_\tau$ |  nil=$0$   |  $0.8286$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
+| Estadistico | Rezagos        | Valor      |  10%    |  5%     |  2.5%   |  1%     |
+|-------------|:--------------:|:----------:|:-------:|:-------:|:-------:|:-------:|
+| $KPSS_\tau$ |  short= $3$    |  $0.2378$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
+| $KPSS_\tau$ |  long= $10$    |  $0.1297$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
+| $KPSS_\tau$ |  nil= $0$      |  $0.8286$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
+| $KPSS_\tau$ |  NW(1994)= $4$ |  $0.1994$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
+
+La variable es no estacionaria porque:
+* Cuando el número de rezagos es short= $3$: $0.2378>0.216$, se rechaza la hipótesis nula de estacionariedad
+* Cuando el número de rezagos es short= $10$: $0.146>0.1297>0.119$, se rechaza la hipótesis nula de estacionariedad al 10% pero no al 5%, 2.% y 1%
+* Cuando el número de rezagos es nil= $0$: $0.8286>0.216$, se rechaza la hipótesis nula de estacionariedad
+* Cuando el número de rezagosa es el establecido por la formula de Newey y West (1994)=$4$: $0.216>0.1994>0.176$, se rechaza la hipótesis nula de estacionariedad al 2.5%, 5% y 10% pero no al 1%
 
 # Referencias
 
