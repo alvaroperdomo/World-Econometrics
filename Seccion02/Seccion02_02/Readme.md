@@ -662,6 +662,136 @@ En consecuencia, la variable es no estacionaria porque:
 * $\phi_2=3.2214<4.16$, es decir, se rechaza $\gamma=a_2=0$
 * $\phi_3=2.2795<5.47$, es decir, se rechaza $a_0=\gamma=a_2=0$
 
+### Prueba DF-GLS
+``` r
+DFGLS1c.ers <- ur.ers(PIBpc, type = c("DF-GLS"), model = c("constant"),lag.max = 4)
+DFGLS1t.ers <- ur.ers(PIBpc, type = c("DF-GLS"), model = c("trend"),lag.max = 4)
+DFGLS2c.ers <- ur.ers(PIBpc, type = c("P-test"), model = c("constant"),lag.max = 4)
+DFGLS2t.ers <- ur.ers(PIBpc, type = c("P-test"), model = c("trend"),lag.max = 4)
+
+summary(DFGLS1c.ers)
+summary(DFGLS1t.ers)
+summary(DFGLS2c.ers)
+summary(DFGLS2t.ers)
+```
+
+Obteniendfo
+``` r
+> summary(DFGLS1c.ers)
+
+############################################### 
+# Elliot, Rothenberg and Stock Unit Root Test # 
+############################################### 
+
+Test of type DF-GLS 
+detrending of series with intercept 
+
+
+Call:
+lm(formula = dfgls.form, data = data.dfgls)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1533672   -78416   122458   213693  1081509 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)  
+yd.lag        0.00747    0.01692   0.441   0.6607  
+yd.diff.lag1 -0.15035    0.17071  -0.881   0.3825  
+yd.diff.lag2  0.50297    0.26788   1.878   0.0661 .
+yd.diff.lag3  0.32225    0.28992   1.112   0.2715  
+yd.diff.lag4 -0.13269    0.26043  -0.510   0.6125  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 381300 on 52 degrees of freedom
+Multiple R-squared:  0.2501,	Adjusted R-squared:  0.178 
+F-statistic: 3.469 on 5 and 52 DF,  p-value: 0.008844
+
+
+Value of test-statistic is: 0.4415 
+
+Critical values of DF-GLS are:
+                1pct  5pct 10pct
+critical values -2.6 -1.95 -1.62
+
+> summary(DFGLS1t.ers)
+
+############################################### 
+# Elliot, Rothenberg and Stock Unit Root Test # 
+############################################### 
+
+Test of type DF-GLS 
+detrending of series with intercept and trend 
+
+
+Call:
+lm(formula = dfgls.form, data = data.dfgls)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1368613  -154555   -11937   122735   937826 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)  
+yd.lag       -0.14125    0.06638  -2.128   0.0381 *
+yd.diff.lag1 -0.19729    0.15594  -1.265   0.2115  
+yd.diff.lag2  0.45223    0.24830   1.821   0.0743 .
+yd.diff.lag3  0.32346    0.26771   1.208   0.2324  
+yd.diff.lag4 -0.07243    0.25251  -0.287   0.7754  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 348400 on 52 degrees of freedom
+Multiple R-squared:  0.1728,	Adjusted R-squared:  0.09326 
+F-statistic: 2.172 on 5 and 52 DF,  p-value: 0.07132
+
+
+Value of test-statistic is: -2.128 
+
+Critical values of DF-GLS are:
+                 1pct  5pct 10pct
+critical values -3.58 -3.03 -2.74
+
+> summary(DFGLS2c.ers)
+
+############################################### 
+# Elliot, Rothenberg and Stock Unit Root Test # 
+############################################### 
+
+Test of type P-test 
+detrending of series with intercept 
+
+Value of test-statistic is: 175.4555 
+
+Critical values of P-test are:
+                1pct 5pct 10pct
+critical values 1.95 3.11  4.17
+
+> summary(DFGLS2t.ers)
+
+############################################### 
+# Elliot, Rothenberg and Stock Unit Root Test # 
+############################################### 
+
+Test of type P-test 
+detrending of series with intercept and trend 
+
+Value of test-statistic is: 12.9039 
+
+Critical values of P-test are:
+                1pct 5pct 10pct
+critical values 4.26 5.64  6.79
+```
+
+Dado que el PIBpc es una variable que presenta tendencia, entonces se decide testear dicha prueba. Los resultados de la misma son:
+
+| Estadistico   |  Valor     |  10%    |  5%     |   1%     |
+|---------------|:----------:|:-------:|:-------:| :-------:|
+| $DF-GLS_\tau$ |  $0.2378$  | $6.79$ | $5.64$ | $4.26$ |
+| $P_\tau$      |  $12.9039$  | $6.79$ | $5.64$ | $4.26$ |
+
+
 ### Prueba KPSS
 Vamos a aplicar las opciones de rezago de R. Sin embargo, no olviden que según  en Newey y West (1994) la longitud de rezago se establece proporcional a $T^{1/3}$, en decir $62^{1/3}=3.96=4$, en nuestro caso: .
 
