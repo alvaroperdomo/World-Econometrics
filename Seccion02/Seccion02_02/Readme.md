@@ -169,6 +169,8 @@ La estructura para hacer la prueba DF-GLS es:
 urersTest(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"), lag.max = 4, doplot = TRUE)
 ```
 
+Para mejorar el poder de la prueba de raíz unitaria, Elliot, Rothenberg y Stock (1996) propusieron la eliminación de tendencia local de la serie de tiempo. ERS desarrolló una prueba de punto óptimo factible, **"P-test"**, que tiene en cuenta la correlación serial del término de error. El segundo tipo de prueba es la prueba "DF-GLS", que es una prueba de tipo ADF.
+
 | **Argumentos**          | **Descripción**                                                                                                                              | 
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | **x**                   | vector o variable de series de tiempo                                                                                                        |
