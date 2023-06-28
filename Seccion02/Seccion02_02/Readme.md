@@ -644,8 +644,19 @@ Value of test-statistic is: 1.9526
 Critical values for test statistics: 
      1pct  5pct 10pct
 tau1 -2.6 -1.95 -1.61
-
 ```
+
+Dado que en la prueba ADF con intercepto y tendencia, ambos terminos dieron significativos, entonces se decide testear dicha prueba. Los resultados de la misma son:
+
+| Estadistico | Valor      |  1%     |  5%     |  10%    |
+|-------------|:----------:|:-------:|:-------:|:-------:|
+| tau3        |  $-2.1093$ | $-4.04$ | $-3.45$ | $-3.15$ |
+| phi2        |  $3.2214$  |  $6.50$ |  $4.88$ |  $4.16$ |
+| phi3        |  $2.2795$  |  $8.73$ |  $6.49$ |  $5.47$ |
+
+
+
+
 # Referencias
 
 * DICKEY, David y FULLER, Wayne. _Distribution of the Estimators for Autoregressive Time Series With a Unit Root_. Journal of the American Statistical Association, Vol. 74, No. 366 (June, 1979); p. 427-431 
