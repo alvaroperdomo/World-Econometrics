@@ -260,7 +260,10 @@ ur.kpss(y, type = c("mu", "tau"), lags = c("short", "long", "nil"), use.lag = NU
 | **type**                | Las opciones válidas son:                                                                                                                    |
 |                         | **"mu"** - **_Opción Predeterminada_**                                                                                                       |
 |                         | **"tau"**                                                                                                                                    |
-| **lags**                | el máximo número de rezagos                                                                                                                  |
+| **lags**                | el máximo número de rezagos utilizado en la corrección del error                                                                             |
+|                         | **"short"** establece el número de rezagos de acuerdpoa  √[4]{4 \times (n/100)}                                                              |
+|                         | **"longe"** establece el número de rezagos de acuerdpoa  √[4]{12 \times (n/100)}                                                             |
+|                         | **"nil"** establece que no se hace ninguna corrección del error                                                                              |
 | **use.lag**             | número de rezagos especificados por el usuario                                                                                               |
 
 
@@ -659,7 +662,11 @@ En consecuencia, la variable es no estacionaria porque:
 * $\phi_2=3.2214<4.16$, es decir, se rechaza $\gamma=a_2=0$
 * $\phi_3=2.2795<5.47$, es decir, se rechaza $a_0=\gamma=a_2=0$
 
-
+### Prueba KPSS
+``` r
+urkpssTest(PIBpc, type = c("mu"), lags = c("short", "long", "nil"), use.lag = NULL, doplot = TRUE)
+urkpssTest(PIBpc, type = c("tau"), lags = c("short", "long", "nil"), use.lag = NULL, doplot = TRUE)
+```
 # Referencias
 
 * DICKEY, David y FULLER, Wayne. _Distribution of the Estimators for Autoregressive Time Series With a Unit Root_. Journal of the American Statistical Association, Vol. 74, No. 366 (June, 1979); p. 427-431 
