@@ -324,9 +324,12 @@ Y la variable $C1PIBpc$ es estacionaria porque
 * $\tau_\mu$ = -3.51<**-3.3514**<-3.15, es decir, se rechaza $\gamma=0$ al 1% y se rechaza al 5% y 10%
 * $\phi_1$ = 4.71<**5.6302**<6.70, es decir, $\gamma=a_0=0$ no se rechaza al 1%  y se rechaza al se rechaza
 
-``` r
 urdfTest(PIBpc, lags = 1, type = c("ct"), doplot = TRUE)
+``` r
+PIBpc_dfTest_trend<- urdfTest(PIBpc, lags = 1, type = c("ct"), doplot = TRUE)
+summary(PIBpc_dfTest_trend)
 ```  
+
 ### Prueba DF-GLS
 ``` r
 PIBpc_DFGLS1c.ers <- ur.ers(PIBpc, type = c("DF-GLS"), model = c("constant"),lag.max = 4)
