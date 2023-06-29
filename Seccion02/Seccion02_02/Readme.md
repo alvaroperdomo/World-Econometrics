@@ -9,12 +9,12 @@ install.packages('fUnitRoots')
 install.packages('urca')
 ```
 
-| Pruebas                                                                                 | Explicación general de la prueba   |  Aplicación en R |
-|-----------------------------------------------------------------------------------------|:----------------------------------:|:----------------:|
-| Las Pruebas DF y ADF: _Pruebas de Dickey Fuller y Aumentada de Dickey Fuller_           |  [X](Seccion02_02_ADF_T/Readme.md) |             X    | 
-| La Prueba ADF-GLS: _Prueba de Elliott, Rothenberg y Stock_                              |  X                                 |             X    |
-| La Prueba KPSS: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_                       |  X                                 |             X    |   
-| Pruebas de Cambio Estructural - P: _Prueba de Perron y ZA: _Prueba de Zivot y Andrews_  |  X                                 |             X    |
+| Pruebas                                                                                 | Explicación general de la prueba      |  Aplicación en R                     |
+|-----------------------------------------------------------------------------------------|:-------------------------------------:|:------------------------------------:|
+| Las Pruebas DF y ADF: _Pruebas de Dickey Fuller y Aumentada de Dickey Fuller_           |  [X](Seccion02_02_ADF_T/Readme.md)    | [X](Seccion02_02_ADF_R/Readme.md)    | 
+| La Prueba ADF-GLS: _Prueba de Elliott, Rothenberg y Stock_                              |  [X](Seccion02_02_ADFGLS_T/Readme.md) | [X](Seccion02_02_ADFGLS_R/Readme.md) |
+| La Prueba KPSS: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_                       |  [X](Seccion02_02_KPSS_T/Readme.md)   | [X](Seccion02_02_KPSS_R/Readme.md)   |   
+| Pruebas de Cambio Estructural - P: _Prueba de Perron y ZA: _Prueba de Zivot y Andrews_  |  [X](Seccion02_02_ZA_T/Readme.md)     | [X](Seccion02_02_ZA_R/Readme.md)     |
 
 
 
