@@ -12,12 +12,9 @@ install.packages('urca')
 | Pruebas                                                                                 | Explicación general de la prueba|  Aplicación en R |
 |-----------------------------------------------------------------------------------------|:-------------------------------:|:----------------:|
 | Las Pruebas DF y ADF: _Pruebas de Dickey Fuller y Aumentada de Dickey Fuller_           |  X                              |             X    | 
+| La Prueba ADF-GLS: _Prueba de Elliott, Rothenberg y Stock_                              |  X                              |             X    |
 | La Prueba KPSS: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_                       |  X                              |             X    |   
-| La Prueba ERZ: _Prueba de Elliott, Rothenberg y Stock_                                  |  X                              |             X    |
 | Pruebas de Cambio Estructural - P: _Prueba de Perron y ZA: _Prueba de Zivot y Andrews_  |  X                              |             X    |
-
-
-
 
 ## Prueba de Mínimos Cuadrados Generalizados de Dickey-Fuller (DF-GLS)
 Elliott, Rothenberg y Stock (1996) muestran que es posible mejorar el poder de la prueba al estimar el modelo utilizando algo cercano a las primeras diferencias. 
