@@ -16,40 +16,7 @@ install.packages('urca')
 | La Prueba KPSS: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_                       |  X                              |             X    |   
 | Pruebas de Cambio Estructural - P: _Prueba de Perron y ZA: _Prueba de Zivot y Andrews_  |  X                              |             X    |
 
-### Aplicando la pruebas ZA en R
 
-Para llevar a cabo la prueba ZA ofrecemos dos opciones:
-
-**Primera Opción:** Utilice el comando **urzaTes**
-
-``` r
-urzaTest(x, model = c("intercept", "trend", "both"), lag, doplot = TRUE)
-```
-| **Argumentos**          | **Descripción**                                                                                                                              | 
-|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| **x**                   | vector o variable de series de tiempo                                                                                                        |
-| **model**               | cadena de caracteres que especifica si cambio estructural ocurre en                                                                          | 
-|                         | **"intercept"**: intercepto - **_Opción Predeterminada_**                                                                                    |  
-|                         | **"trend**: tendencia                                                                                                                        |
-|                         | **"both"**: ambos                                                                                                                            |  
-| **lag**                 | el mayor número de variables diferenciadas endógenas rezagadas que se incluirán en la regresión de prueba.                                   |
-| **doplot**              | indicador lógico, por defecto VERDADERO. ¿Debe mostrarse un gráfico de diagnóstico?                                                          | 
-|                         | **"TRUE"** para mostrar gráfico de diagnostico - **_Opción Predeterminada_**                                                                 |
-|                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                                                           |
-
-**Segunda Opción:** Utilice el comando **ur.za*
-``` r
-ur.za(x, model = c("intercept", "trend", "both"), lag=NULL)
-```
-
-| **Argumentos**          | **Descripción**                                                                                                                              | 
-|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| **x**                   | vector o variable de series de tiempo                                                                                                        |
-| **model**               | cadena de caracteres que especifica si cambio estructural ocurre en :                                                                        |
-|                         | **"intercept"**: intercepto - **_Opción Predeterminada_**                                                                                    |  
-|                         | **"trend**: tendencia                                                                                                                        |
-|                         | **"both"**: ambos                                                                                                                            |  
-| **lag**                 | el mayor número de variables diferenciales endógenas rezagadas que se incluirán en la regresión de prueba                                    |
 
 ## Ejemplo utilizando el PIB per cápita de Colombia a precios constantes en pesos
 
