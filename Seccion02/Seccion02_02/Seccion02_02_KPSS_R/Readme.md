@@ -19,7 +19,7 @@ urkpssTest(x, type = c("mu", "tau"), lags = c("short", "long", "nil"), use.lag =
 |                         | **"TRUE"** para mostrar gráfico de diagnostico - **_Opción Predeterminada_**                                                                 |
 |                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                                                           |
 
-## 2) *Segunda Opción:** Utilice el comando **ur.kpss*
+## 2) **Segunda Opción:** Utilice el comando **ur.kpss*
 ``` r
 ur.kpss(y, type = c("mu", "tau"), lags = c("short", "long", "nil"), use.lag = NULL)
 ```
