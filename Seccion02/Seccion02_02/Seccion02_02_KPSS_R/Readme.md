@@ -36,5 +36,5 @@ ur.kpss(y, type = c("mu", "tau"), lags = c("short", "long", "nil"), use.lag = NU
 |                         | **"nil"** establece que no se hace ninguna corrección del error                                                                              |
 | **use.lag**             | número de rezagos especificados por el usuario                                                                                               |
 
-## De las dos opciones, mi preferida es esta última porque la opción "lags" da varias recomendaciones para escoger los rezagos.
-## Posteriormente, se puede utilizar cla primera opción para aprovechar el comando "doplot"
+#### De las dos opciones, mi preferida es esta última porque la opción "lags" da varias recomendaciones para escoger los rezagos.
+#### Posteriormente, se puede utilizar cla primera opción para aprovechar el comando "doplot"
