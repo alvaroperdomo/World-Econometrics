@@ -1,4 +1,4 @@
-## Prueba de Dickey-Fuller - DF
+# Prueba de Dickey-Fuller - DF
 
 La ecuación $y_t = a_1 y_{t-1} + \varepsilon_t$ tiene raíz unitaria si $a_1=1$. 
 
@@ -39,7 +39,7 @@ donde
 ### Aplicando las pruebas DF en R
 Dado la prueba ADF es una extensión de la prueba DF, entonces la aplicación de la prueba DF en R se explica después de que se explique la prueba ADF
 
-## Prueba Aumentada de Dickey-Fuller - ADF
+# Prueba Aumentada de Dickey-Fuller - ADF
 Tradicionalmente la prueba más utilizada es la **Prueba Aumentada de Dickey-Fuller - ADF**
 
 Esta prueba consiste en estimar estas tres especificaciones
