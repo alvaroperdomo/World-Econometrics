@@ -8,6 +8,7 @@ Para esta sección hay que instalar los paquetes
 install.packages('fUnitRoots')
 install.packages('urca')
 ```
+La siguiente tabla presenta las pruebas que vamos a analizar. Asi mismo, dando click en la **X** de la segunda columna puede redirigirse a la explicación teórica de la prueba y dando click en la **X** de la tercera columna puede redirigirse para ver cómo la misma se lleva a cabo en R.  
 
 | Pruebas                                                                                 | Explicación general de la prueba      |  Aplicación en R                     |
 |-----------------------------------------------------------------------------------------|:-------------------------------------:|:------------------------------------:|
@@ -16,9 +17,9 @@ install.packages('urca')
 | La Prueba KPSS: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_                       |  [X](Seccion02_02_KPSS_T/Readme.md)   | [X](Seccion02_02_KPSS_R/Readme.md)   |   
 | Pruebas de Cambio Estructural - P: _Prueba de Perron y ZA: _Prueba de Zivot y Andrews_  |  [X](Seccion02_02_ZA_T/Readme.md)     | [X](Seccion02_02_ZA_R/Readme.md)     |
 
+Posteriormente, se presenta un ejemplo utilizando la base de datos "Indicadores de Desarrollo Económico del Banco mundial". Para el ejercicio, se ha escogido analizar la variable más utilizada en términos de desarrollo económico, el PIB per cápita, de un país en vías de desarrollo. Más específicamente, se va a analizar la evolución del PIB per cápita de Colombia a precios constantes.
 
-
-## Ejemplo utilizando el PIB per cápita de Colombia a precios constantes en pesos
+## Ejemplo: PIB per cápita de Colombia a precios constantes en pesos
 
 La prueba se va a hacer con respecto al **PIB per cápita de Colombia** en niveles y en primeras diferencias utilizando el siguiente código:
 
