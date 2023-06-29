@@ -307,13 +307,13 @@ Dado que en la prueba ADF con intercepto y tendencia de la variable $PIBpc$, amb
 
 Los resultados de la misma son:
 
-| Variable   | Estadistico | Valor      |  1%     |  5%     |  10%    |
-|------------|-------------|:----------:|:-------:|:-------:|:-------:|
-| $PIBpc$    | $\tau_\tau$ |  $-2.1093$ | $-4.04$ | $-3.45$ | $-3.15$ |
-| $PIBpc$    | $\phi_2$    |  $3.2214$  |  $6.50$ |  $4.88$ |  $4.16$ |
-| $PIBpc$    | $\phi_3$    |  $2.2795$  |  $8.73$ |  $6.49$ |  $5.47$ |
-| $C1PIBpc$  | $\tau_\mu$  |  $-3.3514$ | $-3.51$ | $-2.89$ | $-2.58$ |
-| $C1PIBpc$  | $\phi_1$    |  $5.6302$  |  $6.70$ |  $4.71$ |  $3.86$ |
+| Variable   | Estadístico | Número de rezagos <b> Criterio de Información de Akaike | Valor      |  1%     |  5%     |  10%    |
+|------------|-------------|:-------------------------------------------------------:|:----------:|:-------:|:-------:|:-------:|
+| $PIBpc$    | $\tau_\tau$ |  1                                                      |  $-2.1093$ | $-4.04$ | $-3.45$ | $-3.15$ |
+| $PIBpc$    | $\phi_2$    |  1                                                      |  $3.2214$  |  $6.50$ |  $4.88$ |  $4.16$ |
+| $PIBpc$    | $\phi_3$    |  1                                                      |  $2.2795$  |  $8.73$ |  $6.49$ |  $5.47$ |
+| $C1PIBpc$  | $\tau_\mu$  |  1                                                      |  $-3.3514$ | $-3.51$ | $-2.89$ | $-2.58$ |
+| $C1PIBpc$  | $\phi_1$    |  1                                                      |  $5.6302$  |  $6.70$ |  $4.71$ |  $3.86$ |
 
 En consecuencia, la variable $PIBpc$ es no estacionaria porque:
 * $\tau_\tau$ = **-2.1093**>-3.15, es decir, no se rechaza $\gamma=0$ al 10%, 5% y 1%
