@@ -511,7 +511,7 @@ Construcción propia a partir de los Indicadores de Desarrollo Económico del Ba
 ```
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/681c14d8-e78a-48b9-b6a9-9bc12aea2e84)
 
-A partir del gráfico se puede comenzar a inferir que la variable no tiene un comportamiento estacionario. Sin embargo, hay que recolectar más evidencia al respecto, para ello primero se visualiza la función de autocorrelación de la variable #PIBpc$ utilizando el siguiente comando: 
+A partir del gráfico se puede comenzar a inferir que la variable no tiene un comportamiento estacionario. Sin embargo, hay que recolectar más evidencia al respecto, para ello primero se visualiza la función de autocorrelación de las variables $PIBpc$ y $C1PIBpc$ utilizando el siguiente comando: 
 
 Para el gráfico de la $FAC$ se ejecuta el comando
 ``` r
@@ -785,31 +785,38 @@ Los resultados de la misma son:
 | $C1PIBpc$  | $\tau_\mu$  |  $-3.3514$ | $-3.51$ | $-2.89$ | $-2.58$ |
 | $C1PIBpc$  | $\phi_1$    |  $5.6302$  |  $6.70$ |  $4.71$ |  $3.86$ |
 
-En consecuencia, la variable es no estacionaria porque:
-* $ \tau_\tau = **-2.1093**>-3.15$, es decir, no se rechaza $\gamma=0$
-* $\phi_2 = **3.2214**<4.16$, es decir, no se rechaza $\gamma=a_2=0$
-* $\phi_3 =**2.2795**<5.47$, es decir, no se rechaza $a_0=\gamma=a_2=0$
+En consecuencia, la variable $PIBpc$ es no estacionaria porque:
+* $ \tau_\tau = **-2.1093**>-3.15$, es decir, no se rechaza $\gamma=0$ al 10%, 5% y 1%
+* $\phi_2 = **3.2214**<4.16$, es decir, no se rechaza $\gamma=a_2=0$ al 10%, 5% y 1%
+* $\phi_3 =**2.2795**<5.47$, es decir, no se rechaza $a_0=\gamma=a_2=0$ al 10%, 5% y 1%
 
-Y la variable es estacionaria porque
-* $\tau_\mu=-3.51<**-3.3514**<-3.15$, es decir, $\gamma=0$ se rechaza al  y no se rechaza al 1% y se rechaza al 5% y 10%
-* $\phi_1=4.71<**5.6302**<6.70$, es decir, $\gamma=a_2=0$ se rechaza al  y no se rechaza al
+Y la variable $C1PIBpc$ es estacionaria porque
+* $\tau_\mu=-3.51<**-3.3514**<-3.15$, es decir, se rechaza $\gamma=0$ al 1% y se rechaza al 5% y 10%
+* $\phi_1=4.71<**5.6302**<6.70$, es decir, $\gamma=a_0=0$ no se rechaza al 1%  y se rechaza al se rechaza
   
 ### Prueba DF-GLS
 ``` r
-DFGLS1c.ers <- ur.ers(PIBpc, type = c("DF-GLS"), model = c("constant"),lag.max = 4)
-DFGLS1t.ers <- ur.ers(PIBpc, type = c("DF-GLS"), model = c("trend"),lag.max = 4)
-DFGLS2c.ers <- ur.ers(PIBpc, type = c("P-test"), model = c("constant"),lag.max = 4)
-DFGLS2t.ers <- ur.ers(PIBpc, type = c("P-test"), model = c("trend"),lag.max = 4)
-
-summary(DFGLS1c.ers)
-summary(DFGLS1t.ers)
-summary(DFGLS2c.ers)
-summary(DFGLS2t.ers)
+PIBpc_DFGLS1c.ers <- ur.ers(PIBpc, type = c("DF-GLS"), model = c("constant"),lag.max = 4)
+PIBpc_DFGLS1t.ers <- ur.ers(PIBpc, type = c("DF-GLS"), model = c("trend"),lag.max = 4)
+PIBpc_DFGLS2c.ers <- ur.ers(PIBpc, type = c("P-test"), model = c("constant"),lag.max = 4)
+PIBpc_DFGLS2t.ers <- ur.ers(PIBpc, type = c("P-test"), model = c("trend"),lag.max = 4)
+C1PIBpc_DFGLS1c.ers <- ur.ers(C1PIBpc, type = c("DF-GLS"), model = c("constant"),lag.max = 4)
+C1PIBpc_DFGLS1t.ers <- ur.ers(C1PIBpc, type = c("DF-GLS"), model = c("trend"),lag.max = 4)
+C1PIBpc_DFGLS2c.ers <- ur.ers(C1PIBpc, type = c("P-test"), model = c("constant"),lag.max = 4)
+C1PIBpc_DFGLS2t.ers <- ur.ers(C1PIBpc, type = c("P-test"), model = c("trend"),lag.max = 4)
+summary(PIBpc_DFGLS1c.ers)
+summary(PIBpc_DFGLS1t.ers)
+summary(PIBpc_DFGLS2c.ers)
+summary(PIBpc_DFGLS2t.ers)
+summary(C1PIBpc_DFGLS1c.ers)
+summary(C1PIBpc_DFGLS1t.ers)
+summary(C1PIBpc_DFGLS2c.ers)
+summary(C1PIBpc_DFGLS2t.ers)
 ```
 
 Obteniendfo
 ``` r
-> summary(DFGLS1c.ers)
+> summary(PIBpc_DFGLS1c.ers)
 
 ############################################### 
 # Elliot, Rothenberg and Stock Unit Root Test # 
@@ -847,7 +854,7 @@ Critical values of DF-GLS are:
                 1pct  5pct 10pct
 critical values -2.6 -1.95 -1.62
 
-> summary(DFGLS1t.ers)
+> summary(PIBpc_DFGLS1t.ers)
 
 ############################################### 
 # Elliot, Rothenberg and Stock Unit Root Test # 
@@ -885,7 +892,7 @@ Critical values of DF-GLS are:
                  1pct  5pct 10pct
 critical values -3.58 -3.03 -2.74
 
-> summary(DFGLS2c.ers)
+> summary(PIBpc_DFGLS2c.ers)
 
 ############################################### 
 # Elliot, Rothenberg and Stock Unit Root Test # 
@@ -900,7 +907,7 @@ Critical values of P-test are:
                 1pct 5pct 10pct
 critical values 1.95 3.11  4.17
 
-> summary(DFGLS2t.ers)
+> summary(PIBpc_DFGLS2t.ers)
 
 ############################################### 
 # Elliot, Rothenberg and Stock Unit Root Test # 
@@ -914,18 +921,130 @@ Value of test-statistic is: 12.9039
 Critical values of P-test are:
                 1pct 5pct 10pct
 critical values 4.26 5.64  6.79
+
+> summary(C1PIBpc_DFGLS1c.ers)
+
+############################################### 
+# Elliot, Rothenberg and Stock Unit Root Test # 
+############################################### 
+
+Test of type DF-GLS 
+detrending of series with intercept 
+
+
+Call:
+lm(formula = dfgls.form, data = data.dfgls)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1574633  -143511   -11175   121083   898811 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)   
+yd.lag        -0.9802     0.2956  -3.316  0.00169 **
+yd.diff.lag1  -0.2375     0.2998  -0.792  0.43178   
+yd.diff.lag2   0.1356     0.2924   0.464  0.64483   
+yd.diff.lag3   0.3857     0.2685   1.436  0.15703   
+yd.diff.lag4   0.2513     0.2477   1.014  0.31514   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 363200 on 51 degrees of freedom
+Multiple R-squared:  0.5425,	Adjusted R-squared:  0.4977 
+F-statistic:  12.1 on 5 and 51 DF,  p-value: 9.52e-08
+
+
+Value of test-statistic is: -3.3158 
+
+Critical values of DF-GLS are:
+                1pct  5pct 10pct
+critical values -2.6 -1.95 -1.62
+
+> summary(C1PIBpc_DFGLS1t.ers)
+
+############################################### 
+# Elliot, Rothenberg and Stock Unit Root Test # 
+############################################### 
+
+Test of type DF-GLS 
+detrending of series with intercept and trend 
+
+
+Call:
+lm(formula = dfgls.form, data = data.dfgls)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1766113  -192022    -3470    97875   891789 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)  
+yd.lag       -0.73413    0.29287  -2.507   0.0154 *
+yd.diff.lag1 -0.37093    0.32444  -1.143   0.2583  
+yd.diff.lag2  0.04344    0.31115   0.140   0.8895  
+yd.diff.lag3  0.33414    0.28654   1.166   0.2490  
+yd.diff.lag4  0.20620    0.26144   0.789   0.4339  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 378600 on 51 degrees of freedom
+Multiple R-squared:  0.5023,	Adjusted R-squared:  0.4535 
+F-statistic: 10.29 on 5 and 51 DF,  p-value: 7.348e-07
+
+
+Value of test-statistic is: -2.5067 
+
+Critical values of DF-GLS are:
+                 1pct  5pct 10pct
+critical values -3.58 -3.03 -2.74
+
+> summary(C1PIBpc_DFGLS2c.ers)
+
+############################################### 
+# Elliot, Rothenberg and Stock Unit Root Test # 
+############################################### 
+
+Test of type P-test 
+detrending of series with intercept 
+
+Value of test-statistic is: 0.4162 
+
+Critical values of P-test are:
+                1pct 5pct 10pct
+critical values 1.95 3.11  4.17
+
+> summary(C1PIBpc_DFGLS2t.ers)
+
+############################################### 
+# Elliot, Rothenberg and Stock Unit Root Test # 
+############################################### 
+
+Test of type P-test 
+detrending of series with intercept and trend 
+
+Value of test-statistic is: 0.8719 
+
+Critical values of P-test are:
+                1pct 5pct 10pct
+critical values 4.26 5.64  6.79
 ```
 
-Dado que el PIBpc es una variable que presenta tendencia, entonces se decide testear dicha prueba. Los resultados de la misma son:
+Dado que el $PIBpc$ es una variable que presenta tendencia, entonces se decide hacer su pruba con tendencia. Dado que el $C1PIBpc$ es una variable que no presenta tendencia, entonces se decide hacer su pruba sin tendencia. Los resultados de las misma son:
 
-| Estadistico   |  Valor     |  10%    |  5%     |   1%    |
-|---------------|:----------:|:-------:|:-------:| :------:|
-| $DF-GLS_\tau$ |  $-2.128$  | $-2.74$ | $-3.03$ | $-3.58$ |
-| $P_\tau$      |  $25.8748$ | $6.79$  | $5.64$  | $4.26$  |
+| Variable   | Estadistico   | Valor     |  10%    |  5%     |   1%    |
+|------------|---------------|:---------:|:-------:|:-------:| :------:|
+| $PIBpc$    | $DF-GLS_\tau$ | $-2.128$  | $-2.74$ | $-3.03$ | $-3.58$ |
+| $PIBpc$    | $P_\tau$      | $25.8748$ | $6.79$  | $5.64$  | $4.26$  |
+| $C1PIBpc$  | $DF-GLS_\mu$  | $-3.3158$ | $-1.62$ | $-1.95$ | $-2.60$ |
+| $C1PIBpc$  | $P_\mu$       | $0.4162$  | $4.17$  | $3.11$  | $1.95$  |
 
-La variable es no estacionaria porque:
-* Con el estadistico $DF-GLS_\tau$: $-2.128$-2.74$, no se rechaza la hipótesis nula de raíz unitaria
-* Con el estadistico $P_\tau$: $25.8748>6.79$, no se rechaza la hipótesis nula de raíz unitaria
+La variable $PIBpc$ es no estacionaria porque:
+* Con el estadistico $DF-GLS_\tau$: $**-2.128**>-2.74$, no se rechaza la hipótesis nula de raíz unitaria al 10%, 5% y 1% 
+* Con el estadistico $P_\tau$: $**25.8748**>6.79$, no se rechaza la hipótesis nula de raíz unitaria  10%, 5% y 1% 
+
+La variable $C1PIBpc$ es estacionaria porque:
+* Con el estadistico $DF-GLS_\mu$: $**-3.3158**<-2.60$, se rechaza la hipótesis nula de raíz unitaria al 1%, 5% y 10%
+* Con el estadistico $P_\mu$: $**0.4162**>1.95$, no se rechaza la hipótesis nula de raíz unitaria al 1%, 5% y 10%
 
 ### Prueba KPSS
 Vamos a aplicar las opciones de rezago de R. Sin embargo, no olviden que según  en Newey y West (1994) la longitud de rezago se establece proporcional a $T^{1/3}$, en decir $62^{1/3}=3.96=4$, en nuestro caso: .
