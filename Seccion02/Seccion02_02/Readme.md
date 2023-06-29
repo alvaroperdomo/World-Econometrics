@@ -316,13 +316,13 @@ Los resultados de la misma son:
 | $C1PIBpc$  | $\phi_1$    |  $5.6302$  |  $6.70$ |  $4.71$ |  $3.86$ |
 
 En consecuencia, la variable $PIBpc$ es no estacionaria porque:
-* $ \tau_\tau = **-2.1093**>-3.15$, es decir, no se rechaza $\gamma=0$ al 10%, 5% y 1%
-* $\phi_2 = **3.2214**<4.16$, es decir, no se rechaza $\gamma=a_0=a_2=0$ al 10%, 5% y 1%
-* $\phi_3 =**2.2795**<5.47$, es decir, no se rechaza $a_0=\gamma=a_2=0$ al 10%, 5% y 1%
+* $\tau_\tau$ = **-2.1093**>-3.15, es decir, no se rechaza $\gamma=0$ al 10%, 5% y 1%
+* $\phi_2$ = **3.2214**<4.16, es decir, no se rechaza $\gamma=a_0=a_2=0$ al 10%, 5% y 1%
+* $\phi_3$ = **2.2795**<5.47, es decir, no se rechaza $a_0=\gamma=a_2=0$ al 10%, 5% y 1%
 
 Y la variable $C1PIBpc$ es estacionaria porque
-* $\tau_\mu=-3.51<**-3.3514**<-3.15$, es decir, se rechaza $\gamma=0$ al 1% y se rechaza al 5% y 10%
-* $\phi_1=4.71<**5.6302**<6.70$, es decir, $\gamma=a_0=0$ no se rechaza al 1%  y se rechaza al se rechaza
+* $\tau_\mu$ = -3.51<**-3.3514**<-3.15, es decir, se rechaza $\gamma=0$ al 1% y se rechaza al 5% y 10%
+* $\phi_1$ = 4.71<**5.6302**<6.70, es decir, $\gamma=a_0=0$ no se rechaza al 1%  y se rechaza al se rechaza
   
 ### Prueba DF-GLS
 ``` r
