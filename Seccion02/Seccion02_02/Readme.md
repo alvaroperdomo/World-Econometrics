@@ -16,43 +16,7 @@ install.packages('urca')
 | La Prueba KPSS: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_                       |  X                              |             X    |   
 | Pruebas de Cambio Estructural - P: _Prueba de Perron y ZA: _Prueba de Zivot y Andrews_  |  X                              |             X    |
 
-### Aplicando la prueba KPSS en R
 
-Para llevar a cabo la prueba KPSS ofrecemos dos opciones:
-
-**Primera Opción:** Utilice el comando **unitrootTest**
-
-``` r
-urkpssTest(x, type = c("mu", "tau"), lags = c("short", "long", "nil"), use.lag = NULL, doplot = TRUE)
-```
-| **Argumentos**          | **Descripción**                                                                                                                              | 
-|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| **x**                   | vector o variable de series de tiempo                                                                                                        |
-| **type**                | Las opciones válidas son:                                                                                                                    |
-|                         | **"mu"** - **_Opción Predeterminada_**                                                                                                       |
-|                         | **"tau"**                                                                                                                                    |
-| **lags**                | el máximo número de rezagos:                                                                                                                 |
-| **use.lag**             | cadena de caracteres que especifica el número de rezagos                                                                                     |
-| **doplot**              | indicador lógico, por defecto VERDADERO. ¿Debe mostrarse un gráfico de diagnóstico?                                                          | 
-|                         | **"TRUE"** para mostrar gráfico de diagnostico - **_Opción Predeterminada_**                                                                 |
-|                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                                                           |
-
-**Segunda Opción:** Utilice el comando **ur.kpss*
-``` r
-ur.kpss(y, type = c("mu", "tau"), lags = c("short", "long", "nil"), use.lag = NULL)
-```
-
-| **Argumentos**          | **Descripción**                                                                                                                              | 
-|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| **x**                   | vector o variable de series de tiempo                                                                                                        |
-| **type**                | Las opciones válidas son:                                                                                                                    |
-|                         | **"mu"** - **_Opción Predeterminada_**                                                                                                       |
-|                         | **"tau"**                                                                                                                                    |
-| **lags**                | el máximo número de rezagos utilizado en la corrección del error                                                                             |
-|                         | **"short"** establece el número de rezagos de acuerdpoa  √[4]{4 \times (n/100)}                                                              |
-|                         | **"longe"** establece el número de rezagos de acuerdpoa  √[4]{12 \times (n/100)}                                                             |
-|                         | **"nil"** establece que no se hace ninguna corrección del error                                                                              |
-| **use.lag**             | número de rezagos especificados por el usuario                                                                                               |
 
 
 ## El cambio estructural
