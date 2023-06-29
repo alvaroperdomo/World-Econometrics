@@ -44,4 +44,4 @@ ur.ers(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"),lag.max =
 |                         | **"trend"**                                                                                                                                              |
 
 #### De las dos opciones, mi preferida es esta última por la opción "type("P-test") que permite obtener esta información.
-#### Posteriormente, se puede utilizar cla primera opción opciones para aprovechar el comando "doplot"
+#### Posteriormente, se puede utilizar cla primera opción para aprovechar el comando "doplot"
