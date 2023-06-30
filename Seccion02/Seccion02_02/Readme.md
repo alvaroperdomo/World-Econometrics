@@ -25,6 +25,10 @@ La prueba se va a hacer con respecto al **PIB per cápita de Colombia** en nivel
 
 Retomamos parte del código de R que se había utilizado previamente 
 ``` r
+rm() # Remove all objects from current workspace​
+ls() # confirm that a data frame has been deleted​
+gc() # free up memory and report the memory usage
+
 rm(list = ls())
 library(WDI)
 library(dplyr)
