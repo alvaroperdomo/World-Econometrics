@@ -40,7 +40,7 @@ library(urca)
 
 
 dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
-ggplot(dat, aes(year, PIB_per_capita)) + geom_line () + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
+ggplot(dat, aes(year, PIB_per_capita)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
 Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
 ```
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ec783053-9f06-4834-9983-9158350145b8)
@@ -60,9 +60,9 @@ autoplot(acf(C1PIBpc, plot = FALSE))
 ```
 Obteniendose
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ef5fe48f-b32e-448d-854f-876589b76e9e)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/0271a51d-b03d-4855-94fb-345a23e767c1)
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6183adb4-ec1e-451e-82e1-0077ae8ee28c)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/e9e7176a-6b2b-4202-9b43-49f8a67e9a9c)
 
 El decaimiento continuo pero moderado de la $FAC$ de la variable $PIBpc$ da una idea de raíz unitaria. Por otro lado, la variable $C1PIBpc$ tiene un $FAC$ bajo desde el comienzo, dando así una idea de estacionariedad. 
 
