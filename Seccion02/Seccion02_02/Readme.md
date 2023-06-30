@@ -40,10 +40,10 @@ library(urca)
 
 
 dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
-ggplot(dat, aes(year, PIB_per_capita)) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
+ggplot(dat, aes(year, PIB_per_capita)) + geom_line () + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
 Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/681c14d8-e78a-48b9-b6a9-9bc12aea2e84)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ec783053-9f06-4834-9983-9158350145b8)
 
 A partir del gráfico se puede comenzar a inferir que la variable no tiene un comportamiento estacionario. Sin embargo, hay que recolectar más evidencia al respecto, para ello primero se visualiza la función de autocorrelación de las variables $PIBpc$ y $C1PIBpc$ utilizando el siguiente comando: 
 
@@ -100,24 +100,21 @@ lm(formula = z.diff ~ z.lag.1 + 1 + tt + z.diff.lag)
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--1456590  -140786    16594   176377   898299 
+-1747368  -120660    -1614   137615  1348358 
 
 Coefficients:
-              Estimate Std. Error t value Pr(>|t|)  
-(Intercept)  6.721e+05  2.968e+05   2.265   0.0283 *
-z.lag.1     -1.416e-01  6.714e-02  -2.109   0.0404 *
-tt           2.959e+04  1.394e+04   2.123   0.0392 *
-z.diff.lag1 -1.927e-01  1.679e-01  -1.148   0.2570  
-z.diff.lag2  5.828e-01  2.527e-01   2.307   0.0256 *
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept)  4.017e+05  3.148e+05   1.276    0.208
+z.lag.1     -8.826e-02  7.034e-02  -1.255    0.216
+tt           2.269e+04  1.493e+04   1.520    0.135
+z.diff.lag   1.009e-01  1.533e-01   0.658    0.514
 
-Residual standard error: 372600 on 46 degrees of freedom
-Multiple R-squared:  0.155,	Adjusted R-squared:  0.08154 
-F-statistic:  2.11 on 4 and 46 DF,  p-value: 0.09484
+Residual standard error: 413100 on 48 degrees of freedom
+Multiple R-squared:  0.06313,	Adjusted R-squared:  0.004575 
+F-statistic: 1.078 on 3 and 48 DF,  p-value: 0.3673
 
 
-Value of test-statistic is: -2.1093 3.2214 2.2795 
+Value of test-statistic is: -1.2549 4.7262 1.5025 
 
 Critical values for test statistics: 
       1pct  5pct 10pct
@@ -139,23 +136,20 @@ lm(formula = z.diff ~ z.lag.1 + 1 + z.diff.lag)
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--1607110  -137422     -202   180687   938891 
+-1837056  -157532     1431   140352  1350125 
 
 Coefficients:
-              Estimate Std. Error t value Pr(>|t|)  
-(Intercept)  2.057e+05  2.068e+05   0.995   0.3249  
-z.lag.1     -4.082e-03  1.821e-02  -0.224   0.8236  
-z.diff.lag1 -2.266e-01  1.732e-01  -1.308   0.1973  
-z.diff.lag2  4.451e-01  2.531e-01   1.758   0.0852 .
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+             Estimate Std. Error t value Pr(>|t|)
+(Intercept) 4.996e+04  2.162e+05   0.231    0.818
+z.lag.1     1.506e-02  1.831e-02   0.822    0.415
+z.diff.lag  5.068e-02  1.517e-01   0.334    0.740
 
-Residual standard error: 386200 on 47 degrees of freedom
-Multiple R-squared:  0.07226,	Adjusted R-squared:  0.01304 
-F-statistic:  1.22 on 3 and 47 DF,  p-value: 0.3128
+Residual standard error: 418500 on 49 degrees of freedom
+Multiple R-squared:  0.01803,	Adjusted R-squared:  -0.02205 
+F-statistic: 0.4499 on 2 and 49 DF,  p-value: 0.6403
 
 
-Value of test-statistic is: -0.2241 2.4006 
+Value of test-statistic is: 0.8225 5.7794 
 
 Critical values for test statistics: 
       1pct  5pct 10pct
@@ -176,22 +170,21 @@ lm(formula = z.diff ~ z.lag.1 - 1 + z.diff.lag)
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--1700811  -129976    31119   202167   914060 
+-1857751  -157388     -557   155350  1335178 
 
 Coefficients:
-             Estimate Std. Error t value Pr(>|t|)  
-z.lag.1      0.012818   0.006565   1.953   0.0567 .
-z.diff.lag1 -0.202519   0.171513  -1.181   0.2435  
-z.diff.lag2  0.419725   0.251809   1.667   0.1021  
+           Estimate Std. Error t value Pr(>|t|)   
+z.lag.1    0.019089   0.005574   3.425  0.00124 **
+z.diff.lag 0.050490   0.150288   0.336  0.73831   
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 386200 on 48 degrees of freedom
-Multiple R-squared:  0.2787,	Adjusted R-squared:  0.2336 
-F-statistic: 6.183 on 3 and 48 DF,  p-value: 0.001222
+Residual standard error: 414600 on 50 degrees of freedom
+Multiple R-squared:  0.2593,	Adjusted R-squared:  0.2296 
+F-statistic:  8.75 on 2 and 50 DF,  p-value: 0.0005516
 
 
-Value of test-statistic is: 1.9526 
+Value of test-statistic is: 3.4245 
 
 Critical values for test statistics: 
      1pct  5pct 10pct
@@ -211,23 +204,23 @@ lm(formula = z.diff ~ z.lag.1 + 1 + tt + z.diff.lag)
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--1668276  -153839     6537   182618   902756 
+-1866233  -142254    11798   152547  1289718 
 
 Coefficients:
-              Estimate Std. Error t value Pr(>|t|)   
-(Intercept)  1.171e+05  1.503e+05   0.779  0.44006   
-z.lag.1     -8.103e-01  2.433e-01  -3.330  0.00172 **
-tt           1.360e+03  3.938e+03   0.345  0.73141   
-z.diff.lag  -4.070e-01  2.502e-01  -1.626  0.11072   
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  7.287e+04  1.616e+05   0.451    0.654    
+z.lag.1     -1.071e+00  2.439e-01  -4.390 6.38e-05 ***
+tt           4.835e+03  4.037e+03   1.198    0.237    
+z.diff.lag   1.117e-01  1.740e-01   0.642    0.524    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 390100 on 46 degrees of freedom
-Multiple R-squared:  0.5222,	Adjusted R-squared:  0.491 
-F-statistic: 16.76 on 3 and 46 DF,  p-value: 1.697e-07
+Residual standard error: 422000 on 47 degrees of freedom
+Multiple R-squared:  0.4581,	Adjusted R-squared:  0.4235 
+F-statistic: 13.24 on 3 and 47 DF,  p-value: 2.154e-06
 
 
-Value of test-statistic is: -3.33 3.7229 5.5705 
+Value of test-statistic is: -4.3901 6.8137 10.0805 
 
 Critical values for test statistics: 
       1pct  5pct 10pct
@@ -249,22 +242,22 @@ lm(formula = z.diff ~ z.lag.1 + 1 + z.diff.lag)
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--1633724  -152346     4888   175537   925463 
+-1755395  -170662   -20225   145760  1438131 
 
 Coefficients:
-              Estimate Std. Error t value Pr(>|t|)   
-(Intercept)  1.619e+05  7.499e+04   2.159  0.03600 * 
-z.lag.1     -7.959e-01  2.375e-01  -3.351  0.00159 **
-z.diff.lag  -4.277e-01  2.407e-01  -1.777  0.08204 . 
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  2.432e+05  7.714e+04   3.152  0.00279 ** 
+z.lag.1     -1.054e+00  2.446e-01  -4.308 8.11e-05 ***
+z.diff.lag   1.133e-01  1.748e-01   0.648  0.51982    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 386400 on 47 degrees of freedom
-Multiple R-squared:  0.521,	Adjusted R-squared:  0.5006 
-F-statistic: 25.56 on 2 and 47 DF,  p-value: 3.08e-08
+Residual standard error: 423900 on 48 degrees of freedom
+Multiple R-squared:  0.4415,	Adjusted R-squared:  0.4182 
+F-statistic: 18.97 on 2 and 48 DF,  p-value: 8.477e-07
 
 
-Value of test-statistic is: -3.3514 5.6302 
+Value of test-statistic is: -4.308 9.4182 
 
 Critical values for test statistics: 
       1pct  5pct 10pct
@@ -285,26 +278,26 @@ lm(formula = z.diff ~ z.lag.1 - 1 + z.diff.lag)
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--1517487   -70050   120941   273898  1113094 
+-1507883   -67300    87631   273543  1702191 
 
 Coefficients:
-           Estimate Std. Error t value Pr(>|t|)   
-z.lag.1     -0.4468     0.1804  -2.476  0.01685 * 
-z.diff.lag  -0.7150     0.2080  -3.437  0.00123 **
+            Estimate Std. Error t value Pr(>|t|)  
+z.lag.1      -0.3834     0.2089  -1.836   0.0726 .
+z.diff.lag1  -0.4987     0.2149  -2.321   0.0246 *
+z.diff.lag2  -0.6155     0.2542  -2.421   0.0193 *
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 400900 on 48 degrees of freedom
-Multiple R-squared:  0.4747,	Adjusted R-squared:  0.4528 
-F-statistic: 21.68 on 2 and 48 DF,  p-value: 1.953e-07
+Residual standard error: 439700 on 48 degrees of freedom
+Multiple R-squared:    0.4,	Adjusted R-squared:  0.3625 
+F-statistic: 10.66 on 3 and 48 DF,  p-value: 1.734e-05
 
 
-Value of test-statistic is: -2.4763 
+Value of test-statistic is: -1.8356 
 
 Critical values for test statistics: 
      1pct  5pct 10pct
 tau1 -2.6 -1.95 -1.61
-
 ```
 
 Dado que en la prueba ADF con intercepto y tendencia de la variable $PIBpc$, ambos terminos dieron significativos, entonces se decidio testear la prueba ADF con intercepto y con tendencia. Dado que en la prueba ADF con intercepto de la variable $C1PIBpc$, el intercepto dio significativo, entonces se decidio testear la prueba ADF con intercepto. 
@@ -316,8 +309,10 @@ Los resultados de la misma son:
 | $PIBpc$    | $\tau_\tau$ |  1                                                       |  $-2.1093$ | $-4.04$ | $-3.45$ | $-3.15$ |
 | $PIBpc$    | $\phi_2$    |  1                                                       |  $3.2214$  |  $6.50$ |  $4.88$ |  $4.16$ |
 | $PIBpc$    | $\phi_3$    |  1                                                       |  $2.2795$  |  $8.73$ |  $6.49$ |  $5.47$ |
-| $C1PIBpc$  | $\tau_\mu$  |  1                                                       |  $-3.3514$ | $-3.51$ | $-2.89$ | $-2.58$ |
-| $C1PIBpc$  | $\phi_1$    |  1                                                       |  $5.6302$  |  $6.70$ |  $4.71$ |  $3.86$ |
+| $C1PIBpc$  | $\tau_\mu$  |  1                                                       |  $-4.308$  | $-3.51$ | $-2.89$ | $-2.58$ |
+| $C1PIBpc$  | $\phi_1$    |  1                                                       |  $9.4182$  |  $6.70$ |  $4.71$ |  $3.86$ |
+
+Value of test-statistic is: -1.2549 4.7262 1.5025 
 
 En consecuencia, la variable $PIBpc$ es no estacionaria porque:
 * $\tau_\tau$ = **-2.1093**>-3.15, es decir, no se rechaza $\gamma=0$ al 10%, 5% y 1%
@@ -325,8 +320,8 @@ En consecuencia, la variable $PIBpc$ es no estacionaria porque:
 * $\phi_3$ = **2.2795**<5.47, es decir, no se rechaza $a_0=\gamma=a_2=0$ al 10%, 5% y 1%
 
 Y la variable $C1PIBpc$ es estacionaria porque
-* $\tau_\mu$ = -3.51<**-3.3514**<-3.15, es decir, se rechaza $\gamma=0$ al 1% y se rechaza al 5% y 10%
-* $\phi_1$ = 4.71<**5.6302**<6.70, es decir, $\gamma=a_0=0$ no se rechaza al 1%  y se rechaza al se rechaza
+* $\tau_\mu$ = **-4.308**<-3.51, es decir, no se rechaza $\gamma=0$ al 1%, 5% y 10%
+* $\phi_1$ = 6.70<**9.4182**<6.70, es decir, no se rechaza $\gamma=0$ al 1%, 5% y 10%
 
 urdfTest(PIBpc, lags = 1, type = c("ct"), doplot = TRUE)
 ``` r
@@ -354,7 +349,7 @@ summary(C1PIBpc_DFGLS2c.ers)
 summary(C1PIBpc_DFGLS2t.ers)
 ```
 
-Obteniendfo
+Obteniendo
 ``` r
 > summary(PIBpc_DFGLS1c.ers)
 
