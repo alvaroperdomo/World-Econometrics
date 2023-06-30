@@ -19,9 +19,9 @@ La siguiente tabla presenta las pruebas que vamos a analizar. Asi mismo, dando c
 
 Posteriormente, se presenta un ejemplo utilizando la base de datos "Indicadores de Desarrollo Económico del Banco mundial". Para el ejercicio, se ha escogido analizar la variable más utilizada en términos de desarrollo económico, el PIB per cápita, de un país en vías de desarrollo. Más específicamente, se va a analizar la evolución del PIB per cápita de Colombia a precios constantes.
 
-## Ejemplo: PIB per cápita de Colombia a precios constantes en pesos
+## Ejemplo: PIB per cápita de Colombia
 
-La prueba se va a hacer con respecto al **PIB per cápita de Colombia** en niveles y en primeras diferencias utilizando el siguiente código:
+La prueba se va a hacer con respecto al **PIB per cápita de Colombia a precios constantes en pesos durante el periodo 1960-2019** en niveles y en primeras diferencias. No se utiliza la información hasta 2022 por motivos didacticos; en particular, en 2020 (es decir, en la parte final de la base de datos) hay un cambio estructural bastante fuerte de un solo periodo a raíz de la cuarentena producto de la epidemia del Covid-19. Entonces, **XXX**
 
 Retomamos parte del código de R que se había utilizado previamente 
 ``` r
@@ -40,8 +40,7 @@ library(urca)
 
 
 dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
-ggplot(dat, aes(year, PIB_per_capita)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
-Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
+
 ```
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ec783053-9f06-4834-9983-9158350145b8)
 
@@ -49,10 +48,14 @@ A partir del gráfico se puede comenzar a inferir que la variable no tiene un co
 
 Para el gráfico de la $FAC$ se ejecuta el comando
 ``` r
+dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
 dat_ <- dat %>% arrange(year)
 dat <- na.omit(dat_)
+graf_ = subset(dat, select = c(year, PIB_per_capita))
+ggplot(graf_, aes(year, PIB_per_capita)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
+Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
 PIBpc_ = subset(dat, select = c(PIB_per_capita))
-PIBpc <- ts(PIBpc_, start=1960)
+PIBpc <- ts(PIBpc_, start=1960, end=2022)
 C1PIBpc <- diff(PIBpc, differences = 1)
 
 autoplot(acf(PIBpc, plot = FALSE))
