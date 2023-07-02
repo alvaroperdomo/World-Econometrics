@@ -2,7 +2,7 @@
 # Entendiendo un Mundo en Desarrollo
 Keywords: `Econometría` `Series de Tiempo` `Indicadores de Desarrollo Económico` `Banco Mundial`
 #### Duración del curso: XXXX horas
-Bienvenido al curso _Análisis Aplicado de Series de Tiempo: Entendiendo un Mundo en Desarrollo_. En este curso aprenderá a hacer análisis básico de series de tiempo utilizando [RStudio](https://posit.co/download/rstudio-desktop/). Durante el desarrollo del mismo se tomara como referencia, para el análisis empírico, la base de datos del Banco Mundial "[Indicadores de Desarrollo Económico](https://databank.bancomundial.org/reports.aspx?source=world-development-indicators)", con el fin de aprender los principales entresijos de esta herramienta y metodología econométrica de una forma interesante.
+Bienvenido al curso _Análisis Aplicado de Series de Tiempo: Entendiendo un Mundo en Desarrollo_. En este curso aprenderá a hacer análisis básico de series de tiempo en R utilizando como entorno de desarrollo a [RStudio](https://posit.co/download/rstudio-desktop/). Durante el desarrollo del mismo se tomara como referencia, para el análisis empírico, la base de datos del Banco Mundial "[Indicadores de Desarrollo Económico](https://databank.bancomundial.org/reports.aspx?source=world-development-indicators)", con el fin de aprender los principales entresijos de esta herramienta y metodología econométrica de una forma interesante.
 
 El curso esta dividido en tres secciones principales, a través de las cuales el estudiante desarrollará diferentes habilidades computacionales y analíticas, que podrá aplicar en el análisis de casos de estudio propios.
 
@@ -23,9 +23,9 @@ El curso esta dividido en tres secciones principales, a través de las cuales el
 ## Requisitos
 Es deseable que las alumnos tengan aunque sea conocimientos básicos de R. Sin embargo, en el curso se van a proveer códigos completos de R para ser utilizados por parte de los alumnos.
 
-Es recomendable que los alumnos además de tener instalado [RStudio](https://posit.co/download/rstudio-desktop/) tengan instalado [Rtools](https://cran.r-project.org/bin/windows/Rtools/).
+Es recomendable que los alumnos además de tener instalado R y [RStudio](https://posit.co/download/rstudio-desktop/) tengan instalado el paquete de herramientas [Rtools](https://cran.r-project.org/bin/windows/Rtools/).
 
-A las personas que no utilizan regularmente R se les recomienda hacer de antemano los tutoriales de https://learnr.numbat.space/
+A las personas que no utilizan regularmente R se les recomienda desarrollar dee antemano los tutoriales de https://learnr.numbat.space/
 
 ## Dirigido a
 
@@ -33,11 +33,11 @@ Los contenidos presentados en este curso están dirigidos a estudiantes y profes
 
 ## Metodología
 
-La primera sección del curso comienza con una explicación de lo que es el análisis de series de tiempo y las caracteristicas principales de la base de datos "Indicadores de Desarrollo Económico" del Banco Mundial. Posteriormente, se explica cómo se puede descargar y manipular esta base directamente desde R. Al final de la sección se hace una evaluación donde se formulan varias preguntas de selección múltiple con respecto a los conceptos vistos en la sección y con respecto a un ejercicio que el alumno debe desarrollar en R utilizando la base de datos del Banco Mundial (los códigos en R necesarios para el desarrollo del ejercicio serán explicados durante el desarrollo de la sección). 
+La primera sección del curso comienza con una explicación de lo que es el análisis de series de tiempo y las caracteristicas principales de la base de datos "Indicadores de Desarrollo Económico" del Banco Mundial. Posteriormente, se explica cómo se puede descargar y manipular esta base directamente desde RStudio. Al final de la sección se hace una evaluación donde se formulan varias preguntas de selección múltiple con respecto a los conceptos vistos en la sección y con respecto a un ejercicio que el alumno debe desarrollar en R utilizando la base de datos del Banco Mundial[^1]. 
+
+[^1]: **Los códigos en R necesarios para el desarrollo del ejercicio serán explicados durante el desarrollo de la sección**
 
 Las otras dos secciones del curso comienzan con una explicación general de la herramientas econométricas a utilizar. Luego, se desarrollan algunos ejercicios y posteriormente se deja un ejercicio para ser desarrollado por el alumno. Con respecto a este último se haran algunas preguntas de selección múltiple para evaluar si los conceptos principales han sido entendidos de forma apropiada.
-
-
 
 ## Sección 1 - Las Series de Tiempo, R y la Base de Datos del Banco Mundial
 
@@ -47,7 +47,6 @@ Las otras dos secciones del curso comienzan con una explicación general de la h
 | [02. R y Los Indicadores de Desarrollo Económico del Banco Mundial](Seccion01/Seccion01_02/README.md)   |¿Cómo manipular los Indicadores de Desarrollo Económico del Banco Mundial en R                                            |             1.5           | 
 
 ## Sección 2 - Análisis Univariado (ARIMA)
-
 
 | Subsecciones                                                                                        | Contenido                                                                                                      | Dedicación,<br> 8 horas   | 
 |-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
