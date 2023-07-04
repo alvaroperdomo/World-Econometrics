@@ -647,7 +647,7 @@ La variable $C1PIBpc$ es estacionaria porque:
 * Con el estadistico $P_\mu$: $**0.319**<1.95$, se rechaza la hipótesis nula de raíz unitaria al 1%, 5% y 10%
 
 ### Prueba KPSS
-Vamos a aplicar las opciones de rezago de R. Sin embargo, no olviden que según  en Newey y West (1994) la longitud de rezago se establece proporcional a $T^{1/3}$, en decir $62^{1/3}=3.96=4$, en nuestro caso: .
+Vamos a aplicar las opciones de rezago de R. Sin embargo, no olviden que según  en Newey y West (1994) la longitud de rezago se establece proporcional a $T^{1/3}$, en decir $60^{1/3}=3.92 \sim 4$, en nuestro caso: .
 
 ``` r
 kpss1m.kpss <- ur.kpss(PIBpc, type = c("mu"), lags = c("short"), use.lag = NULL)
