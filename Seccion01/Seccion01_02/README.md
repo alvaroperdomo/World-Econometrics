@@ -240,12 +240,9 @@ PIBpc_ = subset(dat, select = c(PIB_per_capita))
 PIBpc <- ts(PIBpc_, start=1960)
 ```
 
-| [Anterior Sección: 01-01. Series de tiempo](../../Seccion01_01/Readme.md) | [:house: Inicio](../../Readme.md) | [Siguiente Sección: 02-01. Introducción Análisis Univariado](../Seccion02_01/Readme.md) | 
+| [Anterior Sección: 01-01. Series de tiempo](../Seccion01_01/Readme.md) | [:house: Inicio](../../Readme.md) | [Siguiente Sección: 02-01. Introducción Análisis Univariado](../Seccion02_01/Readme.md) | 
 |---------------------------------------------------------------------------|---------------------------|-----------------------------------------------------------------------------------------|
 
-
-| [Anterior Sección: 01-01. Series de tiempo](../Seccion01_01/Readme.md) | 
-|---------------------------------------------------------------------------|
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
