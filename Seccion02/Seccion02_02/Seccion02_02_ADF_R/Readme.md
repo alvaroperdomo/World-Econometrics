@@ -10,12 +10,12 @@ unitrootTest(x, lags = 1, type = c("nc", "c", "ct"), title = NULL, description =
 
 | **Argumentos**          | **Descripción**                                                                                                     | 
 |-------------------------|---------------------------------------------------------------------------------------------------------------------|
-| **x**                   | vector o variable de series de tiempo                                                                               |
+| **x**                   | vector o variable de series de tiempo a la que se le va a hacer la prueba                                           |
 | **lags**                | el número máximo de rezagos utilizados en la prueba (cuando lags = 1, estamos en el caso especial de una prueba DF) |
-| **type**                | cadena de caracteres que describa el tipo de regresión de raíz unitaria. Las opciones válidas son:                  |
-|                         |  **"nc"** para una regresión sin intercepto (constante) ni tendencia temporal                                       |
-|                         |  **"c"** para una regresión con intercepto (constante) pero sin tendencia temporal - **_Opción Predeterminada_**    |
-|                         |  **"ct"** para una regresión con intercepto (constante) y con tendencia temporal                                    |
+| **type**                | en esta opción se especifica el tipo de prueba ADF que se va a llevar a cabo. Las opciones válidas son:             |
+|                         |  **"nc"** para una prueba sin intercepto (constante) ni tendencia temporal                                          |
+|                         |  **"c"** para una prueba con intercepto (constante) pero sin tendencia temporal - **_Opción Predeterminada_**       |
+|                         |  **"ct"** para una prueba con intercepto (constante) y con tendencia temporal                                       |
 | **title**               | cadena de caracteres que permite darle un título a la prueba                                                        |
 | **description**         | cadena de caracteres que permite una breve descripción                                                              | 
 
@@ -33,13 +33,13 @@ urdfTest(x, lags = 1, type = c("nc", "c", "ct"), doplot = TRUE)
 
 | **Argumentos**          | **Descripción**                                                                                                     | 
 |-------------------------|---------------------------------------------------------------------------------------------------------------------|
-| **x**                   | vector o variable de series de tiempo                                                                               |
+| **x**                   | vector o variable de series de tiempo a la que se le va a hacer la prueba                                           |
 | **lags**                | el número máximo de rezagos utilizados en la prueba (cuando lags = 1, estamos en el caso especial de una prueba DF) |
-| **type**                | cadena de caracteres que describa el tipo de regresión de raíz unitaria. Las opciones válidas son:                  |
-|                         | **"nc"** para una regresión sin intercepto (constante) ni tendencia temporal                                        |
-|                         | **"c"** para una regresión con intercepto (constante) pero sin tendencia temporal - **_Opción Predeterminada_**     |
+| **type**                | en esta opción se especifica el tipo de prueba ADF que se va a llevar a cabo. Las opciones válidas son:             |
+|                         | **"nc"** para una prueba sin intercepto (constante) ni tendencia temporal                                           |
+|                         | **"c"** para una prueba con intercepto (constante) pero sin tendencia temporal - **_Opción Predeterminada_**        |
 |                         | **"ct"** para una regresión con intercepto (constante) y con tendencia temporal                                     |
-| **doplot**              | indicador lógico, por defecto VERDADERO. ¿Debe mostrarse un gráfico de diagnóstico?                                 | 
+| **doplot**              | Indicador lógico, para especificar si se desea obtener un gráfico de diagnóstico                                    | 
 |                         | **"TRUE"** para mostrar gráfico de diagnostico **_Opción Predeterminada_**                                          |
 |                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                                  |
 
@@ -50,11 +50,11 @@ ur.df(x, type = c("none", "drift", "trend"), lags = 1, selectlags = c("Fixed", "
 
 | **Argumentos**          | **Descripción**                                                                                                                      | 
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| **x**                   | vector o variable de series de tiempo                                                                                                |
+| **x**                   | vector o variable de series de tiempo a la que se le va a hacer la prueba                                                            |
 | **lags**                | el número máximo de rezagos utilizados en la prueba  (cuando lags = 1, estamos en el caso especial de una prueba DF)                 |
-| **type**                | cadena de caracteres que describa el tipo de regresión de raíz unitaria. Las opciones válidas son:                                   |
-|                         | **"none"** para una regresión sin intercepto (constante) ni tendencia temporal                                                       |
-|                         | **"drift"** para una regresión con intercepto (constante) pero sin tendencia temporal - **_Opción Predeterminada_**                  |
+| **type**                | en esta opción se especifica el tipo de prueba ADF que se va a llevar a cabo. Las opciones válidas son:                              |
+|                         | **"none"** para una prueba sin intercepto (constante) ni tendencia temporal                                                          |
+|                         | **"drift"** para una prueba con intercepto (constante) pero sin tendencia temporal - **_Opción Predeterminada_**                     |
 |                         | **"trend"** para una regresión con intercepto (constante) y con tendencia temporal                                                   |
 | **selectlags**          | Método escogido para la selección del número de rezagos:                                                                             | 
 |                         | **"Fixed"** el número de rezagos establecidos en la opción "lags" - **_Opción Predeterminada_**                                      |
