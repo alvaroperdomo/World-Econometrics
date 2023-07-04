@@ -17,8 +17,7 @@ La prueba se va a hacer con respecto al **PIB per cápita de Colombia a precios 
 
 Retomamos parte del código de R que se había utilizado en la sección 01-02, solicitando la activación de algunas librerias adicionales: 
 ``` r
-rm() # Remove all objects from current workspace​
-ls() # confirm that a data frame has been deleted​
+rm(list = ls())
 
 library(WDI)
 library(dplyr)
@@ -28,16 +27,29 @@ library(forecast)
 library(fUnitRoots)
 library(urca)
 
-dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
-dat_ <- dat %>% arrange(year)
-dat <- na.omit(dat_)
-graf_ = subset(dat, select = c(year, PIB_per_capita))
-ggplot(graf_, aes(year, PIB_per_capita)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
-Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
-```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ec783053-9f06-4834-9983-9158350145b8)
+WDIsearch(string='NY.GDP.PCAP.KN', field='indicator')
 
-A partir del gráfico se puede comenzar a inferir que la variable no tiene un comportamiento estacionario. Sin embargo, hay que recolectar más evidencia al respecto, para ello primero se visualiza la función de autocorrelación de las variables $PIBpc$ y $C1PIBpc$ utilizando el siguiente comando: 
+dat = WDI(indicator= c(PIBpc = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
+dat <- dat %>% arrange(year)
+dat <- na.omit(dat)
+dat <- mutate(dat, PIBpc_lag1 = lag(PIBpc, order_by = year), C1PIBpc=PIBpc-PIBpc_lag1, country=NULL, iso2c=NULL, iso3c=NULL)
+
+ejercicio <- dat[-c(61:63),]
+ejercicioC1 <- ejercicio[-c(1),]
+ejercicio <- mutate(ejercicio, PIBpc_lag1=NULL, C1PIBpc=NULL)
+ejercicioC1 <- mutate(ejercicioC1, PIBpc=NULL, PIBpc_lag1=NULL)
+
+ggplot(ejercicio, aes(year, PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
+
+ggplot(ejercicioC1, aes(year, C1PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="Cambio en el PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
+
+```
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/a9cf6e33-1204-405a-865d-2b55d90b3f1b)
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/771298eb-e6d5-49b4-96bd-6252b91e3493)
+
+
+A partir de los gráficos se puede comenzar a inferir que la variable $PIBpc$ no tiene un comportamiento estacionario y la variable $C1PIBpc$ si lo tiene. Sin embargo, hay que recolectar más evidencia al respecto, para ello primero se visualiza la función de autocorrelación de las variables $PIBpc$ y $C1PIBpc$ utilizando el siguiente comando: 
 
 Para el gráfico de la $FAC$ se ejecuta el comando
 ``` r
@@ -49,16 +61,70 @@ autoplot(acf(PIBpc, plot = FALSE))
 autoplot(acf(C1PIBpc, plot = FALSE))
 ```
 Obteniendose
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/e48c24fd-7cc2-481e-a51f-3e81a71e22ae)
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/0271a51d-b03d-4855-94fb-345a23e767c1)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/bde961de-2060-425e-9504-d7c71846de8e)
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/e9e7176a-6b2b-4202-9b43-49f8a67e9a9c)
 
-El decaimiento continuo pero moderado de la $FAC$ de la variable $PIBpc$ da una idea de raíz unitaria. Por otro lado, la variable $C1PIBpc$ tiene un $FAC$ bajo desde el comienzo, dando así una idea de estacionariedad. 
+El decaimiento continuo pero moderado de la $FAC$ de la variable $PIBpc$ da una idea de raíz unitaria. Por otro lado, la $FAC$ de la variable $C1PIBpc$ desde el comienzo cae raídamente, dando así una idea de estacionariedad. 
 
-A continuación se desarrollan pruebas de raíz unitaria. Primero, para la variable $PIBpc$ y luego para la variable $C1PIBpc$:
+Antes de desarrollar las diferentes pruebas de raíz unitaria, se desarrolla la siguiente prueba sencilla para analizar si es necesario incluirles la tendencia y el intercepto a las diferentes pruebas de raíz unitaria.
 
-### Prueba ADF
+``` r
+PIBpc_MCO <- lm(PIBpc ~ year, data = ejercicio)
+C1PIBpc_MCO <- lm(C1PIBpc ~ year, data = ejercicioC1)
+summary(PIBpc_MCO)
+summary(C1PIBpc_MCO)
+```
+Obteniendose, 
+``` r
+> summary(PIBpc_MCO)
+
+Call:
+lm(formula = PIBpc ~ year, data = ejercicio)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1753296  -382467      993   432933  1682154 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -379979406   12091757  -31.43   <2e-16 ***
+year            196216       6078   32.28   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 815300 on 58 degrees of freedom
+Multiple R-squared:  0.9473,	Adjusted R-squared:  0.9464 
+F-statistic:  1042 on 1 and 58 DF,  p-value: < 2.2e-16
+
+> summary(C1PIBpc_MCO)
+
+Call:
+lm(formula = C1PIBpc ~ year, data = ejercicioC1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-907232 -108680    8272  128200  541135 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)  
+(Intercept) -7204478    3429180  -2.101   0.0401 *
+year            3724       1723   2.161   0.0349 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 225400 on 57 degrees of freedom
+Multiple R-squared:  0.07575,	Adjusted R-squared:  0.05953 
+F-statistic: 4.671 on 1 and 57 DF,  p-value: 0.03488
+```
+Note que al 1% de significancia la variable $PIBpc$ tiene constante y tendencia significativas y la variable $C1PIBpc$. Por lo tanto, en la medida de lo posible, las pruebas de raíz unitaria de la variable $PIBpc$ se analizaran con intercepto y tendencia, mientras que los de la variable $C1PIBpc$ se analizaran sin intercepto y sin tendencia.[^1]
+[^1]: **De todas formas, todas las pruebas de raíz unitaria se van a ser con diferentes variantes dentro de la prueba para que el alumno por su cuenta pueda contrastar los resultados de las mismas.**
+
+A continuación se desarrollan diferentes pruebas de raíz unitaria. Primero, para la variable $PIBpc$ y luego para la variable $C1PIBpc$.
+
+### 1) Prueba ADF
+
 ``` r
 PIBpc_ur_trend.df <- ur.df(y=PIBpc, type = c("trend"), lags = 10, selectlags = c("AIC"))
 PIBpc_ur_drift.df <- ur.df(PIBpc, type = c("drift"), lags = 10, selectlags = c("AIC"))
