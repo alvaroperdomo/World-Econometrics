@@ -389,12 +389,12 @@ En consecuencia, la variable $PIBpc$ es no estacionaria porque:
 Y la variable $C1PIBpc$ es estacionaria porque
 * $\tau$ = -4.308< **-2.3286** <-2.60, es decir, no se rechaza $\gamma=0$ al 1% pero si se rechaza al 5% y 10%
 
-Ahora corra los comandos
+Ahora copie los comandos
 ``` r
 PIBpc_dfTest_trend<- urdfTest(PIBpc, lags = 1, type = c("ct"), doplot = TRUE)
 C1PIBpc_dfTest_trend<- urdfTest(C1PIBpc, lags = 1, type = c("ct"), doplot = TRUE)
 ```  
-Obteniendose los siguientes gráficos de prueba de los errores de la estimación ,
+Obteniendose los siguientes gráficos de prueba sobre los errores de estimación en la prueba,
 
 1) Para $PIBpc$
    
@@ -402,7 +402,7 @@ Obteniendose los siguientes gráficos de prueba de los errores de la estimación
 
 2) Para $C1PIBpc$
    
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/f1cd6217-9328-48a6-a2e7-cc063995e63c)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ffc5fbd8-d472-46d0-bc35-4ec68ec4ec80)
 
 En consecuencia, los gráficos $FAC$ y $FACP$ revelan que los errores son ruidos blanco en ambas pruebas, por lo tanto ambas pruebas estan bien hechas.
 
