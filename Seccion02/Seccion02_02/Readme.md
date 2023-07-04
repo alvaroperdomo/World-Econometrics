@@ -394,10 +394,12 @@ C1PIBpc_dfTest_trend<- urdfTest(C1PIBpc, lags = 1, type = c("ct"), doplot = TRUE
 ```  
 Obteniendose los siguientes gráficos de prueba de los errores de la estimación ,
 
-1) Para $PIBpc"
+1) Para $PIBpc$
+   
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/eda2ac2e-e86a-43c7-bdec-db270fb6216e)
 
 2) Para $C1PIBpc"
+   
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/f1cd6217-9328-48a6-a2e7-cc063995e63c)
 
 En consecuencia, los gráficos $FAC$ y $FACP$ revelan que los errores son ruidos blanco en ambas pruebas, por lo tanto ambas pruebas estan bien hechas.
