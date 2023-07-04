@@ -34,7 +34,7 @@ La primera sección del curso comienza con una explicación de lo que es el aná
 
 [^1]: **Los códigos en R necesarios para el desarrollo del ejercicio serán explicados durante el desarrollo de la sección**
 
-Las otras dos secciones del curso comienzan con una explicación general de la herramientas econométricas a utilizar. Luego, se desarrollan algunos ejercicios y posteriormente se deja un ejercicio para ser desarrollado por el alumno. Con respecto a este último se haran algunas preguntas de selección múltiple para evaluar si los conceptos principales han sido entendidos de forma apropiada.
+Las otras dos secciones del curso comienzan con una explicación general de las herramientas econométricas a utilizar. Luego, se desarrollan algunos ejercicios y posteriormente se deja un ejercicio para ser desarrollado por el alumno. Con respecto a este último se haran algunas preguntas de selección múltiple para evaluar si los conceptos principales han sido entendidos de forma apropiada.
 
 ## Sección 1 - Las Series de Tiempo, R y la Base de Datos del Banco Mundial
 | Subsecciones                                                                                            | Contenido                                                                                                                | Dedicación,<br> 2 horas   | 
