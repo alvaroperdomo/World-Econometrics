@@ -30,7 +30,7 @@ A las personas que no utilizan regularmente R se les recomienda desarrollar dee 
 Los contenidos presentados en este curso están dirigidos a estudiantes y profesionales de diferentes disciplinas que requieran aprender y/o fortalecer sus conocimientos en análisis de series de tiempo en R.
 
 ## Metodología
-La primera sección del curso comienza con una explicación de lo que es el análisis de series de tiempo y las caracteristicas principales de la base de datos "Indicadores de Desarrollo Económico" del Banco Mundial. Posteriormente, se explica cómo se puede descargar y manipular esta base directamente desde RStudio. Al final de la sección se hace una evaluación donde se formulan varias preguntas de selección múltiple con respecto a los conceptos vistos en la sección y con respecto a un ejercicio que el alumno debe desarrollar en RStdio utilizando la base de datos del Banco Mundial[^1]. 
+La primera sección del curso comienza con una explicación de lo que es el análisis de series de tiempo y de las caracteristicas principales de la base de datos "Indicadores de Desarrollo Económico" del Banco Mundial. Posteriormente, se explica cómo se puede descargar y manipular esta base directamente desde RStudio. Al final de la sección se hace una evaluación donde se formulan varias preguntas de selección múltiple con respecto a los conceptos vistos en la sección y con respecto a un ejercicio que el alumno debe desarrollar en RStudio utilizando la base de datos del Banco Mundial[^1]. 
 
 [^1]: **Los códigos en R necesarios para el desarrollo del ejercicio serán explicados durante el desarrollo de la sección**
 
