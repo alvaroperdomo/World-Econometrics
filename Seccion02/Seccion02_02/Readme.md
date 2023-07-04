@@ -639,11 +639,11 @@ Critical values of DF-GLS are:
 critical values -3.58 -3.03 -2.74
 
 La variable $PIBpc$ es no estacionaria porque:
-* Con el estadistico $DF-GLS_\tau$: $ **-3.8173**<-3.58$, se rechaza la hipótesis nula de raíz unitaria al 10%, 5% y 1% 
+* Con el estadistico $DF-GLS_\tau$: $**-3.8173**<-3.58$, se rechaza la hipótesis nula de raíz unitaria al 10%, 5% y 1% 
 * Con el estadistico $P_\tau$: $**34.0584**>6.79$, no se rechaza la hipótesis nula de raíz unitaria  10%, 5% y 1% 
 
 La variable $C1PIBpc$ es estacionaria porque:
-* Con el estadistico $DF-GLS_\mu$: $ **-2.9092** <-2.60$, se rechaza la hipótesis nula de raíz unitaria al 1%, 5% y 10%
+* Con el estadistico $DF-GLS_\mu$: $**-2.9092**<-2.60$, se rechaza la hipótesis nula de raíz unitaria al 1%, 5% y 10%
 * Con el estadistico $P_\mu$: $**0.319**<1.95$, se rechaza la hipótesis nula de raíz unitaria al 1%, 5% y 10%
 
 ### Prueba KPSS
