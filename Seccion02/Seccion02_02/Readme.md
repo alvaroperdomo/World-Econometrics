@@ -468,6 +468,21 @@ Critical values of DF-GLS are:
                 1pct  5pct 10pct
 critical values -2.6 -1.95 -1.62
 
+> summary(PIBpc_DFGLS2c.ers)
+
+############################################### 
+# Elliot, Rothenberg and Stock Unit Root Test # 
+############################################### 
+
+Test of type P-test 
+detrending of series with intercept 
+
+Value of test-statistic is: 30.3276 
+
+Critical values of P-test are:
+                1pct 5pct 10pct
+critical values 1.95 3.11  4.17
+
 > summary(PIBpc_DFGLS1t.ers)
 
 ############################################### 
@@ -505,21 +520,6 @@ Value of test-statistic is: -3.8173
 Critical values of DF-GLS are:
                  1pct  5pct 10pct
 critical values -3.58 -3.03 -2.74
-
-> summary(PIBpc_DFGLS2c.ers)
-
-############################################### 
-# Elliot, Rothenberg and Stock Unit Root Test # 
-############################################### 
-
-Test of type P-test 
-detrending of series with intercept 
-
-Value of test-statistic is: 30.3276 
-
-Critical values of P-test are:
-                1pct 5pct 10pct
-critical values 1.95 3.11  4.17
 
 > summary(PIBpc_DFGLS2t.ers)
 
@@ -574,6 +574,21 @@ Critical values of DF-GLS are:
                 1pct  5pct 10pct
 critical values -2.6 -1.95 -1.62
 
+> summary(C1PIBpc_DFGLS2c.ers)
+
+############################################### 
+# Elliot, Rothenberg and Stock Unit Root Test # 
+############################################### 
+
+Test of type P-test 
+detrending of series with intercept 
+
+Value of test-statistic is: 0.319 
+
+Critical values of P-test are:
+                1pct 5pct 10pct
+critical values 1.95 3.11  4.17
+
 > summary(C1PIBpc_DFGLS1t.ers)
 
 ############################################### 
@@ -611,21 +626,6 @@ Value of test-statistic is: -3.4366
 Critical values of DF-GLS are:
                  1pct  5pct 10pct
 critical values -3.58 -3.03 -2.74
-
-> summary(C1PIBpc_DFGLS2c.ers)
-
-############################################### 
-# Elliot, Rothenberg and Stock Unit Root Test # 
-############################################### 
-
-Test of type P-test 
-detrending of series with intercept 
-
-Value of test-statistic is: 0.319 
-
-Critical values of P-test are:
-                1pct 5pct 10pct
-critical values 1.95 3.11  4.17
 
 > summary(C1PIBpc_DFGLS2t.ers)
 
