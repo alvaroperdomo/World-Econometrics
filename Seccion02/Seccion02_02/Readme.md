@@ -687,6 +687,23 @@ C1PIBpc_1t.kpss <- ur.kpss(C1PIBpc, type = c("tau"), lags = c("short"), use.lag 
 C1PIBpc_2t.kpss <- ur.kpss(C1PIBpc, type = c("tau"), lags = c("long"), use.lag = NULL)
 C1PIBpc_3t.kpss <- ur.kpss(C1PIBpc, type = c("tau"), lags = c("nil"), use.lag = NULL)
 C1PIBpc_4t.kpss <- ur.kpss(C1PIBpc, type = c("tau"), use.lag = 4)
+
+summary(PIBpc_1m.kpss)
+summary(PIBpc_2m.kpss)
+summary(PIBpc_3m.kpss)
+summary(PIBpc_4m.kpss)
+summary(PIBpc_1t.kpss)
+summary(PIBpc_2t.kpss)
+summary(PIBpc_3t.kpss)
+summary(PIBpc_4t.kpss)
+summary(C1PIBpc_1m.kpss)
+summary(C1PIBpc_2m.kpss)
+summary(C1PIBpc_3m.kpss)
+summary(C1PIBpc_4m.kpss)
+summary(C1PIBpc_1t.kpss)
+summary(C1PIBpc_2t.kpss)
+summary(C1PIBpc_3t.kpss)
+summary(C1PIBpc_4t.kpss)
 ```
 Obteniendo
 ``` r
@@ -801,15 +818,131 @@ Value of test-statistic is: 0.0619
 Critical value for a significance level of: 
                 10pct  5pct 2.5pct  1pct
 critical values 0.119 0.146  0.176 0.216
+
+> summary(C1PIBpc_1m.kpss)
+
+####################### 
+# KPSS Unit Root Test # 
+####################### 
+
+Test is of type: mu with 3 lags. 
+
+Value of test-statistic is: 0.2501 
+
+Critical value for a significance level of: 
+                10pct  5pct 2.5pct  1pct
+critical values 0.347 0.463  0.574 0.739
+
+> summary(C1PIBpc_2m.kpss)
+
+####################### 
+# KPSS Unit Root Test # 
+####################### 
+
+Test is of type: mu with 10 lags. 
+
+Value of test-statistic is: 0.2202 
+
+Critical value for a significance level of: 
+                10pct  5pct 2.5pct  1pct
+critical values 0.347 0.463  0.574 0.739
+
+> summary(C1PIBpc_3m.kpss)
+
+####################### 
+# KPSS Unit Root Test # 
+####################### 
+
+Test is of type: mu with 0 lags. 
+
+Value of test-statistic is: 0.5362 
+
+Critical value for a significance level of: 
+                10pct  5pct 2.5pct  1pct
+critical values 0.347 0.463  0.574 0.739
+
+> summary(C1PIBpc_4m.kpss)
+
+####################### 
+# KPSS Unit Root Test # 
+####################### 
+
+Test is of type: mu with 4 lags. 
+
+Value of test-statistic is: 0.2339 
+
+Critical value for a significance level of: 
+                10pct  5pct 2.5pct  1pct
+critical values 0.347 0.463  0.574 0.739
+
+> summary(C1PIBpc_1t.kpss)
+
+####################### 
+# KPSS Unit Root Test # 
+####################### 
+
+Test is of type: tau with 3 lags. 
+
+Value of test-statistic is: 0.0667 
+
+Critical value for a significance level of: 
+                10pct  5pct 2.5pct  1pct
+critical values 0.119 0.146  0.176 0.216
+
+> summary(C1PIBpc_2t.kpss)
+
+####################### 
+# KPSS Unit Root Test # 
+####################### 
+
+Test is of type: tau with 10 lags. 
+
+Value of test-statistic is: 0.0734 
+
+Critical value for a significance level of: 
+                10pct  5pct 2.5pct  1pct
+critical values 0.119 0.146  0.176 0.216
+
+> summary(C1PIBpc_3t.kpss)
+
+####################### 
+# KPSS Unit Root Test # 
+####################### 
+
+Test is of type: tau with 0 lags. 
+
+Value of test-statistic is: 0.1337 
+
+Critical value for a significance level of: 
+                10pct  5pct 2.5pct  1pct
+critical values 0.119 0.146  0.176 0.216
+
+> summary(C1PIBpc_4t.kpss)
+
+####################### 
+# KPSS Unit Root Test # 
+####################### 
+
+Test is of type: tau with 4 lags. 
+
+Value of test-statistic is: 0.0641 
+
+Critical value for a significance level of: 
+                10pct  5pct 2.5pct  1pct
+critical values 0.119 0.146  0.176 0.216
 ```
 Dado que el PIBpc es una variable que presenta tendencia, entonces se decide testear dicha prueba. Los resultados de la misma son:
 
-| Estadistico | Rezagos        | Valor      |  10%    |  5%     |  2.5%   |  1%     |
-|-------------|:--------------:|:----------:|:-------:|:-------:|:-------:|:-------:|
-| $KPSS_\tau$ |  short= $3$    |  $0.2378$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
-| $KPSS_\tau$ |  long= $10$    |  $0.1297$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
-| $KPSS_\tau$ |  nil= $0$      |  $0.8286$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
-| $KPSS_\tau$ |  NW(1994)= $4$ |  $0.1994$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
+| Variable | Estadistico | Rezagos        | Valor      |  10%    |  5%     |  2.5%   |  1%     |
+|----------|-------------|:--------------:|:----------:|:-------:|:-------:|:-------:|:-------:|
+| PIBpc    | $KPSS_\tau$ |  short= $3$    |  $0.2378$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
+| PIBpc    | $KPSS_\tau$ |  long= $10$    |  $0.1297$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
+| PIBpc    | $KPSS_\tau$ |  nil= $0$      |  $0.8286$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
+| PIBpc    | $KPSS_\tau$ |  NW(1994)= $4$ |  $0.1994$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
+| C1PIBpc  | $KPSS_\tau$ |  short= $3$    |  $0.2378$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
+| C1PIBpc  | $KPSS_\tau$ |  long= $10$    |  $0.1297$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
+| C1PIBpc  | $KPSS_\tau$ |  nil= $0$      |  $0.8286$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
+| C1PIBpc  | $KPSS_\tau$ |  NW(1994)= $4$ |  $0.0619$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
 
 La variable es no estacionaria porque:
 * Cuando el número de rezagos es short= $3$: $0.2378>0.216$, se rechaza la hipótesis nula de estacionariedad
