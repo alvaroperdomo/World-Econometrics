@@ -171,15 +171,17 @@ ggplot es una comando que tiene muchas opciones de ser utilizado, a continuació
 * https://r-charts.com/evolution/time-series-ggplot2/
 
 ## Ejercicio utilizando el PIB per cápita[^1] de Colombia a precios constantes en pesos
-[^1]:El PIB per cápita es el producto interno bruto dividido por la población a mitad de año. Los datos están expresados en moneda local a precios constantes.
+[^1]:El PIB per cápita es el producto interno bruto dividido por la población a mitad de año.
 
 En la sección 2 se va a hacer buena parte del análisis utilizando el PIB per cápita de Colombia a precios constantes en moneda local (es decir, en pesos). Por lo tanto, a continuación se les muestra como manipular dicha información.
 
-El comando rm(list = ls()) es útil para borrar bases de datos previas de la memoria del programa
+Al comienzo de la programación le recomendamos copiar los siguientes comandos para:
+
 ``` r
-rm(list = ls())
+rm() # Remover toda la información existente del campo de trabajo
+ls() # Este comando confirma que toda la información se ha borrado​
 ```
-Llamamos a las dos librerias que se van a utilizar
+Llamamos a las dos librerias que se van a utilizar en el resto de este ejemplo
 ``` r
 library(WDI)
 library(ggplot2)
@@ -193,29 +195,63 @@ Dando como resultado
     indicator                          name
 1 NY.GDP.PCAP.KN GDP per capita (constant LCU)
 ```
-Llamamos la variable "NY.GDP.PCAP.KN" para Colombia y creamos la base de datos "dat" a partir de la información del Banco Mundial
+Se llama a la variable "NY.GDP.PCAP.KN" para Colombia y se crea la base de datos "dat" a partir de la información del Banco Mundial:
 ``` r
 dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
 ```
-Hacemos una visualización rápida de los datos:
+Se hace una visualización rápida de los datos:
 ``` r
 head(dat)
 ```
-Obtenemos:
+Obteniendo:
 ``` r
+> head(dat)
    country iso2c iso3c year PIB_per_capita
-1 Colombia    CO   COL 2022             NA
-2 Colombia    CO   COL 2021       17597659
-3 Colombia    CO   COL 2020       16082925
+1 Colombia    CO   COL 2022       18802572
+2 Colombia    CO   COL 2021       17612821
+3 Colombia    CO   COL 2020       16047602
 4 Colombia    CO   COL 2019       17558668
 5 Colombia    CO   COL 2018       17330777
 6 Colombia    CO   COL 2017       17220832
 ```
-Para más adelante, tome en cuenta que los datos estan organizados desde el último año hasta el primero y que al momento de hacer el ejercicio no se cuenta con el dato de 2022. 
+Observe que para esta variable los datos estan organizados en orden descendente (es decir, desde el último año hasta el primero). 
 
-Se gráfican los datos:
+Para organizar los datos en orden ascendente copie los siguientes comandos.
 ``` r
-ggplot(dat, aes(year, PIB_per_capita)) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
+dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
+dat_ <- dat %>% arrange(year)
+dat <- na.omit(dat_)
+head(dat)
+```
+Obteniendo:
+``` r
+> head(dat)
+   country iso2c iso3c year PIB_per_capita
+1 Colombia    CO   COL 1960        5349334
+2 Colombia    CO   COL 1961        5449711
+3 Colombia    CO   COL 1962        5569506
+4 Colombia    CO   COL 1963        5578865
+5 Colombia    CO   COL 1964        5746356
+6 Colombia    CO   COL 1965        5778607
+```
+Note que la base de datos "dat" contiene muchas más variables que las que desea utilizar, entonces puede depurar la información construyendo una base de datos (a la que llamaremos graf_) que sea un subconjunto de "dat", copiando la siguiente información:
+``` r
+graf_ = subset(dat, select = c(year, PIB_per_capita))
+head(graf_)
+```
+Obteniendo:
+``` r
+  year PIB_per_capita
+1 1960        5349334
+2 1961        5449711
+3 1962        5569506
+4 1963        5578865
+5 1964        5746356
+6 1965        5778607
+```
+Grafique utilizando los siiguientes comandos:
+``` r
+ggplot(graf_, aes(year, PIB_per_capita)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
 Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
 ```
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/681c14d8-e78a-48b9-b6a9-9bc12aea2e84)
@@ -225,17 +261,38 @@ En el gráfico se visualizan los siguientes hechos estilizados que afectaron a l
 2) La crisis económica de 1998/1999
 3) La crisis economíca del Covid-19 en 2020
 
-Para las siguientes secciones se van a seguir las siguientes acciones:
-
-1) Se van a reordenar los datos del más antiguo al más reciente y se van a eliminar los años para los cuales no existe información para la variable de análisis,
-``` r
-dat_ <- dat %>% arrange(year)
-dat <- na.omit(dat_)
-```
-2) Se va a crear la variable PIBpc que comienza en 1960
+Como último paso (por su utilidad para las siguientes secciones), se va a crear la variable PIBpc que comienza en 1960 y finaliza en 2019:
 ``` r
 PIBpc_ = subset(dat, select = c(PIB_per_capita))
-PIBpc <- ts(PIBpc_, start=1960)
+PIBpc <- ts(PIBpc_, start=1960, end=2020)
+```
+El código completo de R utilizado en este ejemplo es:
+``` r
+rm() # Remover toda la información existente del campo de trabajo
+ls() # Este comando confirma que toda la información se ha borrado​
+
+library(WDI)
+library(ggplot2)
+
+WDIsearch(string='NY.GDP.PCAP.KN', field='indicator')
+
+dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
+
+head(dat)
+
+dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
+dat_ <- dat %>% arrange(year)
+dat <- na.omit(dat_)
+head(dat)
+
+graf_ = subset(dat, select = c(year, PIB_per_capita))
+head(graf_)
+
+ggplot(graf_, aes(year, PIB_per_capita)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
+Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
+
+PIBpc_ = subset(dat, select = c(PIB_per_capita))
+PIBpc <- ts(PIBpc_, start=1960, end=2020)
 ```
 
 | [Anterior Sección: 01-01. Series de tiempo](../Seccion01_01/Readme.md) | [:house: Inicio](../../Readme.md) | [Siguiente Sección: 02-01. Introducción Análisis Univariado](../Seccion02_01/Readme.md) | 
