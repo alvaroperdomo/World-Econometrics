@@ -385,7 +385,7 @@ En consecuencia, la variable $PIBpc$ es no estacionaria porque:
 * $\phi_3$ = 6.49<**6.1099**<8.73, es decir, no se rechaza $a_0=\gamma=a_2=0$ al 1% pero si se rechaza al 5% y 10%
 
 Y la variable $C1PIBpc$ es estacionaria porque
-* $\tau_\mu$ = -4.308< **-2.3286** <-2.60, es decir, no se rechaza $\gamma=0$ al 1% pero si se rechaza al 5% y 10%
+* $\tau$ = -4.308< **-2.3286** <-2.60, es decir, no se rechaza $\gamma=0$ al 1% pero si se rechaza al 5% y 10%
 
 urdfTest(PIBpc, lags = 1, type = c("ct"), doplot = TRUE)
 ``` r
