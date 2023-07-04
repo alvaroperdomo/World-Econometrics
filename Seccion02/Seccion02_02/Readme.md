@@ -410,6 +410,26 @@ En consecuencia, los gráficos $FAC$ y $FACP$ revelan que los errores son ruidos
 
 ### Prueba DF-GLS
 ``` r
+PIBpc_DFGLS1c.ers <- ur.ers(PIBpc, type = c("DF-GLS"), model = c("constant", "trend"),lag.max = 4)
+PIBpc_DFGLS2c.ers <- ur.ers(PIBpc, type = c("P-test"), model = c("constant", "trend"),lag.max = 4)
+PIBpc_DFGLS1t.ers <- ur.ers(PIBpc, type = c("DF-GLS"), model = c( "trend"),lag.max = 4)
+PIBpc_DFGLS2t.ers <- ur.ers(PIBpc, type = c("P-test"), model = c( "trend"),lag.max = 4)
+C1PIBpc_DFGLS1c.ers <- ur.ers(C1PIBpc, type = c("DF-GLS"), model = c("constant", "trend"),lag.max = 4)
+C1PIBpc_DFGLS2c.ers <- ur.ers(C1PIBpc, type = c("P-test"), model = c("constant", "trend"),lag.max = 4)
+C1PIBpc_DFGLS1t.ers <- ur.ers(C1PIBpc, type = c("DF-GLS"), model = c( "trend"),lag.max = 4)
+C1PIBpc_DFGLS2t.ers <- ur.ers(C1PIBpc, type = c("P-test"), model = c( "trend"),lag.max = 4)
+
+summary(PIBpc_DFGLS1c.ers)
+summary(PIBpc_DFGLS2c.ers)
+summary(PIBpc_DFGLS1t.ers)
+summary(PIBpc_DFGLS2t.ers)
+summary(C1PIBpc_DFGLS1c.ers)
+summary(C1PIBpc_DFGLS2c.ers)
+summary(C1PIBpc_DFGLS1t.ers)
+summary(C1PIBpc_DFGLS2t.ers)
+```
+
+``` r
 > summary(PIBpc_DFGLS1c.ers)
 
 ############################################### 
@@ -650,27 +670,27 @@ La variable $C1PIBpc$ es estacionaria porque:
 Vamos a aplicar las opciones de rezago de R. Sin embargo, no olviden que según  en Newey y West (1994) la longitud de rezago se establece proporcional a $T^{1/3}$, en decir $60^{1/3}=3.92 \sim 4$, en nuestro caso: .
 
 ``` r
-kpss1m.kpss <- ur.kpss(PIBpc, type = c("mu"), lags = c("short"), use.lag = NULL)
-kpss2m.kpss <- ur.kpss(PIBpc, type = c("mu"), lags = c("long"), use.lag = NULL)
-kpss3m.kpss <- ur.kpss(PIBpc, type = c("mu"), lags = c("nil"), use.lag = NULL)
-kpss4m.kpss <- ur.kpss(PIBpc, type = c("mu"), use.lag = 4)
-kpss1t.kpss <- ur.kpss(PIBpc, type = c("tau"), lags = c("short"), use.lag = NULL)
-kpss2t.kpss <- ur.kpss(PIBpc, type = c("tau"), lags = c("long"), use.lag = NULL)
-kpss3t.kpss <- ur.kpss(PIBpc, type = c("tau"), lags = c("nil"), use.lag = NULL)
-kpss4t.kpss <- ur.kpss(PIBpc, type = c("tau"), use.lag = 4)
+PIBpc_1m.kpss <- ur.kpss(PIBpc, type = c("mu"), lags = c("short"), use.lag = NULL)
+PIBpc_2m.kpss <- ur.kpss(PIBpc, type = c("mu"), lags = c("long"), use.lag = NULL)
+PIBpc_3m.kpss <- ur.kpss(PIBpc, type = c("mu"), lags = c("nil"), use.lag = NULL)
+PIBpc_4m.kpss <- ur.kpss(PIBpc, type = c("mu"), use.lag = 4)
+PIBpc_1t.kpss <- ur.kpss(PIBpc, type = c("tau"), lags = c("short"), use.lag = NULL)
+PIBpc_2t.kpss <- ur.kpss(PIBpc, type = c("tau"), lags = c("long"), use.lag = NULL)
+PIBpc_3t.kpss <- ur.kpss(PIBpc, type = c("tau"), lags = c("nil"), use.lag = NULL)
+PIBpc_4t.kpss <- ur.kpss(PIBpc, type = c("tau"), use.lag = 4)
 
-summary(kpss1m.kpss)
-summary(kpss2m.kpss)
-summary(kpss3m.kpss)
-summary(kpss4m.kpss)
-summary(kpss1t.kpss)
-summary(kpss2t.kpss)
-summary(kpss3t.kpss)
-summary(kpss4t.kpss)
+C1PIBpc_1m.kpss <- ur.kpss(C1PIBpc, type = c("mu"), lags = c("short"), use.lag = NULL)
+C1PIBpc_2m.kpss <- ur.kpss(C1PIBpc, type = c("mu"), lags = c("long"), use.lag = NULL)
+C1PIBpc_3m.kpss <- ur.kpss(C1PIBpc, type = c("mu"), lags = c("nil"), use.lag = NULL)
+C1PIBpc_4m.kpss <- ur.kpss(C1PIBpc, type = c("mu"), use.lag = 4)
+C1PIBpc_1t.kpss <- ur.kpss(C1PIBpc, type = c("tau"), lags = c("short"), use.lag = NULL)
+C1PIBpc_2t.kpss <- ur.kpss(C1PIBpc, type = c("tau"), lags = c("long"), use.lag = NULL)
+C1PIBpc_3t.kpss <- ur.kpss(C1PIBpc, type = c("tau"), lags = c("nil"), use.lag = NULL)
+C1PIBpc_4t.kpss <- ur.kpss(C1PIBpc, type = c("tau"), use.lag = 4)
 ```
 Obteniendo
 ``` r
-> summary(kpss1m.kpss)
+> summary(PIBpc_1m.kpss)
 
 ####################### 
 # KPSS Unit Root Test # 
@@ -678,13 +698,13 @@ Obteniendo
 
 Test is of type: mu with 3 lags. 
 
-Value of test-statistic is: 1.555 
+Value of test-statistic is: 1.4135 
 
 Critical value for a significance level of: 
                 10pct  5pct 2.5pct  1pct
 critical values 0.347 0.463  0.574 0.739
 
-> summary(kpss2m.kpss)
+> summary(PIBpc_2m.kpss)
 
 ####################### 
 # KPSS Unit Root Test # 
@@ -692,13 +712,13 @@ critical values 0.347 0.463  0.574 0.739
 
 Test is of type: mu with 10 lags. 
 
-Value of test-statistic is: 0.6611 
+Value of test-statistic is: 0.6254 
 
 Critical value for a significance level of: 
                 10pct  5pct 2.5pct  1pct
 critical values 0.347 0.463  0.574 0.739
 
-> summary(kpss3m.kpss)
+> summary(PIBpc_3m.kpss)
 
 ####################### 
 # KPSS Unit Root Test # 
@@ -706,13 +726,13 @@ critical values 0.347 0.463  0.574 0.739
 
 Test is of type: mu with 0 lags. 
 
-Value of test-statistic is: 5.8294 
+Value of test-statistic is: 4.9218 
 
 Critical value for a significance level of: 
                 10pct  5pct 2.5pct  1pct
 critical values 0.347 0.463  0.574 0.739
 
-> summary(kpss4m.kpss)
+> summary(PIBpc_4m.kpss)
 
 ####################### 
 # KPSS Unit Root Test # 
@@ -720,13 +740,13 @@ critical values 0.347 0.463  0.574 0.739
 
 Test is of type: mu with 4 lags. 
 
-Value of test-statistic is: 1.269 
+Value of test-statistic is: 1.1636 
 
 Critical value for a significance level of: 
                 10pct  5pct 2.5pct  1pct
 critical values 0.347 0.463  0.574 0.739
 
-> summary(kpss1t.kpss)
+> summary(PIBpc_1t.kpss)
 
 ####################### 
 # KPSS Unit Root Test # 
@@ -734,13 +754,13 @@ critical values 0.347 0.463  0.574 0.739
 
 Test is of type: tau with 3 lags. 
 
-Value of test-statistic is: 0.2378 
+Value of test-statistic is: 0.0642 
 
 Critical value for a significance level of: 
                 10pct  5pct 2.5pct  1pct
 critical values 0.119 0.146  0.176 0.216
 
-> summary(kpss2t.kpss)
+> summary(PIBpc_2t.kpss)
 
 ####################### 
 # KPSS Unit Root Test # 
@@ -748,13 +768,13 @@ critical values 0.119 0.146  0.176 0.216
 
 Test is of type: tau with 10 lags. 
 
-Value of test-statistic is: 0.1297 
+Value of test-statistic is: 0.0729 
 
 Critical value for a significance level of: 
                 10pct  5pct 2.5pct  1pct
 critical values 0.119 0.146  0.176 0.216
 
-> summary(kpss3t.kpss)
+> summary(PIBpc_3t.kpss)
 
 ####################### 
 # KPSS Unit Root Test # 
@@ -762,13 +782,13 @@ critical values 0.119 0.146  0.176 0.216
 
 Test is of type: tau with 0 lags. 
 
-Value of test-statistic is: 0.8286 
+Value of test-statistic is: 0.0857 
 
 Critical value for a significance level of: 
                 10pct  5pct 2.5pct  1pct
 critical values 0.119 0.146  0.176 0.216
 
-> summary(kpss4t.kpss)
+> summary(PIBpc_4t.kpss)
 
 ####################### 
 # KPSS Unit Root Test # 
@@ -776,12 +796,11 @@ critical values 0.119 0.146  0.176 0.216
 
 Test is of type: tau with 4 lags. 
 
-Value of test-statistic is: 0.1994 
+Value of test-statistic is: 0.0619 
 
 Critical value for a significance level of: 
                 10pct  5pct 2.5pct  1pct
 critical values 0.119 0.146  0.176 0.216
-
 ```
 Dado que el PIBpc es una variable que presenta tendencia, entonces se decide testear dicha prueba. Los resultados de la misma son:
 
