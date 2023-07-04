@@ -62,7 +62,7 @@ ur.df(x, type = c("none", "drift", "trend"), lags = 1, selectlags = c("Fixed", "
 |                         | **"BIC"** criterio de selección Bayesiano de Schwartz (el número máximo de rezagos analizados se establece en la opción "**lags**")  |
 
 #### De las tres opciones, mi preferida es esta última por la opción "selectlags" ya que permite utilizar los criterios de selección de Akaike y el Bayesiano de Schwartz para escoger la prueba apropiada. 
-#### Posteriormente, se puede utilizar cualqueiera de las otras dos opciones para aprovechar el comando "doplot"
+#### Posteriormente, se puede utilizar cualqueiera la segunda opción para aprovechar el comando "doplot" y así hacer la prueba sobre los residuos
 
 | [Retornar: 02. Pruebas de Raíz Unitaria](../Readme.md) | [02. Pruebas de DF y ADF](../Seccion02_02_ADF_T/Readme.md)  |
 |--------------------------------------------------------|-------------------------------------------------------------|
