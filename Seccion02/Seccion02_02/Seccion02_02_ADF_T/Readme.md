@@ -51,7 +51,7 @@ En las cuales se debe contrastar la hipótesis nula $\gamma=0$. Para escoger la 
 
 **Anotación 2:** La prueba ADF esta sesgada hacía el no rechazo de la hipótesis nula $\gamma=0$. Por lo tanto, es aconsejable complementar el análisis con hipótesis de más potencia o que tengan el sesgo opuesto. 
 
-| [Retornar: 02. Pruebas de Raíz Unitaria](../README.md) | [Retornar: 02. Aplicación en R de la Pruebas DF y ADF](../Seccion02_02_ADF_T/README.md)  |
+| [Retornar: 02. Pruebas de Raíz Unitaria](../Seccion02_02_/README.md) | [Retornar: 02. Aplicación en R de la Pruebas DF y ADF](../Seccion02_02_/Seccion02_02_ADF_T/README.md)  |
 |----------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
 
 
