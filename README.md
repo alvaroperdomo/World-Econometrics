@@ -46,8 +46,8 @@ Las otras dos secciones del curso comienzan con una explicación general de las 
 | Subsecciones                                                                                        | Contenido                                                                                                      | Dedicación,<br> 10 horas  | 
 |-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
 | [01. Introducción](Seccion01/Seccion01_01/README.md)                                                | Introducción al análisis univariado de series de tiempo                                                        |             2.5           | 
-| [02. Pruebas de Raíz Unitaria](Seccion02/Seccion02_02/Readme.md)                                    | Explicación general de la filosofía detrás de las pruebas de raíz unitaria                                     |             5.5           | 
-| [03. Estimación de Modelos ARIMA](Seccion02/Seccion02_03/Readme.md)                                            | Explicación acerca de la metododología de Box-Jenkins para estimar un modelo ARIMA.                 |              1            | 
+| [02. Pruebas de Raíz Unitaria](Seccion02/Seccion02_02/Readme.md)                                    | Explicación general de las pruebas de raíz unitaria                                                            |             5.5           | 
+| [03. Estimación de Modelos ARIMA](Seccion02/Seccion02_03/Readme.md)                                 | Explicación de la metododología de Box-Jenkins para estimar un modelo ARIMA.                                   |              1            | 
 | [04. Principales pruebas de validación de los Modelos ARIMA](Section01/CaseStudy)                   | Explicación de las pruebas de validación de un modelo ARIMA                                                    |              1            | 
 
 
