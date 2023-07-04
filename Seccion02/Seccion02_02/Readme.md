@@ -9,11 +9,11 @@ La siguiente tabla presenta las pruebas que vamos a analizar. Dando click en la 
 | La Prueba KPSS: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_                       |  [X](Seccion02_02_KPSS_T/Readme.md)   | [X](Seccion02_02_KPSS_R/Readme.md)   |   
 | Pruebas de Cambio Estructural: _Prueba de Perron y _Prueba de Zivot y Andrews_          |  [X](Seccion02_02_ZA_T/Readme.md)     | [X](Seccion02_02_ZA_R/Readme.md)     |
 
-A continuación, se presenta un ejemplo utilizando la base de datos "Indicadores de Desarrollo Económico del Banco mundial". Para el ejercicio, se ha escogido analizar la variable más utilizada en términos de desarrollo económico, el PIB per cápita, de un país en vías de desarrollo. Más específicamente, se va a analizar la evolución del PIB per cápita de Colombia a precios constantes.
+A continuación, se presenta un ejemplo utilizando la base de datos "Indicadores de Desarrollo Económico del Banco Mundial". Para el ejercicio, se ha escogido analizar la variable más utilizada en términos de desarrollo económico, el PIB per cápita, de un país en vías de desarrollo. Más específicamente, se va a analizar la evolución del PIB per cápita de Colombia a precios constantes.
 
 ## Ejemplo: PIB per cápita de Colombia
 
-La prueba se va a hacer con respecto al **PIB per cápita de Colombia a precios constantes en pesos durante el periodo 1960-2019** en niveles y en primeras diferencias. No se utiliza la información hasta 2022 por motivos didacticos; en particular, en 2020 (es decir, en la parte final de la base de datos) hay un cambio estructural bastante fuerte de un solo periodo a raíz de la cuarentena producto de la epidemia del Covid-19. Entonces, **XXX**
+La prueba se va a hacer con respecto al **PIB per cápita de Colombia a precios constantes en pesos durante el periodo 1960-2019** en niveles y en primeras diferencias. No se utiliza la información hasta 2022 por motivos didacticos; en particular, en 2020 (es decir, en la parte final de la base de datos) hay un cambio estructural bastante fuerte de un solo periodo, a raíz de la cuarentena producto de la epidemia del Covid-19, que vuelve algunas pruebas más engorrosa de interpretar. Sin embargo, ello no quita que también se puedan implementar las pruebas de raíz unitaria hasta 2022.
 
 Retomamos parte del código de R que se había utilizado previamente 
 ``` r
