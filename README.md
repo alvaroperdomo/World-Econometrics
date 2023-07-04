@@ -61,4 +61,6 @@ Las otras dos secciones del curso comienzan con una explicación general de las 
 | [05. Estimación de Modelos VEC](Section01/Requirement)                                              | Explicación acerca de la metododología para estimar un modelo VEC.                                             |             1.5           | 
 | [06. Principales pruebas de validación de los Modelos VEC](Section01/CaseStudy)                     | Explicación de las pruebas de validación de un modelo VEC                                                      |             1.5           | 
 
+* Durante el desarrollo del curso se van a plantear algunos ejercicios con los cuales al ser resueltos de forma satisfactoria van a permitir optar, previo pago, a la obtención del certificado del curso.
+  
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
