@@ -260,44 +260,25 @@ ggplot(dat, aes(year, C1PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$",
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6622a8df-295e-428f-a7f8-df85f1904e7f)
 
-En el gráfico se visualizan los siguientes hechos estilizados que afectaron a la tasa de crecimiento del PIB:
+En el gráfico se visualizan los siguientes hechos estilizados que afectaron a el comportamiento del PIB per cápita:
 1) La crisis bancaria de comienzos de los 1980s
 2) La crisis económica de 1998/1999
 3) La crisis economíca del Covid-19 en 2020
 
 Como último paso (por su utilidad para las siguientes secciones), se va a crear la variable PIBpc que comienza en 1960 y finaliza en 2019:
 ``` r
-PIBpc_ = subset(dat, select = c(PIB_per_capita))
+PIBpc_ = subset(dat, select = c(PIBpc))
+C1PIBpc_ = subset(dat, select = c(C1PIBpc))
 PIBpc <- ts(PIBpc_, start=1960, end=2020)
+C1PIBpc <- ts(C1PIBpc_, start=1960, end=2020)
 ```
-El código completo de R utilizado en este ejemplo es:
+
+El código completo de R, con los principales comandos, utilizados en este ejemplo es:
 ``` r
-rm(list = ls())
+###################
+# Código Completo #
+###################
 
-library(WDI)
-library(ggplot2)
-
-WDIsearch(string='NY.GDP.PCAP.KN', field='indicator')
-
-dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
-
-head(dat)
-
-dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
-dat_ <- dat %>% arrange(year)
-dat <- na.omit(dat_)
-head(dat)
-
-graf_ = subset(dat, select = c(year, PIB_per_capita))
-head(graf_)
-
-ggplot(graf_, aes(year, PIB_per_capita)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
-Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
-
-PIBpc_ = subset(dat, select = c(PIB_per_capita))
-PIBpc <- ts(PIBpc_, start=1960, end=2020)
-
-*********************************
 rm(list = ls())
 
 library(WDI)
@@ -308,6 +289,8 @@ library(forecast)
 library(fUnitRoots)
 library(urca)
 
+WDIsearch(string='NY.GDP.PCAP.KN', field='indicator')
+
 dat = WDI(indicator= c(PIBpc = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
 dat <- dat %>% arrange(year)
 dat <- na.omit(dat)
@@ -316,8 +299,12 @@ dat <- mutate(dat, PIBpc_lag1 = lag(PIBpc, order_by = year), C1PIBpc=PIBpc-PIBpc
 ggplot(dat, aes(year, PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
 Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
 
-ggplot(dat, aes(year, C1PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
-Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
+ggplot(dat, aes(year, C1PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="Cambio en el PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
+
+PIBpc_ = subset(dat, select = c(PIBpc))
+C1PIBpc_ = subset(dat, select = c(C1PIBpc))
+PIBpc <- ts(PIBpc_, start=1960, end=2020)
+C1PIBpc <- ts(C1PIBpc_, start=1960, end=2020)
 ```
 
 | [Anterior Sección: 01-01. Series de tiempo](../Seccion01_01/Readme.md) | [:house: Inicio](../../Readme.md) | [Siguiente Sección: 02-01. Introducción Análisis Univariado](../Seccion02_01/Readme.md) | 
