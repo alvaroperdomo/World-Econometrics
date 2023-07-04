@@ -156,7 +156,7 @@ Y obtiene:
 6  Canadá    CA   CAN 1965                        NA  19678000
 ```
 
-Existen muchos paquetes en R para Grafique los datos, a continuación utilizammso uno de ellos:
+Existen muchos paquetes en R para grafique los datos, a continuación utilizammso uno de ellos:
 ``` r
 library(ggplot2)
 ggplot(dat, aes(year, PIB_per_cápita_PPA_2017US, color=country)) + labs(subtitle="US$ de 2017", y="Dólares constante de 2017", x="Años", title="PIB per cápita PPA real", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial") + scale_x_date(as.Date("2012"), end)
@@ -175,16 +175,15 @@ ggplot es una comando que tiene muchas opciones de ser utilizado, a continuació
 
 En la sección 2 se va a hacer buena parte del análisis utilizando el PIB per cápita de Colombia a precios constantes en moneda local (es decir, en pesos). Por lo tanto, a continuación se les muestra como manipular dicha información.
 
-Al comienzo de la programación le recomendamos copiar los siguientes comandos para:
-
+Al comienzo de la programación le recomendamos copiar los siguientes comandos para limpiar el área de trabajo:
 ``` r
-rm() # Remover toda la información existente del campo de trabajo
-ls() # Este comando confirma que toda la información se ha borrado​
+rm(list = ls())
 ```
 Llamamos a las dos librerias que se van a utilizar en el resto de este ejemplo
 ``` r
 library(WDI)
 library(ggplot2)
+library(dplyr)     # Esta libreria permite manipular las bases de datos de R de una forma sencilla
 ```
 El siguiente comando lo utilizo para confirmar que la variable "NY.GDP.PCAP.KN" representa el PIB per cápita a precios constantes en moneda local
 ``` r
@@ -206,55 +205,60 @@ head(dat)
 Obteniendo:
 ``` r
 > head(dat)
-   country iso2c iso3c year PIB_per_capita
-1 Colombia    CO   COL 2022       18802572
-2 Colombia    CO   COL 2021       17612821
-3 Colombia    CO   COL 2020       16047602
-4 Colombia    CO   COL 2019       17558668
-5 Colombia    CO   COL 2018       17330777
-6 Colombia    CO   COL 2017       17220832
+   country iso2c iso3c year    PIBpc
+1 Colombia    CO   COL 2022 18802572
+2 Colombia    CO   COL 2021 17612821
+3 Colombia    CO   COL 2020 16047602
+4 Colombia    CO   COL 2019 17558668
+5 Colombia    CO   COL 2018 17330777
+6 Colombia    CO   COL 2017 17220832
 ```
 Observe que para esta variable los datos estan organizados en orden descendente (es decir, desde el último año hasta el primero). 
 
 Para organizar los datos en orden ascendente copie los siguientes comandos.
 ``` r
-dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
-dat_ <- dat %>% arrange(year)
-dat <- na.omit(dat_)
+dat = WDI(indicator= c(PIBpc = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
+dat <- dat %>% arrange(year)
+dat <- na.omit(dat)       # Este comando sirve para eliminar una fila para la cual no existe información
 head(dat)
 ```
 Obteniendo:
 ``` r
 > head(dat)
-   country iso2c iso3c year PIB_per_capita
-1 Colombia    CO   COL 1960        5349334
-2 Colombia    CO   COL 1961        5449711
-3 Colombia    CO   COL 1962        5569506
-4 Colombia    CO   COL 1963        5578865
-5 Colombia    CO   COL 1964        5746356
-6 Colombia    CO   COL 1965        5778607
+   country iso2c iso3c year   PIBpc
+1 Colombia    CO   COL 1960 5349334
+2 Colombia    CO   COL 1961 5449711
+3 Colombia    CO   COL 1962 5569506
+4 Colombia    CO   COL 1963 5578865
+5 Colombia    CO   COL 1964 5746356
+6 Colombia    CO   COL 1965 5778607
 ```
-Note que la base de datos "dat" contiene muchas más variables que las que desea utilizar, entonces puede depurar la información construyendo una base de datos (a la que llamaremos graf_) que sea un subconjunto de "dat", copiando la siguiente información:
+Ahora vamos a crear dos series: Una que represente el PIBpc del periodo anterior (PIBpc_lag1) y otra que represente la diferencia del PIBpc entre periodos (es decir, C1PIBpc=PIBpc-PIBpc_lag1). De paso, dado que la base de datos "dat" contiene muchas más variables que las que se desea utilizar, entonces se puede depurar la base de datos con el siguiente comando:
 ``` r
-graf_ = subset(dat, select = c(year, PIB_per_capita))
-head(graf_)
+dat <- mutate(dat, PIBpc_lag1 = lag(PIBpc, order_by = year), C1PIBpc=PIBpc-PIBpc_lag1, country=NULL, iso2c=NULL, iso3c=NULL)
+head(dat)
 ```
 Obteniendo:
 ``` r
-  year PIB_per_capita
-1 1960        5349334
-2 1961        5449711
-3 1962        5569506
-4 1963        5578865
-5 1964        5746356
-6 1965        5778607
+> head(dat)
+  year   PIBpc PIBpc_lag1   C1PIBpc
+1 1960 5349334         NA        NA
+2 1961 5449711    5349334 100377.43
+3 1962 5569506    5449711 119795.10
+4 1963 5578865    5569506   9358.46
+5 1964 5746356    5578865 167491.40
+6 1965 5778607    5746356  32251.47
 ```
-Grafique utilizando los siiguientes comandos:
+Grafique PIBpc y C1PIBpc utilizando los siiguientes comandos:
 ``` r
-ggplot(graf_, aes(year, PIB_per_capita)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
+ggplot(dat, aes(year, PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
 Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
+
+ggplot(dat, aes(year, C1PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="Cambio en el PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ec783053-9f06-4834-9983-9158350145b8)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/795d678d-d02e-4ea7-a2f6-bdf66b0757f4)
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6622a8df-295e-428f-a7f8-df85f1904e7f)
 
 En el gráfico se visualizan los siguientes hechos estilizados que afectaron a la tasa de crecimiento del PIB:
 1) La crisis bancaria de comienzos de los 1980s
@@ -268,8 +272,7 @@ PIBpc <- ts(PIBpc_, start=1960, end=2020)
 ```
 El código completo de R utilizado en este ejemplo es:
 ``` r
-rm() # Remover toda la información existente del campo de trabajo
-ls() # Este comando confirma que toda la información se ha borrado​
+rm(list = ls())
 
 library(WDI)
 library(ggplot2)
@@ -293,6 +296,28 @@ Construcción propia a partir de los Indicadores de Desarrollo Económico del Ba
 
 PIBpc_ = subset(dat, select = c(PIB_per_capita))
 PIBpc <- ts(PIBpc_, start=1960, end=2020)
+
+*********************************
+rm(list = ls())
+
+library(WDI)
+library(dplyr)
+library(ggfortify)
+library(ggplot2)
+library(forecast)
+library(fUnitRoots)
+library(urca)
+
+dat = WDI(indicator= c(PIBpc = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
+dat <- dat %>% arrange(year)
+dat <- na.omit(dat)
+dat <- mutate(dat, PIBpc_lag1 = lag(PIBpc, order_by = year), C1PIBpc=PIBpc-PIBpc_lag1, country=NULL, iso2c=NULL, iso3c=NULL)
+
+ggplot(dat, aes(year, PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
+Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
+
+ggplot(dat, aes(year, C1PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
+Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
 ```
 
 | [Anterior Sección: 01-01. Series de tiempo](../Seccion01_01/Readme.md) | [:house: Inicio](../../Readme.md) | [Siguiente Sección: 02-01. Introducción Análisis Univariado](../Seccion02_01/Readme.md) | 
