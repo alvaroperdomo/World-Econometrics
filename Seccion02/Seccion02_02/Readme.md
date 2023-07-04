@@ -1,14 +1,6 @@
 # Pruebas de Raíz Unitaria
 
-Para esta sección hay que instalar los paquetes
-* [fUnitRoots](https://cran.r-project.org/web/packages/fUnitRoots/index.html)
-* [urca](https://cran.r-project.org/web/packages/urca/index.html)
-
-``` r
-install.packages('fUnitRoots')
-install.packages('urca')
-```
-La siguiente tabla presenta las pruebas que vamos a analizar. Asi mismo, dando click en la **X** de la segunda columna puede redirigirse a la explicación teórica de la prueba y dando click en la **X** de la tercera columna puede redirigirse para ver cómo la misma se lleva a cabo en R.  
+La siguiente tabla presenta las pruebas que vamos a analizar. Dando click en la **X** de la segunda columna de la tabla puede redirigirse a la explicación teórica de la prueba y dando click en la **X** de la tercera columna de la tabla puede redirigirse para ver cómo la misma se lleva a cabo en R.  
 
 | Pruebas                                                                                 | Explicación general de la prueba      |  Aplicación en R                     |
 |-----------------------------------------------------------------------------------------|:-------------------------------------:|:------------------------------------:|
@@ -17,7 +9,7 @@ La siguiente tabla presenta las pruebas que vamos a analizar. Asi mismo, dando c
 | La Prueba KPSS: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_                       |  [X](Seccion02_02_KPSS_T/Readme.md)   | [X](Seccion02_02_KPSS_R/Readme.md)   |   
 | Pruebas de Cambio Estructural: _Prueba de Perron y _Prueba de Zivot y Andrews_          |  [X](Seccion02_02_ZA_T/Readme.md)     | [X](Seccion02_02_ZA_R/Readme.md)     |
 
-Posteriormente, se presenta un ejemplo utilizando la base de datos "Indicadores de Desarrollo Económico del Banco mundial". Para el ejercicio, se ha escogido analizar la variable más utilizada en términos de desarrollo económico, el PIB per cápita, de un país en vías de desarrollo. Más específicamente, se va a analizar la evolución del PIB per cápita de Colombia a precios constantes.
+A continuación, se presenta un ejemplo utilizando la base de datos "Indicadores de Desarrollo Económico del Banco mundial". Para el ejercicio, se ha escogido analizar la variable más utilizada en términos de desarrollo económico, el PIB per cápita, de un país en vías de desarrollo. Más específicamente, se va a analizar la evolución del PIB per cápita de Colombia a precios constantes.
 
 ## Ejemplo: PIB per cápita de Colombia
 
@@ -27,9 +19,7 @@ Retomamos parte del código de R que se había utilizado previamente
 ``` r
 rm() # Remove all objects from current workspace​
 ls() # confirm that a data frame has been deleted​
-gc() # free up memory and report the memory usage
 
-rm(list = ls())
 library(WDI)
 library(dplyr)
 library(ggfortify)
@@ -38,9 +28,12 @@ library(forecast)
 library(fUnitRoots)
 library(urca)
 
-
 dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
-
+dat_ <- dat %>% arrange(year)
+dat <- na.omit(dat_)
+graf_ = subset(dat, select = c(year, PIB_per_capita))
+ggplot(graf_, aes(year, PIB_per_capita)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
+Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
 ```
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ec783053-9f06-4834-9983-9158350145b8)
 
@@ -48,12 +41,6 @@ A partir del gráfico se puede comenzar a inferir que la variable no tiene un co
 
 Para el gráfico de la $FAC$ se ejecuta el comando
 ``` r
-dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
-dat_ <- dat %>% arrange(year)
-dat <- na.omit(dat_)
-graf_ = subset(dat, select = c(year, PIB_per_capita))
-ggplot(graf_, aes(year, PIB_per_capita)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
-Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
 PIBpc_ = subset(dat, select = c(PIB_per_capita))
 PIBpc <- ts(PIBpc_, start=1960, end=2022)
 C1PIBpc <- diff(PIBpc, differences = 1)
