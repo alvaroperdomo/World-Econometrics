@@ -156,7 +156,7 @@ Y obtiene:
 6  Canadá    CA   CAN 1965                        NA  19678000
 ```
 
-Existen muchos paquetes en R para grafique los datos, a continuación utilizammso uno de ellos:
+Existen muchos paquetes en R para grafique los datos, a continuación utilizamos uno de ellos:
 ``` r
 library(ggplot2)
 ggplot(dat, aes(year, PIB_per_cápita_PPA_2017US, color=country)) + labs(subtitle="US$ de 2017", y="Dólares constante de 2017", x="Años", title="PIB per cápita PPA real", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial") + scale_x_date(as.Date("2012"), end)
@@ -251,8 +251,7 @@ Obteniendo:
 ```
 Grafique PIBpc y C1PIBpc utilizando los siiguientes comandos:
 ``` r
-ggplot(dat, aes(year, PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
-Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
+ggplot(dat, aes(year, PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
 
 ggplot(dat, aes(year, C1PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="Cambio en el PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
 ```
