@@ -282,11 +282,7 @@ rm(list = ls())
 
 library(WDI)
 library(dplyr)
-library(ggfortify)
 library(ggplot2)
-library(forecast)
-library(fUnitRoots)
-library(urca)
 
 WDIsearch(string='NY.GDP.PCAP.KN', field='indicator')
 
