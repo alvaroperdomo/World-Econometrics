@@ -15,7 +15,7 @@ A continuación, se presenta un ejemplo utilizando la base de datos "Indicadores
 
 La prueba se va a hacer con respecto al **PIB per cápita de Colombia a precios constantes en pesos durante el periodo 1960-2019** en niveles y en primeras diferencias. No se utiliza la información hasta 2022 por motivos didacticos; en particular, en 2020 (es decir, en la parte final de la base de datos) hay un cambio estructural bastante fuerte de un solo periodo, a raíz de la cuarentena producto de la epidemia del Covid-19, que vuelve algunas pruebas más engorrosa de interpretar. Sin embargo, ello no quita que también se puedan implementar las pruebas de raíz unitaria hasta 2022.
 
-Retomamos parte del código de R que se había utilizado previamente 
+Retomamos parte del código de R que se había utilizado en la sección 01-02, solicitando la activación de algunas librerias adicionales: 
 ``` r
 rm() # Remove all objects from current workspace​
 ls() # confirm that a data frame has been deleted​
