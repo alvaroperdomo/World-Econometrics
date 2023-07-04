@@ -254,7 +254,7 @@ Grafique utilizando los siiguientes comandos:
 ggplot(graf_, aes(year, PIB_per_capita)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
 Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/681c14d8-e78a-48b9-b6a9-9bc12aea2e84)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ec783053-9f06-4834-9983-9158350145b8)
 
 En el gráfico se visualizan los siguientes hechos estilizados que afectaron a la tasa de crecimiento del PIB:
 1) La crisis bancaria de comienzos de los 1980s
