@@ -170,8 +170,9 @@ ggplot es una comando que tiene muchas opciones de ser utilizado, a continuació
 * https://r-graph-gallery.com/279-plotting-time-series-with-ggplot2.html
 * https://r-charts.com/evolution/time-series-ggplot2/
 
-## Ejercicio utilizando el PIB per cápita de colombia a precios constantes en pesos
+## Ejercicio utilizando el PIB per cápita de Colombia a precios constantes en pesos
 
+En la sección 2 se va a hacer buena parte del análisis utilizando el PIB per cápita de Colombia a precios constantes en moneda local (es decir, en pesos). Por lo tanto, a continuación se les muestra como manipular dicha información.
 El PIB per cápita es el producto interno bruto dividido por la población a mitad de año. Los datos están expresados en moneda local a precios constantes.
 
 El comando rm(list = ls()) es útil para borrar bases de datos previas de la memoria del programa
