@@ -410,22 +410,14 @@ En consecuencia, los gráficos $FAC$ y $FACP$ revelan que los errores son ruidos
 
 ### Prueba DF-GLS
 ``` r
-PIBpc_DFGLS1c.ers <- ur.ers(PIBpc, type = c("DF-GLS"), model = c("constant", "trend"),lag.max = 4)
-PIBpc_DFGLS2c.ers <- ur.ers(PIBpc, type = c("P-test"), model = c("constant", "trend"),lag.max = 4)
-PIBpc_DFGLS1t.ers <- ur.ers(PIBpc, type = c("DF-GLS"), model = c( "trend"),lag.max = 4)
-PIBpc_DFGLS2t.ers <- ur.ers(PIBpc, type = c("P-test"), model = c( "trend"),lag.max = 4)
-C1PIBpc_DFGLS1c.ers <- ur.ers(C1PIBpc, type = c("DF-GLS"), model = c("constant", "trend"),lag.max = 4)
-C1PIBpc_DFGLS2c.ers <- ur.ers(C1PIBpc, type = c("P-test"), model = c("constant", "trend"),lag.max = 4)
-C1PIBpc_DFGLS1t.ers <- ur.ers(C1PIBpc, type = c("DF-GLS"), model = c( "trend"),lag.max = 4)
-C1PIBpc_DFGLS2t.ers <- ur.ers(C1PIBpc, type = c("P-test"), model = c( "trend"),lag.max = 4)
+PIBpc_DFGLS2c.ers <- urersTest(PIBpc, type = c("P-test"), model = c("constant"), lag.max = 4, doplot = FALSE)
+PIBpc_DFGLS2t.ers <- urersTest(PIBpc, type = c("P-test"), model = c("trens"), lag.max = 4, doplot = TRUE)
+1PIBpc_DFGLS2c.ers <- urersTest(C1PIBpc, type = c("P-test"), model = c("constant"), lag.max = 4, doplot = TRUE)
+C1PIBpc_DFGLS2t.ers <- urersTest(C1PIBpc, type = c("P-test"), model = c("trens"), lag.max = 4, doplot = FALSE)
 
-summary(PIBpc_DFGLS1c.ers)
 summary(PIBpc_DFGLS2c.ers)
-summary(PIBpc_DFGLS1t.ers)
 summary(PIBpc_DFGLS2t.ers)
-summary(C1PIBpc_DFGLS1c.ers)
 summary(C1PIBpc_DFGLS2c.ers)
-summary(C1PIBpc_DFGLS1t.ers)
 summary(C1PIBpc_DFGLS2t.ers)
 ```
 
@@ -665,6 +657,11 @@ La variable $PIBpc$ es no estacionaria porque:
 La variable $C1PIBpc$ es estacionaria porque:
 * Con el estadistico $DF-GLS_\mu$: $**-2.9092**<-2.60$, se rechaza la hipótesis nula de raíz unitaria al 1%, 5% y 10%
 * Con el estadistico $P_\mu$: $**0.319**<1.95$, se rechaza la hipótesis nula de raíz unitaria al 1%, 5% y 10%
+
+``` r
+PIBpc_urersTest=urersTest(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"), lag.max = 4, doplot = TRUE)
+summary(PIBpc_urersTest)
+```
 
 ### Prueba KPSS
 Vamos a aplicar las opciones de rezago de R. Sin embargo, no olviden que según  en Newey y West (1994) la longitud de rezago se establece proporcional a $T^{1/3}$, en decir $60^{1/3}=3.92 \sim 4$, en nuestro caso: .
