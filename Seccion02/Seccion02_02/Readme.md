@@ -409,58 +409,23 @@ En consecuencia, los gráficos $FAC$ y $FACP$ revelan que los errores son ruidos
 *****************************************************************************************************************************************************************************
 
 ### Prueba DF-GLS
-``` r
-PIBpc_DFGLS2c.ers <- urersTest(PIBpc, type = c("P-test"), model = c("constant"), lag.max = 4, doplot = FALSE)
-PIBpc_DFGLS2t.ers <- urersTest(PIBpc, type = c("P-test"), model = c("trens"), lag.max = 4, doplot = TRUE)
-1PIBpc_DFGLS2c.ers <- urersTest(C1PIBpc, type = c("P-test"), model = c("constant"), lag.max = 4, doplot = TRUE)
-C1PIBpc_DFGLS2t.ers <- urersTest(C1PIBpc, type = c("P-test"), model = c("trens"), lag.max = 4, doplot = FALSE)
 
-summary(PIBpc_DFGLS2c.ers)
-summary(PIBpc_DFGLS2t.ers)
-summary(C1PIBpc_DFGLS2c.ers)
-summary(C1PIBpc_DFGLS2t.ers)
+Dado que el $PIBpc$ es una variable que presenta tendencia, entonces se va a interpretar su prueba DF-GLS con tendencia. Dado que el $C1PIBpc$ es una variable que no presenta tendencia, entonces se va a interpretar su prueba DF-GLS  sin tendencia. De todas formas abajo se presentan los resultados con ambas pruebas y el número de rezagos se escoge utilizando el Criterio Bayesiano de Schwartz.
+
+``` r
+PIBpc_DFGLSc.ers <- urersTest(PIBpc, type = c("P-test"), model = c("constant"), lag.max = 4, doplot = FALSE)
+PIBpc_DFGLSt.ers <- urersTest(PIBpc, type = c("P-test"), model = c("trend"), lag.max = 4, doplot = TRUE)
+C1PIBpc_DFGL2c.ers <- urersTest(C1PIBpc, type = c("P-test"), model = c("constant"), lag.max = 4, doplot = TRUE)
+C1PIBpc_DFGLSt.ers <- urersTest(C1PIBpc, type = c("P-test"), model = c("trend"), lag.max = 4, doplot = FALSE)
+
+summary(PIBpc_DFGLSc.ers)
+summary(PIBpc_DFGLSt.ers)
+summary(C1PIBpc_DFGLSc.ers)
+summary(C1PIBpc_DFGLSt.ers)
 ```
 
 ``` r
-> summary(PIBpc_DFGLS1c.ers)
-
-############################################### 
-# Elliot, Rothenberg and Stock Unit Root Test # 
-############################################### 
-
-Test of type DF-GLS 
-detrending of series with intercept 
-
-
-Call:
-lm(formula = dfgls.form, data = data.dfgls)
-
-Residuals:
-      Min        1Q    Median        3Q       Max 
--10423263   -367236     89623    618973   1898278 
-
-Coefficients:
-             Estimate Std. Error t value Pr(>|t|)  
-yd.lag       -0.19748    0.07396  -2.670   0.0101 *
-yd.diff.lag1  0.62271    1.05232   0.592   0.5566  
-yd.diff.lag2  0.29897    1.23097   0.243   0.8091  
-yd.diff.lag3  1.68334    1.22796   1.371   0.1764  
-yd.diff.lag4  0.33756    1.12158   0.301   0.7647  
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 1611000 on 51 degrees of freedom
-Multiple R-squared:  0.1443,	Adjusted R-squared:  0.06036 
-F-statistic:  1.72 on 5 and 51 DF,  p-value: 0.1469
-
-
-Value of test-statistic is: -2.6701 
-
-Critical values of DF-GLS are:
-                1pct  5pct 10pct
-critical values -2.6 -1.95 -1.62
-
-> summary(PIBpc_DFGLS2c.ers)
+> summary(PIBpc_DFGLSc.ers)
 
 ############################################### 
 # Elliot, Rothenberg and Stock Unit Root Test # 
@@ -475,45 +440,7 @@ Critical values of P-test are:
                 1pct 5pct 10pct
 critical values 1.95 3.11  4.17
 
-> summary(PIBpc_DFGLS1t.ers)
-
-############################################### 
-# Elliot, Rothenberg and Stock Unit Root Test # 
-############################################### 
-
-Test of type DF-GLS 
-detrending of series with intercept and trend 
-
-
-Call:
-lm(formula = dfgls.form, data = data.dfgls)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--9318134  -327568    49028   657370  2641090 
-
-Coefficients:
-             Estimate Std. Error t value Pr(>|t|)    
-yd.lag        -0.7135     0.1869  -3.817 0.000367 ***
-yd.diff.lag1   0.8376     1.0299   0.813 0.419820    
-yd.diff.lag2   0.6479     1.1766   0.551 0.584236    
-yd.diff.lag3   1.9991     1.1732   1.704 0.094477 .  
-yd.diff.lag4   1.2408     1.1445   1.084 0.283406    
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 1523000 on 51 degrees of freedom
-Multiple R-squared:  0.241,	Adjusted R-squared:  0.1666 
-F-statistic: 3.239 on 5 and 51 DF,  p-value: 0.01292
-
-
-Value of test-statistic is: -3.8173 
-
-Critical values of DF-GLS are:
-                 1pct  5pct 10pct
-critical values -3.58 -3.03 -2.74
-
-> summary(PIBpc_DFGLS2t.ers)
+> summary(PIBpc_DFGLSt.ers)
 
 ############################################### 
 # Elliot, Rothenberg and Stock Unit Root Test # 
@@ -528,45 +455,7 @@ Critical values of P-test are:
                 1pct 5pct 10pct
 critical values 4.26 5.64  6.79
 
-> summary(C1PIBpc_DFGLS1c.ers)
-
-############################################### 
-# Elliot, Rothenberg and Stock Unit Root Test # 
-############################################### 
-
-Test of type DF-GLS 
-detrending of series with intercept 
-
-
-Call:
-lm(formula = dfgls.form, data = data.dfgls)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--598974  -70995   35554  132187  556236 
-
-Coefficients:
-             Estimate Std. Error t value Pr(>|t|)   
-yd.lag       -0.48886    0.16804  -2.909  0.00539 **
-yd.diff.lag1  0.06264    0.17205   0.364  0.71734   
-yd.diff.lag2  0.01434    0.16521   0.087  0.93118   
-yd.diff.lag3  0.15405    0.15230   1.012  0.31663   
-yd.diff.lag4  0.04443    0.14154   0.314  0.75492   
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 209500 on 50 degrees of freedom
-Multiple R-squared:  0.2379,	Adjusted R-squared:  0.1617 
-F-statistic: 3.121 on 5 and 50 DF,  p-value: 0.01577
-
-
-Value of test-statistic is: -2.9092 
-
-Critical values of DF-GLS are:
-                1pct  5pct 10pct
-critical values -2.6 -1.95 -1.62
-
-> summary(C1PIBpc_DFGLS2c.ers)
+> summary(C1PIBpc_DFGLSc.ers)
 
 ############################################### 
 # Elliot, Rothenberg and Stock Unit Root Test # 
@@ -580,44 +469,6 @@ Value of test-statistic is: 0.319
 Critical values of P-test are:
                 1pct 5pct 10pct
 critical values 1.95 3.11  4.17
-
-> summary(C1PIBpc_DFGLS1t.ers)
-
-############################################### 
-# Elliot, Rothenberg and Stock Unit Root Test # 
-############################################### 
-
-Test of type DF-GLS 
-detrending of series with intercept and trend 
-
-
-Call:
-lm(formula = dfgls.form, data = data.dfgls)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--639975  -84158   35443   94501  553432 
-
-Coefficients:
-             Estimate Std. Error t value Pr(>|t|)   
-yd.lag        -0.6629     0.1929  -3.437  0.00119 **
-yd.diff.lag1   0.1816     0.1813   1.002  0.32138   
-yd.diff.lag2   0.1208     0.1723   0.701  0.48657   
-yd.diff.lag3   0.2373     0.1557   1.524  0.13389   
-yd.diff.lag4   0.1056     0.1422   0.742  0.46126   
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 203700 on 50 degrees of freedom
-Multiple R-squared:  0.2791,	Adjusted R-squared:  0.207 
-F-statistic: 3.872 on 5 and 50 DF,  p-value: 0.004823
-
-
-Value of test-statistic is: -3.4366 
-
-Critical values of DF-GLS are:
-                 1pct  5pct 10pct
-critical values -3.58 -3.03 -2.74
 
 > summary(C1PIBpc_DFGLS2t.ers)
 
@@ -635,27 +486,15 @@ Critical values of P-test are:
 critical values 4.26 5.64  6.79
 ```
 
-Dado que el $PIBpc$ es una variable que presenta tendencia, entonces se decide hacer su pruba con tendencia. Dado que el $C1PIBpc$ es una variable que no presenta tendencia, entonces se decide hacer su pruba sin tendencia. Los resultados de las misma son:
-
-| Variable   | Estadistico   | Número de rezagos <br> Criterio de Información de Akaike | Valor     |  10%    |  5%     |   1%    |
-|------------|---------------|:--------------------------------------------------------:|:---------:|:-------:|:-------:|:-------:|
-| $PIBpc$    | $DF-GLS_\tau$ |                                                          | $-3.8173$ | $-2.74$ | $-3.03$ | $-3.58$ |
-| $PIBpc$    | $P_\tau$      |                                                          | $34.0584$ | $6.79$  | $5.64$  | $4.26$  |
-| $C1PIBpc$  | $DF-GLS_\mu$  | 4                                                        | $-2.9092$ | $-1.62$ | $-1.95$ | $-2.60$ |
-| $C1PIBpc$  | $P_\mu$       |                                                          | $0.319$   | $4.17$  | $3.11$  | $1.95$  |
-
-Value of test-statistic is: -3.8173 
-
-Critical values of DF-GLS are:
-                 1pct  5pct 10pct
-critical values -3.58 -3.03 -2.74
+| Variable   | Estadistico   | Valor     |  10%    |  5%     |   1%    |
+|------------|---------------|:---------:|:-------:|:-------:|:-------:|
+| $PIBpc$    | $P_\tau$      | $34.0584$ | $6.79$  | $5.64$  | $4.26$  |
+| $C1PIBpc$  | $P_\mu$       | $0.319$   | $4.17$  | $3.11$  | $1.95$  |
 
 La variable $PIBpc$ es no estacionaria porque:
-* Con el estadistico $DF-GLS_\tau$: $**-3.8173**<-3.58$, se rechaza la hipótesis nula de raíz unitaria al 10%, 5% y 1% 
 * Con el estadistico $P_\tau$: $**34.0584**>6.79$, no se rechaza la hipótesis nula de raíz unitaria  10%, 5% y 1% 
 
 La variable $C1PIBpc$ es estacionaria porque:
-* Con el estadistico $DF-GLS_\mu$: $**-2.9092**<-2.60$, se rechaza la hipótesis nula de raíz unitaria al 1%, 5% y 10%
 * Con el estadistico $P_\mu$: $**0.319**<1.95$, se rechaza la hipótesis nula de raíz unitaria al 1%, 5% y 10%
 
 ``` r
