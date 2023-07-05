@@ -384,7 +384,7 @@ phi3  8.73  6.49  5.47
 En consecuencia, la variable $PIBpc$ es no estacionaria porque:
 * $\tau_\tau$ = -4.04 < **-3.4934** < -3.45, es decir, no se rechaza $\gamma=0$ al 10% y 5%, pero si se rechaza al 1%
 * $\phi_2$ = **4.0757**<4.16, es decir, no se rechaza $\gamma=a_0=a_2=0$ al 10%, 5% y 1%
-* $\phi_3$ = 6.49<**6.1099**<8.73, es decir, no se rechaza $a_0=\gamma=a_2=0$ al 1% pero si se rechaza al 5% y 10%
+* $\phi_3$ = 6.49<**6.1099**<8.73, es decir, no se rechaza $\gamma=a_2=0$ al 1% pero si se rechaza al 5% y 10%
 
 Y la variable $C1PIBpc$ es estacionaria porque
 * $\tau$ = -4.308< **-2.3286** <-2.60, es decir, no se rechaza $\gamma=0$ al 1% pero si se rechaza al 5% y 10%
