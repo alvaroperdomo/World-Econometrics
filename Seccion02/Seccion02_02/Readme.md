@@ -288,6 +288,7 @@ Value of test-statistic is: -2.3286
 Critical values for test statistics: 
      1pct  5pct 10pct
 tau1 -2.6 -1.95 -1.61
+```
 
 Los resultados de las pruebas ADF son:
 
