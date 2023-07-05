@@ -69,7 +69,7 @@ Obteniendose
 
 El decaimiento continuo pero moderado de la $FAC$ de la variable $PIBpc$ da una idea de raíz unitaria. Por otro lado, la $FAC$ de la variable $C1PIBpc$ desde el comienzo cae raídamente, dando así una idea de estacionariedad. 
 
-Antes de desarrollar las diferentes pruebas de raíz unitaria, se desarrolla la siguiente prueba sencilla para analizar si es necesario incluirles la tendencia y el intercepto a las diferentes pruebas de raíz unitaria.
+Antes de desarrollar las diferentes pruebas de raíz unitaria, se desarrolla la siguiente prueba sencilla de Mínimos Cuadrados Ordinarios para analizar si es necesario incluirles la tendencia y el intercepto a las diferentes pruebas de raíz unitaria.
 
 ``` r
 PIBpc_MCO <- lm(PIBpc ~ year, data = ejercicio)
@@ -119,33 +119,31 @@ Residual standard error: 225400 on 57 degrees of freedom
 Multiple R-squared:  0.07575,	Adjusted R-squared:  0.05953 
 F-statistic: 4.671 on 1 and 57 DF,  p-value: 0.03488
 ```
-Note que al 1% de significancia la variable $PIBpc$ tiene constante y tendencia significativas y la variable $C1PIBpc$. Por lo tanto, en la medida de lo posible, las pruebas de raíz unitaria de la variable $PIBpc$ se analizaran con intercepto y tendencia, mientras que los de la variable $C1PIBpc$ se analizaran sin intercepto y sin tendencia.[^1]
+Note que al 1% de significancia la variable $PIBpc$ tiene constante y tendencia significativas y la variable $C1PIBpc$ no las tiene. Por lo tanto, en la medida de lo posible, las pruebas de raíz unitaria de la variable $PIBpc$ se analizaran con intercepto y tendencia, mientras que los de la variable $C1PIBpc$ se analizaran sin intercepto y sin tendencia.[^1]
 [^1]: **De todas formas, todas las pruebas de raíz unitaria se van a ser con diferentes variantes dentro de la prueba para que el alumno por su cuenta pueda contrastar los resultados de las mismas.**
 
 A continuación se desarrollan diferentes pruebas de raíz unitaria. Primero, para la variable $PIBpc$ y luego para la variable $C1PIBpc$.
 
 *****************************************************************************************************************************************************************************
+En cuanto a la prueba ADF, el número óptimo de rezagos, para cada especificación, se va a escoger tomando en cuenta el Criterio de Información de Akaike y el Criterio Bayesiano de Schwartz.
 
 ### 1) Prueba ADF
 
 ``` r
-PIBpc_ur_trend.df <- ur.df(y=PIBpc, type = c("trend"), lags = 10, selectlags = c("AIC"))
-PIBpc_ur_drift.df <- ur.df(PIBpc, type = c("drift"), lags = 10, selectlags = c("AIC"))
-PIBpc_ur_none.df <- ur.df(PIBpc, type = c("none"), lags = 10, selectlags = c("AIC"))
-C1PIBpc_ur_trend.df <- ur.df(y=C1PIBpc, type = c("trend"), lags = 10, selectlags = c("AIC"))
-C1PIBpc_ur_drift.df <- ur.df(C1PIBpc, type = c("drift"), lags = 10, selectlags = c("AIC"))
-C1PIBpc_ur_none.df <- ur.df(C1PIBpc, type = c("none"), lags = 10, selectlags = c("AIC"))
-summary(PIBpc_ur_trend.df)
-summary(PIBpc_ur_drift.df)
-summary(PIBpc_ur_none.df)
-summary(C1PIBpc_ur_trend.df)
-summary(C1PIBpc_ur_drift.df)
-summary(C1PIBpc_ur_none.df)
+PIBpc_ur_trend_AIC.df <- ur.df(y=PIBpc, type = c("trend"), lags = 10, selectlags = c("AIC"))
+PIBpc_ur_trend_BIC.df <- ur.df(y=PIBpc, type = c("trend"), lags = 10, selectlags = c("BIC"))
+C1PIBpc_ur_none_AIC.df <- ur.df(C1PIBpc, type = c("none"), lags = 10, selectlags = c("AIC"))
+C1PIBpc_ur_none_BIC.df <- ur.df(C1PIBpc, type = c("none"), lags = 10, selectlags = c("BIC"))
+
+summary(PIBpc_ur_trend_AIC.df)
+summary(PIBpc_ur_trend_BIC.df)
+summary(C1PIBpc_ur_none_AIC.df)
+summary(C1PIBpc_ur_none_BIC.df)
 ```
 Obteniendose
 
 ``` r
-> summary(PIBpc_ur_trend.df)
+> summary(PIBpc_ur_trend_AIC.df)
 
 ############################################### 
 # Augmented Dickey-Fuller Test Unit Root Test # 
@@ -185,75 +183,7 @@ tau3 -4.04 -3.45 -3.15
 phi2  6.50  4.88  4.16
 phi3  8.73  6.49  5.47
 
-> summary(PIBpc_ur_drift.df)
-
-############################################### 
-# Augmented Dickey-Fuller Test Unit Root Test # 
-############################################### 
-
-Test regression drift 
-
-
-Call:
-lm(formula = z.diff ~ z.lag.1 + 1 + z.diff.lag)
-
-Residuals:
-      Min        1Q    Median        3Q       Max 
--11120291   -165555    108891    450138   1418735 
-
-Coefficients:
-              Estimate Std. Error t value Pr(>|t|)  
-(Intercept)  1.667e+06  9.298e+05   1.793   0.0794 .
-z.lag.1     -1.711e-01  8.227e-02  -2.079   0.0431 *
-z.diff.lag   1.085e+00  1.036e+00   1.047   0.3003  
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 1731000 on 47 degrees of freedom
-Multiple R-squared:  0.08888,	Adjusted R-squared:  0.05011 
-F-statistic: 2.292 on 2 and 47 DF,  p-value: 0.1122
-
-
-Value of test-statistic is: -2.0793 2.2501 
-
-Critical values for test statistics: 
-      1pct  5pct 10pct
-tau2 -3.51 -2.89 -2.58
-phi1  6.70  4.71  3.86
-
-> summary(PIBpc_ur_none.df)
-
-############################################### 
-# Augmented Dickey-Fuller Test Unit Root Test # 
-############################################### 
-
-Test regression none 
-
-
-Call:
-lm(formula = z.diff ~ z.lag.1 - 1 + z.diff.lag)
-
-Residuals:
-      Min        1Q    Median        3Q       Max 
--11865634    175596    339455    511971   1199076 
-
-Coefficients:
-           Estimate Std. Error t value Pr(>|t|)
-z.lag.1    -0.03322    0.02997  -1.108    0.273
-z.diff.lag  1.05155    1.05926   0.993    0.326
-
-Residual standard error: 1770000 on 48 degrees of freedom
-Multiple R-squared:  0.02675,	Adjusted R-squared:  -0.0138 
-F-statistic: 0.6597 on 2 and 48 DF,  p-value: 0.5217
-
-
-Value of test-statistic is: -1.1083 
-
-Critical values for test statistics: 
-     1pct  5pct 10pct
-tau1 -2.6 -1.95 -1.61
-
-> summary(C1PIBpc_ur_trend.df)
+> summary(PIBpc_ur_trend_BIC.df)
 
 ############################################### 
 # Augmented Dickey-Fuller Test Unit Root Test # 
@@ -266,24 +196,24 @@ Call:
 lm(formula = z.diff ~ z.lag.1 + 1 + tt + z.diff.lag)
 
 Residuals:
-    Min      1Q  Median      3Q     Max 
--703395 -129451   13006  119997  440144 
+      Min        1Q    Median        3Q       Max 
+-10820727   -188559     55160    274597   1802783 
 
 Coefficients:
-              Estimate Std. Error t value Pr(>|t|)   
-(Intercept)  5.201e+04  8.434e+04   0.617  0.54055   
-z.lag.1     -5.214e-01  1.492e-01  -3.493  0.00108 **
-tt           1.767e+03  2.284e+03   0.774  0.44326   
-z.diff.lag   5.628e-02  1.497e-01   0.376  0.70867   
+              Estimate Std. Error t value Pr(>|t|)  
+(Intercept)  2.849e+06  1.332e+06   2.139   0.0378 *
+z.lag.1     -5.201e-01  2.947e-01  -1.765   0.0842 .
+tt           7.674e+04  6.223e+04   1.233   0.2238  
+z.diff.lag   1.276e+00  1.042e+00   1.225   0.2268  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 218600 on 45 degrees of freedom
-Multiple R-squared:  0.2462,	Adjusted R-squared:  0.1959 
-F-statistic: 4.899 on 3 and 45 DF,  p-value: 0.004964
+Residual standard error: 1721000 on 46 degrees of freedom
+Multiple R-squared:  0.118,	Adjusted R-squared:  0.06051 
+F-statistic: 2.052 on 3 and 46 DF,  p-value: 0.1197
 
 
-Value of test-statistic is: -3.4934 4.0757 6.1099 
+Value of test-statistic is: -1.7651 2.0235 2.9459 
 
 Critical values for test statistics: 
       1pct  5pct 10pct
@@ -291,43 +221,7 @@ tau3 -4.04 -3.45 -3.15
 phi2  6.50  4.88  4.16
 phi3  8.73  6.49  5.47
 
-> summary(C1PIBpc_ur_drift.df)
-
-############################################### 
-# Augmented Dickey-Fuller Test Unit Root Test # 
-############################################### 
-
-Test regression drift 
-
-
-Call:
-lm(formula = z.diff ~ z.lag.1 + 1 + z.diff.lag)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--692147 -113648   12721  114966  466386 
-
-Coefficients:
-              Estimate Std. Error t value Pr(>|t|)   
-(Intercept)  1.072e+05  4.469e+04   2.400  0.02050 * 
-z.lag.1     -4.918e-01  1.436e-01  -3.424  0.00131 **
-z.diff.lag   4.165e-02  1.478e-01   0.282  0.77940   
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 217600 on 46 degrees of freedom
-Multiple R-squared:  0.2362,	Adjusted R-squared:  0.2029 
-F-statistic: 7.111 on 2 and 46 DF,  p-value: 0.002037
-
-
-Value of test-statistic is: -3.424 5.8656 
-
-Critical values for test statistics: 
-      1pct  5pct 10pct
-tau2 -3.51 -2.89 -2.58
-phi1  6.70  4.71  3.86
-
-> summary(C1PIBpc_ur_none.df)
+> summary(C1PIBpc_ur_none_AIC.df)
 
 ############################################### 
 # Augmented Dickey-Fuller Test Unit Root Test # 
@@ -360,30 +254,57 @@ Value of test-statistic is: -2.3286
 Critical values for test statistics: 
      1pct  5pct 10pct
 tau1 -2.6 -1.95 -1.61
-```
 
-Dado que en la prueba ADF con intercepto y tendencia de la variable $PIBpc$, ambos terminos dieron significativos, entonces se decidio testear la prueba ADF con intercepto y con tendencia. Dado que en la prueba ADF con intercepto de la variable $C1PIBpc$, el intercepto dio significativo, entonces se decidio testear la prueba ADF con intercepto. 
+> summary(C1PIBpc_ur_none_BIC.df)
 
-Los resultados de la misma son:
+############################################### 
+# Augmented Dickey-Fuller Test Unit Root Test # 
+############################################### 
 
-| Variable   | Estadístico | Número de rezagos <br> Criterio de Información de Akaike | Valor      |  1%     |  5%     |  10%    |
-|------------|:-----------:|:--------------------------------------------------------:|:----------:|:-------:|:-------:|:-------:|
-| $PIBpc$    | $\tau_\tau$ |  1                                                       |  $-3.4934$ | $-4.04$ | $-3.45$ | $-3.15$ |
-| $PIBpc$    | $\phi_2$    |  1                                                       |  $4.0757$  |  $6.50$ |  $4.88$ |  $4.16$ |
-| $PIBpc$    | $\phi_3$    |  1                                                       |  $6.1099$  |  $8.73$ |  $6.49$ |  $5.47$ |
-| $C1PIBpc$  | $\tau$      |  1                                                       |  $-4.308$  | $-2.60$ | $-1.95$ | $-1.61$ |
+Test regression none 
 
-Value of test-statistic is: -3.4934 4.0757 6.1099 
+
+Call:
+lm(formula = z.diff ~ z.lag.1 - 1 + z.diff.lag)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-590917 -100077   58096  184819  598045 
+
+Coefficients:
+           Estimate Std. Error t value Pr(>|t|)  
+z.lag.1    -0.24419    0.10487  -2.329   0.0242 *
+z.diff.lag -0.08217    0.14539  -0.565   0.5746  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 228400 on 47 degrees of freedom
+Multiple R-squared:  0.1406,	Adjusted R-squared:  0.1041 
+F-statistic: 3.845 on 2 and 47 DF,  p-value: 0.0284
+
+
+Value of test-statistic is: -2.3286 
 
 Critical values for test statistics: 
-      1pct  5pct 10pct
-tau3 -4.04 -3.45 -3.15
-phi2  6.50  4.88  4.16
-phi3  8.73  6.49  5.47
+     1pct  5pct 10pct
+tau1 -2.6 -1.95 -1.61
+
+Los resultados de las pruebas ADF son:
+
+| Variable   | Estadístico | Criterio de <br> información | Número de <br> rezagos | Valor     |  1%     |  5%     |  10%    |
+|------------|:-----------:|:----------------------------:|:----------------------:|:---------:|:-------:|:-------:|:-------:|
+| $PIBpc$    | $\tau_\tau$ |  Akaike                      |   3                    | $-2.8429$ | $-4.04$ | $-3.45$ | $-3.15$ |
+| $PIBpc$    | $\phi_2$    |  Akaike                      |   3                    |  $4.3493$ |  $6.50$ |  $4.88$ |  $4.16$ |
+| $PIBpc$    | $\phi_3$    |  Akaike                      |   3                    | $ 6.0919$ |  $8.73$ |  $6.49$ |  $5.47$ |
+| $PIBpc$    | $\tau_\tau$ |  Schwartz                    |   1                    | $-1.7651$ | $-4.04$ | $-3.45$ | $-3.15$ |
+| $PIBpc$    | $\phi_2$    |  Schwartz                    |   1                    |  $2.0235$ |  $6.50$ |  $4.88$ |  $4.16$ |
+| $PIBpc$    | $\phi_3$    |  Schwartz                    |   1                    |  $2.9459$ |  $8.73$ |  $6.49$ |  $5.47$ |
+| $C1PIBpc$  | $\tau$      |  Akaike                      |   1                    | $-2.3286$ | $-2.60$ | $-1.95$ | $-1.61$ |
+| $C1PIBpc$  | $\tau$      |  Schwartz                    |   1                    | $-2.3286$ | $-2.60$ | $-1.95$ | $-1.61$ |
 
 En consecuencia, la variable $PIBpc$ es no estacionaria porque:
-* $\tau_\tau$ = -4.04 < **-3.4934** < -3.45, es decir, no se rechaza $\gamma=0$ al 10% y 5%, pero si se rechaza al 1%
-* $\phi_2$ = **4.0757**<4.16, es decir, no se rechaza $\gamma=a_0=a_2=0$ al 10%, 5% y 1%
+* $\tau_\tau$ = -3.15 < **-2.8429 (Akaike)** < **-1.7651 (Shwartz)**, es decir, no se rechaza $\gamma=0$ al 10%, 5% y 1%
+* $\phi_2$ = **2.0235 (Shwartz)** < **4.3493 (Akaike)** < 4.88, es decir, no se rechaza $\gamma=a_0=a_2=0$ al 10%, 5% y 1%
 * $\phi_3$ = 6.49<**6.1099**<8.73, es decir, no se rechaza $\gamma=a_2=0$ al 1% pero si se rechaza al 5% y 10%
 
 Y la variable $C1PIBpc$ es estacionaria porque
@@ -391,18 +312,20 @@ Y la variable $C1PIBpc$ es estacionaria porque
 
 Ahora copie los comandos
 ``` r
-PIBpc_urdfTest<- urdfTest(PIBpc, lags = 1, type = c("ct"), doplot = TRUE)
+PIBpc_urdfTest<- urdfTest(PIBpc, lags = 3, type = c("ct"), doplot = TRUE)
 C1PIBpc_urdfTest<- urdfTest(C1PIBpc, lags = 1, type = c("nc"), doplot = TRUE)
 ```  
 Obteniendose los siguientes gráficos de prueba sobre los errores de estimación en la prueba,
 
 1) Para $PIBpc$
    
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/eda2ac2e-e86a-43c7-bdec-db270fb6216e)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4a7e542c-98a2-42b1-ab94-458640b56352)
+
 
 2) Para $C1PIBpc$
    
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ffc5fbd8-d472-46d0-bc35-4ec68ec4ec80)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6311e9ff-3bc6-4a4e-9802-5ea2fb825685)
+
 
 En consecuencia, los gráficos $FAC$ y $FACP$ revelan que los errores son ruidos blanco en ambas pruebas, por lo tanto ambas pruebas estan bien hechas.
 
