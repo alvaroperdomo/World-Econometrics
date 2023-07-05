@@ -296,7 +296,7 @@ Los resultados de las pruebas ADF son:
 |------------|:-----------:|:----------------------------:|:----------------------:|:---------:|:-------:|:-------:|:-------:|
 | $PIBpc$    | $\tau_\tau$ |  Akaike                      |   3                    | $-2.8429$ | $-4.04$ | $-3.45$ | $-3.15$ |
 | $PIBpc$    | $\phi_2$    |  Akaike                      |   3                    |  $4.3493$ |  $6.50$ |  $4.88$ |  $4.16$ |
-| $PIBpc$    | $\phi_3$    |  Akaike                      |   3                    | $ 6.0919$ |  $8.73$ |  $6.49$ |  $5.47$ |
+| $PIBpc$    | $\phi_3$    |  Akaike                      |   3                    |  $6.0919$ |  $8.73$ |  $6.49$ |  $5.47$ |
 | $PIBpc$    | $\tau_\tau$ |  Schwartz                    |   1                    | $-1.7651$ | $-4.04$ | $-3.45$ | $-3.15$ |
 | $PIBpc$    | $\phi_2$    |  Schwartz                    |   1                    |  $2.0235$ |  $6.50$ |  $4.88$ |  $4.16$ |
 | $PIBpc$    | $\phi_3$    |  Schwartz                    |   1                    |  $2.9459$ |  $8.73$ |  $6.49$ |  $5.47$ |
@@ -318,19 +318,19 @@ C1PIBpc_urdfTest<- urdfTest(C1PIBpc, lags = 1, type = c("nc"), doplot = TRUE)
 ```  
 Obteniendose los siguientes gráficos de prueba sobre los errores de estimación en la prueba,
 
-1) Para $PIBpc$
+1) Para los residuos de la prueba ADF de $PIBpc$
    
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4a7e542c-98a2-42b1-ab94-458640b56352)
 
 
-2) Para $C1PIBpc$
+2) Para los residuos de la prueba ADF de $C1PIBpc$
    
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6311e9ff-3bc6-4a4e-9802-5ea2fb825685)
 
 
 En consecuencia, los gráficos $FAC$ y $FACP$ revelan que los errores son ruidos blanco en ambas pruebas, por lo tanto ambas pruebas estan bien hechas.
 
-*****************************************************************************************************************************************************************************
+****************************************************************************************************************************************************************************
 
 ### Prueba DF-GLS
 
@@ -420,6 +420,8 @@ La variable $PIBpc$ es no estacionaria porque:
 
 La variable $C1PIBpc$ es estacionaria porque:
 * Con el estadistico $P_\mu$: $**0.319**<1.95$, se rechaza la hipótesis nula de raíz unitaria al 1%, 5% y 10%
+
+****************************************************************************************************************************************************************************
 
 ### Prueba KPSS
 Vamos a aplicar las opciones de rezago de R. Sin embargo, no olviden que según  en Newey y West (1994) la longitud de rezago se establece proporcional a $T^{1/3}$, en decir $60^{1/3}=3.92 \sim 4$, en nuestro caso: .
@@ -578,6 +580,8 @@ La variable $PIBpc$ es no estacionaria porque:
 La variable $C1PIBpc$ es estacionaria porque:
 * Cuando el número de rezagos es el establecido por la formula de Newey y West (1994)= $4$ se obtiene: $**0.2339**<0.347$, no se rechaza la hipótesis nula de estacionariedad al 1%, 2.5%, 5% y 10%
 
+****************************************************************************************************************************************************************************
+
 ### Prueba ZA
 ``` r
 ZA1.za <- ur.za(PIBpc, model = c("intercept"), lag=NULL)
@@ -695,10 +699,10 @@ Critical values: 0.01= -5.57 0.05= -5.08 0.1= -4.82
 Potential break point at position: 39 
 ```
 | Estadistico      | Año del cambio <br> estructural |¿Es estadisticamente significativo <br> el cambio estructural? | Valor    |  10%    |  5%     |  1%     |
-|------------------|:-------------------------------:|:---------------------------------------------------------:|:--------:|:-------:|:-------:|:-------:|
-| $ZA_{Intercept}$ |  50                             | Si (du al 1%)                                             |$-3.6435$ | $-4.11$ | $-4.42$ | $-4.93$ |
-| $ZA_{Trend}$     |  42                             | Si (dt al 1%)                                             |$-3.192$  | $-4.58$ | $-4.80$ | $-5.34$ |
-| $ZA_{Both}$      |  39                             | Si (du al 5% y dt al 0.1%)                                |$-3.9148$ | $-4.82$ | $-5.08$ | $-5.57$ |
+|------------------|:-------------------------------:|:-------------------------------------------------------------:|:--------:|:-------:|:-------:|:-------:|
+| $ZA_{Intercept}$ |  50                             | Si (du al 1%)                                                 |$-3.6435$ | $-4.11$ | $-4.42$ | $-4.93$ |
+| $ZA_{Trend}$     |  42                             | Si (dt al 1%)                                                 |$-3.192$  | $-4.58$ | $-4.80$ | $-5.34$ |
+| $ZA_{Both}$      |  39                             | Si (du al 5% y dt al 0.1%)                                    |$-3.9148$ | $-4.82$ | $-5.08$ | $-5.57$ |
 
 La variable es no estacionaria porque:
 * Con el estadistico $ZA_{Intercept}$: $-3.6435>-4.11$, no se rechaza la hipótesis nula de raíz unitaria
