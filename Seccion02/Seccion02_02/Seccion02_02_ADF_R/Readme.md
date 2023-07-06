@@ -1,6 +1,6 @@
 # Aplicando las pruebas DF y ADF en R
 
-Para llevar a cabo la prueba ADF ofrecemos tres opciones:
+Para llevar a cabo la prueba ADF ofrecemos cuatro opciones:
 
 ## 1) **Primera Opción:** Utilice el comando **unitrootTest**
 La estructura para hacer la prueba ADF es:
@@ -44,6 +44,7 @@ urdfTest(x, lags = 1, type = c("nc", "c", "ct"), doplot = TRUE)
 |                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                                  |
 
 ## 3) **Tercera Opción:** Utilice el comando **ur.df**
+La estructura para hacer la prueba ADF es:
 ``` r
 ur.df(x, type = c("none", "drift", "trend"), lags = 1, selectlags = c("Fixed", "AIC", "BIC"))
 ```
@@ -61,8 +62,23 @@ ur.df(x, type = c("none", "drift", "trend"), lags = 1, selectlags = c("Fixed", "
 |                         | **"AIC"** criterio de selección de Akaike (el número máximo de rezagos analizados se establece en la opción "**lags**")              |
 |                         | **"BIC"** criterio de selección Bayesiano de Schwartz (el número máximo de rezagos analizados se establece en la opción "**lags**")  |
 
-#### De las tres opciones, mi preferida es esta última por la opción "selectlags" ya que permite utilizar los criterios de selección de Akaike y el Bayesiano de Schwartz para escoger la prueba apropiada. 
-#### Posteriormente, se puede utilizar cualqueiera la segunda opción para aprovechar el comando "doplot" y así hacer la prueba sobre los residuos
+## 4) **Cuarta Opción:** Utilice el comando **ndiffs**
+Este comando permite estimar el número de diferencias necesarias para hacer estacionaria una serie temporal determinada. **ndiffs** encuentra la menor cantidad de diferencias requeridas para fallar la hpótesis nula de la prueba ADF según el nivel de significancia alpha. La estructura para hallar el número de diferencias con la prueba ADF es:
+``` r
+ndiffs(x, alpha = 0.05, test = c("adf"), type = c("level", "trend"), ...)
+```
+
+| **Argumentos**          | **Descripción**                                                                                                                      | 
+|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| **x**                   | vector o variable de series de tiempo a la que se le va a hacer la prueba                                                            |
+| **alpha**               | Nivel de significancia dela prueba, los valores posibles oscilan entre 0,01 y 0,1.                                                   |
+| **type**                | en esta opción se especifica el tipo de prueba ADF que se va a llevar a cabo. Las opciones válidas son:                              |
+|                         | **"level"** para una prueba con intercepto (constante) pero sin tendencia temporal - **_Opción Predeterminada_**                     |
+|                         | **"trend"** para una regresión con intercepto (constante) y con tendencia temporal                                                   |
+
+#### De las cuatro opciones, mi preferida es la tercera por la opción "selectlags" ya que permite utilizar los criterios de selección de Akaike y el Bayesiano de Schwartz para escoger la prueba apropiada. 
+#### Posteriormente, se puede utilizar la segunda opción para aprovechar el comando "doplot" y así hacer la prueba sobre los residuos.
+#### Por último, se puede contrastar con la cuarta opción para tener una opinión adicional.
 
 | [Retornar: 02. Pruebas de Raíz Unitaria](../Readme.md) | [02. Pruebas de DF y ADF](../Seccion02_02_ADF_T/Readme.md)  |
 |--------------------------------------------------------|-------------------------------------------------------------|
