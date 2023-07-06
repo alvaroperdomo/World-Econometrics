@@ -1,4 +1,4 @@
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/69244420-4a89-446e-947b-df3ebfe5e364)# Estimación de Modelos VAR
+# Estimación de Modelos VAR
 Si se quiere tener en cuenta todas las relaciones posibles entre, digamos, $k$ variables, parece sensato construir un modelo conjunto para todas estas series de tiempo en lugar de construir modelos para todas las series individuales. 
 
 Considere el sistema bivariado simple:
