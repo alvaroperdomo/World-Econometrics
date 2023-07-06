@@ -1,11 +1,11 @@
 # ANÁLISIS ARMA (METODOLOGÍA DE BOX Y JENKINS)
 
-Box y Jenkins (1976) popularizaron un método de tres etapas para seleccionar el modelo $ARMA()$ apropiado para estimar una serie de tiempo univariada. Tenga, en cuenta que esta metodología sólo es valida para aplicar en series estacionarias. Por lo tanto, como se comento anteriormente, si una serie de tiempo no es estacionaria, apliquele la transformación adecuada para aplicar la metodología.
+Box y Jenkins (1976) popularizaron un método de tres etapas para seleccionar el modelo $ARMA()$ apropiado para estimar una serie de tiempo univariada. Tenga, en cuenta que esta metodología sólo es valida en series estacionarias. Por lo tanto, como se comento anteriormente, si una serie de tiempo no es estacionaria, transformela en una serie estacionaria para poder aplicar la propuesta de Box y Jenkins.
 
 Las tres etapas son:
 
 1. **Identificación:** Se examina visualmente
-   * el gráfico de tiempo de la serie,
+   * el gráfico de la serie de tiempo,
    * la función de autocorrelación ($FAC$)  y
    * la función de autocorrelación parcial ($FACP$).
 
@@ -169,31 +169,45 @@ Al examinar la tabla, note que todos los $\hat{a_1}$ son muy significativos; cad
 
 El mismo tipo de razonamiento indica que el Modelo 2 es preferible al Modelo 3. Tenga en cuenta que, para cada modelo, los coeficientes estimados son altamente significativos y las estimaciones puntuales implican convergencia. Aunque el estadístico Q en $24$ rezagos indica que estos dos modelos no tienen residuos correlacionados, el estadístico Q de $8$ rezagos indica una correlación serial en los residuos del Modelo 3. Por lo tanto, el modelo $AR(2)$ no capta la dinámica de corto plazo como lo hace el modelo $ARMA(1,1)$.  También tenga en cuenta que tanto el Criterio de Información de Akaike como el Criterio Bayesiano de Schwartz seleccionan el Modelo 2.
 
-## EJEMPLO XXX
+## Ejemplo utilizando la primera diferencia en el Producto Interno Bruto per cápita de Colombia a precios Constantes en moneda local
 
-https://rpubs.com/palominoM/series
+Para este ejercicio, dado que previamente ya habiamos demostrado que la variable $PIBpc$ es integrada de orden uno, es decir la variable $C1PIBpc$ es estacionaria. entonces, vamos a retomar parte del código utilizado en secciones previas para analizar el comportamiento de $C1PIBpc$ y a partir del mismo poder deducir el comportamiento de $PIBpc$, tal como se muestra a continuación:
 
 ``` r
 rm(list = ls())
+
 library(WDI)
 library(dplyr)
 library(ggfortify)
 library(ggplot2)
 library(forecast)
-dat = WDI(indicator= c(PIB_per_capita = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
-ggplot(dat, aes(year, PIB_per_capita)) + geom_line() + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
-Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
+library(fUnitRoots)
+library(urca)
+
+WDIsearch(string='NY.GDP.PCAP.KN', field='indicator')
+
+dat = WDI(indicator= c(PIBpc = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
+dat <- dat %>% arrange(year)
+dat <- na.omit(dat)
+dat <- mutate(dat, PIBpc_lag1 = lag(PIBpc, order_by = year), C1PIBpc=PIBpc-PIBpc_lag1, country=NULL, iso2c=NULL, iso3c=NULL)
+
+ejercicio <- dat[-c(61:63),]
+ejercicioC1 <- ejercicio[-c(1),]
+ejercicio <- mutate(ejercicio, PIBpc_lag1=NULL, C1PIBpc=NULL)
+ejercicioC1 <- mutate(ejercicioC1, PIBpc=NULL, PIBpc_lag1=NULL)
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/d4bc2fad-ef6c-4721-bcd6-c20b8fd123de)
+Ahora gráficamos la serie así como las funciones $FAC$ y $FACP$
 
 ``` r
-dat_ <- dat %>% arrange(year)
-dat <- na.omit(dat_)
-PIBpc_ = subset(dat, select = c(PIB_per_capita))
-PIBpc <- ts(PIBpc_, start=1960)
-autoplot(acf(PIBpc, plot = FALSE))
-autoplot(pacf(PIBpc, plot = FALSE))
+C1PIBpc_ = subset(ejercicioC1, select = c(C1PIBpc))
+C1PIBpc <- ts(C1PIBpc_)
+autoplot(acf(C1PIBpc, plot = FALSE))
+autoplot(pacf(C1PIBpc, plot = FALSE))
 ```
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/7de314f5-3345-4b56-ad70-136bfe6b33ed)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/b29da0bb-daff-4ffc-a416-91066fd9edcd)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6b57037b-87e6-4c19-a9d3-f01787e41fbe)
+
 ``` r
 ndiffs(PIBpc)
 
