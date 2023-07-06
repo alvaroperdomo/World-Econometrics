@@ -1,10 +1,8 @@
 # El cambio estructural
 
-Al realizar pruebas de raíz unitaria, se debe tener especial cuidado si se sospecha que ha ocurrido un cambio estructural. 
+Al realizar pruebas de raíz unitaria, se debe tener especial cuidado si se sospecha que ha ocurrido un cambio estructural. Cuando hay cambios estructurales, los diversos estadísticos de la prueba ADF están sesgados hacia el no rechazo de una raíz unitaria. 
 
-Cuando hay cambios estructurales, los diversos estadísticos de la prueba ADF están sesgados hacia el no rechazo de una raíz unitaria. 
-
-Como ejemplo, considere la situación en la que hay un cambio único en la media de una secuencia estacionaria. En el gráfico  de abajo la secuencia { $y_t$ } se construyó de manera que fuera estacionaria alrededor de una media de 0 para $t=0, …, 50$ y luego lo fuera alrededor de una media de 6 para $t=51, …, 100$. 
+Como ejemplo, considere la situación en la que hay un cambio único en la media de una secuencia estacionaria. En el gráfico  de abajo la secuencia { $y_t$ } se construyó de manera que es estacionaria alrededor de una media de 0 para $t=0, …, 50$ y luego es estacionaria alrededor de una media de 6 para $t=51, …, 100$. 
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5e70a54a-0564-4c7a-bde3-9812c475657d)
 
