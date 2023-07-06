@@ -199,6 +199,8 @@ ejercicioC1 <- mutate(ejercicioC1, PIBpc=NULL, PIBpc_lag1=NULL)
 Ahora gráficamos la serie así como las funciones $FAC$ y $FACP$
 
 ``` r
+PIBpc_ = subset(ejercicio, select = c(PIBpc))
+PIBpc <- ts(PIBpc_)
 C1PIBpc_ = subset(ejercicioC1, select = c(C1PIBpc))
 C1PIBpc <- ts(C1PIBpc_)
 autoplot(acf(C1PIBpc, plot = FALSE))
@@ -207,6 +209,8 @@ autoplot(pacf(C1PIBpc, plot = FALSE))
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/7de314f5-3345-4b56-ad70-136bfe6b33ed)
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/b29da0bb-daff-4ffc-a416-91066fd9edcd)
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6b57037b-87e6-4c19-a9d3-f01787e41fbe)
+
+La $FACP$ da a entender que la serie no sigue un proceso autorregresivo, pero la $FAC$ si revela la existencia de un comportamiento de media movil, en particular en el rezago 1, en particular en los rezagos 1 y 12
 
 ``` r
 ndiffs(PIBpc)
