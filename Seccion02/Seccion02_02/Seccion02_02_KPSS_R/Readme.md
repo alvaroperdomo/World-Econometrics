@@ -36,7 +36,7 @@ ur.kpss(y, type = c("mu", "tau"), lags = c("short", "long", "nil"), use.lag = NU
 |                         | **"nil"** establece que no se hace ninguna corrección del error                                                                              |
 | **use.lag**             | número de rezagos especificados por el usuario                                                                                               |
 
-## 4) **Cuarta Opción:** Utilice el comando **ndiffs**
+## 3) **Tercera Opción:** Utilice el comando **ndiffs**
 Este comando permite estimar el número de diferencias necesarias para hacer estacionaria una serie temporal determinada. **ndiffs** encuentra la menor cantidad de diferencias requeridas para no rechazar la hipótesis nula de la prueba KPSS según el nivel de significancia alpha. La estructura para hallar el número de diferencias con la prueba KPSS es:
 ``` r
 ndiffs(x, alpha = 0.05, test = c("kpss"), type = c("level", "trend"), ...)
