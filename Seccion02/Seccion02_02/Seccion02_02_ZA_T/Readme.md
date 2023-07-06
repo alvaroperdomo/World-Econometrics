@@ -123,7 +123,7 @@ Perron generó 5000 series de acuerdo con $H_1$ usando valores de $\lambda$ que 
 
 La diferencia máxima entre los dos estadísticos se produce cuando $\lambda=0.5$. Para $\lambda=0.5$, el valor crítico del estadístico $t$ en el nivel de significancia del 5% es $−3.76$ (que es mayor en valor absoluto que el estadístico Dickey-Fuller correspondiente de $−3.41$). 
 
-Si encuentra un estadístico $t$ mayor que el valor crítico calculado por Perron, es posible rechazar la hipótesis nula de una raíz unitaria. La metodología es bastante general, ya que también puede permitir un cambio único en el intercepto o un cambio único tanto en la media como en el intercepto. 
+Si encuentra un estadístico $t$ mayor que el valor crítico calculado por Perron, es posible rechazar la hipótesis nula de una raíz unitaria. La metodología es bastante general, ya que también puede permitir un cambio único en el intercepto o un cambio único tanto en la tendencia como en el intercepto. 
 
 Por ejemplo, es posible probar la hipótesis nula de un cambio permanente en el intercepto frente a la alternativa de un cambio en la pendiente de la tendencia.  
 
@@ -168,7 +168,7 @@ Nuevamente, el procedimiento implica combinar las hipótesis nula y alternativa 
 ## Prueba de Zivot y Andrews
 Se debe tener cuidado al usar el procedimiento de Perron, ya que supone que la fecha del cambio estructural es conocida. Zivot y Andrews (1992) muestran que si el momento de cambio estructural es erróneo y se aplica la prueba de Perron, entonces aumenta la probabilidad de que se rechace la presencia de raíz unitaria en momentos en que esta realmente existe. Por lo tanto, Zivot y Andrews (1992) proponen una prueba de raíz unitaria que calcula endógenamente el momento del cambio estructural. Ante ello, plantean el siguiente procedimiento:
 
-**Paso 1:** Calcule el estadístico $t$ para verificar la hipótesis nula $a_1=0$  (es decir, la hipótesis nula de raíz unitaria) para todos los momentos ($\tau$) y para todos los posibles tipos de cambio estructural. Para el caso de cambio estructural en media y pendiente. $\Delta y_t= a_0 + a_1 y_{t-1} + a_2t + \mu_2 D_L + \mu_3 D_T + \displaystyle\sum_{i = 1}^{p} \beta_i \Delta y_{t-i} +  \varepsilon_t$
+**Paso 1:** Calcule el estadístico $t$ para verificar la hipótesis nula $a_1=0$  (es decir, la hipótesis nula de raíz unitaria) para todos los momentos ($\tau$) y para todos los posibles tipos de cambio estructural. Para el caso de cambio estructural en tendencia y pendiente. $\Delta y_t= a_0 + a_1 y_{t-1} + a_2t + \mu_2 D_L + \mu_3 D_T + \displaystyle\sum_{i = 1}^{p} \beta_i \Delta y_{t-i} +  \varepsilon_t$
 
 **Paso 2:** Escoja el estadístico $|t|$ más alto (es decir, el menos favorable a aceptar $H_0$) y compárelo con los valores críticos propuestos por Zivot y Andrews.
 
