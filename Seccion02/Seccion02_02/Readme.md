@@ -583,6 +583,9 @@ La variable $C1PIBpc$ es estacionaria porque:
 ****************************************************************************************************************************************************************************
 
 ### Prueba ZA
+
+La prueba de Zivot y Andrews sólo se le va a hacer a la variable $PIBpc$ porque revela un cambio estructural al final del siglo pasado producto de una crisis económica que vivió Colombia en esa época:
+
 ``` r
 ZA1.za <- ur.za(PIBpc, model = c("intercept"), lag=NULL)
 ZA2.za <- ur.za(PIBpc, model = c("trend"), lag=NULL)
