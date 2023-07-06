@@ -16,7 +16,7 @@ Las ecuaciones $I$ y $II$ constituyen un vector autorregresivo de primer orden (
 
 [^1]: Este _VAR_ sencillo es útil para ilustrar los sistemas multivariados de orden superior que se presentaran más adelante.
 
-Tenga en cuenta que los términos { $\varepsilon_{yt}$ y$\varepsilon_{zt}$  son innovaciones puras (o choques) en $y_t$ y $z_t$, respectivamente. Por supuesto, 
+Tenga en cuenta que los términos { $\varepsilon_{yt}$ y $\varepsilon_{zt}$  son innovaciones puras (o choques) en $y_t$ y $z_t$, respectivamente. Por supuesto, 
 * si $b_{21}≠0$, $\varepsilon_{yt}$  tiene un efecto contemporáneo indirecto en $z_t$, y
 * si $b_{12}≠0$, $\varepsilon_{zt}$  tiene un efecto contemporáneo indirecto en $y_t$. 
 
@@ -31,6 +31,21 @@ $$x_t = {\left\lbrack \matrix{y_t \cr z_t} \right\rbrack}$$
 $$\Gamma_0 = {\left\lbrack \matrix{b_{10} \cr b_{20}} \right\rbrack}$$
 $$\Gamma_1 = {\left\lbrack \matrix{\gamma_{11} & \gamma_{12} \cr \gamma_{21} & \gamma_{22}} \right\rbrack}$$
 $$\varepsilon_t = {\left\lbrack \matrix{\varepsilon_{yt} \cr \varepsilon_{zt}} \right\rbrack}$$
+
+Al premultiplicar por $B^{−1}$ se obtiene el **modelo VAR en forma estándar** $x_t= A_0 + A_1x_{t-1}+e_t$  donde $A_0=B^{−1}\Gamma_0$, $A_1=B^{−1}\Gamma_1$, y $e_t=B^{−1}\varepsilon_t$
+
+Por propósitos de notación, podemos definir
+* $a_{i0}$  como el elemento $i$ del vector $A_0$,
+* $a_{ij}$ como el elemento en la fila $i$ y la columna $j$ de la matriz $A_1$, y
+* $e_{it}$ como el elemento $i$ del vector $e_t$. 
+
+Usando esta nueva notación, podemos reescribir $x_t= A_0 + A_1x_{t-1}+e_t$ en la forma equivalente:
+
+$i$) $y_t=a{10}+a{11}y{t-1}+a{12}z{t-1}+e{1t}$ 
+
+$ii$) $z_t=a{20}+a{21}y{t-1}+a{22}z{t-1}+e{2t}$
+
+Para distinguir entre los sistemas representados por $I$ y $II$ versus $i$ y $ii$, el primero se llama un **VAR estructural o sistema primitivo** y el segundo se llama un **VAR en forma estándar**. Es importante tener en cuenta que los términos de error (es decir, $e_{1t}$ y $e_{2t}$) son compuestos de los dos choques $\varepsilon_{yt}$  y $\varepsilon_{zt}$. 
 
 
 
