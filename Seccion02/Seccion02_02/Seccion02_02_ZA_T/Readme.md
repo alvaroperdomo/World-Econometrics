@@ -21,7 +21,7 @@ D_L=\left\[\
 $$
 
 El subíndice $L$ indica que el nivel (_Level_ en inglés) de la variable dummy $D_L$ cambia[^1]. 
-[^1]: **Una variable dummy es una variable que únicamente toma valores iguales a $0$ o iguales a $1$**
+[^1]: **Una variable dummy es una variable que únicamente toma valores iguales a 0 o iguales a 1**
 ##### Claro que en la práctica, el cambio estructural puede no ser tan evidente como se muestra en la figura de arriba.
 
 Sin embargo, la variable dummy $D_L$ es útil para ilustrar el problema de usar una prueba de Dickey-Fuller: 
