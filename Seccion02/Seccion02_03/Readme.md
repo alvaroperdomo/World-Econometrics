@@ -196,7 +196,8 @@ ejercicioC1 <- ejercicio[-c(1),]
 ejercicio <- mutate(ejercicio, PIBpc_lag1=NULL, C1PIBpc=NULL)
 ejercicioC1 <- mutate(ejercicioC1, PIBpc=NULL, PIBpc_lag1=NULL)
 ```
-Ahora gráficamos la serie así como las funciones $FAC$ y $FACP$
+**1) Identificación:**
+Gráficamos la variable **C1PIBpc** así como sus funciones $FAC$ y $FACP$
 
 ``` r
 PIBpc_ = subset(ejercicio, select = c(PIBpc))
@@ -210,13 +211,10 @@ autoplot(pacf(C1PIBpc, plot = FALSE))
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/b29da0bb-daff-4ffc-a416-91066fd9edcd)
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6b57037b-87e6-4c19-a9d3-f01787e41fbe)
 
-La $FACP$ da a entender que la serie no sigue un proceso autorregresivo, pero la $FAC$ si revela la existencia de un comportamiento de media movil, en particular en el rezago 1, en particular en los rezagos 1 y 12
+**2) Estimación:**
+La $FACP$ da a entender que la serie sigue un proceso autorregresivo de orden $1$, y la $FAC$ revela la existencia de un comportamiento de media movilde orde $1$ o de orden $2$. En consecuencia, vamos a comparar los siguientes modelos $ARIMA(p,1,q)$ para la variable $PIBpc$ (esto es equivalente a comparar los siguientes modelos $ARIMA(p,0,q)$ para la variable $C1PIBpc$).
 
 ``` r
-ndiffs(PIBpc)
-
-diff.PIBpc<-autoplot(diff(PIBpc))
-autoplot(acf(diff(PIBpc), plot = FALSE))
 arima1<- Arima(PIBpc, order=c(0,1,2))
 arima2<- Arima(PIBpc, order=c(1,1,0))
 arima3<- Arima(PIBpc, order=c(1,1,2))
@@ -226,32 +224,108 @@ arima5<- Arima(PIBpc, order=c(0,1,1))
 AIC(arima1,arima2,arima3,arima4,arima5)
 BIC(arima1,arima2,arima3,arima4,arima5)
 ```
-Aquí se puede apreciar que los ajustes que mejor AIC y BIC presentan son aquellas que solo tienen componente de médias móviles y no tienen componente autorregresiva, siendo ARIMA(0,1,2)el modelo que los test arrojan con un menor valor y por tanto con una mayor consideración. Una vez estimados los modelos y elegido el mejor de ellos, en este caso ARIMA(0,1,2), se procede a validarlo. Para ello en primer lugar se grafican los correlogramas de los residuos para comprobar que son ruido blanco:
+Obteniendo,
+``` r
+> AIC(arima1,arima2,arima3,arima4,arima5)
+       df      AIC
+arima1  3 1629.190
+arima2  2 1617.199
+arima3  4 1618.947
+arima4  3 1618.328
+arima5  2 1633.899
+> BIC(arima1,arima2,arima3,arima4,arima5)
+       df      BIC
+arima1  3 1635.423
+arima2  2 1621.354
+arima3  4 1627.257
+arima4  3 1624.561
+arima5  2 1638.054
+```
+Se puede apreciar que los menores valores del Criterio de Información de Akaike (AIC) y del Criterio Bayesiano de Schwartz (BIC) se presentan el modelo ARIMA(1,1,0) en donde $AIC=1617.199$ y $BIC=1621.354. 
+
+**3) Verificación de diagnóstico:**
+Una vez estimados los modelos y elegido el mejor de ellos, en este caso ARIMA(1,1,0), se procede a validarlo. Para ello en primer lugar se grafican los correlogramas de los residuos para comprobar que son ruido blanco:
+``` r
+autoplot(acf(arima2$residuals, plot = FALSE))
+autoplot(pacf(arima2$residuals, plot = FALSE))
+```
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5b427f75-205e-4d3a-a903-da89bfc762db)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/71fea7cf-2fbc-458c-bd46-5184a63e76ff)
+
+Se puede apreciar en las FAC y en las FACP que no hay ningún rezago significativo que denote ningún tipo de estructura, por lo tanto podemos decir que los residuos son ruido blanco. Ahora, vamos a ver un gráfico de los residuos:
 
 ``` r
-autoplot(acf(arima5$residuals, plot = FALSE))
-autoplot(pacf(arima5$residuals, plot = FALSE))
+ggtsdiag(arima2)
 ```
-Se puede apreciar en los correlogramas que no hay ningún rezago significativo (aparte del 0 del ACF, que es 1 por definición) que denote ningún tipo de estructura, por lo tanto podemos decir que los residuos son ruido blanco. Ahora, vamos a pintar también una serie de gráficas sobre los residuos:
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/09bbd66d-473b-4cf5-93bb-9b04bb63b38a)
 
+Y hacemos la prueba $Q$ de Ljung-Box
 ``` r
-ggtsdiag(arima5)
-```
-``` r
-lb <- Box.test(arima5$residuals, type="Ljung-Box") # Test de Ljung-Box
+lb <- Box.test(arima2$residuals, type="Ljung-Box") # Test de Ljung-Box
 lb$p.value
 ```
+Obteniendo
+``` r
+> lb$p.value
+[1] 0.2478848
+```
+En consecuencia, la prueba de rechaza la hipótesis nula de correlación cero en los residuos; por lo tanto, se certifica nuevamente que los residuos son ruido blanco.
 
 En R existe una función llamada auto.arima que puede calcular automáticamente cuál es la mejor combinación de órdenes para el modelo ARIMA:
 
 ``` r
-auto.arima(co2ts, stepwise = FALSE, approximation = FALSE)
+auto.arima(PIBpc, stepwise = FALSE, approximation = FALSE)
 ```
+Obteniendo
+``` r
+> auto.arima(PIBpc, stepwise = FALSE, approximation = FALSE)
+Series: PIBpc 
+ARIMA(1,1,0) with drift 
 
-En este caso la función certifica que el mejor modelo que representa a la serie sería un ARIMA(0,1,2) con tendencia.
+Coefficients:
+         ar1      drift
+      0.5256  205388.50
+s.e.  0.1087   52528.73
 
-forecast1<-forecast(arima6, level = c(95), h = 50)
+sigma^2 = 3.933e+10:  log likelihood = -802.52
+AIC=1611.04   AICc=1611.48   BIC=1617.28
+```
+En este caso la función certifica que el mejor modelo que representa a la función PIBpc sería un ARIMA(1,1,0) con intercepto.[1^]
+[1^]: Observen que si se hace el mismo analisis para la variable C1PIBpc obtienen que el mejor modelo ARIMA es el modelo ARIMA(1,0,0)
+
+Ahora vamos a hacer un pronostico de tres periodos con esta variable (correspondiente al periodo 2020-2022)
+``` r
+forecast1<-forecast(arima2, level = c(95), h = 3)
+summary(forecast1)
 autoplot(forecast1)
+```
+Obteniendo:
+``` r
+Forecast method: ARIMA(1,1,0)
+
+Model Information:
+Series: PIBpc 
+ARIMA(1,1,0) 
+
+Coefficients:
+         ar1
+      0.7326
+s.e.  0.0856
+
+sigma^2 = 4.405e+10:  log likelihood = -806.6
+AIC=1617.2   AICc=1617.41   BIC=1621.35
+
+Error measures:
+                   ME     RMSE      MAE       MPE     MAPE      MASE       ACF1
+Training set 56740.45 206347.3 157757.3 0.5673997 1.512671 0.6526939 -0.1455209
+
+Forecasts:
+   Point Forecast    Lo 95    Hi 95
+61       17725632 17314285 18136980
+62       17847959 17025052 18670866
+63       17937581 16693138 19182024
+```
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/09900197-149b-460e-b481-51c942aa0a54)
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
