@@ -23,8 +23,8 @@ $$
 El subíndice $L$ indica que el nivel (_Level_ en inglés) de la variable dummy $D_L$ cambia. 
 ##### Claro que en la práctica, el cambio estructural puede no ser tan evidente como se muestra en la figura de arriba.
 
-Sin embargo, ésta es útil para ilustrar el problema de usar una prueba de Dickey-Fuller: 
-* La línea recta del gráfico es la mejor estimación de M.C.O ($y_t=a_0+a_2t+e_t$, donde $a_0<0$ y $a_2>0$) plantea erróneamente que la serie tiene una tendencia determinista. 
+Sin embargo, la variable dummy D_L es útil para ilustrar el problema de usar una prueba de Dickey-Fuller: 
+* La línea recta del gráfico es la mejor estimación lineal de Mínimos Cuadrados Ordinarios ($y_t=a_0+a_2t+e_t$, donde $a_0<0$ y $a_2>0$) plantea erróneamente que la serie tiene una tendencia determinista. 
 * La forma correcta de estimar $y_t=0.5y_{t-1}+\varepsilon_t+D_L$ es un modelo AR(1) en el que se permita  que la intersección cambie al incluir la variable dummy $D_L$. 
 * Sin embargo, suponga que se estima la ecuación: $y_t=a_0+a_1y_{t-1}+e_t+D_L$. Como se puede inferir de la figura, el valor estimado de $a_1$ está necesariamente sesgado hacia 1. 
 
