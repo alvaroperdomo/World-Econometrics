@@ -1,6 +1,6 @@
 # El cambio estructural
 
-Al realizar pruebas de raíz unitaria, se debe tener especial cuidado si se sospecha que ha ocurrido un cambio estructural. Cuando hay cambios estructurales, los diversos estadísticos de la prueba ADF están sesgados hacia el no rechazo de una raíz unitaria. 
+Cuando hay cambios estructurales, los diversos estadísticos de las diferentes pruebas de raíz unitaria vistas previamente están sesgados hacia el no rechazo de la existencia de una raíz unitaria. Por lo tanto, al realizar pruebas de raíz unitaria, se debe tener especial cuidado si se sospecha que ha ocurrido un cambio estructural
 
 ## El cambio estructural en series estacionarias 
 
