@@ -23,7 +23,7 @@ D_L=\left\[\
 $$
 
 El subíndice $L$ indica que el nivel (_Level_ en inglés) de la variable dummy $D_L$ cambia[^1]. 
-[^1]: **Una variable dummy es una variable que únicamente toma valores iguales a 0 o iguales a 1**
+[^1]: **Una variable dummy es una variable que únicamente toma unicamente dos valores. Generalmente estos valores son 0 y 1, pero no son la única opción**
 
 En la práctica, el cambio estructural puede no ser tan evidente como se muestra en la figura de arriba. Sin embargo, la variable dummy $D_L$ es útil para ilustrar el problema de usar una prueba de Dickey-Fuller: 
 * La línea recta del gráfico es la mejor estimación lineal de Mínimos Cuadrados Ordinarios ($y_t=a_0+a_2t+e_t$, donde $a_0<0$ y $a_2>0$) plantea erróneamente que la serie tiene una tendencia determinista. 
