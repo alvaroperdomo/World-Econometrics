@@ -7,7 +7,7 @@ La siguiente tabla presenta las pruebas que vamos a analizar. Dando click en la 
 | Las Pruebas DF y ADF: _Pruebas de Dickey Fuller y Aumentada de Dickey Fuller_           |  [X](Seccion02_02_ADF_T/Readme.md)    | [X](Seccion02_02_ADF_R/Readme.md)    | 
 | La Prueba ADF-GLS: _Prueba de Elliott, Rothenberg y Stock_                              |  [X](Seccion02_02_ADFGLS_T/Readme.md) | [X](Seccion02_02_ADFGLS_R/Readme.md) |
 | La Prueba KPSS: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_                       |  [X](Seccion02_02_KPSS_T/Readme.md)   | [X](Seccion02_02_KPSS_R/Readme.md)   |   
-| Pruebas de Cambio Estructural: _Prueba de Perron y _Prueba de Zivot y Andrews_          |  [X](Seccion02_02_ZA_T/Readme.md)     | [X](Seccion02_02_ZA_R/Readme.md)     |
+| Pruebas de Cambio Estructural: _Prueba de Perron y Prueba de Zivot y Andrews_           |  [X](Seccion02_02_ZA_T/Readme.md)     | [X](Seccion02_02_ZA_R/Readme.md)     |
 
 A continuación, se presenta un ejemplo utilizando la base de datos "Indicadores de Desarrollo Económico del Banco Mundial". Para el ejercicio, se ha escogido analizar la variable más utilizada en términos de desarrollo económico, el PIB per cápita, de un país en vías de desarrollo. Más específicamente, se va a analizar la evolución del PIB per cápita de Colombia a precios constantes.
 
