@@ -26,15 +26,13 @@ El subíndice $L$ indica que el nivel (_Level_ en inglés) de la variable dummy 
 En la práctica, el cambio estructural puede no ser tan evidente como se muestra en la figura de arriba. Sin embargo, la variable dummy $D_L$ es útil para ilustrar el problema de usar una prueba de Dickey-Fuller: 
 * La línea recta del gráfico es la mejor estimación lineal de Mínimos Cuadrados Ordinarios ($y_t=a_0+a_2t+e_t$, donde $a_0<0$ y $a_2>0$) plantea erróneamente que la serie tiene una tendencia determinista. 
 * La forma correcta hacer la estimación es un modelo AR(1) en el que se permita  que la intersección cambie al incluir la variable dummy $D_L$ tal que permita obtener $y_t=0.5y_{t-1}+\varepsilon_t+D_L$. 
-* Sin embargo, suponga que se estima la ecuación: $y_t=a_0+a_1y_{t-1}+e_t+D_L$. Como se puede inferir de la figura, el valor estimado de $a_1$ está necesariamente sesgado hacia 1. 
+* Sin embargo, suponga que se estima la ecuación: $y_t=a_0+a_1y_{t-1}+e_t$. Como se puede inferir de la figura, el valor estimado de $a_1$ está necesariamente sesgado hacia 1. 
 
 La razón de este sesgo ascendente es que:
 * el valor estimado de $a_1$ captura la propiedad de que los valores "bajos" de $y_t$ (es decir, aquellos que fluctúan alrededor de 0) están seguidos por otros valores "bajos" y 
 * los valores "altos" (es decir, aquellos que fluctúan alrededor de una media de 6) son seguidos por otros valores "altos". 
 
-Para una demostración formal, tenga en cuenta que a medida que $a_1$ se acerca a 1, $y_t=a_0+a_1y_{t-1}+e_t$ se acerca a un paseo aleatorio con intercepto. Sabemos que la solución del paseo aleatorio con intercepto incluye una tendencia determinista; es decir,  $y_t=y_0+a_0t+\displaystyle\sum_{i=1}^t \varepsilon_i$
-
-Por lo tanto, la ecuación mal especificada $y_t=a_0+a_1y_{t-1}+e_t$ tenderá a imitar la línea de tendencia mostrada en la figura de arriba a sesgando $a_1$ hacia 1. Este sesgo en $a_1$ significa que la prueba ADF está sesgada hacia la aceptación de la hipótesis nula de una raíz unitaria, aunque la serie es estacionaria dentro de cada uno de los subperíodos.
+Para una demostración formal, tenga en cuenta que a medida que $a_1$ se acerca a 1, $y_t=a_0+a_1y_{t-1}+e_t$ se acerca a un paseo aleatorio con intercepto. Recuerde que, como vimos en una sección previa, la solución del paseo aleatorio con intercepto incluye una tendencia determinista; es decir,  $y_t=y_0+a_0t+\displaystyle\sum_{i=1}^t \varepsilon_i$. Por lo tanto, la ecuación mal especificada $y_t=a_0+a_1y_{t-1}+e_t$ tenderá a imitar la línea de tendencia mostrada en la figura de arriba sesgando $a_1$ hacia 1. Este sesgo en $a_1$ significa que la prueba ADF está sesgada hacia la aceptación de la hipótesis nula de una raíz unitaria, aunque la serie es estacionaria dentro de cada uno de los subperíodos.
 
 Por supuesto, un proceso de raíz unitaria también puede exhibir un cambio estructural. La figura de abajo simula un paseo aleatorio con un cambio estructural que se produce en $t=51$. 
 
