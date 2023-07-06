@@ -20,8 +20,8 @@ D_L=\left\[\
 \right.
 $$
 
-El subíndice $L$ indica que el nivel de la variable dummy $D_L$ cambia. 
-##### En la práctica, el cambio estructural puede no ser tan evidente como se muestra en la figura de arriba.
+El subíndice $L$ indica que el nivel (_Level_ en inglés) de la variable dummy $D_L$ cambia. 
+##### Claro que en la práctica, el cambio estructural puede no ser tan evidente como se muestra en la figura de arriba.
 
 Sin embargo, ésta es útil para ilustrar el problema de usar una prueba de Dickey-Fuller: 
 * La línea recta del gráfico es la mejor estimación de M.C.O ($y_t=a_0+a_2t+e_t$, donde $a_0<0$ y $a_2>0$) plantea erróneamente que la serie tiene una tendencia determinista. 
