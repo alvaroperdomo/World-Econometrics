@@ -76,10 +76,6 @@ Para fines ilustrativos, usaremos el modelo de primer orden de dos variables ana
 
 
 
- 
-
-SIMS, Christopher. _Macroeconomics and Reality_. Econometrica, Vol. 48, No. 1 (January, 1980); p.1-49.
-
 
 
 
