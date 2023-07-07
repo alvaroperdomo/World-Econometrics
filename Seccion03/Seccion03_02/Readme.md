@@ -85,8 +85,18 @@ Los efectos acumulados de los impulsos unitarios en $\varepsilon_{yt}$  y/o $\va
 
 Cuando $n$ se aproxima al infinito se produce el efecto total acumulado. Si se supone que las secuencias { $y_t$ } y { $z_t$ } son estacionarias, debe darse el caso de que para todos los $j$ y $k$, los valores de $\phi_{12}(i)$ convergen a cero a medida que $i$ se hace grande. Esto ocurre porque los choques no pueden tener un efecto permanente en una serie estacionaria. 
 
+Los cuatro conjuntos de coeficientes $\phi_{11}(i)$, $\phi_{12}(i)$, $\phi_{21}(i)$ y $\phi_{22}(i)$ se denominan funciones de impulso-respuesta. 
+El dibujo de las funciones impulso-respuesta (es decir, el dibujo de los coeficientes de $\phi_{jk}(i)$  en función de $i$) es una forma práctica de representar visualmente el comportamiento de las series { $y_t$ } y { $z_t$ } en respuesta a los diversos choques. 
 
-. 
+Suponga que las estimaciones de las ecuaciones $i$ y $ii$ arrojan los valores:
+* $a_{10}=a_{20}=0$, $a_{11}=a_{22}=0.7$, y $a_{12}=a_{21}=0.2$.
+* los elementos de la matriz $\Sigma$ son tales que $\sigma_1^2=\sigma_2^2$
+* el coeficiente de correlación entre $e_{1t}$ y $e_{2t}$ es $\rho_{12}=0.8$.
+* Por lo tanto, $e_{1t}=\varepsilon_{yt}-0.8\varepsilon_{zt}$ y $e_{2t}=\varepsilon_{zt}$   
+
+Los paneles (a) y (b) de la figura de abajo muestran los efectos de los choques unitarios de $\varepsilon_{zt}$  y $\varepsilon_{yt}$  en las trayectorias temporales de las secuencias { $y_t$ } y { $z_t$ }. 
+
+
 
 
 
