@@ -8,16 +8,15 @@ La prueba KPSS se basa en la idea de descomponer una serie de tiempo en la suma 
 * un paseo aleatorio $S_t$ o tendencia estocástica (en otras palabras, $S_t=\displaystyle\sum_{i=1}^{t} \varepsilon_i = S_{t-1} + \varepsilon_t$ con $S_t=0$), y  
 * un proceso de error estacionario $u_t$. 
 
-Es decir, $$y_t = \delta t + S_t + u_t$$
+Es decir, $y_t = \delta t + S_t + u_t$
 
-Cuando la varianza de $varepsilon_t$, denotada como $\sigma^2$, es igual a cero, el componente de paseo aleatorio $S_t$ se vuelve una constante por lo que la serie de tiempo $y_t = \delta t + u_t$ en este caso es estacionaria. 
+Cuando la varianza de $\varepsilon_t$, denotada como $\sigma^2$, es igual a cero, el componente de paseo aleatorio $S_t$ se vuelve una constante por lo que la serie de tiempo $y_t = \delta t + u_t$ en este caso es estacionaria. 
 
 La hipótesis nula de estacionariedad que se va a probar en la KPSS está dada por $\sigma^2=0$.
 
-En Kwiatkowski, Phillips, Schmidt y Shin (1992), el estadístico de prueba se calcula como 
-$$\hat{\eta}=\displaystyle\frac{1}{T^2 s^2(l)} \displaystyle\sum_{i=1}^T (\displaystyle\sum_{i=1}^t \hat{e_i})^2$$ 
-
-donde los residuos $\hat{e_t}$ provienen de la regresión auxiliar $y_t= \hat{\tau} + \hat{\delta} t + \hat{e_t}$ y $s^2(l)$ es una estimación de la varianza de largo plazo  $\sigma^2=\displaystyle\lim_{T \to \infty} \displaystyle\frac{E[S_T^2]}{T} $
+En Kwiatkowski, Phillips, Schmidt y Shin (1992), el estadístico de prueba se calcula como $\eqalign{\hat{\eta}=\frac{1}{T^2 s^2(l)}\sum_{i=1}^T (\sum_{i=1}^t \hat{e_i})^2}$ donde 
+* los residuos $\hat{e_t}$ provienen de la regresión auxiliar $y_t= \hat{\tau} + \hat{\delta} t + \hat{e_t}$ y
+* $s^2(l)$ es una estimación de la varianza de largo plazo  $\sigma^2=\displaystyle\lim_{T \to \infty} \displaystyle\frac{E[S_T^2]}{T} $
 
 Siguiendo a Phillips (1987) y Phillips y Perron (1988), $s^2(l)$ se estima como $s^2(l)=\displaystyle\frac{\displaystyle\sum_{t=1}^T\hat{e_t}^2}{T} + \frac{2\displaystyle\sum_{j=1}^lw(j,l)\displaystyle\sum_{t=j+1}^T\hat{e_t}\hat{e_{t-j}}}{T}$ donde:
 * Las ponderaciones $w(j,l)$ se pueden establecer iguales a $w(j,l)=1-\frac{j}{l+1}$ ver Newey y West (1987), aunque también son posibles otras ponderaciones. 
