@@ -65,7 +65,12 @@ La metodología de Sims implica únicamente:
 
 Sin lugar a dudas, el $VAR$ esta sobreparameterizado ya que muchas de las estimaciones de los coeficientes serán no significativas. Sin embargo, el objetivo es encontrar las interrelaciones importantes entre las variables. Imponer incorrectamente restricciones nulas puede desperdiciar información importante. Además, es probable que los regresores sean altamente colineales, de modo que las pruebas $t$ sobre los coeficientes individuales no son guías confiables para reducir el modelo.
 
+## Pronósticos
+Una vez que se ha estimado el $VAR$, se puede utilizar como un modelo de pronóstico de múltiples ecuaciones. 
 
+Suponga que estima el modelo de primer orden $x_t=A_0+A_1x_{t-1}+e_t$ para obtener los valores de los coeficientes en $A_0$ y $A_1$. Si sus datos van hasta el período $T$, es sencillo obtener los pronósticos de un periodo hacia adelante de sus variables utilizando la relación $E_Tx_{T+1}=A_0+A_1x_T$. De manera similar, se puede obtener un pronóstico de dos periodos hacia adelante utilizando la relación $E_Tx_{T+2}=A_0+A_1x_{T+1}=A_0+A_1(A_0+A_1x_T)$. Sin embargo, en un modelo de orden superior, puede haber un gran número de coeficientes estimados. Dado que los 𝑉𝐴𝑅 no restringidos están sobreparametrizados, los pronósticos pueden ser poco confiables. Con el fin de obtener un modelo parsimonioso, muchos pronosticadores eliminarían los coeficientes no significativos del $VAR$. Para después volver a estimar el modelo llamado $near-VAR$ mediante el uso de un $SUR$, para utilizar con fines de pronóstico. 
+
+## La Función Impulso-Respuesta
 
  
 
