@@ -14,7 +14,7 @@ donde se supone que
 
 Las ecuaciones $I$ y $II$ constituyen un vector autorregresivo de primer orden ($VAR$) porque la longitud de rezago más larga es $1$ [^1]. La estructura del sistema incorpora retroalimentación porque permite que $y_t$ y $z_t$ se afecten entre sí. Por ejemplo, $-b_{12}$  es el efecto contemporáneo de un cambio unitario de $z_t$ en $y_t$ y $\gamma_{12}$  es el efecto de un cambio de unitario de $z_{t-1}$ en $y_t$. 
 
-[^1]: Este _VAR_ sencillo es útil para ilustrar los sistemas multivariados de orden superior que se presentaran más adelante.
+[^1]: **Este _VAR_ sencillo es útil para ilustrar los sistemas multivariados de orden superior que se presentaran más adelante.**
 
 Tenga en cuenta que los términos { $\varepsilon_{yt}$ y $\varepsilon_{zt}$  son innovaciones puras (o choques) en $y_t$ y $z_t$, respectivamente. Por supuesto, 
 * si $b_{21}≠0$, $\varepsilon_{yt}$  tiene un efecto contemporáneo indirecto en $z_t$, y
