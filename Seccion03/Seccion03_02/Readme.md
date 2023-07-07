@@ -24,13 +24,9 @@ Las ecuaciones $I$ y $II$ no pueden ser estimadas por MCO ya que $y_t$ tiene un 
 
 Es posible transformar el sistema de ecuaciones en una forma compacta:
 
-$Bx_t= \Gamma_0 + \Gamma_1x_{t-1}+\varepsilon_t$ 
-donde 
-$$B = {\left\lbrack \matrix{1 & b_{12} \cr b_{21} & 1} \right\rbrack}$$
-$$x_t = {\left\lbrack \matrix{y_t \cr z_t} \right\rbrack}$$
-$$\Gamma_0 = {\left\lbrack \matrix{b_{10} \cr b_{20}} \right\rbrack}$$
-$$\Gamma_1 = {\left\lbrack \matrix{\gamma_{11} & \gamma_{12} \cr \gamma_{21} & \gamma_{22}} \right\rbrack}$$
-$$\varepsilon_t = {\left\lbrack \matrix{\varepsilon_{yt} \cr \varepsilon_{zt}} \right\rbrack}$$
+$$Bx_t= \Gamma_0 + \Gamma_1x_{t-1}+\varepsilon_t$$ 
+
+donde $\eqalign{B = {\left\lbrack \matrix{1 & b_{12} \cr b_{21} & 1} \right\rbrack}}$, $\eqalign{x_t = {\left\lbrack \matrix{y_t \cr z_t} \right\rbrack}}$, $\eqalign{\Gamma_0 = {\left\lbrack \matrix{b_{10} \cr b_{20}} \right\rbrack}}$, $\eqalign{\Gamma_1 = {\left\lbrack \matrix{\gamma_{11} & \gamma_{12} \cr \gamma_{21} & \gamma_{22}} \right\rbrack}}$ y $\eqalign{\varepsilon_t = {\left\lbrack \matrix{\varepsilon_{yt} \cr \varepsilon_{zt}} \right\rbrack}}$
 
 Al premultiplicar por $B^{−1}$ se obtiene el **modelo VAR en forma estándar** $x_t= A_0 + A_1x_{t-1}+e_t$  donde $A_0=B^{−1}\Gamma_0$, $A_1=B^{−1}\Gamma_1$, y $e_t=B^{−1}\varepsilon_t$
 
@@ -71,6 +67,14 @@ Una vez que se ha estimado el $VAR$, se puede utilizar como un modelo de pronós
 Suponga que estima el modelo de primer orden $x_t=A_0+A_1x_{t-1}+e_t$ para obtener los valores de los coeficientes en $A_0$ y $A_1$. Si sus datos van hasta el período $T$, es sencillo obtener los pronósticos de un periodo hacia adelante de sus variables utilizando la relación $E_Tx_{T+1}=A_0+A_1x_T$. De manera similar, se puede obtener un pronóstico de dos periodos hacia adelante utilizando la relación $E_Tx_{T+2}=A_0+A_1x_{T+1}=A_0+A_1(A_0+A_1x_T)$. Sin embargo, en un modelo de orden superior, puede haber un gran número de coeficientes estimados. Dado que los 𝑉𝐴𝑅 no restringidos están sobreparametrizados, los pronósticos pueden ser poco confiables. Con el fin de obtener un modelo parsimonioso, muchos pronosticadores eliminarían los coeficientes no significativos del $VAR$. Para después volver a estimar el modelo llamado $near-VAR$ mediante el uso de un $SUR$, para utilizar con fines de pronóstico. 
 
 ## La Función Impulso-Respuesta
+Al igual que un proceso autorregresivo tiene una representación de media móvil, un $VAR$ puede escribirse como un vector de media móvil ($VMA$). 
+$\eqalign{x_t=\mu+\sum_{i=1}^p A_1^i e_{t-i}}$ es la representación $VMA$ de $x_t=A_0+A_1x_{t-1}+e_t$  en donde las variables (es decir, $y_t$ y $z_t$) se expresan en términos de los valores actuales y pasados de los dos tipos de choques (es decir, $e_{1t}$ y $e_{2t}$).[^2] 
+[^2]: **La representación $VMA$ es una característica esencial de la metodología de Sims (1980), ya que permite rastrear la trayectoria en el tiempo de los diversos choques de las variables contenidas en el sistema _VAR_**. 
+
+Para fines ilustrativos, usaremos el modelo de primer orden de dos variables analizado previamnete. Escribiendo el $VAR$ de dos variables en forma matricial, ${\left\lbrack \matrix{y_t \cr z_t} \right\rbrack} = {\left\lbrack \matrix{a_{10} \cr a_{20}} \right\rbrack} + {\left\lbrack \matrix{a_{11} & a_{12} \cr a_{21} & a_{22}}\right\rbrack}{\left\lbrack \matrix{y_{t-1} \cr z_{t-1}} \right\rbrack}+{\left\lbrack \matrix{e_{1t} \cr e_{2t}} \right\rbrack}$ o usando $\eqalign{x_t=\mu+\sum_{i=1}^p A_1^i e_{t-i}}$
+
+
+
 
  
 
