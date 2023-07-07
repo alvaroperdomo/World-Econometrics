@@ -96,6 +96,7 @@ Suponga que las estimaciones de las ecuaciones $i$ y $ii$ arrojan los valores:
 
 Los paneles (a) y (b) de la figura de abajo muestran los efectos de los choques unitarios de $\varepsilon_{zt}$  y $\varepsilon_{yt}$  en las trayectorias temporales de las secuencias { $y_t$ } y { $z_t$ }. 
 
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/804ef3dc-2e0e-4fd7-bbaa-69ced830d223)
 
 
 
