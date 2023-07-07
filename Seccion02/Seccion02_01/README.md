@@ -96,8 +96,6 @@ En términos generales, una serie de tiempo puede tener la tendencia polinomial 
 Al restar los valores estimados de la secuencia { $y_t$ } de los valores reales se obtiene una estimación de la secuencia estacionaria { $e_t$ }. El proceso de **detrending** puede luego modelarse utilizando métodos tradicionales (como la estimación 𝐴𝑅𝑀𝐴).
 
 
-## Referencias
-BOX, George y JENKINS, Gwilym. _Time Series Analysis: Forecasting and Control_. (1975); 575 p.
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
