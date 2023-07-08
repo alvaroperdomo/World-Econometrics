@@ -79,7 +79,7 @@ Hay varios procedimientos que pueden ayudar a determinar si el modelo estimado d
 
 a) **Realice verificaciones de diagnóstico para determinar si los residuos de las ecuaciones de corrección de errores se aproximan al ruido blanco**. 
 
-Si los residuos están serialmente correlacionados, las longitudes de los rezagos pueden ser demasiado cortas. Vuelva a estimar el modelo utilizando longitudes de rezago que produzcan errores que no están serialmente co-rrelacionados. 
+Si los residuos están serialmente correlacionados, las longitudes de los rezagos pueden ser demasiado cortas. Vuelva a estimar el modelo utilizando longitudes de rezago que produzcan errores que no están serialmente correlacionados. 
 
 b) **La velocidad de ajuste de los coeficientes 𝛼_𝑦  y 𝛼_𝑧  son de particular interés, ya que tienen implicaciones importantes para la dinámica del sistema.** 
 
@@ -91,6 +91,37 @@ Si nos centramos en $ii$, para cualquier valor dado de $\hat{e_{t-1}}$,
 * Si $\alpha_z=0$ y si todos los $\alpha_{21}=0$, entonces se puede decir que { $\Delta y_t$ } no causa en el sentido de Granger a { $\Delta z_t$ } . 
 
 Sabemos que $\alpha_y$ y/o $\alpha_z$ deberían ser significativamente diferentes de cero si las variables están integradas. Después de todo, si $\alpha_y=\alpha_z=0$, no hay corrección de errores y $i$ y $ii$ serían nada más que un $VAR$ en las primeras diferencias. Además, los valores absolutos de estas velocidades de ajuste de los coeficientes no deben ser demasiado grandes. Las estimaciones puntuales deberían implicar que $\Delta y_t$ y $\Delta z_t$ convergen a la relación de equilibrio a largo plazo.
+
+4) **Al igual que en un análisis $VAR$ tradicional, Lutkepohl y Reimers (1992) muestran que el análisis de los impulso-respuesta y la descomposición de varianza se puede utilizar para obtener información sobre las interacciones entre las variables.**
+    
+
+Como cuestión práctica, las dos innovaciones $\varepsilon_{yt}$  y $\varepsilon_{zt}$  pueden correlacionarse simultáneamente si $y_t$ tiene un efecto contemporáneo en $z_t$ y/o si $z_t$ tiene un efecto contemporáneo en $y_t$. Para obtener funciones impulso-respuesta y las descomposiciones de varianza, se debe utilizar algún método, como la descomposición de Choleski, para ortogonalizar las innovaciones. La forma de las funciones impulso-respuesta y los resultados de las descomposiciones de varianza pueden indicar si las respuestas dinámicas de las variables se ajustan a la teoría. Como todas las variables en $i$ y $ii$ son $I(0)$, los impulso-respuesta de $\Delta y_t$ y $\Delta z_t$ deben converger a cero.[^3] 
+[^3]: **Debe reexaminar los resultados de cada paso si obtiene una función de impulso-respuesta explosiva o que no decae.**
+
+Es tentador utilizar estadísticos $t$ para realizar pruebas de significancia en el vector de cointegración. Sin embargo, debe evitar esta tentación ya que, en general, los coeficientes no tienen una distribución $t$ asintótica. 
+
+## Inconvenientes con la Metodología de Engle-Granger
+Aunque el procedimiento de Engle y Granger (1987) se implementa fácilmente, tiene varios defectos importantes. 
+
+1) La estimación de la regresión de equilibrio a largo plazo requiere que el investigador coloque una variable en el lado izquierdo y utilice las otras como regresores. 
+
+Por ejemplo, en el caso de dos variables, es posible hacer la prueba de cointegración de Engle-Granger utilizando los residuos de cualquiera de las siguientes dos regresiones de "equilibrio":
+
+   * $y_t=\beta_{10}+\beta_{11}z_t+e_{1t}$  o
+   * $y_t=\beta_{20}\beta_{21}y_t+e_{2t}$      
+
+A medida que el tamaño de la muestra crece hacia infinito, la teoría asintótica indica que la prueba de raíz unitaria en la secuencia { $e_{1t}$ } se vuelve equivalente a la prueba de raíz unitaria en la secuencia { $e_{2t}$ } . Desafortunadamente, las propiedades de muestras grandes que obtienen este resultado pueden no ser aplicables a los tamaños de muestra generalmente disponibles. En la práctica, es posible encontrar que una regresión implique que las variables están cointegradas, mientras que revertir el orden implique que no hay cointegración. Esta es una característica muy indeseable del procedimiento porque la prueba de cointegración debe ser invariable a la elección de la variable seleccionada para la normalización. El problema se agrava utilizando tres o más variables, ya que cualquiera de las variables puede seleccionarse como la variable del lado izquierdo. Además, en las pruebas que usan tres o más variables, sabemos que puede haber más de un vector de cointegración. El método de Engle-Granger no tiene un proce-dimiento sistemático para la estimación separada de los múltiples vectores de coin-tegración
+
+2) Otro defecto del procedimiento de Engle-Granger es que se basa en un estimador de dos pasos.
+
+El primer paso es generar la serie de residuos $\hat{e_t}$, y el segundo paso utiliza estos errores generados para estimar una regresión de la forma $\Delta\hat{e_t}=a_1\Delta\hat{e_{t-1}}+...$ Entonces, el coeficiente $a_1$ se obtiene estimando una regresión que utiliza los residuos de otra regresión. Por lo tanto, cualquier error introducido por el investigador en el Paso $i$ se lleva al Paso $ii$. 
+
+### La Metodología de Johansen
+
+
+
+
+
 
 
 
