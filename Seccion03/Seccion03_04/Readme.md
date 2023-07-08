@@ -71,8 +71,9 @@ $i)$ $\Delta y_t = \alpha_1 + \alpha_y\hat{e_{t-1}}+\sum_{i=1}\alpha_{11}(i)\Del
 
 $ii)$ $\Delta z_t = \alpha_2 + \alpha_z\hat{e_{t-1}}+\sum_{i=1}\alpha_{21}(i)\Delta y_{t-i}+\sum_{i=1}\alpha_{22}(i)\Delta z_{t-i}+\varepsilon_{zt}$
 
-Aparte del término de corrección de errores  $\hat{e_{t-1}}$, $I$ y $II$ constituyen un $VAR$ en primeras diferencias. Este $VAR$ puede estimarse utilizando la misma metodología desarrollada en la presentación de los modelos $VAR$.[^2] 
-[^2]: **Todos los procedimientos desarrollados para un $VAR$ se aplican al sistema representado por las ecuaciones de corrección de errores.**
+Aparte del término de corrección de errores  $\hat{e_{t-1}}$, $I$ y $II$ constituyen un $VAR$ en primeras diferencias. Este $VAR$ puede estimarse utilizando la misma metodología desarrollada en la presentación de los modelos $VAR$. Dado que todas las variables en $i$ y $ii$ son estacionarias (es decir, $\Delta y_t$ y sus rezagos, $\Delta z_t$ y sus rezagos, y $\hat{e_{t-1}}$ son $I(0)$), los estadísticos de prueba utilizados en el análisis $VAR$ tradicional son apropiados para $i$ y $ii$. 
+
+
 
 
 
