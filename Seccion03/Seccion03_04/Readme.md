@@ -28,7 +28,7 @@ Si $x_t$ tiene $n$ componentes no estacionarios, puede haber hasta $n-1$ vectore
 
 ## Pruebas de Cointegración
 
-Para el análisis de cointegración las metodologías más utilizadas son la de Engle-Granger (1987) y la de Johansen (1988)
+Para el análisis de cointegración las metodologías más utilizadas son la de Engle y Granger (1987) y la de Johansen (1988)
  
 ### La Metodología de Engle-Granger
 
@@ -44,6 +44,13 @@ Si los resultados indican que tanto { $y_t$ } como { $z_t$ } son $I(1)$, estime 
 
 Para determinar si las variables están realmente cointegradas, sea { $\hat{e_t}$ } la secuencia de residuos de esta ecuación. Por lo tanto, la serie { $\hat{e_t}$ } contiene los valores estimados de las desviaciones de la relación a largo plazo. Si se encuentra que estas desviaciones son estacionarias, las secuencias { $y_t$ } y { $z_t$ } son cointegradas de orden $(1,1)$. 
 
+Sería conveniente si pudiéramos realizar una prueba ADF de estos residuos para determinar su orden de integración. Considere la regresión de los residuos: $\Delta\hat{e}=a_1\hat{e_{t-1}}+\varepsilon_t$. Dado que la secuencia { $\hat{e_t}$ } es el residuo de una regresión (con una media necesariamente igual a cero), no es necesario incluir un intercepto; el parámetro de interés es $a_1$. 
+* Si no podemos rechazar la hipótesis nula $a_1=0$, podemos concluir que los residuos tienen una raíz unitaria. Por lo tanto, concluimos que las secuencias { $y_t$ } y { $z_t$ } no están cointegradas. 
+* En cambio, el rechazo de la hipótesis nula implica que la secuencia de residuos es estacionaria. Dado que se encontró que { $y_t$ } y { $z_t$ } son $I(1)$ y que los residuos son estacionarios, podemos concluir que las series están cointegradas de orden $(1,1)$.
+
+En la mayoría de los estudios aplicados, no es posible utilizar las tablas de Dickey-Fuller. El problema es que la secuencia { $\hat{e_t}$ } se genera a partir de una regresión; el investigador no conoce el error real $e_t$, solo el error estimado { $\hat{e_t}$ }.[^1]
+
+[^1]: **Engle y Granger (1987) propusieron nuevas tablas para hacer los cálculos. Y estas posteriormente fueron actualizadas por MacKinnon (1990)**
 
 
 
