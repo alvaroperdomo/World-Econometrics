@@ -6,7 +6,7 @@ En los modelos univariados, hemos visto que una tendencia estocástica puede eli
 
 Engle y Granger (1987) fueron los primeros en hablar acerca de la cointegración. Para entender su significado, considere el siguiente ejemplo:
 
-Asuma que las variables $x_{1t}$, $x_{2t}$, $x_{3t}$, ..., $x_{4t}$ son variables $I(1)$ no estacionarias y que conforman un vector $x_t=$
+Asuma que las variables $x_{1t}$, $x_{2t}$, $x_{3t}$, \dots, $x_{4t}$ son variables $I(1)$ no estacionarias y que conforman un vector $x_t=$
 
 ++++++++++++++++++++++++++++
 
@@ -14,7 +14,7 @@ Asuma que las variables $x_{1t}$, $x_{2t}$, $x_{3t}$, ..., $x_{4t}$ son variable
 Hay cuatro puntos importantes a tener en cuenta sobre la definición:
 1) **La cointegración generalmente se refiere a una combinación lineal de variables no estacionarias**.
 
-El vector de cointegración no es único. Si ${\left\lbrack \matrix{\beta_1 & \beta_2 & ... & \beta_n} \right\rbrack}$ es un vector de cointegración, entonces para cualquier $\lambda≠0$, ${\left\lbrack \matrix{\lambda\beta_1 & \lambda\beta_2 & ... & \lambda\beta_n} \right\rbrack}$ también es un vector de cointegración. Normalmente, una de las variables se usa para normalizar el vector de cointegración fijando su coeficiente en $1$. Para normalizar el vector de cointegración con respecto a $x_{1t}$, simplemente seleccione $\lambda=\frac{1}{\beta_1}$.
+El vector de cointegración no es único. Si ${\left\lbrack \matrix{\beta_1 & \beta_2 & ... & \beta_n} \right\rbrack}$ es un vector de cointegración, entonces para cualquier $\lambda≠0$, ${\left\lbrack \matrix{\lambda\beta_1 & \lambda\beta_2 & \dots & \lambda\beta_n} \right\rbrack}$ también es un vector de cointegración. Normalmente, una de las variables se usa para normalizar el vector de cointegración fijando su coeficiente en $1$. Para normalizar el vector de cointegración con respecto a $x_{1t}$, simplemente seleccione $\lambda=\frac{1}{\beta_1}$.
 
 2) En la definición original de Engle y Granger, la cointegración se refiere a variables que están integradas en el mismo orden. Esto no implica que todas las variables integradas estén cointegradas; por lo general, un conjunto de variables $I(d)$. Tal falta de cointegración implica que no hay un equilibrio a largo plazo entre las variables, de modo que puedan desviarse arbitrariamente una de la otra. 
 
@@ -114,9 +114,26 @@ A medida que el tamaño de la muestra crece hacia infinito, la teoría asintóti
 
 2) Otro defecto del procedimiento de Engle-Granger es que se basa en un estimador de dos pasos.
 
-El primer paso es generar la serie de residuos $\hat{e_t}$, y el segundo paso utiliza estos errores generados para estimar una regresión de la forma $\Delta\hat{e_t}=a_1\Delta\hat{e_{t-1}}+...$ Entonces, el coeficiente $a_1$ se obtiene estimando una regresión que utiliza los residuos de otra regresión. Por lo tanto, cualquier error introducido por el investigador en el Paso $i$ se lleva al Paso $ii$. 
+El primer paso es generar la serie de residuos $\hat{e_t}$, y el segundo paso utiliza estos errores generados para estimar una regresión de la forma $\Delta\hat{e_t}=a_1\Delta\hat{e_{t-1}}+\dots$ Entonces, el coeficiente $a_1$ se obtiene estimando una regresión que utiliza los residuos de otra regresión. Por lo tanto, cualquier error introducido por el investigador en el Paso $i$ se lleva al Paso $ii$. 
 
 ### La Metodología de Johansen
+
+Los estimadores de máxima verosimilitud de Johansen (1988) evitan el uso de estimadores de dos pasos y pueden estimar y probar la presencia de múltiples vectores de cointegración. Además, estas pruebas permiten probar versiones restringidas de los vectores de cointegración y la velocidad de los parámetros de ajuste.[^3] 
+
+[^3]: **A menudo, es interesante determinar si es posible verificar una teoría probando restricciones en las magnitudes de los coeficientes estimados**
+
+El procedimiento de Johansen (1988) se basa en gran medida en la relación entre el rango de una matriz y sus raíces características. Este no es más que una generalización multivariada de la prueba $DF$. En el caso univariado, es posible ver que la estacionariedad de { $y_t$ } depende de $a_1$; es decir, dados $y_t=a_1y_{t-1}+\varepsilon_t$ o $\Delta y_t=(a_1-1)y_{t-1}+\varepsilon_t$. Si $(a_1-1)=0$, el proceso { $y_t$ } tiene una raíz unitaria. Descartando el caso en el que { $y_t$ } es explosivo, si $(a_1-1)≠0$ podemos concluir que la secuencia { $y_t$ } es estacionaria. Las tablas de Dickey-Fuller proporcionan los estadísticos apropiados para probar formalmente la hipótesis nula $(a_1-1)=0$.
+
+Consideremos la generalización al caso simple con 𝑛 variables; asuma que el vector $x_t$ de $n$ variables, se comporta como $x_t=A_1x_{t-1}+\varepsilon_t$  así que $\Delta x_t=A_1x_{t-1}-x_{t-1}+\varepsilon_t=(A_1-I)x_{t-1}+\varepsilon_t=\pi x_t-1+\varepsilon_t$ donde 
+* $\varepsilon_t$ es un vector ( $n\times 1$ ),
+* $A_1$ es una matriz ( $n\times n$ ) de parámetros, 
+* $I$ es una matriz identidad ( $n\times n$ ), 
+𝜋 se define como (𝐴_1−𝐼).
+El rango de (𝐴_1−𝐼) es igual al número de vectores de cointegración. 
+Por analogía con el caso univariado, si (𝐴_1−𝐼)  tiene solo ceros, de modo que el 𝑟𝑎𝑛𝑔𝑜(𝜋)=0, todas las secuencias {𝑥_𝑖𝑡} son raíz unitaria. 
+En esta situación, dado que no hay una combinación lineal de los procesos {𝑥_𝑖𝑡} que sea estacio-naria, las variables no se cointegran. 
+Descartando la presencia de raíces características mayores que 1 y si el 𝑟𝑎𝑛𝑔𝑜(𝜋)=𝑛, ∆𝑥_𝑡=𝜋𝑥_(𝑡−1)+𝜀_𝑡 es un sistema convergente de ecuacio-nes en diferencias, de modo que todas las variables son estacionarias.
+
 
 
 
