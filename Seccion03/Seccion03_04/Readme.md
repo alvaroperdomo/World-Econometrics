@@ -28,7 +28,9 @@ Hay cuatro puntos importantes a tener en cuenta sobre la definición:
 
    El número de vectores de cointegración se denomina rango de cointegración de $\mathbf{x_t}$.Si $\mathbf{x_t}$ tiene $n$ componentes no estacionarios, puede haber hasta $n-1$ vectores de cointegración linealmente independientes. Por lo tanto, si $\mathbf{x_t}$ contiene solo dos variables, puede haber a lo sumo un vector de cointegración independiente.
 
-4) **La mayor parte de la literatura sobre cointegración se centra en el c-so en el que cada variable tiene una sola raíz unitaria.** La razón es que la regresión tradicional o el análisis de series de tiempo se aplica cuando las variables son $I(0)$ y pocas variables económicas están integradas en un orden superior a $1$. 
+4) **La mayor parte de la literatura sobre cointegración se centra en el caso en el que cada variable tiene una sola raíz unitaria.**
+
+   La razón es que la regresión tradicional o el análisis de series de tiempo se aplica cuando las variables son $I(0)$ y pocas variables económicas están integradas en un orden superior a $1$. 
 
 
 ## Pruebas de Cointegración
