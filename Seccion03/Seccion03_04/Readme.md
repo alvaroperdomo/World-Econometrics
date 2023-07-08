@@ -6,6 +6,6 @@ En los modelos univariados, hemos visto que una tendencia estocástica puede eli
 
 Engle y Granger (1987) fueron los primeros en hablar acerca de la cointegración. Para entender su significado, considere el siguiente ejemplo:
 
-Asuma que las variables $x_{1t}$, $x_{2t}$, $x_{3t}$ y $x_{4t}$ son variables $I(1)$ no estacionarias y que conforman un verctor $x_t=$
+Asuma que las variables $x_{1t}$, $x_{2t}$, $x_{3t}$ y $x_{4t}$ son variables $I(1)$ no estacionarias y que conforman un vector $x_t=$
 
 
