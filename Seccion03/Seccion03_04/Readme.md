@@ -4,10 +4,8 @@ En los modelos univariados, hemos visto que una tendencia estocástica puede eli
 
 **En presencia de variables cointegradas, es posible modelar el modelo de largo plazo y la dinámica de corto plazo simultáneamente.** 
 
-Engle y Granger (1987) fueron los primeros en hablar acerca de la cointegración.
+Engle y Granger (1987) fueron los primeros en hablar acerca de la cointegración. Para entender su significado, considere el siguiente ejemplo:
 
-Su análisis formal comienza considerando un conjunto de variables económicas en equilibrio a largo plazo cuando $\eqalign{\sum_{i=1}^n \beta_ix_{it}=0}$ 
+Asuma que las variables $x_{1t}$, $x_{2t}$, $x_{3t}$ y $x_{4t}$ son variables $I(1)$ no estacionarias y que conforman un verctor $x=$
 
-Sea 𝛽=[■8(𝛽_1&■8(𝛽_2&⋯&𝛽_𝑛 ))] y 𝑥_𝑡=[■8(𝑥_1𝑡@■8(𝑥_2𝑡@⋮@𝑥_𝑛𝑡 ))], el sistema está en equilibrio a largo plazo cuando 𝛽𝑥_𝑡= 0. 
-La desviación del equilibrio a largo plazo, llamado error de equilibrio es 𝑒_𝑡, por lo tanto 𝑒_𝑡=𝛽𝑥_𝑡.
-Si el equilibrio es significativo, 𝑒_𝑡  debe ser estacionario. 
+
