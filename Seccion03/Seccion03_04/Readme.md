@@ -41,11 +41,14 @@ Para el análisis de cointegración las metodologías más utilizadas son la de 
 
 Para explicar el procedimiento de prueba de Engle-Granger, comencemos con el tipo de problema que es usual en los estudios aplicados. Suponga que dos variables, digamos $y_t$ y $z_t$, se creen integradas de orden $1$ y se desea determinar si existe una relación de equilibrio entre las dos. Engle y Granger (1987) proponen un procedimiento de cuatro pasos para determinar si dos variables $I(1)$ están cointegradas de orden $CI(1,1):
 
-1) **Haga una prueba preliminar de las variables para conocer su orden de integración.** 
+1) **Haga una prueba preliminar de las variables para conocer su orden de integración.**
+   
+   Por definición, la cointegración requiere que dos variables estén integradas en el mismo orden. Por lo tanto, el primer paso en el análisis es probar cada variable para determinar su orden de integración.
+     * Si ambas variables son estacionarias, no es necesario continuar ya que los métodos estándar de series de tiempo se aplican a las variables estacionarias.
+     * Si las variables están integradas de diferentes órdenes, es posible concluir que no están cointegradas.
+     * Sin embargo, si tiene más de dos variables, de manera que algunas son $I(1)$ y otras son $I(2)$, es posible que desee determinar si las variables están integradas en forma múltiple.
 
-Por definición, la cointegración requiere que dos variables estén integradas en el mismo orden. Por lo tanto, el primer paso en el análisis es probar cada variable para determinar su orden de integración. Si ambas variables son estacionarias, no es necesario continuar ya que los métodos estándar de series de tiempo se aplican a las variables estacionarias. Si las variables están integradas de diferentes órdenes, es posible concluir que no están cointegradas. Sin embargo, si tiene más de dos variables, de manera que algunas son $I(1)$ y otras son $I(2)$, es posible que desee determinar si las variables están integradas en forma múltiple.
-
-2) **Estime la relación del equilibrio a largo plazo.** 
+3) **Estime la relación del equilibrio a largo plazo.** 
 
 Si los resultados indican que tanto { $y_t$ } como { $z_t$ } son $I(1)$, estime la relación de equilibrio: $y_t=\beta_0+\beta_1z_t+e_t$. Si las variables están cointegradas, una regresión de Mínimos Cuadrados Ordinarios produce un estimador "superconsistente" de los parámetros de cointegración $\beta_0$ y $\beta_1$. 
 
