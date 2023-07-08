@@ -16,17 +16,20 @@ Hay cuatro puntos importantes a tener en cuenta sobre la definición:
 
    Normalmente, una de las variables se usa para normalizar el vector de cointegración fijando su coeficiente en $1$. Por ejemplo, para normalizar el vector de cointegración con respecto a $x_{1t}$, simplemente se selecciona un $\lambda=\frac{1}{\beta_1}$.
 
-3) **La cointegración se refiere a variables que están integradas en el mismo orden**.
+2) **La cointegración se refiere a variables que están integradas en el mismo orden**.
 
-   Esto no implica que todas las variables integradas estén cointegradas; por lo general, un conjunto de variables $I(d)$ no está cointegrado. Tal falta de cointegración implica que no hay un equilibrio a largo plazo entre las variables, de modo que puedan desviarse arbitrariamente una de la otra.
+   Esto no implica que todas las variables integradas estén cointegradas; por lo general, un conjunto de variables $I(d)$ no está cointegrado.[^*] 
 
-   Si dos variables son integradas de órdenes diferentes, no pueden estar cointegradas. Suponga que $x_1t$ es $I(d_1)$ y $x_{2t}$ es $I(d_2)$ donde $d_2>d_1$ . Entonces, cualquier combinación lineal de $x_{1t}$ y $x_{2t}$ es $I(d_2)$. Sin embargo, es posible encontrar relaciones de equilibrio entre grupos de variables que están integradas de diferentes órdenes. Supongamos que $x_{1t}$ y $x_{2t}$ son $I(2)$ y que las otras variables en consideración son $I(1)$. Como tal, no puede haber una relación de cointegración entre $x_{1t}$ (o $x_{2t}$) y $x_{3t}$. Sin embargo, si $x_{1t}$ y $x_{2t}$ son $CL(2,1)$, existe una combinación lineal de la forma $\beta_1x_{1t}+\beta_2x_{2t}$ que es $I(1)$. Es posible que esta combinación de $x_{1t}$ y $x_{2t}$ esté cointegrada con las variables $I(1)$. 
+   Si dos variables son integradas de órdenes diferentes, no pueden estar cointegradas. Suponga que $x_{1t}$ es $I(d_1)$ y $x_{2t}$ es $I(d_2)$ donde $d_2>d_1$ . Entonces, cualquier combinación lineal de $x_{1t}$ con $x_{2t}$ es $I(d_2)$. Sin embargo, es posible encontrar relaciones de equilibrio entre grupos de variables que están integradas de diferentes órdenes. Supongamos que $x_{1t}$ y $x_{2t}$ son $I(2)$ y que las otras variables en consideración son $I(1)$. Como tal, no puede haber una relación de cointegración entre $x_{1t}$ (o $x_{2t}$) y $x_{3t}$. Sin embargo, si $x_{1t}$ y $x_{2t}$ son $CL(2,1)$, existe una combinación lineal de la forma $\beta_1x_{1t}+\beta_2x_{2t}$ que es $I(1)$, la cual es posible que esté cointegrada con las variables $I(1)$. 
 
-5) **Puede haber más de un vector de cointegración independiente para un conjunto de variables $I(1)$. El número de vectores de cointegración se denomina rango de cointegración de $x_t$**. 
+[^*]: Tal falta de cointegración implica que no hay un equilibrio a largo plazo entre las variables, de modo que puedan desviarse arbitrariamente una de la otra.
 
-Si $x_t$ tiene $n$ componentes no estacionarios, puede haber hasta $n-1$ vectores de cointegración linealmente independientes. Por lo tanto, si $x_t$ contiene solo dos variables, puede haber a lo sumo un vector de cointegración independiente.
+3) **Puede haber más de un vector de cointegración independiente para un conjunto de variables $I(1)$.**
 
-4) La mayor parte de la literatura sobre cointegración se centra en el ca-so en el que cada variable tiene una sola raíz unitaria. La razón es que la regresión tradicional o el análisis de series de tiempo se aplica cuando las variables son $I(0)$ y pocas variables económicas están integradas en un orden superior a $1$. 
+   El número de vectores de cointegración se denomina rango de cointegración de $\mathbf{x_t}$.Si $\mathbf{x_t}$ tiene $n$ componentes no estacionarios, puede haber hasta $n-1$ vectores de cointegración linealmente independientes. Por lo tanto, si $\mathbf{x_t}$ contiene solo dos variables, puede haber a lo sumo un vector de cointegración independiente.
+
+4) **La mayor parte de la literatura sobre cointegración se centra en el c-so en el que cada variable tiene una sola raíz unitaria.** La razón es que la regresión tradicional o el análisis de series de tiempo se aplica cuando las variables son $I(0)$ y pocas variables económicas están integradas en un orden superior a $1$. 
+
 
 ## Pruebas de Cointegración
 
