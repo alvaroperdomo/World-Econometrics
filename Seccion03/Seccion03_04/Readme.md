@@ -34,7 +34,7 @@ x_{nt}
 \end{array}\right) 
 $$ 
 
-son cointegrados de orden $d,b$, denotado por mathbf{x_{t} \sim (d,b)}  si
+son cointegrados de orden $d,b$, denotado por mathbf{x_{t} \sim CI(d,b) }  si
 
 
 ++++++++++++++++++++++++++++
