@@ -165,9 +165,9 @@ Sin embargo, el análisis impulso-respuesta y las descomposiciones de va-rianza 
 
 ## Pruebas de Hipótesis
 
-En principio, no hay nada que impida incorporar una gran cantidad de variables en el $VAR$. Es posible construir un $VAR$ de $n$ ecuaciones con cada ecuación conteniendo $p$ rezagos de todas las $n$ variables en el sistema. Por lo general, uno quiere incluir aquellas variables que tienen importantes efectos económicos entre sí. No obstante, tenga en cuenta que los grados de libertad disminuyen rápidamente a medida que se incluyen más variables. [^6] 
+En principio, no hay nada que impida incorporar una gran cantidad de variables en el $VAR$. Es posible construir un $VAR$ de $n$ ecuaciones con cada ecuación conteniendo $p$ rezagos de todas las $n$ variables en el sistema. Por lo general, uno quiere incluir aquellas variables que tienen importantes efectos económicos entre sí. No obstante, tenga en cuenta que los grados de libertad disminuyen rápidamente a medida que se incluyen más variables. [^3] 
 
-[^6]: Por ejemplo, al usar datos con 5 rezagos, la inclusión de una variable adicional usa 5 grados adicionales de libertad en cada ecuación. 
+[^3]: **Por ejemplo, al usar datos con 5 rezagos, la inclusión de una variable adicional usa 5 grados adicionales de libertad en cada ecuación.** 
 
 Un examen cuidadoso del modelo teórico relevante lo ayudará a seleccionar el conjunto de variables para incluir en su modelo $VAR$. Un $VAR$ de $n$ ecuaciones puede ser representado por:
 
@@ -179,9 +179,26 @@ $$
 * Los términos $e_{1t}$ son perturbaciones ruido blanco que pueden estar correlacionadas entre sí.
 * La matriz de varianzas y covarianza $\mathbf{\Sigma}$ tiene dimensión ($n \times n$)
 
-Además de la determinación del conjunto de variables a incluir en el $VAR$, es importante determinar la longitud apropiada de rezagos. Un posible procedimiento es permitir diferentes longitudes de rezago para cada variable en cada ecuación. Sin embargo, para preservar la simetría del sistema (y poder usar $MCO$ de manera eficiente), es común usar la misma longitud de rezagos para todas las ecuaciones. [^7] 
+Además de la determinación del conjunto de variables a incluir en el $VAR$, es importante determinar la longitud apropiada de rezagos. Un posible procedimiento es permitir diferentes longitudes de rezago para cada variable en cada ecuación. Sin embargo, para preservar la simetría del sistema (y poder usar $MCO$ de manera eficiente), es común usar la misma longitud de rezagos para todas las ecuaciones. [^4] 
 
-[^7]: Siempre que haya regresores idénticos en cada ecuación, las estimaciones MCO son consistentes y asintóticamente eficientes. 
+[^4]: **Siempre que haya regresores idénticos en cada ecuación, las estimaciones MCO son consistentes y asintóticamente eficientes.** 
+
+Si algunas de las ecuaciones $VAR$ tienen regresores no incluidos en las otras, las regresiones aparentemente no relacionadas ($SUR$ por sus siglas en inglés) proporcionan estimaciones eficientes de los coeficientes $VAR$. Por lo tanto, cuando hay una buena razón para dejar que las longitudes de los rezagos difieran entre las ecuaciones, estime un $near-VAR$ utilizando un $SUR$.
+
+En un $VAR$, los rezagos consumen rápidamente los grados de libertad. Si la longitud del rezago es $p$, cada una de las $p$ ecuaciones contiene $np$ coeficientes más el intercepto. La selección apropiada de la longitud de rezagos puede ser crítica. 
+* Si $p$ es demasiado pequeño, el modelo está mal especificado;
+* si $p$ es demasiado grande, se pierden grados de libertad. 
+Para verificar la longitud del rezago,
+1) comience con la longitud plausible más larga o la longitud más larga posible dadas las consideraciones de grados de libertad.
+2) Estime el $VAR$ y forme la matriz de varianzas y covarianzas de los residuos.
+
+Por ejemplo, puede comenzar con un rezago de 3 años basado en la noción a priori de que este tiempo es lo suficientemente largo para capturar la dinámica del sistema. La matriz de varianzas y covarianzas de los residuos del modelo a 3 rezagos es $\mathbf{\Sigma_3}$. Ahora suponga que quiere determinar si 2 rezagos son apropiados.  Después de todo, restringir el modelo de 3 a 2 rezagos reduciría el número de parámetros estimados en $n$ en cada ecuación. La prueba adecuada para esta restricción de ecuación cruzada es una prueba de razón de verosimilitud. Vuelva a estimar el $VAR$ durante el mismo período de muestra utilizando 2 rezagos y obtenga la matriz de varianzas y covarianzas de los residuos $\mathbf{\Sigma_2}$. Tenga en cuenta que $\mathbf{\Sigma_2}$ pertenece a un sistema de $n$ ecuaciones con $n$ restricciones en cada ecuación, para un total de $n^2$ restricciones. El estadístico de la razón de verosimilitud es $T(\ln{|\mathbf{\Sigma_2}|}-\ln{|\mathbf{\Sigma_3}|})$. Sin embargo, dados los tamaños de muestra que generalmente se encuentran en el análisis económico, Sims (1980) recomendó usar $(T-c)(\ln{|\mathbf{\Sigma_2}|}-\ln{|\mathbf{\Sigma_3}|})$ donde 
+* $T$ es el número de observaciones utilizables,
+* $c$ el número de parámetros estimados en cada ecuación del sistema no restringido, y
+* $\ln{|\mathbf{\Sigma_n}|}$ es el logaritmo natural del determinante de $\mathbf{\Sigma_n}$
+En el ejemplo que nos ocupa, $c=1+3n$  ya que cada ecuación del modelo no restringido tiene 3 rezagos para cada variable más un intercepto
+
+
 
 
 
