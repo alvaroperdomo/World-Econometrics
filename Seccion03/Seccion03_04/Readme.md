@@ -23,11 +23,18 @@ $$
 
 La desviación del equilibrio a largo plazo, llamado error de equilibrio es $e_t$, por lo tanto $e_t=\mathbf{\beta x_t}$. **Si el equilibrio es significativo, $e_t$ debe ser estacionario**. 
 
+Engle y Granger (1987) proporcionan la siguiente definición de cointegra-ción: Se dice que los componentes del vector 
 
+$$ 
+\mathbf{x_{t}} = \left(\begin{array}{ccc} 
+x_{1t} \\ 
+x_{2t} \\ 
+\dots \\ 
+x_{nt}  
+\end{array}\right) 
+$$ 
 
-
-Si dentro de este modelo existe una combinación lineal tal que $\eqalign{x_{it}= - \sum_{j=i+1}^m \ beta_j x_{jt}+e_t}$ tal que ${m\le n}$ y donde $e_t$ es el término de error de la ecuación. Si la secuencia del término de error { $e_t$ } es estacionaria, se deduce que la combinación lineal de variables integradas $\eqalign{sum_{j=i}^m \ beta_j x_{jt}+e_t}$ (donde $beta_i$ se ha normalizado en $1$) también debe ser estacionaria.
-
+son cointegrados de orden $d,b$, denotado por mathbf{x_{t} \sim (d,b)}  si
 
 
 ++++++++++++++++++++++++++++
