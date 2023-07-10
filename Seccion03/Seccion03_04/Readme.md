@@ -4,13 +4,7 @@ En los modelos univariados una tendencia estocástica puede eliminarse por difer
 
 [^1]: **En cierto sentido, el uso del término equilibrio es desafortunado porque los teóricos económicos y los econometristas usan el término de diferentes maneras. En teoría económica usualmente se usa el término para referirse a una igualdad entre transacciones deseadas y reales. El uso econométrico del término hace referencia a cualquier relación a largo plazo entre variables no estacionarias. La cointegración no requiere que la relación a largo plazo sea generada por las fuerzas del mercado o por las reglas de comportamiento de los individuos. Según Engle y Granger (1987) la relación de equilibrio puede ser causal, conductual o sim-plemente una relación de forma reducida entre variables con tendencias similares.** 
 
-Para entender mejor lo que es cointegración considere el siguiente ejemplo: Asuma que hay $n$ variables $x_{1t}, x_{2t}, \dots, x_{nt}$ que son $I(1)$[^2] y que conforman un equilibrio de largo plazo representado por $\eqalign{\sum_{i=1}^n \beta_i x_{it}=0}$. Es decir, $\mathbf{\beta x_t}=0$ donde 
-
-[^2]: **Para fines didácticos se va a asumir que todas son I(1); sin embargo, lo importante es que sean no estacionarias e integradas del mismo orden.**
-
-$$\mathbf{\beta} = \left(\begin{array}{ccc} \beta_1 & \beta_2 & \dots & \beta_n \end{array}\right)$$ 
-
-y
+Para entender mejor lo que es cointegración considere el siguiente ejemplo: Asuma que hay $n$ variables $x_{1t}, x_{2t}, \dots, x_{nt}$ integradas del mismo orden que conforman un equilibrio de largo plazo representado por $\eqalign{\sum_{i=1}^n \beta_i x_{it}=0}$. Es decir, $\mathbf{\beta x_t}=0$ donde $\mathbf{\beta} = {\left\lbrack \matrix{\beta_1 & \beta_2 & ... & \beta_n} \right\rbrack}$ y 
 
 $$ 
 \mathbf{x_{t}} = \left(\begin{array}{ccc} 
@@ -23,7 +17,7 @@ $$
 
 La desviación del equilibrio a largo plazo, llamado error de equilibrio es $e_t$, por lo tanto $e_t=\mathbf{\beta x_t}$. **Si el equilibrio es significativo, $e_t$ debe ser estacionario**. 
 
-Engle y Granger (1987) proporcionan la siguiente definición de cointegra-ción: Se dice que los componentes del vector 
+Engle y Granger (1987) proporcionan la siguiente definición de cointegración: Se dice que los componentes del vector 
 
 $$ 
 \mathbf{x_{t}} = \left(\begin{array}{ccc} 
@@ -34,7 +28,12 @@ x_{nt}
 \end{array}\right) 
 $$ 
 
-son cointegrados de orden $d,b$, denotado por mathbf{x_{t} \sim CI(d,b) }  si
+son cointegrados de orden $d,b$, denotado por $mathbf{x_t} \sim CI(d,b) $  si 
+1) Todos los componentes de 𝒙_𝒕 son integrados de orden 𝒅.
+2) Existe un vector $\mathbf{\beta} = {\left\lbrack \matrix{\beta_1 & \beta_2 & ... & \beta_n} \right\rbrack}$
+
+tal que la combinación lineal $\mathbf{\beta x_t}=0$  está integrada de orden $(d-b)$ donde $b>0$. El vector $\beta$ se llama el vector cointegrante.
+
 
 
 ++++++++++++++++++++++++++++
