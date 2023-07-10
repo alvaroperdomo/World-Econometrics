@@ -51,7 +51,7 @@ Un objetivo explícito del enfoque de Box-Jenkins es proporcionar una metodolog�
 
 Sims (1980) aboga por una estrategia de estimación alternativa. 
 
-Considere la siguiente generalización multivariada de un proceso autorregresivo $\mathbf{x_t=A_0 +  A_1x_{t-1} + \dots + A_p x_{t-p} + e_t} donde 
+Considere la siguiente generalización multivariada de un proceso autorregresivo $\mathbf{x_t=A_0 +  A_1x_{t-1} + \dots + A_p x_{t-p} + e_t}$ donde 
 * $\mathbf{x_t}$ es un vector ($n \times 1$) que reúne las 𝑛 variables incluidas en el $VAR$
 * $\mathbf{A_0}$ es un vector ($n \times 1$) de interceptos
 * $\mathbf{A_i}$ son las matrices ($n \times n$) de coeficientes
