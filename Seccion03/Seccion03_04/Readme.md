@@ -91,22 +91,22 @@ Para explicar el procedimiento de prueba de Engle-Granger, comencemos con el tip
 
 2) **Estime la relación del equilibrio a largo plazo.**
 
-   Si los resultados indican que tanto { $y_t$ } como { $z_t$ } son $I(1)$, estime la relación de equilibrio: $y_t=\beta_0+\beta_1z_t+e_t$. Si las variables están cointegradas, una regresión de Mínimos Cuadrados Ordinarios produce un estimador "superconsistente" de los parámetros de cointegración $\beta_0$ y $\beta_1$.
+   Si los resultados indican que tanto { $y_t$ } como { $z_t$ } son $I(1)$, estime utilizando Mínimos Cuadrados Ordinarios la relación de equilibrio: $y_t=\beta_0+\beta_1z_t+e_t$.
 
    Para determinar si las variables están realmente cointegradas, sea { $\hat{e_t}$ } la secuencia de residuos de esta ecuación. Por lo tanto, la serie { $\hat{e_t}$ } contiene los valores estimados de las desviaciones de la relación de largo plazo. Si se encuentra que estas desviaciones son estacionarias, las secuencias { $y_t$ } y { $z_t$ } son cointegradas de orden $(1,1)$. 
 
-   Sería conveniente si si se pudiera realizar una prueba ADF de estos residuos para determinar su orden de integración. Considere la regresión de los residuos: $\Delta\hat{e}=a_1\hat{e_{t-1}}+\varepsilon_t$ (dado que la secuencia { $\hat{e_t}$ } es el residuo de una regresión, donde su media necesariamente igual a cero, entonces no es necesario incluir un intercepto dentro de la regresión) donde el parámetro de interés es $a_1$:
+   Sería conveniente si si se pudiera realizar una prueba ADF de estos residuos para determinar su orden de integración. Considere la regresión de los residuos: $\Delta\hat{e}=a_1\hat{e_{t-1}}+\varepsilon_t$ (dado que la secuencia { $\hat{e_t}$ } es el residuo de una regresión, por lo que su media necesariamente igual a cero, entonces no es necesario incluir un intercepto dentro de la regresión) donde el parámetro de interés es $a_1$:
 
-   * Si no se puede rechazar la hipótesis nula $a_1=0$, se concluye que los residuos tienen una raíz unitaria. Por lo tanto, se concluye que las secuencias { $y_t$ } y { $z_t$ } no están cointegradas.
+   * Si no se puede rechazar la hipótesis nula $a_1=0$, se concluye que los residuos tienen una raíz unitaria y por lo tanto, se deduce que las secuencias { $y_t$ } y { $z_t$ } no están cointegradas.
    * En cambio, el rechazo de la hipótesis nula implica que la secuencia de residuos es estacionaria. Si se encuentra que { $y_t$ } y { $z_t$ } son $I(1)$ y que los residuos son estacionarios, entonces se puede concluir que las series están cointegradas de orden $(1,1)$.
 
-   En la mayoría de los estudios aplicados, no es posible utilizar las tablas de Dickey-Fuller. El problema es que la secuencia { $\hat{e_t}$ } se genera a partir de una regresión; donde el investigador no conoce el error real $e_t$, solo el error estimado { $\hat{e_t}$ }.[^*]
+   En la mayoría de los estudios aplicados, no es posible utilizar las tablas de Dickey-Fuller. El problema es que la secuencia { $\hat{e_t}$ } se genera a partir de una regresión; donde el investigador no conoce el error real $e_t$, solo el error estimado { $\hat{e_t}$ }.[^5]
 
-[^*]: **Engle y Granger (1987) propusieron nuevas tablas para hacer los cálculos. Y estas posteriormente fueron actualizadas por MacKinnon (1990). En estas tablas, los valores críticos dependen del tamaño de la muestra y del número de variables utilizadas en el análisis**
+[^5]: **Engle y Granger (1987) propusieron nuevas tablas para hacer los cálculos. Y estas posteriormente fueron actualizadas por MacKinnon (1990). En estas tablas, los valores críticos dependen del tamaño de la muestra y del número de variables utilizadas en el análisis**
 
-3) **Estime el modelo de corrección de errores**
+3) **Estime el vector de corrección de errores**
 
-   Si las variables están cointegradas, los residuos de la regresión de equilibrio se pueden utilizar para estimar el modelo de corrección de errores. Si { $y_t$ } y { $z_t$ } son $CI(1,1)$, las variables tienen la forma de corrección de errores:
+   Si las variables están cointegradas, los residuos de la regresión de equilibrio se pueden utilizar para estimar el vector de corrección de errores ($VEC$). El $VEC$ es un $VAR$ en primeras diferencias, en donde las variables { $y_t$ } y { $z_t$ } son $CI(1,1)$, y se incluyen dentro del VEC de la siguiente forma:
 
    $I)$ $\Delta y_t = \alpha_1 + \alpha_y[y_{t-1}-\beta_1z_{t-1}]+\sum_{i=1}\alpha_{11}(i)\Delta y_{t-i}+\sum_{i=1}\alpha_{12}(i)\Delta z_{t-i}+\varepsilon_{yt}$
 
@@ -118,40 +118,40 @@ Para explicar el procedimiento de prueba de Engle-Granger, comencemos con el tip
    * $\varepsilon_{yt}$ y $\varepsilon_{zt}$ son  perturbaciones ruido blanco (que pueden estar corre-lacionadas entre sí), y
    * $\alpha_1$, $\alpha_2$, $\alpha_y$, $\alpha_z$, $\alpha_{11}(i)$, $\alpha_{12}(i)$, $\alpha_{21}(i)$, $\alpha_{22}(i)$ son todos los parámetros.
    
-   Engle y Granger (1987) proponen una forma de sortear las restricciones de ecuaciones cruzadas involucradas en la estimación directa de $I$ y $II$. La magnitud del residuo $\hat{e_{t-1}}$ es la desviación del equilibrio a largo plazo en el período {t-1}. Por lo tanto, es posible usar los residuos estimados { $\hat{e_{t-1}}$ }  obtenidos en el Paso 2 como una estimación de la expresión $y_{t-1}-\beta_1z_{t-1}$ en $I$ y $II$. Por lo tanto, utilizando los $\hat{e_{t-1}}$ estime el modelo de corrección de errores como:
+   Engle y Granger (1987) proponen una forma de sortear las restricciones de ecuaciones cruzadas involucradas en la estimación directa de $I$ y $II$. La magnitud del residuo $\hat{e_{t-1}}$ es la desviación del equilibrio a largo plazo en el período {t-1}. Por lo tanto, es posible usar los residuos estimados { $\hat{e_{t-1}}$ }  obtenidos en el Paso 2 como una estimación de la expresión $y_{t-1}-\beta_1z_{t-1}$ en $I$ y $II$. Por lo tanto, utilizando los $\hat{e_{t-1}}$ estime el VEC como:
 
-$i)$ $\Delta y_t = \alpha_1 + \alpha_y\hat{e_{t-1}}+\sum_{i=1}\alpha_{11}(i)\Delta y_{t-i}+\sum_{i=1}\alpha_{12}(i)\Delta z_{t-i}+\varepsilon_{yt}$
+   $i)$ $\Delta y_t = \alpha_1 + \alpha_y\hat{e_{t-1}}+\sum_{i=1}\alpha_{11}(i)\Delta y_{t-i}+\sum_{i=1}\alpha_{12}(i)\Delta z_{t-i}+\varepsilon_{yt}$
 
-$ii)$ $\Delta z_t = \alpha_2 + \alpha_z\hat{e_{t-1}}+\sum_{i=1}\alpha_{21}(i)\Delta y_{t-i}+\sum_{i=1}\alpha_{22}(i)\Delta z_{t-i}+\varepsilon_{zt}$
+   $ii)$ $\Delta z_t = \alpha_2 + \alpha_z\hat{e_{t-1}}+\sum_{i=1}\alpha_{21}(i)\Delta y_{t-i}+\sum_{i=1}\alpha_{22}(i)\Delta z_{t-i}+\varepsilon_{zt}$
 
-Aparte del término de corrección de errores  $\hat{e_{t-1}}$, $I$ y $II$ constituyen un $VAR$ en primeras diferencias. Este $VAR$ puede estimarse utilizando la misma metodología desarrollada en la presentación de los modelos $VAR$. Dado que todas las variables en $i$ y $ii$ son estacionarias (es decir, $\Delta y_t$ y sus rezagos, $\Delta z_t$ y sus rezagos, y $\hat{e_{t-1}}$ son $I(0)$), los estadísticos de prueba utilizados en el análisis $VAR$ tradicional son apropiados para $i$ y $ii$. 
+   Dado que la estructura del molelo $VEC$ es la de un $VAR$, entonces puede estimarse utilizando la misma metodología desarrollada en la presentación de los modelos $VAR$. Dado que todas las variables en $i$ y $ii$ son estacionarias (es decir, $\Delta y_t$ y sus rezagos, $\Delta z_t$ y sus rezagos, y $\hat{e_{t-1}}$ son $I(0)$), los estadísticos de prueba utilizados en el análisis $VAR$ tradicional son apropiados para $i$ y $ii$. 
 
-4) **Evaluar la adecuación del modelo** 
+4) **Evaluar la adecuación del modelo**
 
-Hay varios procedimientos que pueden ayudar a determinar si el modelo estimado de corrección de errores es apropiado:
+   Hay varios procedimientos que pueden ayudar a determinar si el $VEC$ es apropiado:
 
-a) **Realice verificaciones de diagnóstico para determinar si los residuos de las ecuaciones de corrección de errores se aproximan al ruido blanco**. 
+   a) **Realice verificaciones de diagnóstico para determinar si los residuos de las ecuaciones de corrección de errores se aproximan al ruido blanco**.
 
-Si los residuos están serialmente correlacionados, las longitudes de los rezagos pueden ser demasiado cortas. Vuelva a estimar el modelo utilizando longitudes de rezago que produzcan errores que no están serialmente correlacionados. 
+   Si los residuos están serialmente correlacionados, las longitudes de los rezagos pueden ser demasiado cortas. Vuelva a estimar el modelo utilizando longitudes de rezago que produzcan errores que no están serialmente correlacionados.
 
-b) **La velocidad de ajuste de los coeficientes 𝛼_𝑦  y 𝛼_𝑧  son de particular interés, ya que tienen implicaciones importantes para la dinámica del sistema.** 
+   b) **La velocidad de ajuste de los coeficientes $\alpha_y$  y $\alpha_z$  son de particular interés, ya que tienen implicaciones importantes para la dinámica del sistema.**
 
-Los valores de $\alpha_y$ y $\alpha_z$ están directamente relacionados con las raíces características del sistema de ecuaciones en diferencias. La convergencia directa requiere $\alpha_y$  que sea negativo y que $\alpha_z$  sea positivo.
+   Los valores de $\alpha_y$ y $\alpha_z$ están directamente relacionados con las raíces características del sistema de ecuaciones en diferencias. La convergencia directa requiere $\alpha_y$  que sea negativo y que $\alpha_z$  sea positivo.
 
-Si nos centramos en $ii$, para cualquier valor dado de $\hat{e_{t-1}}$, 
-* un gran valor de $\alpha_z$ se asocia con un gran valor de $\Delta z_t$. 
-* Si $\alpha_z=0$ , el $\Delta z_t$  no responde en absoluto a $\hat{e_{t-1}}$. 
-* Si $\alpha_z=0$ y si todos los $\alpha_{21}=0$, entonces se puede decir que { $\Delta y_t$ } no causa en el sentido de Granger a { $\Delta z_t$ } . 
+   Si nos centramos en $ii$, para cualquier valor dado de $\hat{e_{t-1}}$,
+   * un gran valor de $\alpha_z$ se asocia con un gran valor de $\Delta z_t$. 
+   * Si $\alpha_z=0$ , el $\Delta z_t$  no responde en absoluto a $\hat{e_{t-1}}$. 
+   * Si $\alpha_z=0$ y si todos los $\alpha_{21}=0$, entonces se puede decir que { $\Delta y_t$ } no causa en el sentido de Granger a { $\Delta z_t$ } .
+   
+     Sabemos que $\alpha_y$ y/o $\alpha_z$ deberían ser significativamente diferentes de cero si las variables están cointegradas. Después de todo, si $\alpha_y=\alpha_z=0$, no hay corrección de errores y $i$ y $ii$ serían nada más que un $VAR$ en las primeras diferencias. Además, los valores absolutos de estas velocidades de ajuste de los coeficientes no deben ser demasiado grandes. Las estimaciones puntuales deberían implicar que $\Delta y_t$ y $\Delta z_t$ convergen a la relación de equilibrio a largo plazo.
 
-Sabemos que $\alpha_y$ y/o $\alpha_z$ deberían ser significativamente diferentes de cero si las variables están integradas. Después de todo, si $\alpha_y=\alpha_z=0$, no hay corrección de errores y $i$ y $ii$ serían nada más que un $VAR$ en las primeras diferencias. Además, los valores absolutos de estas velocidades de ajuste de los coeficientes no deben ser demasiado grandes. Las estimaciones puntuales deberían implicar que $\Delta y_t$ y $\Delta z_t$ convergen a la relación de equilibrio a largo plazo.
+     c) **Al igual que en un análisis $VAR$ tradicional, Lutkepohl y Reimers (1992) muestran que el análisis de los impulso-respuesta y la descomposición de varianza se puede utilizar para obtener información sobre las interacciones entre las variables.**
 
-4) **Al igual que en un análisis $VAR$ tradicional, Lutkepohl y Reimers (1992) muestran que el análisis de los impulso-respuesta y la descomposición de varianza se puede utilizar para obtener información sobre las interacciones entre las variables.**
-    
+     Como cuestión práctica, las dos innovaciones $\varepsilon_{yt}$  y $\varepsilon_{zt}$  pueden correlacionarse simultáneamente si $y_t$ tiene un efecto contemporáneo en $z_t$ y/o si $z_t$ tiene un efecto contemporáneo en $y_t$. Para obtener funciones impulso-respuesta y las descomposiciones de varianza, se debe utilizar algún método, como la descomposición de Choleski, para ortogonalizar las innovaciones. La forma de las funciones impulso-respuesta y los resultados de las descomposiciones de varianza pueden indicar si las respuestas dinámicas de las variables se ajustan a la teoría. Como todas las variables en $i$ y $ii$ son $I(0)$, los impulso-respuesta de $\Delta y_t$ y $\Delta z_t$ deben converger a cero.[^3]
 
-Como cuestión práctica, las dos innovaciones $\varepsilon_{yt}$  y $\varepsilon_{zt}$  pueden correlacionarse simultáneamente si $y_t$ tiene un efecto contemporáneo en $z_t$ y/o si $z_t$ tiene un efecto contemporáneo en $y_t$. Para obtener funciones impulso-respuesta y las descomposiciones de varianza, se debe utilizar algún método, como la descomposición de Choleski, para ortogonalizar las innovaciones. La forma de las funciones impulso-respuesta y los resultados de las descomposiciones de varianza pueden indicar si las respuestas dinámicas de las variables se ajustan a la teoría. Como todas las variables en $i$ y $ii$ son $I(0)$, los impulso-respuesta de $\Delta y_t$ y $\Delta z_t$ deben converger a cero.[^3] 
+     Es tentador utilizar estadísticos $t$ para realizar pruebas de significancia en el vector de cointegración. Sin embargo, debe evitar esta tentación ya que, en general, los coeficientes no tienen una distribución $t$ asintótica.
+     
 [^3]: **Debe reexaminar los resultados de cada paso si obtiene una función de impulso-respuesta explosiva o que no decae.**
-
-Es tentador utilizar estadísticos $t$ para realizar pruebas de significancia en el vector de cointegración. Sin embargo, debe evitar esta tentación ya que, en general, los coeficientes no tienen una distribución $t$ asintótica. 
 
 ## Inconvenientes con la Metodología de Engle-Granger
 Aunque el procedimiento de Engle y Granger (1987) se implementa fácilmente, tiene varios defectos importantes. 
