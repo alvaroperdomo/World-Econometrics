@@ -51,11 +51,11 @@ Un objetivo explícito del enfoque de Box-Jenkins es proporcionar una metodolog�
 
 Sims (1980) aboga por una estrategia de estimación alternativa. 
 
-Considere la siguiente generalización multivariada de un proceso autorregresivo $x_t= A_0 + A_1x_{t-1}+...+A_px_{t-p}+e_t$ donde 
-* $x_t$ es un vector ($n×1$) que reúne las 𝑛 variables incluidas en el $VAR$
-* $A_0$ es un vector ($n×1$) de interceptos
-* $A_i$ son las matrices ($n×n$) de coeficientes
-* $e_t$ es un vector ($n×1$) de los términos de error
+Considere la siguiente generalización multivariada de un proceso autorregresivo $\mathbf{x_t=A_0 +  A_1x_{t-1} + \dots + A_p x_{t-p} + e_t} donde 
+* $\mathbf{x_t}$ es un vector ($n \times 1$) que reúne las 𝑛 variables incluidas en el $VAR$
+* $\mathbf{A_0}$ es un vector ($n \times 1$) de interceptos
+* $\mathbf{A_i}$ son las matrices ($n \times n$) de coeficientes
+* $\mathbf{e_t}$ es un vector ($n \times 1$) de los términos de error
 
 La metodología de Sims implica únicamente:
 1) la determinación de las variables apropiadas para incluir en el $VAR$: Las variables que se incluirán en el $VAR$ se seleccionan de acuerdo con el modelo económico relevante.
