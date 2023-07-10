@@ -65,13 +65,13 @@ Hay cuatro puntos importantes a tener en cuenta sobre la definición:
 
    La razón es que la regresión tradicional o el análisis de series de tiempo se aplica cuando las variables son $I(0)$ y pocas variables económicas están integradas en un orden superior a $1$. 
 
-Para terminar la explicación, en el siguiente gráfico se muestra una situación en la que tres variables I(1) que estan con cointegradas
+Para terminar la explicación, en el siguiente gráfico se muestra una situación en la que tres variables $I(1)$ estan con cointegradas
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/36a62b2e-6b7a-4643-8b77-507b154e0a5f)
 
-Mientras que en este último gráfico se muestra una situación en la que dos variables I(1) que no estan con cointegradas
+Mientras que en este último gráfico se muestra una situación en la que dos variables $I(1)$ no estan con cointegradas
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6de510ce-a9dc-4ff8-a57d-fad1f174af30)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4213813c-dae1-49b3-b6d7-f82180ac19fb)
 
 
 ## Pruebas de Cointegración
