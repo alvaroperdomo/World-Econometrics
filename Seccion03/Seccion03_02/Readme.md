@@ -126,7 +126,45 @@ El problema es mucho más complicado en los sistemas de orden superior, ya que l
 
 El beneficio de este método es que no necesita hacer supuestos especia-les con respecto a la distribución de los coeficientes autorregresivos. El cálculo real de los intervalos de confianza es solo un poco más complicado en un $VAR$. 
 
-Considere el sistema de dos variables $i$  y $ii$. El problema se complica porque los residuos de la regresión están correlacionados. Como tal, se necesita escoger aleatoriamente $e_{1t}$ y $e_{2t}$ de tal manera que se mantenga la estructura apropiada del error. Un método simple consiste en escoger aleatoriamente $e_{1t}$ y usar el valor de $e_{2t}$ que corresponde a ese mismo período. Si usa una descomposición de Choleski tal que $b_{21}=0$, construya $\varepsilon_yt$ y $\varepsilon_zt$  utilizando $e_{1t}=$\varepsilon_yt-b_{12}\varepsilon_zt$ y $e_{2t}=\varepsilon_zt$.
+Considere el sistema de dos variables $i$  y $ii$. El problema se complica porque los residuos de la regresión están correlacionados. Como tal, se necesita escoger aleatoriamente $e_{1t}$ y $e_{2t}$ de tal manera que se mantenga la estructura apropiada del error. Un método simple consiste en escoger aleatoriamente $e_{1t}$ y usar el valor de $e_{2t}$ que corresponde a ese mismo período. Si usa una descomposición de Choleski tal que $b_{21}=0$, construya $\varepsilon_{yt}$ y $\varepsilon_{zt}$  utilizando $e_{1t}=\varepsilon_{yt}-b_{12}\varepsilon_{zt}$ y $e_{2t}=\varepsilon_zt$.
+
+## La Descomposición de Varianza
+
+Otra ayuda útil para descubrir las interrelaciones entre las variables en el sistema es la descomposición de varianza del error de pronóstico. 
+
+Retome la ecuación $\mathbf{x_t= A_0 + A_1x_{t-1}+e_t}$, asuma que conoce los coeficientes de $\mathbf{A_0}$ y $\mathbf{A_1}$ y quiere pronosticar los diversos valores de $\mathbf{x_{t+1}}$ condicionados al valor observado de $\mathbf{x_t}$. Actualizando esta ecuación $n$ períodos hacia adelante y tomando la expectativa condicionada en $t$ de $\mathbf{x_{t+n}}$, se obtiene $E_t \mathbf{x_{t+n}}$. Entonces,
+
+* El error de pronóstico un periodo hacia adelante es $\mathbf{x_{t+1}} - E_t\mathbf{x_{t+1}}=e_{t+1}$ 
+* El error de pronóstico dos periodos hacia adelante es $\mathbf{x_{t+2}} - E_t\mathbf{x_{t+2}}=e_{t+2} + A_1e_{t+1}$.
+* El error de pronóstico 𝑛 periodos hacia adelante es $\eqalign{\mathbf{x_{t+n}} - E_t\mathbf{x_{t+n}}=\sum_{i=0}^{n-1}A_1^ie_{t+n-i}}$
+
+También podemos considerar estos errores de pronóstico en términos de $\eqalign{ \mathbf{x_t=\mu+\sum_{i=1}^p\phi_i \varepsilon_{t-i}}}$ (es decir, la forma $VMA$ del modelo estructural). 
+Por supuesto, los modelos $VMA$ y $VAR$ contienen exactamente la misma información, pero es conveniente describir las propiedades de los errores de pronóstico en términos de la secuencia { $\mathbf{\varepsilon_{t-i}}$ }. 
+
+Si usamos $\eqalign{ \mathbf{x_t=\mu+\sum_{i=1}^p\phi_i \varepsilon_{t-i}}}$ para pronosticar condicionalmente $\mathbf{x_{t+1}}$, un periodo hacia adelante el error de pronóstico es $\mathbf{\phi_0 \varepsilon_{t+i}}$. En general, $\eqalign{ \mathbf{x_t=\mu+\sum_{i=0}^\inf \phi_i \varepsilon_{t+n-i}}}$ de modo que el error de pronóstico del periodo $n$ es $\eqalign{\mathbf{x_{t+n}} - E_t\mathbf{x_{t+n}}=\sum_{i=0}^{n-1}\phi_i \varepsilon_{t+n-i}}$ 
+
+Centrándonos únicamente en la secuencia { $y_t$ }, vemos que el error de pronostico $n$ periodos hacía adelante es 
+
+$\eqalign{y_{t+n}-E_t y_{t+n}= \sum_{i=0}^{n-1}[\phi_{11}(i) \varepsilon_{y(t+n-i)} + \phi_{12}(i) \varepsilon_{z(t+n-i)}]}$
+
+La varianza del error de pronóstico $n$ periodos hacia adelante de $y_{t+n}$ es: $\eqalign{[\sigma_y(n)]^2=\sum_{i=0}^{n-1}(\sigma_y^2[\phi_{11}(i)]^2 + \sigma_z^2[\phi_{12}(i)]^2)}$. Debido a que todos los valores $[\phi_{jk}(i)]^2$ son necesariamente no negativos, la varianza del error de pronóstico aumenta a medida que aumenta el horizonte de pro-nóstico. 
+
+Es posible descomponer la varianza del error de previsión $n$ periodos hacia adelante en las proporciones debidas a cada choque. Las proporciones de $[\sigma_y(n)]^2$ debidas a choques en las secuencias { $\varepsilon_{yt}$ } y { $\varepsilon_{zt}$ } son $\eqalign{\frac{\sum_{i=0}^{n-1}\sigma_y^2[\phi_{11}(i)]^2}{[\sigma_y(n)]^2}}$ y  $\eqalign{\frac{\sum_{i=0}^{n-1}\sigma_z^2[\phi_{11}(i)]^2}{[\sigma_y(n)]^2}}$ respectivamente. 
+
+**La descomposición de varianza del error de pronóstico nos dice la proporción de los movimientos en una secuencia debido a sus "propios" choques contra los choques de la otra variable.** 
+* Si los choques $\varepsilon_{zt}$ no explican la varianza del error de pronóstico de $y_t$ en todos los horizontes de pronóstico, podemos decir que la secuencia { $y_t$ } es exógena [en esta circunstancia, { $y_t$ } evoluciona independientemente de los choques de $\varepsilon_{zt}$ y de la secuencia { $z_t$ }].
+* En el otro extremo, los shocks $\varepsilon_{zt}$ podrían explicar toda la varianza del error de pronóstico en la secuencia { $y_t$ } en todos los horizontes de pronóstico, de modo que { $y_t$ } sería completamente endógeno. 
+
+En la investigación aplicada, es usual que una variable explique casi toda su varianza de error de pronóstico en horizontes cortos y proporciones más pequeñas en horizontes más largos. Esperamos este patrón si los choques de $\varepsilon_{zt}$ tuvieran un bajo efecto contemporáneo en $y_t$, pero afectaran la secuencia { $y_t$ } de forma rezagada.
+
+La descomposición de varianza tiene el mismo problema inherente en el análisis de la función impulso-respuesta: Para identificar las secuencias $\varepsilon_{yt}$ y $\varepsilon_{zt}$, es necesario restringir la matriz $\mathbf{B}$. La descomposición de Choleski que utilizamos previamente requiere que toda la varianza del error de pronóstico de un período de $z_t$ se deba a $\varepsilon_{zt}$. Si utilizamos el ordenamiento alternativo, toda la varianza del error de pronóstico de un período de $y_t$ se debería a $\varepsilon_{yt}$. Los efectos de estos supuestos alternativos se reducen en horizontes de pronóstico más largos. 
+
+En la práctica, es útil examinar las descomposiciones de varianza en varios horizontes de pronóstico. A medida que $n$ aumenta, las descomposiciones de varianza deberían converger. Además, si el coeficiente de correlación $\rho_12$ es significativamente diferente de cero, es habitual obtener las descomposiciones de varianza en varios ordenamientos.
+
+Sin embargo, el análisis impulso-respuesta y las descomposiciones de va-rianza pueden ser herramientas útiles para examinar las relaciones entre variables económicas. Si las correlaciones entre las diversas innovaciones son pequeñas, es probable que el problema de identificación no sea especialmente importante. Los ordenamientos alernativos deberían producir impulso-respuesta y descomposiciones de varianza similares. Por supuesto, los movimientos contemporáneos de muchas variables económicas están altamente correlacionados.
+
+
+
 
 
 
