@@ -153,10 +153,10 @@ Para explicar el procedimiento de prueba de Engle-Granger, comencemos con el tip
      
 [^3]: **Debe reexaminar los resultados de cada paso si obtiene una función de impulso-respuesta explosiva o que no decae.**
 
-## Inconvenientes con la Metodología de Engle-Granger
+### Inconvenientes con la Metodología de Engle-Granger
 Aunque el procedimiento de Engle y Granger (1987) se implementa fácilmente, tiene varios defectos importantes. 
 
-1) La estimación de la regresión de equilibrio a largo plazo requiere que el investigador coloque una variable en el lado izquierdo y utilice las otras como regresores. 
+1) La estimación de la regresión de equilibrio a largo plazo requiere que el investigador coloque una variable en el lado izquierdo y utilice las otras variables como regresores. 
 
 Por ejemplo, en el caso de dos variables, es posible hacer la prueba de cointegración de Engle-Granger utilizando los residuos de cualquiera de las siguientes dos regresiones de "equilibrio":
 
