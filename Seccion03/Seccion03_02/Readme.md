@@ -163,6 +163,30 @@ En la práctica, es útil examinar las descomposiciones de varianza en varios ho
 
 Sin embargo, el análisis impulso-respuesta y las descomposiciones de va-rianza pueden ser herramientas útiles para examinar las relaciones entre variables económicas. Si las correlaciones entre las diversas innovaciones son pequeñas, es probable que el problema de identificación no sea especialmente importante. Los ordenamientos alernativos deberían producir impulso-respuesta y descomposiciones de varianza similares. Por supuesto, los movimientos contemporáneos de muchas variables económicas están altamente correlacionados.
 
+## Pruebas de Hipótesis
+
+En principio, no hay nada que impida incorporar una gran cantidad de variables en el $VAR$. Es posible construir un $VAR$ de $n$ ecuaciones con cada ecuación conteniendo $p$ rezagos de todas las $n$ variables en el sistema. Por lo general, uno quiere incluir aquellas variables que tienen importantes efectos económicos entre sí. No obstante, tenga en cuenta que los grados de libertad disminuyen rápidamente a medida que se incluyen más variables. [^6] 
+
+[^6]: Por ejemplo, al usar datos con 5 rezagos, la inclusión de una variable adicional usa 5 grados adicionales de libertad en cada ecuación. 
+
+Un examen cuidadoso del modelo teórico relevante lo ayudará a seleccionar el conjunto de variables para incluir en su modelo $VAR$. Un $VAR$ de $n$ ecuaciones puede ser representado por:
+
+$$ {\left\lbrack \matrix{ x_{1t} \cr x_{2t} \cr \dots \cr x_{nt} } \right\rbrack} = \left\lbrack \matrix{ A_{10} \cr A_{20} \cr \dots \cr A_{n0} } \right\rbrack + \left\lbrack \matrix{A_{11}(L) & A_{12}(L) & \dots & A_{1n}(L) \cr A_{21}(L) & A_{22}(L) & \dots & A_{2n}(L) \cr \dots & \dots & \dots & \dots \cr A_{n1}(L) & A_{n2}(L) & \dots & A_{nn}(L) } \right\rbrack  \left\lbrack \matrix{ x_{1(t-1)} \cr x_{2(t-1)} \cr \dots \cr x_{n(t-1)} } \right\rbrack + \left\lbrack \matrix{ e_{1t} \cr e_{2t} \cr \dots \cr e_{nt} } \right\rbrack
+$$
+
+* los $A_{i0}$ son los interceptos,
+* los $A_{ij}(L)$ son los polinomios en el operador de rezagos $L$. Los coeficientes individuales de los $A_{ij}(L)$ se denotan por $a_{ij}(1), a_{ij}(2)$. Como todas las ecuaciones tienen la misma longitud de rezagos, los polinomios $A_{ij}(L)$ son todos del mismo grado.
+* Los términos $e_{1t}$ son perturbaciones ruido blanco que pueden estar correlacionadas entre sí.
+* La matriz de varianzas y covarianza $\mathbf{\Sigma}$ tiene dimensión ($n \times n$)
+
+Además de la determinación del conjunto de variables a incluir en el $VAR$, es importante determinar la longitud apropiada de rezagos. Un posible procedimiento es permitir diferentes longitudes de rezago para cada variable en cada ecuación. Sin embargo, para preservar la simetría del sistema (y poder usar $MCO$ de manera eficiente), es común usar la misma longitud de rezagos para todas las ecuaciones. [^7] 
+
+[^7]: Siempre que haya regresores idénticos en cada ecuación, las estimaciones MCO son consistentes y asintóticamente eficientes. 
+
+
+
+
+
 
 
 
