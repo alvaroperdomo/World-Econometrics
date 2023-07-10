@@ -124,6 +124,10 @@ El problema es mucho más complicado en los sistemas de orden superior, ya que l
    2) Para un tamaño de muestra de tamaño $T$, seleccione números aleatorios para representar la secuencia { $\varepsilon_i$ }. Por lo tanto, tendrá una serie simulada de longitud T$, llamada $\varepsilon_t^s$, que debería tener las mismas propiedades que el verdadero proceso de error. Use estos números aleatorios para construir la secuencia simulada { $y_t^s$ } como $y_t^s=\hat{a_0}+\hat{a_1}y_{t-1}^s+...+\hat{a_p}y_{t-p}^s+\varepsilon_t^s$ (Asegúrese de que inicializa correctamente la serie para eliminar los efectos de las condiciones iniciales.)
    3) Ahora actúe como si no conociera los valores de los coeficiente utilizados para generar la serie $y_t^s$. Calcule $y_t^s$ como un proceso $AR(p)$ y obtenga la función de impulso-respuesta. Si repite el proceso varios miles de veces, puede generar varios miles de funciones impulso-respuesta. Use estas funciones para construir los intervalos de confianza (por ejemplo, puede construir el intervalo que excluya el 2.5% más bajo y el 2.5% más alto de las respuestas para obtener un intervalo de confianza del 95%).
 
+El beneficio de este método es que no necesita hacer supuestos especia-les con respecto a la distribución de los coeficientes autorregresivos. El cálculo real de los intervalos de confianza es solo un poco más complicado en un $VAR$. 
+
+Considere el sistema de dos variables $i$  y $ii$. El problema se complica porque los residuos de la regresión están correlacionados. Como tal, se necesita escoger aleatoriamente $e_{1t}$ y $e_{2t}$ de tal manera que se mantenga la estructura apropiada del error. Un método simple consiste en escoger aleatoriamente $e_{1t}$ y usar el valor de $e_{2t}$ que corresponde a ese mismo período. Si usa una descomposición de Choleski tal que $b_{21}=0$, construya $\varepsilon_yt$ y $\varepsilon_zt$  utilizando $e_{1t}=$\varepsilon_yt-b_{12}\varepsilon_zt$ y $e_{2t}=\varepsilon_zt$.
+
 
 
 
