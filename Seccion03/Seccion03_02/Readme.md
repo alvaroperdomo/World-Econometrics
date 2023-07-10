@@ -225,7 +225,7 @@ Dado que $A_{ij}(L)$ representa los coeficientes de los valores rezagados de la 
 
 La causalidad de Granger es algo muy diferente de una prueba de exogeneidad. Para que $z_t$ sea exógena, requerimos que no se vea afectada por el valor contemporáneo de $y_t$. Sin embargo, la causalidad de Granger se refiere sólo a los efectos de valores pasados de { $y_t$ } en el valor actual de $z_t$. Por lo tanto, la causalidad de Granger en realidad mide si los valores actuales y pasados de { $y_t$ } ayudan a pronosticar valores futuros de { $z_t$ }. 
 
-Para ilustrar la distinción en términos de un modelo $VMA$, considere la siguiente ecuación tal que $y_t$ no causa en el sentido de Granger $z_t$ y a pesar de todo $z_t$ no es exógeno $\eqalign{z_t=\bar{z} +\phi_{21}(0) \varepsilon_{yt} + \sum_{i=0}^{\infty} \phi_{22}(i) \varepsilon_{zt} }$
+Para ilustrar la distinción en términos de un modelo $VMA$, considere la siguiente ecuación tal que $y_t$ no causa en el sentido de Granger $z_t$ y a pesar de todo $z_t$ no es exógeno $\eqalign{z_t=\bar{z} +\phi_{21}(0) \varepsilon_{yt} + \sum_{i=0}^{\infty} \phi_{22}(i) \varepsilon_{z(t-i)} }$
 
 Si pronosticamos $z_{t+1}=$ condicionado a los valores de $\varepsilon_{z(t-i)}$ ($i=0, 1, \dots$) solo, obtendremos el error de pronóstico $\phi_{21}(0) \varepsilon_{y(t+1)} + \phi_{22}(1) \varepsilon_{z(t+1)}$. Sin embargo, obtenemos el mismo error de pronóstico si pronosticamos $z_{t+1}$ condicionado en $\varepsilon_{z(t-1)} y $\varepsilon_{y(t-1)}$ ($i=0, 1, \dots$). Dado el valor de $z_t$, la información sobre $y_t$ no ayuda a reducir el error de pronóstico para $z_{t+1}. 
 
