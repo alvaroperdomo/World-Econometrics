@@ -218,6 +218,25 @@ Una prueba de causalidad establece si los rezagos de una variable entran en la e
 
 Es sencillo generalizar esta noción al caso de $n$ variables
 
+$$ {\left\lbrack \matrix{ x_{1t} \cr x_{2t} \cr \dots \cr x_{nt} } \right\rbrack} = \left\lbrack \matrix{ A_{10} \cr A_{20} \cr \dots \cr A_{n0} } \right\rbrack + \left\lbrack \matrix{A_{11}(L) & A_{12}(L) & \dots & A_{1n}(L) \cr A_{21}(L) & A_{22}(L) & \dots & A_{2n}(L) \cr \dots & \dots & \dots & \dots \cr A_{n1}(L) & A_{n2}(L) & \dots & A_{nn}(L) } \right\rbrack  \left\lbrack \matrix{ x_{1(t-1)} \cr x_{2(t-1)} \cr \dots \cr x_{n(t-1)} } \right\rbrack + \left\lbrack \matrix{ e_{1t} \cr e_{2t} \cr \dots \cr e_{nt} } \right\rbrack
+$$
+
+Dado que $A_{ij}(L)$ representa los coeficientes de los valores rezagados de la variable $j$ en la variable $i$, la variable $j$ no causa la variable $i$ en el sentido de Granger si todos los coeficientes del polinomio $A_{ij}(L)$ pueden establecerse iguales a cero.
+
+La causalidad de Granger es algo muy diferente de una prueba de exogeneidad. Para que $z_t$ sea exógena, requerimos que no se vea afectada por el valor contemporáneo de $y_t$. Sin embargo, la causalidad de Granger se refiere sólo a los efectos de valores pasados de { $y_t$ } en el valor actual de $z_t$. Por lo tanto, la causalidad de Granger en realidad mide si los valores actuales y pasados de { $y_t$ } ayudan a pronosticar valores futuros de { $z_t$ }. 
+
+Para ilustrar la distinción en términos de un modelo $VMA$, considere la siguiente ecuación tal que $y_t$ no causa en el sentido de Granger $z_t$ y a pesar de todo $z_t$ no es exógeno $\eqalign{z_t=\bar{z} +\phi_{21}(0) \varepsilon_{yt} + \sum_{i=0}^{\infty} \phi_{22}(i) \varepsilon_{zt} }$
+
+Si pronosticamos $z_{t+1}=$ condicionado a los valores de $\varepsilon_{z(t-i)}$ ($i=0, 1, \dots$) solo, obtendremos el error de pronóstico $\phi_{21}(0) \varepsilon_{y(t+1)} + \phi_{22}(1) \varepsilon_{z(t+1)}$. Sin embargo, obtenemos el mismo error de pronóstico si pronosticamos $z_{t+1}$ condicionado en $\varepsilon_{z(t-1)} y $\varepsilon_{y(t-1)}$ ($i=0, 1, \dots$). Dado el valor de $z_t$, la información sobre $y_t$ no ayuda a reducir el error de pronóstico para $z_{t+1}. 
+
+En otras palabras, para el modelo en consideración, $E_t(z_{t+1}|z_t)=E_t(z_{t+1}|z_t, y_t). Por lo tanto, { $y_t$ } no causa { $z_t$ } en el sentido de Granger. 
+
+Por otro lado, dado que estamos asumiendo que $\phi_{21}(0) \not= 0$, { $z_t$ } no es exógeno. Si $\phi_{21}(0) \not= 0$, los choques puros de $y_{t+1}$ (es decir, $\varepsilon_{y(t+1)}$ ) afectan el valor de $z_{t+1}$  aunque la secuencia { $y_t$ } Granger no cause la secuencia { $z_t$ }. 
+
+Una prueba de bloques de exogeneidad es útil para detectar si se debe incorporar una variable adicional en un $VAR$. El problema consiste en determinar si los rezagos de una variable, por ejemplo, $w_t$, causan en el sentido de Granger alguna otra variable en el sistema. En el caso de tres variables con $w_t$, $y_t$ y $z_t$, la prueba es si los rezagos de $w_t$ causan en el sentido de Granger a $y_t$ o $z_t$. En esencia, el bloque de exogeneidad restringe todos los rezagos de $w_t$ en $y_t$ y $z_t$ para que sean iguales a cero. 
+
+Esta restricción se prueba adecuadamente usando la prueba de razón de verosimilitud. Calcule las ecuaciones $y_t$ y $z_t$  usando valores rezagados de { $y_t$ } , { $z_t$ } y { $w_t$ } y calcule $\mathbf{\Sigma_u}$. Vuelva a estimar excluyendo los valores rezagados de { $w_t$ } y calcule $\mathbf{\Sigma_r}$. Encuentre el estadístico de razón de verosimilitud: $(T-c)(\ln{|\mathbf{\Sigma_r}|}-\ln{|\mathbf{\Sigma_u}|})$ este estadístico tiene una distribución $\chi^2$ con grados de libertad iguales a $2p$ (ya que los $p$ valores de rezagados de { $w_t$ } se excluyen de cada ecuación). Aquí $c=3p+1$ porque las ecuaciones no restringidas de $y_t$ y $z_t$ contienen $p$ rezagos de { $y_t$ } , { $z_t$ } y { $w_t$ } más una constante.
+
 
 
 
