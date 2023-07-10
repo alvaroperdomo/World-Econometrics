@@ -1,10 +1,12 @@
 # Cointegración
 
-En los modelos univariados, hemos visto que una tendencia estocástica puede eliminarse por diferenciación, en donde las series estacionarias resultantes se pueden estimar utilizando las técnicas univariadas de Box-Jenkins. Anteriormente, la práctica convencional era generalizar esta idea y diferenciar todas las variables no estacionarias utilizadas en un análisis de regresión. Sin embargo, la forma adecuada de tratar las variables no estacionarias no es tan sencilla en un contexto multivariado. Es bastante posible que haya una combinación lineal de variables integradas que sea estacionaria; se dice que tales variables están **cointegradas**. 
+En los modelos univariados una tendencia estocástica puede eliminarse por diferenciación, en donde las series estacionarias resultantes se pueden estimar utilizando las técnicas univariadas de Box-Jenkins. Anteriormente, la práctica convencional era generalizar esta idea a los modelos multivariados y diferenciar todas las variables no estacionarias utilizadas en un análisis de regresión para luego estimar un modelo VAR en diferencias. Sin embargo, hoy en día la forma adecuada de tratar las variables no estacionarias no es tan sencilla en un contexto multivariado. Es bastante posible que haya una combinación lineal de variables integradas que sea estacionaria y que por lo tanto configure una relación de largo plazo; se dice que tales variables están **cointegradas**. 
 
 Engle y Granger (1987) fueron los primeros en hablar acerca de la cointegración. Para entender su significado, considere el siguiente ejemplo:
 
-Asuma que las variables $x_{1t}, x_{2t}, x_{3t}, \dots, x_{4t}$ son variables $I(1)$ no estacionarias y que conforman un vector $\mathbf{x_t}=$
+Asuma que las variables $x_{1t}, x_{2t}, x_{3t}, \dots, x_{nt}$ son variables $I(1)$ no estacionarias y que conforman un vector $\mathbf{x_t}$
+
+Si dentro de este modelo existe una combinación lineal tal que $x_{it}=\sum_{j=1}^m x_{jt}+e_t$ donde {m\len} y $e_t$ es una variable estacionaria
 
 ++++++++++++++++++++++++++++
 
@@ -59,9 +61,9 @@ Para explicar el procedimiento de prueba de Engle-Granger, comencemos con el tip
    * Si no podemos rechazar la hipótesis nula $a_1=0$, podemos concluir que los residuos tienen una raíz unitaria. Por lo tanto, concluimos que las secuencias { $y_t$ } y { $z_t$ } no están cointegradas.
    * En cambio, el rechazo de la hipótesis nula implica que la secuencia de residuos es estacionaria. Dado que se encontró que { $y_t$ } y { $z_t$ } son $I(1)$ y que los residuos son estacionarios, podemos concluir que las series están cointegradas de orden $(1,1)$.
 
-   En la mayoría de los estudios aplicados, no es posible utilizar las tablas de Dickey-Fuller. El problema es que la secuencia { $\hat{e_t}$ } se genera a partir de una regresión; el investigador no conoce el error real $e_t$, solo el error estimado { $\hat{e_t}$ }.[^1]
+   En la mayoría de los estudios aplicados, no es posible utilizar las tablas de Dickey-Fuller. El problema es que la secuencia { $\hat{e_t}$ } se genera a partir de una regresión; el investigador no conoce el error real $e_t$, solo el error estimado { $\hat{e_t}$ }.[^*]
 
-[^1]: **Engle y Granger (1987) propusieron nuevas tablas para hacer los cálculos. Y estas posteriormente fueron actualizadas por MacKinnon (1990). En estas tablas, los valores críticos dependen del tamaño de la muestra y del número de variables utilizadas en el análisis**
+[^*]: **Engle y Granger (1987) propusieron nuevas tablas para hacer los cálculos. Y estas posteriormente fueron actualizadas por MacKinnon (1990). En estas tablas, los valores críticos dependen del tamaño de la muestra y del número de variables utilizadas en el análisis**
 
 3) **Estime el modelo de corrección de errores**
 
