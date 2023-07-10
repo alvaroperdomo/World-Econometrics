@@ -41,6 +41,8 @@ Hay cuatro puntos importantes a tener en cuenta sobre la definición:
 
    Normalmente, una de las variables se usa para normalizar el vector de cointegración fijando su coeficiente en $1$. Por ejemplo, para normalizar el vector de cointegración con respecto a $x_{1t}$, simplemente se selecciona un $\lambda=\frac{1}{\beta_1}$.
 
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/36a62b2e-6b7a-4643-8b77-507b154e0a5f)
+
 2) **La cointegración se refiere a variables que están integradas en el mismo orden**.
 
    Esto no implica que todas las variables integradas estén cointegradas; por lo general, un conjunto de variables $I(d)$ no está cointegrado.[^3] 
@@ -55,9 +57,11 @@ Hay cuatro puntos importantes a tener en cuenta sobre la definición:
 
 [^3]: Tal falta de cointegración implica que no hay un equilibrio a largo plazo entre las variables, de modo que puedan desviarse arbitrariamente una de la otra.
 
-3) **Puede haber más de un vector de cointegración independiente para un conjunto de variables $I(1)$.**
+3) **Puede haber más de un vector de cointegración independiente para un conjunto de variables $I(1)$.**[^4]
 
-   El número de vectores de cointegración se denomina rango de cointegración de $\mathbf{x_t}$.Si $\mathbf{x_t}$ tiene $n$ componentes no estacionarios, puede haber hasta $n-1$ vectores de cointegración linealmente independientes. Por lo tanto, si $\mathbf{x_t}$ contiene solo dos variables, puede haber a lo sumo un vector de cointegración independiente.
+   Si $\mathbf{x_t}$ tiene $n$ componentes no estacionarios, puede haber hasta $n-1$ vectores de cointegración linealmente independientes. Por lo tanto, si $\mathbf{x_t}$ contiene solo dos variables, puede haber a lo sumo un vector de cointegración independiente.
+
+[^4]: El número de vectores de cointegración se denomina rango de cointegración de $\mathbf{x_t}$.
 
 4) **La mayor parte de la literatura sobre cointegración se centra en el caso en el que cada variable tiene una sola raíz unitaria.**
 
