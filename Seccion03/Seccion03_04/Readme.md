@@ -4,7 +4,7 @@ En los modelos univariados una tendencia estocástica puede eliminarse por difer
 
 [^1]: **En cierto sentido, el uso del término equilibrio es desafortunado porque los teóricos económicos y los econometristas usan el término de diferentes maneras. En teoría económica usualmente se usa el término para referirse a una igualdad entre transacciones deseadas y reales. El uso econométrico del término hace referencia a cualquier relación a largo plazo entre variables no estacionarias. La cointegración no requiere que la relación a largo plazo sea generada por las fuerzas del mercado o por las reglas de comportamiento de los individuos. Según Engle y Granger (1987) la relación de equilibrio puede ser causal, conductual o sim-plemente una relación de forma reducida entre variables con tendencias similares.** 
 
-Para entender mejor lo que es cointegración considere el siguiente ejemplo: Asuma que hay $n$ variables $x_{1t}, x_{2t}, \dots, x_{nt}$ integradas del mismo orden que conforman un equilibrio de largo plazo representado por $\eqalign{\sum_{i=1}^n \beta_i x_{it}=0}$. Es decir, $\mathbf{\beta x_t}=0$ donde $\mathbf{\beta} = {\left\lbrack \matrix{\beta_1 & \beta_2 & ... & \beta_n} \right\rbrack}$ y 
+Para entender mejor lo que es cointegración considere el siguiente ejemplo: Asuma que hay $n$ variables $x_{1t}, x_{2t}, \dots, x_{nt}$ integradas del mismo orden que conforman un equilibrio de largo plazo representado por $\eqalign{\sum_{i=1}^n \beta_i x_{it}=0}$. Es decir, $\mathbf{B x_t}=0$ donde $\mathbf{B} = {\left\lbrack \matrix{\beta_1 & \beta_2 & ... & \beta_n} \right\rbrack}$ y 
 
 $$ 
 \mathbf{x_{t}} = \left(\begin{array}{ccc} 
@@ -30,9 +30,9 @@ $$
 
 son cointegrados de orden $d,b$, denotado por $mathbf{x_t} \sim CI(d,b) $  si 
 1) Todos los componentes de $\mathbf{x_t}$ son integrados de orden $d$.
-2) Existe un vector $\mathbf{\beta} = {\left\lbrack \matrix{\beta_1 & \beta_2 & ... & \beta_n} \right\rbrack}$ tal que la combinación lineal $\mathbf{\beta x_t}=0$  está integrada de orden $(d-b)$ donde $b>0$.
+2) Existe un vector $\mathbf{B} = {\left\lbrack \matrix{\beta_1 & \beta_2 & ... & \beta_n} \right\rbrack}$ tal que la combinación lineal $\mathbf{\beta x_t}=0$  está integrada de orden $(d-b)$ donde $b>0$.
 
-  El vector $\beta$ se llama el vector cointegrante.
+  El vector $B$ se llama el vector cointegrante.
 
 Hay cuatro puntos importantes a tener en cuenta sobre la definición:
 1) **La cointegración se refiere a una combinación lineal de variables no estacionarias**.
