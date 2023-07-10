@@ -69,7 +69,7 @@ Suponga que estima el modelo de primer orden $x_t=A_0+A_1x_{t-1}+e_t$ para obten
 ## La Función Impulso-Respuesta
 Al igual que un proceso autorregresivo tiene una representación de media móvil, un $VAR$ puede escribirse como un vector de media móvil ($VMA$). 
 $\eqalign{x_t=\mu+\sum_{i=1}^p A_1^i e_{t-i}}$ es la representación $VMA$ de $x_t=A_0+A_1x_{t-1}+e_t$  en donde las variables (es decir, $y_t$ y $z_t$) se expresan en términos de los valores actuales y pasados de los dos tipos de choques (es decir, $e_{1t}$ y $e_{2t}$).[^2] 
-[^2]: **La representación _VMA_ es una característica esencial de la metodología de Sims (1980), ya que permite rastrear la trayectoria en el tiempo de los diversos choques de las variables contenidas en el sistema _VAR_**. 
+[^2]: **La representación $VMA$ es una característica esencial de la metodología de Sims (1980), ya que permite rastrear la trayectoria en el tiempo de los diversos choques de las variables contenidas en el sistema _VAR_**. 
 
 Para fines ilustrativos, usaremos el modelo de primer orden de dos variables analizado previamnete. Escribiendo el $VAR$ de dos variables en forma matricial, ${\left\lbrack \matrix{y_t \cr z_t} \right\rbrack} = {\left\lbrack \matrix{a_{10} \cr a_{20}} \right\rbrack} + {\left\lbrack \matrix{a_{11} & a_{12} \cr a_{21} & a_{22}}\right\rbrack}{\left\lbrack \matrix{y_{t-1} \cr z_{t-1}} \right\rbrack}+{\left\lbrack \matrix{e_{1t} \cr e_{2t}} \right\rbrack}$ o usando $\eqalign{x_t=\mu+\sum_{i=1}^p A_1^i e_{t-i}}$ tenemos $\eqalign{{\left\lbrack \matrix{y_t \cr z_t} \right\rbrack} = {\left\lbrack \matrix{\overline{y} \cr \overline{z}} \right\rbrack} + \sum_{i=0}^\infty{\left\lbrack \matrix{a_{11} & a_{12} \cr a_{21} & a_{22}}\right\rbrack}^i+{\left\lbrack \matrix{e_{1(t-i)} \cr e_{2(t-i)}} \right\rbrack}}$.
 
@@ -99,13 +99,21 @@ Los paneles (a) y (b) de la figura de abajo muestran los efectos de los choques 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/804ef3dc-2e0e-4fd7-bbaa-69ced830d223)
 
 Como se muestra en el Panel (a), un choque de una unidad en $\varepsilon_{zt}$ hace que $z_t$  salte una unidad y que $y_t$ salte $0.8$ unidades. En el siguiente período, $\varepsilon_{z(t+1)}$ vuelve a cero, pero la naturaleza autorregresiva del sistema es tal que $y_{t+1}$ y $z_{t+1}$ no regresa inmediatamente a sus valores a largo plazo. 
-Como $z_{t+1}=0.2y_t+0.7z_t+\varepsilon_{z(t+1)}$, se deduce que $z_{t+1}=0.2(0.8)+0.7(1)=0.86$. De manera similar, $y_{t+1}=0.2y_t+0.2z_t=0.76$. Como se puede ver en la figura, los valores subsiguientes de las secuencias { $y_t$ } y { $z_t$ } convergen a sus niveles de largo plazo.
+Como $z_{t+1}=0.2y_t+0.7z_t+\varepsilon_{z(t+1)}$, se deduce que $z_{t+1}=0.2(0.8)+0.7(1)=0.86$. De manera similar, $y_{t+1}=0.7y_t+0.2z_t=0.76$. Como se puede ver en la figura, los valores subsiguientes de las secuencias { $y_t$ } y { $z_t$ } convergen a sus niveles de largo plazo.
 
 Los efectos de un choque unitario de $\varepsilon_{yt}$  se muestran en el Panel (b) de la figura. Puede ver la asimetría de la descomposición inmediatamente comparando los dos gráficos. Un choque unitario en $\varepsilon_{yt}$ hace que el valor de $y_t$ aumente en una unidad; sin embargo, no hay un efecto contemporáneo sobre el valor de $z_t$, de modo que $y_t=1$ y $z_t=0$. En el período subsiguiente, $\varepsilon_{y(t+1)}$ vuelve a cero. La naturaleza autorregresiva del sistema es tal que 
 $y_{t+1}=0.7y_t+0.2z_t=0.7$ y $z_{t+1}=0.2y_t+0.7z_t=0.2$. Los puntos restantes en la figura son los impulso-respuesta para los períodos $t+2$ a $t+20$. Como el sistema es estacionario, los impulso-respuesta finalmente decaen.
 
+Un problema clave relacionado con las funciones impulso-respuesta es que se construyen utilizando los coeficientes estimados. Como cada coeficiente se estima de forma imprecisa, los impulso-respuesta también contienen errores. El problema es construir intervalos de confianza alrededor de los impulso-respuesta que permitan la incertidumbre de parámetros inherente al proceso de estimación. 
 
+Para ilustrar la metodología, considere la siguiente estimación de un modelo $AR(1):y_t=0.6y_{t-1}$ donde el estadístico $t$ de $a_1$ es $4$, es decir el coeficiente parece bien estimado. 
 
+Es fácil configurar la función impulso-respuesta: para cualquier nivel dado de $y_{t-1}$, un choque unitario de $\varepsilon_t$  aumentará $y_t$ en una unidad. En períodos subsiguientes, $y_{t+1}$ será $0.6$ y $y_{t+1}$  será $0.6^2$. Como puede verificar fácilmente, la función impulso-respuesta se puede escribir como $\phi(i)=0.6^i$.
+Observe que la estimación puntual del coeficiente $AR(1)$ es de $0.6$ con una desvíación estándar de $0.15$ ($0.15=\frac{0.6}{4}$). Si estamos dispuestos a suponer que el coeficiente se distribuye normalmente, hay una probabilidad del 95% de que el valor real se encuentre dentro del intervalo de dos desviaciones estándar $0.3–0.9$. Como tal, el patrón de decaimiento podría estar en cualquier lugar entre $\phi(i)=0.9^i$ y $\phi(i)=0.3^i$. 
+
+El problema es mucho más complicado en los sistemas de orden superior, ya que los coeficientes estimados se correlacionarán. Además, es posible que no se desee asumir la normalidad. Una forma de obtener los intervalos de confianza deseados del proceso $AR(p)$ ($y_t=a_0+a_1y_{t-1}+...+a_py_{t-p}+\varepsilon_t$) es realizar el siguiente estudio de Monte Carlo:
+1) Calcule los coeficientes $a_0$ a $a_p$ usando Mínimos Cudrados Ordinarios y guarde los residuos. Sea $\hat{a_i}$ el valor estimado de $a_i$ y sean { $\hat{\varepsilon_i}$ } los residuos estimados.
+2) Para un tamaño de muestra de tamaño {T}, seleccione números aleatorios para representar la secuencia { $\varepsilon_i$ }. Por lo tanto, tendrá una serie simulada de longitud {T}, llamada $\varepsilon_t^s$, que debería tener las mismas propiedades que el verdadero proceso de error. Use estos números aleatorios para construir la secuencia simulada { $y_t^s$ } como $y_t^s=\hat{a_0}+\hat{a_1}y_{t-1}^s+...+\hat{a_p}y_{t-p}^s+\varepsilon_t^s$ (Asegúrese de que inicializa correctamente la serie para eliminar los efectos de las condiciones iniciales.)
 
 
 
