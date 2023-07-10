@@ -6,7 +6,7 @@ Engle y Granger (1987) fueron los primeros en hablar acerca de la cointegración
 
 Asuma que las variables $x_{1t}, x_{2t}, x_{3t}, \dots, x_{nt}$ son variables $I(1)$ no estacionarias y que conforman un vector $\mathbf{x_t}$
 
-Si dentro de este modelo existe una combinación lineal tal que $x_{it}=\sum_{j=1}^m x_{jt}+e_t$ donde {m\len} y $e_t$ es una variable estacionaria
+Si dentro de este modelo existe una combinación lineal tal que $x_{it}=\sum_{j=1}^m x_{jt}+e_t$ tal que {m\le n} y donde la secuencia del término de error  { $e_t$ } es estacionaria
 
 ++++++++++++++++++++++++++++
 
