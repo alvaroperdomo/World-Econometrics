@@ -4,7 +4,7 @@ En los modelos univariados una tendencia estocástica puede eliminarse por difer
 
 Engle y Granger (1987) fueron los primeros en hablar acerca de la cointegración. Para entender su significado, considere el siguiente ejemplo: 
 
-Asuma que hay $n$ variables $x_{1t}, x_{2t}, \dots, x_{nt}$ que son $I(1)$[^*] y que conforman un equilibrio de largo plazo representado por $\eqalign{\sum_{i=1}^n \beta_i x_{it}=0}$[^*]. Es decir, $\mathbf{\beta x_t}=0$ donde 
+Asuma que hay $n$ variables $x_{1t}, x_{2t}, \dots, x_{nt}$ que son $I(1)$[^1] y que conforman un equilibrio de largo plazo representado por $\eqalign{\sum_{i=1}^n \beta_i x_{it}=0}$[^2]. Es decir, $\mathbf{\beta x_t}=0$ donde 
 
 $$\mathbf{\beta} = \left(\begin{array}{ccc} \beta_1 & \beta_2 & \dots & \beta_n \end{array}\right)$$ 
 
@@ -21,14 +21,14 @@ $$
 
 La desviación del equilibrio a largo plazo, llamado error de equilibrio es $e_t$, por lo tanto $e_t=\mathbf{\beta x_t}$. **Si el equilibrio es significativo, $e_t$ debe ser estacionario**. 
 
-[^*]: **En cierto sentido, el uso del término equilibrio es desafortunado porque los teóricos económicos y los econometristas usan el término de diferentes maneras. En teoría económica usualmente se usa el término para referirse a una igualdad entre transacciones deseadas y reales. El uso econométrico del término hace referencia a cualquier relación a largo plazo entre variables no estacionarias. La cointegración no requiere que la relación a largo plazo sea generada por las fuerzas del mercado o por las reglas de comportamiento de los individuos. Según Engle y Granger (1987) la relación de equilibrio puede ser causal, conductual o sim-plemente una relación de forma reducida entre variables con tendencias similares.** 
 
 
 
 Si dentro de este modelo existe una combinación lineal tal que $\eqalign{x_{it}= - \sum_{j=i+1}^m \ beta_j x_{jt}+e_t}$ tal que ${m\le n}$ y donde $e_t$ es el término de error de la ecuación. Si la secuencia del término de error { $e_t$ } es estacionaria, se deduce que la combinación lineal de variables integradas $\eqalign{sum_{j=i}^m \ beta_j x_{jt}+e_t}$ (donde $beta_i$ se ha normalizado en $1$) también debe ser estacionaria.
 
-[^*]: Para fines didácticos se va a asumir que todas son I(1); sin embargo, lo importante es que sean no estacionarias e integradas del mismo orden.
-$\mathbf{x_t}$
+[^1]: **Para fines didácticos se va a asumir que todas son I(1); sin embargo, lo importante es que sean no estacionarias e integradas del mismo orden.**
+
+[^2]: **En cierto sentido, el uso del término equilibrio es desafortunado porque los teóricos económicos y los econometristas usan el término de diferentes maneras. En teoría económica usualmente se usa el término para referirse a una igualdad entre transacciones deseadas y reales. El uso econométrico del término hace referencia a cualquier relación a largo plazo entre variables no estacionarias. La cointegración no requiere que la relación a largo plazo sea generada por las fuerzas del mercado o por las reglas de comportamiento de los individuos. Según Engle y Granger (1987) la relación de equilibrio puede ser causal, conductual o sim-plemente una relación de forma reducida entre variables con tendencias similares.** 
 
 ++++++++++++++++++++++++++++
 
@@ -42,11 +42,11 @@ Hay cuatro puntos importantes a tener en cuenta sobre la definición:
 
 2) **La cointegración se refiere a variables que están integradas en el mismo orden**.
 
-   Esto no implica que todas las variables integradas estén cointegradas; por lo general, un conjunto de variables $I(d)$ no está cointegrado.[^*] 
+   Esto no implica que todas las variables integradas estén cointegradas; por lo general, un conjunto de variables $I(d)$ no está cointegrado.[^3] 
 
    Si dos variables son integradas de órdenes diferentes, no pueden estar cointegradas. Suponga que $x_{1t}$ es $I(d_1)$ y $x_{2t}$ es $I(d_2)$ donde $d_2>d_1$ . Entonces, cualquier combinación lineal de $x_{1t}$ con $x_{2t}$ es $I(d_2)$. Sin embargo, es posible encontrar relaciones de equilibrio entre grupos de variables que están integradas de diferentes órdenes. Supongamos que $x_{1t}$ y $x_{2t}$ son $I(2)$ y que las otras variables en consideración son $I(1)$. Como tal, no puede haber una relación de cointegración entre $x_{1t}$ (o $x_{2t}$) y $x_{3t}$. Sin embargo, si $x_{1t}$ y $x_{2t}$ son $CL(2,1)$, existe una combinación lineal de la forma $\beta_1x_{1t}+\beta_2x_{2t}$ que es $I(1)$, la cual es posible que esté cointegrada con las variables $I(1)$. 
 
-[^*]: Tal falta de cointegración implica que no hay un equilibrio a largo plazo entre las variables, de modo que puedan desviarse arbitrariamente una de la otra.
+[^3]: Tal falta de cointegración implica que no hay un equilibrio a largo plazo entre las variables, de modo que puedan desviarse arbitrariamente una de la otra.
 
 3) **Puede haber más de un vector de cointegración independiente para un conjunto de variables $I(1)$.**
 
