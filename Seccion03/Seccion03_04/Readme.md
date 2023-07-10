@@ -2,7 +2,27 @@
 
 En los modelos univariados una tendencia estocástica puede eliminarse por diferenciación, las series estacionarias resultantes se pueden estimar utilizando las técnicas univariadas de Box-Jenkins. Anteriormente, la práctica convencional era generalizar esta idea a los modelos multivariados y diferenciar todas las variables no estacionarias utilizadas en un análisis de regresión para luego estimar un modelo VAR en diferencias. Sin embargo, hoy en día la forma adecuada de tratar las variables no estacionarias no es tan sencilla en un contexto multivariado. Es bastante posible que haya una combinación lineal de variables integradas que sea estacionaria y que por lo tanto configure una relación de largo plazo; si esto ocurre se dice que tales variables están **cointegradas**. 
 
-Engle y Granger (1987) fueron los primeros en hablar acerca de la cointegración. Para entender su significado, considere el siguiente ejemplo: Asuma que hay $n$ variables $x_{1t}, \dots, x_{nt}$ que son $I(1)$[^*] y que conforman un equilibrio de largo plazo representado por $\eqalign{sum_{i=1}^n \ beta_i x_{it}=0}$
+Engle y Granger (1987) fueron los primeros en hablar acerca de la cointegración. Para entender su significado, considere el siguiente ejemplo: 
+
+Asuma que hay $n$ variables $x_{1t}, x_{2t}, \dots, x_{nt}$ que son $I(1)$[^*] y que conforman un equilibrio de largo plazo representado por $\eqalign{\sum_{i=1}^n \beta_i x_{it}=0}$[^*]. Es decir, $\mathbf{\beta x_t}=0$ donde 
+
+$$\mathbf{\beta} = \left(\begin{array}{ccc} \beta_1 & \beta_2 & \dots & \beta_n \end{array}\right)$$ 
+
+y
+
+$$ 
+\mathbf{x_{it}} = \left(\begin{array}{ccc} 
+x_{1t} \\ 
+x_{2t} \\ 
+\dots \\ 
+x_{nt}  
+\end{array}\right) 
+$$ 
+
+La desviación del equilibrio a largo plazo, llamado error de equilibrio es $e_t$, por lo tanto $e_t=\mathbf{\beta x_t}$. **Si el equilibrio es significativo, $e_t$ debe ser estacionario**. 
+
+[^*]: **En cierto sentido, el uso del término equilibrio es desafortunado porque los teóricos económicos y los econometristas usan el término de diferentes maneras. En teoría económica usualmente se usa el término para referirse a una igualdad entre transacciones deseadas y reales. El uso econométrico del término hace referencia a cualquier relación a largo plazo entre variables no estacionarias. La cointegración no requiere que la relación a largo plazo sea generada por las fuerzas del mercado o por las reglas de comportamiento de los individuos. Según Engle y Granger (1987) la relación de equilibrio puede ser causal, conductual o sim-plemente una relación de forma reducida entre variables con tendencias similares.** 
+
 
 
 Si dentro de este modelo existe una combinación lineal tal que $\eqalign{x_{it}= - \sum_{j=i+1}^m \ beta_j x_{jt}+e_t}$ tal que ${m\le n}$ y donde $e_t$ es el término de error de la ecuación. Si la secuencia del término de error { $e_t$ } es estacionaria, se deduce que la combinación lineal de variables integradas $\eqalign{sum_{j=i}^m \ beta_j x_{jt}+e_t}$ (donde $beta_i$ se ha normalizado en $1$) también debe ser estacionaria.
