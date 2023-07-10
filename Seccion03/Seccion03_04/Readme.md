@@ -51,7 +51,7 @@ Hay cuatro puntos importantes a tener en cuenta sobre la definición:
 
    Sin embargo, **es posible encontrar relaciones de equilibrio entre grupos de variables que están integradas de diferentes órdenes.**
 
-   Supongamos que $x_{1t}$ y $x_{2t}$ son $I(2)$ y que las otras variables en consideración son $I(1)$. Como tal, no puede haber una relación de cointegración entre $x_{1t}$ (o $x_{2t}$) y $x_{3t}$. Sin embargo, si $x_{1t}$ y $x_{2t}$ son $CI(2,1)$, existe una combinación lineal de la forma $\beta_1x_{1t}+\beta_2x_{2t}$ que es $I(1)$, la cual es posible que esté cointegrada con las variables $I(1)$. 
+   Suponga que $x_{1t}$ y $x_{2t}$ son $I(2)$ y que las otras variables en consideración son $I(1)$. Como tal, no puede haber una relación de cointegración entre $x_{1t}$ (o $x_{2t}$) y $x_{3t}$. Sin embargo, si $x_{1t}$ y $x_{2t}$ son $CI(2,1)$, existe una combinación lineal de la forma $\beta_1x_{1t}+\beta_2x_{2t}$ que es $I(1)$, la cual es posible que esté cointegrada con las variables $I(1)$. 
 
 [^3]: Tal falta de cointegración implica que no hay un equilibrio a largo plazo entre las variables, de modo que puedan desviarse arbitrariamente una de la otra.
 
@@ -70,14 +70,14 @@ Para el análisis de cointegración las metodologías más utilizadas son la de 
  
 ### La Metodología de Engle-Granger
 
-Para explicar el procedimiento de prueba de Engle-Granger, comencemos con el tipo de problema que es usual en los estudios aplicados. Suponga que dos variables, digamos $y_t$ y $z_t$, se creen integradas de orden $1$ y se desea determinar si existe una relación de equilibrio entre las dos. Engle y Granger (1987) proponen un procedimiento de cuatro pasos para determinar si dos variables $I(1)$ están cointegradas de orden $CI(1,1)$:
+Para explicar el procedimiento de prueba de Engle-Granger, comencemos con el tipo de problema que es usual en los estudios aplicados. Suponga que dos variables, digamos $y_t$ y $z_t$, son integradas de orden $1$ y se desea determinar si existe una relación de equilibrio entre las dos. Engle y Granger (1987) proponen un procedimiento de cuatro pasos para determinar si dos variables $I(1)$ están cointegradas de orden $CI(1,1)$:
 
 1) **Haga una prueba preliminar de las variables para conocer su orden de integración.**
    
-   Por definición, la cointegración requiere que dos variables estén integradas en el mismo orden. Por lo tanto, el primer paso en el análisis es probar cada variable para determinar su orden de integración.
-     * Si ambas variables son estacionarias, no es necesario continuar ya que los métodos estándar de series de tiempo se aplican a las variables estacionarias.
-     * Si las variables están integradas de diferentes órdenes, es posible concluir que no están cointegradas.
-     * Sin embargo, si tiene más de dos variables, de manera que algunas son $I(1)$ y otras son $I(2)$, es posible que desee determinar si las variables están integradas en forma múltiple.
+   Por definición, la cointegración requiere que dos variables estén integradas en el mismo orden. Por lo tanto, el primer paso en el análisis es determinar para cada variable su orden de integración.
+     * Si ambas variables son estacionarias, no es necesario continuar ya que el método VAR se aplica a las variables estacionarias.
+     * Si las variables están integradas de diferentes órdenes, se concluye que no están cointegradas.
+     * Sin embargo, si tiene más de dos variables, de manera que algunas son $I(1)$ y otras son $I(2)$, es posible que desee determinar si las variables están cointegradas en forma múltiple.
 
 2) **Estime la relación del equilibrio a largo plazo.**
 
@@ -85,29 +85,30 @@ Para explicar el procedimiento de prueba de Engle-Granger, comencemos con el tip
 
    Para determinar si las variables están realmente cointegradas, sea { $\hat{e_t}$ } la secuencia de residuos de esta ecuación. Por lo tanto, la serie { $\hat{e_t}$ } contiene los valores estimados de las desviaciones de la relación de largo plazo. Si se encuentra que estas desviaciones son estacionarias, las secuencias { $y_t$ } y { $z_t$ } son cointegradas de orden $(1,1)$. 
 
-   Sería conveniente si pudiéramos realizar una prueba ADF de estos residuos para determinar su orden de integración. Considere la regresión de los residuos: $\Delta\hat{e}=a_1\hat{e_{t-1}}+\varepsilon_t$. Dado que la secuencia { $\hat{e_t}$ } es el residuo de una regresión (con una media necesariamente igual a cero), no es necesario incluir un intercepto; el parámetro de interés es $a_1$.
+   Sería conveniente si si se pudiera realizar una prueba ADF de estos residuos para determinar su orden de integración. Considere la regresión de los residuos: $\Delta\hat{e}=a_1\hat{e_{t-1}}+\varepsilon_t$ (dado que la secuencia { $\hat{e_t}$ } es el residuo de una regresión, donde su media necesariamente igual a cero, entonces no es necesario incluir un intercepto dentro de la regresión) donde el parámetro de interés es $a_1$:
 
-   * Si no podemos rechazar la hipótesis nula $a_1=0$, podemos concluir que los residuos tienen una raíz unitaria. Por lo tanto, concluimos que las secuencias { $y_t$ } y { $z_t$ } no están cointegradas.
-   * En cambio, el rechazo de la hipótesis nula implica que la secuencia de residuos es estacionaria. Dado que se encontró que { $y_t$ } y { $z_t$ } son $I(1)$ y que los residuos son estacionarios, podemos concluir que las series están cointegradas de orden $(1,1)$.
+   * Si no se puede rechazar la hipótesis nula $a_1=0$, se concluye que los residuos tienen una raíz unitaria. Por lo tanto, se concluye que las secuencias { $y_t$ } y { $z_t$ } no están cointegradas.
+   * En cambio, el rechazo de la hipótesis nula implica que la secuencia de residuos es estacionaria. Si se encuentra que { $y_t$ } y { $z_t$ } son $I(1)$ y que los residuos son estacionarios, entonces se puede concluir que las series están cointegradas de orden $(1,1)$.
 
-   En la mayoría de los estudios aplicados, no es posible utilizar las tablas de Dickey-Fuller. El problema es que la secuencia { $\hat{e_t}$ } se genera a partir de una regresión; el investigador no conoce el error real $e_t$, solo el error estimado { $\hat{e_t}$ }.[^*]
+   En la mayoría de los estudios aplicados, no es posible utilizar las tablas de Dickey-Fuller. El problema es que la secuencia { $\hat{e_t}$ } se genera a partir de una regresión; donde el investigador no conoce el error real $e_t$, solo el error estimado { $\hat{e_t}$ }.[^*]
 
 [^*]: **Engle y Granger (1987) propusieron nuevas tablas para hacer los cálculos. Y estas posteriormente fueron actualizadas por MacKinnon (1990). En estas tablas, los valores críticos dependen del tamaño de la muestra y del número de variables utilizadas en el análisis**
 
 3) **Estime el modelo de corrección de errores**
 
-Si las variables están cointegradas, los residuos de la regresión de equilibrio se pueden usar para estimar el modelo de corrección de errores. Si { $y_t$ } y { $z_t$ } son $CI(1,1)$, las variables tienen la forma de corrección de errores:
+   Si las variables están cointegradas, los residuos de la regresión de equilibrio se pueden utilizar para estimar el modelo de corrección de errores. Si { $y_t$ } y { $z_t$ } son $CI(1,1)$, las variables tienen la forma de corrección de errores:
 
-$I)$ $\Delta y_t = \alpha_1 + \alpha_y[y_{t-1}-\beta_1z_{t-1}]+\sum_{i=1}\alpha_{11}(i)\Delta y_{t-i}+\sum_{i=1}\alpha_{12}(i)\Delta z_{t-i}+\varepsilon_{yt}$
+   $I)$ $\Delta y_t = \alpha_1 + \alpha_y[y_{t-1}-\beta_1z_{t-1}]+\sum_{i=1}\alpha_{11}(i)\Delta y_{t-i}+\sum_{i=1}\alpha_{12}(i)\Delta z_{t-i}+\varepsilon_{yt}$
 
-$II)$ $\Delta z_t = \alpha_2 + \alpha_z[y_{t-1}-\beta_1z_{t-1}]+\sum_{i=1}\alpha_{21}(i)\Delta y_{t-i}+\sum_{i=1}\alpha_{22}(i)\Delta z_{t-i}+\varepsilon_{zt}$
+   $II)$ $\Delta z_t = \alpha_2 + \alpha_z[y_{t-1}-\beta_1z_{t-1}]+\sum_{i=1}\alpha_{21}(i)\Delta y_{t-i}+\sum_{i=1}\alpha_{22}(i)\Delta z_{t-i}+\varepsilon_{zt}$
 
-donde 
-* $\beta_1$ es el parámetro del vector de cointegración dado por $y_t=\beta_0+\beta_1 z_t + e_t$ 𝑦_𝑡=𝛽_0+𝛽_1 𝑧_𝑡+𝑒_𝑡;
-* $\varepsilon_{yt}$ y $\varepsilon_{zt}$ son  perturbaciones ruido blanco (que pueden estar corre-lacionadas entre sí), y
-* $\alpha_1$, $\alpha_2$, $\alpha_y$, $\alpha_z$, $\alpha_{11}(i)$, $\alpha_{12}(i)$, $\alpha_{21}(i)$, $\alpha_{22}(i)$ son todos los parámetros.
+   donde
 
-Engle y Granger (1987) proponen una forma de sortear las restricciones de ecuaciones cruzadas involucradas en la estimación directa de $I$ y $II$. La magnitud del residuo $\hat{e_{t-1}}$ es la desviación del equilibrio a largo plazo en el período {t-1}. Por lo tanto, es posible usar los residuos estimados { $\hat{e_{t-1}}$ }  obtenidos en el Paso 2 como una estimación de la expresión $y_{t-1}-\beta_1z_{t-1}$ en $I$ y $II$. Por lo tanto, utilizando los $\hat{e_{t-1}}$ estime el modelo de corrección de errores como:
+   * $\beta_1$ es el parámetro del vector de cointegración dado por $y_t=\beta_0+\beta_1 z_t + e_t$ 𝑦_𝑡=𝛽_0+𝛽_1 𝑧_𝑡+𝑒_𝑡;
+   * $\varepsilon_{yt}$ y $\varepsilon_{zt}$ son  perturbaciones ruido blanco (que pueden estar corre-lacionadas entre sí), y
+   * $\alpha_1$, $\alpha_2$, $\alpha_y$, $\alpha_z$, $\alpha_{11}(i)$, $\alpha_{12}(i)$, $\alpha_{21}(i)$, $\alpha_{22}(i)$ son todos los parámetros.
+   
+   Engle y Granger (1987) proponen una forma de sortear las restricciones de ecuaciones cruzadas involucradas en la estimación directa de $I$ y $II$. La magnitud del residuo $\hat{e_{t-1}}$ es la desviación del equilibrio a largo plazo en el período {t-1}. Por lo tanto, es posible usar los residuos estimados { $\hat{e_{t-1}}$ }  obtenidos en el Paso 2 como una estimación de la expresión $y_{t-1}-\beta_1z_{t-1}$ en $I$ y $II$. Por lo tanto, utilizando los $\hat{e_{t-1}}$ estime el modelo de corrección de errores como:
 
 $i)$ $\Delta y_t = \alpha_1 + \alpha_y\hat{e_{t-1}}+\sum_{i=1}\alpha_{11}(i)\Delta y_{t-i}+\sum_{i=1}\alpha_{12}(i)\Delta z_{t-i}+\varepsilon_{yt}$
 
