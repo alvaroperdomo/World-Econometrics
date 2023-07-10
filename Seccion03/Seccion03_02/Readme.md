@@ -11,31 +11,33 @@ $II$) $z_t=b_{20}-b_{21}y_t+\gamma_{21}y_{t-1}+\gamma_{22}z_{t-1}+\varepsilon_{z
 
 donde se supone que 
 * tanto { $y_t$ } como { $z_t$ } son series estacionarias; 
-* $\varepsilon_{yt}$  y $\varepsilon_{zt}$ son perturbaciones ruido blanco con desviaciones estándar $\sigma_y$  y $\sigma_z$, respectivamente; y 
+* { $\varepsilon_{yt}$ }  y { $\varepsilon_{zt}$ } son perturbaciones ruido blanco con desviaciones estándar $\sigma_y$  y $\sigma_z$, respectivamente; y 
 * { $\varepsilon_{yt}$ } y { $\varepsilon_{zt}$ } son perturbaciones ruido blanco no correlacionadas.
 
-Las ecuaciones $I$ y $II$ constituyen un vector autorregresivo de primer orden ($VAR(1)$) porque la longitud de rezago más larga es $1$. La estructura del sistema incorpora retroalimentación porque permite que $y_t$ y $z_t$ se afecten entre sí. Por ejemplo, $-b_{12}$  es el efecto contemporáneo de un cambio unitario de $z_t$ en $y_t$ y $\gamma_{12}$  es el efecto de un cambio de unitario de $z_{t-1}$ en $y_t$. 
+Las ecuaciones $I$ y $II$ constituyen un vector autorregresivo de primer orden $VAR(1)$ porque la longitud de rezago más larga es $1$. La estructura del sistema incorpora retroalimentación porque permite que $y_t$ y $z_t$ se afecten entre sí. Por ejemplo, $-b_{12}$  es el efecto contemporáneo de un cambio unitario de $z_t$ en $y_t$ y $\gamma_{12}$ es el efecto de un cambio de unitario de $z_{t-1}$ en $y_t$. 
 
-Tenga en cuenta que los términos { $\varepsilon_{yt}$ y $\varepsilon_{zt}$  son innovaciones puras (o choques) en $y_t$ y $z_t$, respectivamente. Por supuesto, 
+Tenga en cuenta que los términos $\varepsilon_{yt}$ y $\varepsilon_{zt}$ son innovaciones puras (o choques) en $y_t$ y $z_t$, respectivamente. Por supuesto, 
 * si $b_{21}≠0$, $\varepsilon_{yt}$  tiene un efecto contemporáneo indirecto en $z_t$, y
 * si $b_{12}≠0$, $\varepsilon_{zt}$  tiene un efecto contemporáneo indirecto en $y_t$. 
 
-Las ecuaciones $I$ y $II$ no pueden ser estimadas por MCO ya que $y_t$ tiene un efecto contemporáneo en $z_t$ y $z_t$ tiene un efecto contemporáneo en $y_t$. Las estimaciones de MCO sufrirían un sesgo de simultaneidad ya que los regresores y los términos de error estarían correlacionados.
+Las ecuaciones $I$ y $II$ no pueden ser estimadas por Mínimos Cuadrados Ordinarios ( $MCO$ ) ya que 
+* $y_t$ tiene un efecto contemporáneo en $z_t$ y
+* $z_t$ tiene un efecto contemporáneo en $y_t$.
 
-Es posible transformar el sistema de ecuaciones en una forma compacta:
+Por lo tanto, las estimaciones de $MCO$ sufrirían un sesgo de simultaneidad ya que los regresores y los términos de error estarían correlacionados.
 
-$$Bx_t= \Gamma_0 + \Gamma_1x_{t-1}+\varepsilon_t$$ 
+Es posible transformar el sistema de ecuaciones en una forma compacta: $\mathbf{B x_t= \Gamma_0 + \Gamma_1 x_{t-1}+\varepsilon_t}$
 
-donde $\eqalign{B = {\left\lbrack \matrix{1 & b_{12} \cr b_{21} & 1} \right\rbrack}}$, $\eqalign{x_t = {\left\lbrack \matrix{y_t \cr z_t} \right\rbrack}}$, $\eqalign{\Gamma_0 = {\left\lbrack \matrix{b_{10} \cr b_{20}} \right\rbrack}}$, $\eqalign{\Gamma_1 = {\left\lbrack \matrix{\gamma_{11} & \gamma_{12} \cr \gamma_{21} & \gamma_{22}} \right\rbrack}}$ y $\eqalign{\varepsilon_t = {\left\lbrack \matrix{\varepsilon_{yt} \cr \varepsilon_{zt}} \right\rbrack}}$
+donde $\eqalign{\mathbf{B} = {\left\lbrack \matrix{1 & b_{12} \cr b_{21} & 1} \right\rbrack}}$, $\eqalign{\mathbf{x_t} = {\left\lbrack \matrix{y_t \cr z_t} \right\rbrack}}$, $\eqalign{\mathbf{\Gamma_0}= {\left\lbrack \matrix{b_{10} \cr b_{20}} \right\rbrack}}$, $\eqalign{\mathbf{\Gamma_1} = {\left\lbrack \matrix{\gamma_{11} & \gamma_{12} \cr \gamma_{21} & \gamma_{22}} \right\rbrack}}$ y $\eqalign{\mathbf{\varepsilon_t} = {\left\lbrack \matrix{\varepsilon_{yt} \cr \varepsilon_{zt}} \right\rbrack}}$
 
-Al premultiplicar por $B^{−1}$ se obtiene el **modelo VAR en forma estándar** $x_t= A_0 + A_1x_{t-1}+e_t$  donde $A_0=B^{−1}\Gamma_0$, $A_1=B^{−1}\Gamma_1$, y $e_t=B^{−1}\varepsilon_t$
+Al premultiplicar por $\mathbf{B^{−1}}$ se obtiene el **modelo VAR en forma estándar** $\mathbf{x_t= A_0 + A_1x_{t-1}+e_t}$  donde $\mathbf{A_0=B^{−1}\Gamma_0}$, $\mathbf{A_1=B^{−1}\Gamma_1}$, y $\mathbf{e_t=B^{−1}\varepsilon_t}$
 
 Por propósitos de notación, podemos definir
-* $a_{i0}$  como el elemento $i$ del vector $A_0$,
-* $a_{ij}$ como el elemento en la fila $i$ y la columna $j$ de la matriz $A_1$, y
-* $e_{it}$ como el elemento $i$ del vector $e_t$. 
+* $a_{i0}$  como el elemento $i$ del vector $\mathbf{A_0}$,
+* $a_{ij}$ como el elemento en la fila $i$ y la columna $j$ de la matriz $\mathbf{A_1}$, y
+* $e_{it}$ como el elemento $i$ del vector $\mathbf{e_t}$. 
 
-Usando esta nueva notación, podemos reescribir $x_t= A_0 + A_1x_{t-1}+e_t$ en la forma equivalente:
+Usando esta nueva notación, podemos reescribir $\mathbf{x_t= A_0 + A_1x_{t-1}+e_t}$ en la forma equivalente:
 
 $i$) $y_t=a_{10}+a_{11}y_{t-1}+a_{12}z_{t-1}+e_{1t}$ 
 
