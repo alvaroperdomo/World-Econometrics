@@ -10,7 +10,7 @@ $$ {\left\lbrack \matrix{ x_{1t} \cr x_{2t} \cr \dots \cr x_{nt} } \right\rbrack
 $$
 
 * los $A_{i0}$ son los interceptos,
-* los $A_{ij}(L)$ son los polinomios en el operador de rezagos $L$. Los coeficientes individuales de los $A_{ij}(L)$ se denotan por $a_{ij}(1), a_{ij}(2)$. Como todas las ecuaciones tienen la misma longitud de rezagos, los polinomios $A_{ij}(L)$ son todos del mismo grado.
+* los $A_{ij}(L)$ son los polinomios en el operador de rezagos $L$. Los coeficientes individuales de los $A_{ij}(L)$ se denotan por $a_{ij}(1), a_{ij}(2), \dots$. Como todas las ecuaciones tienen la misma longitud de rezagos, los polinomios $A_{ij}(L)$ son todos del mismo grado.
 * Los términos $e_{1t}$ son perturbaciones ruido blanco que pueden estar correlacionadas entre sí.
 * La matriz de varianzas y covarianza $\mathbf{\Sigma}$ tiene dimensión ($n \times n$)
 
