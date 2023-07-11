@@ -23,7 +23,7 @@ Las ecuaciones $I$ y $II$ no pueden ser estimadas por Mínimos Cuadrados Ordinar
 * $y_t$ tiene un efecto contemporáneo en $z_t$ y
 * $z_t$ tiene un efecto contemporáneo en $y_t$.
 
-Por lo tanto, las estimaciones de $MCO$ sufrirían un sesgo de simultaneidad ya que los regresores y los términos de error estarían correlacionados.
+Por lo tanto, las estimaciones de $MCO$ sufrirían un sesgo de simultaneidad en donde los regresores y los términos de error estarían correlacionados.
 
 Es posible transformar el sistema de ecuaciones en una forma compacta: $\mathbf{B x_t= \Gamma_0 + \Gamma_1 x_{t-1}+\varepsilon_t}$
 
