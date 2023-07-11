@@ -191,7 +191,7 @@ $\dots$
 
 $\Delta x_{nt}=s_n(\pi_{n1}x_{n(t-1)} + \pi_{n2}x_{n(t-1)} + \dots + \pi_{nn}x_{n(t-1)}) + a_{n0} + \varepsilon_{nt}$
 
-donde $\s_i$ es un escalar tal que $\s_i \pi_{1j}= \pi_{ij}$  
+donde $s_i$ es un escalar tal que $s_i \pi_{1j}= \pi_{ij}$  
 
 Si $a_i0$ se puede restringir tal que $a_i0=s_ia_{10}$, todas las secuencias { $\Delta x_{it}$ } se pueden escribir con la constante incluida en el vector de cointegración:
 
@@ -235,18 +235,7 @@ De los gráficos previos, note que es necesario una constante fuera de la relaci
 
 Al igual que con la prueba $ADF$, el modelo multivariado también puede generalizarse para permitir un proceso autorregresivo de orden superior. 
 
-Considere $x_t = A_1x_{t-1} + A_2x_{t-2}  + \ dots +  A_px_{t-p} + \varepsilon_t$ donde
-
-$$ 
-\mathbf{x_t} = \left[\begin{array}{ccc} 
-x_{1t} \\ 
-x_{2t} \\ 
-\dots \\ 
-x_{nt}  
-\end{array}\right] 
-$$
-
-y $\mathbf{\varepsilon_t}$ es un vector n-dimensional distribuido de forma independiente e idéntica con media cero y matriz de varianza $\Sigma_\varepsilon$.
+Considere $x_t = A_1x_{t-1} + A_2x_{t-2}  + \ dots +  A_px_{t-p} + \varepsilon_t$ donde $\eqalign{\mathbf{x_t} = {\left\lbrack \matrix{x_{1t} \cr x_{2t} \cr \dots \cr x_{nt} } \right\rbrack}}$ y $\mathbf{\varepsilon_t}$ es un vector n-dimensional distribuido de forma independiente e idéntica con media cero y matriz de varianza $\Sigma_\varepsilon$.
 
 
 
