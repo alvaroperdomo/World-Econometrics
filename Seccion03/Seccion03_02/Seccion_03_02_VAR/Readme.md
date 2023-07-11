@@ -58,11 +58,9 @@ La metodología de Sims implica únicamente:
 1) **la determinación de las variables apropiadas para incluir en el $VAR$:** Las variables que se incluirán en el $VAR$ se seleccionan de acuerdo con el modelo económico relevante.
 2) **la determinación de la longitud de rezagos apropiada:** Existen una serie de pruebas (las cuales se explicarán más adelante) para hacer esto. No se hace un intento explícito de "reducir" el número de parámetros estimados. La matriz $\mathbf{A_0}$ contiene $n$ parámetros, y cada matriz $\mathbf{A_i}$ contiene $n^2$ parámetros; por lo tanto, $n+pn^2$ coeficientes deben ser estimados. 
 
-Sin lugar a dudas, el $VAR$ esta sobreparameterizado ya que muchas de las estimaciones de los coeficientes serán no significativas. Sin embargo, el objetivo es encontrar las interrelaciones importantes entre las variables. Imponer incorrectamente restricciones nulas puede desperdiciar información importante. Además, es probable que los regresores sean altamente colineales, de modo que las pruebas $t$ sobre los coeficientes individuales no son guías confiables para reducir el modelo.
+Sin lugar a dudas, el $VAR$ esta sobreparameterizado ya que muchas de las estimaciones de los coeficientes serán no significativas. Sin embargo, el objetivo es encontrar las interrelaciones importantes entre las variables. Imponer incorrectamente restricciones nulas puede desperdiciar información importante. Además, _es probable que los regresores sean altamente colineales, de modo que las pruebas $t$ sobre los coeficientes individuales no son guías confiables para reducir el modelo_.
 
-De todas formas, 
-
-# Pronósticos
+# Los Pronósticos
 Una vez que se ha estimado el $VAR$, se puede utilizar como un modelo de pronóstico de múltiples ecuaciones. 
 
 Suponga que estima el modelo de primer orden $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$ para obtener los valores de los coeficientes en $\mathbf{A_0}$ y en $\mathbf{A_1}$. Si sus datos van hasta el período $T$, es sencillo obtener los pronósticos de un periodo hacia adelante de sus variables utilizando la relación $E_T\mathbf{x_{T+1}=A_0+A_1x_T}$. De manera similar, se puede obtener un pronóstico de dos periodos hacia adelante utilizando la relación $E_T\mathbf{x_{T+2}=A_0+A_1x_{T+1}=A_0+A_1(A_0+A_1x_T)}$. 
