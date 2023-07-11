@@ -23,7 +23,7 @@ La última representación $VMA$ es una herramienta especialmente útil para exa
 2) De la misma manera, los elementos $\phi_{11}(1)$ y $\phi_{12}(1)$ representan:
    * Los efectos de los cambios unitarios de $\varepsilon_{y(t-1)}$ y $\varepsilon_{z(t-1)}$ en $y_t$, respectivamente.
    * Los efectos de los cambios unitarios de $\varepsilon_{yt}$ y $\varepsilon_{zt}$ en $y_{t+1}$, respectivamente.
-   * Los efectos de los cambios unitarios de $\varepsilon_{y(t+s)}$ y $\varepsilon_{z(t+s)}$ en $y_{t+s+1}$, respectivamente.
+   * Los efectos de los cambios unitarios de $\varepsilon_{y(t+s)}$ y $\varepsilon_{z(t+s)}$ en $y_{t+s+1}$, respectivamente; para todo $s=\dots, -1, 0, 1, \dots$.
 
 Los efectos acumulados de los impulsos unitarios en $\varepsilon_{yt}$  y/o $\varepsilon_{zt}$  se pueden obtener mediante la suma apropiada de los coeficientes de las funciones de impulso-respuesta. Por ejemplo, tenga en cuenta que, después de $n$ periodos, el efecto de $\varepsilon_{zt}$  en el valor de $y_{t+n}$ es $\phi_{12}(n)$. Por lo tanto, después de $n$ periodos, la suma acumulada de los efectos de $\varepsilon_{zt}$  en la secuencia { $y_t$ } es $\eqalign{\sum_{i=0}^n \phi_{12}(i)}$
 
