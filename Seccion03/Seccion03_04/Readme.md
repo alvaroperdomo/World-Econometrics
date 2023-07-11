@@ -1,5 +1,7 @@
 # Cointegración
 
+A continuación, dando click en la X de la segunda columna de la siguiente tabla se redirigira a la explicación de cada uno de los aspectos teóricos que se encuentran en la primera columna de la tabla. Por otra parte, dando click en la X de la tercera columna de la tabla podra ver las aplicaciones en R de cada uno de estos temas:
+
 | Temas                                                                                                     | Explicación teórica                   |  Aplicación en R                     |
 |-----------------------------------------------------------------------------------------------------------|:-------------------------------------:|:---------------------:|
 | ¿Qué es la Cointegración?                                                                                 |  [X](Seccion02_02_ADF_T/Readme.md)    | [X](Seccion02_02_ADF_R/Readme.md)    | 
