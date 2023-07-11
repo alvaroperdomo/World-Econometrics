@@ -31,26 +31,28 @@ roots(p)
 |--------------------|---------------------------------------------------------------------------------------------------------------------|
 | **p**              | Nombre del Vector autorregresivo (VAR) que ha sido estimado                                                         |
 
+##  Pruebas sobre los residuos
 ``` r
 acf(residuals(modelo)[,1])
 ```
 
-Prueba Portmanteau Multivariada
+###  Prueba Portmanteau Multivariada
 ``` r
 serial.test(modelo,lags.pt=10)
 ```
 
-Prueba de normalidad de los residuos
+### Prueba de normalidad de los residuos
 ``` r
 normality.test(modelo, multivariate.only=FALSE)
 ```
 
-Prueba de Granger
+### Prueba de Granger
 ``` r
 grangertest(diff(y) ~ diff(x),order=1,data=Datos)
 grangertest(diff(x) ~ diff(y),order=1,data=Datos)
 ```
-Funciones Impulso-Respuesta
+
+# Funciones Impulso-Respuesta
 ``` r
 modelo.irf<-irf(modelo,impulse="x", response="y")
 modelo.irf2<-irf(modelo,impulse="x", response="x")
