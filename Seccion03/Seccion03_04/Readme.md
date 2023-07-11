@@ -272,7 +272,7 @@ $\dots$
 
 $\Delta x_{nt}=s_n(\pi_{n1}x_{n(t-1)} + \pi_{n2}x_{n(t-1)} + \dots + \pi_{nn}x_{n(t-1)} + b_{n0}) + b_{n1} + \varepsilon_{nt}$
 
-donde  $\s_i b_{10} + b_{11}= a_(10)$  
+donde  $s_i b_{10} + b_{11}= a_(10)$  
 
 Todo lo que se hace es dividir $a_(10)$ en dos partes y colocar una parte dentro de la relación de cointegración. Es necesaria alguna estrategia de identificación ya que la proporción del intercepto a incluir en el vector de cointegración es arbitraria. 
 
