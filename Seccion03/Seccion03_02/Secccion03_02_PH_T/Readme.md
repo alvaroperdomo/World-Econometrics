@@ -18,9 +18,9 @@ $$
 ## ¿Cuántos rezagos incluir en un $VAR$?
 Además de la determinación del conjunto de variables a incluir en el $VAR$, es importante determinar la longitud apropiada de rezagos. Un posible procedimiento es permitir diferentes longitudes de rezago para cada variable en cada ecuación. Sin embargo, para preservar la simetría del sistema (y poder usar $MCO$ de manera eficiente), es común usar la misma longitud de rezagos para todas las ecuaciones. [^2] 
 
-[^2]: **Siempre que haya regresores idénticos en cada ecuación, las estimaciones MCO son consistentes y asintóticamente eficientes.** 
+[^2]: **Siempre que haya regresores idénticos en cada ecuación, las estimaciones _MCO_ son consistentes y asintóticamente eficientes.** 
 
-Si algunas de las ecuaciones $VAR$ tienen regresores no incluidos en las otras, las regresiones aparentemente no relacionadas ($SUR$ por sus siglas en inglés) proporcionan estimaciones eficientes de los coeficientes $VAR$. Por lo tanto, cuando hay una buena razón para dejar que las longitudes de los rezagos difieran entre las ecuaciones, estime un $near-VAR$ utilizando un $SUR$.
+Si algunas de las ecuaciones del $VAR$ tienen regresores no incluidos en las otras, las regresiones aparentemente no relacionadas ($SUR$ por sus siglas en inglés) proporcionan estimaciones eficientes de los coeficientes $VAR$. Por lo tanto, cuando hay una buena razón para dejar que las longitudes de los rezagos difieran entre las ecuaciones, estime un $near-VAR$ utilizando un $SUR$.
 
 En un $VAR$, los rezagos consumen rápidamente los grados de libertad. Si la longitud del rezago es $p$, cada una de las $p$ ecuaciones contiene $np$ coeficientes más el intercepto. La selección apropiada de la longitud de rezagos puede ser crítica. 
 * Si $p$ es demasiado pequeño, el modelo está mal especificado;
