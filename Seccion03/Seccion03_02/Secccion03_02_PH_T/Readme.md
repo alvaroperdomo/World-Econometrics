@@ -1,5 +1,6 @@
 # Pruebas de Hipótesis
 
+## ¿Cuáles variables incluir en un $VAR$?
 En principio, no hay nada que impida incorporar una gran cantidad de variables en el $VAR$. Es posible construir un $VAR$ de $n$ ecuaciones con cada ecuación conteniendo $p$ rezagos de todas las $n$ variables en el sistema. Por lo general, uno quiere incluir aquellas variables que tienen importantes efectos económicos entre sí. No obstante, tenga en cuenta que los grados de libertad disminuyen rápidamente a medida que se incluyen más variables. [^1] 
 
 [^1]: **Por ejemplo, al usar datos con 5 rezagos, la inclusión de una variable adicional usa 5 grados adicionales de libertad en cada ecuación.** 
@@ -14,6 +15,7 @@ $$
 * Los términos $e_{1t}$ son perturbaciones ruido blanco que pueden estar correlacionadas entre sí.
 * La matriz de varianzas y covarianza $\mathbf{\Sigma}$ tiene dimensión ($n \times n$)
 
+## ¿Cuántos rezagos incluir en un $VAR$?
 Además de la determinación del conjunto de variables a incluir en el $VAR$, es importante determinar la longitud apropiada de rezagos. Un posible procedimiento es permitir diferentes longitudes de rezago para cada variable en cada ecuación. Sin embargo, para preservar la simetría del sistema (y poder usar $MCO$ de manera eficiente), es común usar la misma longitud de rezagos para todas las ecuaciones. [^2] 
 
 [^2]: **Siempre que haya regresores idénticos en cada ecuación, las estimaciones MCO son consistentes y asintóticamente eficientes.** 
