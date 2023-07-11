@@ -211,7 +211,7 @@ $\dots$
 
 $\Delta x_{nt}=s_n(\pi_{n1}x_{n(t-1)} + \pi_{n2}x_{n(t-1)} + \dots + \pi_{nn}x_{n(t-1)}) + a_{n0} + \varepsilon_{nt}$
 
-donde $\s_i$ es un escalar tal que $\s_i \pi_{1j}= \pi_ij$  
+donde $\s_i$ es un escalar tal que $\s_i \pi_{1j}= \pi_{ij}$  
 
 Si $a_i0$ se puede restringir tal que $a_i0=s_ia_{10}$, todas las secuencias { $\Delta x_{it}$ } se pueden escribir con la constante incluida en el vector de cointegración:
 
@@ -252,7 +252,49 @@ $$
 \end{array}\right] 
 $$ 
 
-La característica interesante de $\mathbf{\Delta x_t=A_0+ \pi^* x_{t-1}^*+\varepsilon_t}$ es que la tendencia lineal se elimina del sistema. En esencia, los diversos $a_io$ se han modificado de tal manera que la solución general para cada { $x_it$ } no contiene una tendencia temporal. La solución al conjunto de ecuaciones en diferencias representadas por $\mathbf{\Delta x_t=A_0+ \pi^* x_{t-1}^*+\varepsilon_t}$ es tal que se espera que todos los $Delta x_{it}$ sean iguales a cero cuando $\p_{11} x_{1(t-1)} + \p_{12} x_{2(t-1)} + \dots + \p_{1n} x_{n(t-1)} + a_i0 =0$.
+La característica interesante de $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + varepsilon_t}$ es que la tendencia lineal se elimina del sistema. En esencia, los diversos $a_io$ se han modificado de tal manera que la solución general para cada { $x_it$ } no contiene una tendencia temporal. La solución al conjunto de ecuaciones en diferencias representadas $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + varepsilon_t}$ por es tal que se espera que todos los $Delta x_{it}$ sean iguales a cero cuando $\p_{11} x_{1(t-1)} + \p_{12} x_{2(t-1)} + \dots + \p_{1n} x_{n(t-1)} + a_{i0} =0$.
+
+Para resaltar la diferencia entre $\mathbf{\Delta x_t=A_0+ \pi x_{t-1}+\varepsilon_t}$ y $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + varepsilon_t}$, la figura de abajo ilustra las consecuencias de utilizar $a_10=0.1$ y $a_20=-0.1$.  
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/217d2e36-944c-493c-8cab-b45d1ff27ff6)
+
+Se puede ver que ninguna secuencia contiene una tendencia determinista. De hecho, para los datos que se muestran en la figura, la tendencia desaparecerá siempre que seleccionemos valores de los interceptos manteniendo la relación $a_10=-a_20$.
+
+**Algunos econometristas prefieren incluir un intercepto en el vector de cointegración junto con un intercepto fuera de éste.** Esto tiene sentido si las variables contienen un intercepto y si la teoría económica sugiere que el vector de cointegración contiene un intercepto. Sin embargo, debe quedar claro que el intercepto en el vector de cointegración no se identifica en presencia de un intercepto fuera de este. Después de todo, alguna parte del intercepto no restringido siempre puede incluirse en el vector de cointegración. 
+
+En términos del ejemplo anterior, el sistema siempre puede escribirse como:
+
+$\Delta x_{1t}= (\pi_{11}x_{1(t-1)} + \pi_{12}x_{2(t-1)} + \dots + \pi_{1n}x_{1(t-1)} + b_{10}) + b_{11} + \varepsilon_{1t}$
+
+$\Delta x_{2t}=s_2(\pi_{21}x_{2(t-1)} + \pi_{22}x_{2(t-1)} + \dots + \pi_{2n}x_{2(t-1)} + b_{20}) + b_{21} + \varepsilon_{2t}$
+
+$\dots$
+
+$\Delta x_{nt}=s_n(\pi_{n1}x_{n(t-1)} + \pi_{n2}x_{n(t-1)} + \dots + \pi_{nn}x_{n(t-1)} + b_{n0}) + b_{n1} + \varepsilon_{nt}$
+
+donde  $\s_i b_{10} + b_{11}= a_(10)$  
+
+Todo lo que se hace es dividir $a_(10)$ en dos partes y colocar una parte dentro de la relación de cointegración. Es necesaria alguna estrategia de identificación ya que la proporción del intercepto a incluir en el vector de cointegración es arbitraria. 
+
+De los gráficos previos, note que es necesario una constante fuera de la relación de cointegración para capturar los efectos de una tendencia sostenida de las variables a aumentar (o a disminuir). La mayoría de los investigadores incluyen interceptos si los datos se asemejan a los gráficos donde ambos interceptos eran 0.1 o donde los interceptos eram 0.1 y 0.4. De lo contrario, incluyen interceptos en el vector de cointegración o excluyen por completo a los regresores deterministas. Si no está seguro, puede usar los métodos que se describen más adelante para probar si las desviaciones se pueden restringir adecuadamente. R permite incluir una tendencia de tiempo determinista en el modelo. Claro que es mejor evitar el uso de la tendencia como variable explicativa a menos que tenga una buena razón para incluirla en el modelo. Johansen (1994) discute el papel de los regresores deterministas en una relación de cointegración.
+
+Al igual que con la prueba $ADF$, el modelo multivariado también puede generalizarse para permitir un proceso autorregresivo de orden superior. 
+
+Considere $x_t = A_1x_{t-1} + A_2x_{t-2}  + \ dots +  A_px_{t-p} + \varepsilon_t$ donde
+
+$$ 
+\mathbf{x_t} = \left[\begin{array}{ccc} 
+x_{1t} \\ 
+x_{2t} \\ 
+\dots \\ 
+x_{nt}  
+\end{array}\right] 
+$$
+
+y $\mathbf{\varepsilon_t}$ es un vector n-dimensional distribuido de forma independiente e idéntica con media cero y matriz de varianza $\Sigma_\varepsilon$.
+
+
+
 
 
 
