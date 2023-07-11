@@ -31,7 +31,7 @@ donde $\eqalign{\mathbf{B} = {\left\lbrack \matrix{1 & b_{12} \cr b_{21} & 1} \r
 
 Al premultiplicar por $\mathbf{B^{−1}}$ se obtiene el **modelo VAR en forma estándar** $\mathbf{x_t= A_0 + A_1x_{t-1}+e_t}$  donde $\mathbf{A_0=B^{−1}\Gamma_0}$, $\mathbf{A_1=B^{−1}\Gamma_1}$, y $\mathbf{e_t=B^{−1}\varepsilon_t}$
 
-Por propósitos de notación, podemos definir
+Para propósitos de notación, podemos definir
 * $a_{i0}$  como el elemento $i$ del vector $\mathbf{A_0}$,
 * $a_{ij}$ como el elemento en la fila $i$ y la columna $j$ de la matriz $\mathbf{A_1}$, y
 * $e_{it}$ como el elemento $i$ del vector $\mathbf{e_t}$. 
