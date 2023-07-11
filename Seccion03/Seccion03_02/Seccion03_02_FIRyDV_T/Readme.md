@@ -1,4 +1,4 @@
-## La Función Impulso-Respuesta
+# La Función Impulso-Respuesta
 Al igual que un proceso autorregresivo tiene una representación de media móvil, un $VAR$ puede escribirse como un vector de media móvil ($VMA$). 
 
 $\eqalign{\mathbf{x_t=\mu+\sum_{i=1}^p A_1^i e_{t-i}}}$ es la representación $VMA$ de $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$  en donde las variables (es decir, $y_t$ y $z_t$) se expresan en términos de los valores actuales y pasados de los dos tipos de choques (es decir, $e_{1t}$ y $e_{2t}$).[^2] 
@@ -54,7 +54,7 @@ El beneficio de este método es que no necesita hacer supuestos especia-les con 
 
 Considere el sistema de dos variables $i$  y $ii$. El problema se complica porque los residuos de la regresión están correlacionados. Como tal, se necesita escoger aleatoriamente $e_{1t}$ y $e_{2t}$ de tal manera que se mantenga la estructura apropiada del error. Un método simple consiste en escoger aleatoriamente $e_{1t}$ y usar el valor de $e_{2t}$ que corresponde a ese mismo período. Si usa una descomposición de Choleski tal que $b_{21}=0$, construya $\varepsilon_{yt}$ y $\varepsilon_{zt}$  utilizando $e_{1t}=\varepsilon_{yt}-b_{12}\varepsilon_{zt}$ y $e_{2t}=\varepsilon_zt$.
 
-## La Descomposición de Varianza
+# La Descomposición de Varianza
 
 Otra ayuda útil para descubrir las interrelaciones entre las variables en el sistema es la descomposición de varianza del error de pronóstico. 
 
