@@ -25,3 +25,7 @@ VAR(x, p = 1, type = c("const", "trend", "both", "none"), season = NULL, exogen 
 | **exogen**         | Se da la opción de incluir variables exógenas adicionales dentro del VAR                                            | 
 | **lag.max**        | el número máximo de rezagos utilizado en la prueba determinada por la opción **ic**                                 | 
 | **ic**             | Criterio de Información utilizado                                                                                   | 
+|                    | **AIC**: Criterio de Información de Akaike                                                                          | 
+|                    | **HQ**: Criterio de Información de Hannan-Quinn                                                                     | 
+|                    | **SC**: Criterio Bayesiano de Schwartz                                                                              | 
+|                    | **FPE**: Error Final de Predicción                                                                                  | 
