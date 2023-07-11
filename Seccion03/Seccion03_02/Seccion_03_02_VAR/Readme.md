@@ -55,8 +55,8 @@ Un objetivo explícito del enfoque de Box-Jenkins es proporcionar una metodolog�
 [^2]: **El objetivo final de hacer pronósticos precisos a corto plazo se logra mejor eliminando las estimaciones de parámetros insignificantes del modelo.**
 
 La metodología de Sims implica únicamente:
-1) **la determinación de las variables apropiadas para incluir en el $VAR$.** Las variables que se incluirán en el $VAR$ se seleccionan de acuerdo con el modelo económico relevante.
-2) **la determinación de la longitud de rezagos apropiada: Existen una serie de pruebas (las cuales se explicarán más adelante) para hacer esto.** No se hace un intento explícito de "reducir" el número de parámetros estimados. La matriz $\mathbf{A_0}$ contiene $n$ parámetros, y cada matriz $\mathbf{A_i}$ contiene $n^2$ parámetros; por lo tanto, $n+pn^2$ coeficientes deben ser estimados. 
+1) **la determinación de las variables apropiadas para incluir en el $VAR$:** Las variables que se incluirán en el $VAR$ se seleccionan de acuerdo con el modelo económico relevante.
+2) **la determinación de la longitud de rezagos apropiada:** Existen una serie de pruebas (las cuales se explicarán más adelante) para hacer esto. No se hace un intento explícito de "reducir" el número de parámetros estimados. La matriz $\mathbf{A_0}$ contiene $n$ parámetros, y cada matriz $\mathbf{A_i}$ contiene $n^2$ parámetros; por lo tanto, $n+pn^2$ coeficientes deben ser estimados. 
 
 Sin lugar a dudas, el $VAR$ esta sobreparameterizado ya que muchas de las estimaciones de los coeficientes serán no significativas. Sin embargo, el objetivo es encontrar las interrelaciones importantes entre las variables. Imponer incorrectamente restricciones nulas puede desperdiciar información importante. Además, es probable que los regresores sean altamente colineales, de modo que las pruebas $t$ sobre los coeficientes individuales no son guías confiables para reducir el modelo.
 
