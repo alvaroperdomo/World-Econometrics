@@ -205,11 +205,37 @@ donde
 Aunque trabajamos con variables no estacionarias, podemos realizar pruebas de longitud de rezagos utilizando el estadístico de prueba de razón de verosi-militud recomendado por Sims (1980): $(T-c)(\ln{|\mathbf{\Sigma_1}|}-\ln{|\mathbf{\Sigma_4}|})$ donde 
 * $T$ es el número de observaciones,
 * $c" es el número de parámetros en el sistema no restringido y
-* ln{|\mathbf{\Sigma_i}|} es el logaritmo natural del determinante de $\mathbf{\Sigma_i}$.
+* $ln{|\mathbf{\Sigma_i}|}$ es el logaritmo natural del determinante de $\mathbf{\Sigma_i}$.
 
 Siguiendo a Sims, use la distribución $\chi^2$ con grados de libertad igual al número de restricciones de los coeficientes. Como cada $\mathbf{A_i}$ tiene $n^2$ coeficientes, la restricción $\mathbf{A_2=A_3=A_4=0}$  implica restricciones $3n^2$. 
 
 Alternativamente, puede seleccionar la longitud del rezago $p$ utilizando las generalizaciones multivariadas del Criterio de Información de Akaike o del Criterio Bayesiano de Schwartz. En el modelo en cuestión, puede darse por ejemplo que el método general a específico y el Criterio de Información de Akaike seleccionan una longitud de rezago de $2$, mientras que el Criterio Bayesiano de Schwartz selecciona una longitud de rezago de $1$. 
+
+2) **Estime el modelo y determine el rango de $\pi$.**
+
+   Muchos paquetes de software econométrico contienen una rutina para estimar el modelo. Aquí, basta con decir que Mínimos Cuadrados Ordinarios no es apropiado porque es necesario imponer restricciones de ecuaciones cruzadas en la matriz. En la mayoría de los casos, puede elegir estimar el modelo en tres formas:
+   
+   i) con todos los elementos de $\mathbf{A_0}$ establecidos en cero,
+   
+   ii) con una constante en la ecuación, o
+   
+   iii) con un término constante en el vector de cointegración. 
+
+3) **Analice el (los) vector (es) de cointegración normalizados y la velocidad de los coeficientes de ajuste.**
+
+   Por ejemplo, asuma que si seleccionamos $r=1$, el vector estimado de cointegración $(\beta_0,\beta_1,\beta_2,\beta_3)$ es $\mathbf{\beta_t}=(0.00553, 0.41532, 0.42988, −0.42207)$. Normalizando con respecto a $\beta_1$, el vector de cointegración normalizado es $\mathbf{\beta_t}=(−0.01331, −1.0000, −1.0350, 1.0162)$.
+
+   Asuma que los valores teóricos del vector de cointegración son $(0,−1,−1, 1)$. En consecuencia, considere hacer las siguientes pruebas:
+   a) La prueba de $\beta_0=0$ implica una restricción en un vector de cointegración; por lo tanto, la prueba de razón de verosimilitud tiene una distribución $\chi^2$ con un grado de libertad.
+   b) Para restringir el vector de cointegración normalizado tal que $\beta_2=-1$ y $\beta_3=-1$ implica dos restricciones en un vector de cointegración; por lo tanto, la prueba de razón de verosimilitud tiene una distribución $\chi^2$ con dos grados de libertad.
+   c) Para probar la restricción conjunta $\mathbf{\beta_t}=(0,−1,−1, 1)$ implica las tres restricciones $\beta_0=0$, $\beta_2=-1$ y $\beta_3=-1$.
+
+4) Finalmente, **las pruebas de impulso-respuesta, descomposición de varianza y causalidad en el modelo de corrección de errores** podrían ayudar a identificar un modelo estructural y determinar si el modelo estimado parece ser razonable.
+
+
+
+
+
 
 
 
