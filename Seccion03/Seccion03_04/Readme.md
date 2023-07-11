@@ -203,27 +203,27 @@ A continuación veremos que manipulando apropiadamente los elementos de $A_0$ es
 
 Una forma de incluir una constante en las relaciones de cointegración es restringir los valores de los diversos $a_i0$. Por ejemplo, si $rango(\pi)=1$, las filas de $\pi$ pueden diferir sólo en un escalar, por lo que es posible escribir cada secuencia { $\Delta x_{it}$ } en $\mathbf{\Delta x_t=A_0+ \pi x_{t-1}+\varepsilon_t}$ como:
 
-$\Delta x_{1t}= (\pi_{11}x_{1(t-1)} + \pi_{12}x_{2(t-1)} + \dots + \pi_{1n}x_{n(t-1)}) + a_{10} + \varepsilon_{1t}$
+$\Delta x_{1t}= (\pi_{11}x_{1(t-1)} + \pi_{12}x_{2(t-1)} + \dots + \pi_{1n}x_{1(t-1)}) + a_{10} + \varepsilon_{1t}$
 
-$\Delta x_{2t}=s_2(\pi_{21}x_{2(t-1)} + \pi_{22}x_{2(t-1)} + \dots + \pi_{2n}x_{n(t-1)}) + a_{20} + \varepsilon_{2t}$
+$\Delta x_{2t}=s_2(\pi_{21}x_{2(t-1)} + \pi_{22}x_{2(t-1)} + \dots + \pi_{2n}x_{2(t-1)}) + a_{20} + \varepsilon_{2t}$
 
-$...$
+$\dots$
 
-$\Delta x_{nt}=s_n(\pi_{n1}x_{n(t-1)} + \pi_{n2}x_n(t-1)} + \dots + \pi_{nn}x_{n(t-1)}) + a_{n0} + \varepsilon_{nt}$
+$\Delta x_{nt}=s_n(\pi_{n1}x_{n(t-1)} + \pi_{n2}x_{n(t-1)} + \dots + \pi_{nn}x_{n(t-1)}) + a_{n0} + \varepsilon_{nt}$
 
 donde $\s_i$ es un escalar tal que $\s_i \pi_{1j}= \pi_ij$  
 
 Si $a_i0$ se puede restringir tal que $a_i0=s_ia_{10}$, todas las secuencias { $\Delta x_{it}$ } se pueden escribir con la constante incluida en el vector de cointegración:
 
-$\Delta x_{1t}= (\pi_{11}x_{1(t-1)} + \pi_{12}x_{2(t-1)} + \dots + \pi_{1n}x_{n(t-1)} + a_{10}) + \varepsilon_{1t}$
+$\Delta x_{1t}= (\pi_{11}x_{1(t-1)} + \pi_{12}x_{2(t-1)} + \dots + \pi_{1n}x_{1(t-1)} + a_{10}) + \varepsilon_{1t}$
 
-$\Delta x_{2t}=s_2(\pi_{21}x_{2(t-1)} + \pi_{22}x_{2(t-1)} + \dots + \pi_{2n}x_{n(t-1)} + a_{20}) + \varepsilon_{2t}$
+$\Delta x_{2t}=s_2(\pi_{21}x_{2(t-1)} + \pi_{22}x_{2(t-1)} + \dots + \pi_{2n}x_{2(t-1)} + a_{20}) + \varepsilon_{2t}$
 
-$...$
+$\dots$
 
-$\Delta x_{nt}=s_n(\pi_{n1}x_{n(t-1)} + \pi_{n2}x_n(t-1)} + \dots + \pi_{nn}x_{n(t-1)} + a_{n0}) + \varepsilon_{nt}$
+$\Delta x_{nt}=s_n(\pi_{n1}x_{n(t-1)} + \pi_{n2}x_{n(t-1)} + \dots + \pi_{nn}x_{n(t-1)} + a_{20}) + \varepsilon_{nt}$
 
-o en la forma compacta $\mathbf{\Delta x_t=A_0+ \pi^* x_{t-1}^*+\varepsilon_t}$ ∆𝑥_𝑡=𝜋^∗ 𝑥_(𝑡−1)^∗+𝜀_𝑡 donde
+o en la forma compacta $\mathbf{\Delta x_t=A_0+ \pi^* x_{t-1}^*+\varepsilon_t}$ donde
 
 $$ 
 \mathbf{x_t} = \left[\begin{array}{ccc} 
@@ -252,10 +252,15 @@ $$
 \end{array}\right] 
 $$ 
 
+La característica interesante de $\mathbf{\Delta x_t=A_0+ \pi^* x_{t-1}^*+\varepsilon_t}$ es que la tendencia lineal se elimina del sistema. En esencia, los diversos $a_io$ se han modificado de tal manera que la solución general para cada { $x_it$ } no contiene una tendencia temporal. La solución al conjunto de ecuaciones en diferencias representadas por $\mathbf{\Delta x_t=A_0+ \pi^* x_{t-1}^*+\varepsilon_t}$ es tal que se espera que todos los $Delta x_{it}$ sean iguales a cero cuando $\p_{11} x_{1(t-1)} + \p_{12} x_{2(t-1)} + \dots + \p_{1n} x_{n(t-1)} + a_i0 =0$.
+
+
+
 
 
 
 +++++++++++++++++++++
+
 Utilice los siguientes cuatro pasos cuando implemente el procedimiento Johansen:
 
 1) **Realice una prueba de todas las variables para evaluar su orden de integración.**
