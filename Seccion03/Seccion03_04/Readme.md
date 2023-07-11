@@ -201,6 +201,28 @@ de modo que la relación de cointegración es $y_t=z_t$
 
 A continuación veremos que manipulando apropiadamente los elementos de $A_0$ es posible incluir una constante en los vectores de cointegración sin necesidad de in-cluir una tendencia de tiempo determinista al sistema.
 
+Una forma de incluir una constante en las relaciones de cointegración es restringir los valores de los diversos $a_i0$. Por ejemplo, si $rango(\pi)=1$, las filas de $\pi$ pueden diferir sólo en un escalar, por lo que es posible escribir cada secuencia { $\Delta x_{it}$ } en $\mathbf{\Delta x_t=A_0+ \pi x_{t-1}+\varepsilon_t}$ como:
+
+$\Delta x_{1t}= (\pi_{11}x_{1(t-1)} + \pi_{12}x_{2(t-1)} + \dots + \pi_{1n}x_{n(t-1)}) + a_{10} + \varepsilon_{1t}$
+
+$\Delta x_{2t}=s_2(\pi_{21}x_{2(t-1)} + \pi_{22}x_{2(t-1)} + \dots + \pi_{2n}x_{n(t-1)}) + a_{20} + \varepsilon_{2t}$
+
+$\dots$
+
+$\Delta x_{nt}=s_n(\pi_{n1}x_{n(t-1)} + \pi_{n2}x_n(t-1)} + \dots + \pi_{nn}x_{n(t-1)}) + a_{n0} + \varepsilon_{nt}$
+
+donde $\s_i$ es un escalar tal que $\s_i \pi_{1j}= \pi_ij$  
+
+Si $a_i0$ se puede restringir tal que $a_i0=s_ia_{10}$, todas las secuencias { $\Delta x_{it}$ } se pueden escribir con la constante incluida en el vector de cointegración:
+
+$\Delta x_{1t}= (\pi_{11}x_{1(t-1)} + \pi_{12}x_{2(t-1)} + \dots + \pi_{1n}x_{n(t-1)} + a_{10}) + \varepsilon_{1t}$
+
+$\Delta x_{2t}=s_2(\pi_{21}x_{2(t-1)} + \pi_{22}x_{2(t-1)} + \dots + \pi_{2n}x_{n(t-1)} + a_{20}) + \varepsilon_{2t}$
+
+$\dots$
+
+$\Delta x_{nt}=s_n(\pi_{n1}x_{n(t-1)} + \pi_{n2}x_n(t-1)} + \dots + \pi_{nn}x_{n(t-1)} + a_{n0}) + \varepsilon_{nt}$
+
 
 
 
