@@ -29,7 +29,7 @@ Los efectos acumulados de los impulsos unitarios en $\varepsilon_{yt}$  y/o $\va
 
 Si se supone que las secuencias { $y_t$ } y { $z_t$ } son estacionarias, debe darse el caso de que para todos los $j$ y $k$, los valores de $\phi_{12}(i)$ convergen a cero a medida que $i$ se hace grande. Esto ocurre porque los choques no pueden tener un efecto permanente en una serie estacionaria. 
 
-Los cuatro conjuntos de coeficientes $\phi_{11}(i)$, $\phi_{12}(i)$, $\phi_{21}(i)$ y $\phi_{22}(i)$ se denominan funciones de impulso-respuesta. 
+**Los cuatro conjuntos de coeficientes $\phi_{11}(i)$, $\phi_{12}(i)$, $\phi_{21}(i)$ y $\phi_{22}(i)$ se denominan funciones de impulso-respuesta**. 
 El dibujo de las funciones impulso-respuesta (es decir, el dibujo de los coeficientes de $\phi_{jk}(i)$  en función de $i$) es una forma práctica de representar visualmente el comportamiento de las series { $y_t$ } y { $z_t$ } en respuesta a los diversos choques. 
 
 Suponga que las estimaciones de las ecuaciones $i$ y $ii$ arrojan los valores:
