@@ -1,7 +1,7 @@
 # La Función Impulso-Respuesta
 Al igual que un proceso autorregresivo tiene una representación de media móvil, un vector autorregresivo $VAR$ puede escribirse como un vector de media móvil $VMA$. 
 
-Más específicamente, $\eqalign{\mathbf{x_t=\mu+\sum_{i=1}^p A_1^i e_{t-i}}}$ es la representación $VMA$ de $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$  en donde las variables (es decir, $y_t$ y $z_t$) se expresan en términos de los valores actuales y pasados de los dos tipos de choques (es decir, $e_{1t}$ y $e_{2t}$).[^2] 
+Más específicamente, $\eqalign{\mathbf{x_t=\mu+\sum_{i=1}^p A_1^i e_{t-i}}}$ es la representación $VMA$ del $VAR$ $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$  en donde las variables (es decir, $y_t$ y $z_t$) se expresan en términos de los valores actuales y pasados de los dos tipos de choques (es decir, $e_{1t}$ y $e_{2t}$).[^2] 
 
 [^2]: **La representación _VMA_ es una característica esencial de la metodología de Sims (1980), ya que permite rastrear la trayectoria en el tiempo de los diversos choques de las variables contenidas en el sistema _VAR_**. 
 
