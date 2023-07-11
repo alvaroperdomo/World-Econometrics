@@ -25,7 +25,8 @@ Si algunas de las ecuaciones del $VAR$ tienen regresores no incluidos en las otr
 En un $VAR$, los rezagos consumen rápidamente los grados de libertad. Si la longitud del rezago es $p$, cada una de las $p$ ecuaciones contiene $np$ coeficientes más el intercepto. La selección apropiada de la longitud de rezagos puede ser crítica. 
 * Si $p$ es demasiado pequeño, el modelo está mal especificado;
 * si $p$ es demasiado grande, se pierden grados de libertad. 
-Para verificar la longitud del rezago,
+
+Para determinar la longitud del rezago,
 1) comience con la longitud plausible más larga o la longitud más larga posible dadas las consideraciones de grados de libertad.
 2) Estime el $VAR$ y forme la matriz de varianzas y covarianzas de los residuos.
 
