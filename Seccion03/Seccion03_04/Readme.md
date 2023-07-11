@@ -205,32 +205,7 @@ $\Delta x_{nt}=s_n(\pi_{n1}x_{n(t-1)} + \pi_{n2}x_{n(t-1)} + \dots + \pi_{nn}x_{
 
 o en la forma compacta $\mathbf{\Delta x_t=A_0+ \pi^* x_{t-1}^*+\varepsilon_t}$ donde
 
-$$ 
-\mathbf{x_t} = \left[\begin{array}{ccc} 
-x_{1t} \\ 
-x_{2t} \\ 
-\dots \\ 
-x_{nt}  
-\end{array}\right] 
-$$ 
-
-$$ 
-\mathbf{x_{t-1}^*} = \left[\begin{array}{ccc} 
-x_{1(t-1)} \\ 
-x_{2(t-1)} \\ 
-\dots \\ 
-x_{n(t-1)}  
-\end{array}\right] 
-$$ 
-
-$$ 
-\mathbf{ \pi^*} = \left[\begin{array}{ccc} 
-\pi_{11)} & \pi_{12)} & \dots & \pi_{1n)}\\ 
-\pi_{21)} & \pi_{22)} & \dots & \pi_{2n)} \\ 
-\dots \\ 
-\pi_{n1)} & \pi_{n2)} & \dots & \pi_{nn)}  
-\end{array}\right] 
-$$ 
+$\eqalign{\mathbf{x_t} = {\left\lbrack \matrix{x_{1t} \cr x_{2t} \cr \dots \cr x_{nt} } \right\rbrack}}$, $\eqalign{\mathbf{x_{t-1}^*} = {\left\lbrack \matrix{x_{1(t-1)} \cr x_{2(t-1)} \cr \dots \cr x_{n(t-1)} } \right\rbrack}}$, y $\eqalign{\mathbf{ \pi* } = {\left\lbrack \matrix{\pi_{11} & \pi_{12} & \dots & \pi_{1n} \cr \pi_{21} & \pi_{22} & \dots & \pi_{2n} \cr \dots & \dots & \dots & \dots \cr \pi_{n1} & \pi_{n2} & \dots & \pi_{nn} } \right\rbrack}}$ 
 
 La característica interesante de $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + varepsilon_t}$ es que la tendencia lineal se elimina del sistema. En esencia, los diversos $a_io$ se han modificado de tal manera que la solución general para cada { $x_it$ } no contiene una tendencia temporal. La solución al conjunto de ecuaciones en diferencias representadas $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + varepsilon_t}$ por es tal que se espera que todos los $Delta x_{it}$ sean iguales a cero cuando $\pi_{11} x_{1(t-1)} + \pi_{12} x_{2(t-1)} + \dots + \pi_{1n} x_{n(t-1)} + a_{i0} =0$.
 
