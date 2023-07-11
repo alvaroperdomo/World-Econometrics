@@ -177,15 +177,13 @@ Los estimadores de máxima verosimilitud de Johansen (1988) evitan el uso de est
 
 El procedimiento de Johansen (1988) se basa en gran medida en la relación entre el rango de una matriz y sus raíces características. Este no es más que una generalización multivariada de la prueba $DF$. En el caso univariado, es posible ver que la estacionariedad de { $y_t$ } depende de $a_1$; es decir, dados $y_t=a_1y_{t-1}+\varepsilon_t$ o $\Delta y_t=(a_1-1)y_{t-1}+\varepsilon_t$. Si $(a_1-1)=0$, el proceso { $y_t$ } tiene una raíz unitaria. Descartando el caso en el que { $y_t$ } es explosivo, si $(a_1-1)≠0$ podemos concluir que la secuencia { $y_t$ } es estacionaria. Las tablas de Dickey-Fuller proporcionan los estadísticos apropiados para probar formalmente la hipótesis nula $(a_1-1)=0$.
 
-Consideremos la generalización al caso simple con 𝑛 variables; asuma que el vector $x_t$ de $n$ variables, se comporta como $x_t=A_1x_{t-1}+\varepsilon_t$  así que $\Delta x_t=A_1x_{t-1}-x_{t-1}+\varepsilon_t=(A_1-I)x_{t-1}+\varepsilon_t=\pi x_t-1+\varepsilon_t$ donde 
-* $\varepsilon_t$ es un vector ( $n\times 1$ ),
-* $A_1$ es una matriz ( $n\times n$ ) de parámetros, 
-* $I$ es una matriz identidad ( $n\times n$ ), 
-𝜋 se define como (𝐴_1−𝐼).
-El rango de (𝐴_1−𝐼) es igual al número de vectores de cointegración. 
-Por analogía con el caso univariado, si (𝐴_1−𝐼)  tiene solo ceros, de modo que el 𝑟𝑎𝑛𝑔𝑜(𝜋)=0, todas las secuencias {𝑥_𝑖𝑡} son raíz unitaria. 
-En esta situación, dado que no hay una combinación lineal de los procesos {𝑥_𝑖𝑡} que sea estacio-naria, las variables no se cointegran. 
-Descartando la presencia de raíces características mayores que 1 y si el 𝑟𝑎𝑛𝑔𝑜(𝜋)=𝑛, ∆𝑥_𝑡=𝜋𝑥_(𝑡−1)+𝜀_𝑡 es un sistema convergente de ecuacio-nes en diferencias, de modo que todas las variables son estacionarias.
+Consideremos la generalización al caso simple con {n} variables; asuma que el vector $\mathbf{x_t}$ de $n$ variables, se comporta como $\mathbf{x_t=A_1x_{t-1}+\varepsilon_t}$  así que $\mathbf{\Delta x_t=A_1x_{t-1}-x_{t-1}+\varepsilon_t=(A_1-I)x_{t-1}+\varepsilon_t=\pi x_t-1+\varepsilon_t}$ donde 
+* $\mathbf{\varepsilon_t}$ es un vector ( $n\times 1$ ),
+* $\mathbf{A_1}$ es una matriz ( $n\times n$ ) de parámetros, 
+* $\mathbf{I}$ es una matriz identidad ( $n\times n$ ),
+* $\mathbf{\pi}$ se define como $\mathbf{(A_1-I}$.
+
+El rango de $\mathbf{(A_1-I}$ es igual al número de vectores de cointegración. Por analogía con el caso univariado, si $\mathbf{(A_1-I}$  tiene solo ceros, de modo que el $rango(\pi)=0$, todas las secuencias { $x_{it}$ } tienen raíz unitaria. En esta situación, dado que no hay una combinación lineal de los procesos { $x_{it}$ } que sea estacionaria, las variables no se cointegran. Descartando la presencia de raíces características mayores que $1$ y si el $rango(\pi)=n$, $\mathbf{\Delta x_t=\pi x_{t-1} + \varepsilon_t}$ es un sistema convergente de ecuacio-nes en diferencias, de modo que todas las variables son estacionarias.
 
 
 
