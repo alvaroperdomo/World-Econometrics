@@ -16,7 +16,7 @@ VARselect(x, lag.max = 10, type = c("const", "trend", "both", "none"), season = 
 |                    |  **"trend"** para un VAR con tendencia lineal                                                                       |
 |                    |  **"both"** para un VAR con intercepto y con tendencia lineal                                                       |
 |                    |  **"none"** para un VAR sin intercepto y sin tendencia lineal                                                       |
-| **season**         | se da la opción de incluir variables dummy centradas dentro del VAR                                                 |
+| **season**         | se da la opción de incluir variables dummy estacionales centradas dentro del VAR                                    |
 | **exogen**         | Se da la opción de incluir variables exógenas adicionales dentro del VAR                                            | 
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
