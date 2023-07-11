@@ -29,7 +29,7 @@ Es posible transformar el sistema de ecuaciones en una forma compacta: $\mathbf{
 
 donde $\eqalign{\mathbf{B} = {\left\lbrack \matrix{1 & b_{12} \cr b_{21} & 1} \right\rbrack}}$, $\eqalign{\mathbf{x_t} = {\left\lbrack \matrix{y_t \cr z_t} \right\rbrack}}$, $\eqalign{\mathbf{\Gamma_0}= {\left\lbrack \matrix{b_{10} \cr b_{20}} \right\rbrack}}$, $\eqalign{\mathbf{\Gamma_1} = {\left\lbrack \matrix{\gamma_{11} & \gamma_{12} \cr \gamma_{21} & \gamma_{22}} \right\rbrack}}$ y $\eqalign{\mathbf{\varepsilon_t} = {\left\lbrack \matrix{\varepsilon_{yt} \cr \varepsilon_{zt}} \right\rbrack}}$
 
-Al premultiplicar por $\mathbf{B^{−1}}$ se obtiene el **modelo VAR en forma estándar** $\mathbf{x_t= A_0 + A_1x_{t-1}+e_t}$  donde $\mathbf{A_0=B^{−1}\Gamma_0}$, $\mathbf{A_1=B^{−1}\Gamma_1}$, y $\mathbf{e_t=B^{−1}\varepsilon_t}$
+Al premultiplicar por $\mathbf{B^{−1}}$ se obtiene $\mathbf{x_t= A_0 + A_1x_{t-1}+e_t}$  donde $\mathbf{A_0=B^{−1}\Gamma_0}$, $\mathbf{A_1=B^{−1}\Gamma_1}$, y $\mathbf{e_t=B^{−1}\varepsilon_t}$
 
 Para propósitos de notación, podemos definir
 * $a_{i0}$ como el elemento $i$ del vector $\mathbf{A_0}$,
