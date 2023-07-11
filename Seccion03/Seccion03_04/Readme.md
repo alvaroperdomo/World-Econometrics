@@ -1,4 +1,4 @@
-# Cointegración
+**# Cointegración
 
 En los modelos univariados una tendencia estocástica puede eliminarse por diferenciación, las series estacionarias resultantes se pueden estimar utilizando las técnicas univariadas de Box-Jenkins. Anteriormente, la práctica convencional era generalizar esta idea a los modelos multivariados y diferenciar todas las variables no estacionarias utilizadas en un análisis de regresión para luego estimar un modelo VAR en diferencias. Sin embargo, hoy en día la forma adecuada de tratar las variables no estacionarias no es tan sencilla en un contexto multivariado. Es bastante posible que haya una combinación lineal de variables integradas que sea estacionaria y que por lo tanto configure una relación de largo plazo[^1]; si esto ocurre se dice que tales variables están **cointegradas**. 
 
@@ -177,15 +177,19 @@ Los estimadores de máxima verosimilitud de Johansen (1988) evitan el uso de est
 
 El procedimiento de Johansen (1988) se basa en gran medida en la relación entre el rango de una matriz y sus raíces características. Este no es más que una generalización multivariada de la prueba $DF$. En el caso univariado, es posible ver que la estacionariedad de { $y_t$ } depende de $a_1$; es decir, dados $y_t=a_1y_{t-1}+\varepsilon_t$ o $\Delta y_t=(a_1-1)y_{t-1}+\varepsilon_t$. Si $(a_1-1)=0$, el proceso { $y_t$ } tiene una raíz unitaria. Descartando el caso en el que { $y_t$ } es explosivo, si $(a_1-1)≠0$ podemos concluir que la secuencia { $y_t$ } es estacionaria. Las tablas de Dickey-Fuller proporcionan los estadísticos apropiados para probar formalmente la hipótesis nula $(a_1-1)=0$.
 
-Consideremos la generalización al caso simple con {n} variables; asuma que el vector $\mathbf{x_t}$ de $n$ variables, se comporta como $\mathbf{x_t=A_1x_{t-1}+\varepsilon_t}$  así que $\mathbf{\Delta x_t=A_1x_{t-1}-x_{t-1}+\varepsilon_t=(A_1-I)x_{t-1}+\varepsilon_t=\pi x_t-1+\varepsilon_t}$ donde 
+Consideremos la generalización al caso simple con {n} variables; asuma que el vector $\mathbf{x_t}$ de $n$ variables, se comporta como $\mathbf{x_t=A_1x_{t-1}+\varepsilon_t}$  así que $\mathbf{\Delta x_t=A_1x_{t-1}-x_{t-1}+\varepsilon_t=(A_1-I)x_{t-1}+\varepsilon_t=\pi x_{t-1}+\varepsilon_t}$ donde 
 * $\mathbf{\varepsilon_t}$ es un vector ( $n\times 1$ ),
 * $\mathbf{A_1}$ es una matriz ( $n\times n$ ) de parámetros, 
 * $\mathbf{I}$ es una matriz identidad ( $n\times n$ ),
 * $\mathbf{\pi}$ se define como $\mathbf{(A_1-I}$.
 
-El rango de $\mathbf{(A_1-I}$ es igual al número de vectores de cointegración. Por analogía con el caso univariado, si $\mathbf{(A_1-I}$  tiene solo ceros, de modo que el $rango(\pi)=0$, todas las secuencias { $x_{it}$ } tienen raíz unitaria. En esta situación, dado que no hay una combinación lineal de los procesos { $x_{it}$ } que sea estacionaria, las variables no se cointegran. Descartando la presencia de raíces características mayores que $1$ y si el $rango(\pi)=n$, $\mathbf{\Delta x_t=\pi x_{t-1} + \varepsilon_t}$ es un sistema convergente de ecuacio-nes en diferencias, de modo que todas las variables son estacionarias.
+El rango de $\mathbf{(A_1-I}$ es igual al número de vectores de cointegración. Por analogía con el caso univariado, si $\mathbf{(A_1-I}$  tiene solo ceros, de modo que el $rango(\pi)=0$, todas las secuencias { $x_{it}$ } tienen raíz unitaria. En esta situación, dado que no hay una combinación lineal de los procesos { $x_{it}$ } que sea estacionaria, las variables no se cointegran. Descartando la presencia de raíces características mayores que $1$ y si el $rango(\pi)=n$, $\mathbf{\Delta x_t=\pi x_{t-1} + \varepsilon_t}$ es un sistema convergente de ecuaciones en diferencias, de modo que todas las variables son estacionarias.
+
+Hay varias formas de generalizar $\mathbf{\Delta x_t=\pi x_{t-1}+\varepsilon_t}$. Por ejemplo, la ecuación se modifica fácilmente si se considera la presencia de un intercepto; simplemente asuma $\mathbf{\Delta x_t=A_0 \pi x_{t-1}+\varepsilon_t}$ donde $$ \mathbf{A_0}={\left\lbrack \matrix{ a_{10} \cr a_{20} \cr \dots \cr a_{n0} } \right\rbrack}. El efecto de incluir los diversos $a_{i0}$ es permitir la posibilidad de una tendencia lineal en el proceso de generación de datos. Lo ideal es incluir el intercepto si las variables exhiben una tendencia decidida a aumentar o a disminuir. Aquí, el rango de $\pi$ se puede ver como el número de relaciones de cointegración existentes en los datos sin tendencia. En el largo plazo, $\mathbf{\pi x_{t-1}=0 tal que el valor esperado de cada secuencia { $\Delta x_{it} } es $a_{i0}$. Al agregar todos estos cambios en el tiempo se obtiene la expresión determinista $a_{i0}t$.
 
 
+
++++++++++++++++++++++
 Utilice los siguientes cuatro pasos cuando implemente el procedimiento Johansen:
 
 1) **Realice una prueba de todas las variables para evaluar su orden de integración.**
@@ -221,7 +225,7 @@ Alternativamente, puede seleccionar la longitud del rezago $p$ utilizando las ge
    
    iii) con un término constante en el vector de cointegración. 
 
-3) **Analice el (los) vector (es) de cointegración normalizados y la velocidad de los coeficientes de ajuste.**
+3) **Analice el(los) vector(es) de cointegración normalizados y la velocidad de los coeficientes de ajuste.**
 
    Por ejemplo, asuma que si seleccionamos $r=1$, el vector estimado de cointegración $(\beta_0,\beta_1,\beta_2,\beta_3)$ es $\mathbf{\beta_t}=(0.00553, 0.41532, 0.42988, −0.42207)$. Normalizando con respecto a $\beta_1$, el vector de cointegración normalizado es $\mathbf{\beta_t}=(−0.01331, −1.0000, −1.0350, 1.0162)$.
 
