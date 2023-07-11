@@ -71,7 +71,7 @@ Retome la ecuación $\mathbf{x_t= A_0 + A_1x_{t-1}+e_t}$, asuma que conoce los c
 
 También podemos considerar estos errores de pronóstico en su forma $VMA$: $\eqalign{ \mathbf{x_t=\mu+\sum_{i=1}^p\phi_i \varepsilon_{t-i}}}$. Por supuesto, los modelos $VMA$ y $VAR$ contienen exactamente la misma información, pero es conveniente describir las propiedades de los errores de pronóstico en términos de la secuencia { $\mathbf{\varepsilon_{t-i}}$ }. 
 
-Si usamos $\eqalign{ \mathbf{x_t=\mu+\sum_{i=1}^p\phi_i \varepsilon_{t-i}}}$ para pronosticar condicionalmente $\mathbf{x_{t+1}}$, un periodo hacia adelante el error de pronóstico es $\mathbf{\phi_0 \varepsilon_{t+i}}$. En general, $\eqalign{ \mathbf{x_t=\mu+\sum_{i=0}^\inf \phi_i \varepsilon_{t+n-i}}}$ de modo que el error de pronóstico del periodo $n$ es $\eqalign{\mathbf{x_{t+n}} - E_t\mathbf{x_{t+n}}=\sum_{i=0}^{n-1}\phi_i \varepsilon_{t+n-i}}$ 
+Si usamos $\eqalign{ \mathbf{x_t=\mu+\sum_{i=1}^p\phi_i \varepsilon_{t-i}}}$ para pronosticar condicionalmente $\mathbf{x_{t+1}}$, un periodo hacia adelante el error de pronóstico es $\mathbf{\phi_0 \varepsilon_{t+1}}$. En general, $\eqalign{ \mathbf{x_t=\mu+\sum_{i=0}^\inf \phi_i \varepsilon_{t+n-i}}}$ de modo que el error de pronóstico del periodo $n$ es $\eqalign{\mathbf{x_{t+n}} - E_t\mathbf{x_{t+n}}=\sum_{i=0}^{n-1}\phi_i \varepsilon_{t+n-i}}$ 
 
 Centrándonos únicamente en la secuencia { $y_t$ }, vemos que el error de pronostico $n$ periodos hacía adelante es 
 
