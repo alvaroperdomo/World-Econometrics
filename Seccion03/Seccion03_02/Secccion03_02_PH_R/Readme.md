@@ -21,7 +21,7 @@ VARselect(x, lag.max = 10, type = c("const", "trend", "both", "none"), season = 
 
 
 ## Prueba de estabilidad
-La función "roots" calcula las raíces de un polinomio como valores propios de una matriz complementaria.
+La función "roots" calcula las raíces caracteristicas del modelo VAR que ha sido previamente estimado. Recuerden que la condición de estabilidad requiere que estas raíces en valor absoluto sean menores que $1$. 
 
 ``` r
 roots(p)
@@ -30,5 +30,32 @@ roots(p)
 | **Argumentos**     | **Descripción**                                                                                                     | 
 |--------------------|---------------------------------------------------------------------------------------------------------------------|
 | **p**              | Nombre del Vector autorregresivo (VAR) que ha sido estimado                                                         |
+
+``` r
+acf(residuals(modelo)[,1])
+```
+
+Prueba Portmanteau Multivariada
+``` r
+serial.test(modelo,lags.pt=10)
+```
+
+Prueba de normalidad de los residuos
+``` r
+normality.test(modelo, multivariate.only=FALSE)
+```
+
+Prueba de Granger
+``` r
+grangertest(diff(y) ~ diff(x),order=1,data=Datos)
+grangertest(diff(x) ~ diff(y),order=1,data=Datos)
+```
+Funciones Impulso-Respuesta
+``` r
+modelo.irf<-irf(modelo,impulse="x", response="y")
+modelo.irf2<-irf(modelo,impulse="x", response="x")
+plot(modelo.irf)
+plot(modelo.irf2)
+```
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
