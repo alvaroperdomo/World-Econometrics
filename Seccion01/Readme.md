@@ -5,7 +5,11 @@
   <br><b>Análisis Aplicado de Series de Tiempo: Entendiendo un Mundo en Desarrollo</b><br><br><b>Universidad Escuela Colombiana de Ingeniería Julio Garavito</b><br>Alvaro Andrés Perdomo Strauch<br>Profesor del Programa de Economía<br>alvaro.perdomo@escuelaing.edu.co<br>
 </div><br>
 
-# Sección 1 - Las Series de Tiempo, R y la Base de Datos del Banco Mundial
+## SECCIÓN 1:
+
+# Las Series de Tiempo, R y la Base de Datos del Banco Mundial
+Esta es una sección introductoria que se divide en dos subsecciones:
+
 En la subsección 1.1 se van a desarrollar dos cosas:
 * Se va a explicar lo que es una serie de tiempo y sus usos en el análisis económico.
 * Se van a explicar algunas generalidades de la base de datos "_Indicadores de Desarrollo Económico_" del Banco Mundial y se va a explicar cómo acceder y descargar la misma desde R 
