@@ -52,16 +52,11 @@ A continuación encontrara información más detallada acerca de cada una de las
 | [03. Estimación de Modelos ARIMA](Seccion02/Seccion02_03/Readme.md)                                 | Explicación de la metododología de Box-Jenkins para estimar un modelo ARIMA.                                   |              1            | 
 | [04. Principales pruebas de validación de los Modelos ARIMA](Section01/CaseStudy)                   | Explicación de las pruebas de validación de un modelo ARIMA                                                    |              1            | 
 
-
-## Sección 3 - Análisis Multivariado (VAR y VEC)
-| Subsecciones                                                                                        | Contenido                                                                                                      | Dedicación,<br> 5.5 horas | 
-|-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|:-------------------------:|
-| [01. Introducción](Seccion01/Seccion01_01)                                                          | Introducción al análisis multivariado de series de tiempo                                                      |             2.5           | 
-| [02. Estimación de Modelos VAR](Section01/Requirement)                                              | Explicación acerca de la metododología para estimar un modelo VAR.                                             |              1            | 
-| [03. Principales pruebas de validación de los Modelos VAR](Section01/CaseStudy)                     | Explicación de las pruebas de validación de un modelo VAR                                                      |              1            | 
-| [04. Cointegración y Pruebas de Cointegración](Section01/Requirement)                               | Explicación acerca de la prueba de Cointegración de Johansen.                                                  |             0.5           | 
-| [05. Estimación de Modelos VEC](Section01/Requirement)                                              | Explicación acerca de la metododología para estimar un modelo VEC.                                             |             1.5           | 
-| [06. Principales pruebas de validación de los Modelos VEC](Section01/CaseStudy)                     | Explicación de las pruebas de validación de un modelo VEC                                                      |             1.5           | 
+## [Sección 3 - Análisis Multivariado de Series de Tiempo](Seccion03/Readme.md)
+| Subsecciones                   | Contenido                                                               | Dedicación,<br> 5.5 horas | 
+|--------------------------------|-------------------------------------------------------------------------|:-------------------------:|
+| 01. Estimación de Modelos VAR  | Explicación acerca de la metododología para estimar un modelo VAR.      |              1            | 
+| 02. Estimación de Modelos VEC  | Explicación acerca de la metododología para estimar un modelo VEC.      |              1            | 
 
 ### _Durante el desarrollo del curso se van a plantear algunos ejercicios con los cuales al ser resueltos de forma satisfactoria van a permitir optar, previo pago, a la obtención del certificado del curso._
   
