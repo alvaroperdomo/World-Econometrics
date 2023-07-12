@@ -1,8 +1,14 @@
-# Introducción
-Los modelos de series de tiempo univariados pueden ser muy útiles para el análisis descriptivo y para el pronóstico fuera de muestra. Sin embargo, tales modelos univariados son restrictivos, en el sentido de que se basan únicamente en la historia de las series de tiempo y no intentan explotar la información presente en otras variables. 
+# Modelos de Vectores Autorregresivos $VAR$
+Si se quiere tener en cuenta todas las relaciones posibles entre, digamos, $k$ variables, parece sensato construir un modelo conjunto que incluya todas estas series de tiempo en lugar de construir modelos para cada una de las series individuales, a este tipo de modelos se les llama modelos $VAR$. A continuación, dando click en la **X** de la segunda columna de la siguiente tabla se redirigira a la explicación de cada uno de los aspectos teóricos que se encuentran en la primera columna de la tabla. Por otra parte, dando click en la **X** de la tercera columna de la tabla podra ver las aplicaciones en R de cada uno de estos temas:
 
-Dado que a menudo las variables económicas están estrechamente relacionadas con otras variables, dicha información puede ser potencialmente útil y su uso puede llevar a descripciones más realistas del comportamiento de las variables económicas y también a pronósticos más precisos fuera de la muestra. 
+| Temas                                                                                                     | Explicación teórica                   |  Aplicación en R                     |
+|-----------------------------------------------------------------------------------------------------------|:-------------------------------------:|:---------------------:|
+| ¿Qué es un modelo VAR? ¿Cuáles son los tipos de modelos VAR? y ¿Cómo hacer pronósticos con un modelo VAR? |  [X](Seccion02_02_ADF_T/Readme.md)    | [X](Seccion02_02_ADF_R/Readme.md)    | 
+| Pruebas de Hipótesis en Modelos VAR                                                                       |  [X](Seccion02_02_ZA_T/Readme.md)     | [X](Seccion02_02_ZA_R/Readme.md)     |
+| La Función Impulso Respuesta y la Descomposición de Varianza                                              |  [X](Seccion02_02_ADFGLS_T/Readme.md) | [X](Seccion02_02_ADFGLS_R/Readme.md) |
 
-De hecho, ignorar las relaciones con otras variables puede dar lugar a complicaciones en la especificación de un modelo apropiado de series de tiempo univariadas. Puede ser que la especificación empírica de un modelo univariado se vea obstaculizada por los valores atípicos y los cambios estructurales, que pueden atribuirse a una o más variables distintas de la variable $y_t$ en cuestión.
+A continuación, se presenta un ejemplo utilizando la base de datos "Indicadores de Desarrollo Económico del Banco Mundial". Para el ejercicio, se ha escogido analizar la variable más utilizada en términos de desarrollo económico, el PIB per cápita, de un país en vías de desarrollo. Más específicamente, se va a analizar la evolución del PIB per cápita de Colombia a precios constantes.
+
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
+
