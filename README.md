@@ -36,10 +36,12 @@ La primera sección del curso comienza con una explicación de lo que es el aná
 
 Las otras dos secciones del curso comienzan con una explicación general de las herramientas econométricas a utilizar. Luego, se desarrollan algunos ejercicios y posteriormente se deja un ejercicio para ser desarrollado por el alumno. Con respecto a este último se haran algunas preguntas de selección múltiple para evaluar si los conceptos principales han sido entendidos de forma apropiada.
 
+A continuación encontrara información más detallada acerca de cada una de las seccones en que se divide el curso. Si quiere ir a alguna sección en particular, dele _click_ con el mouse a la sección respectiva. 
+
 ## [Sección 1 - Las Series de Tiempo, R y la Base de Datos del Banco Mundial](Seccion01/Readme.md)
 | Subsecciones                                                       | Contenido                                                                                                                | Dedicación,<br> 2 horas   | 
 |--------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|:-------------------------:|
-| 1. Series de tiempo]                                               |¿Qué es una serie de tiempo?, ¿En qué consiste el análisis de series de tiempo?, ¿Qué es una variable discreta aleatoria? |             0.5           | 
+| 1. Series de tiempo                                                |¿Qué es una serie de tiempo?, ¿En qué consiste el análisis de series de tiempo?, ¿Qué es una variable discreta aleatoria? |             0.5           | 
 | 02. R y Los Indicadores de Desarrollo Económico del Banco Mundial  |¿Cómo manipular los Indicadores de Desarrollo Económico del Banco Mundial en R?                                           |             1.5           | 
 
 ## Sección 2 - Análisis Univariado (ARIMA)
