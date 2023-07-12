@@ -1,7 +1,7 @@
 ## SECCIÓN 1.1:
 # Series de Tiempo
 
-### ¿Qué es una serie de tiempo?
+## ¿Qué es una serie de tiempo?
 Una serie de tiempo es una secuencia de observaciones sobre una variable tomada a intervalos discretos en el tiempo. Donde estos intervalos discretos tienen la misma unidad de medida; es decir, están igualmente distanciados [^1] .
 
  
