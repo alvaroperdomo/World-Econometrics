@@ -25,3 +25,12 @@ plot(modelo.irf2)
 ```
 
 # Descomposición de Varianza en R
+
+``` r
+fevd(nombre, n.ahead=10, ...)
+```
+| **Argumentos**     | **Descripción**                                                                                                     | 
+|--------------------|---------------------------------------------------------------------------------------------------------------------|
+| **nombre**         | Nombre del Vector autorregresivo (VAR) que ha sido estimado                                                         |
+| **n.ahead**        | Número de periodos para los cuales se va a calcular la descomposición de varianza                                   |
+
