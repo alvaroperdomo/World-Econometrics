@@ -1,3 +1,5 @@
+## SECCIÓN 3.1.2. (R):
+
 # Pruebas de Hipótesis de un $VAR$ en R
 
 ## Número de rezagos
