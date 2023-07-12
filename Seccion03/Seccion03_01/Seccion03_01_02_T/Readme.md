@@ -1,3 +1,5 @@
+## SECCIÓN 3.1.2. (T):
+
 # Pruebas de Hipótesis
 
 ## ¿Cuáles variables incluir en un $VAR$?
