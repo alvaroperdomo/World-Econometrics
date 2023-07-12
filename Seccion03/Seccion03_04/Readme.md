@@ -1,4 +1,4 @@
-# Cointegración
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/c4991bee-3fad-4116-bc6e-04c334a2330c)# Cointegración
 
 A continuación, dando click en la X de la segunda columna de la siguiente tabla se redirigira a la explicación de cada uno de los aspectos teóricos que se encuentran en la primera columna de la tabla. Por otra parte, dando click en la X de la tercera columna de la tabla podra ver las aplicaciones en R de cada uno de estos temas:
 
@@ -295,10 +295,12 @@ En lugar de plantear con cautela la forma de $A_0$, es posible probar formas res
 Para probar la presencia de un intercepto en el vector de cointegración en oposición al intercepto no restringido $A_0$, estime las dos formas del modelo. Denote 
 
 * las raíces características ordenadas de la matriz no restringida $\pi$ por $\hat{\lambda_i},\dots,\hat{\lambda_n}$, y
-* las raíces características del modelo con los interceptos en los vectores de cointegración por $\hat{\lambda_i^*},\dots,\hat{\lambda_n^*}$. 
+* las raíces características del modelo con los interceptos en los vectores de cointegración por $\hat{\lambda_i^* },\dots,\hat{\lambda_n^* }$. 
 
 Suponga que la forma no restringida del modelo tiene $r$ raíces características distintas de cero.  Asintóticamente, el estadístico 
-$-T\sum_{i=r+1}^n[\ln{1-\hat{\lambda_i^*}}-\ln{1-\hat{\lambda_n}}]$ tiene una distribución $\chi^2$ con $(n-r)$ grados de libertad. La intuición detrás de la prueba es que todos los valores de $\ln{1-\hat{\lambda_i^*}}$ y \ln{1-\hat{\lambda_n}} deben ser equivalentes si la restricción no es vinculante. Por lo tanto, valores pequeños del estadístico de prueba implican que está permitido incluir el intercepto en el vector de cointegración. Sin embargo, la probabilidad de encontrar una combinación lineal estacionaria de las 𝑛 variables es mayor con el intercepto en el vector de cointegración que si el intercepto está ausente de este. 
+$-T\displaystyle\sum_{i=r+1}^n[\ln{(1-\hat{\lambda_i^* )}}-\ln{(1-\hat{\lambda_n})}]$ tiene una distribución $\chi^2$ con $(n-r)$ grados de libertad. La intuición detrás de la prueba es que todos los valores de $\ln{1-\hat{\lambda_i^*}}$ y \ln{1-\hat{\lambda_n}} deben ser equivalentes si la restricción no es vinculante. Por lo tanto, valores pequeños del estadístico de prueba implican que está permitido incluir el intercepto en el vector de cointegración. Sin embargo, la probabilidad de encontrar una combinación lineal estacionaria de las 𝑛 variables es mayor con el intercepto en el vector de cointegración que si el intercepto está ausente de este. 
+
+Por lo tanto, un valor grande de $\hat{\lambda_{r+1}^* }$   [y en consecuencia de $-T \ln{(1-\hat{\lambda_i^* )}}$], implica que la restricción infla artificialmente el número de vectores de cointegración. En-tonces, como lo demuestra Johansen (1991), si el estadístico de prueba es suficientemente grande, es posible rechazar la hipótesis nula de un intercepto en el vector de cointegración y concluir que hay una tendencia lineal en las variables. 
 
 
 
