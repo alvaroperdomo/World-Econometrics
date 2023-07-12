@@ -23,7 +23,7 @@ En la subsección 1.2 se van a revisar las técnicas de análisis univariado de 
 
    ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ec783053-9f06-4834-9983-9158350145b8)
 
-Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en la subsección respectiva_
+Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en la subsección respectiva
 
 | Subsecciones                                                                                            | Contenido                                                                                                                | Dedicación,<br> 2 horas   | 
 |---------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|:-------------------------:|
