@@ -9,10 +9,10 @@ De hecho, ignorar las relaciones con otras variables puede dar lugar a complicac
 
 Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en la subsección respectiva
 
-| Subsecciones                                   | Contenido                                                               | Dedicación,<br> 5.5 horas | 
-|------------------------------------------------|-------------------------------------------------------------------------|:-------------------------:|
-| [01. Estimación de Modelos VAR](Seccion03_01)  | Explicación acerca de la metododología para estimar un modelo VAR.      |              1            | 
-| [02. Estimación de Modelos VEC](Seccion03_02)  | Explicación acerca de la metododología para estimar un modelo VEC.      |              1            | 
+| Subsecciones                                                   | Contenido                                                                           | Dedicación,<br> 5.5 horas       | 
+|----------------------------------------------------------------|-------------------------------------------------------------------------------------|:-------------------------:|
+| [01. Estimación de Modelos VAR](Seccion03_01)                  | Explicación acerca de la metododología para estimar un modelo VAR.                  |              1            | 
+| [02. Cointegración y Estimación de Modelos VEC](Seccion03_02)  | Explicación acerca de lo qué es la cointegración y acerca de la metododología para estimar un modelo VEC. |              1            | 
 
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
