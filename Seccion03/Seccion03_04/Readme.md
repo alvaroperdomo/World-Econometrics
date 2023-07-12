@@ -308,18 +308,7 @@ Alternativamente, puede usar el Coeficiente de Información de Akaike o el Coefi
 
 Sims, Stock y Watson (1990), también descartan las pruebas de exogenei-dad en bloque. 
 
-
-
-
-
-
-
-
-
-
-
-
-+++++++++++++++++++++
+## Resumen de la metodología propuesta por Johansen
 
 Utilice los siguientes cuatro pasos cuando implemente el procedimiento Johansen:
 
