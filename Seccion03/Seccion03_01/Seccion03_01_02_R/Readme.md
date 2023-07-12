@@ -51,19 +51,45 @@ pacf(residuals(nombre)[,1])
 #### b)  Prueba Portmanteau Multivariada para analizar la autocorrelación de los residuos
 Utilice el siguiente comando:
 ``` r
-serial.test(modelo,lags.pt=10)
+serial.test(nombre,lags.pt=10)
 ```
 
-### Prueba de normalidad de los residuos
+| **Argumentos**     | **Descripción**                                                                                                     | 
+|--------------------|---------------------------------------------------------------------------------------------------------------------|
+| **nombre**         | Nombre del Vector autorregresivo (VAR) que ha sido estimado                                                         |
+| **lags.pt**        | Número de Rezagos que se va a utilizar en la prueba de Portmanteau                                                  |
+
+
+#### c) Prueba de normalidad de los residuos
+Este comando calcula pruebas de Jarque-Bera univariadas y multivariadas y pruebas multivariadas de asimetría y curtosis para los residuos de un VAR o de un VEC en niveles.
+
 ``` r
-normality.test(modelo, multivariate.only=FALSE)
+normality.test(nombre, multivariate.only={FALSE, TRUE})
 ```
 
-### Prueba de Granger
+| **Argumentos**        | **Descripción**                                                                                                     | 
+|-----------------------|---------------------------------------------------------------------------------------------------------------------|
+| **nombre**            | Nombre del Vector autorregresivo (VAR) que ha sido estimado                                                         |
+| **multivariate.only** | Este comando tiene dos opciones:                                                                                    |
+|                       | **TRUE**:  Sólo se calculan las pruebas de normalidad multivariadas **(Opción: Predeterminada)**                    |
+|                       | **FALSE**: Se calculan las pruebas de normalidad multivariadas y univariadas                                        |
+
+## 4)  Prueba de Granger
+Este comando cálcula la prueba de causalidad de Granger entre dos variables
+
 ``` r
+grangertest(x, y, order = 1, na.action = na.omit, …)
+grangertest(y, x, order = 1, na.action = na.omit, …)
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 grangertest(diff(y) ~ diff(x),order=1,data=Datos)
 grangertest(diff(x) ~ diff(y),order=1,data=Datos)
 ```
+| **Argumentos**        | **Descripción**                                                                                                     | 
+|-----------------------|---------------------------------------------------------------------------------------------------------------------|
+| **x** y **y**         | Nombre de las variables a las cuales se les va a llevar a cabo la prueba                                            |
+| **order**             | Número que específica el orden de los rezagos que se incluirán en la regresión auxiliar.                            |
+|                       | **TRUE**:  Sólo se calculan las pruebas de normalidad multivariadas **(Opción: Predeterminada)**                    |
+|                       | **FALSE**: Se calculan las pruebas de normalidad multivariadas y univariadas                                        |
 
 # Funciones Impulso-Respuesta
 ``` r
