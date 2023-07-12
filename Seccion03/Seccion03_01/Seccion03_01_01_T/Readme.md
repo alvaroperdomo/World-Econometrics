@@ -1,3 +1,5 @@
+## SECCIÓN 3.1.1. (T):
+
 # ¿Qué es un modelo VAR?
 
 Considere el sistema bivariado simple[^1]:
