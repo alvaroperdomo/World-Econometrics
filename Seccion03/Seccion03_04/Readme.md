@@ -274,7 +274,7 @@ donde
 * $\hat{\lambda_i}$ son los valores estimados de las raíces características (también llamados valores propios) obtenido de la matriz $\mathbf{\pi}$ estimada 
 * $T$ es el número de observaciones utilizables
 
-El estadístico $\lambda_{traza}$ prueba la hipótesis nula de que el número de diferentes vectores de cointegración es menor o igual que $r$ frente a una alterna-tiva general. Note que $\lambda_{traza}=0$ cuando todos los {\lambda_i=0}. Cuanto más lejos están las raíces características estimadas de cero, más negativo es $(1-\hat{\lambda_i})$  y más grande es el estadístico $\lambda_{traza}$. 
+El estadístico $\lambda_{traza}$ prueba la hipótesis nula de que el número de diferentes vectores de cointegración es menor o igual que $r$ frente a una alterna-tiva general. Note que $\lambda_{traza}=0$ cuando todos los $\lambda_i=0$. Cuanto más lejos están las raíces características estimadas de cero, más negativo es $(1-\hat{\lambda_i})$  y más grande es el estadístico $\lambda_{traza}$. 
 
 El estadístico $\lambda_{max}$ prueba la hipótesis nula de que el número de vectores de cointegración es $r$ frente a la alternativa de $r+1$ vectores de cointe-gración. Si el valor estimado de la raíz característica está cerca de cero, $\lambda_{max}$ será pequeño.
 
@@ -297,9 +297,8 @@ Para probar la presencia de un intercepto en el vector de cointegración en opos
 * las raíces características ordenadas de la matriz no restringida $\pi$ por $\hat{\lambda_i},\dots,\hat{\lambda_n}$, y
 * las raíces características del modelo con los interceptos en los vectores de cointegración por $\hat{\lambda_i^*},\dots,\hat{\lambda_n^*}$. 
 
-Suponga que la forma no restringida del modelo tiene $r$ raíces características distintas de cero.  Asintóticamente, el estadístico
-
-−𝑇∑_(𝑖=𝑟+1)^𝑛▒[ln⁡(1−𝜆 ̂_𝑖^∗ )−ln⁡(1−𝜆 ̂_𝑛 ) ]  tiene una distribución $\chi^2$ con $(n-r)$ grados de libertad. La intuición detrás de la prueba es que todos los valores de ln⁡(1−𝜆 ̂_𝑖^∗ ) y ln⁡(1−𝜆 ̂_𝑛 ) deben ser equivalentes si la restricción no es vinculante. Por lo tanto, valores pequeños del estadístico de prueba implican que está permitido incluir el intercepto en el vector de cointegración. Sin embargo, la probabilidad de encontrar una combinación lineal estacionaria de las 𝑛 variables es mayor con el intercepto en el vector de cointegración que si el intercepto está ausente de este. 
+Suponga que la forma no restringida del modelo tiene $r$ raíces características distintas de cero.  Asintóticamente, el estadístico 
+$-T\sum_{i=r+1}^n[\ln{1-\hat{\lambda_i^*}}-\ln{1-\hat{\lambda_n}}]$ tiene una distribución $\chi^2$ con $(n-r)$ grados de libertad. La intuición detrás de la prueba es que todos los valores de $\ln{1-\hat{\lambda_i^*}}$ y \ln{1-\hat{\lambda_n}} deben ser equivalentes si la restricción no es vinculante. Por lo tanto, valores pequeños del estadístico de prueba implican que está permitido incluir el intercepto en el vector de cointegración. Sin embargo, la probabilidad de encontrar una combinación lineal estacionaria de las 𝑛 variables es mayor con el intercepto en el vector de cointegración que si el intercepto está ausente de este. 
 
 
 
