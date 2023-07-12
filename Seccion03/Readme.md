@@ -1,6 +1,6 @@
 ## SECCIÓN 3:
 
-# Los Modelos Multivariados de Series de Tiempo
+# Análisis Multivariado de Series de Tiempo
 Los modelos de series de tiempo univariados pueden ser muy útiles para el análisis descriptivo y para el pronóstico fuera de muestra. Sin embargo, tales modelos univariados son restrictivos, en el sentido de que se basan únicamente en la historia de las series de tiempo y no intentan explotar la información presente en otras variables. 
 
 Dado que a menudo las variables económicas están estrechamente relacionadas con otras variables, dicha información puede ser potencialmente útil y su uso puede llevar a descripciones más realistas del comportamiento de las variables económicas y también a pronósticos más precisos fuera de la muestra. 
@@ -9,7 +9,6 @@ De hecho, ignorar las relaciones con otras variables puede dar lugar a complicac
 
 Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en la subsección respectiva
 
-## Sección 3 - Análisis Multivariado (VAR y VEC)
 | Subsecciones                                   | Contenido                                                               | Dedicación,<br> 5.5 horas | 
 |------------------------------------------------|-------------------------------------------------------------------------|:-------------------------:|
 | [01. Estimación de Modelos VAR](Seccion03_01)  | Explicación acerca de la metododología para estimar un modelo VAR.      |              1            | 
