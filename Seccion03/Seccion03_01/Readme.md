@@ -3,7 +3,7 @@ Si se quiere tener en cuenta todas las relaciones posibles entre, digamos, $k$ v
 
 | Temas                                                                                                                                                                  | Explicación teórica                   |  Aplicación en R                     |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------:|:------------------------------------:|
-| 1. ¿Qué es un modelo VAR?, ¿Cuáles son los tipos de modelos VAR?, ¿Cómo hacer pronósticos con un modelo VAR?, ¿Cómo estimar y hacer pronosticos de un modelo VAR en R? |  [X](Seccion03_/Readme.md)    | [X](Seccion03_01_01_T/Readme.md)    | 
+| 1. ¿Qué es un modelo VAR?, ¿Cuáles son los tipos de modelos VAR?, ¿Cómo hacer pronósticos con un modelo VAR?, ¿Cómo estimar y hacer pronosticos de un modelo VAR en R? |  [X](Seccion03_01_01_R/Readme.md)    | [X](Seccion03_01_01_R/Readme.md)    | 
 | 2. Pruebas de Hipótesis en Modelos VAR                                                                                                                                 |  [X](Seccion02_02_ZA_T/Readme.md)     | [X](Seccion02_02_ZA_R/Readme.md)     |
 | 3. La Función Impulso Respuesta y la Descomposición de Varianza                                                                                                        |  [X](Seccion02_02_ADFGLS_T/Readme.md) | [X](Seccion02_02_ADFGLS_R/Readme.md) | 
 
