@@ -267,12 +267,40 @@ De manera similar, si $\mathbf{rango(\pi)=1}$, $0 < 𝜆_1 < 1$, entonces $\ln{(
 
 En la práctica, solo podemos obtener estimaciones de $\mathbf{\pi}$ y de sus raíces características. La prueba para el número de raíces características que son significativamente diferentes de $1$ se puede realizar utilizando los siguientes dos estadísticos de prueba:
 
-* 𝜆_𝑡𝑟𝑎𝑧𝑎 (𝑟)=−𝑇∑_(𝑖=𝑟+1)^𝑛▒ln⁡(1−𝜆 ̂_𝑖 ) 
-* 𝜆_𝑚𝑎𝑥 (𝑟,𝑟+1)=−𝑇 ln⁡(1−𝜆 ̂_(𝑟+1) )
+* $\lambda_{traza}(r)=-T\displaystyle\sum_{r+1}^n \ln{(1-\hat{\lambda_i})}$ 
+* $\lambda_{max}(r,r+1)=-T\ln{(1-\hat{\lambda_{r+1}})}$
 
 donde
 * $\hat{\lambda_i}$ son los valores estimados de las raíces características (también llamados valores propios) obtenido de la matriz $\mathbf{\pi}$ estimada 
 * $T$ es el número de observaciones utilizables
+
+El estadístico $\lambda_{traza}$ prueba la hipótesis nula de que el número de diferentes vectores de cointegración es menor o igual que $r$ frente a una alterna-tiva general. Note que $\lambda_{traza}=0$ cuando todos los {\lambda_i=0}. Cuanto más lejos están las raíces características estimadas de cero, más negativo es $(1-\hat{\lambda_i})$  y más grande es el estadístico $\lambda_{traza}$. 
+
+El estadístico $\lambda_{max}$ prueba la hipótesis nula de que el número de vectores de cointegración es $r$ frente a la alternativa de $r+1$ vectores de cointe-gración. Si el valor estimado de la raíz característica está cerca de cero, $\lambda_{max}$ será pequeño.
+
+Los valores críticos de los estadísticos $\lambda_{traza}$  y $\lambda_{max}$ se obtienen utilizan-do el enfoque de Monte Carlo. La distribución de estos estadísticos depende de dos cosas:
+1) El número de componentes no estacionarios bajo la hipótesis nula (es decir, $n-r$).
+2) La forma del vector $A_0$. Es decir: 
+    * si no incluye interceptos ni en la ecuación ni en el vector de cointegración.
+    * si incluye un intercepto en la ecuación.
+    * si incluye un intercepto en el vector de cointegración.
+
+Es importante anotar que estos estadísticos necesitan que sus residuos sean ruido blanco. Cualquier evidencia de que los errores no son ruido blanco generalmente significa que las longitudes de rezago son demasiado cortas. 
+
+En la prueba de Johansen, es importante determinar correctamente la forma de los regresores deterministas. Por ejemplo, los valores críticos de los estadísticos $\lambda_{traza}$ y $\lambda_{max}$ son más pequeños sin ningún tipo de regresores deterministas y más grandes con un intercepto en el vector de cointegración. 
+En lugar de plantear con cautela la forma de $A_0$, es posible probar formas restringidas del vector [^*]. La idea clave de todas las pruebas de hipótesis es que **si hay $r$ vectores de cointegración, solo estas $r$ combinaciones lineales de las variables son estacionarias**. Todas las demás combinaciones lineales son no estacionarias. Por lo tanto, suponga que se reestima el modelo restringiendo los parámetros de $\pi$. Si las restricciones no son vinculantes, debe encontrar que el número de vectores de cointegración no ha disminuido. 
+
+[^*]: Uno de los aspectos más interesantes del procedimiento de Johansen es que permite probar formas restringidas de los vectores de cointegración.
+
+Para probar la presencia de un intercepto en el vector de cointegración en oposición al intercepto no restringido $A_0$, estime las dos formas del modelo. Denote 
+
+* las raíces características ordenadas de la matriz no restringida $\pi$ por $\hat{\lambda_i},\dots,\hat{\lambda_n}$, y
+* las raíces características del modelo con los interceptos en los vectores de cointegración por $\hat{\lambda_i^*},\dots,\hat{\lambda_n^*}$. 
+
+Suponga que la forma no restringida del modelo tiene $r$ raíces características distintas de cero.  Asintóticamente, el estadístico
+
+−𝑇∑_(𝑖=𝑟+1)^𝑛▒[ln⁡(1−𝜆 ̂_𝑖^∗ )−ln⁡(1−𝜆 ̂_𝑛 ) ]  tiene una distribución $\chi^2$ con $(n-r)$ grados de libertad. La intuición detrás de la prueba es que todos los valores de ln⁡(1−𝜆 ̂_𝑖^∗ ) y ln⁡(1−𝜆 ̂_𝑛 ) deben ser equivalentes si la restricción no es vinculante. Por lo tanto, valores pequeños del estadístico de prueba implican que está permitido incluir el intercepto en el vector de cointegración. Sin embargo, la probabilidad de encontrar una combinación lineal estacionaria de las 𝑛 variables es mayor con el intercepto en el vector de cointegración que si el intercepto está ausente de este. 
+
 
 
 
