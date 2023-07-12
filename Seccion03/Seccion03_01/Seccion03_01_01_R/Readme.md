@@ -1,4 +1,4 @@
-## Sección 3.1.1 (R):
+## SECCIÓN 3.1.1. (R):
 
 # Estimando un $VAR$ en R
 
