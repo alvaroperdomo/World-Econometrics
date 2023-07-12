@@ -8,3 +8,6 @@ Dado que a menudo las variables económicas están estrechamente relacionadas co
 De hecho, ignorar las relaciones con otras variables puede dar lugar a complicaciones en la especificación de un modelo apropiado de series de tiempo univariadas. Puede ser que la especificación empírica de un modelo univariado se vea obstaculizada por los valores atípicos y los cambios estructurales, que pueden atribuirse a una o más variables distintas de la variable $y_t$ en cuestión.
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
+
+| [:house: Inicio](../README.md) |
+|-----------------------------------|
