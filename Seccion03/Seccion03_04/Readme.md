@@ -212,14 +212,14 @@ $\dots$
 
 $\Delta x_{nt}=s_n(\pi_{n1}x_{n(t-1)} + \pi_{n2}x_{n(t-1)} + \dots + \pi_{nn}x_{n(t-1)} + a_{20}) + \varepsilon_{nt}$
 
-o en la forma compacta $\mathbf{\Delta x_t=A_0+ \pi^* x_{t-1}^*+\varepsilon_t}$ donde 
+o en la forma compacta $\mathbf{\Delta x_t= A_0 + \pi^* x_{t-1}^* + \varepsilon_t}$ donde 
 
 $\eqalign{\mathbf{x_t} = {\left\lbrack \matrix{x_{1t} \cr x_{2t} \cr \dots \cr x_{nt} } \right\rbrack}}$, 
 $\eqalign{\mathbf{x_{t-1}^*} = {\left\lbrack \matrix{x_{1(t-1)} \cr x_{2(t-1)} \cr \dots \cr x_{n(t-1)} } \right\rbrack}}$,     y 
 
 $\eqalign{\mathbf{ \pi* } = {\left\lbrack \matrix{\pi_{11} & \pi_{12} & \dots & \pi_{1n} \cr \pi_{21} & \pi_{22} & \dots & \pi_{2n} \cr \dots & \dots & \dots & \dots \cr \pi_{n1} & \pi_{n2} & \dots & \pi_{nn} } \right\rbrack}}$ 
 
-La característica interesante de $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + varepsilon_t}$ es que la tendencia lineal se elimina del sistema. En esencia, los diversos $a_io$ se han modificado de tal manera que la solución general para cada { $x_it$ } no contiene una tendencia temporal. La solución al conjunto de ecuaciones en diferencias representadas $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + varepsilon_t}$ por es tal que se espera que todos los $Delta x_{it}$ sean iguales a cero cuando $\pi_{11} x_{1(t-1)} + \pi_{12} x_{2(t-1)} + \dots + \pi_{1n} x_{n(t-1)} + a_{i0} =0$.
+La característica interesante de $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + \varepsilon_t}$ es que la tendencia lineal se elimina del sistema. En esencia, los diversos $a_io$ se han modificado de tal manera que la solución general para cada { $x_it$ } no contiene una tendencia temporal. La solución al conjunto de ecuaciones en diferencias representadas $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + \varepsilon_t}$ por es tal que se espera que todos los $Delta x_{it}$ sean iguales a cero cuando $\pi_{11} x_{1(t-1)} + \pi_{12} x_{2(t-1)} + \dots + \pi_{1n} x_{n(t-1)} + a_{i0} =0$.
 
 Para resaltar la diferencia entre $\mathbf{\Delta x_t=A_0+ \pi x_{t-1}+\varepsilon_t}$ y $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + varepsilon_t}$, la figura de abajo ilustra las consecuencias de utilizar $a_10=0.1$ y $a_20=-0.1$.  
 
@@ -239,15 +239,34 @@ $\dots$
 
 $\Delta x_{nt}=s_n(\pi_{n1}x_{n(t-1)} + \pi_{n2}x_{n(t-1)} + \dots + \pi_{nn}x_{n(t-1)} + b_{n0}) + b_{n1} + \varepsilon_{nt}$
 
-donde  $s_i b_{10} + b_{11}= a_(10)$  
+donde  $s_i b_{10} + b_{11}= a_{10}$  
 
-Todo lo que se hace es dividir $a_(10)$ en dos partes y colocar una parte dentro de la relación de cointegración. Es necesaria alguna estrategia de identificación ya que la proporción del intercepto a incluir en el vector de cointegración es arbitraria. 
+Todo lo que se hace es dividir $a_{10}$ en dos partes y colocar una parte dentro de la relación de cointegración. Es necesaria alguna estrategia de identificación ya que la proporción del intercepto a incluir en el vector de cointegración es arbitraria. 
 
 De los gráficos previos, note que es necesario una constante fuera de la relación de cointegración para capturar los efectos de una tendencia sostenida de las variables a aumentar (o a disminuir). La mayoría de los investigadores incluyen interceptos si los datos se asemejan a los gráficos donde ambos interceptos eran 0.1 o donde los interceptos eram 0.1 y 0.4. De lo contrario, incluyen interceptos en el vector de cointegración o excluyen por completo a los regresores deterministas. Si no está seguro, puede usar los métodos que se describen más adelante para probar si las desviaciones se pueden restringir adecuadamente. R permite incluir una tendencia de tiempo determinista en el modelo. Claro que es mejor evitar el uso de la tendencia como variable explicativa a menos que tenga una buena razón para incluirla en el modelo. Johansen (1994) discute el papel de los regresores deterministas en una relación de cointegración.
 
 Al igual que con la prueba $ADF$, el modelo multivariado también puede generalizarse para permitir un proceso autorregresivo de orden superior. 
 
 Considere $x_t = A_1x_{t-1} + A_2x_{t-2}  + \ dots +  A_px_{t-p} + \varepsilon_t$ donde $\eqalign{\mathbf{x_t} = {\left\lbrack \matrix{x_{1t} \cr x_{2t} \cr \dots \cr x_{nt} } \right\rbrack}}$ y $\mathbf{\varepsilon_t}$ es un vector n-dimensional distribuido de forma independiente e idéntica con media cero y matriz de varianza $\Sigma_\varepsilon$.
+
+Como se hizo con la prueba $ADF$ en el modelo univariado, con las sumas apropiadas, la ecuación 
+
+$\mathbf{x_t = \sum_{i=1}^p A_ix_{t-i} + \varepsilon_t}$ 
+
+se puede transformar en: $\mathbf{\Delta x_t= \pi x_{t-1} +  \sum_{i=1}^{p-1} \pi_i \Delta x_{t-i} + \varepsilon_t}$ donde 
+
+$\mathbf{\pi = -(I-\sum_{i=1}^p A_i)}$ y 
+
+$\mathbf{\pi_i = -(I-\sum_{j=i+1}^p A_j)}$ 
+
+La característica clave a tener en esta nueva ecuación es el rango de la matriz $\mathbf{\pi}$ ; **el rango de $\mathbf{\pi}$ es igual al número de vectores cointegrantes independientes**:
+
+si 𝑟𝑎𝑛𝑔𝑜(𝜋)=0, la matriz es nula y ∆𝑥_𝑡=𝜋𝑥_(𝑡−1)+∑_(𝑖=1)^(𝑝−1)▒〖𝜋_𝑖 ∆𝑥_(𝑡−𝑖) 〗+𝜀_𝑡 es el modelo 𝑉𝐴𝑅 en las primeras diferencias. 
+si 𝑟𝑎𝑛𝑔𝑜(𝜋)=𝑛, el proceso vectorial es estacionario. 
+si 𝑟𝑎𝑛𝑔𝑜 (𝜋) = 1, hay un solo vector de cointegración y la expresión 𝜋𝑥_(𝑡−1)  es el término de corrección de errores. 
+Si 1<𝑟𝑎𝑛𝑔𝑜(𝜋)<𝑛, hay múltiples vectores de cointegración.
+El número de distintos vectores de cointegración se puede obtener al ve-rificar la significancia de las raíces características de 𝜋. 
+Sabemos que el rango de una matriz es igual al número de sus raíces características que difieren de cero. Suponga que se obtiene la matriz 𝜋 y se ordenan las 𝑛 raíces características de forma que 𝜆_1>𝜆_2> · · ·>𝜆_𝑛. 
 
 
 
