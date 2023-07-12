@@ -1,4 +1,4 @@
-## SECCIÓN 1:
+## SECCIÓN 3:
 
 # Los Modelos Multivariados de Series de Tiempo
 Los modelos de series de tiempo univariados pueden ser muy útiles para el análisis descriptivo y para el pronóstico fuera de muestra. Sin embargo, tales modelos univariados son restrictivos, en el sentido de que se basan únicamente en la historia de las series de tiempo y no intentan explotar la información presente en otras variables. 
