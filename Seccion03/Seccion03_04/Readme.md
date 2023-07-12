@@ -256,11 +256,23 @@ La característica clave a tener en esta nueva ecuación es el rango de la matri
 * si $\mathbf{rango(\pi)=0}$, la matriz es nula y $\mathbf{\Delta x_t= \pi x_{t-1} +  \displaystyle\sum_{i=1}^{p-1} \pi_i \Delta x_{t-i} + \varepsilon_t}$ es el modelo $VAR$ en las primeras diferencias.
 * si $\mathbf{rango(\pi)=n}$, el proceso vectorial es estacionario.
 * si $\mathbf{rango(\pi)=1}$, hay un solo vector de cointegración y la expresión $\mathbf{\pi x_{t-1}}$ es el término de corrección de errores.
-* si $\mathbf{1 <rango(\pi) < n}$, hay múltiples vectores de cointegración.
+* si $\mathbf{1 \lt rango(\pi) \lt n}$, hay múltiples vectores de cointegración.
 
 El número de distintos vectores de cointegración se puede obtener al verificar la significancia de las raíces características de $\mathbf{\pi}$. 
 Sabemos que el rango de una matriz es igual al número de sus raíces características que difieren de cero. Suponga que se obtiene la matriz $\mathbf{\pi}$ y se ordenan las $n$ raíces características de forma que $\lambda_1>\lambda_2>\dots>\lambda_n$. 
 
+Si las variables en $\mathbf{x_t}$ no están cointegradas, $\mathbf{rango(\pi)=0}$ y todas las raíces características serán iguales a cero. Como $\ln{(1)}=0$, entonces cada una de las expresiones $\ln{(1 - \lambda_i)}$ será igual a cero si las variables no están cointegradas. 
+
+De manera similar, si $\mathbf{rango(\pi)=1}$, $0 < 𝜆_1 < 1$, entonces $\ln{(1 - \lambda_1)} < 0$ y $\ln{(1 - \lambda_2)} = \ln{(1 - \lambda_3)} = \dots = \ln{(1 - \lambda_n)} = 0$.
+
+En la práctica, solo podemos obtener estimaciones de $\mathbf{\pi}$ y de sus raíces características. La prueba para el número de raíces características que son significativamente diferentes de $1$ se puede realizar utilizando los siguientes dos estadísticos de prueba:
+
+* 𝜆_𝑡𝑟𝑎𝑧𝑎 (𝑟)=−𝑇∑_(𝑖=𝑟+1)^𝑛▒ln⁡(1−𝜆 ̂_𝑖 ) 
+* 𝜆_𝑚𝑎𝑥 (𝑟,𝑟+1)=−𝑇 ln⁡(1−𝜆 ̂_(𝑟+1) )
+
+donde
+* $\hat{\lambda_i}$ son los valores estimados de las raíces características (también llamados valores propios) obtenido de la matriz $\mathbf{\pi}$ estimada 
+* $T$ es el número de observaciones utilizables
 
 
 
