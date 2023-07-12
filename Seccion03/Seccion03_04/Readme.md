@@ -113,7 +113,7 @@ Para explicar el procedimiento de prueba de Engle-Granger, comencemos con el tip
 
    $ii)$ $\Delta z_t = \alpha_2 + \alpha_z\hat{e_{t-1}}+\sum_{i=1}\alpha_{21}(i)\Delta y_{t-i}+\sum_{i=1}\alpha_{22}(i)\Delta z_{t-i}+\varepsilon_{zt}$
 
-   Dado que la estructura del molelo $VEC$ es la de un $VAR$, entonces puede estimarse utilizando la misma metodología desarrollada en la presentación de los modelos $VAR$. Dado que todas las variables en $i$ y $ii$ son estacionarias (es decir, $\Delta y_t$ y sus rezagos, $\Delta z_t$ y sus rezagos, y $\hat{e_{t-1}}$ son $I(0)$), los estadísticos de prueba utilizados en el análisis $VAR$ tradicional son apropiados para $i$ y $ii$. 
+   Dado que la estructura del molelo $VEC$ es la de un $VAR$, entonces puede estimarse utilizando la misma metodología desarrollada en la presentación de los modelos $VAR$. Dado que todas las variables en $i$ y $ii$ son estacionarias (es decir, $\Delta y_t$ y sus rezagos, $\Delta z_t$ y sus rezagos, y $\hat{e_{t-1}}$ son $I(0)$ ), los estadísticos de prueba utilizados en el análisis $VAR$ tradicional son apropiados para $i$ y $ii$. 
 
 4) **Evaluar la adecuación del modelo**
 
