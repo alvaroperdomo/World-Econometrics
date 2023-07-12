@@ -29,7 +29,6 @@ Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
 
-| [Siguiente Sección: 02-01. Los Indicadores de Desarrollo Económico del Banco Mundial](Seccion02_01/README.md) | [:house: Inicio](../README.md) |
-|---------------------------------------------------------------------------------------------------------------|-----------------------------------|
+| [:house: Inicio](../README.md) |
+|-----------------------------------|
 
-<div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
