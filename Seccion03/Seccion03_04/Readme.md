@@ -302,6 +302,10 @@ $-T\displaystyle\sum_{i=r+1}^n[\ln{(1-\hat{\lambda_i^* )}}-\ln{(1-\hat{\lambda_n
 
 Por lo tanto, un valor grande de $\hat{\lambda_{r+1}^* }$   [y en consecuencia de $-T \ln{(1-\hat{\lambda_i^* )}}$], implica que la restricción infla artificialmente el número de vectores de cointegración. En-tonces, como lo demuestra Johansen (1991), si el estadístico de prueba es suficientemente grande, es posible rechazar la hipótesis nula de un intercepto en el vector de cointegración y concluir que hay una tendencia lineal en las variables. 
 
+La manera más sencilla de comprender las pruebas de longitud de rezagos es considerar el sistema en la forma
+$\mathbf{\Delta x_t=\pi^* x_{t-1} + \displaystyle\sum_{i=1}^{p-1} + \varepsilon_t}$. Independientemente del rango de $\pi$, todos los $\Delta x_{t-i}$ son variables esta-cionarias. Entonces, a partir de Sims, Stock y Watson (1990), sabemos que los coeficientes de interés en las variables estacionarias de media cero se pueden probar utilizando una distribución normal. Dado que la longitud del rezago depende únicamente de los valores de los diversos $\pi_i$, una distribución $\chi^2$ es apropiada para probar cualquier restricción relacionada con la longitud del rezago. 
+
+
 
 
 
