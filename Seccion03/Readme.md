@@ -7,6 +7,15 @@ Dado que a menudo las variables económicas están estrechamente relacionadas co
 
 De hecho, ignorar las relaciones con otras variables puede dar lugar a complicaciones en la especificación de un modelo apropiado de series de tiempo univariadas. Puede ser que la especificación empírica de un modelo univariado se vea obstaculizada por los valores atípicos y los cambios estructurales, que pueden atribuirse a una o más variables distintas de la variable $y_t$ en cuestión.
 
+Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en la subsección respectiva
+
+## Sección 3 - Análisis Multivariado (VAR y VEC)
+| Subsecciones                                   | Contenido                                                               | Dedicación,<br> 5.5 horas | 
+|------------------------------------------------|-------------------------------------------------------------------------|:-------------------------:|
+| [01. Estimación de Modelos VAR](Seccion03_01)  | Explicación acerca de la metododología para estimar un modelo VAR.      |              1            | 
+| [02. Estimación de Modelos VEC](Seccion03_02)  | Explicación acerca de la metododología para estimar un modelo VEC.      |              1            | 
+
+
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
 | [:house: Inicio](../README.md) |
