@@ -1,4 +1,4 @@
-## SECCION 1.1:
+## SECCIÓN 1.1:
 # Series de Tiempo
 
 ### ¿Qué es una serie de tiempo?
