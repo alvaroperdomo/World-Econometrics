@@ -91,12 +91,6 @@ grangertest(diff(x) ~ diff(y),order=1,data=Datos)
 |                       | **TRUE**:  Sólo se calculan las pruebas de normalidad multivariadas **(Opción: Predeterminada)**                    |
 |                       | **FALSE**: Se calculan las pruebas de normalidad multivariadas y univariadas                                        |
 
-# Funciones Impulso-Respuesta
-``` r
-modelo.irf<-irf(modelo,impulse="x", response="y")
-modelo.irf2<-irf(modelo,impulse="x", response="x")
-plot(modelo.irf)
-plot(modelo.irf2)
-```
+
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
