@@ -36,7 +36,7 @@ Hay cuatro puntos importantes a tener en cuenta sobre la definición:
 
 3) **Puede haber más de un vector de cointegración independiente para un conjunto de variables $I(1)$.**[^4]
 
-   Si $\mathbf{x_t}$ tiene $n$ componentes no estacionarios, puede haber hasta $n-1$ vectores de cointegración linealmente independientes. Por lo tanto, si $\mathbf{x_t}$ contiene solo dos variables, puede haber a lo sumo un vector de cointegración independiente.
+   Si $\mathbf{x_t}$ tiene $n$ componentes no estacionarios, puede haber hasta $n-1$ vectores de cointegración linealmente independientes. Por lo tanto, tenga en cuenta que si $\mathbf{x_t}$ contiene solo dos variables, puede haber a lo sumo un vector de cointegración independiente.
 
 [^4]: **El número de vectores de cointegración se denomina rango de cointegración del vector.**
 
