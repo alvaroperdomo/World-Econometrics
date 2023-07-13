@@ -76,7 +76,7 @@ $\eqalign{\mathbf{ \pi* } = {\left\lbrack \matrix{\pi_{11} & \pi_{12} & \dots & 
 
 La característica interesante de $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + \varepsilon_t}$ es que la tendencia lineal se elimina del sistema. En esencia, los diversos $a_{i0}$ se han modificado de tal manera que la solución general para cada { $x_{it}$ } no contiene una tendencia temporal. La solución al conjunto de ecuaciones en diferencias representadas por $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + \varepsilon_t}$ es tal que se espera que todos los $\Delta x_{it}$ sean iguales a cero cuando $\pi_{11} x_{1(t-1)} + \pi_{12} x_{2(t-1)} + \dots + \pi_{1n} x_{n(t-1)} + a_{i0} =0$.
 
-Para resaltar la diferencia entre $\mathbf{\Delta x_t=A_0+ \pi x_{t-1}+\varepsilon_t}$ y $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + varepsilon_t}$, la figura de abajo ilustra las consecuencias de utilizar $a_10=0.1$ y $a_20=-0.1$.  
+Para resaltar la diferencia entre $\mathbf{\Delta x_t=A_0+ \pi x_{t-1}+\varepsilon_t}$ y $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + \varepsilon_t}$, la figura de abajo ilustra las consecuencias de utilizar $a_10=0.1$ y $a_20=-0.1$.  
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/217d2e36-944c-493c-8cab-b45d1ff27ff6)
 
