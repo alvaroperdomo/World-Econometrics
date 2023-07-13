@@ -23,7 +23,7 @@ Recuerde que:
    Sería conveniente si se pudiera realizar una prueba $ADF$ de estos residuos para determinar su orden de integración. Considere la regresión de los residuos: $\Delta\hat{e}=a_1\hat{e_{t-1}}+\varepsilon_t$[^2] donde el parámetro de interés es $a_1$:
 
    * Si no se puede rechazar la hipótesis nula $a_1=0$, se concluye que los residuos tienen una raíz unitaria y por lo tanto, se deduce que las secuencias { $y_t$ } y { $z_t$ } no están cointegradas.
-   * En cambio, el rechazo de la hipótesis nula implica que la secuencia de residuos es estacionaria. Si se encuentra que { $y_t$ } y { $z_t$ } son $I(1)$ y que los residuos son estacionarios, entonces se puede concluir que las series están cointegradas de orden $(1,1)$.
+   * En cambio, el rechazo de la hipótesis nula $a_1=0$ implica que la secuencia de residuos es estacionaria. Si se encuentra que { $y_t$ } y { $z_t$ } son $I(1)$ y que los residuos son estacionarios, entonces se puede concluir que las series están cointegradas de orden $(1,1)$.
 
    En la mayoría de los estudios aplicados, no es posible utilizar las tablas de Dickey-Fuller. El problema es que la secuencia { $\hat{e_t}$ } se genera a partir de una regresión; donde el investigador no conoce el error real $e_t$, solo el error estimado { $\hat{e_t}$ }.[^3]
 
