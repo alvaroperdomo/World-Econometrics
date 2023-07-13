@@ -166,7 +166,7 @@ Utilice los siguientes cuatro pasos cuando implemente el procedimiento Johansen:
 
    Grafique los datos para ver si es probable que una tendencia de tiempo lineal esté presente en el proceso de generación de datos. Tenga cuidado porque los resultados de la prueba pueden ser bastante sensibles a la longitud del rezago. En la siguiente sección se profundiza más acerca de las pruebas para determinar el número óptimo de rezagos.
 
-2) **Estime el modelo y determine el rango de $\pi$.**
+2) **Estime el modelo y determine el número de vectores de cointegración (es decir, determien el rango de $\pi$.)**
 
    Muchos paquetes de software econométrico contienen una rutina para estimar el modelo. Aquí, basta con decir que Mínimos Cuadrados Ordinarios no es apropiado porque es necesario imponer restricciones de ecuaciones cruzadas en la matriz. En la mayoría de los casos, puede elegir estimar el modelo en tres formas:
    
