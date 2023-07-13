@@ -147,7 +147,7 @@ donde
 
 El estadístico $\lambda_{traza}$ prueba la hipótesis nula de que el número de diferentes vectores de cointegración es menor o igual que $r$ frente a una alternativa general. Note que $\lambda_{traza}=0$ cuando todos los $\lambda_i=0$. Cuanto más lejos están las raíces características estimadas de cero, más negativo es $(1-\hat{\lambda_i})$  y más grande es el estadístico $\lambda_{traza}$. 
 
-El estadístico $\lambda_{max}$ prueba la hipótesis nula de que el número de vectores de cointegración es $r$ frente a la alternativa de $r+1$ vectores de cointe-gración. Si el valor estimado de la raíz característica está cerca de cero, $\lambda_{max}$ será pequeño.
+El estadístico $\lambda_{max}$ prueba la hipótesis nula de que el número de vectores de cointegración es $r$ frente a la alternativa de $r+1$ vectores de cointegración. Si el valor estimado de la raíz característica está cerca de cero, $\lambda_{max}$ será pequeño.
 
 Los valores críticos de los estadísticos $\lambda_{traza}$  y $\lambda_{max}$ se obtienen utilizan-do el enfoque de Monte Carlo. La distribución de estos estadísticos depende de dos cosas:
 1) El número de componentes no estacionarios bajo la hipótesis nula (es decir, $n-r$).
