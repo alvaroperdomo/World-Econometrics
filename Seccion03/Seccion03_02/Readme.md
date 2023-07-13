@@ -5,7 +5,7 @@ A continuación, dando click en la X de la segunda columna de la siguiente tabla
 
 | Temas                                                                                                     | Explicación teórica                   |  Aplicación en R                     |
 |-----------------------------------------------------------------------------------------------------------|:-------------------------------------:|:---------------------:|
-|  ¿Qué es y para qué sirve la Cointegración?                                                               |  [X](Seccion03_02/Readme.md)          | 
+|  ¿Qué es y para qué sirve la Cointegración?                                                               |  [X](Seccion03_02_01_T/Readme.md)     | 
 | ¿Cómo evaluar la presencia de Cointegración?: Prueba de Cointegración de Engle y Granger                  |  [X](Seccion02_02_ZA_T/Readme.md)     | [X](Seccion02_02_ZA_R/Readme.md)     |
 | ¿Cómo evaluar la presencia de Cointegración?: Prueba de Cointegración de Johansen                         |  [X](Seccion02_02_ADFGLS_T/Readme.md) | [X](Seccion02_02_ADFGLS_R/Readme.md) |
 | ¿Qué es un Modelo VEC? ¿Cómo se estima un Modelo VEC?                                                     |  [X](Seccion02_02_ADFGLS_T/Readme.md) | [X](Seccion02_02_ADFGLS_R/Readme.md) |
