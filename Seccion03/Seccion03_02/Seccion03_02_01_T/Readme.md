@@ -48,6 +48,6 @@ Para terminar la explicación, en el siguiente gráfico se muestra una situació
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/36a62b2e-6b7a-4643-8b77-507b154e0a5f)
 
-Mientras tanto en eel gráfico de abajo se muestra una situación en la que dos variables $y_t$ y $x_t$ son $I(1)$ y no estan cointegradas
+Mientras tanto en el gráfico de abajo se muestra una situación en la que dos variables $y_t$ y $x_t$ son $I(1)$ y no estan cointegradas
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4213813c-dae1-49b3-b6d7-f82180ac19fb)
