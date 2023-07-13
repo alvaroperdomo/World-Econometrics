@@ -98,7 +98,15 @@ donde  $s_i b_{10} + b_{11}= a_{10}$
 
 Todo lo que se hace es dividir $a_{10}$ en dos partes y colocar una parte dentro de la relación de cointegración. Es necesaria alguna estrategia de identificación ya que la proporción del intercepto a incluir en el vector de cointegración es arbitraria. 
 
-De los gráficos previos, note que es necesario una constante fuera de la relación de cointegración para capturar los efectos de una tendencia sostenida de las variables a aumentar (o a disminuir). La mayoría de los investigadores incluyen interceptos si los datos se asemejan a los gráficos donde ambos interceptos eran 0.1 o donde los interceptos eram 0.1 y 0.4. De lo contrario, incluyen interceptos en el vector de cointegración o excluyen por completo a los regresores deterministas. Si no está seguro, puede usar los métodos que se describen más adelante para probar si las desviaciones se pueden restringir adecuadamente. R permite incluir una tendencia de tiempo determinista en el modelo. Claro que es mejor evitar el uso de la tendencia como variable explicativa a menos que tenga una buena razón para incluirla en el modelo. Johansen (1994) discute el papel de los regresores deterministas en una relación de cointegración.
+De los gráficos previos, note que es necesario una constante fuera de la relación de cointegración para capturar los efectos de una tendencia sostenida de las variables a aumentar (o a disminuir). La mayoría de los investigadores incluyen interceptos si los datos se asemejan a los gráficos donde ambos interceptos eran 0.1 o donde los interceptos eran 0.1 y 0.4. De lo contrario, incluyen interceptos en el vector de cointegración o excluyen por completo a los regresores deterministas. 
+
+**Si no está seguro, puede usar los métodos que se describen más adelante para probar si las desviaciones se pueden restringir adecuadamente**. R permite incluir una tendencia de tiempo determinista en el modelo. Claro que es mejor evitar el uso de la tendencia como variable explicativa a menos que tenga una buena razón para incluirla en el modelo.[^2] 
+
+Hasta el momento se analizado el ejenmplo en donde el modelo sólo tiene un proceso autorregresivo de orden $1$, ¿qué se puede decir acerca de los procesos autorregresivos de orden superior? 
+
+[^2] **Johansen (1994) discute el papel de los regresores deterministas en una relación de cointegración.**
+
+## Componentes autorregresivos de orden superior
 
 Al igual que con la prueba $ADF$, el modelo multivariado también puede generalizarse para permitir un proceso autorregresivo de orden superior. 
 
