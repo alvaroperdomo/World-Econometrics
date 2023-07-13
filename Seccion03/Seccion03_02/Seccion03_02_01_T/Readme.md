@@ -20,7 +20,7 @@ Hay cuatro puntos importantes a tener en cuenta sobre la definición:
 
    El vector de cointegración no es único. Si $\mathbf{B} = {\left\lbrack \matrix{\beta_1 & \beta_2 & ... & \beta_n} \right\rbrack}$ es un vector de cointegración, entonces para cualquier parametro $\lambda \not= 0$, $\mathbf{\lambda B} = {\left\lbrack \matrix{\lambda\beta_1 & \lambda\beta_2 & \dots & \lambda\beta_n} \right\rbrack}$ también es un vector de cointegración.
 
-   Normalmente, una de las variables se usa para normalizar el vector de cointegración fijando su coeficiente en $1$. Por ejemplo, para normalizar el vector de cointegración con respecto a $x_{1t}$, simplemente se selecciona un $\lambda^*=\frac{1}{\beta_1}$ de tal forma que $\mathbf{\lambda^* B} = {\left\lbrack \matrix{1 & \frac{\beta_2}{\beta_1} & \dots & \frac{\beta_n}{\beta_1}} \right\rbrack}$.
+   Normalmente, una de las variables se usa para normalizar el vector de cointegración fijando su coeficiente en $1$. Por ejemplo, para normalizar el vector de cointegración con respecto a $x_{1t}$, simplemente se selecciona un $\tilde{\lambda}=\frac{1}{\beta_1}$ de tal forma que $\mathbf{\tilde{\lambda} B} = {\left\lbrack \matrix{1 & \frac{\beta_2}{\beta_1} & \dots & \frac{\beta_n}{\beta_1}} \right\rbrack}$.
 
 2) **La cointegración se refiere a variables que están integradas en el mismo orden**.
 
