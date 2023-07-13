@@ -20,7 +20,7 @@ Recuerde que:
 
    Para determinar si las variables están realmente cointegradas, sea { $\hat{e_t}$ } la secuencia de residuos de esta ecuación. Por lo tanto, la serie { $\hat{e_t}$ } contiene los valores estimados de las desviaciones de la relación de largo plazo. Si se encuentra que estas desviaciones son estacionarias, las secuencias { $y_t$ } y { $z_t$ } son cointegradas de orden $(1,1)$. 
 
-   Sería conveniente si se pudiera realizar una prueba ADF de estos residuos para determinar su orden de integración. Considere la regresión de los residuos: $\Delta\hat{e}=a_1\hat{e_{t-1}}+\varepsilon_t$ (dado que la secuencia { $\hat{e_t}$ } es el residuo de una regresión, por lo que su media necesariamente igual a cero, entonces no es necesario incluir un intercepto dentro de la regresión) donde el parámetro de interés es $a_1$:
+   Sería conveniente si se pudiera realizar una prueba $ADF$ de estos residuos para determinar su orden de integración. Considere la regresión de los residuos: $\Delta\hat{e}=a_1\hat{e_{t-1}}+\varepsilon_t$ (dado que la secuencia { $\hat{e_t}$ } es el residuo de una regresión, por lo que su media necesariamente igual a cero, entonces no es necesario incluir un intercepto dentro de la regresión) donde el parámetro de interés es $a_1$:
 
    * Si no se puede rechazar la hipótesis nula $a_1=0$, se concluye que los residuos tienen una raíz unitaria y por lo tanto, se deduce que las secuencias { $y_t$ } y { $z_t$ } no están cointegradas.
    * En cambio, el rechazo de la hipótesis nula implica que la secuencia de residuos es estacionaria. Si se encuentra que { $y_t$ } y { $z_t$ } son $I(1)$ y que los residuos son estacionarios, entonces se puede concluir que las series están cointegradas de orden $(1,1)$.
