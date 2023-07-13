@@ -17,7 +17,7 @@ En el caso univariado, es posible ver que la estacionariedad de { $y_t$ } depend
 
 Las tablas de Dickey-Fuller proporcionan los estadísticos apropiados para probar formalmente la hipótesis nula $(a_1-1)=0$.
 
-Consideremos la generalización al caso simple con $n$ variables; asuma que el vector $\mathbf{x_t}$ de $n$ variables, se comporta como $\mathbf{x_t=A_1x_{t-1}+\varepsilon_t}$  así que $\mathbf{\Delta x_t=A_1x_{t-1}-x_{t-1}+\varepsilon_t=(A_1-I)x_{t-1}+\varepsilon_t=\pi x_{t-1}+\varepsilon_t}$ donde 
+Consideremos la generalización al caso multivariado con $n$ variables; asuma que el vector $\mathbf{x_t}$ de $n$ variables, se comporta como $\mathbf{x_t=A_1x_{t-1}+\varepsilon_t}$  así que $\mathbf{\Delta x_t=A_1x_{t-1}-x_{t-1}+\varepsilon_t=(A_1-I)x_{t-1}+\varepsilon_t=\pi x_{t-1}+\varepsilon_t}$ donde 
 * $\mathbf{\varepsilon_t}$ es un vector ( $n\times 1$ ),
 * $\mathbf{A_1}$ es una matriz ( $n\times n$ ) de parámetros, 
 * $\mathbf{I}$ es una matriz identidad ( $n\times n$ ),
