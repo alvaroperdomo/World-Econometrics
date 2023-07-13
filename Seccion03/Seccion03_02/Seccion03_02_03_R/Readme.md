@@ -60,5 +60,11 @@ XXXXXXXXXXXXXXXXXXXXXXXXXX
 # Estimación del $VEC$ 
 Para estimar el modelo $VEC$ copie el comando:
 ``` r
-cajorls(johansen,r=1)
+cajorls(x, r = 1, reg.number = NULL)
 ```
+
+| **Argumentos**     | **Descripción**                                                                                                                                                      | 
+|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **x**              | vector de variables de series de tiempo que incluye las variables endógenas utilizadas en el VEC                                                                     |
+| **r**              | número que determina el número de vectores de cointegración obtenidos en $\lambda_{max}$ y/o en  $\lambda_{traza}$                                                   |
+| **reg.number**     | El número de la ecuación del VEC que se debe estimar o, si se escoge en NULL ( esta es la **_Opción Predeterminada), se estiman todas las ecuaciones dentro del VEC. |
