@@ -3,12 +3,6 @@
 
 ## ¿Cómo determinar la longitud de rezagos del VEC?
 
-En la prueba de Johansen, es importante determinar correctamente la forma de los regresores deterministas. Por ejemplo, los valores críticos de los estadísticos $\lambda_{traza}$ y $\lambda_{max}$ son más pequeños sin ningún tipo de regresores deterministas y más grandes con un intercepto en el vector de cointegración. 
-
-En lugar de plantear con cautela la forma de $A_0$, es posible probar formas restringidas del vector [^1]. La idea clave de todas las pruebas de hipótesis es que **si hay $r$ vectores de cointegración, solo estas $r$ combinaciones lineales de las variables son estacionarias**. Todas las demás combinaciones lineales son no estacionarias. Por lo tanto, suponga que se reestima el modelo restringiendo los parámetros de $\pi$. Si las restricciones no son vinculantes, debe encontrar que el número de vectores de cointegración no ha disminuido. 
-
-[^1]: **Uno de los aspectos más interesantes del procedimiento de Johansen es que permite probar formas restringidas de los VEC.**
-
 El procedimiento más común es estimar $VAR$ de los datos no diferenciados. Luego use las mismas pruebas de longitud de rezagos que en un $VAR$ tradicional. Comience con el rezago mas largo que considere razonable y verifique si se puede acortar. Por ejemplo, si queremos probar si los rezagos $1$ a $4$ son importantes, podemos estimar los siguientes dos $VAR$:
    * $\mathbf{x_t=A_0+A_1 x_{t-1}+A_2 x_{t-2}+A_3 x_{t-3}+A_4 x_{t-4}+e_{1t}}$
    * $\mathbf{x_t=A_0+A_1 x_{t-1}+e_{2t}}$
@@ -34,6 +28,11 @@ Alternativamente, puede usar el **Coeficiente de Información de Akaike multivar
 
 ## Los interceptos en los modelos VEC
 
+En la prueba de Johansen, es importante determinar correctamente la forma de los regresores deterministas. Por ejemplo, los valores críticos de los estadísticos $\lambda_{traza}$ y $\lambda_{max}$ son más pequeños sin ningún tipo de regresores deterministas y más grandes con un intercepto en el vector de cointegración. 
+
+En lugar de plantear con cautela la forma de $A_0$, es posible probar formas restringidas del vector [^1]. La idea clave de todas las pruebas de hipótesis es que **si hay $r$ vectores de cointegración, solo estas $r$ combinaciones lineales de las variables son estacionarias**. Todas las demás combinaciones lineales son no estacionarias. Por lo tanto, suponga que se reestima el modelo restringiendo los parámetros de $\pi$. Si las restricciones no son vinculantes, debe encontrar que el número de vectores de cointegración no ha disminuido. 
+
+[^1]: **Uno de los aspectos más interesantes del procedimiento de Johansen es que permite probar formas restringidas de los VEC.**
 Para probar la presencia de un intercepto en el VEC en oposición al intercepto no restringido $A_0$, estime las dos formas del modelo. Denote 
 
 * las raíces características ordenadas de la matriz no restringida $\pi$ por $\hat{\lambda_i},\dots,\hat{\lambda_n}$, y
