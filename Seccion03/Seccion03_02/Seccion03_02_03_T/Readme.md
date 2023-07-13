@@ -112,7 +112,7 @@ De los gráficos previos, note que es necesario una constante fuera de la relaci
 
 Hasta el momento se analizado el ejenmplo en donde el modelo sólo tiene un proceso autorregresivo de orden $1$, ¿qué se puede decir acerca de los procesos autorregresivos de orden superior? 
 
-[^2] **Johansen (1994) discute el papel de los regresores deterministas en una relación de cointegración.**
+[^2]: **Johansen (1994) discute el papel de los regresores deterministas en una relación de cointegración.**
 
 ## Componentes autorregresivos de orden superior
 
