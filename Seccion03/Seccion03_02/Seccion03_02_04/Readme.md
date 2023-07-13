@@ -8,5 +8,5 @@ VARorder(x,maxp=10)
 ```
 | **Argumentos**     | **Descripción**                                                                                                     | 
 |--------------------|---------------------------------------------------------------------------------------------------------------------|
-| **x**              | vector de variables de series de tiempo que incluye las variables endógenas utilizadas en el VAR                    |
+| **x**              | vector de variables de series de tiempo que incluye las variables endógenas utilizadas en el VEC                    |
 | **maxp**           | el número máximo de rezagos utilizados en la prueba (la **_Opción Predeterminada es 13_**)                          |
