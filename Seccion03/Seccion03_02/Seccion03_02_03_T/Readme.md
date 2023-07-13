@@ -80,7 +80,7 @@ Para resaltar la diferencia entre $\mathbf{\Delta x_t=A_0+ \pi x_{t-1}+\varepsil
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/217d2e36-944c-493c-8cab-b45d1ff27ff6)
 
-Se puede ver que ninguna secuencia contiene una tendencia determinista. De hecho, para los datos que se muestran en la figura, la tendencia desaparecerá siempre que seleccionemos valores de los interceptos manteniendo la relación $a_10=-a_20$.
+Se puede ver que ninguna secuencia contiene una tendencia determinista. De hecho, para los datos que se muestran en la figura, la tendencia desaparecerá siempre que seleccionemos valores de los interceptos manteniendo la relación $a_{10}=-a_{20}$.
 
 **Algunos econometristas prefieren incluir un intercepto en el vector de cointegración junto con un intercepto fuera de éste.** Esto tiene sentido si las variables contienen un intercepto y si la teoría económica sugiere que el vector de cointegración contiene un intercepto. Sin embargo, debe quedar claro que el intercepto en el vector de cointegración no se identifica en presencia de un intercepto fuera de este. Después de todo, alguna parte del intercepto no restringido siempre puede incluirse en el vector de cointegración. 
 
