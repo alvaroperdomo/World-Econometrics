@@ -6,11 +6,11 @@ Para explicar el procedimiento de prueba de Engle-Granger, consideremos la clase
 ### 1) Haga una prueba preliminar de las variables para conocer su orden de integración.
    
    Por definición, la cointegración requiere que dos variables estén integradas en el mismo orden. Por lo tanto, el primer paso en el análisis es determinar para cada variable su orden de integración.[^1]
-     * Si ambas variables son estacionarias, no es necesario continuar ya que el método VAR se aplica a las variables estacionarias.
-     * Si las variables están integradas de diferentes órdenes, se concluye que no están cointegradas.
-     * Sin embargo, si tiene más de dos variables, de manera que algunas son $I(1)$ y otras son $I(2)$, es posible que desee determinar si las variables están cointegradas en forma múltiple.
+   * Si ambas variables son estacionarias, no es necesario continuar ya que el método VAR se aplica a las variables estacionarias.
+   * Si las variables están integradas de diferentes órdenes, se concluye que no están cointegradas.
+   * Sin embargo, si tiene más de dos variables, de manera que algunas son $I(1)$ y otras son $I(2)$, es posible que desee determinar si las variables están cointegradas en forma múltiple.
 
-[^1]: **De la sección 2, recuerde que para hallar el orden de integración de una variable tiene que hacer pruebas de raíz unitaria. Si la variable en niveles no tiene raíz unitaria entonces es _I(0)_ (es decir, es estacionaria); si tiene raíz unitaria en niveles, pero se convierte en estacionaria al sacarle la primera diferencia es I(1); si tiene raíz unitaria en niveles y al sacarle la primera diferencia, ero se convierte en estacionaria al sacarle la segunda diferencia es I(2); y así en adelante**
+[^1]: **De la sección 2, recuerde que para hallar el orden de integración de una variable tiene que hacer pruebas de raíz unitaria. Si la variable en niveles no tiene raíz unitaria entonces es _I(0)_ (es decir, es estacionaria); si tiene raíz unitaria en niveles, pero se convierte en estacionaria al sacarle la primera diferencia es _I(1)_; si tiene raíz unitaria en niveles y al sacarle la primera diferencia, pero se convierte en estacionaria al sacarle la segunda diferencia es _I(2)_; y así en adelante**
 
 ### 2) Estime la relación del equilibrio a largo plazo.
 
