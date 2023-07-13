@@ -19,7 +19,6 @@ En el caso univariado, es posible ver que la estacionariedad de { $y_t$ } depend
 
 Las tablas de Dickey-Fuller proporcionan los estadísticos apropiados para probar formalmente la hipótesis nula $(a_1-1)=0$.
 
-## ¿Qué criterio utilizar para incluir un intercepto a todas las ecuaciones del modelo multivariado de series de tiempo?
 Consideremos la generalización al caso multivariado con $n$ variables; asuma que el vector $\mathbf{x_t}$ de $n$ variables, se comporta como $\mathbf{x_t=A_1x_{t-1}+\varepsilon_t}$  así que $\mathbf{\Delta x_t=A_1x_{t-1}-x_{t-1}+\varepsilon_t=(A_1-I)x_{t-1}+\varepsilon_t=\pi x_{t-1}+\varepsilon_t}$ donde 
 * $\mathbf{\varepsilon_t}$ es un vector ( $n\times 1$ ),
 * $\mathbf{A_1}$ es una matriz ( $n\times n$ ) de parámetros, 
@@ -30,6 +29,8 @@ El rango de $\mathbf{\pi}$ es igual al número de vectores de cointegración. En
 
 1) Por analogía con el caso univariado, si $\mathbf{\pi}$ tiene solo ceros, de modo que el **$rango(\pi)=0$**, entonces a pesar de que todas las $n$ secuencias { $x_{it}$ } tengan raíz unitaria, no hay una combinación lineal de las mismas que sea estacionaria. En otras palabras, **las variables no se cointegran**.
 2) Descartando la presencia de raíces características mayores que $1$ y con un **$rango(\pi)=n$**, se obtiene que $\mathbf{\Delta x_t=\pi x_{t-1} + \varepsilon_t}$ es un sistema convergente de ecuaciones en diferencias, de modo que todas **las variables son estacionarias**.
+
+## ¿Qué criterio utilizar para incluir un intercepto a todas las ecuaciones del modelo multivariado de series de tiempo?
 
 Hay varias formas de generalizar $\mathbf{\Delta x_t=\pi x_{t-1}+\varepsilon_t}$. Por ejemplo, la ecuación se modifica fácilmente si se considera la presencia de un intercepto; simplemente asuma $\mathbf{\Delta x_t=A_0 + \pi x_{t-1}+\varepsilon_t}$ donde $\mathbf{A_0}={\left\lbrack \matrix{ a_{10} \cr a_{20} \cr \dots \cr a_{n0} } \right\rbrack}$. El efecto de considerar los diversos $a_{i0}$ es que permite la posibilidad de incluir una tendencia lineal en el proceso de generación de datos. Lo ideal es incluir el intercepto si las variables exhiben una tendencia que claramente  aumenta o a disminuye. Aquí, el rango de $\pi$ se puede ver como el número de relaciones de cointegración existentes en los datos sin tendencia. En el largo plazo, $\mathbf{\pi x_{t-1}=0}$ tal que el valor esperado de cada secuencia { $\Delta x_{it}$ } es $a_{i0}$. Al agregar todos estos cambios en el tiempo se obtiene la expresión determinista $a_{i0}t$.
 
