@@ -164,26 +164,7 @@ Utilice los siguientes cuatro pasos cuando implemente el procedimiento Johansen:
 
 1) **Realice una prueba de todas las variables para evaluar su orden de integración.**
 
-   Grafique los datos para ver si es probable que una tendencia de tiempo lineal esté presente en el proceso de generación de datos. Los resultados de la prueba pueden ser bastante sensibles a la longitud del rezago, por lo que es importante tener cuidado. El procedimiento más común es estimar $VAR$ de los datos no diferenciados. Luego use las mismas pruebas de longitud de rezagos que en un $VAR$ tradicional. Comience con el rezago mas largo que considere razonable y verifique si se puede acortar. Por ejemplo, si queremos probar si los rezagos $1$ a $4$ son importantes, podemos estimar los siguientes dos 𝑉𝐴𝑅:
-   * $\mathbf{x_t=A_0+A_1 x_{t-1}+A_2 x_{t-2}+A_3 x_{t-3}+A_4 x_{t-4}+e_{1t}}$
-   * $\mathbf{x_t=A_0+A_1 x_{t-1}+e_{2t}}$
-
-donde 
-   * $\mathbf{x_t}$ es un vector de variables ( $n\times 1$ ),
-   * $\mathbf{A_0}$ es la matriz ( $n\times 1$ ) de interceptos,
-   * $\mathbf{A_1}$ son matrices ( $n\times n$  de coeficientes, y
-   * $\mathbf{e_{1t}}$ y $\mathbf{e_{2t}}$ son vectores ( $n\times 1$ ) de términos de error.
-   
-   Calcule el primer sistema con cuatro rezagos de cada variable en cada ecuación y llame a la matriz de varianzas y covarianzas de los residuos $\mathbf{\Sigma_4}$. Ahora estime la segunda ecuación usando solo un rezago de cada variable en cada ecuación y llame a la matriz de varianzas y covarianzas de los residuos $\mathbf{\Sigma_1}$. 
-
-Aunque trabajamos con variables no estacionarias, podemos realizar pruebas de longitud de rezagos utilizando el estadístico de prueba de razón de verosi-militud recomendado por Sims (1980): $(T-c)(\ln{|\mathbf{\Sigma_1}|}-\ln{|\mathbf{\Sigma_4}|})$ donde 
-* $T$ es el número de observaciones,
-* $c" es el número de parámetros en el sistema no restringido y
-* $ln{|\mathbf{\Sigma_i}|}$ es el logaritmo natural del determinante de $\mathbf{\Sigma_i}$.
-
-Siguiendo a Sims, use la distribución $\chi^2$ con grados de libertad igual al número de restricciones de los coeficientes. Como cada $\mathbf{A_i}$ tiene $n^2$ coeficientes, la restricción $\mathbf{A_2=A_3=A_4=0}$  implica restricciones $3n^2$. 
-
-Alternativamente, puede seleccionar la longitud del rezago $p$ utilizando las generalizaciones multivariadas del Criterio de Información de Akaike o del Criterio Bayesiano de Schwartz. En el modelo en cuestión, puede darse por ejemplo que el método general a específico y el Criterio de Información de Akaike seleccionan una longitud de rezago de $2$, mientras que el Criterio Bayesiano de Schwartz selecciona una longitud de rezago de $1$. 
+   Grafique los datos para ver si es probable que una tendencia de tiempo lineal esté presente en el proceso de generación de datos. Tenga cuidado porque los resultados de la prueba pueden ser bastante sensibles a la longitud del rezago. En la siguiente sección se profundiza más acerca de las pruebas para determinar el número óptimo de rezagos.
 
 2) **Estime el modelo y determine el rango de $\pi$.**
 
