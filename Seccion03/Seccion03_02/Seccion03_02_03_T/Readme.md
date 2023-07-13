@@ -1,9 +1,13 @@
-SECCIÓN 3.2.3:
-#La Metodología Cointegración de Johansen
+## SECCIÓN 3.2.3:
+# La Metodología de Johansen
 
-Los estimadores de máxima verosimilitud de Johansen (1988) evitan el uso de estimadores de dos pasos y pueden estimar y probar la presencia de múltiples vectores de cointegración. Además, estas pruebas permiten probar versiones restringidas de los vectores de cointegración y la velocidad de los parámetros de ajuste.[^3] 
+Los estimadores de máxima verosimilitud de Johansen (1988): 
+* evitan el uso de estimadores de dos pasos[^1],
+* pueden estimar y probar la presencia de múltiples vectores de cointegración, y
+* permiten probar versiones restringidas de los vectores de cointegración y la velocidad de los parámetros de ajuste.[^2] 
 
-[^3]: **A menudo, es interesante determinar si es posible verificar una teoría probando restricciones en las magnitudes de los coeficientes estimados**
+[^1]: **Tal como ocurre en la metodología de Engle y Granger (1987) visto previamente.
+[^2]: **A menudo, es interesante determinar si es posible verificar una teoría probando restricciones en las magnitudes de los coeficientes estimados**
 
 El procedimiento de Johansen (1988) se basa en gran medida en la relación entre el rango de una matriz y sus raíces características. Este no es más que una generalización multivariada de la prueba $DF$. En el caso univariado, es posible ver que la estacionariedad de { $y_t$ } depende de $a_1$; es decir, dados $y_t=a_1y_{t-1}+\varepsilon_t$ o $\Delta y_t=(a_1-1)y_{t-1}+\varepsilon_t$. Si $(a_1-1)=0$, el proceso { $y_t$ } tiene una raíz unitaria. Descartando el caso en el que { $y_t$ } es explosivo, si $(a_1-1)≠0$ podemos concluir que la secuencia { $y_t$ } es estacionaria. Las tablas de Dickey-Fuller proporcionan los estadísticos apropiados para probar formalmente la hipótesis nula $(a_1-1)=0$.
 
