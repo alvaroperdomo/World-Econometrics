@@ -11,8 +11,8 @@ VARorder(x,maxp=10)
 | **x**              | vector de variables de series de tiempo que incluye las variables endógenas utilizadas en el VEC                    |
 | **maxp**           | el número máximo de rezagos utilizados en la prueba (la **_Opción Predeterminada es 13_**)                          |
 
-## 2) Gráfico de la $FAC$ y la $FACP$ de los residuos del $VEC$
-Recuerde que los residuos del $VEC$ son ruido blanco. Entonces, el siguiente comando permite ver el gráfico de la $FAC$ y de la $FACP$ para verificar que los mismos no esten correlacionados:
+## 2) Gráfico de la $FAC$ y la $FACP$ de los residuos de la prueba de cointegración de Johansen
+Recuerde que los residuos del la prueba de cointegración de Johansen tienen que ser ruido blanco ruido blanco. Entonces, el siguiente comando permite ver el gráfico de la $FAC$ y de la $FACP$ para verificar que los mismos no esten correlacionados:
 
 ``` r
 plotres(nombre)
