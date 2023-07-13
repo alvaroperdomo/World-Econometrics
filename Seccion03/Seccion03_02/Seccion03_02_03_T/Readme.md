@@ -74,7 +74,7 @@ $\eqalign{\mathbf{x_{t-1}^*} = {\left\lbrack \matrix{x_{1(t-1)} \cr x_{2(t-1)} \
 
 $\eqalign{\mathbf{ \pi* } = {\left\lbrack \matrix{\pi_{11} & \pi_{12} & \dots & \pi_{1n} \cr \pi_{21} & \pi_{22} & \dots & \pi_{2n} \cr \dots & \dots & \dots & \dots \cr \pi_{n1} & \pi_{n2} & \dots & \pi_{nn} } \right\rbrack}}$ 
 
-La característica interesante de $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + \varepsilon_t}$ es que la tendencia lineal se elimina del sistema. En esencia, los diversos $a_io$ se han modificado de tal manera que la solución general para cada { $x_it$ } no contiene una tendencia temporal. La solución al conjunto de ecuaciones en diferencias representadas $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + \varepsilon_t}$ por es tal que se espera que todos los $Delta x_{it}$ sean iguales a cero cuando $\pi_{11} x_{1(t-1)} + \pi_{12} x_{2(t-1)} + \dots + \pi_{1n} x_{n(t-1)} + a_{i0} =0$.
+La característica interesante de $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + \varepsilon_t}$ es que la tendencia lineal se elimina del sistema. En esencia, los diversos $a_{i0}$ se han modificado de tal manera que la solución general para cada { $x_it$ } no contiene una tendencia temporal. La solución al conjunto de ecuaciones en diferencias representadas $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + \varepsilon_t}$ por es tal que se espera que todos los $Delta x_{it}$ sean iguales a cero cuando $\pi_{11} x_{1(t-1)} + \pi_{12} x_{2(t-1)} + \dots + \pi_{1n} x_{n(t-1)} + a_{i0} =0$.
 
 Para resaltar la diferencia entre $\mathbf{\Delta x_t=A_0+ \pi x_{t-1}+\varepsilon_t}$ y $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + varepsilon_t}$, la figura de abajo ilustra las consecuencias de utilizar $a_10=0.1$ y $a_20=-0.1$.  
 
