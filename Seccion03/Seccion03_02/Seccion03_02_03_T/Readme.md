@@ -168,7 +168,7 @@ Utilice los siguientes cuatro pasos cuando implemente el procedimiento Johansen:
 
 2) **Estime el modelo y determine el número de vectores de cointegración (es decir, determien el rango de $\pi$.)**
 
-   Muchos paquetes de software econométrico contienen una rutina para estimar el modelo. Aquí, basta con decir que Mínimos Cuadrados Ordinarios no es apropiado porque es necesario imponer restricciones de ecuaciones cruzadas en la matriz. En la mayoría de los casos, puede elegir estimar el modelo en tres formas:
+   R contiene una rutina para estimar el modelo. Aquí, basta con decir que Mínimos Cuadrados Ordinarios no es apropiado porque es necesario imponer restricciones de ecuaciones cruzadas en la matriz. En la mayoría de los casos, puede elegir estimar el modelo en tres formas:
    
    i) con todos los elementos de $\mathbf{A_0}$ establecidos en cero,
    
