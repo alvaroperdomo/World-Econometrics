@@ -42,6 +42,7 @@ En las figuras, se generan dos secuencias aleatorias, { $\varepsilon_{yt}$ } y {
 * En la figura del centro se agregan interceptos de manera que $a_{10}=a_{20}=0.1$; ahora cada serie tiende a aumentar $0.1$ unidades en cada período. Además del hecho de que cada secuencia comparte la misma tendencia estocástica, tenga en cuenta que cada una también tiene la misma tendencia de tiempo determinista. El hecho de que cada una tenga la misma tendencia determinista no es el resultado de la equivalencia entre $a_{10}$ y $a_{20}$; ya que $y_t$ y $z_t$ están cointegradas, la solución general a $\mathbf{\Delta x_t=A_0+ \pi x_{t-1}+\varepsilon_t}$ requiere que cada uno tenga la misma tendencia lineal.
 * Para verificar esto, la figura de la derecha establece $a_{10}=0.1$ y $a_{20}=0.4$. De nuevo, las secuencias tienen las mismas tendencias estocásticas y deterministas.
 
+## El término constante en los vectores de cointegración
 A continuación veremos que manipulando apropiadamente los elementos de $A_0$ es posible incluir una constante en los vectores de cointegración sin necesidad de in-cluir una tendencia de tiempo determinista al sistema.
 
 Una forma de incluir una constante en las relaciones de cointegración es restringir los valores de los diversos $a_i0$. Por ejemplo, si $rango(\pi)=1$, las filas de $\pi$ pueden diferir sólo en un escalar, por lo que es posible escribir cada secuencia { $\Delta x_{it}$ } en $\mathbf{\Delta x_t=A_0+ \pi x_{t-1}+\varepsilon_t}$ como:
