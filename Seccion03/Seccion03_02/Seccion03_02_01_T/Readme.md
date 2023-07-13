@@ -5,7 +5,7 @@ En los modelos univariados la tendencia estocástica de una serie de tiempo pued
 
 [^1]: **En cierto sentido, el uso del término equilibrio es desafortunado porque la teoría económica y la econometría usan el término de diferentes maneras. En teoría económica usualmente el término equilibrio para referirse a una igualdad entre transacciones deseadas y reales. El uso econométrico el equilibrio hace referencia a cualquier relación a largo plazo entre variables no estacionarias. La cointegración no requiere que la relación a largo plazo sea generada por las fuerzas del mercado o por las reglas de comportamiento de los individuos. Según Engle y Granger (1987) la relación de equilibrio puede ser causal, conductual o sim-plemente una relación de forma reducida entre variables con tendencias similares.** 
 
-Para entender mejor lo que es la cointegración considere el siguiente ejemplo: 
+Para entender mejor lo que es la cointegración considere la siguiente situación: 
 
 Asuma que hay $n$ variables $x_{1t}, x_{2t}, \dots, x_{nt}$ integradas del mismo orden que conforman un equilibrio de largo plazo representado por $\eqalign{\sum_{i=1}^n \beta_i x_{it}=0}$. Es decir, $\mathbf{B x_t}=0$ donde $\mathbf{B} = {\left\lbrack \matrix{\beta_1 & \beta_2 & ... & \beta_n} \right\rbrack}$ y $\eqalign{\mathbf{x_t} = {\left\lbrack \matrix{x_{1t} \cr x_{2t} \cr \dots \cr x_{nt} } \right\rbrack}}$
 
