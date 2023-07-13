@@ -10,3 +10,13 @@ VARorder(x,maxp=10)
 |--------------------|---------------------------------------------------------------------------------------------------------------------|
 | **x**              | vector de variables de series de tiempo que incluye las variables endógenas utilizadas en el VEC                    |
 | **maxp**           | el número máximo de rezagos utilizados en la prueba (la **_Opción Predeterminada es 13_**)                          |
+
+## 2) Gráfico de la $FAC$ y la $FACP$ de los residuos del $VEC$
+Recuerde que los residuos del $VEC$ son ruido blanco. Entonces, el siguiente comando permite ver el gráfico de la $FAC$ y de la $FACP$ para verificar que los mismos no esten correlacionados:
+
+``` r
+plotres(nombre)
+```
+| **Argumentos**     | **Descripción**                                                                                                     | 
+|--------------------|---------------------------------------------------------------------------------------------------------------------|
+| **nombre**         | nombre del $VEC$ que se estimó                                                                                      |
