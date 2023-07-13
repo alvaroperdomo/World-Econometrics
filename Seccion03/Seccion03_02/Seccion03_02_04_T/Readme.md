@@ -13,11 +13,9 @@ donde
    * $\mathbf{A_1}$ son matrices ( $n\times n$  de coeficientes, y
    * $\mathbf{e_{1t}}$ y $\mathbf{e_{2t}}$ son vectores ( $n\times 1$ ) de términos de error.
    
-   Calcule el primer sistema con cuatro rezagos de cada variable en cada ecuación y encuentre la matriz de varianzas y covarianzas de los residuos $\mathbf{\Sigma_4}$. Ahora estime la segunda ecuación usando solo un rezago de cada variable en cada ecuación y encuentre la matriz de varianzas y covarianzas de los residuos $\mathbf{\Sigma_1}$. 
-
-Aunque trabajamos con variables no estacionarias, podemos realizar pruebas de longitud de rezagos utilizando el estadístico de prueba de razón de verosimilitud recomendado por Sims (1980): $(T-c)(\ln{|\mathbf{\Sigma_1}|}-\ln{|\mathbf{\Sigma_4}|})$ donde 
+   Calcule el primer sistema con cuatro rezagos de cada variable en cada ecuación y encuentre la matriz de varianzas y covarianzas de los residuos $\mathbf{\Sigma_4}$. Ahora estime la segunda ecuación usando solo un rezago de cada variable en cada ecuación y encuentre la matriz de varianzas y covarianzas de los residuos $\mathbf{\Sigma_1}$. Aunque trabajamos con variables no estacionarias, podemos realizar pruebas de longitud de rezagos utilizando el estadístico de prueba de razón de verosimilitud recomendado por Sims (1980): $(T-c)(\ln{|\mathbf{\Sigma_1}|}-\ln{|\mathbf{\Sigma_4}|})$ donde 
 * $T$ es el número de observaciones,
-* $c" es el número de parámetros en el sistema no restringido y
+* $c$ es el número de parámetros en el sistema no restringido y
 * $ln{|\mathbf{\Sigma_i}|}$ es el logaritmo natural del determinante de $\mathbf{\Sigma_i}$.
 
 Siguiendo a Sims, use la distribución $\chi^2$ con grados de libertad igual al número de restricciones de los coeficientes. Como cada $\mathbf{A_i}$ tiene $n^2$ coeficientes, la restricción $\mathbf{A_2=A_3=A_4=0}$  implica restricciones $3n^2$. 
