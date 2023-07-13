@@ -53,10 +53,10 @@ A continuación encontrara información más detallada acerca de cada una de las
 | 04. Principales pruebas de validación de los Modelos ARIMA | Explicación de las pruebas de validación de un modelo ARIMA                                                    |              1            | 
 
 ## [Sección 3 - Análisis Multivariado de Series de Tiempo](Seccion03/Readme.md)
-| Subsecciones                                   | Contenido                                     | Dedicación,<br> 5.5 horas | 
-|------------------------------------------------|-----------------------------------------------|:-------------------------:|
-| 01. Estimación de Modelos VAR                  | Metododología para estimar un modelo VAR.     |              1            | 
-| 02. Cointegración y estimación de Modelos VEC  | Metodología para estimar un modelo VEC.       |              1            | 
+| Subsecciones                                       | Contenido                                     | Dedicación,<br> 5.5 horas | 
+|----------------------------------------------------|-----------------------------------------------|:-------------------------:|
+| **3.1.** Estimación de Modelos VAR                  | Metododología para estimar un modelo VAR.     |              1            | 
+| **3.2.** Cointegración y estimación de Modelos VEC  | Metodología para estimar un modelo VEC.       |              1            | 
 
 ### _Durante el desarrollo del curso se van a plantear algunos ejercicios con los cuales al ser resueltos de forma satisfactoria van a permitir optar, previo pago, a la obtención del certificado del curso._
   
