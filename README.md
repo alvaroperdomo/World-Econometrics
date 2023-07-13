@@ -41,8 +41,8 @@ A continuación encontrara información más detallada acerca de cada una de las
 ## [Sección 1 - Las Series de Tiempo, R y la Base de Datos del Banco Mundial](Seccion01/Readme.md)
 | Subsecciones                                                       | Contenido                                                                                                                | Dedicación,<br> 2 horas   | 
 |--------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|:-------------------------:|
-| 1. Series de tiempo                                                |¿Qué es una serie de tiempo?, ¿En qué consiste el análisis de series de tiempo?, ¿Qué es una variable discreta aleatoria? |             0.5           | 
-| 02. R y Los Indicadores de Desarrollo Económico del Banco Mundial  |¿Cómo manipular los Indicadores de Desarrollo Económico del Banco Mundial en R?                                           |             1.5           | 
+| **1.1.** Series de tiempo                                                |¿Qué es una serie de tiempo?, ¿En qué consiste el análisis de series de tiempo?, ¿Qué es una variable discreta aleatoria? |             0.5           | 
+| **1.2.** R y Los Indicadores de Desarrollo Económico del Banco Mundial  |¿Cómo manipular los Indicadores de Desarrollo Económico del Banco Mundial en R?                                           |             1.5           | 
 
 ## [Sección 2 - Análisis Univariado (ARIMA)](Seccion02/Readme.md)
 | Subsecciones                                               | Contenido                                                                    | Dedicación,<br> 10 horas  | 
