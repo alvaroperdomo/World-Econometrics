@@ -22,7 +22,7 @@ Siguiendo a Sims, use la distribución $\chi^2$ con grados de libertad igual al 
 
 Generalizando la prueba de razón de verosimilitud, como en el caso de cualquier $VAR$, sea $\Sigma_u$ y $\Sigma_r$ las matrices de varianzas y covarianzas de los sistemas no restringidos y restringidos, respectivamente. Suponga que $c$ denota el número máximo de regresores contenidos en la ecuación más larga. El estadístico de prueba de la **razón de verosimilitud** $(T-c)(\ln{|\mathbf{\Sigma_r}|}-\ln{|\mathbf{\Sigma_u}|})$ se puede comparar con una distribución $\chi^2$ con grados de libertad igual al número de restricciones en el sistema. 
 
-Alternativamente, puede usar el **Coeficiente de Información de Akaike multivariado** o el **Coeficiente Bayesiano de Schwartz multivariado** para determinar la longitud del rezago. Si desea probar la longitud del rezago para una sola ecuación, una prueba $F$ es apropiada. 
+Alternativamente, al igual que en los modelos $VAR$, puede usar el **Coeficiente de Información de Akaike multivariado** o el **Coeficiente Bayesiano de Schwartz multivariado** para determinar la longitud del rezago. Si desea probar la longitud del rezago para una sola ecuación, una prueba $F$ es apropiada. 
 
 ## Los interceptos en los modelos VEC
 
