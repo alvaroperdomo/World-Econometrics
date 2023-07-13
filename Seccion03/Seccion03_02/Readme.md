@@ -3,12 +3,12 @@
 
 A continuación, dando click en la X de la segunda columna de la siguiente tabla se redirigira a la explicación de cada uno de los aspectos teóricos que se encuentran en la primera columna de la tabla. Por otra parte, dando click en la X de la tercera columna de la tabla podra ver las aplicaciones en R de cada uno de estos temas:
 
-| Temas                                                                                                     | Explicación teórica                   |  Aplicación en R                     |
-|-----------------------------------------------------------------------------------------------------------|:-------------------------------------:|:---------------------:|
-|  ¿Qué es y para qué sirve la Cointegración?                                                               |  [X](Seccion03_02_01_T/Readme.md)     | 
-| ¿Cómo evaluar la presencia de Cointegración?: Prueba de Cointegración de Engle y Granger                  |  [X](Seccion02_02_ZA_T/Readme.md)     | [X](Seccion02_02_ZA_R/Readme.md)     |
-| ¿Cómo evaluar la presencia de Cointegración?: Prueba de Cointegración de Johansen                         |  [X](Seccion02_02_ADFGLS_T/Readme.md) | [X](Seccion02_02_ADFGLS_R/Readme.md) |
-| ¿Qué es un Modelo VEC? ¿Cómo se estima un Modelo VEC?                                                     |  [X](Seccion02_02_ADFGLS_T/Readme.md) | [X](Seccion02_02_ADFGLS_R/Readme.md) |
+| Temas                                                                                    | Explicación teórica                   |  Aplicación en R   |
+|----------------------------------------------------------------------------------------- |:-------------------------------------:|:------------------:|
+|  ¿Qué es y para qué sirve la Cointegración?                                              |  [X](Seccion03_02_01_T/Readme.md)     | 
+| ¿Cómo evaluar la presencia de Cointegración?: La Metodología de Engle y Granger          |  [X](Seccion03_02_02_T/Readme.md)     | [X](Seccion02_02_ZA_R/Readme.md)     |
+| ¿Cómo evaluar la presencia de Cointegración?: La Metodología Cointegración de Johansen   |  [X](Seccion02_02_ADFGLS_T/Readme.md) | [X](Seccion02_02_ADFGLS_R/Readme.md) |
+| ¿Qué es un Modelo VEC? ¿Cómo se estima un Modelo VEC?                                     |  [X](Seccion02_02_ADFGLS_T/Readme.md)| [X](Seccion02_02_ADFGLS_R/Readme.md) |
 
 ### La Metodología de Johansen
 
