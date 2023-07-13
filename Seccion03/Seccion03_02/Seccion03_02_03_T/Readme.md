@@ -181,10 +181,13 @@ Utilice los siguientes cuatro pasos cuando implemente el procedimiento Johansen:
    Por ejemplo, asuma que si seleccionamos $r=1$, el vector estimado de cointegración $(\beta_0,\beta_1,\beta_2,\beta_3)$ es $\mathbf{\beta_t}=(0.00553, 0.41532, 0.42988, −0.42207)$. Normalizando con respecto a $\beta_1$, el vector de cointegración normalizado es $\mathbf{\beta_t}=(−0.01331, −1.0000, −1.0350, 1.0162)$.
 
    Asuma que los valores teóricos del vector de cointegración son $(0,−1,−1, 1)$. En consecuencia, considere hacer las siguientes pruebas:
+
    a) La prueba de $\beta_0=0$ implica una restricción en un vector de cointegración; por lo tanto, la prueba de razón de verosimilitud tiene una distribución $\chi^2$ con un grado de libertad.
+
    b) Para restringir el vector de cointegración normalizado tal que $\beta_2=-1$ y $\beta_3=-1$ implica dos restricciones en un vector de cointegración; por lo tanto, la prueba de razón de verosimilitud tiene una distribución $\chi^2$ con dos grados de libertad.
+
    c) Para probar la restricción conjunta $\mathbf{\beta_t}=(0,−1,−1, 1)$ implica las tres restricciones $\beta_0=0$, $\beta_2=-1$ y $\beta_3=-1$.
 
-4) Finalmente, **las pruebas de impulso-respuesta, descomposición de varianza y causalidad en el modelo de corrección de errores** podrían ayudar a identificar un modelo estructural y determinar si el modelo estimado parece ser razonable.
+5) Finalmente, **las pruebas de impulso-respuesta, descomposición de varianza y causalidad en el modelo de corrección de errores** podrían ayudar a identificar un modelo estructural y determinar si el modelo estimado parece ser razonable.
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
