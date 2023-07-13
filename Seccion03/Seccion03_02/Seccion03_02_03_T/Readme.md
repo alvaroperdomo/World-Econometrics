@@ -1,6 +1,14 @@
 ## SECCIÓN 3.2.3:
 # La Metodología de Johansen
 
+La metodología de Johansen se resume en cuatro pasos:
+1) Realice una prueba de todas las variables para evaluar su orden de integración
+2) Estime el modelo y determine el núemro de vectores de cointegración
+3) Analice el(los) vector(es) de cointegración normalizados y la velocidad de los coeficientes de ajuste.
+4) Desarrolle las pruebas de impulso-respuesta, descomposición de varianza y causalidad en el modelo de corrección de errores
+
+El paso (1) ya se analizo en la sección 2.2 por lo cual no se ahondara mucho en esta sección. Los pasos (2) y (3) si seran objeto de análisis de esta sección. El paso (4) es equivalente al análisis que se hizo para el modelo VAR en la sección, por lo cual tampoco se ahondara mucho en esta sección. A continuación, se abordara los pasos (2) y (3) de la metodología de Johansen a partir de la respuesta a algunas preguntas importantes y al final de la sección se hara un resumen de los cuatro pasos considerados.  
+   
 ## ¿En qué supera la metodología de Johansen a la metodología de Engle y Granger?
 Los estimadores de máxima verosimilitud de Johansen (1988): 
 * evitan el uso de estimadores de dos pasos,
