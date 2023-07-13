@@ -1,6 +1,7 @@
 ## SECCIÓN 3.2.3:
 # La Metodología de Johansen
 
+## ¿En qué supera la metodología de Johansen a la metodología de Engle y Granger?
 Los estimadores de máxima verosimilitud de Johansen (1988): 
 * evitan el uso de estimadores de dos pasos[^1],
 * pueden estimar y probar la presencia de múltiples vectores de cointegración, y
@@ -9,6 +10,7 @@ Los estimadores de máxima verosimilitud de Johansen (1988):
 [^1]: **Tal como ocurre en la metodología de Engle y Granger (1987) visto previamente.
 [^2]: **A menudo, es interesante determinar si es posible verificar una teoría probando restricciones en las magnitudes de los coeficientes estimados**
 
+## ¿Cuáles son las bases de la metodología de Johansen para definir el número de vectores de cointegración de un modelo?
 El procedimiento de Johansen (1988) se basa en gran medida en la relación entre el rango de una matriz y sus raíces características. Este no es más que una generalización multivariada de la prueba $DF$ utilizada para analizar la presencia de raíz unitaria en los modelos univariados. 
 
 En el caso univariado, es posible ver que la estacionariedad de { $y_t$ } depende de $a_1$; es decir, dados $y_t=a_1y_{t-1}+\varepsilon_t$ o $\Delta y_t=(a_1-1)y_{t-1}+\varepsilon_t$:
