@@ -39,7 +39,7 @@ Las figuras de abajo ilustran los efectos de incluir un intercepto en el proceso
 
 En las figuras, se generan dos secuencias aleatorias, { $\varepsilon_{yt}$ } y { $\varepsilon_{zt}$ }, con $100$ observaciones cada una. Por otro lado, se asume $y_0=z_0=0$, y que los siguientes $100$ valores de las secuencias { $y_t$ } y { $z_t$ } son 
 
-$\eqalign{\left\lbrack \matrix{-0.2 & 0.2 \cr 0.2 & -0.2} \right\rbrack}$
+$\eqalign{ \left\lbrack \matrix{\Delta y_t \cr \Delta x_t} \right\rbrack = \left\lbrack \matrix{-0.2 & 0.2 \cr 0.2 & -0.2} \right\rbrack \left\lbrack \matrix{\Delta y_{t-1} \cr \Delta x_{t-1} \right\rbrack}}$
 
 de modo que la relación de cointegración es $y_t=z_t$
 
