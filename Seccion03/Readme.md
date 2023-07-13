@@ -11,8 +11,8 @@ Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en
 
 | Subsecciones                                                             | Contenido                                                                           | Dedicación,<br> 5.5 horas       | 
 |--------------------------------------------------------------------------|-------------------------------------------------------------------------------------|:-------------------------:|
-| [01. Estimación de Modelos VAR](Seccion03_01/Readme.md)                  | Explicación acerca de la metododología para estimar un modelo VAR.                  |              1            | 
-| [02. Cointegración y Estimación de Modelos VEC](Seccion03_02/Readme.md)  | Explicación acerca de lo qué es la cointegración y acerca de la metododología para estimar un modelo VEC. |              1            | 
+| [3.1. Estimación de Modelos VAR](Seccion03_01/Readme.md)                 | Explicación acerca de la metododología para estimar un modelo VAR.                  |              1            | 
+| [3.2. Cointegración y Estimación de Modelos VEC](Seccion03_02/Readme.md) | Explicación acerca de lo qué es la cointegración y acerca de la metododología para estimar un modelo VEC. |              1            | 
 
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
