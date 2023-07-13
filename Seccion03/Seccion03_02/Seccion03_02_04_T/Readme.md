@@ -3,7 +3,7 @@
 
 ## ¿Cómo determinar la longitud de rezagos del VEC?
 
-El procedimiento más común es estimar $VAR$ de los datos no diferenciados. Luego use las mismas pruebas de longitud de rezagos que en un $VAR$ tradicional. Comience con el rezago mas largo que considere razonable y verifique si se puede acortar. Por ejemplo, si queremos probar si los rezagos $1$ a $4$ son importantes, podemos estimar los siguientes dos $VAR$:
+El procedimiento más común es estimar el $VAR$ de los datos no diferenciados. Luego se utilizan las mismas pruebas de longitud de rezagos que en un $VAR$ tradicional. Comience con el rezago mas largo que considere razonable y verifique si se puede acortar. Por ejemplo, si queremos probar si los rezagos $1$ a $4$ son importantes, podemos estimar los siguientes dos $VAR$:
    * $\mathbf{x_t=A_0+A_1 x_{t-1}+A_2 x_{t-2}+A_3 x_{t-3}+A_4 x_{t-4}+e_{1t}}$
    * $\mathbf{x_t=A_0+A_1 x_{t-1}+e_{2t}}$
 
