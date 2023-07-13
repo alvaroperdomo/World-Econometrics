@@ -9,6 +9,25 @@ En lugar de plantear con cautela la forma de $A_0$, es posible probar formas res
 
 [^1]: **Uno de los aspectos más interesantes del procedimiento de Johansen es que permite probar formas restringidas de los VEC.**
 
+El procedimiento más común es estimar $VAR$ de los datos no diferenciados. Luego use las mismas pruebas de longitud de rezagos que en un $VAR$ tradicional. Comience con el rezago mas largo que considere razonable y verifique si se puede acortar. Por ejemplo, si queremos probar si los rezagos $1$ a $4$ son importantes, podemos estimar los siguientes dos $VAR$:
+   * $\mathbf{x_t=A_0+A_1 x_{t-1}+A_2 x_{t-2}+A_3 x_{t-3}+A_4 x_{t-4}+e_{1t}}$
+   * $\mathbf{x_t=A_0+A_1 x_{t-1}+e_{2t}}$
+
+donde 
+   * $\mathbf{x_t}$ es un vector de variables ( $n\times 1$ ),
+   * $\mathbf{A_0}$ es la matriz ( $n\times 1$ ) de interceptos,
+   * $\mathbf{A_1}$ son matrices ( $n\times n$  de coeficientes, y
+   * $\mathbf{e_{1t}}$ y $\mathbf{e_{2t}}$ son vectores ( $n\times 1$ ) de términos de error.
+   
+   Calcule el primer sistema con cuatro rezagos de cada variable en cada ecuación y llame a la matriz de varianzas y covarianzas de los residuos $\mathbf{\Sigma_4}$. Ahora estime la segunda ecuación usando solo un rezago de cada variable en cada ecuación y llame a la matriz de varianzas y covarianzas de los residuos $\mathbf{\Sigma_1}$. 
+
+Aunque trabajamos con variables no estacionarias, podemos realizar pruebas de longitud de rezagos utilizando el estadístico de prueba de razón de verosimilitud recomendado por Sims (1980): $(T-c)(\ln{|\mathbf{\Sigma_1}|}-\ln{|\mathbf{\Sigma_4}|})$ donde 
+* $T$ es el número de observaciones,
+* $c" es el número de parámetros en el sistema no restringido y
+* $ln{|\mathbf{\Sigma_i}|}$ es el logaritmo natural del determinante de $\mathbf{\Sigma_i}$.
+
+Siguiendo a Sims, use la distribución $\chi^2$ con grados de libertad igual al número de restricciones de los coeficientes. Como cada $\mathbf{A_i}$ tiene $n^2$ coeficientes, la restricción $\mathbf{A_2=A_3=A_4=0}$  implica restricciones $3n^2$. 
+
 La manera más sencilla de comprender las pruebas de longitud de rezagos es considerar el sistema en la forma $\mathbf{\Delta x_t=\pi^* x_{t-1} + \displaystyle\sum_{i=1}^{p-1} + \varepsilon_t}$. Independientemente del rango de $\pi$, todos los $\Delta x_{t-i}$ son variables estacionarias. Entonces, a partir de Sims, Stock y Watson (1990), sabemos que los coeficientes de interés en las variables estacionarias de media cero se pueden probar utilizando una distribución normal. Dado que la longitud del rezago depende únicamente de los valores de los diversos $\pi_i$, una distribución $\chi^2$ es apropiada para probar cualquier restricción relacionada con la longitud del rezago. Como en el caso de cualquier $VAR$, sea $\Sigma_u$ y $\Sigma_r$ las matrices de varianzas y covarianzas de los sistemas no restringidos y restringidos, respectivamente. Suponga que $c$ denota el número máximo de regresores contenidos en la ecuación más larga. El estadístico de prueba de la **razón de verosimilitud** $(T-c)(\ln{|\mathbf{\Sigma_r}|}-\ln{|\mathbf{\Sigma_u}|})$ se puede comparar con una distribución $\chi^2$ con grados de libertad igual al número de restricciones en el sistema. 
 
 Alternativamente, puede usar el **Coeficiente de Información de Akaike multivariado** o el **Coeficiente Bayesiano de Schwartz multivariado** para determinar la longitud del rezago. Si desea probar la longitud del rezago para una sola ecuación, una prueba $F$ es apropiada. 
