@@ -21,7 +21,7 @@ Consideremos la generalización al caso multivariado con $n$ variables; asuma qu
 * $\mathbf{\varepsilon_t}$ es un vector ( $n\times 1$ ),
 * $\mathbf{A_1}$ es una matriz ( $n\times n$ ) de parámetros, 
 * $\mathbf{I}$ es una matriz identidad ( $n\times n$ ),
-* $\mathbf{\pi}$ se define como $\mathbf{(A_1-I}$.
+* $\mathbf{\pi}$ se define como $\mathbf{(A_1-I)}$.
 
 El rango de $\mathbf{(A_1-I}$ es igual al número de vectores de cointegración. Por analogía con el caso univariado, si $\mathbf{(A_1-I}$  tiene solo ceros, de modo que el $rango(\pi)=0$, todas las secuencias { $x_{it}$ } tienen raíz unitaria. En esta situación, dado que no hay una combinación lineal de los procesos { $x_{it}$ } que sea estacionaria, las variables no se cointegran. Descartando la presencia de raíces características mayores que $1$ y si el $rango(\pi)=n$, $\mathbf{\Delta x_t=\pi x_{t-1} + \varepsilon_t}$ es un sistema convergente de ecuaciones en diferencias, de modo que todas las variables son estacionarias.
 
