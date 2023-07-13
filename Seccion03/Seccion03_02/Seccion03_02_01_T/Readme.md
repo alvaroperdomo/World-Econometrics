@@ -15,7 +15,7 @@ Engle y Granger (1987) proporcionan la siguiente definición de cointegración: 
 1) Todos los componentes de $\mathbf{x_t}$ son integrados de orden $d$.
 2) Existe un vector $\mathbf{B} = {\left\lbrack \matrix{\beta_1 & \beta_2 & ... & \beta_n} \right\rbrack}$ tal que la combinación lineal $\mathbf{B x_t}=0$  está integrada de orden $(d-b)$ donde $b>0$.
 
-  El vector $B$ se llama el vector cointegrante.
+  El vector $\mathbf{B}$ se llama el vector cointegrante.
 
 Hay cuatro puntos importantes a tener en cuenta sobre la definición:
 1) **La cointegración se refiere a una combinación lineal de variables no estacionarias**.
