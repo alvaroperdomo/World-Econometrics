@@ -3,12 +3,11 @@
 
 ## ¿En qué supera la metodología de Johansen a la metodología de Engle y Granger?
 Los estimadores de máxima verosimilitud de Johansen (1988): 
-* evitan el uso de estimadores de dos pasos[^1],
+* evitan el uso de estimadores de dos pasos,
 * pueden estimar y probar la presencia de múltiples vectores de cointegración, y
-* permiten probar versiones restringidas de los vectores de cointegración y la velocidad de los parámetros de ajuste.[^2] 
+* permiten probar versiones restringidas de los vectores de cointegración y la velocidad de los parámetros de ajuste.[^1] 
 
-[^1]: **Tal como ocurre en la metodología de Engle y Granger (1987) visto previamente.
-[^2]: **A menudo, es interesante determinar si es posible verificar una teoría probando restricciones en las magnitudes de los coeficientes estimados**
+[^1]: **A menudo, es interesante determinar si es posible verificar una teoría probando restricciones en las magnitudes de los coeficientes estimados**
 
 ## ¿Cuáles son las bases de la metodología de Johansen para definir el número de vectores de cointegración de un modelo multivariado de series de tiempo?
 El procedimiento de Johansen (1988) se basa en gran medida en la relación entre el rango de una matriz y sus raíces características. Este no es más que una generalización multivariada de la prueba $DF$ utilizada para analizar la presencia de raíz unitaria en los modelos univariados. 
@@ -39,9 +38,9 @@ Las figuras de abajo ilustran los efectos de incluir un intercepto en el proceso
 
 En las figuras, se generan dos secuencias aleatorias, { $\varepsilon_{yt}$ } y { $\varepsilon_{zt}$ }, con $100$ observaciones cada una. Por otro lado, se asume $y_0=z_0=0$, y que los siguientes $100$ valores de las secuencias { $y_t$ } y { $z_t$ } son 
 
-$\eqalign{ \left\lbrack \matrix{\Delta y_t \cr \Delta x_t} \right\rbrack = \left\lbrack \matrix{-0.2 & 0.2 \cr 0.2 & -0.2} \right\rbrack} + \left\lbrack \matrix{\varepsilon_{yt} \cr \varepsilon_{zt}} \right\rbrack$  
+$\eqalign{ \left\lbrack \matrix{\Delta y_t \cr \Delta z_t} \right\rbrack = \left\lbrack \matrix{-0.2 & 0.2 \cr 0.2 & -0.2} \right\rbrack} \left\lbrack \matrix{\Delta y_{t-1} \cr \Delta z_{t-1}} \right\rbrack + \left\lbrack \matrix{\varepsilon_{yt} \cr \varepsilon_{zt}} \right\rbrack$  
 
-$\eqalign{ \left\lbrack \matrix{\Delta y_{t-1} \cr \Delta x_{t-1} \right\rbrack}}$ 
+
 
 de modo que la relación de cointegración es $y_t=z_t$
 
