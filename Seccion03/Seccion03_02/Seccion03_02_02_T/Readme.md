@@ -1,7 +1,7 @@
 ## SECCIÓN 3.2.2.
 # La Metodología de Engle y Granger
 
-Para explicar el procedimiento de prueba de Engle-Granger, consideremos la clase de problema que es usual en los estudios aplicados. Suponga que dos variables, digamos $y_t$ y $z_t$, son integradas de orden $1$ y se desea determinar si existe una relación de equilibrio entre las dos. Para ello, Engle y Granger (1987) proponen el siguiente procedimiento de cuatro pasos para determinar si dos variables $I(1)$ están cointegradas de orden $CI(1,1)$:
+Para explicar el procedimiento de prueba de Engle-Granger, consideremos la clase de problema que es usual en los estudios aplicados. Suponga que dos variables, digamos $y_t$ y $z_t$, son integradas de orden $1$ y se desea determinar si existe una relación de equilibrio entre las dos. Para ello, Engle y Granger (1987) proponen el siguiente procedimiento de tres pasos para determinar si dos variables $I(1)$ están cointegradas de orden $CI(1,1)$:
 
 ### 1) Haga una prueba preliminar de las variables para conocer su orden de integración.
    
@@ -25,10 +25,9 @@ Recuerde que:
    * Si no se puede rechazar la hipótesis nula $a_1=0$, se concluye que los residuos tienen una raíz unitaria y por lo tanto, se deduce que las secuencias { $y_t$ } y { $z_t$ } no están cointegradas.
    * En cambio, el rechazo de la hipótesis nula $a_1=0$ implica que la secuencia de residuos es estacionaria. Si se encuentra que { $y_t$ } y { $z_t$ } son $I(1)$ y que los residuos son estacionarios, entonces se puede concluir que las series están cointegradas de orden $(1,1)$.
 
-   En la mayoría de los estudios aplicados, no es posible utilizar las tablas de Dickey-Fuller. El problema es que la secuencia { $\hat{e_t}$ } se genera a partir de una regresión; donde el investigador no conoce el error real $e_t$, solo el error estimado { $\hat{e_t}$ }.[^3]
+   Tenga en cuenta que en la mayoría de los estudios aplicados, no es posible utilizar las tablas de Dickey-Fuller para probar la hipótesis nula que acabamos de mencionar. El problema es que la secuencia { $\hat{e_t}$ } se genera a partir de una regresión; donde el investigador no conoce el error real $e_t$, solo el error estimado { $\hat{e_t}$ }.Por ello es que Engle y Granger (1987) propusieron nuevas tablas para hacer los cálculos. Y estas posteriormente fueron actualizadas por MacKinnon (1990). En estas tablas, los valores críticos dependen del tamaño de la muestra y del número de variables utilizadas en el análisis
 
 [^2]: **Los residuos estimados de una regresión tienen media igual a cero, por ello es que no es necesario incluir un intercepto dentro de esta regresión**
-[^3]: **Engle y Granger (1987) propusieron nuevas tablas para hacer los cálculos. Y estas posteriormente fueron actualizadas por MacKinnon (1990). En estas tablas, los valores críticos dependen del tamaño de la muestra y del número de variables utilizadas en el análisis**
 
 ### 3) Estime el vector de corrección de errores
 
