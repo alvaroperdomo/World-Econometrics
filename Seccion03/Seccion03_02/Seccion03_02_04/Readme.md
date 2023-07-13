@@ -17,6 +17,6 @@ Recuerde que los residuos del $VEC$ son ruido blanco. Entonces, el siguiente com
 ``` r
 plotres(nombre)
 ```
-| **Argumentos**     | **Descripción**                                                                                                     | 
-|--------------------|---------------------------------------------------------------------------------------------------------------------|
-| **nombre**         | nombre del $VEC$ que se estimó                                                                                      |
+| **Argumentos**     | **Descripción**                                                        | 
+|--------------------|------------------------------------------------------------------------|
+| **nombre**         | nombre del $VEC$ que se estimó  con el comando "ca.jo"                 |
