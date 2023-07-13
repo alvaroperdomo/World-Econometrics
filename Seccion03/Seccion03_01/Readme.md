@@ -4,7 +4,7 @@ Si se quiere tener en cuenta todas las relaciones posibles entre, digamos, $k$ v
 
 | Temas                                                                                                                                                                  | Explicación teórica                   |  Aplicación en R                     |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------:|:------------------------------------:|
-| 1. ¿Qué es un modelo VAR?, ¿Cuáles son los tipos de modelos VAR?, ¿Cómo hacer pronósticos con un modelo VAR?, ¿Cómo estimar y hacer pronosticos de un modelo VAR en R? |  [X](Seccion03_01_01_T/Readme.md)    | [X](Seccion03_01_01_R/Readme.md)    | 
+| 1. ¿Qué es un modelo VAR?, ¿Cómo hacer pronósticos con un modelo VAR?, ¿Cómo estimar y hacer pronosticos de un modelo VAR en R? |  [X](Seccion03_01_01_T/Readme.md)    | [X](Seccion03_01_01_R/Readme.md)    | 
 | 2. Pruebas de Hipótesis en Modelos VAR                                                                                                                                 |  [X](Seccion03_01_02_T/Readme.md)     | [X](Seccion03_01_02_R/Readme.md)     |
 | 3. La Función Impulso Respuesta y la Descomposición de Varianza                                                                                                        |  [X](Seccion03_01_03_T/Readme.md) | [X](Seccion03_01_03_R/Readme.md) | 
 
@@ -13,5 +13,5 @@ A continuación, se presenta un ejemplo utilizando la base de datos "Indicadores
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
-| [:house: Inicio](../README.md)    | [Siguiente Sección: 3.1.1. ¿Qué es un modelo VAR?, ¿Cuáles son los tipos de modelos VAR?, ...](Seccion03_01_01_R/Readme.md) |
+| [:house: Inicio](../README.md)    | [Siguiente Sección: 3.1.1. ¿Qué es un modelo VAR?, ...](Seccion03_01_01_T/Readme.md) |
 |-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
