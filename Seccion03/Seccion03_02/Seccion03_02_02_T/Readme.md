@@ -16,7 +16,7 @@ Recuerde que:
 
 ### 2) Estime la relación del equilibrio a largo plazo.
 
-   Si los resultados indican que tanto { $y_t$ } como { $z_t$ } son $I(1)$, estime utilizando Mínimos Cuadrados Ordinarios la relación de equilibrio: $y_t=\beta_0+\beta_1z_t+e_t$.
+   Si los resultados indican que tanto las secuencias { $y_t$ } como las secuencias { $z_t$ } son $I(1)$, estime utilizando Mínimos Cuadrados Ordinarios la relación de equilibrio: $y_t=\beta_0+\beta_1z_t+e_t$.
 
    Para determinar si las variables están realmente cointegradas, sea { $\hat{e_t}$ } la secuencia de residuos de esta ecuación. Por lo tanto, la serie { $\hat{e_t}$ } contiene los valores estimados de las desviaciones de la relación de largo plazo. Si se encuentra que estas desviaciones son estacionarias, las secuencias { $y_t$ } y { $z_t$ } son cointegradas de orden $(1,1)$. 
 
