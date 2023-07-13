@@ -159,9 +159,9 @@ Los valores críticos de los estadísticos $\lambda_{traza}$  y $\lambda_{max}$ 
 Es importante anotar que estos estadísticos necesitan que sus residuos sean ruido blanco. Cualquier evidencia de que los errores no son ruido blanco generalmente significa que las longitudes de rezago son demasiado cortas. 
 
 En la prueba de Johansen, es importante determinar correctamente la forma de los regresores deterministas. Por ejemplo, los valores críticos de los estadísticos $\lambda_{traza}$ y $\lambda_{max}$ son más pequeños sin ningún tipo de regresores deterministas y más grandes con un intercepto en el vector de cointegración. 
-En lugar de plantear con cautela la forma de $A_0$, es posible probar formas restringidas del vector [^*]. La idea clave de todas las pruebas de hipótesis es que **si hay $r$ vectores de cointegración, solo estas $r$ combinaciones lineales de las variables son estacionarias**. Todas las demás combinaciones lineales son no estacionarias. Por lo tanto, suponga que se reestima el modelo restringiendo los parámetros de $\pi$. Si las restricciones no son vinculantes, debe encontrar que el número de vectores de cointegración no ha disminuido. 
+En lugar de plantear con cautela la forma de $A_0$, es posible probar formas restringidas del vector [^2]. La idea clave de todas las pruebas de hipótesis es que **si hay $r$ vectores de cointegración, solo estas $r$ combinaciones lineales de las variables son estacionarias**. Todas las demás combinaciones lineales son no estacionarias. Por lo tanto, suponga que se reestima el modelo restringiendo los parámetros de $\pi$. Si las restricciones no son vinculantes, debe encontrar que el número de vectores de cointegración no ha disminuido. 
 
-[^*]: Uno de los aspectos más interesantes del procedimiento de Johansen es que permite probar formas restringidas de los vectores de cointegración.
+[^2]: **Uno de los aspectos más interesantes del procedimiento de Johansen es que permite probar formas restringidas de los vectores de cointegración.**
 
 Para probar la presencia de un intercepto en el vector de cointegración en oposición al intercepto no restringido $A_0$, estime las dos formas del modelo. Denote 
 
