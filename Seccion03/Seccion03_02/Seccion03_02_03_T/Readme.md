@@ -120,7 +120,7 @@ Al igual que con la prueba $ADF$, el modelo multivariado también puede generali
 
 Considere $x_t = A_1x_{t-1} + A_2x_{t-2}  + \dots +  A_px_{t-p} + \varepsilon_t$ donde $\eqalign{\mathbf{x_t} = {\left\lbrack \matrix{x_{1t} \cr x_{2t} \cr \dots \cr x_{nt} } \right\rbrack}}$ y $\mathbf{\varepsilon_t}$ es un vector n-dimensional distribuido de forma independiente e idéntica con media cero y matriz de varianza $\Sigma_\varepsilon$.
 
-Como se hizo con la prueba $ADF$ en el modelo univariado, con las sumas apropiadas, la ecuación $\mathbf{x_t= \displaystyle\sum_{i=1}^{p} A_i x_{t-i} + \varepsilon_t}$ se puede transformar en: $\mathbf{\Delta x_t= \pi x_{t-1} +  \displaystyle\sum_{i=1}^{p-1} \pi_i \Delta x_{t-i} + \varepsilon_t}$ donde $\mathbf{\pi = -(I-\displaystyle\sum_{i=1}^p A_i)}$ y $\mathbf{\pi_i = -(I-\displaystyle\sum_{j=i+1}^p A_j)}$ 
+Como se hizo con la prueba $ADF$ en el modelo univariado, con las sumas apropiadas, la ecuación $\mathbf{x_t= \displaystyle\sum_{i=1}^{p} A_i x_{t-i} + \varepsilon_t}$ se puede transformar en: $\mathbf{\Delta x_t= \pi x_{t-1} +  \displaystyle\sum_{i=1}^{p-1} \pi_i \Delta x_{t-i} + \varepsilon_t}$ donde $\mathbf{\pi = \displaystyle\sum_{i=1}^p A_i-I}$ y $\mathbf{\pi_i = -(I-\displaystyle\sum_{j=i+1}^p A_j)}$ 
 
 La característica clave a tener en esta nueva ecuación es el rango de la matriz $\mathbf{\pi}$ ; **el rango de $\mathbf{\pi}$ es igual al número de vectores cointegrantes independientes**:
 
