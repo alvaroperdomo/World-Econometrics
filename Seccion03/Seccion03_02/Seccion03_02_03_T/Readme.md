@@ -120,12 +120,12 @@ Al igual que con la prueba $ADF$, el modelo multivariado también puede generali
 
 Considere $x_t = A_1x_{t-1} + A_2x_{t-2}  + \dots +  A_px_{t-p} + \varepsilon_t$ donde $\eqalign{\mathbf{x_t} = {\left\lbrack \matrix{x_{1t} \cr x_{2t} \cr \dots \cr x_{nt} } \right\rbrack}}$ y $\mathbf{\varepsilon_t}$ es un vector n-dimensional distribuido de forma independiente e idéntica con media cero y matriz de varianza $\Sigma_\varepsilon$.
 
-Como se hizo con la prueba $ADF$ en el modelo univariado, con las sumas apropiadas, la ecuación $\mathbf{x_t= \displaystyle\sum_{i=1}^{p} A_i x_{t-i} + \varepsilon_t}$ se puede transformar en: $\mathbf{\Delta x_t= \pi x_{t-1} +  \displaystyle\sum_{i=1}^{p-1} \pi_i \Delta x_{t-i} + \varepsilon_t}$ donde $\mathbf{\pi = \displaystyle\sum_{i=1}^p A_i-I}$ y $\mathbf{\pi_i = -(I-\displaystyle\sum_{j=i+1}^p A_j)}$ 
+Como se hizo con la prueba $ADF$ en el modelo univariado, con las sumas apropiadas, la ecuación $\mathbf{x_t= \displaystyle\sum_{i=1}^{p} A_i x_{t-i} + \varepsilon_t}$ se puede transformar en: $\mathbf{\Delta x_t= \pi x_{t-1} +  \displaystyle\sum_{i=1}^{p-1} \pi_i \Delta x_{t-i} + \varepsilon_t}$ donde $\mathbf{\pi = \displaystyle\sum_{i=1}^p A_i-I}$ y $\mathbf{\pi_i =- \displaystyle\sum_{j=i+1}^p A_j}$ 
 
 La característica clave a tener en esta nueva ecuación es el rango de la matriz $\mathbf{\pi}$ ; **el rango de $\mathbf{\pi}$ es igual al número de vectores cointegrantes independientes**:
 
 * si $\mathbf{rango(\pi)=0}$, la matriz es nula y $\mathbf{\Delta x_t= \pi x_{t-1} +  \displaystyle\sum_{i=1}^{p-1} \pi_i \Delta x_{t-i} + \varepsilon_t}$ es el modelo $VAR$ en las primeras diferencias.
-* si $\mathbf{rango(\pi)=n}$, el proceso vectorial es estacionario.
+* si $\mathbf{rango(\pi)=n}$, todas las variables dentro del $VAR$ son estacionarias.
 * si $\mathbf{rango(\pi)=1}$, hay un solo vector de cointegración y la expresión $\mathbf{\pi x_{t-1}}$ es el término de corrección de errores.
 * si $\mathbf{1 \lt rango(\pi) \lt n}$, hay múltiples vectores de cointegración.
 
@@ -136,7 +136,7 @@ Si las variables en $\mathbf{x_t}$ no están cointegradas, $\mathbf{rango(\pi)=0
 
 De manera similar, si $\mathbf{rango(\pi)=1}$, $0 < 𝜆_1 < 1$, entonces $\ln{(1 - \lambda_1)} < 0$ y $\ln{(1 - \lambda_2)} = \ln{(1 - \lambda_3)} = \dots = \ln{(1 - \lambda_n)} = 0$.
 
-En la práctica, solo podemos obtener estimaciones de $\mathbf{\pi}$ y de sus raíces características. La prueba para el número de raíces características que son significativamente diferentes de $1$ se puede realizar utilizando los siguientes dos estadísticos de prueba:
+En la práctica, solo podemos obtener estimaciones de $\mathbf{\pi}$ y de sus raíces características. La prueba para el número de raíces características que son significativamente diferentes de $1$ se puede realizar utilizando los siguientes dos estadísticos de prueba propuestos por Johansen (1988):
 
 * $\lambda_{traza}(r)=-T\displaystyle\sum_{r+1}^n \ln{(1-\hat{\lambda_i})}$ 
 * $\lambda_{max}(r,r+1)=-T\ln{(1-\hat{\lambda_{r+1}})}$
