@@ -1,4 +1,4 @@
-## SECCIÓN 3.2.4:
+## SECCIÓN 3.2.4 (T):
 # Pruebas de Hipótesis Adicionales en modelos VEC
 
 ## ¿Cómo determinar la longitud de rezagos del VEC?
