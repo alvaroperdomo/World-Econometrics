@@ -62,7 +62,7 @@ La metodología de Sims implica únicamente:
 
 Sin lugar a dudas, el $VAR$ esta sobreparameterizado ya que muchas de las estimaciones de los coeficientes serán no significativas. Sin embargo, el objetivo es encontrar las interrelaciones importantes entre las variables. Imponer incorrectamente restricciones nulas puede desperdiciar información importante. Además, _es probable que los regresores sean altamente colineales, de modo que las pruebas $t$ sobre los coeficientes individuales no son guías confiables para reducir el modelo_.
 
-# Los Pronósticos
+# ¿Cómo hacer pronósticos con un modelo $VAR$?
 Una vez que se ha estimado el $VAR$, se puede utilizar como un modelo de pronóstico de múltiples ecuaciones. 
 
 Suponga que estima el modelo de primer orden $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$ para obtener los valores de los coeficientes en $\mathbf{A_0}$ y en $\mathbf{A_1}$. Si sus datos van hasta el período $T$, es sencillo obtener los pronósticos de un periodo hacia adelante de sus variables utilizando la relación $E_T\mathbf{x_{T+1}=A_0+A_1x_T}$. De manera similar, se puede obtener un pronóstico de dos periodos hacia adelante utilizando la relación $E_T\mathbf{x_{T+2}=A_0+A_1x_{T+1}=A_0+A_1(A_0+A_1x_T)}$. 
