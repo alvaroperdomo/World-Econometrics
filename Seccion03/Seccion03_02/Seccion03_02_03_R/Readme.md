@@ -19,6 +19,43 @@ ca.jo(txhs, type="eigen",spec="transitory",ecdet="none",K=2)
 |                    |  **"const"** VEC con intercepto en la cointegración                                                                 |
 |                    |  **"trend"** VEC con tendencia en la cointegración                                                                  |
 | **K**              | número de rezagos que incluye el VEC                                                                                |
+| **spec**           | aquí se pueden escoger dos opciones para hacer la prueba                                                            |
+|                    |  **"longrun"** se calcula el estadistico $\lambda_{traza}$                                                          |
+|                    |  **"transitory"** se calcula el estadistico $\lambda_{traza}$                                                       |
+
+Dado un $VAR$ de la forma:
+
+XXXXXXXXXXXXXXXXXXXXXXXXXX
+
+existen las siguientes dos especificaciones de un VECM:
+
+XXXXXXXXXXXXXXXXXXXXXXXXXX
+
+donde
+
+XXXXXXXXXXXXXXXXXXXXXXXXXX
+
+y
+
+XXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Las XXXXX las matrices contienen los impactos acumulativos de largo plazo, por lo tanto, si se escoge **spec="long run"**, se estima el $VEC$ anterior.
+
+La otra especificación del $VEC$ es de la forma: 
+
+XXXXXXXXXXXXXXXXXXXXXXXXXX
+
+donde
+
+XXXXXXXXXXXXXXXXXXXXXXXXXX
+
+y
+
+XXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+**ANOTACIÓN de R:** La matriz XXXXX es la misma que en la primera especificación. Sin embargo, las matrices ahora difieren, en el sentido de que miden los efectos transitorios, por lo tanto, al establecer **spec="transitory"** se estima la segunda forma del $VEC$. Tenga en cuenta que las inferencias extraídas serán las mismas, independientemente de la especificación elegida y que el poder explicativo también es el mismo.
+
 
 # Estimación del $VEC$ 
 Para estimar el modelo $VEC$ copie el comando:
