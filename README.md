@@ -45,12 +45,12 @@ A continuación encontrara información más detallada acerca de cada una de las
 | **1.2.** R y Los Indicadores de Desarrollo Económico del Banco Mundial  |¿Cómo manipular los Indicadores de Desarrollo Económico del Banco Mundial en R?                                           |             1.5           | 
 
 ## [Sección 2 - Análisis Univariado (ARIMA)](Seccion02/Readme.md)
-| Subsecciones                                               | Contenido                                                                    | Dedicación,<br> 10 horas  | 
-|------------------------------------------------------------|------------------------------------------------------------------------------|:-------------------------:|
-| 01. Las Series Estacionarias                               | La importancia de trabajar con series estacionarias                          |             2.5           | 
-| 02. Pruebas de Raíz Unitaria                               | Explicación general de las pruebas de raíz unitaria                          |             5.5           | 
-| 03. Estimación de Modelos ARIMA                            | Explicación de la metododología de Box-Jenkins para estimar un modelo ARIMA. |              1            | 
-| 04. Principales pruebas de validación de los Modelos ARIMA | Explicación de las pruebas de validación de un modelo ARIMA                                                    |              1            | 
+| Subsecciones                                                   | Contenido                                                                     | Dedicación,<br> 10 horas| 
+|-----------------------------------------------------------------|------------------------------------------------------------------------------|:-----------------------:|
+| **2.1.** Las Series Estacionarias                               | La importancia de trabajar con series estacionarias                          |             2.5         | 
+| **2.2** Pruebas de Raíz Unitaria                                | Explicación general de las pruebas de raíz unitaria                          |             5.5         | 
+| **2.3.**. Estimación de Modelos ARIMA                           | Explicación de la metododología de Box-Jenkins para estimar un modelo ARIMA. |              1          | 
+| **2.4.** Principales pruebas de validación de los Modelos ARIMA | Explicación de las pruebas de validación de un modelo ARIMA                  |              1          | 
 
 ## [Sección 3 - Análisis Multivariado de Series de Tiempo](Seccion03/Readme.md)
 | Subsecciones                                       | Contenido                                     | Dedicación,<br> 5.5 horas | 
