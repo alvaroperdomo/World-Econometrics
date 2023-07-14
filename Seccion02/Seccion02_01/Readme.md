@@ -41,7 +41,7 @@ Apliquele la transformación adecuada. El procedimiento más común es sacandole
 
 Si la serie $y_t$ no es estacionacionaria ni en niveles, ni al sacarle la primera y segunda diferencia, entonces es mejor manejar la serie como un polinomio. En el Anexo 2 se explica cómo funciona esta transformación polinomica.  
 
-## ANEXO 1: ¿Bajo qué condiciones un modelo $AR(1) es estacionario? 
+## ANEXO 1: ¿Bajo qué condiciones un modelo $AR(1)$ es estacionario? 
 
 Sea $y_t=a_0+a_1y_{t-1}+\varepsilon_t$ donde $\varepsilon_t$ es ruido blanco.
 
