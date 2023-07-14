@@ -9,7 +9,15 @@ En esta sección se van a revisar las técnicas de análisis univariado de serie
   * Ello no quita que se puedan utilizar los datos de 1960-2022 para proyectar el PIB per cápita de Colombia a precios constantes durante el periodo 2023-2025. Sin embargo, las pruebas de raíz unitaria en términos didácticos resultan un poco más engorrosas de interpretar a raíz del choque temporal que tuvó el Covid-19 (Ver gráfico de abajo)
 
    ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ec783053-9f06-4834-9983-9158350145b8)
-  
+
+Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en la subsección respectiva
+
+| Subsecciones                                                                   | Contenido                                                                                            | Dedicación,<br> 5.5 horas | 
+|--------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|:-------------------------:|
+| [**2.1.** Series Estacionarias y No Estacionarias](Seccion02_01/Readme.md)     | Se explica la importancia de las series estacionarias en el análisis univariado de series de tiempo. |              1            | 
+| [**2.2.** Pruebas de Raíz Unitaria](Seccion02_02/Readme.md) | Explicación acerca de la metodología y lectura de diferentes tipos de pruebas de raíz unitaria                          |              1            | 
+| [**2.3.** Análisis ARIMA (Metodología de Box-Jenkins)](Seccion02_03/Readme.md) | Explicación acerca de cómo estimar un modelo ARIMA                                                   |              1            | 
+
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
 
