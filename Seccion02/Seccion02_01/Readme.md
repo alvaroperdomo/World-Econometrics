@@ -60,7 +60,7 @@ Si se sigue este mismo proceso iterativo, entonces la solución a esta ecuación
 1. **$t$ es grande [^1] y**
 2. **$|a_1|<1$** 
 
-[^1]:En consecuencia, si una muestra es generada por un proceso que ha comenzado recientemente, las realizaciones pueden no ser estacionarias. Empíricamente, en los análisis econométicos de series de tiempo anuales, es deseable tener al menos 30 grados de libertad en las estimaciones (los grados de libertad on iguales al número de años que tiene la serie menos el número de parámetros que se estiman). 
+[^1]: **En consecuencia, si una muestra es generada por un proceso que ha comenzado recientemente, las realizaciones pueden no ser estacionarias. Empíricamente, en los análisis econométicos de series de tiempo anuales, es deseable tener al menos 30 grados de libertad en las estimaciones (los grados de libertad son iguales al número de años que tiene la serie menos el número de parámetros que se estiman).** 
 
 La prueba de esto es:
 
