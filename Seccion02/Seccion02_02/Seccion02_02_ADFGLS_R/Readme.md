@@ -1,4 +1,4 @@
-## SECCIÓN 2.2.1. (R)
+## SECCIÓN 2.2.2. (R)
 # Aplicando las pruebas ADF-GLS en R
 
 Para llevar a cabo la prueba ADF-GLS ofrecemos dos opciones:
