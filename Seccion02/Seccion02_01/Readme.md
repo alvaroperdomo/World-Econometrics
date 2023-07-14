@@ -29,7 +29,7 @@ En el resto del curso, { $\varepsilon_t$ } siempre se referirá a un proceso de 
 Observe que si $q=0$, obtenemos un proceso $AR(p)$. Y si $p=0$, obtenemos un proceso $MA(q)$. 
 
 ## Requisito principal para poder aplicar la metodología de Box y Jenkins en el análisis univariado de series de tiempo
-Según la metodología de Box y Jenkins, el análisis univariado de series de tiempo se hace a partir de la construcción de modelos $ARMA$ de series estacionarias. **¿Por qué es importante el supuesto de estacionariedad en el análisis?** A modo de ejemplo, en el Anexo 1 se explica qué implicaciones tiene la estacionariedad de una serie sobre su representación $AR(1)$
+Según la metodología de Box y Jenkins, el análisis univariado de series de tiempo se hace a partir de la construcción de modelos $ARMA$ de series estacionarias. A modo de ejemplo, en el Anexo 1 se explica qué requisitos debe cumplir un proceso $AR(1)$ para ser estacionario
 
 ## ¿Qué hacer si una serie no es estacionaria?
 
@@ -56,7 +56,7 @@ Si se sigue este mismo proceso iterativo, entonces la solución a esta ecuación
 * $y_t=a_0\displaystyle\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0+\displaystyle\sum_{i = 0}^{t-1}\varepsilon_{t-i}$
 * $y_{t+s}=a_0\displaystyle\sum_{i = 0}^{t+s-1}a_1^i+a_1^{t+s}y_0+\displaystyle\sum_{i = 0}^{t+s-1}\varepsilon_{t+s-i}$
 
-**Por lo tanto, esta ecuación es estacionaria si** 
+**Por lo tanto, esta ecuación (obtenida de un proceso AR(1) es estacionaria si** 
 1. **$t$ es grande [^1] y**
 2. **$|a_1|<1$** 
 
@@ -74,6 +74,10 @@ Por lo tanto, sólo si $t \to \infty$ y $|a_1|<1$, la serie { $y_t$ }se vuelve e
 (2) La varianza de $y_t$ es finita e independiente del tiempo: $E(y_t-\mu)^2=E(\varepsilon_t+a_1\varepsilon_{t-1}+a_1^2\varepsilon_{t-2}+a_1^4\varepsilon_{t-4}+ …)^2=\sigma^2(1+a_1+a_1^2+a_1^4+ …)^2=\frac{\sigma^2}{1-a_1^2}$ 
 
 (3) Las autovarianzas de $y_t$ son finitas e independientes del tiempo: $E(y_t-\mu)(y_{t-s}-\mu)=E(\varepsilon_t+a_1\varepsilon_{t-1}+a_1^2\varepsilon_{t-2}+a_1^4\varepsilon_{t-4}+ …)(\varepsilon_{t-s}+a_1\varepsilon_{t-s-1}+a_1^2\varepsilon_{t-s-2}+a_1^4\varepsilon_{t-s-4}+ …)=\sigma^2a_1^s(1+a_1+a_1^2+a_1^4+ …)=\frac{\sigma^2a_1^s}{1-a_1^2}$ 
+
+La explicación de los requisitos para obtener procesos estacionarios en representaciones $ARMA(p,q)$ son más complejas que para un proceso AR(1). En general, note que un modelo $ARMA(p,q)$ es la representación de una ecuación en diferencias. Por lo tanto, se requiere que los valores caracteristicos (o también llamados los valores propios) que resuelven esta ecuación en diferencias sean menores que el valor absoluto de $1$.[^2]  
+
+[^2]: En el caso de un modelo $AR(1)$ es fácil demostrar que el valor caracteristico que resuelve a la ecuación es el coeficiente que multiplica al valor rezagado de la variable analizada.
 
 ## ANEXO 2: La transformación polinomica 
 En términos generales, una serie de tiempo puede tener la tendencia polinomial $y_t=a_0+a_1t+a_2t^2+a_3t^3+...+a_nt^n+e_t$ donde { $e_t$ } es un proceso estacionario. La transformación polinomica se logra estimando { $y_t$ } con respecto a una tendencia de tiempo polinomial determinista. 
