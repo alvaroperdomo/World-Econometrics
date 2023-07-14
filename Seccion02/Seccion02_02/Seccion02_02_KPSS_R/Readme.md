@@ -1,3 +1,4 @@
+## SECCIÓN 2.2.3. (R)
 # Aplicando la prueba KPSS en R
 
 Para llevar a cabo la prueba KPSS ofrecemos tres opciones:
