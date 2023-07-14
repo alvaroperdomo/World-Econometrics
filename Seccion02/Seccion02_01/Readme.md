@@ -3,23 +3,20 @@
 
 Para llevar a cabo un análisis univariado de series de tiempo siguiendo la metodología de Box y Jenkins (1976). Se necesita que la variable a analizar sea estacionaria. 
 
-## Los procesos estocásticos
-Generalmente, se denota a los elementos observados de una serie de tiempo { $y_0, y_1, y_2, ..., y_t$ } como realizaciones de un proceso estocástico, en donde que $y_t$ se refiere a un elemento de la secuencia completa { $y_t$ }. 
-
 ## Los procesos estacionarios
 Un proceso estocástico que tiene una media y una varianza finita es estacionario en covarianza si para todo $t$ y $t-s$ tiene:
 1) **Media constante**: $E(y_t)=E(y_{t-s})=\mu $
 2) **Varianza constante**: $E[(y_{t}- \mu)^2]=E[(y_{t-s}- \mu)^2]=\sigma_{y}^2$
 3) **Autocovarianzas de la misma amplitud constantes**: $E[(y_{t}- \mu)(y_{t-s}- \mu)] = E[(y_{t-j}- \mu)(y_{t-j-s}- \mu)] = \gamma_{s}$
 
-donde $\mu, \sigma_{y}^2$, y $\gamma_{s}$ son parametros constantes.
+donde $\mu, \sigma_{y}^2$, y $\gamma_{s}$ son parametros constantes, y $E(x)$ es el valor medio teórico de $x$.
 
 ## Los procesos ruido blanco
-Un caso especial de un proceso estacionario que es importante tener en consideración son los procesos ruido blanco.
+Un caso especial de procesos estacionarios que es importante tener en consideración son los procesos ruido blanco.
 
-Una secuencia { $\varepsilon_t$ } es un proceso de **ruido blanco** si cada valor en la secuencia tiene una media de cero, una varianza constante, y no está correlacionado con todas las demás realizaciones. 
+Una secuencia { $\varepsilon_t$ } es un proceso de **ruido blanco** si cada valor en la secuencia tiene una media de cero, una varianza constante, y no está correlacionado con todas las demás realizaciones de la secuencia. 
 
-Formalmente, si $E(x)$ es el valor medio teórico de $x$, entonces la secuencia { $\epsilon_t$ } es un proceso de ruido blanco si para cada período de tiempo $t$:
+Formalmente, la secuencia { $\epsilon_t$ } es un proceso de ruido blanco si para cada período de tiempo $t$:
 1) $E(\varepsilon_t)=E(\varepsilon_{t-1})= · · · =0$
 2) $E(\varepsilon_{t}^2)=E(\varepsilon_{t-1}^2)= · · · =\sigma^2$ ó [ $\sigma_{\varepsilon_{t}}^2=\sigma_{\varepsilon_{t-1}}^2= · · · =\sigma^2$ ]
 3) $E(\varepsilon_{t}\varepsilon_{t-s})=E(\varepsilon_{t-j}\varepsilon_{t-j-s})=0,  \forall j\neq s$ ó [ $\sigma_{\varepsilon_{t}\varepsilon_{t-s}}=\sigma_{\varepsilon_{t-j}\varepsilon_{t-j-s}}=0$ ]
