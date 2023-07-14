@@ -29,7 +29,7 @@ En el resto del curso, { $\varepsilon_t$ } siempre se referirá a un proceso de 
 Observe que si $q=0$, obtenemos un proceso $AR(p)$. Y si $p=0$, obtenemos un proceso $MA(q)$. 
 
 ## Requisito principal para poder aplicar la metodología de Box y Jenkins en el análisis univariado de series de tiempo
-Según la metodología de Box y Jenkins, el análisis univariado de series de tiempo se hace a partir de la construcción de modelos $ARMA$ de series estacionarias. **¿Por qué es importante la estacionariedad en el análisi?** A modo de ejemplo, en el Anexo 1 se explica qué implicaciones tiene la estacionariedad de una serie sobre su representación $AR(1)$
+Según la metodología de Box y Jenkins, el análisis univariado de series de tiempo se hace a partir de la construcción de modelos $ARMA$ de series estacionarias. **¿Por qué es importante el supuesto de estacionariedad en el análisis?** A modo de ejemplo, en el Anexo 1 se explica qué implicaciones tiene la estacionariedad de una serie sobre su representación $AR(1)$
 
 ## ¿Qué hacer si una serie no es estacionaria?
 
