@@ -1,3 +1,4 @@
+## SECCIÓN 2.2.1. (T)
 # Prueba de Dickey-Fuller - DF
 
 Recuerde que la ecuación $y_t = a_1 y_{t-1} + \varepsilon_t$ tiene raíz unitaria si $a_1=1$. Por otro lado, note que si resta $y_{t-1}$ a ambos lados de la ecuación se obtiene $\Delta y_t = \gamma y_{t-1} + \varepsilon_t$ donde $\gamma=a_1-1$. Por lo tanto, probar la hipótesis $a_1=1$ es equivalente a probar la hipótesis $\gamma=0$. 
