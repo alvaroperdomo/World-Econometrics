@@ -1,3 +1,4 @@
+## SECCIÓN 2.2.4. (T)
 # El cambio estructural
 
 Cuando hay cambios estructurales, los diversos estadísticos de las diferentes pruebas de raíz unitaria vistas previamente están sesgados hacia el no rechazo de la existencia de una raíz unitaria. Por lo tanto, al realizar pruebas de raíz unitaria, se debe tener especial cuidado si se sospecha que ha ocurrido un cambio estructural
