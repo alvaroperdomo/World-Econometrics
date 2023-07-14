@@ -1,3 +1,4 @@
+## SECCIÓN 2.2.4. (R)
 # Aplicando la pruebas ZA en R
 
 Para llevar a cabo la prueba ZA ofrecemos dos opciones:
