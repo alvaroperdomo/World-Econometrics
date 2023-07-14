@@ -1,3 +1,4 @@
+## SECCIÓN 2.3:
 # ANÁLISIS ARMA (METODOLOGÍA DE BOX Y JENKINS)
 
 Box y Jenkins (1976) popularizaron un método de tres etapas para seleccionar el modelo $ARMA()$ apropiado para estimar una serie de tiempo univariada. Tenga, en cuenta que esta metodología sólo es valida en series estacionarias. Por lo tanto, como se comento anteriormente, si una serie de tiempo no es estacionaria, transformela en una serie estacionaria para poder aplicar la propuesta de Box y Jenkins.
