@@ -40,15 +40,17 @@ Apliquele la transformación adecuada. El procedimiento más común es sacandole
 * Si una serie { $y_t$ } y su primera diferencia $\Delta y_t$ no son estacionarias, pero su segunda diferencia $\Delta_2 y_t= \Delta y_t - \Delta y_{t-1}$ si es estacionaria, se dice que es integrada de orden $2$ y el modelo de serie que la identifica se le suele denotar como $ARIMA(p,2,q)$
 * En consecuencia, en un modelo $ARIMA(p,i,q)$ la $I$ significa el número de veces que hubo que diferenciar la serie { $y_t$ } para obtener una serie estacionaria.
 
-Si la serie { $y_t$ } no es estacionacionaria ni en niveles, ni al sacarle la primera y segunda diferencia, entonces es mejor transformar la serie utilizando la estimación de un polinomio. En el Anexo 2 se explica cómo funciona esta transformación polinomica.  
+En la gran mayoría de las variables económicas, la serie { $y_t$ } es estacionaria en niveles o en primeras diferencias, en algunos casos es estacionaria en segundas diferencias. Sin embargo, si después de la segunda diferencia una serie no resulta estacionaria, entonces se puede transformar la serie como la estimación de un polinomio. En el Anexo 2 se explica cómo funciona esta transformación polinómica.  
 
 ## ANEXO 1: ¿Bajo qué condiciones un modelo $AR(1)$ es estacionario? 
 
 Sea $y_t=a_0+a_1y_{t-1}+\varepsilon_t$ donde $\varepsilon_t$ es ruido blanco.
 
-Suponga que el proceso comenzó en el período $0$, de modo que $y_0$ es una condición inicial determinista. 
-
-La solución a esta ecuación es 
+Suponga que el proceso comenzó en el período $0$, de modo que $y_0$ es una condición inicial determinista. Entonces, 
+* $y_1=a_0+a_1y_0+\varepsilon_1$
+* $y_2=a_0+a_1y_1+\varepsilon_2=a_0+a_1(a_0+a_1y_0+\varepsilon_1)+\varepsilon_2=a_0(1+a_1)+a_1^2y_0+a_1\varepsilon_1+\varepsilon_2$ donde en la segunda igualdad se reemplaza $y_1$.
+* $y_3=a_0+a_1y_2+\varepsilon_3=a_0+a_1(a_0(1+a_1)+a_1^2y_0+a_1\varepsilon_1+\varepsilon_2)+\varepsilon_3=a_0(1+a_1+a_1^2)+a_1^3y_0+a_1^2\varepsilon_1+a_1\varepsilon_2+\varepsilon_3$ donde en la segunda igualdad se reemplaza $y_2$
+Si se sigue el proceso iterativo La solución a esta ecuación es 
 
 * $$y_t=a_0\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0+\sum_{i = 0}^{t-1}\varepsilon_{t-i}$$
 * $$y_{t+s}=a_0\sum_{i = 0}^{t+s-1}a_1^i+a_1^{t+s}y_0+\sum_{i = 0}^{t+s-1}\varepsilon_{t+s-i}$$
@@ -67,7 +69,7 @@ El valor esperado de la misma es $$Ey_t=a_0\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0$$ y 
 
 (3) Las autovarianzas de $y_t$ son finitas e independientes del tiempo: $$E(y_t-\mu)(y_{t-s}-\mu)=E(\varepsilon_t+a_1\varepsilon_{t-1}+a_1^2\varepsilon_{t-2}+a_1^4\varepsilon_{t-4}+ …)(\varepsilon_{t-s}+a_1\varepsilon_{t-s-1}+a_1^2\varepsilon_{t-s-2}+a_1^4\varepsilon_{t-s-4}+ …)=\sigma^2a_1^s(1+a_1+a_1^2+a_1^4+ …)=\frac{\sigma^2a_1^s}{1-a_1^2}$$ 
 
-## ANEXO 2: ¿XXX? 
+## ANEXO 2: La transformación polinomica 
 A veces se puede usar la diferenciación para transformar un modelo no estacionario en un modelo estacionario con una representación 𝐴𝑅𝑀𝐴. Esto no significa que todos los modelos no estacionarios puedan transformarse en modelos $ARMA$ de buen comportamiento mediante la diferenciación apropiada. 
 
 Considere, por ejemplo, un modelo que es la suma de una tendencia determinista y un componente de ruido puro: $y_t=y_0+a_1t+\varepsilon_t$
