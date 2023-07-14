@@ -48,16 +48,19 @@ Sea $y_t=a_0+a_1y_{t-1}+\varepsilon_t$ donde $\varepsilon_t$ es ruido blanco.
 
 Suponga que el proceso comenzó en el período $0$, de modo que $y_0$ es una condición inicial determinista. Entonces, 
 * $y_1=a_0+a_1y_0+\varepsilon_1$
-* $y_2=a_0+a_1y_1+\varepsilon_2=a_0+a_1(a_0+a_1y_0+\varepsilon_1)+\varepsilon_2=a_0(1+a_1)+a_1^2y_0+a_1\varepsilon_1+\varepsilon_2$ donde en la segunda igualdad se reemplaza $y_1$.
-* $y_3=a_0+a_1y_2+\varepsilon_3=a_0+a_1(a_0(1+a_1)+a_1^2y_0+a_1\varepsilon_1+\varepsilon_2)+\varepsilon_3=a_0(1+a_1+a_1^2)+a_1^3y_0+a_1^2\varepsilon_1+a_1\varepsilon_2+\varepsilon_3$ donde en la segunda igualdad se reemplaza $y_2$
-Si se sigue el proceso iterativo La solución a esta ecuación es 
+* $y_2=a_0+a_1y_1+\varepsilon_2=a_0+a_1[a_0+a_1y_0+\varepsilon_1]+\varepsilon_2=a_0(1+a_1)+a_1^2y_0+a_1\varepsilon_1+\varepsilon_2$ donde en la segunda igualdad se reemplaza $y_1$.
+* $y_3=a_0+a_1y_2+\varepsilon_3=a_0+a_1[a_0(1+a_1)+a_1^2y_0+a_1\varepsilon_1+\varepsilon_2]+\varepsilon_3=a_0(1+a_1+a_1^2)+a_1^3y_0+a_1^2\varepsilon_1+a_1\varepsilon_2+\varepsilon_3$ donde en la segunda igualdad se reemplaza $y_2$
 
-* $$y_t=a_0\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0+\sum_{i = 0}^{t-1}\varepsilon_{t-i}$$
-* $$y_{t+s}=a_0\sum_{i = 0}^{t+s-1}a_1^i+a_1^{t+s}y_0+\sum_{i = 0}^{t+s-1}\varepsilon_{t+s-i}$$
+Si se sigue este mismo proceso iterativo, entonces la solución a esta ecuación en los periodos $t$ y $t+s$ es: 
+
+* $y_t=a_0\displaystyle\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0+\displaystyle\sum_{i = 0}^{t-1}\varepsilon_{t-i}$
+* $y_{t+s}=a_0\displaystyle\sum_{i = 0}^{t+s-1}a_1^i+a_1^{t+s}y_0+\displaystyle\sum_{i = 0}^{t+s-1}\varepsilon_{t+s-i}$
 
 **Por lo tanto, esta ecuación es estacionaria si** 
-1. **$t$ es grande (por lo tanto, si una muestra es generada por un proceso que ha comenzado recientemente, las realizaciones pueden no ser estacionarias) y**
+1. **$t$ es grande [^1] y**
 2. **$|a_1|<1$** 
+
+[^1]:En consecuencia, si una muestra es generada por un proceso que ha comenzado recientemente, las realizaciones pueden no ser estacionarias. Empíricamente, en los análisis econométicos de series de tiempo anuales, es deseable tener al menos 30 grados de libertad en las estimaciones (los grados de libertad on iguales al número de años que tiene la serie menos el número de parámetros que se estiman). 
 
 La prueba de esto es:
 
