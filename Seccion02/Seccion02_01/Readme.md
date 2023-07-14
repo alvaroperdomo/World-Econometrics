@@ -65,7 +65,7 @@ Si se sigue este mismo proceso iterativo, entonces la solución a esta ecuación
 La prueba de esto es bastante semcilla; sin embargo, primero noten los siguientes dos puntos:
 
 * El valor esperado de la serie { $y_t$ } es $Ey_t=a_0\displaystyle\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0$ y $Ey_{t+s}=a_0\displaystyle\sum_{i = 0}^{t+s-1}a_1^i+a_1^{t+s}y_0$ para todo $s$.
-* Como  $y_t=a_0\displaystyle\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0+\displaystyle\sum_{i = 0}^{t-1}\varepsilon_{t-i}$ y $Ey_t=a_0\displaystyle\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0$, entonces $y_t-Ey_t=\displaystyle\sum_{i = 0}^{t-1}\varepsilon_{t-i}$
+* Dados $y_t$, $y_{t+s}$, $Ey_t$ y $Ey_{t+s}$ entonces $y_t-Ey_t=\displaystyle\sum_{i = 0}^{t-1}\varepsilon_{t-i}$ y $y_{t+s}-Ey_{t+s}=\displaystyle\sum_{i = 0}^{t+s-1}\varepsilon_{t+s-i}$
 
 Por lo tanto, sólo si $t \to \infty$ y $|a_1|<1$, la serie se vuelve estacionaria porque:
 
