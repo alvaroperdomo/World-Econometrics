@@ -4,7 +4,7 @@
 Para llevar a cabo un análisis univariado de series de tiempo siguiendo la metodología de Box y Jenkins (1976). Se necesita que la variable a analizar sea estacionaria. 
 
 ## Los procesos estocásticos
-Generalmente, se denota a los elementos observados de una serie de tiempo { $y_0, y_1, y_2, ..., y_T$ } como realizaciones de un proceso estocástico, en donde que la notación $y_t$ se refiere a un elemento de la secuencia completa { $y_t$ }. 
+Generalmente, se denota a los elementos observados de una serie de tiempo { $y_0, y_1, y_2, ..., y_t$ } como realizaciones de un proceso estocástico, en donde que $y_t$ se refiere a un elemento de la secuencia completa { $y_t$ }. 
 
 ## Los procesos estacionarios
 Un proceso estocástico que tiene una media y una varianza finita es estacionario en covarianza si para todo $t$ y $t-s$ tiene:
