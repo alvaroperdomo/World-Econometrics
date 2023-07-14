@@ -35,11 +35,12 @@ Según la metodología de Box y Jenkins, el análisis univariado de series de ti
 
 Apliquele la transformación adecuada. El procedimiento más común es sacandole diferencias a la serie original, en particular:
 
-* Si una serie $y_t$ es estacionaria, se dice que es integrada de orden $0$ y el modelo de serie que la identifica se le suele denotar como $ARMA(p,q)$ (o como $ARIMA(p,0,q)$) donde $p$ y $q$ son los componentes autorregresivo y de media móvil del modelo, respectivamente.
-* Si una serie $y_t$ no es estacionaria, pero su primera diferencia $\Delta y_t = y_t-y_{t-1}$ si es estacionaria, se dice que es integrada de orden $1$ y el modelo de serie que la identifica se le suele denotar como $ARIMA(p,1,q)$
-* Si una serie $y_t$ y su primera diferencia $\Delta y_t$ no son estacionarias, pero su segunda diferencia $\Delta_2 y_t= \Delta y_t - \Delta y_{t-1}$ si es estacionaria, se dice que es integrada de orden $2$ y el modelo de serie que la identifica se le suele denotar como $ARIMA(p,2,q)$
+* Si una serie { $y_t$ } es estacionaria, se dice que es integrada de orden $0$ y el modelo de serie que la identifica se le suele denotar como $ARMA(p,q)$ (o como $ARIMA(p,0,q)$ ) donde $p$ y $q$ son los componentes autorregresivo y de media móvil del modelo, respectivamente.
+* Si una serie { $y_t$ } no es estacionaria, pero su primera diferencia $\Delta y_t = y_t-y_{t-1}$ si es estacionaria, se dice que es integrada de orden $1$ y el modelo de serie que la identifica se le suele denotar como $ARIMA(p,1,q)$
+* Si una serie { $y_t$ } y su primera diferencia $\Delta y_t$ no son estacionarias, pero su segunda diferencia $\Delta_2 y_t= \Delta y_t - \Delta y_{t-1}$ si es estacionaria, se dice que es integrada de orden $2$ y el modelo de serie que la identifica se le suele denotar como $ARIMA(p,2,q)$
+* En consecuencia, en un modelo $ARIMA(p,i,q)$ la $I$ significa el número de veces que hubo que diferenciar la serie { $y_t$ } para obtener una serie estacionaria.
 
-Si la serie $y_t$ no es estacionacionaria ni en niveles, ni al sacarle la primera y segunda diferencia, entonces es mejor manejar la serie como un polinomio. En el Anexo 2 se explica cómo funciona esta transformación polinomica.  
+Si la serie { $y_t$ } no es estacionacionaria ni en niveles, ni al sacarle la primera y segunda diferencia, entonces es mejor manejar la serie como un polinomio. En el Anexo 2 se explica cómo funciona esta transformación polinomica.  
 
 ## ANEXO 1: ¿Bajo qué condiciones un modelo $AR(1)$ es estacionario? 
 
