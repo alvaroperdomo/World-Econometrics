@@ -62,9 +62,12 @@ Si se sigue este mismo proceso iterativo, entonces la solución a esta ecuación
 
 [^1]: **En consecuencia, si una muestra es generada por un proceso que ha comenzado recientemente, las realizaciones pueden no ser estacionarias. Empíricamente, en los análisis econométicos de series de tiempo anuales, es deseable tener al menos 30 grados de libertad en las estimaciones (los grados de libertad son iguales al número de años que tiene la serie menos el número de parámetros que se estiman).** 
 
-La prueba de esto es:
+La prueba de esto es bastante semcilla; sin embargo, primero noten los siguientes dos puntos:
 
-El valor esperado de la serie { $y_t$ } es $Ey_t=a_0\displaystyle\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0$ y $Ey_{t+s}=a_0\displaystyle\sum_{i = 0}^{t+s-1}a_1^i+a_1^{t+s}y_0$ para todo $s$. Por lo tanto, sólo si $t \to \infty$ y $|a_1|<1$, la serie se vuelve estacionaria porque:
+* El valor esperado de la serie { $y_t$ } es $Ey_t=a_0\displaystyle\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0$ y $Ey_{t+s}=a_0\displaystyle\sum_{i = 0}^{t+s-1}a_1^i+a_1^{t+s}y_0$ para todo $s$.
+* Como  $y_t=a_0\displaystyle\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0+\displaystyle\sum_{i = 0}^{t-1}\varepsilon_{t-i}$ y $Ey_t=a_0\displaystyle\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0$, entonces $y_t-Ey_t=\displaystyle\sum_{i = 0}^{t-1}\varepsilon_{t-i}$
+
+Por lo tanto, sólo si $t \to \infty$ y $|a_1|<1$, la serie se vuelve estacionaria porque:
 
 (1) El valor medio de $y_t$ es finito e independiente del tiempo: $Ey_t=Ey_{t+s}=\frac{a_0}{1-a_1}=\mu$ para todo $s$
 
