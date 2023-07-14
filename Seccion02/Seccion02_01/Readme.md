@@ -40,7 +40,7 @@ Apliquele la transformación adecuada. El procedimiento más común es sacandole
 * Si una serie { $y_t$ } y su primera diferencia $\Delta y_t$ no son estacionarias, pero su segunda diferencia $\Delta_2 y_t= \Delta y_t - \Delta y_{t-1}$ si es estacionaria, se dice que es integrada de orden $2$ y el modelo de serie que la identifica se le suele denotar como $ARIMA(p,2,q)$
 * En consecuencia, en un modelo $ARIMA(p,i,q)$ la $I$ significa el número de veces que hubo que diferenciar la serie { $y_t$ } para obtener una serie estacionaria.
 
-Si la serie { $y_t$ } no es estacionacionaria ni en niveles, ni al sacarle la primera y segunda diferencia, entonces es mejor manejar la serie como un polinomio. En el Anexo 2 se explica cómo funciona esta transformación polinomica.  
+Si la serie { $y_t$ } no es estacionacionaria ni en niveles, ni al sacarle la primera y segunda diferencia, entonces es mejor transformar la serie utilizando la estimación de un polinomio. En el Anexo 2 se explica cómo funciona esta transformación polinomica.  
 
 ## ANEXO 1: ¿Bajo qué condiciones un modelo $AR(1)$ es estacionario? 
 
