@@ -1,3 +1,4 @@
+## SECCIÓN 2.2:
 # Pruebas de Raíz Unitaria
 
 La siguiente tabla presenta las pruebas que vamos a analizar. Dando click en la **X** de la segunda columna de la tabla puede redirigirse a la explicación teórica de la prueba y dando click en la **X** de la tercera columna de la tabla puede redirigirse para ver cómo la misma se lleva a cabo en R.  
