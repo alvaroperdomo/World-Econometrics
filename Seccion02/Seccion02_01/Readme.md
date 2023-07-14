@@ -1,8 +1,6 @@
 ## SECCIÓN 2.1: 
 # Series Estacionarias y No Estacionarias
 
-Para llevar a cabo un análisis univariado de series de tiempo siguiendo la metodología de Box y Jenkins (1976). Se necesita que la variable a analizar sea estacionaria. 
-
 ## Los procesos estacionarios
 Un proceso estocástico que tiene una media y una varianza finita es estacionario en covarianza si para todo $t$ y $t-s$ tiene:
 1) **Media constante**: $E(y_t)=E(y_{t-s})=\mu $
@@ -24,25 +22,18 @@ Formalmente, la secuencia { $\varepsilon_t$ } es un proceso de ruido blanco si p
 En el resto del curso, { $\varepsilon_t$ } siempre se referirá a un proceso de ruido blanco y $\sigma^2$  se referirá a la varianza de ese proceso. Cuando sea necesario hacer referencia a dos o más procesos de ruido blanco, se usarán símbolos como { $\varepsilon_{1t}$ } y { $\varepsilon_{2t}$ }. 
 
 ## Los procesos ARMA
-Es posible combinar un proceso de media móvil con un proceso autorregresivo para obtener un modelo autorregresivo de media móvil (_ARMA_). Por ejemplo, un modelo _ARMA(p,q)_, se escribe como:
-
-$$y_t=a_0+\sum_{i = 1}^{p}a_iy_{t-i}+\sum_{i = 0}^{q} \beta_i\varepsilon_{t-i}$$
+* Un proceso autorregresivo de orden $p$, también conocido como $AR(p)$ se define así: $y_t=a_0+\displaystyle\sum_{i = 1}^{p}a_iy_{t-i}+\varepsilon_{t}$
+* Un proceso de media móvil de orden $q$, también conocido como $MA(q)$ se define así: $y_t=a_0+\displaystyle\sum_{i = 1}^{q} \beta_i\varepsilon_{t-i}+\varepsilon_{t}$
+* Es posible combinar un proceso de media móvil con un proceso autorregresivo para obtener un modelo autorregresivo de media móvil ($ARMA$). Por ejemplo, un modelo $ARMA(p,q)$, se escribe como: $y_t=a_0+\displaystyle\sum_{i = 1}^{p}a_iy_{t-i}+\displaystyle\sum_{i = 1}^{q} \beta_i\varepsilon_{t-i}+\varepsilon_{t}$
     
-* Seguimos la convención usual de normalizar unidades para que siempre $\beta_0=1$. 
-* Si $q=0$, obtenemos un proceso autorregresivo de orden $p$: $AR(p)$. 
-* Si $p=0$, obtenemos un proceso de media móvil de orden $q$: $MA(q)$. 
+Observe que si $q=0$, obtenemos un proceso $AR(p)$. Y si $p=0$, obtenemos un proceso $MA(q)$. 
 
-##### En un modelo $ARMA$, es perfectamente posible que $p$ y/o $q$ sean infinitos. 
-
-Según la metodología de Box y Jenkins, el análisis univariado de series de tiempo se hace a partir de la construcción de modelos $ARMA$ de series estacionarias.
-
-En el Anexo 1 se explica, a modo de ejemplo, qué implicaciones tiene la estacionariedad de una serie sobre su representación $AR(1)$
+## Requisito principal para poder aplicar la metodología de Box y Jenkins en eñ análisis univariado de series de tiempo
+Según la metodología de Box y Jenkins, el análisis univariado de series de tiempo se hace a partir de la construcción de modelos $ARMA$ de series estacionarias. **¿Por qué es importante la estacionariedad en el análisi?** A modo de ejemplo, en el Anexo 1 se explica qué implicaciones tiene la estacionariedad de una serie sobre su representación $AR(1)$
 
 ## ¿Qué hacer si una serie no es estacionaria?
 
-Apliquele la transformación adecuada. 
-
-El procedimiento más común es sacandole la primera diferencia a la serie original, en particular:
+Apliquele la transformación adecuada. El procedimiento más común es sacandole diferencias a la serie original, en particular:
 
 * Si una serie $y_t$ es estacionaria, se dice que es integrada de orden $0$ y el modelo de serie que la identifica se le suele denotar como $ARMA(p,q)$ (o como $ARIMA(p,0,q)$) donde $p$ y $q$ son los componentes autorregresivo y de media móvil del modelo, respectivamente.
 * Si una serie $y_t$ no es estacionaria, pero su primera diferencia $\Delta y_t = y_t-y_{t-1}$ si es estacionaria, se dice que es integrada de orden $1$ y el modelo de serie que la identifica se le suele denotar como $ARIMA(p,1,q)$
