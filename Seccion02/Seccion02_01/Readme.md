@@ -67,7 +67,7 @@ La prueba de esto es bastante semcilla; sin embargo, primero noten los siguiente
 * El valor esperado de la serie { $y_t$ } es $Ey_t=a_0\displaystyle\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0$ y $Ey_{t+s}=a_0\displaystyle\sum_{i = 0}^{t+s-1}a_1^i+a_1^{t+s}y_0$ para todo $s$.
 * Dados $y_t$, $y_{t+s}$, $Ey_t$ y $Ey_{t+s}$ entonces $y_t-Ey_t=\displaystyle\sum_{i = 0}^{t-1}\varepsilon_{t-i}$ y $y_{t+s}-Ey_{t+s}=\displaystyle\sum_{i = 0}^{t+s-1}\varepsilon_{t+s-i}$
 
-Por lo tanto, sólo si $t \to \infty$ y $|a_1|<1$, la serie se vuelve estacionaria porque:
+Por lo tanto, sólo si $t \to \infty$ y $|a_1|<1$, la serie { $y_t$ }se vuelve estacionaria porque:
 
 (1) El valor medio de $y_t$ es finito e independiente del tiempo: $Ey_t=Ey_{t+s}=\frac{a_0}{1-a_1}=\mu$ para todo $s$
 
@@ -76,27 +76,15 @@ Por lo tanto, sólo si $t \to \infty$ y $|a_1|<1$, la serie se vuelve estacionar
 (3) Las autovarianzas de $y_t$ son finitas e independientes del tiempo: $E(y_t-\mu)(y_{t-s}-\mu)=E(\varepsilon_t+a_1\varepsilon_{t-1}+a_1^2\varepsilon_{t-2}+a_1^4\varepsilon_{t-4}+ …)(\varepsilon_{t-s}+a_1\varepsilon_{t-s-1}+a_1^2\varepsilon_{t-s-2}+a_1^4\varepsilon_{t-s-4}+ …)=\sigma^2a_1^s(1+a_1+a_1^2+a_1^4+ …)=\frac{\sigma^2a_1^s}{1-a_1^2}$ 
 
 ## ANEXO 2: La transformación polinomica 
-A veces se puede usar la diferenciación para transformar un modelo no estacionario en un modelo estacionario con una representación 𝐴𝑅𝑀𝐴. Esto no significa que todos los modelos no estacionarios puedan transformarse en modelos $ARMA$ de buen comportamiento mediante la diferenciación apropiada. 
+En términos generales, una serie de tiempo puede tener la tendencia polinomial $y_t=a_0+a_1t+a_2t^2+a_3t^3+...+a_nt^n+e_t$ donde { $e_t$ } es un proceso estacionario. La transformación polinomica se logra estimando { $y_t$ } con respecto a una tendencia de tiempo polinomial determinista. 
 
-Considere, por ejemplo, un modelo que es la suma de una tendencia determinista y un componente de ruido puro: $y_t=y_0+a_1t+\varepsilon_t$
-
-Note que la primera diferencia de $y_t$ no se comporta bien porque $\Delta y_t=a_1+\varepsilon_t-+\varepsilon_{t-1}$
-
-En este caso, $\Delta y_t$ no es invertible en el sentido de que $\Delta y_t$ no puede expresarse como un proceso autorregresivo. La invertibilidad de un proceso estacionario requiere que el componente 𝑀𝐴 no tenga una raíz unitaria.
-
-En cambio, una forma adecuada de transformar este modelo es estimar la ecuación $y_t=a_0+a_1t+\varepsilon_t$. Al restar los valores estimados de $y_t$ de las series observadas se obtienen los valores estimados de la serie { $\varepsilon_t$ }. 
-
-En términos generales, una serie de tiempo puede tener la tendencia polinomial $y_t=a_0+a_1t+a_2t^2+a_3t^3+...+a_nt^n+e_t$ donde { $e_t$ }  es un proceso estacionario. El **detrending** se logra estimando { $y_t$ } con respecto a una tendencia de tiempo polinomial determinista. 
-
-### ¿Cuál es el grado apropiado del polinomio? Criterios: 
+### ¿Cuál es el grado apropiado del polinomio que se estima? Criterios: 
 
 * La práctica común es estimar la ecuación utilizando el mayor valor de $n$ que es considerado razonable. Si el estadístico $t$ indica que $a_n$ es cero, considere una tendencia polinomial de orden $n-1$. Continúe reduciendo el orden de la tendencia polinomial hasta encontrar un coeficiente distinto de cero.
 * Las pruebas $F$ se pueden usar para determinar si un grupo de coeficientes, por ejemplo, de $a_{n-i}$  a $a_n$, es estadísticamente diferente de cero.
 * Los Criterios de Información de Akaike y el Criterio Bayesiano de Schwartz se pueden usar para reconfirmar el grado apropiado del polinomio. 
 
-Al restar los valores estimados de la secuencia { $y_t$ } de los valores reales se obtiene una estimación de la secuencia estacionaria { $e_t$ }. El proceso de **detrending** puede luego modelarse utilizando métodos tradicionales (como la estimación 𝐴𝑅𝑀𝐴).
-
-
+Al restar los valores estimados de la secuencia { $y_t$ } de los valores reales se obtiene una estimación de la secuencia estacionaria { $e_t$ }. Ya con la serie estacionaria se puede proceder a hacerle un análisis $ARMA$
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
