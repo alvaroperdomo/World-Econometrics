@@ -64,13 +64,13 @@ Si se sigue este mismo proceso iterativo, entonces la solución a esta ecuación
 
 La prueba de esto es:
 
-El valor esperado de la misma es $$Ey_t=a_0\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0$$ y $$Ey_{t+s}=a_0\sum_{i = 0}^{t+s-1}a_1^i+a_1^{t+s}y_0$$ para todo $s$
+El valor esperado de la { $y_t } es $Ey_t=a_0\displaystyle\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0$ y $Ey_{t+s}=a_0\displaystyle\sum_{i = 0}^{t+s-1}a_1^i+a_1^{t+s}y_0$$ para todo $s$. Por lo tanto, sólo si $t \to \infty$ y $|a_1|<1, la serie se vuelve estacionaria porque:
 
-(1) El valor medio de $y_t$ es finito e independiente del tiempo: $$Ey_t=Ey_{t+s}=\frac{a_0}{1-a_1}=\mu$$ para todo $s$
+(1) El valor medio de $y_t$ es finito e independiente del tiempo: $Ey_t=Ey_{t+s}=\frac{a_0}{1-a_1}=\mu$ para todo $s$
 
-(2) La varianza de $y_t$ es finita e independiente del tiempo: $$E(y_t-\mu)^2=E(\varepsilon_t+a_1\varepsilon_{t-1}+a_1^2\varepsilon_{t-2}+a_1^4\varepsilon_{t-4}+ …)^2=\sigma^2(1+a_1+a_1^2+a_1^4+ …)^2=\frac{\sigma^2}{1-a_1^2}$$ 
+(2) La varianza de $y_t$ es finita e independiente del tiempo: $E(y_t-\mu)^2=E(\varepsilon_t+a_1\varepsilon_{t-1}+a_1^2\varepsilon_{t-2}+a_1^4\varepsilon_{t-4}+ …)^2=\sigma^2(1+a_1+a_1^2+a_1^4+ …)^2=\frac{\sigma^2}{1-a_1^2}$ 
 
-(3) Las autovarianzas de $y_t$ son finitas e independientes del tiempo: $$E(y_t-\mu)(y_{t-s}-\mu)=E(\varepsilon_t+a_1\varepsilon_{t-1}+a_1^2\varepsilon_{t-2}+a_1^4\varepsilon_{t-4}+ …)(\varepsilon_{t-s}+a_1\varepsilon_{t-s-1}+a_1^2\varepsilon_{t-s-2}+a_1^4\varepsilon_{t-s-4}+ …)=\sigma^2a_1^s(1+a_1+a_1^2+a_1^4+ …)=\frac{\sigma^2a_1^s}{1-a_1^2}$$ 
+(3) Las autovarianzas de $y_t$ son finitas e independientes del tiempo: $E(y_t-\mu)(y_{t-s}-\mu)=E(\varepsilon_t+a_1\varepsilon_{t-1}+a_1^2\varepsilon_{t-2}+a_1^4\varepsilon_{t-4}+ …)(\varepsilon_{t-s}+a_1\varepsilon_{t-s-1}+a_1^2\varepsilon_{t-s-2}+a_1^4\varepsilon_{t-s-4}+ …)=\sigma^2a_1^s(1+a_1+a_1^2+a_1^4+ …)=\frac{\sigma^2a_1^s}{1-a_1^2}$ 
 
 ## ANEXO 2: La transformación polinomica 
 A veces se puede usar la diferenciación para transformar un modelo no estacionario en un modelo estacionario con una representación 𝐴𝑅𝑀𝐴. Esto no significa que todos los modelos no estacionarios puedan transformarse en modelos $ARMA$ de buen comportamiento mediante la diferenciación apropiada. 
