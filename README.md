@@ -8,16 +8,16 @@ El curso esta dividido en tres secciones principales, a través de las cuales el
 
 | Secciones                                                                                               |   
 |---------------------------------------------------------------------------------------------------------|
-| 01. Las Series de Tiempo, R y la Base de Datos del Banco Mundial                                        | 
+| 01. Las Series de Tiempo y acceso en R a las Bases de Datos Públicas del Banco Mundial                  | 
 | 02. Análisis Univariado (ARIMA)                                                                         | 
 | 03. Análisis Multivariado (VAR y VEC)                                                                   | 
 
 
 ## Objetivos generales
 * Explicar y aplicar los principales fundamentos del análisis de series de tiempo.
-* Estudiar los modelos de series de tiempo más relevantes
+* Estudiar los modelos de series de tiempo más relevantes.
 * Explicar la construcción y análisis de modelos de series de tiempo univariados y multivariados.
-* Utilizar modelos de series de tiempo para desarrollar análisis de desarrollo económico
+* Explicar cómo hacer análisis de series de tiempo en R utilizando la base _Indicadores de Desarrollo Mundial_.
 
 ## Requisitos
 Es deseable que las alumnos tengan como mínimo conocimientos básicos de R y de probabilidad. Sin embargo, en el curso se van a proveer códigos completos de R para ser utilizados por parte de los alumnos.
