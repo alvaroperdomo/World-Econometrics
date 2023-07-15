@@ -51,11 +51,10 @@ series <-ts(PIBpc_paises,frequency=1,start = 1960)
 
 VARorder(series, maxp = 13, output = T)
 
-modelo <- VAR(series, p = 1, type = c("const"), season = NULL, exogen = NULL, lag.max = NULL, ic = c("AIC"))
-modelo
-summary(modelo, equation="Chile")
-summary(modelo, equation="Colombia")
-summary(modelo, equation="Mexico")
+Johansen <- ca.jo(series, type = c("eigen"), ecdet = c("none"), K = 2)
+summary(Johansen)
+cajorls(Johansen, r = 1, reg.number = NULL)
+
 ```
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
