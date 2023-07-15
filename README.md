@@ -9,8 +9,8 @@ El curso esta dividido en tres secciones principales, a través de las cuales el
 | Secciones                                                                                               |   
 |---------------------------------------------------------------------------------------------------------|
 | 01. Las Series de Tiempo,  $R$ a los _Indicadores de Desarrollo Mundial_                                | 
-| 02. Análisis Univariado (ARIMA)                                                                         | 
-| 03. Análisis Multivariado (VAR y VEC)                                                                   | 
+| 02. Análisis Univariado (_ARIMA_)                                                                       | 
+| 03. Análisis Multivariado (_VAR_ y _VEC_)                                                               | 
 
 
 ## Objetivos generales
