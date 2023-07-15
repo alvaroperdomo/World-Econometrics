@@ -7,7 +7,7 @@
 
 ## SECCIÓN 1:
 
-# Las Series de Tiempo, R y la Base de Datos del Banco Mundial
+# Las Series de Tiempo,  $R$ y los _Indicadores de Desarrollo Mundial_  
 Esta es una sección introductoria que se divide en dos subsecciones:
 
 En la subsección 1.1 se van a desarrollar dos cosas:
