@@ -2,13 +2,13 @@
 # Entendiendo un Mundo en Desarrollo
 Keywords: `Econometría` `Series de Tiempo` `Indicadores de Desarrollo Económico` `Banco Mundial`
 #### Duración del curso: XXXX horas
-Bienvenido al curso _Análisis Aplicado de Series de Tiempo: Entendiendo un Mundo en Desarrollo_. En este curso aprenderá a hacer análisis básicos de series de tiempo en R utilizando como entorno de desarrollo la plataforma [RStudio](https://posit.co/download/rstudio-desktop/). Se tomara como referencia, para el análisis empírico, la base de datos del Banco Mundial "[Indicadores de Desarrollo Mundial](https://databank.worldbank.org/source/world-development-indicators)", con el fin de aprender los principales entresijos del análisis de series de tiempo de una forma interesante.
+Bienvenido al curso _Análisis Aplicado de Series de Tiempo: Entendiendo un Mundo en Desarrollo_. En este curso aprenderá a hacer análisis básicos de series de tiempo en $R$ utilizando como entorno de desarrollo la plataforma $RStudio$. Se tomara como referencia, para el análisis empírico, la base de datos del Banco Mundial "[Indicadores de Desarrollo Mundial](https://databank.worldbank.org/source/world-development-indicators)", con el fin de aprender los principales entresijos del análisis de series de tiempo de una forma interesante.
 
 El curso esta dividido en tres secciones principales, a través de las cuales el estudiante desarrollará diferentes habilidades computacionales y analíticas, que podrá aplicar en el análisis de estudios de caso propios.
 
 | Secciones                                                                                               |   
 |---------------------------------------------------------------------------------------------------------|
-| 01. Las Series de Tiempo y acceso en R a las Bases de Datos Públicas del Banco Mundial                  | 
+| 01. Las Series de Tiempo,  $R$ a los _Indicadores de Desarrollo Mundial_                                | 
 | 02. Análisis Univariado (ARIMA)                                                                         | 
 | 03. Análisis Multivariado (VAR y VEC)                                                                   | 
 
@@ -17,32 +17,32 @@ El curso esta dividido en tres secciones principales, a través de las cuales el
 * Explicar y aplicar los principales fundamentos del análisis de series de tiempo.
 * Estudiar los modelos de series de tiempo más relevantes.
 * Explicar la construcción y análisis de modelos de series de tiempo univariados y multivariados.
-* Explicar cómo hacer análisis de series de tiempo en R utilizando la base _Indicadores de Desarrollo Mundial_.
+* Explicar cómo hacer análisis de series de tiempo en $R$ utilizando la base _Indicadores de Desarrollo Mundial_.
 
 ## Requisitos
-Es deseable que las alumnos tengan como mínimo conocimientos básicos de R y de probabilidad. Sin embargo, en el curso se van a proveer códigos completos de R para ser utilizados por parte de los alumnos.
+Es deseable que las alumnos tengan como mínimo conocimientos básicos de $R$ y de probabilidad. Sin embargo, en el curso se van a proveer códigos completos de $R$ para ser utilizados por parte de los alumnos.
 
-Es recomendable que los alumnos además de tener instalado R y [RStudio](https://posit.co/download/rstudio-desktop/) tengan instalado el paquete de herramientas [Rtools](https://cran.r-project.org/bin/windows/Rtools/).
+Es importante que los alumnos además de tener instalados $R$ y [$RStudio$](https://posit.co/download/rstudio-desktop/), también tengan instalado el paquete de herramientas [Rtools](https://cran.r-project.org/bin/windows/Rtools/).
 
-A las personas que no utilizan regularmente R se les recomienda desarrollar dee antemano los tutoriales de https://learnr.numbat.space/
+A las personas que no utilizan regularmente $R$ se les recomienda desarrollar de antemano los tutoriales de https://learnr.numbat.space/
 
 ## Dirigido a
 Los contenidos presentados en este curso están dirigidos a estudiantes y profesionales de diferentes disciplinas que requieran aprender y/o fortalecer sus conocimientos en análisis de series de tiempo en R.
 
 ## Metodología
-La primera sección del curso comienza con una explicación de lo que es el análisis de series de tiempo y de las caracteristicas principales de la base de datos "Indicadores de Desarrollo Económico" del Banco Mundial. Posteriormente, se explica cómo se puede descargar y manipular esta base directamente desde RStudio. Al final de la sección se hace una evaluación donde se formulan varias preguntas de selección múltiple con respecto a los conceptos vistos en la sección y con respecto a un ejercicio que el alumno debe desarrollar en RStudio utilizando la base de datos del Banco Mundial[^1]. 
+La primera sección del curso comienza con una explicación de lo que es el análisis de series de tiempo y de las caracteristicas principales de la base de datos "Indicadores de Desarrollo Mundial". Posteriormente, se explica cómo se puede descargar y manipular esta base directamente desde RStudio. Al final de la sección se hace una evaluación donde se formulan varias preguntas de selección múltiple con respecto a los conceptos vistos en la sección y con respecto a un ejercicio que el alumno debe desarrollar en $RStudio$ utilizando los "Indicadores de Desarrollo Mundial" [^1]. 
 
-[^1]: **Los códigos en R necesarios para el desarrollo del ejercicio serán explicados durante el desarrollo de la sección**
+[^1]: **Los códigos en _R_ necesarios para el desarrollo del ejercicio serán explicados durante el desarrollo de la sección**
 
 Las otras dos secciones del curso comienzan con una explicación general de las herramientas econométricas a utilizar. Luego, se desarrollan algunos ejercicios y posteriormente se deja un ejercicio para ser desarrollado por el alumno. Con respecto a este último se haran algunas preguntas de selección múltiple para evaluar si los conceptos principales han sido entendidos de forma apropiada.
 
 A continuación encontrara información más detallada acerca de cada una de las seccones en que se divide el curso. Si quiere ir a alguna sección en particular, dele _click_ con el mouse a la sección respectiva. 
 
-## [Sección 1 - Las Series de Tiempo, R y la Base de Datos del Banco Mundial](Seccion01/Readme.md)
-| Subsecciones                                                       | Contenido                                                                                                                | Dedicación,<br> 2 horas   | 
-|--------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|:-------------------------:|
-| **1.1.** Series de tiempo                                                |¿Qué es una serie de tiempo?, ¿En qué consiste el análisis de series de tiempo?, ¿Qué es una variable discreta aleatoria? |             0.5           | 
-| **1.2.** R y Los Indicadores de Desarrollo Económico del Banco Mundial  |¿Cómo manipular los Indicadores de Desarrollo Económico del Banco Mundial en R?                                           |             1.5           | 
+## [Sección 1 - Las Series de Tiempo, _R_ y los _Indicadores de Desarrollo Mundial_](Seccion01/Readme.md)
+| Subsecciones                                         | Contenido                                                                                                                | Dedicación,<br> 2 horas   | 
+|------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|:-------------------------:|
+| **1.1.** Series de tiempo                            |¿Qué es una serie de tiempo?, ¿En qué consiste el análisis de series de tiempo?, ¿Qué es una variable discreta aleatoria? |             0.5           | 
+| **1.2.** R y los _Indicadores de Desarrollo Mundial_ |¿Cómo manipular los _Indicadores de Desarrollo Mundial_ en R?                                                             |             1.5           | 
 
 ## [Sección 2 - Análisis Univariado (ARIMA)](Seccion02/Readme.md)
 | Subsecciones                                                   | Contenido                                                                     | Dedicación,<br> 10 horas| 
