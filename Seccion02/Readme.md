@@ -4,13 +4,10 @@
 En esta sección se van a revisar las técnicas de análisis univariado de series de tiempo, en particular:
 * Se van a explicar los aspectos teóricos más relevantes del análisis univariado de series de tiempo
 * Se va explicar la forma cómo se utiliza R para hacer un análisis univariado de series de tiempo
-* Se va a desarrollar un ejemplo empírico utilizando la base de datos "_Indicadores de Desarrollo Económico_" del Banco Mundial
-  * Más específicamente, durante el desarrollo de la sección **utilizaremos el _PIB per cápita de Colombia a precios constantes durante el periodo 1960-2019_ para calcular las proyecciones de esta variable durante el periodo 2020-2025 si no se hubiera presentado la pandemia del Covid 19**.
-  * Ello no quita que se puedan utilizar los datos de 1960-2022 para proyectar el PIB per cápita de Colombia a precios constantes durante el periodo 2023-2025. Sin embargo, las pruebas de raíz unitaria en términos didácticos resultan un poco más engorrosas de interpretar a raíz del choque temporal que tuvó el Covid-19 (Ver gráfico de abajo)
+* Se va a desarrollar un ejemplo empírico utilizando la base de datos "_Indicadores de Desarrollo Mundial_" del Banco Mundial
+  * Más específicamente, durante el desarrollo de la sección **utilizaremos el _PIB per cápita de Colombia a pesos constantes durante el periodo 1960-2019_ para calcular las proyecciones de esta variable durante el periodo 2020-2025 como si no se hubiera presentado la pandemia del Covid 19**. Con ello, lo que se busca es cómo se hubiera comportado esta variable, según su comportamiento histórico, sin la cuarentena que se dio en la pandemia. 
 
-   ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ec783053-9f06-4834-9983-9158350145b8)
-
-Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en la subsección respectiva
+Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en la subsección respectiva. Sin embargo, lo ideal es que se aborden las tres secciones en el orden que esta prescrito.
 
 | Subsecciones                                                                   | Contenido                                                                                            | Dedicación,<br> 5.5 horas | 
 |--------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|:-------------------------:|
