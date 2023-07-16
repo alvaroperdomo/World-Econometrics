@@ -84,18 +84,21 @@ Por lo tanto, sólo si $t \to \infty$ y $|a_1|<1$, la serie { $y_t$ }se vuelve e
 (3) Las autovarianzas de $y_t$ son finitas e independientes del tiempo: $E(y_t-\mu)(y_{t-s}-\mu)=E(\varepsilon_t+a_1\varepsilon_{t-1}+a_1^2\varepsilon_{t-2}+a_1^4\varepsilon_{t-4}+ …)(\varepsilon_{t-s}+a_1\varepsilon_{t-s-1}+a_1^2\varepsilon_{t-s-2}+a_1^4\varepsilon_{t-s-4}+ …)=\sigma^2a_1^s(1+a_1+a_1^2+a_1^4+ …)=\frac{\sigma^2a_1^s}{1-a_1^2}$ 
 
 ## ANEXO 2: La transformación polinomica 
-En términos generales, una serie de tiempo puede tener la tendencia polinomial $y_t=a_0+a_1t+a_2t^2+a_3t^3+...+a_nt^n+e_t$ donde { $e_t$ } es un proceso estacionario. La transformación polinomica se logra estimando { $y_t$ } con respecto a una tendencia de tiempo polinomial determinista. 
+En términos generales, una serie de tiempo puede tener la tendencia polinomial $y_t=a_0+a_1t+a_2t^2+a_3t^3+...+a_nt^n+e_t$ donde { $e_t$ } es un proceso estacionario. La transformación polinomica se logra estimando { $y_t$ }, utilizando Mínimos Cuadrados Ordinarios, con respecto a una tendencia de tiempo polinomial determinista. 
+
+Al restar los valores estimados de la secuencia { $y_t$ } de los valores reales se obtiene una estimación de la secuencia estacionaria { $e_t$ }. Ya con esta serie estacionaria se puede proceder a hacerle un análisis $ARMA$ utilizando la metodología de Box y Jenkins.
 
 ### ¿Cuál es el grado apropiado del polinomio que se estima? Criterios: 
 
 * La práctica común es estimar la ecuación utilizando el mayor valor de $n$ que es considerado razonable. Si el estadístico $t$ indica que $a_n$ es cero, considere una tendencia polinomial de orden $n-1$. Continúe reduciendo el orden de la tendencia polinomial hasta encontrar un coeficiente distinto de cero.
-* Las pruebas $F$ se pueden usar para determinar si un grupo de coeficientes, por ejemplo, de $a_{n-i}$  a $a_n$, es estadísticamente diferente de cero.
-* Los Criterios de Información de Akaike y el Criterio Bayesiano de Schwartz se pueden usar para reconfirmar el grado apropiado del polinomio. 
+* Igualmente, las pruebas $F$ también se pueden usar para determinar si un grupo de coeficientes, por ejemplo, de $a_{n-i}$  a $a_n$, es estadísticamente diferente de cero.
+* Por último, los Criterios de Información de Akaike y el Criterio Bayesiano de Schwartz se pueden usar para reconfirmar el grado apropiado del polinomio. 
 
-Al restar los valores estimados de la secuencia { $y_t$ } de los valores reales se obtiene una estimación de la secuencia estacionaria { $e_t$ }. Ya con la serie estacionaria se puede proceder a hacerle un análisis $ARMA$
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
+| [Anterior Sección: 2. Análisis Univariado de Series de Tiempo](../../Seccion02/Readme.md)](../Seccion01/Seccion01_02/README.md) | [:house: Inicio](../README.md) |[Siguiente Sección: 2.2. Pruebas de Raíz Unitaria](Seccion02_01/Readme.md) |
+|-------------------------------------------------------------------------------------------------------------|--------------------------------|-------------------------------------------------------------------------------------------|
 
 
 
