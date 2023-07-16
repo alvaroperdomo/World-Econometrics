@@ -303,8 +303,8 @@ PIBpc <- ts(PIBpc_, start=1960, end=2019)
 C1PIBpc <- ts(C1PIBpc_, start=1960, end=2019)
 ```
 
-| [Anterior Sección: 1.1. Series de tiempo](../Seccion01_01/Readme.md) | [:house: Inicio](../../Readme.md) | [Siguiente Sección: 2. nálisis Univariado de Series de Tiempo](../Seccion02_01/Readme.md) | 
-|----------------------------------------------------------------------|-----------------------------------|----------------------------------------------------------------------------------------------------|
+| [Anterior Sección: 1.1. Series de tiempo](../Seccion01_01/Readme.md) | [:house: Inicio](../../Readme.md) | [Siguiente Sección: 2. nálisis Univariado de Series de Tiempo](../../Seccion02/Readme.md) | 
+|----------------------------------------------------------------------|-----------------------------------|---------------------------------------------------------------------------------------------|
 
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
