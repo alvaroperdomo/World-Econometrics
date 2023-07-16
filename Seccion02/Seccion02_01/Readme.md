@@ -97,7 +97,7 @@ Al restar los valores estimados de la secuencia { $y_t$ } de los valores reales 
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
-| [Anterior Sección: 2. Análisis Univariado de Series de Tiempo](../Readme.md)] | [:house: Inicio](../../README.md) |[Siguiente Sección: 2.2. Pruebas de Raíz Unitaria](../Seccion02_02/Readme.md) |
+| [Anterior Sección: 2. Análisis Univariado de Series de Tiempo](../Readme.md) | [:house: Inicio](../../README.md) |[Siguiente Sección: 2.2. Pruebas de Raíz Unitaria](../Seccion02_02/Readme.md) |
 |-------------------------------------------------------------------------------------------------------------|--------------------------------|-------------------------------------------------------------------------------------------|
 
 
