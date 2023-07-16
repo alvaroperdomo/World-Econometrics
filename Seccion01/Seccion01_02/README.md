@@ -39,7 +39,7 @@ Asuma que desea buscar los datos del Producto Interno Bruto per cápita por pari
    * En la parte inferior del desplegable se encuentra el nombre de la variable: **NY.GDP.MKTP.PP.KD**
 
    
-3) **Utilizando RStudio:**
+3) **Utilizando $RStudio$:**
 
 #### Dentro del comando WDIsearch coloque, separados con los dos signos .*, palabras (en inglés) relacionadas con la variable que esta buscando. 
 
