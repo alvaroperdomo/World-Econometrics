@@ -64,13 +64,13 @@ Si se sigue este mismo proceso iterativo, entonces la solución a esta ecuación
 * $y_t=a_0\displaystyle\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0+\displaystyle\sum_{i = 0}^{t-1}\varepsilon_{t-i}$
 * $y_{t+s}=a_0\displaystyle\sum_{i = 0}^{t+s-1}a_1^i+a_1^{t+s}y_0+\displaystyle\sum_{i = 0}^{t+s-1}\varepsilon_{t+s-i}$
 
-**Por lo tanto, esta ecuación (obtenida de un proceso AR(1) es estacionaria si** 
+**Por lo tanto, estas ecuaciones (obtenidas de un proceso $AR(1)$ son estacionarias si** 
 1. **$t$ es grande [^2] y**
 2. **$|a_1|<1$** 
 
 [^2]: **En consecuencia, si una muestra es generada por un proceso que ha comenzado recientemente, las realizaciones pueden no ser estacionarias. Empíricamente, en los análisis econométicos de series de tiempo anuales, es deseable tener al menos 30 grados de libertad en las estimaciones (los grados de libertad son iguales al número de años que tiene la serie menos el número de parámetros que se estiman).** 
 
-La prueba de esto es bastante semcilla; sin embargo, primero noten los siguientes dos puntos:
+La prueba de esto es bastante sencilla; sin embargo, primero noten los siguientes dos puntos:
 
 * El valor esperado de la serie { $y_t$ } es $Ey_t=a_0\displaystyle\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0$ y $Ey_{t+s}=a_0\displaystyle\sum_{i = 0}^{t+s-1}a_1^i+a_1^{t+s}y_0$ para todo $s$.
 * Dados $y_t$, $y_{t+s}$, $Ey_t$ y $Ey_{t+s}$ entonces $y_t-Ey_t=\displaystyle\sum_{i = 0}^{t-1}\varepsilon_{t-i}$ y $y_{t+s}-Ey_{t+s}=\displaystyle\sum_{i = 0}^{t+s-1}\varepsilon_{t+s-i}$
