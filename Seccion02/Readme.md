@@ -18,5 +18,5 @@ Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
 
-| [Anterior Sección: 1.2. _R_ y los _Indicadores de Desarrollo Mundial_](../Seccion01/Seccion01_02/README.md) | [:house: Inicio](../README.md) |[Siguiente Sección: 2.1. Series Estacionarias y No Estacionarias](Seccion02_01/README.md) |
+| [Anterior Sección: 1.2. _R_ y los _Indicadores de Desarrollo Mundial_/Readme.md](../Seccion01/Seccion01_02/README.md) | [:house: Inicio](../README.md) |[Siguiente Sección: 2.1. Series Estacionarias y No Estacionarias](Seccion02_01/Readme.md) |
 |-------------------------------------------------------------------------------------------------------------|--------------------------------|-------------------------------------------------------------------------------------------|
