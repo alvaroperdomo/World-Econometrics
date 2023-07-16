@@ -56,7 +56,7 @@ donde
 
 Por lo tanto, si cada ecuación en un $VAR$ de $n$ variables tiene $p$ rezagos y un intercepto, entonces $N=n^2p+n$ (porque cada una de las $n$ ecuaciones tiene $np$ regresores rezagados y un intercepto).La adición de regresores adicionales reducirá $|\mathbf{\Sigma}|$ a expensas de aumentar $N$. Como en el caso univariado, seleccione el modelo con el valor más bajo del Criterio de Información de Akaike o del Criterio Bayesiano de Schwartz.[^4] 
 
-[^4]: Tenga en cuenta que el Criterio de Información de Akaike y el Criterio Bayesiano de Schwartz multivariados no se pueden usar para probar la importancia estadística de modelos alternativos. En cambio, son medidas del ajuste general de las alternativas. 
+[^4]: **Tenga en cuenta que el Criterio de Información de Akaike y el Criterio Bayesiano de Schwartz multivariados no se pueden usar para probar la importancia estadística de modelos alternativos. En cambio, son medidas del ajuste general de las alternativas.** 
 
 ## Prueba de Causalidad de Granger y Prueba de Exogeneidad
 Una prueba de causalidad establece si los rezagos de una variable entran en la ecuación de otra variable. En un modelo de dos ecuaciones con $p$ rezagos, { $y_t$ } no causa en el sentido de Granger a { $z_t$ } si y solo si todos los coeficientes de $A_{21}(L)$ son nulos. Por lo tanto, si { $y_t$ } no mejora el rendimiento de pronóstico de { $z_t$ }, entonces { $y_t$ } no causa en el sentido de Granger a { $z_t$ }. 
