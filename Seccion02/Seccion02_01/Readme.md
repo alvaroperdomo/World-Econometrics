@@ -35,7 +35,7 @@ Para el análisis univariado, se va a seguir la metodología de Box y Jenkins (1
 
 La explicación de los requisitos para obtener procesos estacionarios en representaciones $ARMA(p,q)$ es más complejas que para un proceso AR(1). En general, note que un modelo $ARMA(p,q)$ es la representación de una ecuación en diferencias. Por lo tanto, para que esta ecuación no sea explosiva se requiere que todos los valores caracteristicos (o también llamados los valores propios) que resuelven esta ecuación en diferencias sean menores que el valor absoluto de $1$ (usualmente, a este requisito se le denomina _estar dentro del circulo unitario_).[^1]  
 
-[^1]: En el caso de un modelo $AR(1)$ el valor caracteristico que resuelve a la ecuación es coincidente con el coeficiente que multiplica al valor rezagado de la variable analizada. Por lo tanto, en el Anexo 1, vamos a aprovechar esta caracteristica para ver cómo se muestra la estacionariedad en este caso.
+[^1]: En el caso de un modelo _AR(1)_ el valor caracteristico que resuelve a la ecuación es coincidente con el coeficiente que multiplica al valor rezagado de la variable analizada. Por lo tanto, en el Anexo 1, vamos a aprovechar esta caracteristica para ver cómo se muestra la estacionariedad en este caso.
 
 En series de tiempo, una forma de ver si una variable cumple el requisito de estacionariedad es a través de las pruebas de raíz unitaria. En la sección 2.2 vamos a explicar teóricamente cómo funcionan este tipo de pruebas y cómo se aplican en $R$.
 
