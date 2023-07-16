@@ -45,12 +45,15 @@ A continuación encontrara información más detallada acerca de cada una de las
 | **1.2.** $R$ y los _Indicadores de Desarrollo Mundial_ |¿Cómo manipular los _Indicadores de Desarrollo Mundial_ en R?                                                             |             2.0           | 
 
 ## [Sección 2 - Análisis Univariado (ARIMA)](Seccion02/Readme.md)
-| Subsecciones                                                   | Contenido                                                                     | Dedicación,<br> 10 horas| 
-|-----------------------------------------------------------------|------------------------------------------------------------------------------|:-----------------------:|
-| **2.1.** Las Series Estacionarias                               | La importancia de trabajar con series estacionarias                          |             2.5         | 
-| **2.2** Pruebas de Raíz Unitaria                                | Explicación general de las pruebas de raíz unitaria                          |             5.5         | 
-| **2.3.**. Estimación de Modelos ARIMA                           | Explicación de la metododología de Box-Jenkins para estimar un modelo ARIMA. |              1          | 
-| **2.4.** Principales pruebas de validación de los Modelos ARIMA | Explicación de las pruebas de validación de un modelo ARIMA                  |              1          | 
+| Subsecciones                                         | Contenido                                                                                            | Dedicación,<br> 5.5 horas | 
+|------------------------------------------------------|------------------------------------------------------------------------------------------------------|:-------------------------:|
+| **2.1.** Series Estacionarias y No Estacionarias     | Se explica la importancia de las series estacionarias en el análisis univariado de series de tiempo. |              1            | 
+| **2.2.** Pruebas de Raíz Unitaria                    | Explicación acerca de la metodología y lectura de diferentes tipos de pruebas de raíz unitaria       |              1            | 
+| **2.2.1.** Las Pruebas DF y ADF: _Pruebas de Dickey Fuller y Aumentada de Dickey Fuller_ | Teoría y aplicación en $R$| | 
+| **2.2.2.** La Prueba ADF-GLS: _Prueba de Elliott, Rothenberg y Stock_                    | Teoría y aplicación en $R$| |
+| **2.2.3.** La Prueba KPSS: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_             | Teoría y aplicación en $R$| |  
+| **2.2.4.** Pruebas de Cambio Estructural: _Prueba de Perron y Prueba de Zivot y Andrews_ | Teoría y aplicación en $R$| |
+| **2.3.** Análisis ARIMA (Metodología de Box-Jenkins) | Explicación acerca de cómo estimar un modelo ARIMA                                                   |              1            | 
 
 ## [Sección 3 - Análisis Multivariado de Series de Tiempo](Seccion03/Readme.md)
 | Subsecciones                                       | Contenido                                     | Dedicación,<br> 5.5 horas | 
