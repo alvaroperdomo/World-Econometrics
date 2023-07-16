@@ -160,10 +160,11 @@ Y obtiene:
 Existen muchos paquetes en $R$ para graficar los datos, a continuación utilizamos uno de ellos:
 ``` r
 library(ggplot2)
-ggplot(dat, aes(year, PIB_per_cápita_PPA_2017US, color=country)) + geom_line (size = 1) + theme(plot.caption = element_text(hjust=0)) +
+ggplot(dat, aes(year, PIB_per_cápita_PPA_2017US, color=country)) + geom_line (size = 1) + theme(plot.caption = element_text(size=7)) +
 labs(subtitle="US$ de 2017", y="Dólares constante de 2017", x="Años", title="PIB per cápita PPA real", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial") 
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4dc4e6a9-fe1d-4688-8adb-3f69e4d5a72a)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/7096078c-9412-4cf2-a5fb-d0d0d52299f7)
+
 
 
 **ggplot** es una comando que tiene muchas opciones de ser utilizado, a continuación les comparto varias páginas de internet donde a partir de la replica podran obtener el gráfico que desean, y una tabla donde se explican los argumento que hemos utilizado en **ggplot**:
