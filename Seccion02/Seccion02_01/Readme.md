@@ -22,7 +22,9 @@ Formalmente, la secuencia { $\varepsilon_t$ } es un proceso ruido blanco si para
 En el resto del curso, { $\varepsilon_t$ } siempre se referirá a un proceso de ruido blanco y $\sigma^2$  se referirá a la varianza de ese proceso. Cuando sea necesario hacer referencia a dos o más procesos que son ruido blanco, se usarán símbolos como { $\varepsilon_{1t}$ } y { $\varepsilon_{2t}$ }. 
 
 ## Los procesos ARMA
-* Un proceso autorregresivo de orden $p$, también conocido como $AR(p)$ se define así: $y_t=a_0+\displaystyle\sum_{i = 1}^{p}a_iy_{t-i}+\varepsilon_{t}$
+Dados unos parametros $a_i$ y $\beta_i$:
+
+* Un proceso autorregresivo de orden $p$, también conocido como $AR(p)$ se define así: $y_t=a_0+\displaystyle\sum_{i = 1}^{p}a_iy_{t-i}+\varepsilon_{t}$.
 * Un proceso de media móvil de orden $q$, también conocido como $MA(q)$ se define así: $y_t=a_0+\displaystyle\sum_{i = 1}^{q} \beta_i\varepsilon_{t-i}+\varepsilon_{t}$
 * Es posible combinar un proceso de media móvil con un proceso autorregresivo para obtener un modelo autorregresivo de media móvil ($ARMA$). Por ejemplo, un modelo $ARMA(p,q)$, se escribe como: $y_t=a_0+\displaystyle\sum_{i = 1}^{p}a_iy_{t-i}+\displaystyle\sum_{i = 1}^{q} \beta_i\varepsilon_{t-i}+\varepsilon_{t}$
     
