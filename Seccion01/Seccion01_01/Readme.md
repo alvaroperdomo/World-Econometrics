@@ -21,7 +21,7 @@ Una característica intrínseca de una serie tiempo es que, por lo general, las 
 
 El análisis de series tiempo (o en otras palabras, la econometría de series de tiempo) se refiere al manejo de técnicas para el análisis de esta dependencia. Esto requiere el desarrollo de modelos estocásticos y dinámicos para datos de series de tiempo y el uso aplicado de dichos modelos.
 
-Un uso importante del análisis de series de tiempo ha sido para el desarrollo de modelos dinámicos multivariados que permitan representar las relaciones conjuntas entre diversas variables a lo largo del tiempo
+Un uso importante del análisis de series de tiempo ha sido para el desarrollo de modelos dinámicos multivariados que permitan representar las relaciones conjuntas entre diversas variables a lo largo del tiempo. También ha sido tradicionalmente importante el análisis de series de tiempo para pronosticar los valores futuros de una serie de tiempo a partir de sus valores presentes y pasados.
 
 ## ¿Qué es una variable discreta aleatoria?
 Una variable discreta $y$ es una variable aleatoria (es decir, estocástica) si, para cualquier número real $r$, existe una probabilidad $p(y\leq r)$ de que $y$ tome un valor menor o igual a $r$. 
