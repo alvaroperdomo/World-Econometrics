@@ -30,16 +30,17 @@ Asuma que desea buscar los datos del Producto Interno Bruto per cápita por pari
    
       ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/fb4214ee-4704-40f6-96e3-69bd90f76bd1)
 
-     * Escoja con el _mouse_ la variable en cuestión "PIB per cápita, PPA ($ a precios internacionales constantes de 2011)" y será redirigido a la página de Internet donde se encuentra la variable en cuestión
-       
+     * Escoja con el _mouse_ la variable en cuestión "PIB per cápita, PPA ($ a precios internacionales constantes de 2011)" y será redirigido a la página de Internet donde se encuentra la variable en cuestión[^3]
+
+[^3]: **No se preocupen demasiado por el año base reportado en el nombre de la variable.. Noten que cuando ustedes escogen en esta nueva página de Internet que la quieren ver en inglés, el año va a cambias a 2017, pero los datos siguen siendo los mismos**
+
      * Escoja con el _mouse_ la opción ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/d615bae3-bd1b-46e8-99cd-42f3566ef4f0) que se encuentra en la esquina superior derecha de la figura, y se desplegará la siguiente información
        
      ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4fd84b83-79f2-4d78-a721-1af9d3ef69ea)
    
    * En la parte inferior del desplegable se encuentra el nombre de la variable: **NY.GDP.PCAP.PP.KD**
 
-   
-3) **Utilizando $RStudio$:**
+2) **Utilizando $RStudio$:**
 
 #### Dentro del comando WDIsearch coloque, separados con los dos signos .*, palabras (en inglés) relacionadas con la variable que esta buscando. 
 
@@ -58,7 +59,7 @@ Obteniendo:
 [4,]    NY.GDP.PCAP.PP.KD  GDP per capita, PPP (constant 2017 international $)
 [5,] NY.GDP.PCAP.PP.KD.87  GDP per capita, PPP (constant 1987 international $)
 ```
-Por lo tanto, la variable solicitada es **NY.GDP.PCAP.PP.KD**. Existe también la opción de tener la variable a precios constantes de 1987 o de 2011, pero generalmente las personas prefieren utilizar la variable con los precios constantes más recientes (es decir, 2017)
+Por lo tanto, la variable solicitada es **NY.GDP.PCAP.PP.KD** (observen que se llegó a la misma variable que con la primera opción de busqueda). Existe también la opción de tener la variable a precios constantes de 1987 o de 2011, pero generalmente las personas prefieren utilizar la variable con los precios constantes más recientes (es decir, 2017) 
 
 Observe que si sólo copia:
 
@@ -89,7 +90,7 @@ Y obtiene:
 [10,]    BG.KLT.DINV.GD.ZS           Gross foreign direct investment (% of GDP)
 ```
 
-El problema con esta forma de busqueda es que dentro de estas 10 primeras variables no se encuentra la variable requerida. 
+La mentablemente, observe que con esta forma de busqueda dentro de las 10 primeras variables no se encuentra la variable requerida. 
 
 A partir de la instrucción 
 
