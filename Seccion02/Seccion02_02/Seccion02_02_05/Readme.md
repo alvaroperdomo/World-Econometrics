@@ -1,13 +1,11 @@
 # SECCIÓN 2.2.5 
 ## Ejemplo utilizando la base de datos _Indicadores de Desarrollo Mundial_
 
-A continuación, se presenta un ejemplo utilizando la base de datos "Indicadores de Desarrollo Mundial del Banco Mundial". Para el ejercicio, se ha escogido analizar la variable más utilizada en términos de desarrollo económico, el PIB per cápita, de un país en vías de desarrollo. Más específicamente, se va a analizar la evolución del PIB per cápita de Colombia a precios constantes.
+Para el ejemplo, se ha escogido analizar la variable más utilizada en términos de desarrollo económico, el PIB per cápita a precios constantes, de un país en vías de desarrollo. Más específicamente, se va a analizar la evolución del PIB per cápita de Colombia a pesos constantes. Más específicamente, utilizaremos el ** PIB per cápita de Colombia a pesos constantes durante el periodo 1960-2019** (en niveles y en primeras diferencias)[^2] para calcular las proyecciones de esta variable durante el periodo 2020-2025 como si no se hubiera presentado la pandemia del Covid 19. Con ello, lo que se busca es cómo se hubiera comportado esta variable, según su comportamiento histórico, sin la cuarentena que se dio en la pandemia.
 
-## Ejemplo: PIB per cápita de Colombia
+[^2]: Se va a hacer el análisis tanto en niveles como en primeras diferencias porque, tal como se mostrara más adelante, esta variable no es estacionaria en niveles, pero si lo va a ser en las primeras diferencias
 
-La prueba se va a hacer con respecto al **PIB per cápita de Colombia a precios constantes en pesos durante el periodo 1960-2019** en niveles y en primeras diferencias. No se utiliza la información hasta 2022 por motivos didacticos; en particular, en 2020 (es decir, en la parte final de la base de datos) hay un cambio estructural bastante fuerte de un solo periodo, a raíz de la cuarentena producto de la epidemia del Covid-19, que vuelve algunas pruebas más engorrosa de interpretar. Sin embargo, ello no quita que también se puedan implementar las pruebas de raíz unitaria hasta 2022.
-
-Retomamos parte del código de R que se había utilizado en la sección 01-02, solicitando la activación de algunas librerias adicionales: 
+Retomamos parte del código de R que se había utilizado en la sección 1.2, solicitando la activación de algunas librerias adicionales: 
 ``` r
 rm(list = ls())
 
@@ -15,9 +13,9 @@ library(WDI)
 library(dplyr)
 library(ggfortify)
 library(ggplot2)
-library(forecast)
-library(fUnitRoots)
-library(urca)
+library(fUnitRoots)  # Esta libreria sirve para hacer pruebas de raíz unitaria
+library(urca)        # Esta libreria sirve para hacer pruebas de raíz unitaria
+library(forecast)    # Esta libreria sirve para hacer pronósticos
 
 WDIsearch(string='NY.GDP.PCAP.KN', field='indicator')
 
