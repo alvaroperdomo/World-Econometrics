@@ -256,11 +256,12 @@ ggplot(dat, aes(year, PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y
 
 ggplot(dat, aes(year, C1PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="Cambio en el PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/795d678d-d02e-4ea7-a2f6-bdf66b0757f4)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/b7b0b094-d689-4975-b6eb-e2348fe84fb1)
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6622a8df-295e-428f-a7f8-df85f1904e7f)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/617610e4-3524-4752-b339-8fd3957e1a87)
 
-En el gráfico se visualizan los siguientes hechos estilizados que afectaron a el comportamiento del PIB per cápita:
+
+En ambos gráficos se visualizan los siguientes hechos estilizados que afectaron a el comportamiento del PIB per cápita de Colombia:
 1) La crisis bancaria de comienzos de los 1980s
 2) La crisis económica de 1998/1999
 3) La crisis economíca del Covid-19 en 2020
