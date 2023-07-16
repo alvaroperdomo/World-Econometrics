@@ -3,13 +3,13 @@
 "_Los Indicadores del Desarrollo Mundial son la principal colección de estadísticas internacionales sobre desarrollo que el Banco Mundial recopila de fuentes reconocidas oficialmente e incluyen estadísticas a nivel nacional, regional y mundial. Proporcionan acceso a casi 1600 indicadores para 217 economías, y algunas de las series cronológicas se remontan a más de 50 años. En la base de datos, los usuarios —analistas, encargados de formular políticas, académicos y todas las personas interesadas en la situación del mundo— pueden encontrar información relacionada con todos los aspectos del desarrollo, tanto actuales como históricos._" ([Banco Mundial](https://blogs.worldbank.org/es/opendata/guia-en-linea-para-los-indicadores-del-desarrollo-mundial-una-nueva-manera-de-encontrar-datos-sobre-el-desarrollo#:~:text=Los%20Indicadores%20del%20Desarrollo%20Mundial%20(WDI)%20son%20la%20principal%20colecci%C3%B3n,nivel%20nacional%2C%20regional%20y%20mundial.)) 
 
 La Base de Datos con los _Indicadores de Desarrollo Mundial_ pueden consultarse en https://datos.bancomundial.org/ o en https://databank.worldbank.org/source/world-development-indicators.
-Si se desea tener un acceso rápido a la misma utilizando $R$ hay que descargar la libreria **WDI** (en inglés _World Development Indicators_) escribiendo el siguiente comando en $RStudio$:
+Si se desea tener un acceso rápido a la misma utilizando $R$ hay que descargar la libreria **WDI** (en inglés _World Development Indicators_) escribiendo el siguiente comando en $RStudio$:[1^]
 
 ``` r
 install.packages('WDI')
 ```
 
-#### El paquete **WDI** permite descargar información de más de 40 bases de datos alojadas por el Banco Mundial, incluidos los Indicadores de Desarrollo Mundial (**WDI**), estadísticas de deuda internacional, la base Doing Business, el índice de capital humano y el índice de pobreza subnacional, entre otras.
+[1^]:**El paquete **WDI** permite descargar información de más de 40 bases de datos alojadas por el Banco Mundial, incluidos los Indicadores de Desarrollo Mundial (**WDI**), estadísticas de deuda internacional, la base Doing Business, el índice de capital humano y el índice de pobreza subnacional, entre otras.**
 
 ## Buscando los datos
 A continuación se presenta un ejemplo didáctico que le sugerira ideas acerca de cómo buscar información en la base de datos Índicadores de Desarrollo Económico.
