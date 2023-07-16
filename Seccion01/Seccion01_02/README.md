@@ -171,7 +171,7 @@ ggplot(dat, aes(year, PIB_per_cápita_PPA_2017US, color=country)) + labs(subtitl
 * https://r-graph-gallery.com/279-plotting-time-series-with-ggplot2.html
 * https://r-charts.com/evolution/time-series-ggplot2/
 
-## Ejercicio utilizando el PIB per cápita[^31] de Colombia a precios constantes en pesos
+## Ejercicio utilizando el PIB per cápita[^3] de Colombia a precios constantes en pesos
 [^3]:El PIB per cápita es el producto interno bruto dividido por la población a mitad de año.
 
 En la sección 2 se va a hacer buena parte del análisis utilizando el PIB per cápita de Colombia a precios constantes en moneda local (es decir, en pesos). Por lo tanto, a continuación se les muestra como manipular dicha información.
