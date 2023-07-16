@@ -22,8 +22,6 @@ Además de la determinación del conjunto de variables a incluir en el $VAR$, es
 
 [^2]: **Siempre que haya regresores idénticos en cada ecuación, las estimaciones _MCO_ son consistentes y asintóticamente eficientes.** 
 
-Si algunas de las ecuaciones del $VAR$ tienen regresores no incluidos en las otras, las regresiones aparentemente no relacionadas ($SUR$ por sus siglas en inglés) proporcionan estimaciones eficientes de los coeficientes $VAR$. Por lo tanto, cuando hay una buena razón para dejar que las longitudes de los rezagos difieran entre las ecuaciones, estime un $near-VAR$ utilizando un $SUR$.
-
 En un $VAR$, los rezagos consumen rápidamente los grados de libertad. Si la longitud del rezago es $p$, cada una de las $p$ ecuaciones contiene $np$ coeficientes más el intercepto. La selección apropiada de la longitud de rezagos puede ser crítica. 
 * Si $p$ es demasiado pequeño, el modelo está mal especificado;
 * si $p$ es demasiado grande, se pierden grados de libertad. 
