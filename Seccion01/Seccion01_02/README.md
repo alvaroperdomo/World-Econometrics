@@ -9,7 +9,7 @@ Si se desea tener un acceso rápido a la misma utilizando $R$ hay que descargar 
 install.packages('WDI')
 ```
 
-[^1]:**El paquete **WDI** permite descargar información de más de 40 bases de datos alojadas por el Banco Mundial, incluidos los Indicadores de Desarrollo Mundial (**WDI**), estadísticas de deuda internacional, la base Doing Business, el índice de capital humano y el índice de pobreza subnacional, entre otras.**
+[^1]:**La libreria **WDI** permite descargar información de más de 40 bases de datos alojadas por el Banco Mundial, incluidos los Indicadores de Desarrollo Mundial (**WDI**), estadísticas de deuda internacional, la base Doing Business, el índice de capital humano y el índice de pobreza subnacional, entre otras.**
 
 ## Buscando los datos
 A continuación se presenta un ejemplo didáctico que le sugerira ideas acerca de cómo buscar información en la base de datos Índicadores de Desarrollo Económico.
