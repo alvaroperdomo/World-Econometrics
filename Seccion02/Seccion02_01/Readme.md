@@ -2,7 +2,7 @@
 # Series Estacionarias y No Estacionarias
 
 ## Los procesos estacionarios
-Dado un proceso estocástico de una variable $\y_t$ que tiene una media y una varianza finita, se afirma que es estacionario en covarianza si para todo $t$ y $t-s$ donde $s=0,1,2,\dots$ se cumple:
+Dado un proceso estocástico de una variable $y_t$ que tiene una media y una varianza finita, se afirma que es estacionario en covarianza si para todo $t$ y $t-s$ donde $s=0,1,2,\dots$ se cumple:
 1) **Media constante**: $E(y_t)=E(y_{t-s})=\mu $
 2) **Varianza constante**: $E[(y_{t}- \mu)^2]=E[(y_{t-s}- \mu)^2]=\sigma_{y}^2$
 3) **Autocovarianzas de la misma amplitud constantes**: $E[(y_{t}- \mu)(y_{t-s}- \mu)] = E[(y_{t-j}- \mu)(y_{t-j-s}- \mu)] = \gamma_{s}$
