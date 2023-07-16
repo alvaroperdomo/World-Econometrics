@@ -26,17 +26,17 @@ Asuma que desea buscar los datos del Producto Interno Bruto per cápita por pari
        
       ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/888b9892-66a4-4ac1-8e99-0dcb0395a497)
 
-     * si coloca PIB y PPA (ver figura de abajo) resulta más fácil que se le sugiera la variable requerida
+     * si coloca PIB per cápita  PPA,  (ver figura de abajo) resulta más fácil que se le sugiera la variable requerida
    
-      ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ab5ada61-8916-415e-9713-2af78c6f8f2a)
+      ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/fb4214ee-4704-40f6-96e3-69bd90f76bd1)
 
-     * Escoja con el _mouse_ la variable en cuestión "PIB, PPA ($ a precios internacionales constantes de 2011)" y será redirigido a la página de Internet donde se encuentra la variable en cuestión
+     * Escoja con el _mouse_ la variable en cuestión "PIB per cápita, PPA ($ a precios internacionales constantes de 2011)" y será redirigido a la página de Internet donde se encuentra la variable en cuestión
        
      * Escoja con el _mouse_ la opción ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/d615bae3-bd1b-46e8-99cd-42f3566ef4f0) que se encuentra en la esquina superior derecha de la figura, y se desplegará la siguiente información
        
-     ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4f57f0e3-d0f2-48c2-a31d-2d293544329b)
+     ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4fd84b83-79f2-4d78-a721-1af9d3ef69ea)
    
-   * En la parte inferior del desplegable se encuentra el nombre de la variable: **NY.GDP.MKTP.PP.KD**
+   * En la parte inferior del desplegable se encuentra el nombre de la variable: **NY.GDP.PCAP.PP.KD**
 
    
 3) **Utilizando $RStudio$:**
