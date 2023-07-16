@@ -14,7 +14,7 @@ Un caso especial de procesos estacionarios que es importante tener en considerac
 
 Una secuencia { $\varepsilon_t$ } es un proceso **ruido blanco** si cada valor en la secuencia tiene una media de cero, una varianza constante, y no está correlacionado con todas las demás realizaciones de la secuencia. 
 
-Formalmente, la secuencia { $\varepsilon_t$ } es un proceso ruido blanco si para cada período de tiempo $t$:
+Formalmente, la secuencia { $\varepsilon_t$ } es un proceso ruido blanco si para todo $t$ y $t-s$ donde $s=0,1,2,\dots$, se cumple:
 1) $E(\varepsilon_t)=E(\varepsilon_{t-1})= · · · =0$
 2) $E(\varepsilon_{t}^2)=E(\varepsilon_{t-1}^2)= · · · =\sigma^2$ ó [ $\sigma_{\varepsilon_{t}}^2=\sigma_{\varepsilon_{t-1}}^2= · · · =\sigma^2$ ]
 3) $E(\varepsilon_{t}\varepsilon_{t-s})=E(\varepsilon_{t-j}\varepsilon_{t-j-s})=0,  \forall j\neq s$ ó [ $\sigma_{\varepsilon_{t}\varepsilon_{t-s}}=\sigma_{\varepsilon_{t-j}\varepsilon_{t-j-s}}=0$ ]
