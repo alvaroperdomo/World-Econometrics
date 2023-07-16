@@ -250,7 +250,7 @@ Obteniendo:
 5 1964 5746356    5578865 167491.40
 6 1965 5778607    5746356  32251.47
 ```
-Grafique PIBpc y C1PIBpc utilizando los siiguientes comandos:
+Grafique PIBpc y C1PIBpc utilizando los siguientes comandos:
 ``` r
 ggplot(dat, aes(year, PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
 
