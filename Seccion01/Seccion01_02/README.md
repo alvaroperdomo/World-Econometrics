@@ -307,7 +307,7 @@ PIBpc <- ts(PIBpc_, start=1960, end=2019)
 C1PIBpc <- ts(C1PIBpc_, start=1960, end=2019)
 ```
 
-| [Anterior Sección: 1.1. Series de tiempo](../Seccion01_01/Readme.md) | [:house: Inicio](../../Readme.md) | [Siguiente Sección: 2. nálisis Univariado de Series de Tiempo](../../Seccion02/Readme.md) | 
+| [Anterior Sección: 1.1. Series de tiempo](../Seccion01_01/Readme.md) | [:house: Inicio](../../Readme.md) | [Siguiente Sección: 2. Análisis Univariado de Series de Tiempo](../../Seccion02/Readme.md) | 
 |----------------------------------------------------------------------|-----------------------------------|---------------------------------------------------------------------------------------------|
 
 
