@@ -135,7 +135,7 @@ Note que en la pantalla _Environment_ de Rstudio aparece la base "dat" (ver figu
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6d3547d6-7a8e-40ee-9ffb-c76d5e31e543)
 
-Si le da click a "dat" con el _mouse_ podra ver los datos en una ventana RStudio (ver figura de abajo), otra opción es copiando el comando **View()**:
+Si le da _click_ a "dat" con el _mouse_ podra ver los datos en una ventana $RStudio$ (ver figura de abajo), otra opción es copiando el comando **View()**:
 ``` r
 View(dat)
 ```
@@ -157,14 +157,14 @@ Y obtiene:
 6  Canadá    CA   CAN 1965                        NA  19678000
 ```
 
-Existen muchos paquetes en R para grafique los datos, a continuación utilizamos uno de ellos:
+Existen muchos paquetes en $R$ para graficar los datos, a continuación utilizamos uno de ellos:
 ``` r
 library(ggplot2)
 ggplot(dat, aes(year, PIB_per_cápita_PPA_2017US, color=country)) + labs(subtitle="US$ de 2017", y="Dólares constante de 2017", x="Años", title="PIB per cápita PPA real", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial") + scale_x_date(as.Date("2012"), end)
 ```
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/110de4f2-2beb-471a-9aa0-00e85377332e)
 
-ggplot es una comando que tiene muchas opciones de ser utilizado, a continuación les comparto varias páginas de internet donde a partir de la replica podran obtener el gráfico que desean, y una tabla donde se explican los argumento que hemos utilizado en **ggplot**:
+**ggplot** es una comando que tiene muchas opciones de ser utilizado, a continuación les comparto varias páginas de internet donde a partir de la replica podran obtener el gráfico que desean, y una tabla donde se explican los argumento que hemos utilizado en **ggplot**:
 
 * http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html
 * https://r-graph-gallery.com/ggplot2-package.html
