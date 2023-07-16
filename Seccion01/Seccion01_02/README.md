@@ -30,15 +30,15 @@ Asuma que desea buscar los datos del Producto Interno Bruto per cápita por pari
    
       ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/fb4214ee-4704-40f6-96e3-69bd90f76bd1)
 
-     * Escoja con el _mouse_ la variable en cuestión "PIB per cápita, PPA ($ a precios internacionales constantes de 2011)" y será redirigido a la página de Internet donde se encuentra la variable en cuestión[^3]
-
-[^3]: **No se preocupen demasiado por el año base reportado en el nombre de la variable.. Noten que cuando ustedes escogen en esta nueva página de Internet que la quieren ver en inglés, el año va a cambias a 2017, pero los datos siguen siendo los mismos**
+     * Escoja con el _mouse_ la variable en cuestión "PIB per cápita, PPA ($ a precios internacionales constantes de 2011)" y será redirigido a la página de Internet donde se encuentra la variable en cuestión[^2]
 
      * Escoja con el _mouse_ la opción ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/d615bae3-bd1b-46e8-99cd-42f3566ef4f0) que se encuentra en la esquina superior derecha de la figura, y se desplegará la siguiente información
        
      ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4fd84b83-79f2-4d78-a721-1af9d3ef69ea)
    
    * En la parte inferior del desplegable se encuentra el nombre de la variable: **NY.GDP.PCAP.PP.KD**
+
+[^2]: **No se preocupen demasiado por el año base reportado en el nombre de la variable.. Noten que cuando ustedes escogen en esta nueva página de Internet que la quieren ver en inglés, el año va a cambias a 2017, pero los datos siguen siendo los mismos**
 
 2) **Utilizando $RStudio$:**
 
@@ -171,8 +171,8 @@ ggplot(dat, aes(year, PIB_per_cápita_PPA_2017US, color=country)) + labs(subtitl
 * https://r-graph-gallery.com/279-plotting-time-series-with-ggplot2.html
 * https://r-charts.com/evolution/time-series-ggplot2/
 
-## Ejercicio utilizando el PIB per cápita[^1] de Colombia a precios constantes en pesos
-[^1]:El PIB per cápita es el producto interno bruto dividido por la población a mitad de año.
+## Ejercicio utilizando el PIB per cápita[^31] de Colombia a precios constantes en pesos
+[^3]:El PIB per cápita es el producto interno bruto dividido por la población a mitad de año.
 
 En la sección 2 se va a hacer buena parte del análisis utilizando el PIB per cápita de Colombia a precios constantes en moneda local (es decir, en pesos). Por lo tanto, a continuación se les muestra como manipular dicha información.
 
