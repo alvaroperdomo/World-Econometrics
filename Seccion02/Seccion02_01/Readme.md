@@ -46,9 +46,9 @@ Apliquele la transformación adecuada. El procedimiento más común es sacandole
 * Si una serie { $y_t$ } es estacionaria, se dice que es integrada de orden $0$ y el modelo de serie que la identifica se le suele denotar como $ARMA(p,q)$ (o como $ARIMA(p,0,q)$ ) donde $p$ y $q$ son los componentes autorregresivo y de media móvil del modelo, respectivamente.
 * Si una serie { $y_t$ } no es estacionaria, pero su primera diferencia $\Delta y_t = y_t-y_{t-1}$ si es estacionaria, se dice que es integrada de orden $1$ y el modelo de serie que la identifica se le suele denotar como $ARIMA(p,1,q)$
 * Si una serie { $y_t$ } y su primera diferencia $\Delta y_t$ no son estacionarias, pero su segunda diferencia $\Delta_2 y_t= \Delta y_t - \Delta y_{t-1}$ si es estacionaria, se dice que es integrada de orden $2$ y el modelo de serie que la identifica se le suele denotar como $ARIMA(p,2,q)$
-* En consecuencia, en un modelo $ARIMA(p,i,q)$ la $I$ significa el número de veces que hubo que diferenciar la serie { $y_t$ } para obtener una serie estacionaria.
+* En consecuencia, en un modelo $ARIMA(p,i,q)$ la $I$ significa el número de veces que hubo que diferenciar la serie { $y_t$ } para obtener una serie estacionaria. A la $I$ también se le llama el orden de integración de la serie.
 
-En la gran mayoría de las variables económicas, la serie { $y_t$ } es estacionaria en niveles o en primeras diferencias, en algunos casos es estacionaria en segundas diferencias. Sin embargo, si después de la segunda diferencia una serie no resulta estacionaria, entonces se puede transformar la serie como la estimación de un polinomio. En el Anexo 2 se explica cómo funciona esta transformación polinómica.  
+En la gran mayoría de las variables económicas, la serie { $y_t$ } es estacionaria en niveles o en primeras diferencias, en algunos casos es estacionaria en segundas diferencias. Sin embargo, si después de la segunda diferencia una serie no resulta estacionaria, entonces se puede plantear la opción de transformar la serie como la estimación de un polinomio. En el Anexo 2 se explica cómo funciona esta transformación polinómica.  
 
 ## ANEXO 1: ¿Bajo qué condiciones un modelo $AR(1)$ es estacionario? 
 
