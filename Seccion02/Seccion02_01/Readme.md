@@ -7,7 +7,7 @@ Dado un proceso estocástico de una variable $y_t$ que tiene una media y una var
 2) **Varianza constante**: $E[(y_{t}- \mu)^2]=E[(y_{t-s}- \mu)^2]=\sigma_{y}^2$
 3) **Autocovarianzas de la misma amplitud constantes**: $E[(y_{t}- \mu)(y_{t-s}- \mu)] = E[(y_{t-j}- \mu)(y_{t-j-s}- \mu)] = \gamma_{s}$
 
-donde $\mu, \sigma_{y}^2$, y $\gamma_{s}$ son parametros constantes, y $E(x)$ es el valor medio teórico de $x$.
+donde $\mu, \sigma_{y}^2$, y $\gamma_{s}$ son parametros constantes, y $E(x)$ es el valor esperado (o valor medio teórico) de $x$.
 
 ## Los procesos ruido blanco
 Un caso especial de procesos estacionarios que es importante tener en consideración son los procesos ruido blanco.
