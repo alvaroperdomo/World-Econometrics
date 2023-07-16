@@ -10,6 +10,7 @@ Muchos tipos de datos aparecen como series de tiempo[^2]:
 * una secuencia mensual de la tasa de inflación de una nación,
 * una serie semanal de las ventas de una empresa, 
 * observaciones por hora o  por minuto de la tasa de cambio de una divisa, 
+
 y así sucesivamente. 
 
 [^1]: **El curso sólo se va a enfocar en series de tiempo anuales. Sin embargo, todo lo aprendido también es aplicable a series de tiempo con diferente periodicidad.**
