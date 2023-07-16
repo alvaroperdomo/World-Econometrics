@@ -265,12 +265,12 @@ En el gráfico se visualizan los siguientes hechos estilizados que afectaron a e
 2) La crisis económica de 1998/1999
 3) La crisis economíca del Covid-19 en 2020
 
-Como último paso (por su utilidad para las siguientes secciones), se va a crear la variable PIBpc que comienza en 1960 y finaliza en 2019:
+Como último paso (por su utilidad para las siguientes secciones), se van a crear las variablse PIBpc y C1PIBpc que comienzan en 1960 y finalizan en 2019:
 ``` r
 PIBpc_ = subset(dat, select = c(PIBpc))
 C1PIBpc_ = subset(dat, select = c(C1PIBpc))
-PIBpc <- ts(PIBpc_, start=1960, end=2020)
-C1PIBpc <- ts(C1PIBpc_, start=1960, end=2020)
+PIBpc <- ts(PIBpc_, start=1960, end=2019)
+C1PIBpc <- ts(C1PIBpc_, start=1960, end=2019)
 ```
 
 El código completo de R, con los principales comandos, utilizados en este ejemplo es:
@@ -299,8 +299,8 @@ ggplot(dat, aes(year, C1PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$",
 
 PIBpc_ = subset(dat, select = c(PIBpc))
 C1PIBpc_ = subset(dat, select = c(C1PIBpc))
-PIBpc <- ts(PIBpc_, start=1960, end=2020)
-C1PIBpc <- ts(C1PIBpc_, start=1960, end=2020)
+PIBpc <- ts(PIBpc_, start=1960, end=2019)
+C1PIBpc <- ts(C1PIBpc_, start=1960, end=2019)
 ```
 
 | [Anterior Sección: 01-01. Series de tiempo](../Seccion01_01/Readme.md) | [:house: Inicio](../../Readme.md) | [Siguiente Sección: 02-01. Introducción Análisis Univariado](../Seccion02_01/Readme.md) | 
