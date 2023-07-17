@@ -7,7 +7,7 @@ Considere el modelo de tendencia estacionaria: $y_t=a_0+a_2t+\displaystyle\sum_{
 
 Por lo tanto, $\tilde{y_t}=a_0(1-\alpha)+a_2 [\alpha + (1- \alpha)t] + e_t$ para $t=2,\dots,T$ donde $\tilde{y_t}=y_t-\alpha y_{t-1}$ y $e_t$ es un término de error estacionario. Para $t=1$, la diferencia no es factible por lo que se asume $\tilde{y_1}=y_1$
 
-Para obtener las estimaciones deseadas de $a_0$ y $a_2$ estime por Mínimos Cuadrados Ordinarios $\tilde{y_t}=a_0 z_{1t}+a_2 z_{2t} + e_t$ donde $z_{1t}=(1- \alpha)$ y $z_{2t}=\alpha + (1- \alpha)t$. El punto a tener en cuenta es que las estimaciones de $a_0$ y $a_2$ se pueden usar para calcular $y_t^d = y_t - \tilde{a_0} - \tilde{a_2}t$
+Para obtener las estimaciones deseadas de $a_0$ y $a_2$ estime por Mínimos Cuadrados Ordinarios $\tilde{y_t}=a_0 z_{1t}+a_2 z_{2t} + e_t$ donde $z_{1t}=(1- \alpha)$ y $z_{2t}=\alpha + (1- \alpha)t$. El punto a tener en cuenta es que las estimaciones de $a_0$ y $a_2$ (es decir, $\hat{a_0}$ y $\hat{a_2}$) se pueden usar para calcular $y_t^d = y_t - \hat{a_0} - \hat{a_2}t$
 
 En el segundo paso del procedimiento, se estima: $\Delta y_t^d = \gamma y_{t-1}^d + \varepsilon_t$. Si existe una correlación serial en los residuos, la forma aumentada de la prueba se puede estimar como $\eqalign{\Delta y_t^d = \gamma y_{t-1}^d + \sum_{i=1}^p c_i \Delta y_{t-i}^d + \varepsilon_t}$
 
