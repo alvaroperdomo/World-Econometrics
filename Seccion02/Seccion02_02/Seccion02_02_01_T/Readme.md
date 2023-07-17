@@ -31,7 +31,7 @@ Los estadísticos $\phi_1$, $\phi_2$, y $\phi_3$ se construyen exactamente de la
 En todas las pruebas $DF$ si el estadistico es menor que el valor crítico reportado en las tablas de Dickey-Fuller, entoces se rechaza $H_0$ y se afirma que la serie $y_t$ es estacionaria. En caso contrario, se dice que la serie tiene raíz unitaria (es decir, es no estacionaria).
 
 # Prueba Aumentada de Dickey-Fuller - $ADF$
-Tradicionalmente, la prueba de raíz unitaria más utilizada en la literatura econométrica de series de tiempo es la **Prueba Aumentada de Dickey-Fuller - ADF**[^1].
+Tradicionalmente, la prueba de raíz unitaria más utilizada en la literatura econométrica de series de tiempo es la prueba $ADF$[^1].
 
 [^1]: De todas formas, esta prueba no es infalible, por lo que se recomienda acompañarla, como se verá más adelante, con otras pruebas de raíz unitaria. 
 
