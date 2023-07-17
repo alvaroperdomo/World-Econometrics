@@ -66,7 +66,7 @@ Por lo tanto, el choque de una sola vez a $D_P(51)$ tiene un efecto permanente e
 El sesgo en las pruebas tradicionales de raíz unitaria, y en particular en la prueba ADF se confirmó en un experimento de Monte Carlo realizado por Perron (1989).
 
 Perron generó 10.000 repeticiones de un proceso de la misma naturaleza que $y_t=0.5y_{t-1}+\varepsilon_t+D_L$. Cada replica la formó:
-* generando 100 valores distribuidos normalmente e independientemente para la secuencia { $\varepsilon_t }. 
+* generando 100 valores distribuidos normalmente e independientemente para la secuencia { $\varepsilon_t$ }. 
 * Para cada una de las 10.000 series replicadas, utilizó Mínimos Cuadrados Ordinarios para estimar una regresión en la forma de $y_t=a_0+a_1y_{t-1}+e_t$. 
 
 Perron descubrió que los valores estimados de $a_1$ estaban sesgados hacia $1$. Además, el sesgo se hizo más pronunciado a medida que aumentaba la magnitud del cambio.
