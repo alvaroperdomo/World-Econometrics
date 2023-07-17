@@ -129,6 +129,8 @@ Note que al 1% de significancia la variable $PIBpc$ tiene constante y tendencia 
 
 A continuación se desarrollan las distintas pruebas de raíz unitaria. Primero, para la variable $PIBpc$ y luego para la variable $C1PIBpc$.
 
+****************************************************************************************************************************************************************************
+
 ### 1) Prueba $ADF$
 
 En cuanto a la prueba $ADF$, el número óptimo de rezagos, para cada especificación, se va a escoger tomando en cuenta el Criterio de Información de Akaike y el Criterio Bayesiano de Schwartz.
@@ -320,12 +322,13 @@ Y la variable $C1PIBpc$ es estacionaria porque:[^5]
 
 [^5]: **Aunque al 1% no se rechaza la hipótesis de raiz unitaria, al 5% y al 10% si se rechaza**
 
-Ahora copie los comandos
+Dado que los criterios de Akaike concluyen que la prueba $ADF$ de la variable $PIBpc$ se debe hacer con $3$ rezagos y que la prueba $ADF$ de la variable $C1PIBpc$ se debe hacer con $1$ rezago. Entonces, vamos a utilizar los siguientes comando para evaluar la existencia de autocorrelación en los residuos de ambas pruebas: 
+
 ``` r
 PIBpc_urdfTest<- urdfTest(PIBpc, lags = 3, type = c("ct"), doplot = TRUE)
 C1PIBpc_urdfTest<- urdfTest(C1PIBpc, lags = 1, type = c("nc"), doplot = TRUE)
 ```  
-Obteniendose los siguientes gráficos de prueba sobre los errores de estimación en la prueba,
+Obteniendose los siguientes gráficos de prueba sobre los residuos de estimación de las pruebas,
 
 1) Para los residuos de la prueba $ADF$ de $PIBpc$
    
@@ -337,42 +340,23 @@ Obteniendose los siguientes gráficos de prueba sobre los errores de estimación
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6311e9ff-3bc6-4a4e-9802-5ea2fb825685)
 
 
-En consecuencia, los gráficos $FAC$ y $FACP$ revelan que los errores son ruidos blanco en ambas pruebas, por lo tanto ambas pruebas estan bien hechas.
+Los gráficos $FAC$ y $FACP$, que se encuentran arriba, revelan que los residuos de ambas pruebas $ADF$ no estan autocorrelacionados , por lo tanto ambas pruebas de raíz unitaria estan bien hechas.
 
 ****************************************************************************************************************************************************************************
 
 ### Prueba DF-GLS
 
-Dado que el $PIBpc$ es una variable que presenta tendencia, entonces se va a interpretar su prueba DF-GLS con tendencia. Dado que el $C1PIBpc$ es una variable que no presenta tendencia, entonces se va a interpretar su prueba DF-GLS  sin tendencia. De todas formas abajo se presentan los resultados con ambas pruebas y el número de rezagos se escoge utilizando el Criterio Bayesiano de Schwartz.
+Dado que el $PIBpc$ es una variable que presenta tendencia, entonces se va a desarrollar su prueba DF-GLS con tendencia. Dado que el $C1PIBpc$ es una variable que no presenta tendencia, entonces se va a desarrollar su prueba DF-GLS  sin tendencia. El número de rezagos se va a escoger utilizando el Criterio Bayesiano de Schwartz.
 
 ``` r
-PIBpc_DFGLSc.ers <- ur.ers(PIBpc, type = c("P-test"), model = c("constant"),lag.max = 4) 
 PIBpc_DFGLSt.ers <- ur.ers(PIBpc, type = c("P-test"), model = c("trend"),lag.max = 4)
 C1PIBpc_DFGLSc.ers <- ur.ers(C1PIBpc, type = c("P-test"), model = c("constant"),lag.max = 4) 
-C1PIBpc_DFGLSt.ers <- ur.ers(C1PIBpc, type = c("P-test"), model = c("trend"),lag.max = 4)
 
-summary(PIBpc_DFGLSc.ers)
 summary(PIBpc_DFGLSt.ers)
-summary(C1PIBpc_DFGLSc.ers)
 summary(C1PIBpc_DFGLSt.ers)
 ```
 
 ``` r
-> summary(PIBpc_DFGLSc.ers)
-
-############################################### 
-# Elliot, Rothenberg and Stock Unit Root Test # 
-############################################### 
-
-Test of type P-test 
-detrending of series with intercept 
-
-Value of test-statistic is: 30.3276 
-
-Critical values of P-test are:
-                1pct 5pct 10pct
-critical values 1.95 3.11  4.17
-
 > summary(PIBpc_DFGLSt.ers)
 
 ############################################### 
@@ -403,26 +387,14 @@ Critical values of P-test are:
                 1pct 5pct 10pct
 critical values 1.95 3.11  4.17
 
-> summary(C1PIBpc_DFGLSt.ers)
-
-############################################### 
-# Elliot, Rothenberg and Stock Unit Root Test # 
-############################################### 
-
-Test of type P-test 
-detrending of series with intercept and trend 
-
-Value of test-statistic is: 1.0387 
-
-Critical values of P-test are:
-                1pct 5pct 10pct
-critical values 4.26 5.64  6.79
 ```
 
 | Variable   | Estadistico   | Valor     |  10%    |  5%     |   1%    |
 |------------|---------------|:---------:|:-------:|:-------:|:-------:|
 | $PIBpc$    | $P_\tau$      | $34.0584$ | $6.79$  | $5.64$  | $4.26$  |
-| $C1PIBpc$  | $P_\mu$       | $0.319$   | $4.17$  | $3.11$  | $1.95$  |
+| $C1PIBpc$  | $P_\mu$       | $0.319$***| $4.17$  | $3.11$  | $1.95$  |
+
+**Niveles de significancia: *** al 1%, ** al 5% y * al 10%**
 
 La variable $PIBpc$ es no estacionaria porque:
 * Con el estadistico $P_\tau$: $**34.0584**>6.79$, no se rechaza la hipótesis nula de raíz unitaria  10%, 5% y 1% 
