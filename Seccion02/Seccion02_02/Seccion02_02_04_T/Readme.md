@@ -167,7 +167,7 @@ Se debe tener cuidado al usar el procedimiento de Perron, ya que supone que la f
 
 **Paso 1:** Calcule el estadístico $t$ para verificar la hipótesis nula $a_1=0$  (es decir, la hipótesis nula de raíz unitaria) para todos los momentos ($\tau$) y para todos los posibles tipos de cambio estructural (es decir, para los casmbios estructurales en tendencia y pendiente). $\Delta y_t= a_0 + a_1 y_{t-1} + a_2t + \mu_2 D_L + \mu_3 D_T + \displaystyle\sum_{i = 1}^{p} \beta_i \Delta y_{t-i} +  \varepsilon_t$
 
-**Paso 2:** Escoja el estadístico $|t|$ más alto (es decir, el menos favorable a aceptar $H_0$) y compárelo con los valores críticos propuestos por Zivot y Andrews.
+**Paso 2:** Escoja el estadístico $t$ más bajo (es decir, el menos favorable a aceptar $H_0$) y compárelo con los valores críticos propuestos por Zivot y Andrews. **Si el estadístico $t$ es menor que el valor crítico calculado por Zivot y Andrews, es posible rechazar la hipótesis nula de una raíz unitaria**
 
 **Paso 3:** Si se rechaza $H_0$, se concluye que no existe raíz unitaria. En caso contrario, se debe identificar el mejor modelo de cambio estructural utilizando la prueba iterativa de Chow.
 
