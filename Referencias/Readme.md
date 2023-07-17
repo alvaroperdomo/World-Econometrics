@@ -9,6 +9,7 @@
 * JOHANSEN, Soren. _The Role of the Constant and Linear Terms in Cointegration Analysis of Non-Stationary Variables_. Econometric Reviews, Vol. 13, No. 2(1994); p. 205 – 230.
 * JOHANSEN, Soren. _Estimation and Hypothesis Testing of Cointegrating Vectors in Gaussian Vector Autoregressive Models_. Econometrica, Vol. 59, No. 6 (November, 1991); p.1551–1580.
 * LUTKEPOHL, Helmut y REIMERS, Hans. _Impulse Response Analysis of Cointegrated Systems_. Journal of Economic Dynamics and Control, Vol. 16, No. 1 (January, 1992); p. 53-78.
+* MACKINNON, James. _Numerical Distribution Functions for Unit Root and Cointegration Tests_. Journal of Applied Econometrics, Vol. 11, No. 6 (November - December, 1996), pp. 601-618
 * NEWEY, Whitney y WEST, Kenneth. _A Simple, Positive Semi-Definite, Heteroskedasticity and Autocorrelation Consistent Covariance Matrix_. Econometrica, Vol. 55, No. 3 (May, 1987); p. 703-708
 * NEWEY, Whitney y WEST, Kenneth. _Automatic Lag Selection in Covariance Matrix Estimation_. The Re-view of Economic Studies, Vol. 61, No. 4 (October, 1994); p. 631–653
 * PERRON, Pierre. _The Great Crash, the Oil Price Shock, and the Unit Root Hypothesis_. Econometrica, Vol. 57, No. 6 (November, 1989); p. 1361-1401
