@@ -41,15 +41,39 @@ Esta prueba es una generalización de la prueba $DF$ y consiste en estimar estas
 2) $\eqalign{\Delta y_t = a_0 + \gamma y_{t-1} +\sum_{i = 2}^{p} \beta_i \Delta y_{t-i+1} + \varepsilon_t}$
 3) $\eqalign{\Delta y_t = a_0 + \gamma y_{t-1} +\sum_{i = 2}^{p} \beta_i \Delta y_{t-i+1} + a_2 t + \varepsilon_t}$
 
-En las cuales se debe contrastar la hipótesis nula $\gamma=0$. Para escoger la especificación correcta, se debe tener en cuenta la significancia tanto de $a_0$ como de $t$. El número de rezagos óptimos ($p$) dentro de las sumatorias se puede escoger utilizando el Críterio de Información de Akaike (o el Críterio Bayesiano de Schwartz).
+En las cuales se debe contrastar la hipótesis nula $\gamma=0$. Para determinar el número de rezagos óptimos ($p$) dentro de las sumatorias se puede escoger utilizando el Críterio de Información de Akaike (o el Críterio Bayesiano de Schwartz). Entre más bajo sea el valor de cualquiera de los dos criterios, la especificación del modelo en cuanto al número de rezagos sera mejor.
 
-## Anotaciones importantes en cuanto a la prueba $ADF$ y por consiguiente en cuanto a la prueba $DF$
+## El problema con la potencia de la prueba $DF$ y $ADF$
 
-**Anotación 1:** Si el valor estimado de $\gamma \notin [-2,0]$, entonces no es necesario hacer prueba de raíz unitaria porque la serie no cumpla $|a_1|<1$ y por lo tanto no es estacionaria
+La potencia de una prueba es igual a la probabilidad de rechazar una hipótesis nula falsa. Simulaciones de Monte Carlo han demostrado que la potencia de las diversas versiones de la prueba $DF$ y (y de la prueba $ADF$) puede ser muy bajo. Como tal, estas pruebas indican con demasiada frecuencia que una serie contiene una raíz unitaria. El problema es que, en muestras finitas, cualquier proceso estacionario con tendencia se puede aproximar arbitrariamente bien mediante un proceso de raíz unitaria y cualquier proceso de raíz unitaria se puede aproximar arbitrariamente bien mediante un proceso estacionario con tendencia.
 
-**Anotación 2:** La prueba ADF esta sesgada hacía el no rechazo de la hipótesis nula $\gamma=0$. Por lo tanto, es aconsejable complementar el análisis con hipótesis de más potencia [^2] (como la prueba $ADF-GLS$) o que tengan el sesgo opuesto (como la prueba $KPSS$). 
+Podría parecer razonable probar la hipótesis $\gamma=0$ utilizando el más general de los modelos: $\Delta y_t = a_0 + \gamma y_{t-1} + a_2t + \varepsilon_t$. Después de todo, si el verdadero proceso es un proceso aleatorio, esta regresión debe encontrar que $a_0=\gamma=a_2=0$. Esta forma de pensar tiene los siguientes dos problemas:
 
-[^2]: **La potencia de una prueba es igual a la probabilidad de rechazar una hipótesis nula falsa. Simulaciones de Monte Carlo han demostrado que la potencia de las diversas pruebas _DF_ y _ADF_ puede ser muy bajo. Como tal, estas pruebas indican con demasiada frecuencia que una serie contiene una raíz unitaria. El problema es que, en muestras finitas, cualquier proceso estacionario con tendencia se puede aproximar arbitrariamente bien mediante un proceso de raíz unitaria y cualquier proceso de raíz unitaria se puede aproximar arbitrariamente bien mediante un proceso estacionario con tendencia.** 
+(1) La presencia de los parámetros estimados adicionales reduce los grados de libertad y la potencia de la prueba. La menor potencia significa que no se podrá rechazar la hipótesis de una raíz unitaria cuando, de hecho, no hay una raíz unitaria presente. 
+
+(2) El estadístico apropiado ($\tau$, $\tau_\mu$ 0 $\tau_\tau$) para la prueba $\gamma=0$ depende de los regresores están incluidos en el modelo. En las tablas de Dickey-Fuller, para un nivel dado de significancia, los intervalos de confianza en torno a $\gamma=0$ se expanden bastante si se incluye en el modelo un intercepto y una tendencia temporal. Esto es diferente del caso en el que { $y_t $ } es estacionario. Cuando { $y_t $ } es estacionario, la distribución del estadístico $t$ no depende de la presencia de otros regresores. Por lo tanto, es importante usar la regresión que imite el proceso real de generación de datos. La omisión inadecuada del intercepto o de la tendencia de tiempo puede hacer que el poder de la prueba sea cero. 
+
+Campbell y Perron (1991) encuentran los siguientes resultados con respecto a las pruebas de raíz unitaria $DF$ y #ADF$:
+
+(i) Si la regresión estimada incluye regresores deterministas que no están en el proceso real de generación de datos, la potencia de la prueba de raíz unitaria contra una alternativa estacionaria disminuye a medida que se agregan regresores deterministas adicionales. Por lo tanto, no es deseable incluir regresores que no estén en el proceso de generación de datos.
+
+(ii) Si la regresión estimada omite una variable importante de tendencia determinista presente en el proceso real de generación de datos, como la expresión $a_2t$ en $\eqalign{\Delta y_t = a_0 + \gamma y_{t-1} +\sum_{i = 2}^{p} \beta_i \Delta y_{t-i+1} + a_2 t + \varepsilon_t}$, la potencia de la prueba del estadístico $t$ cae a cero a medida que aumenta el tamaño de la muestra. Si la regresión estimada omite una variable sin tendencia (como un intercepto), el estadístico $t$ es consistente, pero la potencia de la muestra finita se ve afectada adversamente y disminuye a medida que aumenta la magnitud del coeficiente en el componente omitido. Por lo tanto, no es deseable omitir los regresores que están en el proceso de generación de datos.
+
+La implicación directa de estos hallazgos es que se puede no rechazar la hipótesis nula de una raíz unitaria debido a una falta de especificación sobre la parte determinista de la regresión. **Muy pocos o demasiados regresores pueden llevar a una falla en la prueba al momento de rechazar la hipótesis nula de una raíz unitaria**. 
+
+**¿Cómo determinar si se debe incluir una tendencia de tiempo o el intercepto en la realización de las pruebas?** 
+
+El problema clave es que las pruebas de raíz unitaria están condicionadas a la presencia de regresores deterministas y las pruebas para la presencia de regresores deterministas están condicionadas a la presencia de una raíz unitaria. 
+
+Aunque nunca podemos estar seguros de que estamos incluyendo los regresores deterministas apropiados en nuestro modelo econométrico, hay algunas pautas útiles.
+
+1. **Grafique siempre los datos**. La inspección visual puede ayudarlo a determinar si hay una tendencia clara en los datos.
+2. **Sea claro acerca de la hipótesis nula apropiada y la hipótesis alternativa**. Cuando realice una prueba de $DF$ o $ADF$, siempre calcule el modelo según la hipótesis alternativa e imponga la restricción implícita en la hipótesis nula. Dado que la hipótesis nula es que la serie tiene una raíz unitaria, siempre estime la serie como si fuera estacionaria o con tendencia estacionaria. Por ejemplo, si el gráfico de una serie es creciente (o decreciente). El problema es si la serie es estacionaria o contiene una raíz unitaria más un termino de intercepto. El modelo a estimar tiene la forma $\eqalign{\Delta y_t = a_0 + \gamma y_{t-1} +\sum_{i = 2}^{p} \beta_i \Delta y_{t-i+1} + a_2 t + \varepsilon_t}$. Luego, pruebe las restricciones $\gamma=0$ y/o $\gamma=a_2=0$. No es necesario estimar un modelo sin $a_2t$ ya que la hipótesis alternativa no está representada en dicha especificación.
+3. **No es deseable rechazar la hipótesis nula cuando la serie tiene realmente una raíz unitaria o aceptar incorrectamente hipótesis nula de una raíz unitaria cuando la serie es estacionaria o con tendencia estacionaria**. Sin embargo, cualquier prueba implica la posibilidad de cometer tales errores. Como tal, no es deseable realizar pruebas innecesarias. Por ejemplo, si si el gráfico de una serie es claramente creciente (o decreciente) tiene poco sentido probar la restricción $\gamma=a_0=a_2=0$ ya que la variable claramente aumenta (o disminuye) con el tiempo. Probar una restricción en un modelo que ya ha sido restringido crea la posibilidad de agravar sus errores. 
+
+Dado que las pruebas $DF$ y $ADF$ estan sesgadas hacía el no rechazo de la hipótesis nula $\gamma=0$. PEs aconsejable complementar el análisis de raíz unitaria con hipótesis de más potencia (como la prueba $ADF-GLS$) o que tengan el sesgo opuesto (como la prueba $KPSS$). 
+
+**Anotación importante en cuanto a las pruebas $DF# $ADF$**: Si el valor estimado de $\gamma \notin [-2,0]$, entonces no es necesario hacer prueba de raíz unitaria porque la serie no cumple la condición $|a_1|<1$ y por lo tanto no es estacionaria
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
