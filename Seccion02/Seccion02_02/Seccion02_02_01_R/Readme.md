@@ -4,7 +4,7 @@ Para llevar a cabo la prueba $ADF$ en $R$ existen las siguientes cuatro opciones
 
 ## 1) Primera Opción:** Utilice el comando _unitrootTest_ [^1]
 
-[^1]: **Este comando pertenece a la libreria _fUnitRoots_**
+[^1]: **Este comando pertenece a la librería _fUnitRoots_**
 
 La estructura para hacer la prueba $ADF$ es:
 ``` r
@@ -31,7 +31,7 @@ unitrootTest(x, lags = 5, type = c("ct"), title = "Modelo de Paseo Aleatorio con
 
 ## 2) Segunda Opción: Utilice el comando _fUnitRoots_ [^2]
 
-[^2]: **Este comando pertenece a la libreria _urca_**
+[^2]: **Este comando pertenece a la librería _urca_**
 
 La estructura para hacer la prueba $ADF$ es:
 ``` r
@@ -52,7 +52,7 @@ urdfTest(x, lags = 1, type = c("nc", "c", "ct"), doplot = TRUE)
 
 ## 3) Tercera Opción: Utilice el comando _ur.df_ [^3]
 
-[^3]: **Este comando pertenece a la libreria _urca_**
+[^3]: **Este comando pertenece a la librería _urca_**
 
 La estructura para hacer la prueba $ADF$ es:
 ``` r
@@ -74,7 +74,7 @@ ur.df(x, type = c("none", "drift", "trend"), lags = 1, selectlags = c("Fixed", "
 
 ## 4) Cuarta Opción: Utilice el comando _ndiffs_ [^4]
 
-[^4]: **Este comando pertenece a la libreria _forecast_**
+[^4]: **Este comando pertenece a la librería _forecast_**
 
 Este comando permite estimar el número de diferencias necesarias para hacer estacionaria una serie temporal determinada. **ndiffs** encuentra la menor cantidad de diferencias requeridas para fallar la hipótesis nula de la prueba $ADF$ según el nivel de significancia **alpha**. La estructura para hallar el número de diferencias con la prueba $ADF$ es:
 ``` r
