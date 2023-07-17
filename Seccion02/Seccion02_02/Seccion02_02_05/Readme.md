@@ -31,11 +31,14 @@ ggplot(dat, aes(year, PIBpc)) + scale_x_continuous(name="Años", limits=c(1960, 
 ggplot(dat, aes(year, C1PIBpc)) + scale_x_continuous(name="Años", limits=c(1961, 2019))  + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", title="Cambio en el PIB per cápita real de Colombia: 1961-2019", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 ```
 Obteniendose los siguientes gráficos:
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/a9cf6e33-1204-405a-865d-2b55d90b3f1b)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5d46b27b-f8a0-4870-ac7f-fca52a0cd292)
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/771298eb-e6d5-49b4-96bd-6252b91e3493)
 
-Las siguientes cuatrolineas en $R$, permiten armar dos subconjuntos de bases de datos uno en el cual se encuentre el PIB[^2] para el periodo 1960-2019 (subconjunto PIBpc_) y otro en el cual se encuentre la variación del PIB durante el periodo 1961-2019 [^3]
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/80c86152-925a-4117-9b9a-f803e147a926)
+
+Las siguientes cuatrolineas en $R$, permiten armar dos subconjuntos de bases de datos:
+* uno en el cual se encuentre el PIB[^2] para el periodo 1960-2019 (subconjunto PIBpc_) y
+* otro en el cual se encuentre la variación del PIB durante el periodo 1961-2019 [^3]
 
 [^2]: **En lo que resta de esta sección, cuando hagamos referencia al PIB, estaremos haciendo referencia de una forma simplificada al PIB de Colombia a precios constantes** 
 [^3]: **Se toma el periodo desde 1961 porque el dato de la variación del PIB en 1960 no se tiene porque se desconoce el valor del PIB de 1959** 
