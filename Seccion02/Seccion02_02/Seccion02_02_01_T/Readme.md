@@ -47,7 +47,11 @@ En las cuales se debe contrastar la hipótesis nula $\gamma=0$. Para escoger la 
 
 **Anotación 1:** Si el valor estimado de $\gamma \notin [-2,0]$, entonces no es necesario hacer prueba de raíz unitaria porque la serie no cumpla $|a_1|<1$ y por lo tanto no es estacionaria
 
-**Anotación 2:** La prueba ADF esta sesgada hacía el no rechazo de la hipótesis nula $\gamma=0$. Por lo tanto, es aconsejable complementar el análisis con hipótesis de más potencia (como la prueba $ADF-GLS$) o que tengan el sesgo opuesto (como la prueba $KPSS$). 
+**Anotación 2:** La prueba ADF esta sesgada hacía el no rechazo de la hipótesis nula $\gamma=0$. Por lo tanto, es aconsejable complementar el análisis con hipótesis de más potencia [^1] (como la prueba $ADF-GLS$) o que tengan el sesgo opuesto (como la prueba $KPSS$). 
+
+[^1]: **La potencia de una prueba es igual a la probabilidad de rechazar una hipótesis nula falsa. Simulaciones de Monte Carlo han demostrado que la potencia de las diversas pruebas _DF_ y _ADF_ puede ser muy bajo. Como tal, estas pruebas indican con demasiada frecuencia que una serie contiene una raíz unitaria. El problema es que, en muestras finitas, cualquier proceso estacionario con tendencia se puede aproximar arbitrariamente bien mediante un proceso de raíz unitaria y cualquier proceso de raíz unitaria se puede aproximar arbitrariamente bien mediante un proceso estacionario con tendencia.** 
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/59244380-99c0-4a6a-a3e7-1e5370f3b2b8)
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
