@@ -32,9 +32,11 @@ ggplot(dat, aes(year, C1PIBpc)) + scale_x_continuous(name="Años", limits=c(1961
 ```
 Obteniendose los siguientes gráficos:
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5d46b27b-f8a0-4870-ac7f-fca52a0cd292)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/f38730a5-5c71-40bd-abae-77012d6fb5e2)
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/80c86152-925a-4117-9b9a-f803e147a926)
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/fa3f1086-f7b2-4432-85cc-c33a4ab47796)
+
 
 Las siguientes cuatrolineas en $R$, permiten armar dos subconjuntos de bases de datos:
 * uno en el cual se encuentre el PIB[^2] para el periodo 1960-2019 (subconjunto PIBpc_) y
