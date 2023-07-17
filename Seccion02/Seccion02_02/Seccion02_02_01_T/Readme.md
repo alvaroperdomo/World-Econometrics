@@ -33,7 +33,7 @@ En todas las pruebas $DF$ si el estadistico es menor que el valor crítico repor
 # Prueba Aumentada de Dickey-Fuller - $ADF$
 Tradicionalmente, la prueba de raíz unitaria más utilizada en la literatura econométrica de series de tiempo es la prueba $ADF$[^1].
 
-[^1]: De todas formas, esta prueba no es infalible, por lo que se recomienda acompañarla, como se verá más adelante, con otras pruebas de raíz unitaria. 
+[^1]: **De todas formas, esta prueba no es infalible, por lo que se recomienda acompañarla, como se verá más adelante, con otras pruebas de raíz unitaria.** 
 
 Esta prueba es una generalización de la prueba $DF$ y consiste en estimar estas tres especificaciones:
 
