@@ -73,7 +73,7 @@ Aunque nunca podemos estar seguros de que estamos incluyendo los regresores dete
 
 Dado que las pruebas $DF$ y $ADF$ estan sesgadas hacía el no rechazo de la hipótesis nula $\gamma=0$. PEs aconsejable complementar el análisis de raíz unitaria con hipótesis de más potencia (como la prueba $ADF-GLS$) o que tengan el sesgo opuesto (como la prueba $KPSS$). 
 
-**Anotación importante en cuanto a las pruebas $DF# $ADF$**: Si el valor estimado de $\gamma \notin [-2,0]$, entonces no es necesario hacer prueba de raíz unitaria porque la serie no cumple la condición $|a_1|<1$ y por lo tanto no es estacionaria
+**Anotación importante en cuanto a las pruebas $DF$ y $ADF$**: Si el valor estimado de $\gamma \notin [-2,0]$, entonces no es necesario hacer prueba de raíz unitaria porque la serie no cumple la condición $|a_1|<1$ y por lo tanto no es estacionaria
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
