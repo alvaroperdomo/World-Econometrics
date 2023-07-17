@@ -75,7 +75,7 @@ Obteniendose
 
 El decaimiento continuo pero moderado de la $FAC$ de la variable $PIBpc$ da una idea de raíz unitaria. Por otro lado, la $FAC$ de la variable $C1PIBpc$ desde el comienzo cae rapidamente, dando así una idea de estacionariedad. 
 
-Antes de desarrollar las diferentes pruebas de raíz unitaria, se desarrolla la siguiente prueba sencilla de Mínimos Cuadrados Ordinarios para analizar si es necesario incluirles la tendencia y el intercepto a las diferentes pruebas de raíz unitaria.
+Antes de desarrollar las diferentes pruebas de raíz unitaria, observe a partir de los dos gráficos del comienzo de la sección, que el PIB tiene una tendencia clara, mientras que la variación del PIB no tiene tendencia y parece tampo tener un intercepto (aunque este último aspecto no es claro. Para visualizar mejor, esto se desarrolla la siguiente prueba sencilla de Mínimos Cuadrados Ordinarios:
 
 ``` r
 PIBpc_MCO <- lm(PIBpc ~ year, data = ejercicio)
@@ -125,15 +125,13 @@ Residual standard error: 225400 on 57 degrees of freedom
 Multiple R-squared:  0.07575,	Adjusted R-squared:  0.05953 
 F-statistic: 4.671 on 1 and 57 DF,  p-value: 0.03488
 ```
-Note que al 1% de significancia la variable $PIBpc$ tiene constante y tendencia significativas y la variable $C1PIBpc$ no las tiene. Por lo tanto, en la medida de lo posible, las pruebas de raíz unitaria de la variable $PIBpc$ se analizaran con intercepto y tendencia, mientras que los de la variable $C1PIBpc$ se analizaran sin intercepto y sin tendencia.[^1]
-[^1]: **De todas formas, todas las pruebas de raíz unitaria se van a ser con diferentes variantes dentro de la prueba para que el alumno por su cuenta pueda contrastar los resultados de las mismas.**
+Note que al 1% de significancia la variable $PIBpc$ tiene constante y tendencia significativas y la variable $C1PIBpc$ no las tiene (claro esta que el intercepto de la variable $C1PIBpc$ es significativo al 10%). Por lo tanto, en la medida de lo posible, las pruebas de raíz unitaria de la variable $PIBpc$ se analizaran con intercepto y tendencia, mientras que los de la variable $C1PIBpc$ se analizaran sin intercepto y sin tendencia (o con intercepto y sin tendencia
 
-A continuación se desarrollan diferentes pruebas de raíz unitaria. Primero, para la variable $PIBpc$ y luego para la variable $C1PIBpc$.
+A continuación se desarrollan las distintas pruebas de raíz unitaria. Primero, para la variable $PIBpc$ y luego para la variable $C1PIBpc$.
 
-*****************************************************************************************************************************************************************************
-En cuanto a la prueba ADF, el número óptimo de rezagos, para cada especificación, se va a escoger tomando en cuenta el Criterio de Información de Akaike y el Criterio Bayesiano de Schwartz.
+### 1) Prueba $ADF$
 
-### 1) Prueba ADF
+En cuanto a la prueba $ADF$, el número óptimo de rezagos, para cada especificación, se va a escoger tomando en cuenta el Criterio de Información de Akaike y el Criterio Bayesiano de Schwartz.
 
 ``` r
 PIBpc_ur_trend_AIC.df <- ur.df(y=PIBpc, type = c("trend"), lags = 10, selectlags = c("AIC"))
@@ -298,16 +296,18 @@ tau1 -2.6 -1.95 -1.61
 
 Los resultados de las pruebas ADF son:
 
-| Variable   | Estadístico | Criterio de <br> información | Número de <br> rezagos | Valor     |  1%     |  5%     |  10%    |
-|------------|:-----------:|:----------------------------:|:----------------------:|:---------:|:-------:|:-------:|:-------:|
-| $PIBpc$    | $\tau_\tau$ |  Akaike                      |   3                    | $-2.8429$ | $-4.04$ | $-3.45$ | $-3.15$ |
-| $PIBpc$    | $\phi_2$    |  Akaike                      |   3                    |  $4.3493$ |  $6.50$ |  $4.88$ |  $4.16$ |
-| $PIBpc$    | $\phi_3$    |  Akaike                      |   3                    |  $6.0919$ |  $8.73$ |  $6.49$ |  $5.47$ |
-| $PIBpc$    | $\tau_\tau$ |  Schwartz                    |   1                    | $-1.7651$ | $-4.04$ | $-3.45$ | $-3.15$ |
-| $PIBpc$    | $\phi_2$    |  Schwartz                    |   1                    |  $2.0235$ |  $6.50$ |  $4.88$ |  $4.16$ |
-| $PIBpc$    | $\phi_3$    |  Schwartz                    |   1                    |  $2.9459$ |  $8.73$ |  $6.49$ |  $5.47$ |
-| $C1PIBpc$  | $\tau$      |  Akaike                      |   1                    | $-2.3286$ | $-2.60$ | $-1.95$ | $-1.61$ |
-| $C1PIBpc$  | $\tau$      |  Schwartz                    |   1                    | $-2.3286$ | $-2.60$ | $-1.95$ | $-1.61$ |
+| Variable   | Estadístico | Criterio de <br> información | Número óptimo <br> de rezagos | Valor       |  1%     |  5%     |  10%    | 
+|------------|:-----------:|:----------------------------:|:-----------------------------:|:-----------:|:-------:|:-------:|:-------:|
+| $PIBpc$    | $\tau_\tau$ |  Akaike                      |   3                           | $-2.8429$   | $-4.04$ | $-3.45$ | $-3.15$ | 
+| $PIBpc$    | $\phi_2$    |  Akaike                      |   3                           |  $4.3493*$  |  $6.50$ |  $4.88$ |  $4.16$ | 
+| $PIBpc$    | $\phi_3$    |  Akaike                      |   3                           |  $6.0919*$  |  $8.73$ |  $6.49$ |  $5.47$ | 
+| $PIBpc$    | $\tau_\tau$ |  Schwartz                    |   1                           | $-1.7651$   | $-4.04$ | $-3.45$ | $-3.15$ | 
+| $PIBpc$    | $\phi_2$    |  Schwartz                    |   1                           |  $2.0235$   |  $6.50$ |  $4.88$ |  $4.16$ |
+| $PIBpc$    | $\phi_3$    |  Schwartz                    |   1                           |  $2.9459$   |  $8.73$ |  $6.49$ |  $5.47$ |
+| $C1PIBpc$  | $\tau$      |  Akaike                      |   1                           | $-2.3286**$ | $-2.60$ | $-1.95$ | $-1.61$ |
+| $C1PIBpc$  | $\tau$      |  Schwartz                    |   1                           | $-2.3286**$ | $-2.60$ | $-1.95$ | $-1.61$ |
+
+**Niveles de significancia: *** al 1%, ** al 5% y * al 10%**
 
 En consecuencia, la variable $PIBpc$ es no estacionaria porque:
 * $\tau_\tau$ = -3.15 < **-2.8429 (Akaike)** < **-1.7651 (Shwartz)**, es decir, no se rechaza $\gamma=0$ al 10%, 5% y 1%
