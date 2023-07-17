@@ -10,9 +10,7 @@ La prueba KPSS se basa en la idea de descomponer una serie de tiempo en la suma 
 
 Es decir, $y_t = \delta t + S_t + u_t$
 
-Cuando la varianza de $\varepsilon_t$, denotada como $\sigma^2$, es igual a cero, el componente de paseo aleatorio $S_t$ se vuelve una constante por lo que la serie de tiempo $y_t = \delta t + S_t u_t$ en este caso es estacionaria. 
-
-La hipótesis nula de estacionariedad que se va a probar en la KPSS está dada por $\sigma^2=0$.
+Cuando la varianza de $\varepsilon_t$, denotada como $\sigma^2$, es igual a cero, el componente de paseo aleatorio $S_t$ se vuelve una constante por lo que la serie de tiempo $y_t = \delta t + S_t u_t$ en este caso es estacionaria. La hipótesis nula de estacionariedad que se va a probar en la $KPSS$ está dada por $\sigma^2=0$.
 
 En Kwiatkowski, Phillips, Schmidt y Shin (1992), el estadístico de prueba se calcula como $\eqalign{\hat{\eta}=\frac{1}{T^2 s^2(l)}\sum_{i=1}^T (\sum_{i=1}^t \hat{e_i})^2}$ donde 
 * los residuos $\hat{e_t}$ provienen de la regresión auxiliar $y_t= \hat{\tau} + \hat{\delta} t + \hat{e_t}$ y
