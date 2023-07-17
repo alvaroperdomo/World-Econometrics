@@ -70,7 +70,7 @@ Perron descubrió que los valores estimados de $a_1$ estaban sesgados hacia $1$.
 ## Prueba de Perron
 Volviendo a las dos gráficas de arriba, puede haber casos en los que a plena vista sin ayuda no se puede detectar fácilmente la diferencia entre los tipos alternativos de secuencias. 
 
-Un procedimiento econométrico para probar las raíces unitarias en presencia de una cambio estructural implica dividir la muestra en dos partes y usar las pruebas ADF en cada una de las partes. El problema con este procedimiento es que los grados de libertad para cada una de las regresiones resultantes disminuyen. 
+Un procedimiento econométrico para probar las raíces unitarias en presencia de un cambio estructural implica dividir la muestra en dos partes y usar las pruebas ADF en cada una de las partes. El problema con este procedimiento es que los grados de libertad para cada una de las regresiones resultantes disminuyen. 
 
 Perron (1989) desarrolla un procedimiento formal para probar la presencia de raíz unitaria cuando hay un cambio estructural en el período de tiempo $t=\tau+1$. 
 
