@@ -78,7 +78,7 @@ Dado que las pruebas $DF$ y $ADF$ estan sesgadas hacía el no rechazo de la hip�
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
 
-| [Retornar: 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) | [2.2.(T) Aplicación en R de las Pruebas DF y ADF](../Seccion02_02_01_R/Readme.md) |
-|--------------------------------------------------------|--------------------------------------|-------------------------------------------------------------------------------|
+| [Retornar: 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) | [2.2.(R) Aplicación en R de las Pruebas DF-GLS](../Seccion02_02_01_R/Readme.md) |
+|---------------------------------------------------------|--------------------------------------|---------------------------------------------------------------------------------|
 
 
