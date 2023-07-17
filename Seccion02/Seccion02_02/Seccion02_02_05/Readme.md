@@ -73,7 +73,7 @@ Obteniendose
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/bde961de-2060-425e-9504-d7c71846de8e)
 
-El decaimiento continuo pero moderado de la $FAC$ de la variable $PIBpc$ da una idea de raíz unitaria. Por otro lado, la $FAC$ de la variable $C1PIBpc$ desde el comienzo cae raídamente, dando así una idea de estacionariedad. 
+El decaimiento continuo pero moderado de la $FAC$ de la variable $PIBpc$ da una idea de raíz unitaria. Por otro lado, la $FAC$ de la variable $C1PIBpc$ desde el comienzo cae rapidamente, dando así una idea de estacionariedad. 
 
 Antes de desarrollar las diferentes pruebas de raíz unitaria, se desarrolla la siguiente prueba sencilla de Mínimos Cuadrados Ordinarios para analizar si es necesario incluirles la tendencia y el intercepto a las diferentes pruebas de raíz unitaria.
 
