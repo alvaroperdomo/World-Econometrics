@@ -10,7 +10,7 @@ La prueba KPSS se basa en la idea de descomponer una serie de tiempo en la suma 
 
 Es decir, $y_t = \delta t + S_t + u_t$
 
-Cuando la varianza de $\varepsilon_t$, denotada como $\sigma^2$, es igual a cero, el componente de paseo aleatorio $S_t$ se vuelve una constante por lo que la serie de tiempo $y_t = \delta t + u_t$ en este caso es estacionaria. 
+Cuando la varianza de $\varepsilon_t$, denotada como $\sigma^2$, es igual a cero, el componente de paseo aleatorio $S_t$ se vuelve una constante por lo que la serie de tiempo $y_t = \delta t + S_t u_t$ en este caso es estacionaria. 
 
 La hipótesis nula de estacionariedad que se va a probar en la KPSS está dada por $\sigma^2=0$.
 
