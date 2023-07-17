@@ -150,7 +150,7 @@ En **$H_0$**, la secuencia { $y_t$ } se genera por $\Delta y_t = a_0 + \varepsil
 * Si $\mu_2 \gt 0$, la magnitud del intercepto aumenta para $t \gt \tau$.
 * De manera similar, se produce una reducción en el intercepto si $\mu_2 \lt 0$.
 
-En **$H_1$** se postula una serie estacionaria en tendencia con un cambio uniforme en la pendiente de la tendencia a partir de $t \gt tau$:
+En **$H_1$** se postula una serie estacionaria en tendencia con un cambio uniforme en la pendiente de la tendencia a partir de $t \gt \tau$:
 * positivo si $\mu_3 \gt 0$ y 
 * negativo si $\mu_3 \lt 0$ 
 
