@@ -18,3 +18,6 @@ Los valores críticos de la prueba dependen de si se incluye una tendencia en la
 Por último, vale la pena resaltar que Elliott, Rothenberg y Stock (1996) muestran que la prueba $DF-GLS$ mejora la potencia de la prueba $ADF$. 
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
+
+| [Retornar: 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) | [2.2.(R) Aplicación en R de la prueba ADF-GLS](../Seccion02_02_02_R/Readme.md) |
+|---------------------------------------------------------|--------------------------------------|--------------------------------------------------------------------------------|
