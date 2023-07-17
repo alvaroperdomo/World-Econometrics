@@ -49,3 +49,6 @@ ur.ers(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"),lag.max =
 #### De las dos opciones, mi preferida es ésta última por la opción "type($P-test$) que permite obtener el número óptimo de rezagos utilizando el Criterio Bayesiano de Schwartz. Posteriormente, se puede utilizar la primera opción para aprovechar el comando "doplot" para ver las pruebas sobre los $\varepsilon_t$
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
+
+| [Retornar: 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) | [2.2.2.(T) Explicación general de la pruebas ADF-GLS](../Seccion02_02_02_T/Readme.md)  |
+|---------------------------------------------------------|--------------------------------------|----------------------------------------------------------------------------------------|
