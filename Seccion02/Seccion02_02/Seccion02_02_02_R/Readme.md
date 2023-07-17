@@ -14,8 +14,8 @@ urersTest(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"), lag.m
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **x**                   | vector o variable de series de tiempo                                                                                                                    |
 | **lag.max**             | esta opción puede significar dos cosas:                                                                                                                  |
-|                         | el número máximo de rezagos utilizados para probar el truncamiento del rezago decendente para la "prueba P", utilizando el Criterio Bayesiano de Schwartz|   
-|                         | el número máximo de diferencias rezagadas que se incluirán en la regresión de prueba para "$DF-GLS$"                                                     |
+|                         | el número máximo de rezagos utilizados para probar el truncamiento del rezago decendente para la $prueba P$, utilizando el Criterio Bayesiano de Schwartz|   
+|                         | el número máximo de diferencias rezagadas que se incluirán en la regresión de prueba para $DF-GLS$                                                       |
 | **model**               | El modelo determinista utilizado para eliminar la tendencias:                                                                                            | 
 |                         | **"constant"** - **_Opción Predeterminada_**                                                                                                             |
 |                         | **"trend"**                                                                                                                                              |
@@ -35,8 +35,8 @@ ur.ers(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"),lag.max =
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **x**                   | vector o variable de series de tiempo                                                                                                                    |
 | **lag.max**             | esta opción puede significar dos cosas:                                                                                                                  |
-|                         | el número máximo de rezagos utilizados para probar el truncamiento del rezago decendente para la "prueba P", utilizando el Criterio Bayesiano de Schwartz|   
-|                         | el número máximo de diferencias rezagadas que se incluirán en la regresión de prueba para "DF-GLS"                                                       |
+|                         | el número máximo de rezagos utilizados para probar el truncamiento del rezago decendente para la $prueba P$, utilizando el Criterio Bayesiano de Schwartz|   
+|                         | el número máximo de diferencias rezagadas que se incluirán en la regresión de prueba para $DF-GLS$                                                       |
 | **type**                | cadena de caracteres que describa el tipo de regresión de raíz unitaria. Las opciones válidas son:                                                       |
 |                         | **"DF-GLS"** - **_Opción Predeterminada_**                                                                                                               |
 |                         | **"P-test"**[^3]                                                                                                                                         |
@@ -44,7 +44,7 @@ ur.ers(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"),lag.max =
 |                         | **"constant"** - **_Opción Predeterminada_**                                                                                                             |
 |                         | **"trend"**                                                                                                                                              |
 
-[^3]: **La prueba de punto óptimo factible (**"P-test"**) tiene en cuenta la correlación serial del término de error y haya el número óptimo de rezagos utilizando el Criterio Bayesiano de Schwartz.** 
+[^3]: **La prueba de punto óptimo factible (_P-test_) tiene en cuenta la correlación serial del término de error y haya el número óptimo de rezagos utilizando el Criterio Bayesiano de Schwartz.** 
 
 #### De las dos opciones, mi preferida es esta última por la opción "type("P-test") que permite obtener esta información.
 #### Posteriormente, se puede utilizar cla primera opción para aprovechar el comando "doplot"
