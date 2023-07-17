@@ -38,6 +38,6 @@ ur.za(x, model = c("intercept", "trend", "both"), lag=NULL)
 |                         | **"both"**: ambos                                                                                                                              | 
 | **lag**                 | el número máximo de rezagos utilizados en la prueba                                                                                            |
 
-#### De las tres opciones, mi preferida es la primera porque muestra un gráfico de diagnóstico sobre los residuos.
+#### De las tres opciones, mi preferida es la primera porque permite mostrar un gráfico de diagnóstico sobre los residuos.
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
