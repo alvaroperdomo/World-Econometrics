@@ -97,7 +97,7 @@ D_L=\left\[\
 \right.
 $$
 
-Bajo la hipótesis nula, { $y_t$ } es un proceso de raíz unitaria con un salto de una sola vez en el nivel de la secuencia en el período $t= /tau + 1$. Bajo la hipótesis alternativa, { $y_t$ } es una tendencia estacionaria con un salto de una sola vez en el intercepto. 
+Bajo la hipótesis nula, { $y_t$ } es un proceso de raíz unitaria con un salto de una sola vez en el nivel de la secuencia en el período $t= \tau + 1$. Bajo la hipótesis alternativa, { $y_t$ } es una tendencia estacionaria con un salto de una sola vez en el intercepto. 
 
 La figura de abajo puede ayudar a visualizar las dos hipótesis:
 * Simulando $y_t=0.2+y_{t-1}+\mu_1 D_P(51) + \varepsilon_t$ y usando 100 realizaciones para la secuencia { $\varepsilon_t$ }, la línea discontinua errática representa la trayectoria en el tiempo de { $y_t$ } bajo **$H_0$**. Antes y después del salto en el periodo 51, la secuencia { $y_t$ } sigue el mismo paseo aleatorio con intercepto. 
