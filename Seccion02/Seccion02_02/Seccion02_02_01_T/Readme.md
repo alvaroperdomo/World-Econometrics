@@ -1,9 +1,9 @@
 ## SECCIÓN 2.2.1. (T)
 # Prueba de Dickey-Fuller - $DF$
 
-Cuando en la ecuación $y_t = a_1 y_{t-1} + \varepsilon_t$ se cumple que $a_1=1$, se dice que ésta ecuación es un **paseo aleatorio** (es decir, $y_t$ es una variable no estacionaria). Sin embargo, aunque el valor estimado de $a_1$ cumpla $|a_1|<1$, no se puede afirmar que estadisticamente $a_1 \not= 1$. Por lo tanto, es necesario hacer pruebas de raíz unitaria, en donde ese contrasta la hipótesis nula $H_0:|a_1|=1$ con la hipótesis alternativa $H_1:|a_1|<1$. Si no se rechaza $H_0$, entonces $y_t$ es no estacionaria (es decir, tiene raíz unitaria); por otro lado, si se rechaza $H_0$, entonces $y_t$ es no estacionaria.
+Cuando en la ecuación $y_t = a_1 y_{t-1} + \varepsilon_t$ se cumple que $a_1=1$, se dice que ésta ecuación es un **paseo aleatorio** (es decir, $y_t$ es una variable no estacionaria). Sin embargo, aunque el valor estimado de $a_1$ cumpla $|a_1|<1$, no se puede afirmar que estadisticamente $a_1 \not= 1$. Por lo tanto, es necesario hacer pruebas de raíz unitaria, en donde ese evalua la hipótesis nula $H_0:a_1=1$. Si no se rechaza $H_0$, entonces $y_t$ es no estacionaria (es decir, tiene raíz unitaria); por otro lado, si se rechaza $H_0$, entonces $y_t$ es no estacionaria.
 
-Para la prueba $DF$ note que si resta $y_{t-1}$ a ambos lados de la ecuación $y_t = a_1 y_{t-1} + \varepsilon_t$ se obtiene $\Delta y_t = \gamma y_{t-1} + \varepsilon_t$ donde $\gamma=a_1-1$. Por lo tanto, probar la hipótesis $a_1=1$ es equivalente a probar la hipótesis $\gamma=0$. 
+Para la explicación de la prueba $DF$ note que si resta $y_{t-1}$ a ambos lados de la ecuación $y_t = a_1 y_{t-1} + \varepsilon_t$ se obtiene $\Delta y_t = \gamma y_{t-1} + \varepsilon_t$ donde $\gamma=a_1-1$. Por lo tanto, probar la hipótesis $a_1=1$ es equivalente a probar la hipótesis $\gamma=0$. 
 
 Dickey y Fuller (1979) consideran tres ecuaciones de regresión diferentes que pueden usarse para probar la presencia de una raíz unitaria:
 1) $\Delta y_t = \gamma y_{t-1} + \varepsilon_t$ **(Modelo de Paseo Aleatorio)**
