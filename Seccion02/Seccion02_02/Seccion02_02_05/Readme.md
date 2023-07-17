@@ -397,15 +397,15 @@ critical values 1.95 3.11  4.17
 **Niveles de significancia: *** al 1%, ** al 5% y * al 10%**
 
 La variable $PIBpc$ es no estacionaria porque:
-* Con el estadistico $P_\tau$: $**34.0584**>6.79$, no se rechaza la hipótesis nula de raíz unitaria  10%, 5% y 1% 
+* Con el estadistico $P_\tau$: **34.0584** > 6.79, no se rechaza la hipótesis nula de raíz unitaria  10%, 5% y 1% 
 
 La variable $C1PIBpc$ es estacionaria porque:
-* Con el estadistico $P_\mu$: $**0.319**<1.95$, se rechaza la hipótesis nula de raíz unitaria al 1%, 5% y 10%
+* Con el estadistico $P_\mu$: **0.319** < 1.95, se rechaza la hipótesis nula de raíz unitaria al 1%, 5% y 10%
 
 ****************************************************************************************************************************************************************************
 
 ### Prueba KPSS
-Vamos a aplicar las opciones de rezago de R. Sin embargo, no olviden que según  en Newey y West (1994) la longitud de rezago se establece proporcional a $T^{1/3}$, en decir $60^{1/3}=3.92 \sim 4$, en nuestro caso: .
+Vamos a aplicar las opciones de rezago de R. Sin embargo, no olviden que según Newey y West (1994) la longitud de rezago se debe establecer proporcional a $T^{1/3}$, en decir $60^{1/3}=3.92 \sim 4$. Por otro lado, dado que el $PIBpc$ es una variable que presenta tendencia, entonces se decide testear dicha prueba con tendencia; y como el el $C1PIBpc$ es una variable que no presenta tendencia, entonces se decide testear dicha prueba sólo con el intercepto. Los comandos para las dos pruebas son:
 
 ``` r
 PIBpc_1t.kpss <- ur.kpss(PIBpc, type = c("tau"), lags = c("short"), use.lag = NULL)
@@ -427,8 +427,8 @@ summary(C1PIBpc_2m.kpss)
 summary(C1PIBpc_3m.kpss)
 summary(C1PIBpc_4m.kpss)
 ```
-
 Obteniendo
+
 ``` r
 > summary(PIBpc_1t.kpss)
 
@@ -542,20 +542,21 @@ Critical value for a significance level of:
                 10pct  5pct 2.5pct  1pct
 critical values 0.347 0.463  0.574 0.739
 ```
-Dado que el $PIBpc$ es una variable que presenta tendencia, entonces se decide testear dicha prueba. Los resultados de la misma son:
 
-| Variable | Estadistico | Rezagos        | Valor      |  10%    |  5%     |  2.5%   |  1%     |
-|----------|-------------|:--------------:|:----------:|:-------:|:-------:|:-------:|:-------:|
-| PIBpc    | $KPSS_\tau$ |  nil= $0$      |  $0.0857$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
-| PIBpc    | $KPSS_\tau$ |  short= $3$    |  $0.0642$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
-| PIBpc    | $KPSS_\tau$ |  NW(1994)= $4$ |  $0.0619$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
-| PIBpc    | $KPSS_\tau$ |  long= $10$    |  $0.0729$  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
-| C1PIBpc  | $KPSS_\mu$  |  nil= $0$      |  $0.5362$  | $0.347$ | $0.463$ | $0.574$ | $0.739$ |
-| C1PIBpc  | $KPSS_\mu$  |  short= $3$    |  $0.2501$  | $0.347$ | $0.463$ | $0.574$ | $0.739$ |
-| C1PIBpc  | $KPSS_\mu$  |  NW(1994)= $4$ |  $0.2339$  | $0.347$ | $0.463$ | $0.574$ | $0.739$ |
-| C1PIBpc  | $KPSS_\mu$  |  long= $10$    |  $0.2202$  | $0.347$ | $0.463$ | $0.574$ | $0.739$ |
+| Variable | Estadistico | Rezagos        | Valor         |  10%    |  5%     |  2.5%   |  1%     |
+|----------|-------------|:--------------:|:-------------:|:-------:|:-------:|:-------:|:-------:|
+| PIBpc    | $KPSS_\tau$ |  nil= $0$      |  $0.0857$***  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
+| PIBpc    | $KPSS_\tau$ |  short= $3$    |  $0.0642$***  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
+| PIBpc    | $KPSS_\tau$ |  NW(1994)= $4$ |  $0.0619$***  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
+| PIBpc    | $KPSS_\tau$ |  long= $10$    |  $0.0729$***  | $0.119$ | $0.146$ | $0.176$ | $0.216$ |
+| C1PIBpc  | $KPSS_\mu$  |  nil= $0$      |  $0.5362$*    | $0.347$ | $0.463$ | $0.574$ | $0.739$ |
+| C1PIBpc  | $KPSS_\mu$  |  short= $3$    |  $0.2501$***  | $0.347$ | $0.463$ | $0.574$ | $0.739$ |
+| C1PIBpc  | $KPSS_\mu$  |  NW(1994)= $4$ |  $0.2339$***  | $0.347$ | $0.463$ | $0.574$ | $0.739$ |
+| C1PIBpc  | $KPSS_\mu$  |  long= $10$    |  $0.2202$***  | $0.347$ | $0.463$ | $0.574$ | $0.739$ |
 
-La variable $PIBpc$ es no estacionaria porque:
+**Niveles de significancia: *** al 1%, ** al 5% y * al 10%**
+
+La variable $PIBpc$ es estacionaria porque:
 * Cuando el número de rezagos es el establecido por la formula de Newey y West (1994)= $4$ se obtiene: $**0.0619**<0.119$, no se rechaza la hipótesis nula de estacionariedad al 1%, 2.5%, 5% y 10%
 
 La variable $C1PIBpc$ es estacionaria porque:
