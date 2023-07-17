@@ -13,7 +13,7 @@ rm(list = ls())
 
 library(WDI)         # Esta libreria sirve para trabajar directamente con la base de datos Indicadores de Desarrollo Mundial.
 library(dplyr)       # Esta libreria permite manipular las bases de datos de R de una forma sencilla, por ejemplo utilizando los comandos mutate() y arrange()
-library(ggfortify)   # Esta libreria tienen comando utiles para plantear gráficos de series de tiempo, por ejemplo utilizando ell comando autoplot()
+library(ggfortify)   # Esta libreria tienen comando utiles para plantear gráficos de series de tiempo, por ejemplo utilizando el comando autoplot()
 library(ggplot2)     # Esta librería sirve para construir gráficos interesantes
 library(fUnitRoots)  # Esta libreria sirve para hacer pruebas de raíz unitaria.
 library(urca)        # Esta libreria sirve para hacer pruebas de raíz unitaria.
@@ -26,26 +26,44 @@ dat <- dat %>% arrange(year)
 dat <- na.omit(dat)
 dat <- mutate(dat, PIBpc_lag1 = lag(PIBpc, order_by = year), C1PIBpc=PIBpc-PIBpc_lag1, country=NULL, iso2c=NULL, iso3c=NULL)
 
-ejercicio <- dat[-c(61:63),]
-ejercicioC1 <- ejercicio[-c(1),]
-ejercicio <- mutate(ejercicio, PIBpc_lag1=NULL, C1PIBpc=NULL)
-ejercicioC1 <- mutate(ejercicioC1, PIBpc=NULL, PIBpc_lag1=NULL)
+ggplot(dat, aes(year, PIBpc)) + scale_x_continuous(name="Años", limits=c(1960, 2019)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", title="PIB per cápita real de Colombia: 1960-2019", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 
-ggplot(ejercicio, aes(year, PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
-
-ggplot(ejercicioC1, aes(year, C1PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="Cambio en el PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
-
+ggplot(dat, aes(year, C1PIBpc)) + scale_x_continuous(name="Años", limits=c(1961, 2019))  + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", title="Cambio en el PIB per cápita real de Colombia: 1961-2019", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 ```
+Obteniendose los siguientes gráficos:
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/a9cf6e33-1204-405a-865d-2b55d90b3f1b)
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/771298eb-e6d5-49b4-96bd-6252b91e3493)
 
-Para el análisis de series de tiempo que viene, es necesario establecer las variables a analizar como una serie de tiempo, así:
+Las siguientes cuatrolineas en $R$, permiten armar dos subconjuntos de bases de datos uno en el cual se encuentre el PIB[^2] para el periodo 1960-2019 (subconjunto PIBpc_) y otro en el cual se encuentre la variación del PIB durante el periodo 1961-2019 [^3]
+
+[^2]: **En lo que resta de esta sección, cuando hagamos referencia al PIB, estaremos haciendo referencia de una forma simplificada al PIB de Colombia a precios constantes** 
+[^3]: **Se toma el periodo desde 1961 porque el dato de la variación del PIB en 1960 no se tiene porque se desconoce el valor del PIB de 1959** 
+
 ``` r
-PIBpc_ = subset(ejercicio, select = c(PIBpc))
-C1PIBpc_ = subset(ejercicioC1, select = c(C1PIBpc))
-PIBpc <- ts(PIBpc_, start=1960, end=2020)
-C1PIBpc <- ts(C1PIBpc_, start=1961, end=2020)
+PIBpc_ <- dat[-c(61:63),]
+C1PIBpc_ <- PIBpc_[-c(1),]
+PIBpc_ = subset(PIBpc_, select = c(PIBpc))
+C1PIBpc_ = subset(C1PIBpc_, select = c(C1PIBpc))
+```
+
+Para el análisis de series de tiempo que viene, se va a llamar (desde la base de datos PIBpc_) a una variable llamada $PIBpc$ que va a representar una serie de tiempo anual (la del PIB) que va desde 1960 hasta 2019. Por otro lado, se va a llamar (desde la base de datos CIPIBpc_) a una variable llamada $CIPIBpc$ que va a representar una serie de tiempo anual (la del cambio en el PIB) que va desde 1961 hasta 2019
+
+``` r
+PIBpc <- ts(PIBpc_, start=1960, end=2019)
+C1PIBpc <- ts(C1PIBpc_, start=1961, end=2019)
+```
+
+
+
+es necesario establecer las variables a analizar como una serie de tiempo, así:
+
+PIBpc_ = subset(dat, select = c(PIBpc))
+C1PIBpc_ = subset(dat, select = c(C1PIBpc))
+PIBpc <- ts(PIBpc_, start=1960, end=2019)
+C1PIBpc <- ts(C1PIBpc_, start=1961, end=2019)
+``` r
+
 ```
 Por otro lado, a partir de los gráficos se puede comenzar a inferir que la variable $PIBpc$ no tiene un comportamiento estacionario y que la variable $C1PIBpc$ si lo tiene. Sin embargo, hay que recolectar más evidencia al respecto, para ello primero se visualiza la función de autocorrelación de las variables $PIBpc$ y $C1PIBpc$ utilizando el siguiente comando: 
 
