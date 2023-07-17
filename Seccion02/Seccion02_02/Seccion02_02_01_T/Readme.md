@@ -53,7 +53,7 @@ Podría parecer razonable probar la hipótesis $\gamma=0$ utilizando el más gen
 
 (2) El estadístico apropiado ($\tau$, $\tau_\mu$ 0 $\tau_\tau$) para la prueba $\gamma=0$ depende de los regresores están incluidos en el modelo. En las tablas de Dickey-Fuller, para un nivel dado de significancia, los intervalos de confianza en torno a $\gamma=0$ se expanden bastante si se incluye en el modelo un intercepto y una tendencia temporal. Esto es diferente del caso en el que { $y_t$ } es estacionario. Cuando { $y_t$ } es estacionario, la distribución del estadístico $t$ no depende de la presencia de otros regresores. Por lo tanto, es importante usar la regresión que imite el proceso real de generación de datos. La omisión inadecuada del intercepto o de la tendencia de tiempo puede hacer que el poder de la prueba sea cero. 
 
-Campbell y Perron (1991) encuentran los siguientes resultados con respecto a las pruebas de raíz unitaria $DF$ y #ADF$:
+Campbell y Perron (1991) encuentran los siguientes resultados con respecto a las pruebas de raíz unitaria $DF$ y $ADF$:
 
 (i) Si la regresión estimada incluye regresores deterministas que no están en el proceso real de generación de datos, la potencia de la prueba de raíz unitaria contra una alternativa estacionaria disminuye a medida que se agregan regresores deterministas adicionales. Por lo tanto, no es deseable incluir regresores que no estén en el proceso de generación de datos.
 
