@@ -85,9 +85,7 @@ Por lo tanto, sólo si $t \to \infty$ y $|a_1|<1$, la serie { $y_t$ }se vuelve e
 
 Por otro lado, observe que cuando se tiene $a_1=1$ y $a_0=0$, entonces $y_t=y_{t-1}+\varepsilon_t$. Por lo tanto, se tiene $\Delta y_t=\varepsilon_t$, o equivalentemente, $y_t=\displaystyle\sum_{i = 0}^{t-1}\varepsilon_{t-i}$. En este caso, se dice que $y_t$ sigue un **paseo aleatorio**, en donde no se puede predecir con certeza si la secuencia { $y_t$ } va a subir o va a bajar.
 
-Por último, observe que cuando se tiene $a_1=1$, entonces $y_t=a_0+y_{t-1}+\varepsilon_t$. Por lo tanto, se tiene $\Delta y_t=a_0+\varepsilon_t$, o equivalentemente, $y_t=a_0\displaystyle\sum_{i = 0}^{t-1}a_1^i+a_1^ty_0+\displaystyle\sum_{i = 0}^{t-1}\varepsilon_{t-i}$. 
-
-En este caso, se dice que $y_t$ sigue un **paseo aleatorio con intercepto**, en donde no se puede predecir con certeza si la secuencia { $y_t$ } va a subir o va a bajar.
+Por último, observe que cuando se tiene $a_1=1$, entonces $y_t=a_0+y_{t-1}+\varepsilon_t$. Por lo tanto, se tiene $\Delta y_t=a_0+\varepsilon_t$, o equivalentemente, $y_t=a_0(t-1)+\displaystyle\sum_{i = 0}^{t-1}\varepsilon_{t-i}$. En este caso, se dice que $y_t$ sigue un **paseo aleatorio con intercepto**, en donde la secuencia { $y_t$ } sigue una tendencia ascendente si $a_0>0$ (o una tendencia descendente si $a_0<0$), pero en donde no se puede predecir con certeza si la secuencia { $y_t$ } va a estar por encima o por debajo de esta tendencia.
 
 ## ANEXO 2: La transformación polinomica 
 En términos generales, una serie de tiempo puede tener la tendencia polinomial $y_t=a_0+a_1t+a_2t^2+a_3t^3+...+a_nt^n+e_t$ donde { $e_t$ } es un proceso estacionario. La transformación polinomica se logra estimando { $y_t$ }, utilizando Mínimos Cuadrados Ordinarios, con respecto a una tendencia de tiempo polinomial determinista. 
