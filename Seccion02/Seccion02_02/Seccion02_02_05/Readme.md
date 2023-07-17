@@ -3,7 +3,7 @@
 
 Para el ejemplo, se ha escogido analizar la variable más utilizada en los análisis de desarrollo económico: el PIB per cápita a precios constantes de un país en vías de desarrollo. 
 
-Más específicamente, se va a analizar la evolución del PIB per cápita de Colombia a pesos constantes. Más específicamente, utilizaremos el **PIB per cápita de Colombia a pesos constantes durante el periodo 1960-2019** (en niveles y en primeras diferencias)[^1] para calcular las proyecciones de esta variable durante el periodo 2020-2025 como si no se hubiera presentado la pandemia del Covid 19. Con ello, lo que se busca es cómo se hubiera comportado esta variable, según su comportamiento histórico, sin la cuarentena que se dio en la pandemia.
+Más específicamente, se va a analizar la evolución del PIB per cápita de Colombia a pesos constantes. Más específicamente, utilizaremos el **PIB per cápita de Colombia a pesos constantes durante el periodo 1960-2019** (en niveles y en primeras diferencias)[^1] para calcular las proyecciones de esta variable durante el periodo 2020-2025 como si no se hubiera presentado la pandemia del Covid 19. Con ello, lo que se busca es analizar cómo se hubiera comportado esta variable, según su comportamiento histórico, si no hubiera ocurrido la cuarentena que se dio en debido a la pandemia del Covid-19.
 
 [^1]: **Se va a hacer el análisis tanto en niveles como en primeras diferencias porque, tal como se mostrara más adelante, esta variable no es estacionaria en niveles, pero si lo va a ser en las primeras diferencias**
 
