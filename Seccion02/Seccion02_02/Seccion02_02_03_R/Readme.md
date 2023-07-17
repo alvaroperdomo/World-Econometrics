@@ -1,9 +1,11 @@
 ## SECCIÓN 2.2.3. (R)
-# Aplicando la prueba KPSS en R
+# Aplicando la prueba $KPSS$ en $R$
 
-Para llevar a cabo la prueba KPSS ofrecemos tres opciones:
+Para llevar a cabo la prueba $KPSS$ ofrecemos tres opciones:
 
-## 1) **Primera Opción:** Utilice el comando **unitrootTest**
+## 1) Primera Opción: Utilice el comando _unitrootTest_ [^1]
+
+[^1]: **Este comando pertenece a la librería _fUnitRoots_**
 
 ``` r
 urkpssTest(x, type = c("mu", "tau"), lags = c("short", "long", "nil"), use.lag = NULL, doplot = TRUE)
@@ -20,7 +22,10 @@ urkpssTest(x, type = c("mu", "tau"), lags = c("short", "long", "nil"), use.lag =
 |                         | **"TRUE"** para mostrar gráfico de diagnostico - **_Opción Predeterminada_**                                                                 |
 |                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                                                           |
 
-## 2) **Segunda Opción:** Utilice el comando **ur.kpss*
+## 2) Segunda Opción: Utilice el comando _ur.kpss_ [^2]
+
+[^2]: **Este comando pertenece a la librería _urca_**
+
 ``` r
 ur.kpss(y, type = c("mu", "tau"), lags = c("short", "long", "nil"), use.lag = NULL)
 ```
@@ -59,3 +64,6 @@ ndiffs(x, alpha = 0.05, test = c("kpss"), type = c("level", "trend"), ...)
 #### Por último, se puede contrastar con la cuarta opción para tener una opinión adicional.
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
+
+| [Retornar: 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) | [2.2.1.(T) Explicación general de la prueba _KPSS_](../Seccion02_02_03_T/Readme.md)  |
+|---------------------------------------------------------|--------------------------------------|--------------------------------------------------------------------------------------|
