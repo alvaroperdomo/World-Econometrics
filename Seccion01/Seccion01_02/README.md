@@ -299,12 +299,12 @@ dat <- mutate(dat, PIBpc_lag1 = lag(PIBpc, order_by = year), C1PIBpc=PIBpc-PIBpc
 ggplot(dat, aes(year, PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
 Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
 
-ggplot(dat, aes(year, C1PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="Cambio en el PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
+ggplot(dat, aes(year, C1PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="Cambio en el PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial")
 
 PIBpc_ = subset(dat, select = c(PIBpc))
 C1PIBpc_ = subset(dat, select = c(C1PIBpc))
 PIBpc <- ts(PIBpc_, start=1960, end=2019)
-C1PIBpc <- ts(C1PIBpc_, start=1960, end=2019)
+C1PIBpc <- ts(C1PIBpc_, start=1961, end=2019)
 ```
 
 | [Anterior Sección: 1.1. Series de tiempo](../Seccion01_01/Readme.md) | [:house: Inicio](../../Readme.md) | [Siguiente Sección: 2. Análisis Univariado de Series de Tiempo](../../Seccion02/Readme.md) | 
