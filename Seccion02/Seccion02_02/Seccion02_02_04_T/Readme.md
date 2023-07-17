@@ -59,7 +59,7 @@ $$
 
 El subíndice $P$ indica que $D_P$ es una variable dummy de pulso. 
 
-En un proceso de raíz unitaria, un único pulso en la dummy tendrá un efecto permanente en el nivel de la secuencia { $y_t$ }. En $t=51$, el pulso en la dummy es equivalente a un choque \varepsilon_{t+51}$ de cuatro unidades adicionales. 
+En un proceso de raíz unitaria, un único pulso en la dummy tendrá un efecto permanente en el nivel de la secuencia { $y_t$ }. En $t=51$, el pulso en la dummy es equivalente a un choque $\varepsilon_{t+51}$ de cuatro unidades adicionales. 
 
 Por lo tanto, el choque de una sola vez a $D_P(51)$ tiene un efecto permanente en el valor medio de la secuencia para $t \ge 51$. 
 
