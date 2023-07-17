@@ -22,7 +22,7 @@ unitrootTest(x, lags = 1, type = c("nc", "c", "ct"), title = NULL, description =
 | **title**               | cadena de caracteres que permite darle un título a la prueba                                                          |
 | **description**         | cadena de caracteres que permite una breve descripción                                                                | 
 
-Algunos ejemplos de cómo aplicar la prueba ADF con esta opción son_
+Algunos ejemplos de cómo aplicar la prueba $ADF$ con esta opción son:
 ``` r
 unitrootTest(x, lags = 5, type = c("nc"), title = "Modelo de Paseo Aleatorio", description = NULL)
 unitrootTest(x, lags = 5, type = c("c"), title = "Modelo de Paseo Aleatorio con Intercepto", description = NULL)
@@ -96,5 +96,5 @@ ndiffs(x, alpha = 0.05, test = c("adf"), type = c("level", "trend"), ...)
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
 
-| [Retornar: 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) | [2.2.1.(T) Explicación general de las pruebas DF y ADF](../Seccion02_02_01_T/Readme.md)  |
-|---------------------------------------------------------|--------------------------------------|------------------------------------------------------------------------------------------|
+| [Retornar: 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) | [2.2.1.(T) Explicación general de las pruebas _DF_ y _ADF_](../Seccion02_02_01_T/Readme.md)  |
+|---------------------------------------------------------|--------------------------------------|----------------------------------------------------------------------------------------------|
