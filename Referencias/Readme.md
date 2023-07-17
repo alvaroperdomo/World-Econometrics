@@ -1,5 +1,6 @@
 # Referencias
 * BOX, George y JENKINS, Gwilym. _Time Series Analysis: Forecasting and Control_. (1975); 575 p.
+* CAMPBELL, John y PERRON, Pierre. _Pitfalls and Opportunities: What Macroeconomists Should Know About Unit Roots_. NBER Macroeconomics Annual, Vol. 6 (1991); p. 141-201 
 * DICKEY, David y FULLER, Wayne. _Distribution of the Estimators for Autoregressive Time Series With a Unit Root_. Journal of the American Statistical Association, Vol. 74, No. 366 (June, 1979); p. 427-431 
 * DICKEY, David y  FULLER, Wayne. _Likelihood Ratio Statistics for Autoregressive Time Series with a Unit Root_. Econometrica, Vol. 49, No. 4 (July, 1981); p. 1057-1072
 * ENGLE, Robert y GRANGER, Clive. _Co-Integration and Error Correction: Representation, Estimation, and Testing_. Econometrica, Vol. 55, No. 2 (March 1987); p. 251-276
