@@ -31,8 +31,8 @@ ggplot(dat, aes(year, PIBpc)) + scale_x_continuous(name="Años", limits=c(1960, 
 ggplot(dat, aes(year, C1PIBpc)) + scale_x_continuous(name="Años", limits=c(1961, 2019))  + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", title="Cambio en el PIB per cápita real de Colombia: 1961-2019", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 ```
 Obteniendose los siguientes gráficos:
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5d46b27b-f8a0-4870-ac7f-fca52a0cd292)
 
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5d46b27b-f8a0-4870-ac7f-fca52a0cd292)
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/80c86152-925a-4117-9b9a-f803e147a926)
 
