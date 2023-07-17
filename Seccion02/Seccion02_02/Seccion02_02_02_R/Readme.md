@@ -44,7 +44,7 @@ ur.ers(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"),lag.max =
 |                         | **"constant"** - **_Opción Predeterminada_**                                                                                                             |
 |                         | **"trend"**                                                                                                                                              |
 
-[^3]: La prueba de punto óptimo factible (**"P-test"**) tiene en cuenta la correlación serial del término de error y haya el número óptimo de rezagos utilizando el Criterio Bayesiano de Schwartz. 
+[^3]: **La prueba de punto óptimo factible (**"P-test"**) tiene en cuenta la correlación serial del término de error y haya el número óptimo de rezagos utilizando el Criterio Bayesiano de Schwartz.** 
 
 #### De las dos opciones, mi preferida es esta última por la opción "type("P-test") que permite obtener esta información.
 #### Posteriormente, se puede utilizar cla primera opción para aprovechar el comando "doplot"
