@@ -116,7 +116,7 @@ El problema econométrico es determinar si una serie observada se modela mejor c
 
 **PASO 4:** Calcule el estadístico $t$ para la hipótesis nula $a_1=1$. Este estadístico puede compararse con los valores críticos calculados por Perron. 
 
-Perron generó 5000 series de acuerdo con $H_1$ usando valores de $\lambda$ que van de 0 a 1 en incrementos de 0.1. Para cada valor de $\lambda$, estimó cada una de las regresiones y calculó la distribución muestral de $a_1$. Los valores críticos son idénticos a los estadísticos de Dickey-Fuller cuando $\lambda=0$ y $\lambda=1$; en efecto, no hay cambio estructural a menos que $0 \lt \lambda \lt 1$. 
+Perron generó 5000 series de acuerdo con $H_1$ usando valores de $\lambda$ que van de $0$ a $1$ en incrementos de $0.1$. Para cada valor de $\lambda$, estimó cada una de las regresiones y calculó la distribución muestral de $a_1$. Los valores críticos son idénticos a los estadísticos de Dickey-Fuller cuando $\lambda=0$ y $\lambda=1$; en efecto, no hay cambio estructural a menos que $0 \lt \lambda \lt 1$. 
 
 La diferencia máxima entre los dos estadísticos se produce cuando $\lambda=0.5$. Para $\lambda=0.5$, el valor crítico del estadístico $t$ en el nivel de significancia del 5% es $−3.76$ (que es mayor en valor absoluto que el estadístico Dickey-Fuller correspondiente de $−3.41$). 
 
