@@ -60,7 +60,7 @@ PIBpc <- ts(PIBpc_, start=1960, end=2019)
 C1PIBpc <- ts(C1PIBpc_, start=1961, end=2019)
 ```
 
-# Análisis d eraíz unitaria
+# Análisis de raíz unitaria
 A partir de los dos gráficos de arriba se puede comenzar a inferir que la variable $PIBpc$ no tiene un comportamiento estacionario y que la variable $C1PIBpc$ si lo tiene. Sin embargo, hay que recolectar más evidencia al respecto, para ello primero se visualiza la función de autocorrelación de las variables $PIBpc$ y $C1PIBpc$ utilizando el siguiente comando: 
 
 Para el gráfico de la $FAC$ se ejecuta el comando
