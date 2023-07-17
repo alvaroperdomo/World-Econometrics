@@ -13,5 +13,5 @@ Las pruebas de raíz unitaria sirven para determinar si una serie es estacionari
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
-| [Anterior Sección: 2.1. Series Estacionarias y No Estacionarias](../Seccion02_01/Readme.md) | [:house: Inicio](../../README.md) |[Siguiente Sección: 2.3. Análisis ARMA (Metodología de Box Y Jenkins)_](../Seccion02_03/Readme.md) |
+| [Anterior Sección: 2.1. Series Estacionarias y No Estacionarias](../Seccion02_01/Readme.md) | [:house: Inicio](../../README.md) |[Siguiente Sección: 2.3. Análisis ARMA (Metodología de Box Y Jenkins)](../Seccion02_03/Readme.md) |
 |---------------------------------------------------------------------------------------------|-----------------------------------|-------------------------------------------------------------------------------------------|
