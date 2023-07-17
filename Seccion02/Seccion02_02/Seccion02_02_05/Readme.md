@@ -1,11 +1,13 @@
-# SECCIÓN 2.2.5 
-## Ejemplo utilizando la base de datos _Indicadores de Desarrollo Mundial_
+## SECCIÓN 2.2.5 
+# Ejemplo utilizando la base de datos _Indicadores de Desarrollo Mundial_
 
 Para el ejemplo, se ha escogido analizar la variable más utilizada en los análisis de desarrollo económico: el PIB per cápita a precios constantes de un país en vías de desarrollo. 
 
 Más específicamente, se va a analizar la evolución del PIB per cápita de Colombia a pesos constantes. Más específicamente, utilizaremos el **PIB per cápita de Colombia a pesos constantes durante el periodo 1960-2019** (en niveles y en primeras diferencias)[^1] para calcular las proyecciones de esta variable durante el periodo 2020-2025 como si no se hubiera presentado la pandemia del Covid 19. Con ello, lo que se busca es analizar cómo se hubiera comportado esta variable, según su comportamiento histórico, si no hubiera ocurrido la cuarentena que se dio en debido a la pandemia del Covid-19.
 
 [^1]: **Se va a hacer el análisis tanto en niveles como en primeras diferencias porque, tal como se mostrara más adelante, esta variable no es estacionaria en niveles, pero si lo va a ser en las primeras diferencias**
+
+## Preparación de los datos y gráficos
 
 Retomamos parte del código de $R$ que se había utilizado en la sección 1.2, solicitando la activación de algunas librerias adicionales: 
 ``` r
@@ -37,10 +39,9 @@ Obteniendose los siguientes gráficos:
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/fa3f1086-f7b2-4432-85cc-c33a4ab47796)
 
-
 Las siguientes cuatrolineas en $R$, permiten armar dos subconjuntos de bases de datos:
 * uno en el cual se encuentre el PIB[^2] para el periodo 1960-2019 (subconjunto PIBpc_) y
-* otro en el cual se encuentre la variación del PIB durante el periodo 1961-2019 [^3]
+* otro en el cual se encuentre la variación del PIB durante el periodo 1961-2019 (subconjunto C1PIBpc_) [^3]
 
 [^2]: **En lo que resta de esta sección, cuando hagamos referencia al PIB, estaremos haciendo referencia de una forma simplificada al PIB de Colombia a precios constantes** 
 [^3]: **Se toma el periodo desde 1961 porque el dato de la variación del PIB en 1960 no se tiene porque se desconoce el valor del PIB de 1959** 
@@ -52,25 +53,15 @@ PIBpc_ = subset(PIBpc_, select = c(PIBpc))
 C1PIBpc_ = subset(C1PIBpc_, select = c(C1PIBpc))
 ```
 
-Para el análisis de series de tiempo que viene, se va a llamar (desde la base de datos PIBpc_) a una variable llamada $PIBpc$ que va a representar una serie de tiempo anual (la del PIB) que va desde 1960 hasta 2019. Por otro lado, se va a llamar (desde la base de datos CIPIBpc_) a una variable llamada $CIPIBpc$ que va a representar una serie de tiempo anual (la del cambio en el PIB) que va desde 1961 hasta 2019
+Para el análisis de raíz unitaria que viene, se va a llamar (desde la base de datos PIBpc_) a una variable llamada $PIBpc$ que representa una serie de tiempo anual (la del PIB) que va desde 1960 hasta 2019. Por otro lado, se va a llamar (desde la base de datos C1PIBpc_) a una variable llamada $C1PIBpc$ que representa una serie de tiempo anual (la del cambio en el PIB) que va desde 1961 hasta 2019.
 
 ``` r
 PIBpc <- ts(PIBpc_, start=1960, end=2019)
 C1PIBpc <- ts(C1PIBpc_, start=1961, end=2019)
 ```
 
-
-
-es necesario establecer las variables a analizar como una serie de tiempo, así:
-
-PIBpc_ = subset(dat, select = c(PIBpc))
-C1PIBpc_ = subset(dat, select = c(C1PIBpc))
-PIBpc <- ts(PIBpc_, start=1960, end=2019)
-C1PIBpc <- ts(C1PIBpc_, start=1961, end=2019)
-``` r
-
-```
-Por otro lado, a partir de los gráficos se puede comenzar a inferir que la variable $PIBpc$ no tiene un comportamiento estacionario y que la variable $C1PIBpc$ si lo tiene. Sin embargo, hay que recolectar más evidencia al respecto, para ello primero se visualiza la función de autocorrelación de las variables $PIBpc$ y $C1PIBpc$ utilizando el siguiente comando: 
+# Análisis d eraíz unitaria
+A partir de los dos gráficos de arriba se puede comenzar a inferir que la variable $PIBpc$ no tiene un comportamiento estacionario y que la variable $C1PIBpc$ si lo tiene. Sin embargo, hay que recolectar más evidencia al respecto, para ello primero se visualiza la función de autocorrelación de las variables $PIBpc$ y $C1PIBpc$ utilizando el siguiente comando: 
 
 Para el gráfico de la $FAC$ se ejecuta el comando
 ``` r
