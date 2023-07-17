@@ -299,20 +299,19 @@ Los resultados de las pruebas ADF son:
 | Variable   | Estadístico | Criterio de <br> información | Número óptimo <br> de rezagos | Valor       |  1%     |  5%     |  10%    | 
 |------------|:-----------:|:----------------------------:|:-----------------------------:|:-----------:|:-------:|:-------:|:-------:|
 | $PIBpc$    | $\tau_\tau$ |  Akaike                      |   3                           | $-2.8429$   | $-4.04$ | $-3.45$ | $-3.15$ | 
-| $PIBpc$    | $\phi_2$    |  Akaike                      |   3                           |  $4.3493*$  |  $6.50$ |  $4.88$ |  $4.16$ | 
-| $PIBpc$    | $\phi_3$    |  Akaike                      |   3                           |  $6.0919*$  |  $8.73$ |  $6.49$ |  $5.47$ | 
+| $PIBpc$    | $\phi_2$    |  Akaike                      |   3                           |  $4.3493$*  |  $6.50$ |  $4.88$ |  $4.16$ | 
+| $PIBpc$    | $\phi_3$    |  Akaike                      |   3                           |  $6.0919$*  |  $8.73$ |  $6.49$ |  $5.47$ | 
 | $PIBpc$    | $\tau_\tau$ |  Schwartz                    |   1                           | $-1.7651$   | $-4.04$ | $-3.45$ | $-3.15$ | 
 | $PIBpc$    | $\phi_2$    |  Schwartz                    |   1                           |  $2.0235$   |  $6.50$ |  $4.88$ |  $4.16$ |
 | $PIBpc$    | $\phi_3$    |  Schwartz                    |   1                           |  $2.9459$   |  $8.73$ |  $6.49$ |  $5.47$ |
-| $C1PIBpc$  | $\tau$      |  Akaike                      |   1                           | $-2.3286**$ | $-2.60$ | $-1.95$ | $-1.61$ |
-| $C1PIBpc$  | $\tau$      |  Schwartz                    |   1                           | $-2.3286**$ | $-2.60$ | $-1.95$ | $-1.61$ |
+| $C1PIBpc$  | $\tau$      |  Akaike y Schwartz           |   1                           | $-2.3286$** | $-2.60$ | $-1.95$ | $-1.61$ |
 
 **Niveles de significancia: *** al 1%, ** al 5% y * al 10%**
 
 En consecuencia, la variable $PIBpc$ es no estacionaria porque:
 * $\tau_\tau$ = -3.15 < **-2.8429 (Akaike)** < **-1.7651 (Shwartz)**, es decir, no se rechaza $\gamma=0$ al 10%, 5% y 1%
-* $\phi_2$ = **2.0235 (Shwartz)** < **4.3493 (Akaike)** < 4.88, es decir, no se rechaza $\gamma=a_0=a_2=0$ al 10%, 5% y 1%
-* $\phi_3$ = 6.49<**6.1099**<8.73, es decir, no se rechaza $\gamma=a_2=0$ al 1% pero si se rechaza al 5% y 10%
+* $\phi_2$ = **2.0235 (Shwartz)** < 4.16 < **4.3493 (Akaike)** < 4.88, es decir, no se rechaza $\gamma=a_0=a_2=0$ al 10%, 5% y 1% si se utiliza el Criterie Schwartz (con el Criterio de Akaike sólo se rechazaría al 10%)
+* $\phi_3$ =  **2.9459 (Shwartz)** < 5.47 <**6.0919 (Akaike)** < 6.49, es decir, no se rechaza $\gamma=a_2=0$ al 10%, 5% y 1% si se utiliza el Criterie Schwartz (con el Criterio de Akaike sólo se rechazaría al 10%)
 
 Y la variable $C1PIBpc$ es estacionaria porque
 * $\tau$ = -4.308< **-2.3286** <-2.60, es decir, no se rechaza $\gamma=0$ al 1% pero si se rechaza al 5% y 10%
