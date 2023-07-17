@@ -2,7 +2,7 @@
 
 Para llevar a cabo la prueba $ADF$ en $R$ existen las siguientes cuatro opciones:
 
-## 1) Primera Opción:** Utilice el comando unitrootTest [^1]
+## 1) Primera Opción:** Utilice el comando _unitrootTest_ [^1]
 
 [^1]: **Este comando pertenece a la libreria _fUnitRoots_**
 
@@ -72,7 +72,7 @@ ur.df(x, type = c("none", "drift", "trend"), lags = 1, selectlags = c("Fixed", "
 |                         | **"AIC"** criterio de selección de Akaike (el número máximo de rezagos analizados se establece en la opción "**lags**")                |
 |                         | **"BIC"** criterio de selección Bayesiano de Schwartz (el número máximo de rezagos analizados se establece en la opción "**lags**")    |
 
-## 4) **Cuarta Opción:** Utilice el comando **ndiffs** [^4]
+## 4) Cuarta Opción: Utilice el comando _ndiffs_ [^4]
 
 [^4]: **Este comando pertenece a la libreria _forecast_**
 
