@@ -42,5 +42,5 @@ ur.za(x, model = c("intercept", "trend", "both"), lag=NULL)
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
-| [Retornar: 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) | [2.2.4.(T) Explicación general de las pruebas de cambio estructural (la prueba de Perron y la prueba _ZA_](../Seccion02_02_03_T/Readme.md)  |
+| [Retornar: 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) | [2.2.4.(T) Explicación general de las pruebas de cambio estructural (la prueba de Perron y la prueba _ZA_)](../Seccion02_02_03_T/Readme.md)  |
 |---------------------------------------------------------|--------------------------------------|--------------------------------------------------------------------------------------|
