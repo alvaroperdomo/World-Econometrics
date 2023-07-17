@@ -20,7 +20,7 @@ Siguiendo a Phillips (1987) y Phillips y Perron (1988), $s^2(l)$ se estima como 
 * Las ponderaciones $w(j,l)$ se pueden establecer iguales a $w(j,l)=1-\frac{j}{l+1}$ como establecen Newey y West (1987), aunque también son posibles otras ponderaciones. 
 * Según Newey y West (1994), la longitud de rezago $l$ generalmente se debe establecer proporcional a $T^{1/3}$.
 
-La distribución asintótica del estadístico de prueba $\hat{\eta}$, tal como se explica en Kwiatkowski, Phillips, Schmidt y Shin (1992) depende de si la serie tiene tendencia o no.
+La distribución asintótica del estadístico de prueba $\hat{\eta}$, tal como se explica en Kwiatkowski, Phillips, Schmidt y Shin (1992) depende de si la serie tiene tendencia o no. Por último, tenga en cuenta que si el estadistico es menor que el valor crítico reportado en las tablas de Kwiatkowski, Phillips, Schmidt y Shin (1992), entoces no se rechaza la hipóteis nula y se afirma que la serie es estacionaria
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
