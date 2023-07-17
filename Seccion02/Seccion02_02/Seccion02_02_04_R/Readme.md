@@ -1,9 +1,12 @@
 ## SECCIÓN 2.2.4. (R)
-# Aplicando la pruebas ZA en R
+# Aplicando la pruebas $ZA$ en $R$
 
-Para llevar a cabo la prueba ZA ofrecemos dos opciones:
+Para llevar a cabo la prueba $ZA$ ofrecemos dos opciones:
 
-## 1) **Primera Opción:** Utilice el comando **urzaTes**
+## 1) Primera Opción: Utilice el comando _urzaTes_[^1]
+
+[^1]: **Este comando pertenece a la librería _fUnitRoots_**
+
 ``` r
 urzaTest(x, model = c("intercept", "trend", "both"), lag, doplot = TRUE)
 ```
@@ -19,7 +22,10 @@ urzaTest(x, model = c("intercept", "trend", "both"), lag, doplot = TRUE)
 |                         | **"TRUE"** para mostrar el gráfico de diagnostico - **_Opción Predeterminada_**                                                              |
 |                         | **"FALSE"** para no mostrar el gráfico de diagnostico                                                                                        |
 
-## 2) **Segunda Opción:** Utilice el comando **ur.za*
+## 2) Segunda Opción: Utilice el comando _ur.za_ [^2]
+
+[^2]: **Este comando pertenece a la librería _urca_**
+
 ``` r
 ur.za(x, model = c("intercept", "trend", "both"), lag=NULL)
 ```
