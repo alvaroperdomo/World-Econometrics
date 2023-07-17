@@ -120,7 +120,7 @@ Perron generó 5000 series de acuerdo con $H_1$ usando valores de $\lambda$ que 
 
 La diferencia máxima entre los dos estadísticos se produce cuando $\lambda=0.5$. Para $\lambda=0.5$, el valor crítico del estadístico $t$ en el nivel de significancia del 5% es $−3.76$ (que es menor que el estadístico Dickey-Fuller correspondiente de $−3.41$). 
 
-Si encuentra un estadístico $t$ menor que el valor crítico calculado por Perron, es posible rechazar la hipótesis nula de una raíz unitaria. La metodología es bastante general, ya que también puede permitir un cambio único en el intercepto o un cambio único tanto en la tendencia como en el intercepto. 
+**Si encuentra un estadístico $t$ menor que el valor crítico calculado por Perron, es posible rechazar la hipótesis nula de una raíz unitaria**. La metodología es bastante general, ya que también puede permitir un cambio único en el intercepto o un cambio único tanto en la tendencia como en el intercepto. 
 
 Por ejemplo, es posible probar la hipótesis nula de un cambio permanente en el intercepto frente a la alternativa de un cambio en la pendiente de la tendencia.  
 
