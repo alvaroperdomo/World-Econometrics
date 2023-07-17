@@ -162,7 +162,7 @@ $H_1: y_t= a_0 + a_2t + \mu_2 D_L + \mu_3 D_T + \varepsilon_t$
 
 Nuevamente, el procedimiento implica combinar las hipótesis nula y alternativa en una sola ecuación. Considere $H_0: y_t= a_0 + a_1 y_{t-1} + \mu_1 D_P + \mu_2 D_L + \mu_3 D_T + \varepsilon_t$. Compare el estadístico $t$ de la estimación de $a_1$ con el valor crítico calculado por Perron (1989). Si los errores de esta regresión no parecen ser ruido blanco, estime la ecuación en la forma de una prueba aumentada de Dickey-Fuller. El estadístico $t$ para la hipótesis nula $a_1=1$ puede compararse con los valores críticos calculados por Perron (1989)
 
-## Prueba de Zivot y Andrews
+## Prueba de Zivot y Andrews ($ZA$)
 Se debe tener cuidado al usar el procedimiento de Perron, ya que supone que la fecha del cambio estructural es conocida. Zivot y Andrews (1992) muestran que si la escogencia del momento del cambio estructural es erróneo y se aplica la prueba de Perron, entonces aumenta la probabilidad de que se rechace la presencia de raíz unitaria en momentos en que esta realmente existe. Por lo tanto, Zivot y Andrews (1992) proponen una prueba de raíz unitaria que calcula endógenamente el momento del cambio estructural. Ante ello, plantean el siguiente procedimiento:
 
 **Paso 1:** Calcule el estadístico $t$ para verificar la hipótesis nula $a_1=0$  (es decir, la hipótesis nula de raíz unitaria) para todos los momentos ($\tau$) y para todos los posibles tipos de cambio estructural (es decir, para los casmbios estructurales en tendencia y pendiente). $\Delta y_t= a_0 + a_1 y_{t-1} + a_2t + \mu_2 D_L + \mu_3 D_T + \displaystyle\sum_{i = 1}^{p} \beta_i \Delta y_{t-i} +  \varepsilon_t$
@@ -172,3 +172,6 @@ Se debe tener cuidado al usar el procedimiento de Perron, ya que supone que la f
 **Paso 3:** Si se rechaza $H_0$, se concluye que no existe raíz unitaria. En caso contrario, se debe identificar el mejor modelo de cambio estructural utilizando la prueba iterativa de Chow.
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
+
+| [Retornar: 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) | [2.2.4.(R) Aplicación en R de la prueba _ZA_](../Seccion02_02_04_R/Readme.md) |
+|---------------------------------------------------------|--------------------------------------|---------------------------------------------------------------------------------------|
