@@ -17,8 +17,8 @@ urersTest(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"), lag.m
 |                         | el número máximo de rezagos utilizados para probar el truncamiento del rezago decendente para la $prueba P$, utilizando el Criterio Bayesiano de Schwartz|   
 |                         | el número máximo de diferencias rezagadas que se incluirán en la regresión de prueba para $DF-GLS$                                                       |
 | **model**               | El modelo determinista utilizado para eliminar la tendencias:                                                                                            | 
-|                         | **"constant"** - **_Opción Predeterminada_**                                                                                                             |
-|                         | **"trend"**                                                                                                                                              |
+|                         | **"constant"** Se refiere al modelo con constante pero sin tendencia (**_Opción Predeterminada_**)                                                       |
+|                         | **"trend"** Se refiere al modelo con constante y tendencia                                                                                               |
 | **lag.max**             | el número máximo de rezagos utilizados en la prueba                                                                                                      |
 | **doplot**              | indicador lógico, por defecto VERDADERO. ¿Debe mostrarse un gráfico de diagnóstico?                                                                      | 
 |                         | **"TRUE"** para mostrar gráfico de diagnostico **_Opción Predeterminada_**                                                                               |
@@ -41,12 +41,12 @@ ur.ers(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"),lag.max =
 |                         | **"DF-GLS"** - **_Opción Predeterminada_**                                                                                                               |
 |                         | **"P-test"**[^3]                                                                                                                                         |
 | **model**               | El modelo determinista utilizado para eliminar la tendencias:                                                                                            | 
-|                         | **"constant"** - **_Opción Predeterminada_**                                                                                                             |
-|                         | **"trend"**                                                                                                                                              |
+|                         | **"constant"** Se refiere al modelo con constante pero sin tendencia (**_Opción Predeterminada_**)                                                       |
+|                         | **"trend"** Se refiere al modelo con constante y tendencia                                                                                               |
 
 [^3]: **La prueba de punto óptimo factible (_P-test_) tiene en cuenta la correlación serial del término de error y haya el número óptimo de rezagos utilizando el Criterio Bayesiano de Schwartz.** 
 
-#### De las dos opciones, mi preferida es esta última por la opción "type("P-test") que permite obtener esta información.
-#### Posteriormente, se puede utilizar cla primera opción para aprovechar el comando "doplot"
+#### De las dos opciones, mi preferida es ésta última por la opción "type("P-test") que permite obtener el número óptimo de rezagos utilizando el Criterio Bayesiano de Schwartz.
+#### Posteriormente, se puede utilizar la primera opción para aprovechar el comando "doplot" para ver las pruebas sobre los $\varepsilon_t$
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
