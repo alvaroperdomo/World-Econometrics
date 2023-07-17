@@ -3,7 +3,7 @@
 
 Para llevar a cabo la prueba $KPSS$ ofrecemos tres opciones:
 
-## 1) Primera Opción: Utilice el comando _unitrootTest_ [^1]
+## 1) Primera Opción: Utilice el comando _urkpssTest_ [^1]
 
 [^1]: **Este comando pertenece a la librería _fUnitRoots_**
 
