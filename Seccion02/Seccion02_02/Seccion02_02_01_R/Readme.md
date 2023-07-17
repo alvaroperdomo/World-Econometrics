@@ -66,7 +66,7 @@ ur.df(x, type = c("none", "drift", "trend"), lags = 1, selectlags = c("Fixed", "
 | **type**                | en esta opción se especifica el tipo de prueba $ADF$ que se va a llevar a cabo. Las opciones válidas son:                              |
 |                         | **"none"** para una prueba sin intercepto (constante) ni tendencia temporal                                                            |
 |                         | **"drift"** para una prueba con intercepto (constante) pero sin tendencia temporal - **_Opción Predeterminada_**                       |
-|                         | **"trend"** para una regresión con intercepto (constante) y con tendencia temporal                                                     |
+|                         | **"trend"** para una prueba con intercepto (constante) y con tendencia temporal                                                        |
 | **selectlags**          | Método escogido para la selección del número de rezagos:                                                                               | 
 |                         | **"Fixed"** el número de rezagos establecidos en la opción "lags" - **_Opción Predeterminada_**                                        |
 |                         | **"AIC"** criterio de selección de Akaike (el número máximo de rezagos analizados se establece en la opción "**lags**")                |
