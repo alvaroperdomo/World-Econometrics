@@ -294,7 +294,7 @@ Critical values for test statistics:
 tau1 -2.6 -1.95 -1.61
 ```
 
-Los resultados de las pruebas ADF son:
+Los resultados de las pruebas $ADF$ son:
 
 | Variable   | Estadístico | Criterio de <br> información | Número óptimo <br> de rezagos | Valor       |  1%     |  5%     |  10%    | 
 |------------|:-----------:|:----------------------------:|:-----------------------------:|:-----------:|:-------:|:-------:|:-------:|
