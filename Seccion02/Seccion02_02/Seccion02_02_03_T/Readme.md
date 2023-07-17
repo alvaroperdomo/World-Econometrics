@@ -3,7 +3,7 @@
 
 Dado que la potencia de las pruebas de raíz unitaria no es particularmente alta, también puede ser interesante aplicar pruebas en donde la hipótesis nula es de estacionariedad, para evitar que podamos concluir erróneamente que una serie de tiempo tiene una raíz unitaria debido a las propiedades estadísticas de la prueba $ADF$. Una prueba que toma la estacionariedad como hipótesis nula es la de Kwiatkowski, Phillips, Schmidt y Shin (1992) [ $KPSS$ ]. 
 
-La prueba KPSS se basa en la idea de descomponer una serie de tiempo en la suma de :
+La prueba $KPSS$ se basa en la idea de descomponer una serie de tiempo en la suma de :
 * una tendencia determinística $\delta_t$, 
 * un paseo aleatorio $S_t$ o tendencia estocástica (en otras palabras, $S_t=\displaystyle\sum_{i=1}^{t} \varepsilon_i = S_{t-1} + \varepsilon_t$ con $S_t=0$), y  
 * un proceso de error estacionario $u_t$. 
