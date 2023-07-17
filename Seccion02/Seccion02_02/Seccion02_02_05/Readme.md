@@ -308,13 +308,17 @@ Los resultados de las pruebas $ADF$ son:
 
 **Niveles de significancia: *** al 1%, ** al 5% y * al 10%**
 
-En consecuencia, la variable $PIBpc$ es no estacionaria porque:
+En consecuencia, la variable $PIBpc$ es no estacionaria porque:[^4]
 * $\tau_\tau$ = -3.15 < **-2.8429 (Akaike)** < **-1.7651 (Shwartz)**, es decir, no se rechaza $\gamma=0$ al 10%, 5% y 1%
 * $\phi_2$ = **2.0235 (Shwartz)** < 4.16 < **4.3493 (Akaike)** < 4.88, es decir, no se rechaza $\gamma=a_0=a_2=0$ al 10%, 5% y 1% si se utiliza el Criterio Schwartz (con el Criterio de Akaike sólo se rechazaría al 10%)
 * $\phi_3$ =  **2.9459 (Shwartz)** < 5.47 <**6.0919 (Akaike)** < 6.49, es decir, no se rechaza $\gamma=a_2=0$ al 10%, 5% y 1% si se utiliza el Criterio Schwartz (con el Criterio de Akaike sólo se rechazaría al 10%)
 
-Y la variable $C1PIBpc$ es estacionaria porque
+[^4]: **La prueba no es totalmente contundente porque para algunos niveles de significancia, en ocasiones se rechaza la hipótesis nula. Sin embargo, al 5% de significancia es clara la existencia de raíz unitaria en esta variable**
+
+Y la variable $C1PIBpc$ es estacionaria porque:[^5] 
 * $\tau$ = -4.308< **-2.3286** <-2.60, es decir, no se rechaza $\gamma=0$ al 1% pero si se rechaza al 5% y 10%
+
+[^5]: **Aunque al 1% no se rechaza la hipótesis de raiz unitaria, al 5% y al 10% si se rechaza**
 
 Ahora copie los comandos
 ``` r
@@ -323,12 +327,12 @@ C1PIBpc_urdfTest<- urdfTest(C1PIBpc, lags = 1, type = c("nc"), doplot = TRUE)
 ```  
 Obteniendose los siguientes gráficos de prueba sobre los errores de estimación en la prueba,
 
-1) Para los residuos de la prueba ADF de $PIBpc$
+1) Para los residuos de la prueba $ADF$ de $PIBpc$
    
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4a7e542c-98a2-42b1-ab94-458640b56352)
 
 
-2) Para los residuos de la prueba ADF de $C1PIBpc$
+2) Para los residuos de la prueba $ADF$ de $C1PIBpc$
    
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6311e9ff-3bc6-4a4e-9802-5ea2fb825685)
 
