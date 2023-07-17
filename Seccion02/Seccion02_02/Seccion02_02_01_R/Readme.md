@@ -96,5 +96,5 @@ ndiffs(x, alpha = 0.05, test = c("adf"), type = c("level", "trend"), ...)
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
 
-| [Retornar: 02. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) | [02. Explicación general de las Pruebas DF y ADF](../Seccion02_02_01_T/Readme.md)  |
-|--------------------------------------------------------|--------------------------------------|------------------------------------------------------------------------------------|
+| [Retornar: 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) | [2.2.(T) Explicación general de las Pruebas DF y ADF](../Seccion02_02_01_T/Readme.md)  |
+|---------------------------------------------------------|--------------------------------------|----------------------------------------------------------------------------------------|
