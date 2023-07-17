@@ -6,12 +6,12 @@ Las pruebas de raíz unitaria sirven para determinar si una serie es estacionari
 | Pruebas                                                                                 | Explicación general de la prueba |  Aplicación en R                 |
 |-----------------------------------------------------------------------------------------|:--------------------------------:|:--------------------------------:|
 | **2.2.1.** Las Pruebas DF y ADF: _Pruebas de Dickey Fuller y Aumentada de Dickey Fuller_| [X](Seccion02_02_01_T/Readme.md) | [X](Seccion02_02_01_R/Readme.md) | 
-| **2.2.2.** La Prueba ADF-GLS: _Prueba de Elliott, Rothenberg y Stock_                   |  [X](Seccion02_02_02_T/Readme.md)| [X](Seccion02_02_02_R/Readme.md) |
-| **2.2.3.** La Prueba KPSS: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_            |  [X](Seccion02_02_03_T/Readme.md)| [X](Seccion02_02_03_R/Readme.md) |  
-| **2.2.4** Pruebas de Cambio Estructural: _Prueba de Perron y Prueba de Zivot y Andrews_ |  [X](Seccion02_02_04_T/Readme.md)| [X](Seccion02_02_04_R/Readme.md) |
+| **2.2.2.** La Prueba ADF-GLS: _Prueba de Elliott, Rothenberg y Stock_                   | [X](Seccion02_02_02_T/Readme.md) | [X](Seccion02_02_02_R/Readme.md) |
+| **2.2.3.** La Prueba KPSS: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_            | [X](Seccion02_02_03_T/Readme.md) | [X](Seccion02_02_03_R/Readme.md) |  
+| **2.2.4** Pruebas de Cambio Estructural: _Prueba de Perron y Prueba de Zivot y Andrews_ | [X](Seccion02_02_04_T/Readme.md) | [X](Seccion02_02_04_R/Readme.md) |
 | **2.2.5** Ejemplo utilizando la base de datos _Indicadores de Desarrollo Mundial_       |                                  | [X](Seccion02_02_05_R/Readme.md) |
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
-| [Anterior Sección: 2.1. Series Estacionarias y No Estacionarias](../Seccion02_01/Readme.md) | [:house: Inicio](../../README.md) |[Siguiente Sección: 2.1. SLas Pruebas DF y ADF: _Pruebas de Dickey Fuller y Aumentada de Dickey Fuller_](Seccion02_02_01_T/Readme.md) |
+| [Anterior Sección: 2.1. Series Estacionarias y No Estacionarias](../Seccion02_01/Readme.md) | [:house: Inicio](../../README.md) |[Siguiente Sección: 2.2.1.(T) SLas Pruebas DF y ADF: _Pruebas de Dickey Fuller y Aumentada de Dickey Fuller_](Seccion02_02_01_T/Readme.md) |
 |---------------------------------------------------------------------------------------------|-----------------------------------|-------------------------------------------------------------------------------------------|
