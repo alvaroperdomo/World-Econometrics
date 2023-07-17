@@ -185,8 +185,8 @@ rm(list = ls())
 ```
 Llamamos a las dos librerias que se van a utilizar en el resto de este ejemplo
 ``` r
-library(WDI)
-library(ggplot2)
+library(WDI)       # Esta libreria sirve para trabajar directamente con la base de datos Indicadores de Desarrollo Mundial.
+library(ggplot2)   # Esta librería sirve para construir gráficos interesantes
 library(dplyr)     # Esta libreria permite manipular las bases de datos de R de una forma sencilla
 ```
 El siguiente comando lo utilizo para confirmar que la variable "NY.GDP.PCAP.KN" representa el PIB per cápita a precios constantes en moneda local
@@ -285,9 +285,9 @@ El código completo de R, con los principales comandos, utilizados en este ejemp
 
 rm(list = ls())
 
-library(WDI)
-library(dplyr)
-library(ggplot2)
+library(WDI)       # Esta libreria sirve para trabajar directamente con la base de datos Indicadores de Desarrollo Mundial.
+library(ggplot2)   # Esta librería sirve para construir gráficos interesantes
+library(dplyr)     # Esta libreria permite manipular las bases de datos de R de una forma sencilla
 
 WDIsearch(string='NY.GDP.PCAP.KN', field='indicator')
 
