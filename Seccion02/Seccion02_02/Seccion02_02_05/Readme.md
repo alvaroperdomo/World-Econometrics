@@ -340,7 +340,9 @@ Por lo tanto, se obtienen los siguientes gráficos de prueba sobre los residuos 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6311e9ff-3bc6-4a4e-9802-5ea2fb825685)
 
 
-Los gráficos $FAC$ y $FACP$, que se encuentran arriba, revelan que los residuos de ambas pruebas $ADF$ no estan autocorrelacionados , por lo tanto ambas pruebas de raíz unitaria estan bien hechas.
+Los gráficos $FAC$ y $FACP$, que se encuentran arriba, revelan que los residuos de ambas pruebas $ADF$ no estan autocorrelacionados (estan dentro de las bandas de confianza)[^6]; por lo tanto, los residuos son ruido blanco y ambas pruebas de raíz unitaria estan bien hechas.
+
+[^6]: **Tenga en cuenta que la _FAC_ en el rezago cero siempre es igual a 1. Por lo tanto, la _FAC_ del rezago cero nunca se lee para interpretar la prueba de autocorrelación**
 
 ****************************************************************************************************************************************************************************
 
