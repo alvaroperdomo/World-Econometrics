@@ -26,13 +26,15 @@ Para este ejercicio, dado que previamente ya habiamos demostrado que la variable
 ``` r
 rm(list = ls())
 
-library(WDI)
-library(dplyr)
-library(ggfortify)
-library(ggplot2)
-library(forecast)
-library(fUnitRoots)
-library(urca)
+rm(list = ls())
+
+library(WDI)         # Esta libreria sirve para trabajar directamente con la base de datos Indicadores de Desarrollo Mundial.
+library(dplyr)       # Esta libreria permite manipular las bases de datos de R de una forma sencilla, por ejemplo utilizando los comandos mutate() y arrange()
+library(ggfortify)   # Esta libreria tienen comando utiles para plantear gráficos de series de tiempo, por ejemplo utilizando ell comando autoplot()
+library(ggplot2)     # Esta librería sirve para construir gráficos interesantes
+library(fUnitRoots)  # Esta libreria sirve para hacer pruebas de raíz unitaria.
+library(urca)        # Esta libreria sirve para hacer pruebas de raíz unitaria.
+library(forecast)    # Esta libreria sirve para hacer pronósticos.
 
 WDIsearch(string='NY.GDP.PCAP.KN', field='indicator')
 
@@ -41,25 +43,33 @@ dat <- dat %>% arrange(year)
 dat <- na.omit(dat)
 dat <- mutate(dat, PIBpc_lag1 = lag(PIBpc, order_by = year), C1PIBpc=PIBpc-PIBpc_lag1, country=NULL, iso2c=NULL, iso3c=NULL)
 
-ejercicio <- dat[-c(61:63),]
-ejercicioC1 <- ejercicio[-c(1),]
-ejercicio <- mutate(ejercicio, PIBpc_lag1=NULL, C1PIBpc=NULL)
-ejercicioC1 <- mutate(ejercicioC1, PIBpc=NULL, PIBpc_lag1=NULL)
+ggplot(dat, aes(year, C1PIBpc)) + scale_x_continuous(name="Años", limits=c(1961, 2019))  + geom_line (linewidth=0.2) + labs(subtitle="1960-2019", y="Pesos constantes", title="Cambio en el PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 ```
-**1) Identificación:**
-Gráficamos la variable **C1PIBpc** así como sus funciones $FAC$ y $FACP$
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/a42692a0-f034-42b7-82b5-9aae03615a37)
+
+Del gráfico de **C1PIBpc** ya hablamos en la sección 2.2., por lo que no diremos nada mas al respecto.
+
+Antes de pasar a la etapa de identificación, vamos a preparar un poco la base de datos para que $R$ identifique a la variable **C1PIBpc** como una serie de tiempo
 
 ``` r
-PIBpc_ = subset(ejercicio, select = c(PIBpc))
-PIBpc <- ts(PIBpc_)
-C1PIBpc_ = subset(ejercicioC1, select = c(C1PIBpc))
-C1PIBpc <- ts(C1PIBpc_)
+C1PIBpc_ <- dat[-c(1,61:63),] # Con este comando creamos la base de datos "C1PIBpc_" la cual es igual a la base de datos "dat", pero sin incluir los años 1961 (Fila (1) - del cual "dat" no existe información para C1PIBpc) y los años 2020-2023 (Filas (61-63) - los cuales no vamos a utilizar en la estimación de C1PIBpc) 
+C1PIBpc_ = subset(C1PIBpc_, select = c(C1PIBpc)) # Con este comando deburamos la base de datos C1PIBpc_ para que sólo incluya la variable C1PIBpc
+C1PIBpc <- ts(C1PIBpc_) # Con el comando ts() identificamos a la variable C1PIBpc como una serie de tiempo que se encuentra en la base de datos C1PIBpc_
+
 autoplot(acf(C1PIBpc, plot = FALSE))
 autoplot(pacf(C1PIBpc, plot = FALSE))
-```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/7de314f5-3345-4b56-ad70-136bfe6b33ed)
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/b29da0bb-daff-4ffc-a416-91066fd9edcd)
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6b57037b-87e6-4c19-a9d3-f01787e41fbe)
+
+**1) Identificación:**
+Gráficamos las variable **C1PIBpc** así como sus funciones $FAC$ y $FACP$
+
+
+
+Entonces, nos preparamosa para gráficar las funciones $FAC$ y $FACP$ de estas dos variables,
+
+
+
+autoplot(acf(C1PIBpc, plot = FALSE))
 
 **2) Estimación:**
 La $FACP$ da a entender que la serie sigue un proceso autorregresivo de orden $1$, y la $FAC$ revela la existencia de un comportamiento de media movilde orde $1$ o de orden $2$. En consecuencia, vamos a comparar los siguientes modelos $ARIMA(p,1,q)$ para la variable $PIBpc$ (esto es equivalente a comparar los siguientes modelos $ARIMA(p,0,q)$ para la variable $C1PIBpc$).
