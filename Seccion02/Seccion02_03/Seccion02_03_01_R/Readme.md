@@ -17,7 +17,7 @@ autoplot(pacf(x, plot = FALSE))
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **x**                | vector o variable de series de tiempo                                                                                                                    |
 | **plot**             | Argumento lógico que sólo tiene dos opciones:                                                                                                            |
-|                      | **TRUE** (**Opción Predeterminada**)                                                                                                            |
-|                      | **FALSE**                                                                                                             |
+|                      | **TRUE** Saca dos opciones de gráfico (**Opción Predeterminada**)                                                                                        |
+|                      | **FALSE** Saca una sola opción de gráfico                                                                                                                |
 
-[^1]: El comando _autoplot_ tiene muchisimos más argumentos (buena parte de ellos estéticos), pero por lo pronto sólo nos interesan los dos que presentamos
+[^1]: **El comando _autoplot_ tiene muchisimos más argumentos (buena parte de ellos estéticos), pero por lo pronto sólo nos interesan los dos que presentamos**
