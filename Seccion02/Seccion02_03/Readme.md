@@ -51,26 +51,32 @@ ggplot(dat, aes(year, C1PIBpc)) + scale_x_continuous(name="Años", limits=c(1961
 Del gráfico de **C1PIBpc** ya hablamos en la sección 2.2., por lo que no diremos nada mas al respecto. Antes de pasar a la etapa de identificación, vamos a preparar un poco la base de datos para que $R$ identifique a la variable **C1PIBpc** como una serie de tiempo
 
 ``` r
-C1PIBpc_ <- dat[-c(1,61:63),] # Con este comando creamos la base de datos "C1PIBpc_" la cual es igual a la base de datos "dat", pero sin incluir los años 1961 (Fila (1) - del cual "dat" no existe información para C1PIBpc) y los años 2020-2023 (Filas (61-63) - los cuales no vamos a utilizar en la estimación de C1PIBpc) 
-C1PIBpc_ = subset(C1PIBpc_, select = c(C1PIBpc)) # Con este comando deburamos la base de datos C1PIBpc_ para que sólo incluya la variable C1PIBpc
+C1PIBpc_ <- dat[-c(1,61:63),] # Con este comando creamos la base de datos "C1PIBpc_" la cual es igual a la base de datos "dat", pero sin incluir el año 1961 (Fila (1) - del cual "dat" no existe información para C1PIBpc) y los años 2020-2023 (Filas (61-63) - los cuales no vamos a utilizar en la estimación de C1PIBpc) 
+C1PIBpc_ = subset(C1PIBpc_, select = c(C1PIBpc)) # Con este comando depuramos la base de datos C1PIBpc_ para que sólo incluya la variable C1PIBpc
 C1PIBpc <- ts(C1PIBpc_) # Con el comando ts() identificamos a la variable C1PIBpc como una serie de tiempo que se encuentra en la base de datos C1PIBpc_
+```
+Algo similar hacemos con la variable PIBpc porque algunos comandos permiten manejar la variable original sin diferenciar:
 
-autoplot(acf(C1PIBpc, plot = FALSE))
-autoplot(pacf(C1PIBpc, plot = FALSE))
+``` r
+PIBpc_ <- dat[-c(61:63),] # Con este comando creamos la base de datos "PIBpc_" la cual es igual a la base de datos "dat", pero sin incluir los años y los años 2020-2023 (Filas (61-63) - los cuales no vamos a utilizar en la estimación de C1PIBpc) 
+PIBpc_ = subset(PIBpc_, select = c(PIBpc)) # Con este comando depuramos la base de datos PIBpc_ para que sólo incluya la variable PIBpc
+PIBpc <- ts(PIBpc_) # Con el comando ts() identificamos a la variable PIBpc como una serie de tiempo que se encuentra en la base de datos PIBpc_
+```
 
 **1) Identificación:**
-Gráficamos las variable **C1PIBpc** así como sus funciones $FAC$ y $FACP$
+Gráficamos las $FAC$ y $FACP$ muestrales de la variable **C1PIBpc**
 
-
-
-Entonces, nos preparamosa para gráficar las funciones $FAC$ y $FACP$ de estas dos variables,
-
-
-
+``` r
 autoplot(acf(C1PIBpc, plot = FALSE))
+autoplot(pacf(C1PIBpc, plot = FALSE))
+```
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/a26c22c6-0c48-4e5c-8383-88ff83c7c16a)
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/23f5f1ea-291b-4722-9635-37fefbf30dfe)
+
 
 **2) Estimación:**
-La $FACP$ da a entender que la serie sigue un proceso autorregresivo de orden $1$, y la $FAC$ revela la existencia de un comportamiento de media movilde orde $1$ o de orden $2$. En consecuencia, vamos a comparar los siguientes modelos $ARIMA(p,1,q)$ para la variable $PIBpc$ (esto es equivalente a comparar los siguientes modelos $ARIMA(p,0,q)$ para la variable $C1PIBpc$).
+La $FACP$ da a entender que la serie de **C1PIBpc** sigue un proceso autorregresivo de orden $1$, y la $FAC$ revela la existencia de un comportamiento de media movil de orde $1$ o de orden $2$. En consecuencia, vamos a comparar los siguientes modelos $ARIMA(p,1,q)$ para la variable $PIBpc$ (esto es equivalente a comparar los siguientes modelos $ARIMA(p,0,q)$ para la variable $C1PIBpc$).
 
 ``` r
 arima1<- Arima(PIBpc, order=c(0,1,2))
