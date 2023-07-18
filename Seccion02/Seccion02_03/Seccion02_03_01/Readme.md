@@ -26,42 +26,32 @@ Una idea fundamental en el enfoque de Box y Jenkins es el principio de parsimoni
 
 La parsimonia sugiere usar el _Criterio de Información de Akaike_ y/o el _Criterio Bayesiano de Schwartz_ como medidas más apropiadas del ajuste general del modelo. En ambos casos, el modelo más parsimonioso es el que reporta un menor valor según el criterio escogido. Hay varias formas equivalentes de calcular ambos criterios, que pueden diferir en valor. Sin embargo, lo importante es que la forma escogida mantenga el orden en la parsimonia del criterio escogido. A continuación se presenta una tabla con diferentes formas de cálculo de ambos criterios.
 
-| Criterio de Información de Akaike        | Criterio Bayesiano de Schwatrz                                                                    
-|:----------------------------------------:|:--------------------------------------:|
-| $T \times \ln{SRC} + 2n$                 | $T \times \ln{SRC} + n \times \ln{t}$  |
-|                                                  |
-| |
+| Criterio de Información de Akaike   | Criterio Bayesiano de Schwatrz |
+|:-----------------------------------:|:------------------------------:|
+| $T \ln{SRC} + 2n$                   | $T \ln{SRC} + n \ln{t}$        |
 
+donde,
+* $T$ es el número de observaciones
+* $SRC$ es la suma de residuos al cuadrado
+* $n$ es el número de parametros estimados
 
-
-[^1] **Tenga cuidado con las estimaciones que no convergen rápidamente. _R_ al igual que la mayoría de los paquetes econométricos estiman los parámetros de un modelo _ARMA()_ utilizando un procedimiento de búsqueda no lineal. Si la búsqueda no converge rápidamente, es posible que los parámetros estimados sean inestables. En tales circunstancias, agregar una o dos observaciones adicionales puede alterar en gran medida las estimaciones.**
+[^1]: **Tenga cuidado con las estimaciones que no convergen rápidamente. _R_ al igual que la mayoría de los paquetes econométricos estiman los parámetros de un modelo _ARMA()_ utilizando un procedimiento de búsqueda no lineal. Si la búsqueda no converge rápidamente, es posible que los parámetros estimados sean inestables. En tales circunstancias, agregar una o dos observaciones adicionales puede alterar en gran medida las estimaciones.**
 
 ## 3. VERIFICACIÓN DE DIAGNOSTICO: 
 
-La práctica estándar es dibujar los residuos para buscar valores atípicos y evidencia de períodos en los que el modelo no se ajusta bien a los datos. Una práctica común es crear residuos estandarizados dividiendo cada residuo, $\varepsilon_t$ , por su desviación estándar estimada, $\sigma$. 
+La práctica estándar es dibujar los residuos para buscar valores atípicos y evidencia de períodos en los que el modelo no se ajusta bien a los datos. Una práctica común es crear residuos estandarizados dividiendo cada residuo, $\varepsilon_t$ , por su desviación estándar estimada, $\sigma$. Si los residuos se distribuyen normalmente, el gráfico de la serie $\frac{\varepsilon_t}{\sigma}$ debe ser tal que no más del $5$% queden fuera de la banda de $-1.96$ a $1.96$. Si los residuos estandarizados parecen ser mucho más grandes en algunos períodos que en otros, puede ser evidencia de un cambio estructural. 
 
-Si los residuos se distribuyen normalmente, el gráfico de la serie $\frac{\varepsilon_t}{\sigma}$ debe ser tal que no más del $5$% queden fuera de la banda de $-1.96$ a $1.96$. 
+Si todos los modelos _ARMA_ plausibles muestran evidencia de un mal ajuste durante una porción razonablemente larga de la muestra, es aconsejable considerar el uso de hacer un análisis multivariado de series de tiempo[2^]. Si la varianza de los residuos está aumentando, una transformación logarítmica puede ser apropiada. Alternativamente, es posible que se desee modelar cualquier tendencia de la varianza utilizando las técnicas $ARCH$ (las cuales no serán objeto de este curso).
 
-Si los residuos estandarizados parecen ser mucho más grandes en algunos períodos que en otros, puede ser evidencia de un cambio estructural. 
+[2^]: **Tambiém se puede considerar la opción de estimar análisis de intervención o funciones de transferencia. Sin embargo, estos temas no serán objeto de análisis en este curso**
 
-Si todos los modelos _ARMA_ plausibles muestran evidencia de un mal ajuste durante una porción razonablemente larga de la muestra, es aconsejable considerar el uso de:
-* análisis de intervención,
-* análisis de función de transferencia o
-* cualquier otro de los métodos de estimación multivariante que veremos más adelante en el curso. 
-
-Si la varianza de los residuos está aumentando, una transformación logarítmica puede ser apropiada. Alternativamente, es posible que se desee mo-delar cualquier tendencia de la varianza utilizando las técnicas $ARCH$ (las cuales serán objeto de otro curso) 
-
-Es particularmente importante que los residuos de un modelo estimado no estén serialmente correlacionados. 
-
-Cualquier evidencia de correlación serial implica un movimiento sistemático en la secuencia { $y_t$ } que no es explicado por los coeficientes $ARMA$ incluidos en el modelo. Por lo tanto, cualquiera de los modelos tentativos que producen residuos no aleatorios debería eliminarse de la consideración. 
-
-Para verificar la correlación en los residuos, construya la $FAC$ y la $FACP$ de los residuos del modelo estimado. Luego puede usar el estadístico Q de Ljung-Box para determinar si alguna o todas las autocorrelaciones o autocorrelaciones parciales de los residuos son estadísticamente significativas.
+Es particularmente importante que los residuos de un modelo estimado no estén serialmente correlacionados. Cualquier evidencia de correlación serial implica un movimiento sistemático en la secuencia { $y_t$ } que no es explicado por los coeficientes $ARMA$ incluidos en el modelo. Por lo tanto, cualquiera de los modelos tentativos que producen residuos no aleatorios debería eliminarse de la consideración. Para verificar la correlación en los residuos, construya la $FAC$ y la $FACP$ de los residuos del modelo estimado. Luego puede usar el estadístico $Q$ de Ljung-Box para determinar si alguna o todas las autocorrelaciones o autocorrelaciones parciales de los residuos son estadísticamente significativas.
 
 #### ANOTACIÓN: Algunos programas econométricos informan el resultado de la prueba de Durbin-Watson como un control para la correlación serial de primer orden. Esta prueba está sesgada hacia la búsqueda de una correlación serial en presencia de variables dependientes rezagadas. Por lo tanto, generalmente no se usa en modelos $ARMA$.
 
 Aunque no hay un nivel de significancia que se considere "más apropiado", desconfíe de cualquier modelo que arroje:
 
-1. varias correlaciones residuales que sean marginalmente significativas y
+1. varias correlaciones de los residuos que sean marginalmente significativas y
 2. un estadístico Q que apenas sea significativo al nivel del $10%$. 
 
 En tales circunstancias, generalmente es posible formular un modelo que tenga un mejor rendimiento.
