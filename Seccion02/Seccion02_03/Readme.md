@@ -135,10 +135,11 @@ Training set error measures:
 Training set 56740.45 206347.3 157757.3 0.5673997 1.512671 0.6526939 -0.1455209
 ```
 
-Note que el coeficiente estimado $\hat{a}_1=0.7326$ del modelo $ARIMA(1,1,0)$ es estadísticamente significativo (es decir, es más de dos veces superior a su error estándar de $0.0856$)
+Note que el coeficiente estimado $\hat{a}_1=0.7326$ del modelo $ARIMA(1,1,0)$ es estadísticamente significativo (es decir, es más de dos veces superior al valor de su error estándar de $0.0856$)
 
 ## 3) Verificación de diagnóstico:
-Una vez estimados los modelos y elegido el mejor de ellos, en este caso ARIMA(1,1,0), se procede a validarlo. Para ello en primer lugar se grafican los correlogramas de los residuos para comprobar que son ruido blanco:
+Ahora hay que hacer las pruebas de validación del modelo $ARIMA(1,1,0)$. Para ello en primer lugar se grafican los correlogramas de los residuos para comprobar que son ruido blanco:
+
 ``` r
 autoplot(acf(arima2$residuals, plot = FALSE))
 autoplot(pacf(arima2$residuals, plot = FALSE))
@@ -165,7 +166,7 @@ Obteniendo
 ```
 En consecuencia, la prueba de rechaza la hipótesis nula de correlación cero en los residuos; por lo tanto, se certifica nuevamente que los residuos son ruido blanco.
 
-En R existe una función llamada auto.arima que puede calcular automáticamente cuál es la mejor combinación de órdenes para el modelo ARIMA:
+En $R$ existe una función llamada auto.arima que puede calcular automáticamente cuál es la mejor combinación de órdenes para el modelo ARIMA:
 
 ``` r
 auto.arima(PIBpc, stepwise = FALSE, approximation = FALSE)
