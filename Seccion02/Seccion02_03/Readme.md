@@ -3,7 +3,7 @@
 
 Box y Jenkins (1976) popularizaron una metodología para seleccionar el modelo $ARMA(p,q)$ apropiado para estimar una serie de tiempo univariada. Tenga, en cuenta que la misma sólo es valida en series estacionarias. Por lo tanto, como se comento anteriormente, si una serie de tiempo no es estacionaria, transformela en una serie estacionaria para poder aplicar la propuesta de Box y Jenkins.
 
-EEsta sección se encuentra dividida en tres subsecciones. Para acceder a cada una de las subsecciones haga click en la tabla de abajo en la subsección respectiva. Sin embargo, lo ideal es que se aborden las tres secciones en el orden que esta prescrito.
+Esta sección se encuentra dividida en tres subsecciones. Para acceder a cada una de las subsecciones haga click en la tabla de abajo en la subsección respectiva. Sin embargo, lo ideal es que se aborden las tres secciones en el orden que esta prescrito.
 
 | Subsecciones                                                                                                  | 
 |---------------------------------------------------------------------------------------------------------------|
