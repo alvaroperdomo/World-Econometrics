@@ -75,11 +75,11 @@ Obteniendose
 
 El decaimiento continuo pero moderado de la $FAC$ de la variable $PIBpc$ da una idea de raíz unitaria. Por otro lado, la $FAC$ de la variable $C1PIBpc$ desde el comienzo cae rapidamente, dando así una idea de estacionariedad. 
 
-Antes de desarrollar las diferentes pruebas de raíz unitaria, observe a partir de los dos gráficos del comienzo de la sección, que el PIB tiene una tendencia clara, mientras que la variación del PIB no tiene tendencia y parece tampo tener un intercepto (aunque este último aspecto no es claro. Para visualizar mejor, esto se desarrolla la siguiente prueba sencilla de Mínimos Cuadrados Ordinarios con respecto a la ecuación $y_t=a_0+a_2t+e_t$ donde $e_t$ es el residuo de la ecuación:
+Antes de desarrollar las diferentes pruebas de raíz unitaria, observe a partir de los dos gráficos del comienzo de la sección, que el PIB tiene una tendencia clara, mientras que la variación del PIB no tiene tendencia y parece tampo tener un intercepto (aunque este último aspecto no es claro. Para visualizar mejor esto, se desarrolla la siguiente prueba sencilla de Mínimos Cuadrados Ordinarios con respecto a la ecuación $y_t=a_0+a_2t+e_t$ donde $e_t$ es el residuo de la ecuación. Los comandos para llevar a cabo la estimación, son:
 
 ``` r
-PIBpc_MCO <- lm(PIBpc ~ year, data = ejercicio)
-C1PIBpc_MCO <- lm(C1PIBpc ~ year, data = ejercicioC1)
+PIBpc_MCO <- lm(PIBpc ~ year, data = PIBpc_)
+C1PIBpc_MCO <- lm(C1PIBpc ~ year, data = C1PIBpc_)
 summary(PIBpc_MCO)
 summary(C1PIBpc_MCO)
 ```
@@ -125,9 +125,9 @@ Residual standard error: 225400 on 57 degrees of freedom
 Multiple R-squared:  0.07575,	Adjusted R-squared:  0.05953 
 F-statistic: 4.671 on 1 and 57 DF,  p-value: 0.03488
 ```
-Note que al 1% de significancia la variable $PIBpc$ tiene constante y tendencia significativas y la variable $C1PIBpc$ no las tiene (claro esta que el intercepto de la variable $C1PIBpc$ es significativo al 10%). Por lo tanto, en la medida de lo posible, las pruebas de raíz unitaria de la variable $PIBpc$ se analizaran con intercepto y tendencia, mientras que los de la variable $C1PIBpc$ se analizaran sin intercepto y sin tendencia (o con intercepto y sin tendencia
+Note que al 1% de significancia la variable $PIBpc$ tiene constante y tendencia significativas y la variable $C1PIBpc$ no las tiene (claro esta que el intercepto de la variable $C1PIBpc$ es significativo al 10%). Por lo tanto, en la medida de lo posible, las pruebas de raíz unitaria de la variable $PIBpc$ se analizaran con intercepto y tendencia, mientras que las de la variable $C1PIBpc$ se analizaran sin intercepto y sin tendencia (o con solo intercepto sino fuera posible hacer la prueba sin intercepto)
 
-A continuación se desarrollan las distintas pruebas de raíz unitaria. Primero, para la variable $PIBpc$ y luego para la variable $C1PIBpc$.
+A continuación se desarrollan las distintas pruebas de raíz unitaria para las variables $PIBpc$ y $C1PIBpc$.
 
 ****************************************************************************************************************************************************************************
 
@@ -322,13 +322,13 @@ Y la variable $C1PIBpc$ es estacionaria porque:[^5]
 
 [^5]: **Aunque al 1% no se rechaza la hipótesis de raiz unitaria, al 5% y al 10% si se rechaza**
 
-Dado que los criterios de Akaike concluyen que la prueba $ADF$ de la variable $PIBpc$ se debe hacer con $3$ rezagos y que la prueba $ADF$ de la variable $C1PIBpc$ se debe hacer con $1$ rezago. Entonces, vamos a utilizar los siguientes comando para evaluar la existencia de autocorrelación en los residuos de ambas pruebas: 
+Dado que con el Criterio de Información de Akaike se concluye que la prueba $ADF$ de la variable $PIBpc$ se debe hacer con $3$ rezagos y que la prueba $ADF$ de la variable $C1PIBpc$ se debe hacer con $1$ rezago. Entonces, vamos a utilizar los siguientes comando para evaluar la existencia de autocorrelación en los residuos de ambas pruebas (y por consiguiente, si los residuos son ruido blanco): 
 
 ``` r
 PIBpc_urdfTest<- urdfTest(PIBpc, lags = 3, type = c("ct"), doplot = TRUE)
 C1PIBpc_urdfTest<- urdfTest(C1PIBpc, lags = 1, type = c("nc"), doplot = TRUE)
 ```  
-Obteniendose los siguientes gráficos de prueba sobre los residuos de estimación de las pruebas,
+Por lo tanto, se obtienen los siguientes gráficos de prueba sobre los residuos de estimación de las pruebas,
 
 1) Para los residuos de la prueba $ADF$ de $PIBpc$
    
