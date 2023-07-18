@@ -596,7 +596,7 @@ Es decir, al 5% de significancia, la variable $PIBpc$ tiene raíz unitaria, y la
 
 ### Prueba ZA
 
-La prueba de Zivot y Andrews sólo se le va a hacer a la variable $PIBpc$ porque revela un cambio estructural al final del siglo pasado producto de una crisis económica que vivió Colombia en esa época:
+Las pruebas previas parecen indicar que la variable $PIBpc$ es no estacionaria y la variable $C1PIBpc$ es estacionaria. Sin embargo, los dos gráficos iniciales de esta sección parecen indicar un cambio estructural, alrededor de 1998-1999 (cuando Colombia experimentó una crisis económica), que afecta a $PIBpc$ pero no a $C1PIBpc$. Por consiguiente, se va a hacer la prueba de Zivot y Andrews para analizar la presencia de raíz unitaria en la variable $PIBpc$. Para ello, se copian los siguientes comandos
 
 ``` r
 ZA1.za <- ur.za(PIBpc, model = c("intercept"), lag=NULL)
@@ -610,7 +610,6 @@ summary(ZA3.za)
 Obteniendo
 ``` r
 > summary(ZA1.za)
-> summary(ZA1.za)
 
 ################################ 
 # Zivot-Andrews Unit Root Test # 
@@ -621,28 +620,28 @@ Call:
 lm(formula = testmat)
 
 Residuals:
-     Min       1Q   Median       3Q      Max 
--1601711  -109518     5583   160822   893657 
+    Min      1Q  Median      3Q     Max 
+-779772  -99685    6135  124243  358601 
 
 Coefficients:
              Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 1.606e+06  4.139e+05   3.881 0.000273 ***
-y.l1        6.986e-01  8.273e-02   8.443 1.27e-11 ***
-trend       5.026e+04  1.384e+04   3.632 0.000604 ***
-du          7.467e+05  2.284e+05   3.269 0.001833 ** 
+(Intercept) 7.850e+05  2.099e+05   3.740  0.00044 ***
+y.l1        8.744e-01  4.163e-02  21.004  < 2e-16 ***
+trend       1.933e+04  7.156e+03   2.701  0.00918 ** 
+du          4.745e+05  1.139e+05   4.166  0.00011 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 325900 on 57 degrees of freedom
+Residual standard error: 199600 on 55 degrees of freedom
   (1 observation deleted due to missingness)
-Multiple R-squared:  0.9923,	Adjusted R-squared:  0.9919 
-F-statistic:  2445 on 3 and 57 DF,  p-value: < 2.2e-16
+Multiple R-squared:  0.9969,	Adjusted R-squared:  0.9967 
+F-statistic:  5887 on 3 and 55 DF,  p-value: < 2.2e-16
 
 
-Teststatistic: -3.6435 
+Teststatistic: -3.0165 
 Critical values: 0.01= -5.34 0.05= -4.8 0.1= -4.58 
 
-Potential break point at position: 50 
+Potential break point at position: 46 
 
 > summary(ZA2.za)
 
@@ -655,25 +654,25 @@ Call:
 lm(formula = testmat)
 
 Residuals:
-     Min       1Q   Median       3Q      Max 
--1773789  -118649    -1243   157165   722589 
+    Min      1Q  Median      3Q     Max 
+-770090 -119124   -6756  129557  429068 
 
 Coefficients:
              Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 1.504e+06  4.429e+05   3.396  0.00125 ** 
-y.l1        7.280e-01  8.521e-02   8.544 8.66e-12 ***
-trend       4.305e+04  1.352e+04   3.183  0.00236 ** 
-dt          4.966e+04  1.826e+04   2.719  0.00866 ** 
+(Intercept) 1.076e+06  3.165e+05   3.398  0.00127 ** 
+y.l1        8.160e-01  6.084e-02  13.412  < 2e-16 ***
+trend       2.862e+04  9.421e+03   3.038  0.00364 ** 
+dt          4.613e+04  1.407e+04   3.279  0.00181 ** 
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 334100 on 57 degrees of freedom
+Residual standard error: 209300 on 55 degrees of freedom
   (1 observation deleted due to missingness)
-Multiple R-squared:  0.9919,	Adjusted R-squared:  0.9915 
-F-statistic:  2325 on 3 and 57 DF,  p-value: < 2.2e-16
+Multiple R-squared:  0.9966,	Adjusted R-squared:  0.9964 
+F-statistic:  5348 on 3 and 55 DF,  p-value: < 2.2e-16
 
 
-Teststatistic: -3.192 
+Teststatistic: -3.024 
 Critical values: 0.01= -4.93 0.05= -4.42 0.1= -4.11 
 
 Potential break point at position: 42 
@@ -689,42 +688,43 @@ Call:
 lm(formula = testmat)
 
 Residuals:
-     Min       1Q   Median       3Q      Max 
--1834422   -94403    -2496   165996   513979 
+    Min      1Q  Median      3Q     Max 
+-333653 -116006    1991  118176  386430 
 
 Coefficients:
               Estimate Std. Error t value Pr(>|t|)    
-(Intercept)  1.908e+06  4.627e+05   4.123 0.000125 ***
-y.l1         6.300e-01  9.451e-02   6.666 1.23e-08 ***
-trend        6.420e+04  1.694e+04   3.790 0.000370 ***
-du          -5.475e+05  2.252e+05  -2.432 0.018255 *  
-dt           7.178e+04  2.026e+04   3.543 0.000805 ***
+(Intercept)  1.788e+06  3.403e+05   5.254 2.59e-06 ***
+y.l1         6.552e-01  7.031e-02   9.319 7.81e-13 ***
+trend        5.986e+04  1.240e+04   4.827 1.18e-05 ***
+du          -6.453e+05  1.620e+05  -3.984 0.000205 ***
+dt           8.533e+04  1.643e+04   5.193 3.23e-06 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 323800 on 56 degrees of freedom
+Residual standard error: 188400 on 54 degrees of freedom
   (1 observation deleted due to missingness)
-Multiple R-squared:  0.9925,	Adjusted R-squared:  0.992 
-F-statistic:  1858 on 4 and 56 DF,  p-value: < 2.2e-16
+Multiple R-squared:  0.9973,	Adjusted R-squared:  0.9971 
+F-statistic:  4958 on 4 and 54 DF,  p-value: < 2.2e-16
 
 
-Teststatistic: -3.9148 
+Teststatistic: -4.9037 
 Critical values: 0.01= -5.57 0.05= -5.08 0.1= -4.82 
 
 Potential break point at position: 39 
 ```
 | Estadistico      | Año del cambio <br> estructural |¿Es estadisticamente significativo <br> el cambio estructural? | Valor    |  10%    |  5%     |  1%     |
 |------------------|:-------------------------------:|:-------------------------------------------------------------:|:--------:|:-------:|:-------:|:-------:|
-| $ZA_{Intercept}$ |  50                             | Si (du al 1%)                                                 |$-3.6435$ | $-4.11$ | $-4.42$ | $-4.93$ |
-| $ZA_{Trend}$     |  42                             | Si (dt al 1%)                                                 |$-3.192$  | $-4.58$ | $-4.80$ | $-5.34$ |
-| $ZA_{Both}$      |  39                             | Si (du al 5% y dt al 0.1%)                                    |$-3.9148$ | $-4.82$ | $-5.08$ | $-5.57$ |
+| $ZA_{Intercept}$ |  $2006$ = 1960+46               | Si (du al 1%)                                                 |$-3.6435$ | $-4.11$ | $-4.42$ | $-4.93$ |
+| $ZA_{Trend}$     |  $2004$ = 1960+44               | Si (dt al 1%)                                                 |$-3.192$  | $-4.58$ | $-4.80$ | $-5.34$ |
+| $ZA_{Both}$      |  $1999$ = 1960+44               | Si (du al 5% y dt al 0.1%)                                    |$-4.9037$*| $-4.82$ | $-5.08$ | $-5.57$ |
 
-La variable es no estacionaria porque:
-* Con el estadistico $ZA_{Intercept}$: $-3.6435>-4.11$, no se rechaza la hipótesis nula de raíz unitaria
-* Con el estadistico $ZA_{Trend}$: $-3.192>-4.58$, no se rechaza la hipótesis nula de raíz unitaria
-* Con el estadistico $ZA_{Both}$: $-3.9148>-4.82$, no se rechaza la hipótesis nula de raíz unitaria
+**Niveles de significancia: *** al 1%, ** al 5% y * al 10%**
 
-Dado que practicamente en todas las pruebas se concluye que la variable $PIBpc$ tiene raíz unitaria, entonces se procerde a sacarle la primera diferencia para obtener la variable $\Delta PIBpc$ y a esta aplicarle las mismas pruebas.
+De los tres estadisticos, el que cogio bien el año de la crisis económica de los finales de los 1990s fue $ZA_{Both}$. Por lo tanto, es el estadístico que vamos a analizar:
+* Con el estadistico $ZA_{Both}$: -5.08 < **-4.9037** < -4.82, no se rechaza la hipótesis nula de raíz unitaria 1% y 5%, y se rechaza al 10%. Por consiguiente, se concluye que hay raíz unitaria
+
+#### Conclusión:
+Todas las pruebas aplicadas parecen indicar la presencia de raíz unitaria en la variable $PIBpc$ y la estacionariedad en $C1PIBpc$
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
