@@ -39,7 +39,7 @@ donde,
 
 [^1]: **Tenga cuidado con las estimaciones que no convergen rápidamente. _R_ al igual que la mayoría de los paquetes econométricos estiman los parámetros de un modelo _ARMA()_ utilizando un procedimiento de búsqueda no lineal. Si la búsqueda no converge rápidamente, es posible que los parámetros estimados sean inestables. En tales circunstancias, agregar una o dos observaciones adicionales puede alterar en gran medida las estimaciones.**
 
-## 3. VERIFICACIÓN DE DIAGNOSTICO: 
+## 3. Verificación de diagnostico.
 
 La práctica estándar es dibujar los residuos para buscar valores atípicos y evidencia de períodos en los que el modelo no se ajusta bien a los datos. Una práctica común es crear residuos estandarizados dividiendo cada residuo, $\varepsilon_t$ , por su desviación estándar estimada, $\sigma$. Si los residuos se distribuyen normalmente, el gráfico de la serie $\frac{\varepsilon_t}{\sigma}$ debe ser tal que no más del $5$% queden fuera de la banda de $-1.96$ a $1.96$. Si los residuos estandarizados parecen ser mucho más grandes en algunos períodos que en otros, puede ser evidencia de un cambio estructural. 
 
