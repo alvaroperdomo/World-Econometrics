@@ -18,9 +18,6 @@ urkpssTest(x, type = c("mu", "tau"), lags = c("short", "long", "nil"), use.lag =
 |                         | **"tau"** para una prueba con intercepto (constante) y con tendencia temporal                                                                |
 | **lags**                | el máximo número de rezagos                                                                                                                  |
 | **use.lag**             | número de rezagos especificados por el usuario                                                                                               |
-| **doplot**              | indicador lógico, por defecto VERDADERO. ¿Debe mostrarse un gráfico de diagnóstico?                                                          | 
-|                         | **"TRUE"** para mostrar gráfico de diagnostico - **_Opción Predeterminada_**                                                                 |
-|                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                                                           |
 
 ## 2) Segunda Opción: Utilice el comando _ur.kpss_ [^2]
 
@@ -59,8 +56,7 @@ ndiffs(x, alpha = 0.05, test = c("kpss"), type = c("level", "trend"), ...)
 |                         | **"level"** para una prueba con intercepto (constante) pero sin tendencia temporal - **_Opción Predeterminada_**                     |
 |                         | **"trend"** para una regresión con intercepto (constante) y con tendencia temporal                                                   |
 
-#### De las tres opciones, mi preferida es la primera porque porque además de poder escoger el número exacto de rezagos (al igual que lo permite la segunda opción), también se puede utilizar el comando _doplot_ para mostrar un gráfico de diagnóstico sobre los residuos.
-#### Por último, se puede contrastar con la cuarta opción para tener una opinión adicional.
+#### De las tres opciones, mi preferida es la segunda porque reporta mejor información que la primera. Después, se puede contrastar con la tercera opción para tener una opinión adicional.
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
