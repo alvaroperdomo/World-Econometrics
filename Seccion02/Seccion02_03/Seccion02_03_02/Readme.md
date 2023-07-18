@@ -23,7 +23,7 @@ La $FACP$ se utiliza para determinar el componente $AR(p)$ del $ARMA(p,q)$. Iden
 [^1]: **Dentro del análisis no se toma en consideración el rezago _0_ porque la autocorrelación parcial en este rezego por definición siempre es igual a $1$.** 
 [^2]: **Si no conociéramos el verdadero proceso subyacente y estuvieramos utilizando datos mensuales, podría interesarnos incluir el componente AR(12). Después de todo, con los datos mensuales, cabe esperar alguna relación directa entre el valor de una variable y su valor en el mismo mes del año previo.**
 
-#### La parte de media móvil (MA) del proceso generador de datos
+#### La parte de media móvil ($MA$) del proceso generador de datos
 La $FAC$ se utiliza para determinar el componente $MA(q)$ del $ARMA(p,q)$. Identifique los rezagos de la $FAC$, del rezago $1$ en adelante, que estan aislados y que son superiores a $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{100}}=\frac{2}{10}=0.2$.[^3] No hay ningún rezago que se comporte así, lo que se observa es que las $FAC$ revelan una decaimieto progresivo (por ejemplo, los primeros tres rezagos de la $FAC$ son $0.74$, $0.58$ y $0.47$.). Por lo tanto, parece que no se genera un proceso $MA(q)$ dentro de nuestro $ARMA(p,q)$. 
 
 [^3]: **Dentro del análisis no se toma en consideración el rezago _0_ porque la autocorrelación total en este rezego por definición siempre es igual a $1$.** 
@@ -39,7 +39,6 @@ La tabla de abajo informa los resultados de las dos estimaciones
 | Indicadores                               | Modelo 1                | Modelo 2                | 
 |-------------------------------------------|:-----------------------:|:-----------------------:|
 | Grados de Libertad                        |$98$                     |$97$                     | 
-| SRC (Suma de Residuos al Cuadrado)        |$85.10$                  |$85.07$                  | 
 | $\hat{a_1}$  <br> (Error estándar)        |$0.7904$ <br> ($0.0624)$ |$0.7938$ <br> ($0.0643$) | 
 | $\hat{\beta_{12}}$  <br> (Error estándar) |                         |$-0.0325$ <br> ($0.11$)  | 
 | Criterio de Información de Akaike         |$441.9$                  |$443.9$                  | 
