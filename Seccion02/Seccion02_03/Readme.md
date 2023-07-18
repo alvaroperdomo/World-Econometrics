@@ -48,9 +48,7 @@ ggplot(dat, aes(year, C1PIBpc)) + scale_x_continuous(name="Años", limits=c(1961
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/a42692a0-f034-42b7-82b5-9aae03615a37)
 
-Del gráfico de **C1PIBpc** ya hablamos en la sección 2.2., por lo que no diremos nada mas al respecto.
-
-Antes de pasar a la etapa de identificación, vamos a preparar un poco la base de datos para que $R$ identifique a la variable **C1PIBpc** como una serie de tiempo
+Del gráfico de **C1PIBpc** ya hablamos en la sección 2.2., por lo que no diremos nada mas al respecto. Antes de pasar a la etapa de identificación, vamos a preparar un poco la base de datos para que $R$ identifique a la variable **C1PIBpc** como una serie de tiempo
 
 ``` r
 C1PIBpc_ <- dat[-c(1,61:63),] # Con este comando creamos la base de datos "C1PIBpc_" la cual es igual a la base de datos "dat", pero sin incluir los años 1961 (Fila (1) - del cual "dat" no existe información para C1PIBpc) y los años 2020-2023 (Filas (61-63) - los cuales no vamos a utilizar en la estimación de C1PIBpc) 
