@@ -1,9 +1,11 @@
 ## SECCIÓN 2.3.1.R. 
 # Las tres etapas de la metodología de Box-Jenkins (Aplicación en $R$)
 
-## Identificación:
+## 1) Identificación:
 
-### $FAC$ y $FACP$ muestrales
+La forma para gráficar una serie { $y_t$ } en $R$ ya la vimos en la sección 1.2. con el comando **ggplot**. Entonces, vamos a pasar directamente a cómo hacer el gráfico de la $FAC$ y de la $FACP$. 
+
+### Gráficos de las $FAC$ y $FACP$ muestrales
 Para gráficar la función de autocorrelación $FAC$ y la función de autocorrelación parcial $FACP$ muestrales copie los siguientes comandos
 
 ``` r
