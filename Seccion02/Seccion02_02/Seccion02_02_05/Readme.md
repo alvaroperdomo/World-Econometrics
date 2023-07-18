@@ -40,18 +40,19 @@ Obteniendose los siguientes gráficos:
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/971d2748-1b9c-4d4c-911f-8e3696749ee1)
 
 
-Las siguientes cuatrolineas en $R$, permiten armar dos subconjuntos de bases de datos:
+Las siguientes cuatrolineas en $R$, permiten armar cuatro subconjuntos de bases de datos:
 * uno en el cual se encuentre el PIB[^2] para el periodo 1960-2019 (subconjunto PIBpc_) y
 * otro en el cual se encuentre la variación del PIB durante el periodo 1961-2019 (subconjunto C1PIBpc_) [^3]
+* los subconjuntos PIBpc__ y C1PIBpc__ son dos subconjuntos iguales a PIBpc_ y a C1PIBpc_, con la diferencia que además incluyen la variale "year". Estos dos subconjuntos son utilizados para estimar una prueba MCO que se explicara más adelante. 
 
 [^2]: **En lo que resta de esta sección, cuando hagamos referencia al PIB, estaremos haciendo referencia de una forma simplificada al PIB de Colombia a precios constantes** 
 [^3]: **Se toma el periodo desde 1961 porque el dato de la variación del PIB en 1960 no se tiene porque se desconoce el valor del PIB de 1959** 
 
 ``` r
-PIBpc_ <- dat[-c(61:63),]
-C1PIBpc_ <- PIBpc_[-c(1),]
-PIBpc_ = subset(PIBpc_, select = c(PIBpc))
-C1PIBpc_ = subset(C1PIBpc_, select = c(C1PIBpc))
+PIBpc__ <- dat[-c(61:63),]
+C1PIBpc__ <- PIBpc__[-c(1),]
+PIBpc_ = subset(PIBpc__, select = c(PIBpc))
+C1PIBpc_ = subset(C1PIBpc__, select = c(C1PIBpc))
 ```
 
 Para el análisis de raíz unitaria que viene, se va a llamar (desde la base de datos PIBpc_) a una variable llamada $PIBpc$ que representa una serie de tiempo anual (la del PIB) que va desde 1960 hasta 2019. Por otro lado, se va a llamar (desde la base de datos C1PIBpc_) a una variable llamada $C1PIBpc$ que representa una serie de tiempo anual (la del cambio en el PIB) que va desde 1961 hasta 2019.
@@ -79,8 +80,8 @@ El decaimiento continuo pero moderado de la $FAC$ de la variable $PIBpc$ da una 
 Antes de desarrollar las diferentes pruebas de raíz unitaria, observe a partir de los dos gráficos del comienzo de la sección, que el PIB tiene una tendencia clara, mientras que la variación del PIB no tiene tendencia y parece tampo tener un intercepto (aunque este último aspecto no es claro. Para visualizar mejor esto, se desarrolla la siguiente prueba sencilla de Mínimos Cuadrados Ordinarios con respecto a la ecuación $y_t=a_0+a_2t+e_t$ donde $e_t$ es el residuo de la ecuación. Los comandos para llevar a cabo la estimación, fuenon:
 
 ``` r
-PIBpc_MCO <- lm(PIBpc ~ year, data = PIBpc_)
-C1PIBpc_MCO <- lm(C1PIBpc ~ year, data = C1PIBpc_)
+PIBpc_MCO <- lm(PIBpc ~ year, data = PIBpc__)
+C1PIBpc_MCO <- lm(C1PIBpc ~ year, data = C1PIBpc__)
 summary(PIBpc_MCO)
 summary(C1PIBpc_MCO)
 ```
