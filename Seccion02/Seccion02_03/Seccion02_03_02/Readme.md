@@ -1,11 +1,10 @@
 ## SECCIÓN 2.3.2
 # Estimación de un $ARMA$ - Ejemplos simulados 
 
-Una comparación de las $FAC$ y las $FACP$ muestrales con las de varios procesos $ARMA()$ teóricos puede sugerir varios modelos plausibles. Por medio de dos ejemplos sencillos, vamos a mostrar cómo se identifica el proceso generador de una variable.
+Una comparación de la función de autocorrelación $FAC$ y la función de autocorrelación parcial $FACP$ muestrales con las de varios procesos $ARMA()$ teóricos puede sugerir varios modelos plausibles. Por medio de dos ejemplos sencillos, vamos a mostrar cómo se identifica el proceso $ARMA()$ generador de una variable.
 
 ## Estimación de un modelo AR(1)
-Utilizemos un ejemplo específico para ver cómo la función de autocorrelación muestral ($FAC$) y la función de autocorrelación parcial muestral ($FACP$) se pueden utilizar como ayuda para identificar un modelo $ARMA()$. 
-Se utilizó R para obtener 100 números aleatorios $\varepsilon_t$ distribuidos normalmente con una varianza teórica igual $1$. Comenzando con $t=1$, los valores de $y_t$ se generaron usando la fórmula $y_{t-1}=0.7y_{t-1}+\varepsilon_t$ y la condición inicial $y_0=0$. Tenga en cuenta que el problema de no estacionariedad se evita ya que la condición inicial es consistente con el equilibrio a largo plazo. 
+En este ejemplo se generaron $100$ números aleatorios $\varepsilon_t$ distribuidos normalmente con una varianza teórica igual $1$. Comenzando con $t=1$, los valores de $y_t$ se generaron usando la fórmula $y_{t-1}=0.7y_{t-1}+\varepsilon_t$ y la condición inicial $y_0=0$. Note que la serie { y_t} que se construte es no estacionaria. 
 
 Las figuras de abajo muestran la $FAC$ y la $FACP$ muestral. 
 
