@@ -3,39 +3,38 @@
 
 La metodología de Box-Jenkins consta de las siguientes tres etapas:
 
-1. **Identificación:** Se examina visualmente
-   * el gráfico de la serie de tiempo,
-   * la función de autocorrelación ($FAC$)  y
-   * la función de autocorrelación parcial ($FACP$).
+1. **Identificación.** 
+2. **Estimación.** De acuerdo a la información de los gráficos, se plantean y se estiman modelos potenciales, se examinan los diferentes coeficientes $a_i$ y $\beta_i$ y se evaluan indicadores de parsimonia.
+3. **Verificación de diagnóstico.** Se garantiza que los residuos del modelo estimado imiten un proceso de ruido blanco.
 
-2. **Estimación:** De acuerdo a la información de los gráficos, se plantean y se estiman modelos potenciales, se examinan los diferentes coeficientes $a_i$ y $\beta_i$ y se evaluan indicadores de parsimonia.
+A continuación se revisa más en detalle cada uno de las etapas. 
 
-3. **Verificación de diagnóstico:** Se garantiza que los residuos del modelo estimado imiten un proceso de ruido blanco.
+## 1. Identificación
+Se examina visualmente
+* el gráfico de la serie de tiempo,
+* la función de autocorrelación ($FAC$)  y
+* la función de autocorrelación parcial ($FACP$).
 
-A continuación se revisa más en detalle cada uno de las etapas, posteriormente se plantean algunos ejemplos simulados y finalmente se desarrolla un ejemplo utilizando la basa de datos Indicadores de Desarrollo Económico del Banco Mundial.
+La trayectoria temporal de la serie proporciona información sobre valores atípicos, valores faltantes y cambios estructurales en los datos. Así mismo, las variables no estacionarias pueden tener una tendencia pronunciada o parecer serpentear sin una media o varianza constante a largo plazo. Los valores faltantes y los valores atípicos se pueden corregir en este punto. 
 
-## 1. IDENTIFICACIÓN
-La trayectoria temporal de la serie proporciona información sobre:
-* valores atípicos,
-* valores faltantes y
-* cambios estructurales en los datos.
+La $FACP$ y la $FAC$ se utilizan para determinar los componentes $AR()$ y $MA()$ del Modelo $ARMA()$, respectivamente. Más adelante, en la sección de 2.3.2, se puede ver más en detalle esta cuestión. 
 
-Así mismo, las variables no estacionarias pueden tener una tendencia pronunciada o parecer serpentear sin una media o varianza constante a largo plazo. Los valores faltantes y los valores atípicos se pueden corregir en este punto. 
+## 2. Estimación
+De acuerdo a los gráficos de las $FACP$ y $FAC$, se estiman varios potenciales modelos para luego ser comparados[^1].
 
-La $FACP$ y la $FAC$ se utilizan para determinar los componentes $AR()$ y $MA()$ del Modelo $ARMA()$, respectivamente. Más adelante, en la sección de ejemplos, se puede ver más en detalle esta cuestión. 
+Una idea fundamental en el enfoque de Box y Jenkins es el principio de parsimonia. Box y Jenkins argumentan que los modelos parsimoniosos producen mejores pronósticos que los modelos sobreparametrizados. Un modelo parsimonioso se adapta bien a los datos sin incorporar ningún coeficiente innecesario. El $R^2$ y el promedio de la Suma de los Residuos al Cuadrado son medidas comunes de bondad de ajuste en estimaciones de Mínimos Cuadrados Ordinarios. El problema con estas medidas es que el ajuste necesariamente mejora a medida que se incluyen más parámetros en el modelo. 
 
-## 2. ESTIMACIÓN:
-De acuerdo a los gráficos de las $FACP$ y $FAC$, se estiman varios potenciales modelos para luego ser comparados.
+La parsimonia sugiere usar el _Criterio de Información de Akaike_ y/o el _Criterio Bayesiano de Schwartz_ como medidas más apropiadas del ajuste general del modelo. En ambos casos, el modelo más parsimonioso es el que reporta un menor valor según el criterio escogido. Hay varias formas equivalentes de calcular ambos criterios, que pueden diferir en valor. Sin embargo, lo importante es que la forma escogida mantenga el orden en la parsimonia del criterio escogido. A continuación se presenta una tabla con diferentes formas de cálculo de ambos criterios.
 
-Una idea fundamental en el enfoque de Box y Jenkins es el principio de parsimonia. La incorporación de coeficientes adicionales aumenta necesariamente el ajuste del modelo (por ejemplo, el valor del $R^2$ aumenta) pero al costo de reducir los grados de libertad. 
+| Criterio de Información de Akaike        | Criterio Bayesiano de Schwatrz                                                                    
+|:----------------------------------------:|:--------------------------------------:|
+| $T \times \ln{SRC} + 2n$                 | $T \times \ln{SRC} + n \times \ln{t}$  |
+|                                                  |
+| |
 
-Box y Jenkins argumentan que los modelos parsimoniosos producen mejores pronósticos que los modelos sobreparametrizados. Un modelo parsimonioso se adapta bien a los datos sin incorporar ningún coeficiente innecesario. 
 
-El $R^2$ y el promedio de la Suma de los Residuos al Cuadrado son medidas comunes de bondad de ajuste en estimaciones de Mínimos Cuadrados Ordinarios. El problema con estas medidas es que el ajuste necesariamente mejora a medida que se incluyen más parámetros en el modelo. 
 
-La parsimonia sugiere usar el Criterio de Información de Akaike ($CIA$) y/o el Criterio Bayesiano de Schwartz ($CBS$) como medidas más apropiadas del ajuste general del modelo. 
-
-##### Tenga cuidado con las estimaciones que no convergen rápidamente. La mayoría de los paquetes econométricos estiman los parámetros de un modelo $ARMA()$ utilizando un procedimiento de búsqueda no lineal. Si la búsqueda no converge rápidamente, es posible que los parámetros estimados sean inestables. En tales circunstancias, agregar una o dos observaciones adicionales puede alterar en gran medida las estimaciones.
+[^1] **Tenga cuidado con las estimaciones que no convergen rápidamente. _R_ al igual que la mayoría de los paquetes econométricos estiman los parámetros de un modelo _ARMA()_ utilizando un procedimiento de búsqueda no lineal. Si la búsqueda no converge rápidamente, es posible que los parámetros estimados sean inestables. En tales circunstancias, agregar una o dos observaciones adicionales puede alterar en gran medida las estimaciones.**
 
 ## 3. VERIFICACIÓN DE DIAGNOSTICO: 
 
