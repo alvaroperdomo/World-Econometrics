@@ -406,6 +406,7 @@ Critical values of P-test are:
 critical values 1.95 3.11  4.17
 
 ```
+Los resultados de las pruebas $DF-GLS$ son:
 
 | Variable   | Estadistico   | Valor     |  10%    |  5%     |   1%    |
 |------------|---------------|:---------:|:-------:|:-------:|:-------:|
@@ -558,6 +559,7 @@ Critical value for a significance level of:
                 10pct  5pct 2.5pct  1pct
 critical values 0.347 0.463  0.574 0.739
 ```
+Los resultados de las pruebas $KPSS$ son:
 
 | Variable | Estadistico | Rezagos        | Valor         |  10%    |  5%     |  2.5%   |  1%     |
 |----------|-------------|:--------------:|:-------------:|:-------:|:-------:|:-------:|:-------:|
@@ -712,6 +714,9 @@ Critical values: 0.01= -5.57 0.05= -5.08 0.1= -4.82
 
 Potential break point at position: 39 
 ```
+
+Los resultados de las pruebas de Zivot-Andrews son:
+
 | Estadistico      | Año del cambio <br> estructural |¿Es estadisticamente significativo <br> el cambio estructural? | Valor    |  10%    |  5%     |  1%     |
 |------------------|:-------------------------------:|:-------------------------------------------------------------:|:--------:|:-------:|:-------:|:-------:|
 | $ZA_{Intercept}$ |  $2006$ = 1960+46               | Si (du al 1%)                                                 |$-3.6435$ | $-4.58$ | $-4.80$ | $-5.34$ |
