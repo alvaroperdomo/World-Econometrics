@@ -23,3 +23,6 @@ autoplot(pacf(x, plot = FALSE))
 [^1]: **El comando _autoplot_ tiene muchisimos más argumentos (buena parte de ellos estéticos), pero por lo pronto sólo nos interesan los dos que presentamos**
 
 ## 2) Estimación:
+La esmimación del modelo univariado se hace con el comando
+
+Arima(PIBpc, order=c(0,1,2))
