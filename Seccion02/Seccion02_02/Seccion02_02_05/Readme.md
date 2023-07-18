@@ -28,16 +28,17 @@ dat <- dat %>% arrange(year)
 dat <- na.omit(dat)
 dat <- mutate(dat, PIBpc_lag1 = lag(PIBpc, order_by = year), C1PIBpc=PIBpc-PIBpc_lag1, country=NULL, iso2c=NULL, iso3c=NULL)
 
-ggplot(dat, aes(year, PIBpc)) + scale_x_continuous(name="Años", limits=c(1960, 2019)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", title="PIB per cápita real de Colombia: 1960-2019", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+ggplot(dat, aes(year, PIBpc)) + scale_x_continuous(name="Años", limits=c(1960, 2019)) + geom_line (linewidth=0.2) + theme(plot.caption = element_text(size=7)) + labs(subtitle="1960-2019", y="Pesos constantes", title="PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 
-ggplot(dat, aes(year, C1PIBpc)) + scale_x_continuous(name="Años", limits=c(1961, 2019))  + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", title="Cambio en el PIB per cápita real de Colombia: 1961-2019", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+ggplot(dat, aes(year, C1PIBpc)) + scale_x_continuous(name="Años", limits=c(1961, 2019))  + geom_line (linewidth=0.2) + theme(plot.caption = element_text(size=7)) + labs(subtitle="1961-2019", y="Pesos constantes", title="Cambio en el PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+
 ```
 Obteniendose los siguientes gráficos:
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/f38730a5-5c71-40bd-abae-77012d6fb5e2)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ed1aee77-0496-46b4-9be0-225a72022b05)
 
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/971d2748-1b9c-4d4c-911f-8e3696749ee1)
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/fa3f1086-f7b2-4432-85cc-c33a4ab47796)
 
 Las siguientes cuatrolineas en $R$, permiten armar dos subconjuntos de bases de datos:
 * uno en el cual se encuentre el PIB[^2] para el periodo 1960-2019 (subconjunto PIBpc_) y
