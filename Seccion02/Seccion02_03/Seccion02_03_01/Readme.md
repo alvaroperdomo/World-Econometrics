@@ -28,12 +28,14 @@ La parsimonia sugiere usar el _Criterio de Información de Akaike_ y/o el _Crite
 
 | Criterio de Información de Akaike   | Criterio Bayesiano de Schwatrz |
 |:-----------------------------------:|:------------------------------:|
-| $T \ln{SRC} + 2n$                   | $T \ln{SRC} + n \ln{t}$        |
+| $T \ln{SRC} + 2n$                   | $T \ln{SRC} + n \ln{T}$        |
+| $2n - 2 \ln(L)$                     | $ n \ln{T}$  - 2 \ln(L)        |
 
 donde,
 * $T$ es el número de observaciones
 * $SRC$ es la suma de residuos al cuadrado
 * $n$ es el número de parametros estimados
+* $L$ es el máximo valor de la función de verosimilitud para el modelo estimado
 
 [^1]: **Tenga cuidado con las estimaciones que no convergen rápidamente. _R_ al igual que la mayoría de los paquetes econométricos estiman los parámetros de un modelo _ARMA()_ utilizando un procedimiento de búsqueda no lineal. Si la búsqueda no converge rápidamente, es posible que los parámetros estimados sean inestables. En tales circunstancias, agregar una o dos observaciones adicionales puede alterar en gran medida las estimaciones.**
 
