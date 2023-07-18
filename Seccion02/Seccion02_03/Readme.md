@@ -8,12 +8,12 @@ Esta sección se encuentra dividida en tres subsecciones. Para acceder a cada un
 | Subsecciones                                                                                                  | 
 |---------------------------------------------------------------------------------------------------------------|
 | [**2.3.1.** Las tres etapas de la metodología de Box-Jenkins](Seccion02_03_01/Readme.md)                      | 
-| [**2.3.2.** Ejemplos simulados](Seccion02_03_02/Readme.md)                                                    |
+| [**2.3.2.** Estimación de un ARMA - Ejemplos simulados](Seccion02_03_02/Readme.md)                            |
 | [**2.3.3.** Ejemplo utilizando la base de datos Indicadores de Desarrollo Mundial](Seccion02_03_03/Readme.md) |
 
 
 
-## 4. EJEMPLOS SIMULADOS: 
+4. EJEMPLOS SIMULADOS: 
 Una comparación de las $FAC$ y las $FACP$ muestrales con las de varios procesos $ARMA()$ teóricos puede sugerir varios modelos plausibles. Por medio de dos ejemplos sencillos, vamos a mostrar cómo se identifica el proceso generador de una variable.
 
 ### Estimación de un modelo AR(1)
