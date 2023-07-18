@@ -1,9 +1,17 @@
 ## SECCIÓN 2.3:
-# ANÁLISIS ARMA (METODOLOGÍA DE BOX Y JENKINS)
+# Análisis ARMA (La Metodología de Box-Jenkins)
 
-Box y Jenkins (1976) popularizaron un método de tres etapas para seleccionar el modelo $ARMA()$ apropiado para estimar una serie de tiempo univariada. Tenga, en cuenta que esta metodología sólo es valida en series estacionarias. Por lo tanto, como se comento anteriormente, si una serie de tiempo no es estacionaria, transformela en una serie estacionaria para poder aplicar la propuesta de Box y Jenkins.
+Box y Jenkins (1976) popularizaron una metodología para seleccionar el modelo $ARMA(p,q)$ apropiado para estimar una serie de tiempo univariada. Tenga, en cuenta que la misma sólo es valida en series estacionarias. Por lo tanto, como se comento anteriormente, si una serie de tiempo no es estacionaria, transformela en una serie estacionaria para poder aplicar la propuesta de Box y Jenkins.
 
-Las tres etapas son:
+EEsta sección se encuentra dividida en tres subsecciones. Para acceder a cada una de las subsecciones haga click en la tabla de abajo en la subsección respectiva. Sin embargo, lo ideal es que se aborden las tres secciones en el orden que esta prescrito.
+
+| Subsecciones                                                                                                  | 
+|---------------------------------------------------------------------------------------------------------------|
+| [**2.3.1.** Las tres etapas de la metodología de Box-Jenkins](Seccion02_03_01/Readme.md)                      | 
+| [**2.3.2.** Ejemplos simulados](Seccion02_03_02/Readme.md)                                                    |
+| [**2.3.3.** Ejemplo utilizando la base de datos Indicadores de Desarrollo Mundial](Seccion02_03_03/Readme.md) |
+
+La metodología de Box-Jenkins consta de las siguientes tres etapas:
 
 1. **Identificación:** Se examina visualmente
    * el gráfico de la serie de tiempo,
