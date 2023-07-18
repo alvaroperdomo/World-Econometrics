@@ -15,13 +15,9 @@ En la práctica, nunca conocemos el verdadero proceso de generación de datos. S
 El primer paso podría ser comparar la $FAC$ y la $FACP$ muestrales con las de los diversos modelos teóricos. 
 
 #### La parte autorregresiva ($AR$) del proceso generador de datos (las $FACP$)
-La $FACP$ se utiliza para determinar el componente $AR(p)$ del $ARMA(p,q)$. En el gráfico de la $FACP$ que se encuentra arriba, note que el único pico grande que se observa es en el rezago $1$. Por lo tanto, esto sugiere un potencial compomemte $AR(1)$ dentro del modelo $ARMA$.
+La $FACP$ se utiliza para determinar el componente $AR(p)$ del $ARMA(p,q)$. En el gráfico de la $FACP$ que se encuentra arriba, note que el único pico grande que se observa es en el rezago $1$. Por lo tanto, esto sugiere un potencial compomemte $AR(1)$ dentro del modelo $ARMA$ . El pico es de $0.74$ en el rezago $1$, y todas las otras $FACP$ (excepto la del rezago $12$) son muy pequeñas[^1]. A partir de la figura de la $FACP$, se puede ver que todas las $FACP$ a excepción de la $\phi_{11}$ (y del desfase en el rezago $12$) son menores que $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{100}}=\frac{2}{10}=0.2$ . 
 
-##### Sin embargo, si no conociéramos el verdadero proceso subyacente y estuvieramos utilizando datos mensuales, podríamos preocuparnos por la autocorrelación parcial significativa en el rezago $12$. Después de todo, con los datos mensuales, podríamos esperar alguna relación directa entre $y_t$ y $y_{t-12}$.
-
-El pico es de $0.74$ en el rezago $1$, y todas las otras $FACP$ (excepto la del rezago $12$) son muy pequeñas. 
-
-A partir de la figura de las $FACP$, se puede ver que todas las $FACP$ a excepción de la $\phi_{11}$ (y del desfase en el rezago $12$) son menores que $\frac{2}{\sqrt{}T}=0.2$ . 
+[^1]: **Si no conociéramos el verdadero proceso subyacente y estuvieramos utilizando datos mensuales, podríamos preocuparnos por la autocorrelación parcial significativa en el rezago _12_. Después de todo, con los datos mensuales, podríamos esperar alguna relación directa entre el valor de una variable y su valor en el mismo mes del año previo.**
 
 #### La parte de media móvil (MA) del proceso generador de datos (las _FAC_)
 Las $FAC$ revelan una decaimieto progresivo (por ejemplo, las primeras tres $FAC$ son $r_1=0.74$, $r_2=0.58$ y $r_3=0.47$.) que no dan la idea de un proceso $MA$. 
