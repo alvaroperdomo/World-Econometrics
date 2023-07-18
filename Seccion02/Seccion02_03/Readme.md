@@ -78,7 +78,9 @@ autoplot(pacf(C1PIBpc, plot = FALSE))
 
 
 ## 2) Estimación:
-La $FACP$ da a entender que la serie de **C1PIBpc** sigue un proceso autorregresivo de orden $1$, y la $FAC$ revela la existencia de un comportamiento de media movil de orden $1$ o de orden $2$. En consecuencia, vamos a comparar diferentes modelos $ARIMA(p,1,q)$ para la variable $PIBpc$ (recuerden que esto es equivalente a comparar los siguientes modelos $ARIMA(p,0,q)$ o $ARMA(p,q)$ para la variable $C1PIBpc$). Para la comparación, priemro vamos a visualizar [sin reportar los resultados de los diferentes ARIMA(p,I,q)] los resultados del _Criterio de Información de Akaike_ y del _Criterio Bayesiano de Schwartz_ 
+La $FACP$ da a entender que la serie de **C1PIBpc** sigue un proceso autorregresivo de orden $1$, y la $FAC$ revela la existencia de un comportamiento de media movil de orden $1$ o de orden $2$. En consecuencia, vamos a estimar diferentes modelos $ARIMA(p,1,q)$ para la variable $PIBpc$ [^1], para evaluar cuál especificación es más parsimoniosa. Para ello se copian los siguientes comandos:
+
+[^1]: **Recuerden que un modelo _ARIMA(p,1,q)_ para la variable _PIBpc_ es es equivalente a un modelo _ARIMA(p,0,q)_ o _ARMA(p,q)_ para la variable _C1PIBpc_.**
 
 ``` r
 arima1<- Arima(PIBpc, order=c(0,1,2))
@@ -90,7 +92,7 @@ arima5<- Arima(PIBpc, order=c(0,1,1))
 AIC(arima1,arima2,arima3,arima4,arima5)
 BIC(arima1,arima2,arima3,arima4,arima5)
 ```
-Obteniendo,
+Obteniendose,
 ``` r
 > AIC(arima1,arima2,arima3,arima4,arima5)
        df      AIC
@@ -107,14 +109,14 @@ arima3  4 1627.257
 arima4  3 1624.561
 arima5  2 1638.054
 ```
-Se puede apreciar que los menores valores del _Criterio de Información de Akaike_ (AIC) y del _Criterio Bayesiano de Schwartz_ (BIC) se presentan el modelo $ARIMA(1,1,0)$ de $PIBpc$ [o equivalentemente, el modelo $ARMA(1,0)$ o $AR(1)$ de $C1PIBpc$] en donde $AIC=1617.199$ y $BIC=1621.354. Al modelo escogido, dentro del código de $R$ lo hemos llamado como **arima2**
+Por consiguiente, según el _Criterio de Información de Akaike_ (AIC) y el _Criterio Bayesiano de Schwartz_ (BIC), dentro de los modelos analizados, el modelo más parsimonioso es el modelo $ARIMA(1,1,0)$ [el cual, dentro del código de $R$ lo hemos llamado **arima2**]. Más específicamente, los valores que se obtuvieron con el modelo $ARIMA(1,1,0)$ son: $AIC=1617.199$ y $BIC=1621.354. 
 
-Ahora visualizamos la estimación del modelo escogido, con el comando:
+Ahora, sabiendo cuál es el modelo más parsimonioso, procedemos a visualizar la estimación del modelo escogido, $y_t=a_1y_{t-1}+\varepsilon_t$, con el comando:
 ``` r
 summary(arima2)
 ```
+Obteniendose
 
-Obteniendo 
 ``` r
 > summary(arima2)
 Series: PIBpc 
@@ -132,6 +134,8 @@ Training set error measures:
                    ME     RMSE      MAE       MPE     MAPE      MASE       ACF1
 Training set 56740.45 206347.3 157757.3 0.5673997 1.512671 0.6526939 -0.1455209
 ```
+
+Note que el coeficiente estimado $\hat{a}_1=0.7326$ del modelo $ARIMA(1,1,0)$ es estadísticamente significativo (es decir, es más de dos veces superior a su error estándar de $0.0856$)
 
 ## 3) Verificación de diagnóstico:
 Una vez estimados los modelos y elegido el mejor de ellos, en este caso ARIMA(1,1,0), se procede a validarlo. Para ello en primer lugar se grafican los correlogramas de los residuos para comprobar que son ruido blanco:
