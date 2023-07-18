@@ -37,8 +37,8 @@ ur.kpss(y, type = c("mu", "tau"), lags = c("short", "long", "nil"), use.lag = NU
 |                         | **mu** para una prueba con intercepto (constante) pero sin tendencia temporal - **_Opción Predeterminada_**                                  |
 |                         | **"tau"** para una prueba con intercepto (constante) y con tendencia temporal                                                                |
 | **lags**                | el máximo número de rezagos utilizado en la corrección del error, se puede escoger cualquiera de las siguientes opciones:                    |
-|                         | **"short"** establece el número de rezagos de acuerdoa  √[4]{4 \times (n/100)}                                                               |
-|                         | **"longe"** establece el número de rezagos de acuerdoa  √[4]{12 \times (n/100)}                                                              |
+|                         | **"short"** establece el número de rezagos de acuerdo a $(4 \times \frac{n}{100})^{\frac{1}{4}}$                                             |
+|                         | **"longe"** establece el número de rezagos de acuerdoa  $(12 \times \frac{n}{100})^{\frac{1}{4}}$                                            |
 |                         | **"nil"** establece que no se hace ninguna corrección del error                                                                              |
 | **use.lag**             | número de rezagos especificados por el usuario                                                                                               |
 
