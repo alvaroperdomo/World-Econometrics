@@ -75,7 +75,7 @@ Obteniendose
 
 El decaimiento continuo pero moderado de la $FAC$ de la variable $PIBpc$ da una idea de raíz unitaria. Por otro lado, la $FAC$ de la variable $C1PIBpc$ desde el comienzo cae rapidamente, dando así una idea de estacionariedad. 
 
-Antes de desarrollar las diferentes pruebas de raíz unitaria, observe a partir de los dos gráficos del comienzo de la sección, que el PIB tiene una tendencia clara, mientras que la variación del PIB no tiene tendencia y parece tampo tener un intercepto (aunque este último aspecto no es claro. Para visualizar mejor esto, se desarrolla la siguiente prueba sencilla de Mínimos Cuadrados Ordinarios con respecto a la ecuación $y_t=a_0+a_2t+e_t$ donde $e_t$ es el residuo de la ecuación. Los comandos para llevar a cabo la estimación, son:
+Antes de desarrollar las diferentes pruebas de raíz unitaria, observe a partir de los dos gráficos del comienzo de la sección, que el PIB tiene una tendencia clara, mientras que la variación del PIB no tiene tendencia y parece tampo tener un intercepto (aunque este último aspecto no es claro. Para visualizar mejor esto, se desarrolla la siguiente prueba sencilla de Mínimos Cuadrados Ordinarios con respecto a la ecuación $y_t=a_0+a_2t+e_t$ donde $e_t$ es el residuo de la ecuación. Los comandos para llevar a cabo la estimación, fuenon:
 
 ``` r
 PIBpc_MCO <- lm(PIBpc ~ year, data = PIBpc_)
@@ -133,7 +133,7 @@ A continuación se desarrollan las distintas pruebas de raíz unitaria para las 
 
 ### 1) Prueba $ADF$
 
-En cuanto a la prueba $ADF$, el número óptimo de rezagos, para cada especificación, se va a escoger tomando en cuenta el Criterio de Información de Akaike y el Criterio Bayesiano de Schwartz.
+En cuanto a la prueba $ADF$, el número óptimo de rezagos, para cada especificación, se va a escoger tomando en cuenta el _Criterio de Información de Akaike_ y el _Criterio Bayesiano de Schwartz_. Para ello, se copiaron los siguientes comandos:
 
 ``` r
 PIBpc_ur_trend_AIC.df <- ur.df(y=PIBpc, type = c("trend"), lags = 10, selectlags = c("AIC"))
@@ -322,13 +322,13 @@ Y la variable $C1PIBpc$ es estacionaria porque:[^5]
 
 [^5]: **Aunque al 1% no se rechaza la hipótesis de raiz unitaria, al 5% y al 10% si se rechaza**
 
-Dado que con el Criterio de Información de Akaike se concluye que la prueba $ADF$ de la variable $PIBpc$ se debe hacer con $3$ rezagos y que la prueba $ADF$ de la variable $C1PIBpc$ se debe hacer con $1$ rezago. Entonces, vamos a utilizar los siguientes comando para evaluar la existencia de autocorrelación en los residuos de ambas pruebas (y por consiguiente, si los residuos son ruido blanco): 
+Dado que con el _Criterio de Información de Akaike_ se concluye que la prueba $ADF$ de la variable $PIBpc$ se debe hacer con $3$ rezagos y que la prueba $ADF$ de la variable $C1PIBpc$ se debe hacer con $1$ rezago. Entonces, se van utilizar los siguientes comandos para evaluar la existencia de autocorrelación en los residuos de ambas pruebas (y por consiguiente, si los residuos son ruido blanco): 
 
 ``` r
 PIBpc_urdfTest<- urdfTest(PIBpc, lags = 3, type = c("ct"), doplot = TRUE)
 C1PIBpc_urdfTest<- urdfTest(C1PIBpc, lags = 1, type = c("nc"), doplot = TRUE)
 ```  
-Por lo tanto, se obtienen los siguientes gráficos de prueba sobre los residuos de estimación de las pruebas,
+Obteniendose los siguientes gráficos,
 
 1) Para los residuos de la prueba $ADF$ de $PIBpc$
    
@@ -340,15 +340,22 @@ Por lo tanto, se obtienen los siguientes gráficos de prueba sobre los residuos 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6311e9ff-3bc6-4a4e-9802-5ea2fb825685)
 
 
-Los gráficos $FAC$ y $FACP$, que se encuentran arriba, revelan que los residuos de ambas pruebas $ADF$ no estan autocorrelacionados (estan dentro de las bandas de confianza)[^6]; por lo tanto, los residuos son ruido blanco y ambas pruebas de raíz unitaria estan bien hechas.
+Los gráficos $FAC$ y $FACP$, que se encuentran arriba, revelan que los residuos de ambas pruebas $ADF$ no estan autocorrelacionados (estan dentro de las bandas de confianza)[^6]; por lo tanto, los residuos son ruido blanco y se concluye que ambas pruebas de raíz unitaria estan bien hechas.
 
 [^6]: **Tenga en cuenta que la _FAC_ en el rezago cero siempre es igual a 1. Por lo tanto, la _FAC_ del rezago cero nunca se lee para interpretar la prueba de autocorrelación**
+
+Por úlimo, se utilizó el comando 
+
+``` r
+ndiffs(PIBpc, alpha = 0.05, test = c("adf"), type = c("trend"))
+```
+
 
 ****************************************************************************************************************************************************************************
 
 ### Prueba DF-GLS
 
-Dado que el $PIBpc$ es una variable que presenta tendencia, entonces se va a desarrollar su prueba DF-GLS con tendencia. Dado que el $C1PIBpc$ es una variable que no presenta tendencia, entonces se va a desarrollar su prueba DF-GLS  sin tendencia. El número de rezagos se va a escoger utilizando el Criterio Bayesiano de Schwartz.
+Dado que el $PIBpc$ es una variable que presenta tendencia, entonces se va a desarrollar su prueba $DF-GLS$ con tendencia. Dado que el $C1PIBpc$ es una variable que no presenta tendencia, entonces se va a desarrollar su prueba $DF-GLS$  sin tendencia. El número de rezagos se va a escoger utilizando el _Criterio Bayesiano de Schwartz_. Para el desarrollo de la prueba se copiaron los siguientes comandos:
 
 ``` r
 PIBpc_DFGLSt.ers <- ur.ers(PIBpc, type = c("P-test"), model = c("trend"),lag.max = 4)
@@ -407,7 +414,7 @@ La variable $C1PIBpc$ es estacionaria porque:
 ****************************************************************************************************************************************************************************
 
 ### Prueba KPSS
-Vamos a aplicar las opciones de rezago de R. Sin embargo, no olviden que según Newey y West (1994) la longitud de rezago se debe establecer proporcional a $T^{1/3}$, en decir $60^{1/3}=3.92 \sim 4$. Por otro lado, dado que el $PIBpc$ es una variable que presenta tendencia, entonces se decide testear dicha prueba con tendencia; y como el el $C1PIBpc$ es una variable que no presenta tendencia, entonces se decide testear dicha prueba sólo con el intercepto. Los comandos para las dos pruebas son:
+Vamos a aplicar las opciones de rezago de $R$. Sin embargo, no olviden que según Newey y West (1994) la longitud de rezago se debe establecer proporcional a $T^{1/3}$, en decir $60^{1/3}=3.92 \sim 4$. Por otro lado, dado que el $PIBpc$ es una variable que presenta tendencia, entonces se decide testear dicha prueba con tendencia; y como el el $C1PIBpc$ es una variable que no presenta tendencia, entonces se decide testear dicha prueba sólo con el intercepto. Los comandos para las dos pruebas son:
 
 ``` r
 PIBpc_1t.kpss <- ur.kpss(PIBpc, type = c("tau"), lags = c("short"), use.lag = NULL)
