@@ -19,7 +19,7 @@ La siguiente tabla presenta tres subsecciones en que esta dividida esta sección
 
 
 
-## Ejemplo utilizando la primera diferencia en el Producto Interno Bruto per cápita de Colombia a precios Constantes en moneda local
+# Ejemplo utilizando la primera diferencia en el Producto Interno Bruto per cápita de Colombia a precios Constantes en moneda local
 
 Para este ejercicio, dado que previamente ya habiamos demostrado que la variable $PIBpc$ es integrada de orden uno, es decir la variable $C1PIBpc$ es estacionaria. entonces, vamos a retomar parte del código utilizado en secciones previas para analizar el comportamiento de $C1PIBpc$ y a partir del mismo poder deducir el comportamiento de $PIBpc$, tal como se muestra a continuación:
 
@@ -63,7 +63,7 @@ PIBpc_ = subset(PIBpc_, select = c(PIBpc)) # Con este comando depuramos la base 
 PIBpc <- ts(PIBpc_) # Con el comando ts() identificamos a la variable PIBpc como una serie de tiempo que se encuentra en la base de datos PIBpc_
 ```
 
-**1) Identificación:**
+## 1) Identificación:
 Gráficamos las $FAC$ y $FACP$ muestrales de la variable **C1PIBpc**
 
 ``` r
@@ -75,7 +75,7 @@ autoplot(pacf(C1PIBpc, plot = FALSE))
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/23f5f1ea-291b-4722-9635-37fefbf30dfe)
 
 
-**2) Estimación:**
+## 2) Estimación:
 La $FACP$ da a entender que la serie de **C1PIBpc** sigue un proceso autorregresivo de orden $1$, y la $FAC$ revela la existencia de un comportamiento de media movil de orde $1$ o de orden $2$. En consecuencia, vamos a comparar los siguientes modelos $ARIMA(p,1,q)$ para la variable $PIBpc$ (esto es equivalente a comparar los siguientes modelos $ARIMA(p,0,q)$ para la variable $C1PIBpc$).
 
 ``` r
