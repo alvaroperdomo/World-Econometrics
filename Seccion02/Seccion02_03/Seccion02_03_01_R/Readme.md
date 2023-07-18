@@ -25,4 +25,14 @@ autoplot(pacf(x, plot = FALSE))
 ## 2) Estimación:
 La esmimación del modelo univariado se hace con el comando
 
-Arima(PIBpc, order=c(0,1,2))
+``` r
+Arima(x, order=c("p","I","q"))
+```
+
+| **Argumentos**            | **Descripción**                                                                                                                      | 
+|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| **x**                     | variable a la que se le va a hacer la estimación $ARIMA$                                                                             |
+| **order=c("p","I","q"))** | con este comado es escogen:                                                                                                          |
+|                           | **p**: El número de componentes autorregresivos que tiene la estimación $ARIMA$                                                      |
+|                           | **I**: El grado de integración de la estimación $ARIMA$                                                                              |
+|                           | **q**: El número de componentes autorregresivos que tiene la estimación $ARIMA$                                                      |
