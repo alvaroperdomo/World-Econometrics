@@ -47,7 +47,9 @@ La tabla de abajo informa los resultados de las dos estimaciones
 
 **Análicemos el Modelo 1**
 
-El coeficiente del **Modelo 1** satisface la condición de estabilidad $|\hat{a}_1| < 0$ y tiene un error estándar bajo (es decir, menor a dos desviaciones estandar del valor de $|\hat{a}_1|$ ). Como una verificación de diagnóstico útil, en el gráfico de abajo se dibuja la $FAC$ de los residuos del modelo ajustado (es decir, los residuos del modelo cuando se estima $y_t=a_1y_{t-1}+\varepsilon_t$). Note que las barras de las autocorrelaciones de todos los rezagos superiores a $0$ son inferiores a $0.2$. Es decir, los residuos parecen ser ruido blanco. 
+El coeficiente del **Modelo 1** satisface la condición de estabilidad $|\hat{a}_1| < 0$ y tiene un error estándar bajo (es decir, el coeficente estimado es menor a dos desviaciones estandar del valor de $|\hat{a}|$).
+
+Como una verificación de diagnóstico útil, en el gráfico de abajo se dibuja la $FAC$ de los residuos del modelo ajustado (es decir, los residuos del modelo cuando se estima $y_t=a_1y_{t-1}+\varepsilon_t$). Note que las barras de las autocorrelaciones de todos los rezagos superiores a $0$ son inferiores a $0.2$. Es decir, los residuos parecen ser ruido blanco. 
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/bf030c21-940a-4842-9971-5a42410f7b52)
 
@@ -59,21 +61,18 @@ Al examinar los resultados para el **Modelo 2**, observe que arroja estimaciones
 * el coeficiente autorregresivo de primer orden $|\hat{a}_1|$ y
 * el error estándar asociado. 
 
-Sin embargo, 
-* la estimación del $\hat{\beta}_{12}$ es de mala calidad;
-* el valor del estadístico t no es significativo y sugiere que debería eliminarse del modelo.
-  
-Además, la comparación de los valores del Criterio de Información de Akaike y del Criterio Bayesianode Schwartz de los dos modelos sugiere que los beneficios de reducir la Suma de Residuos al Cuadrado se ven superados por los efectos perjudiciales de la estimación de un parámetro adicional. 
+Sin embargo, la estimación del $\hat{\beta}_{12}$ es de mala calidad (es decir, el error estándar es superior a dos veces el valor absoluto de este coeficiente estimado)
 
-##### Todos estos indicadores apuntan a la elección del Modelo 1.
+Además, la comparación de los valores del _Criterio de Información de Akaike_ y del _Criterio Bayesiano de Schwartz_ de los dos modelos sugiere que es mucho mejor el **Modelo 1** al ser comparado con el **Modelo 2**. Por lo tanto, apunta a la elección del **Modelo 1**.
 
-### Estimación de un modelo $ARMA(1,1)$
+## Estimación de un modelo $ARMA(1,1)$
 
-Utilizemos un segundo ejemplo para ver cómo la función de autocorrelación muestral ($FAC$) y la función de autocorrelación parcial muestral ($FACP$) sirven para identificar un modelo $ARMA(1,1)$. 
-Se utilizó R para obtener 100 números aleatorios $\varepsilon_t$ distribuidos normalmente. Comenzando con $t=1$, los valores de $y_t$ se generaron usando la fórmula $y_{t-1}=-0.7y_{t-1}+\varepsilon_t+0.7\varepsilon_{t-1}$ y la condición inicial $y_0=0$ y $\varepsilon_0=0$. 
+Utilizemos un segundo ejemplo para ver cómo la $FAC$ y la $FACP$ muestrales sirven para identificar un modelo $ARMA(1,1)$. En este ejemplo se generaron $100$ números aleatorios $\varepsilon_t$ distribuidos normalmente. Comenzando con $t=1$, los valores de $y_t$ se generaron usando la fórmula $y_{t-1}=-0.7y_{t-1}+\varepsilon_t+0.7\varepsilon_{t-1}$ y la condición inicial $y_0=0$ y $\varepsilon_0=0$. 
 
-Las figuras de abajo muestran la $FAC$ y la $FACP$ muestral. Estos nos dan idea de un $ARMA(1,1)$.
+A continuación se van a desarrollar cada uno de los pasos de la metodología Box-Jenkins explicados en la sección 2.3.1. 
 
+### Identificación
+Las figuras de abajo muestran la $FAC$ y la $FACP$ muestrales. Las mismas nos dan idea de un $ARMA(1,1)$.
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/49d0c43b-c2a0-4f54-a68c-baa66931aafd)
 
