@@ -714,14 +714,22 @@ Potential break point at position: 39
 ```
 | Estadistico      | Año del cambio <br> estructural |¿Es estadisticamente significativo <br> el cambio estructural? | Valor    |  10%    |  5%     |  1%     |
 |------------------|:-------------------------------:|:-------------------------------------------------------------:|:--------:|:-------:|:-------:|:-------:|
-| $ZA_{Intercept}$ |  $2006$ = 1960+46               | Si (du al 1%)                                                 |$-3.6435$ | $-4.11$ | $-4.42$ | $-4.93$ |
-| $ZA_{Trend}$     |  $2004$ = 1960+44               | Si (dt al 1%)                                                 |$-3.192$  | $-4.58$ | $-4.80$ | $-5.34$ |
-| $ZA_{Both}$      |  $1999$ = 1960+44               | Si (du al 5% y dt al 0.1%)                                    |$-4.9037$*| $-4.82$ | $-5.08$ | $-5.57$ |
+| $ZA_{Intercept}$ |  $2006$ = 1960+46               | Si (du al 1%)                                                 |$-3.6435$ | $-4.58$ | $-4.80$ | $-5.34$ |
+| $ZA_{Trend}$     |  $2004$ = 1960+44               | Si (dt al 1%)                                                 |$-3.024$  | $-4.11$ | $-4.42$ | $-4.93  |
+| $ZA_{Both}$      |  $1999$ = 1960+44               | Si (du al 0.1% y dt al 0.1%)                                  |$-4.9037$*| $-4.82$ | $-5.08$ | $-5.57$ |
 
 **Niveles de significancia: *** al 1%, ** al 5% y * al 10%**
 
 De los tres estadisticos, el que cogio bien el año de la crisis económica de los finales de los 1990s fue $ZA_{Both}$. Por lo tanto, es el estadístico que vamos a analizar:
 * Con el estadistico $ZA_{Both}$: -5.08 < **-4.9037** < -4.82, no se rechaza la hipótesis nula de raíz unitaria 1% y 5%, y se rechaza al 10%. Por consiguiente, se concluye que hay raíz unitaria
+
+Copiando los siguientes comandos se puede visualizar gráficamente el comportamiento de los estadisticos, de acuerdo a la especificación escogida del modelo:
+``` r
+urzaTest(PIBpc, model = c("both"))
+```
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/1ba0c5be-0e21-43b6-aee6-038d594c5eb7)
+
+Es decir, hay un cambio estructural en pendiente y tendencia en el año 1999.
 
 #### Conclusión:
 Todas las pruebas aplicadas parecen indicar la presencia de raíz unitaria en la variable $PIBpc$ y la estacionariedad en $C1PIBpc$
