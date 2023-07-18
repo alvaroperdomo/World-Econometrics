@@ -18,12 +18,15 @@ En la práctica, nunca conocemos el verdadero proceso de generación de datos. S
 El primer paso podría ser comparar la $FAC$ y la $FACP$ muestrales con las de los diversos modelos teóricos. 
 
 #### La parte autorregresiva ($AR$) del proceso generador de datos
-La $FACP$ se utiliza para determinar el componente $AR(p)$ del $ARMA(p,q)$. Identifique los rezagos, aislados, de la $FACP$ que son superiores a $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{100}}=\frac{2}{10}=0.2$. Note que el pico más grande, por mucho, corresponde al rezago $1$ y vale $0.74$. esto sugiere un potencial compomemte $AR(1)$ dentro del modelo $ARMA(p,q)$. Todas las otras $FACP$ (excepto la del rezago $12$) son muy pequeñas[^1]
+La $FACP$ se utiliza para determinar el componente $AR(p)$ del $ARMA(p,q)$. Identifique los rezagos de la $FACP$, del rezago $1$ en adelante, que estan aislados y que son superiores a $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{100}}=\frac{2}{10}=0.2$ [^1]. Note que el pico más grande, por mucho, corresponde al rezago $1$ y vale $0.74$. esto sugiere un potencial compomemte $AR(1)$ dentro del modelo $ARMA(p,q)$. Todas las otras $FACP$ (excepto la del rezago $12$) son muy pequeñas[^2]
 
-[^1]: **Si no conociéramos el verdadero proceso subyacente y estuvieramos utilizando datos mensuales, podría interesarnos incluir el componente AR(12). Después de todo, con los datos mensuales, cabe esperar alguna relación directa entre el valor de una variable y su valor en el mismo mes del año previo.**
+[^1]: **Dentro del análisis no se toma en consideración el rezago _0_ porque la autocorrelación parcial en este rezego por definición siempre es igual a $1$.** 
+[^2]: **Si no conociéramos el verdadero proceso subyacente y estuvieramos utilizando datos mensuales, podría interesarnos incluir el componente AR(12). Después de todo, con los datos mensuales, cabe esperar alguna relación directa entre el valor de una variable y su valor en el mismo mes del año previo.**
 
 #### La parte de media móvil (MA) del proceso generador de datos
-La $FAC$ se utiliza para determinar el componente $MA(q)$ del $ARMA(p,q)$. Identifique los rezagos, aislados, de la $FAC$ que son superiores a $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{100}}=\frac{2}{10}=0.2$. No hay ningún rezago que se comporte así, lo que se observa es que las $FAC$ revelan una decaimieto progresivo (por ejemplo, los primeros tres rezagos de la $FAC$ son $0.74$, $0.58$ y $0.47$.). Por lo tanto, parece que no se genera un proceso $MA(q)$ dentro de nuestro $ARMA(p,q)$. 
+La $FAC$ se utiliza para determinar el componente $MA(q)$ del $ARMA(p,q)$. Identifique los rezagos de la $FAC$, del rezago $1$ en adelante, que estan aislados y que son superiores a $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{100}}=\frac{2}{10}=0.2$.[^3] No hay ningún rezago que se comporte así, lo que se observa es que las $FAC$ revelan una decaimieto progresivo (por ejemplo, los primeros tres rezagos de la $FAC$ son $0.74$, $0.58$ y $0.47$.). Por lo tanto, parece que no se genera un proceso $MA(q)$ dentro de nuestro $ARMA(p,q)$. 
+
+[^3]: **Dentro del análisis no se toma en consideración el rezago _0_ porque la autocorrelación total en este rezego por definición siempre es igual a $1$.** 
 
 ### Estimación y verificación de diagnóstico
 Aunque sabemos que los datos se generaron en realidad a partir de un proceso de $AR(1)$, es ilustrativo comparar las estimaciones de dos modelos diferentes. Suponga que estimamos un modelo $AR(1)$ e intentamos capturar el pico en el desfase $12$ con un coeficiente $MA$. Por lo tanto, consideramos los dos modelos tentativos:
@@ -43,11 +46,13 @@ La tabla de abajo informa los resultados de las dos estimaciones
 | Criterio Bayesianode Schwartz             |$444.5$                  |$449.1$                  | 
 | Ljung-Box Estadístico Q para los residuos <br> (nivel de significancia en paréntesis) |$Q(8) = 6.43 (0.490)$ <br> $Q(16) = 15.86 (0.391)$ <br> $Q(24) = 21.74 (0.536)$ |$Q(8) = 6.48 (0.485)$ <br> $Q(16) = 15.75 (0.400)$ <br> $Q(24) = 21.56 (0.547)$ | 
 
-El coeficiente del **Modelo 1** satisface la condición de estabilidad $|a_1|<0$ y tiene un error estándar bajo (el estadístico $t$ asociad0 es mayor que $12$). Como una verificación de diagnóstico útil, en la figura de abajo se dibuja la $FACP$ de los residuos del modelo ajustado (es decir, los residuos del modelo cuando se estima $y_t=a_1y_{t-1}+\varepsilon_t$). 
+**Análicemos el Modelo 1**
+
+El coeficiente del **Modelo 1** satisface la condición de estabilidad $|a_1|<0$ y tiene un error estándar bajo (es decir, menor a dos desviaciones estandar del valor de $|a_1|$). Como una verificación de diagnóstico útil, en el gráfico de abajo se dibuja la $FAC$ de los residuos del modelo ajustado (es decir, los residuos del modelo cuando se estima $y_t=a_1y_{t-1}+\varepsilon_t$). Note que las barras de las autocorrelaciones de todos los rezagos superiores a $0$ son inferiores a $0.2$. Es decir, los residuos parecen ser ruido blanco. 
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/bf030c21-940a-4842-9971-5a42410f7b52)
 
-Los estadísticos Q de los residuos indican que:
+El estadistico $Q$ de los residuos a diferentes rezagos indica que:
 * cada una de las autocorrelaciones es menor que dos desviaciones estándar de cero.
 * como grupo, los rezagos $1$ a $8$, $1$ a $16$ y $1$ a $24$ no son significativamente diferentes de cero. 
 
