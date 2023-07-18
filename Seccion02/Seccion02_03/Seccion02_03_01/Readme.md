@@ -17,7 +17,7 @@ Se examina visualmente
 
 La trayectoria temporal de la serie proporciona información sobre valores atípicos, valores faltantes y cambios estructurales en los datos. Así mismo, las variables no estacionarias pueden tener una tendencia pronunciada o parecer serpentear sin una media o varianza constante a largo plazo. Los valores faltantes y los valores atípicos se pueden corregir en este punto. 
 
-La $FACP$ y la $FAC$ se utilizan para determinar los componentes $AR()$ y $MA()$ del Modelo $ARMA()$, respectivamente. Más adelante, en la sección de 2.3.2, se puede ver más en detalle esta cuestión. 
+La $FACP$ y la $FAC$ se utilizan para determinar los componentes $AR()$ y $MA()$ del Modelo $ARMA()$, respectivamente. Más adelante, en las secciones de 2.3.2 y 2.3.3, se muestran ejemplos que ayudan a entender mejor cómo opera ésto. 
 
 ## 2. Estimación
 De acuerdo a los gráficos de las $FACP$ y $FAC$, se estiman varios potenciales modelos para luego ser comparados[^1].
