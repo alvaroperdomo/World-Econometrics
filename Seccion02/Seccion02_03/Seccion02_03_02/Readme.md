@@ -6,7 +6,10 @@ Una comparación de la función de autocorrelación $FAC$ y la función de autoc
 ## Estimación de un modelo AR(1)
 En este ejemplo se generaron $100$ números aleatorios $\varepsilon_t$ distribuidos normalmente con una varianza teórica igual $1$. Comenzando con $t=1$, los valores de $y_t$ se generaron usando la fórmula $y_{t-1}=0.7y_{t-1}+\varepsilon_t$ y la condición inicial $y_0=0$. Note que la serie { $y_t$ } que se construye es estacionaria, por lo que es factible aplicar la metodología de Box-Jenkins. 
 
-Las figuras de abajo muestran la $FAC$ y la $FACP$ muestrales. 
+A continuación se van a desarrollar cada uno de los pasos de la metodología Box-Jenkins explicados en la sección 2.3.1. 
+
+### Identificación
+Las figuras de abajo muestran la $FAC$ y la $FACP$ muestrales de { $y_t$ } (en el eje vertical se muestran, respectivamente, el valor de las autocorrelaciones totales y parciales de la muestra para cada uno de los rezagos que se presentan en el eje horizontal). 
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/d051567c-1c96-4305-9a5b-f2f9340192da)
 
@@ -14,20 +17,19 @@ En la práctica, nunca conocemos el verdadero proceso de generación de datos. S
 
 El primer paso podría ser comparar la $FAC$ y la $FACP$ muestrales con las de los diversos modelos teóricos. 
 
-#### La parte autorregresiva ($AR$) del proceso generador de datos (las $FACP$)
-La $FACP$ se utiliza para determinar el componente $AR(p)$ del $ARMA(p,q)$. En el gráfico de la $FACP$ que se encuentra arriba, note que el único pico grande que se observa es en el rezago $1$. Por lo tanto, esto sugiere un potencial compomemte $AR(1)$ dentro del modelo $ARMA$ . El pico es de $0.74$ en el rezago $1$, y todas las otras $FACP$ (excepto la del rezago $12$) son muy pequeñas[^1]. A partir de la figura de la $FACP$, se puede ver que todas las $FACP$ a excepción de la $\phi_{11}$ (y del desfase en el rezago $12$) son menores que $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{100}}=\frac{2}{10}=0.2$ . 
+#### La parte autorregresiva ($AR$) del proceso generador de datos
+La $FACP$ se utiliza para determinar el componente $AR(p)$ del $ARMA(p,q)$. Identifique los rezagos, aislados, de la $FACP$ que son superiores a $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{100}}=\frac{2}{10}=0.2$. Note que el pico más grande, por mucho, corresponde al rezago $1$ y vale $0.74$. esto sugiere un potencial compomemte $AR(1)$ dentro del modelo $ARMA(p,q)$. Todas las otras $FACP$ (excepto la del rezago $12$) son muy pequeñas[^1]
 
-[^1]: **Si no conociéramos el verdadero proceso subyacente y estuvieramos utilizando datos mensuales, podríamos preocuparnos por la autocorrelación parcial significativa en el rezago _12_. Después de todo, con los datos mensuales, podríamos esperar alguna relación directa entre el valor de una variable y su valor en el mismo mes del año previo.**
+[^1]: **Si no conociéramos el verdadero proceso subyacente y estuvieramos utilizando datos mensuales, podría interesarnos incluir el componente AR(12). Después de todo, con los datos mensuales, cabe esperar alguna relación directa entre el valor de una variable y su valor en el mismo mes del año previo.**
 
-#### La parte de media móvil (MA) del proceso generador de datos (las _FAC_)
-Las $FAC$ revelan una decaimieto progresivo (por ejemplo, las primeras tres $FAC$ son $r_1=0.74$, $r_2=0.58$ y $r_3=0.47$.) que no dan la idea de un proceso $MA$. 
+#### La parte de media móvil (MA) del proceso generador de datos
+La $FAC$ se utiliza para determinar el componente $MA(q)$ del $ARMA(p,q)$. Identifique los rezagos, aislados, de la $FAC$ que son superiores a $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{100}}=\frac{2}{10}=0.2$. No hay ningún rezago que se comporte así, lo que se observa es que las $FAC$ revelan una decaimieto progresivo (por ejemplo, los primeros tres rezagos de la $FAC$ son $0.74$, $0.58$ y $0.47$.). Por lo tanto, parece que no se genera un proceso $MA(q)$ dentro de nuestro $ARMA(p,q)$. 
 
-#### Análisis de la conjetura
-
+### Estimación y verificación de diagnóstico
 Aunque sabemos que los datos se generaron en realidad a partir de un proceso de $AR(1)$, es ilustrativo comparar las estimaciones de dos modelos diferentes. Suponga que estimamos un modelo $AR(1)$ e intentamos capturar el pico en el desfase $12$ con un coeficiente $MA$. Por lo tanto, consideramos los dos modelos tentativos:
 
-* **Modelo 1 - _AR(1)_:** $y_t=a_1y_{t-1}+\varepsilon_t$
-* **Modelo 2 - _ARMA(1,12)_:** $y_t=a_1y_{t-1}+\varepsilon_t+\beta_{12}\varepsilon_{t-12} $
+* **Modelo 1 - $AR(1)$:** $y_t=a_1y_{t-1}+\varepsilon_t$
+* **Modelo 2 - $ARMA(1,12)$:** $y_t=a_1y_{t-1}+\varepsilon_t+\beta_{12}\varepsilon_{t-12} $
 
 La tabla de abajo informa los resultados de las dos estimaciones
 
@@ -41,7 +43,7 @@ La tabla de abajo informa los resultados de las dos estimaciones
 | Criterio Bayesianode Schwartz             |$444.5$                  |$449.1$                  | 
 | Ljung-Box Estadístico Q para los residuos <br> (nivel de significancia en paréntesis) |$Q(8) = 6.43 (0.490)$ <br> $Q(16) = 15.86 (0.391)$ <br> $Q(24) = 21.74 (0.536)$ |$Q(8) = 6.48 (0.485)$ <br> $Q(16) = 15.75 (0.400)$ <br> $Q(24) = 21.56 (0.547)$ | 
 
-El coeficiente del Modelo 1 satisface la condición de estabilidad $|a_1|<0$ y tiene un error estándar bajo (el estadístico t asociada es mayor que $12$). Como una verificación de diagnóstico útil, dibujamos el correlograma de los residuos del modelo ajustado en la figura de abajo. 
+El coeficiente del Modelo 1 satisface la condición de estabilidad $|a_1|<0$ y tiene un error estándar bajo (el estadístico $t$ asociad0 es mayor que $12$). Como una verificación de diagnóstico útil, dibujamos el correlograma de los residuos del modelo ajustado en la figura de abajo. 
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/bf030c21-940a-4842-9971-5a42410f7b52)
 
