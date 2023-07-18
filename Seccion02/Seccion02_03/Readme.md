@@ -78,13 +78,13 @@ autoplot(pacf(C1PIBpc, plot = FALSE))
 
 
 ## 2) Estimación:
-La $FACP$ da a entender que la serie de **C1PIBpc** sigue un proceso autorregresivo de orden $1$, y la $FAC$ revela la existencia de un comportamiento de media movil de orde $1$ o de orden $2$. En consecuencia, vamos a comparar los siguientes modelos $ARIMA(p,1,q)$ para la variable $PIBpc$ (esto es equivalente a comparar los siguientes modelos $ARIMA(p,0,q)$ para la variable $C1PIBpc$).
+La $FACP$ da a entender que la serie de **C1PIBpc** sigue un proceso autorregresivo de orden $1$, y la $FAC$ revela la existencia de un comportamiento de media movil de orden $1$ o de orden $2$. En consecuencia, vamos a comparar diferentes modelos $ARIMA(p,1,q)$ para la variable $PIBpc$ (recuerden que esto es equivalente a comparar los siguientes modelos $ARIMA(p,0,q)$ o $ARMA(p,q)$ para la variable $C1PIBpc$). Para la comparación, priemro vamos a visualizar [sin reportar los resultados de los diferentes ARIMA(p,I,q)] los resultados del _Criterio de Información de Akaike_ y del _Criterio Bayesiano de Schwartz_ 
 
 ``` r
 arima1<- Arima(PIBpc, order=c(0,1,2))
-arima2<- Arima(PIBpc, order=c(1,1,0))
-arima3<- Arima(PIBpc, order=c(1,1,2))
-arima4<- Arima(PIBpc, order=c(1,1,1))
+arima2<- Arima(PIBpc, order=c(1,1,0))  # Este es uno de los modelos que parecen identificar las FAC y FACP
+arima3<- Arima(PIBpc, order=c(1,1,2))  # Este es uno de los modelos que parecen identificar las FAC y FACP
+arima4<- Arima(PIBpc, order=c(1,1,1))  
 arima5<- Arima(PIBpc, order=c(0,1,1))
 
 AIC(arima1,arima2,arima3,arima4,arima5)
@@ -107,9 +107,33 @@ arima3  4 1627.257
 arima4  3 1624.561
 arima5  2 1638.054
 ```
-Se puede apreciar que los menores valores del Criterio de Información de Akaike (AIC) y del Criterio Bayesiano de Schwartz (BIC) se presentan el modelo ARIMA(1,1,0) en donde $AIC=1617.199$ y $BIC=1621.354. 
+Se puede apreciar que los menores valores del _Criterio de Información de Akaike_ (AIC) y del _Criterio Bayesiano de Schwartz_ (BIC) se presentan el modelo $ARIMA(1,1,0)$ de $PIBpc$ [o equivalentemente, el modelo $ARMA(1,0)$ o $AR(1)$ de $C1PIBpc$] en donde $AIC=1617.199$ y $BIC=1621.354. Al modelo escogido, dentro del código de $R$ lo hemos llamado como **arima2**
 
-**3) Verificación de diagnóstico:**
+Ahora visualizamos la estimación del modelo escogido, con el comando:
+``` r
+summary(arima2)
+```
+
+Obteniendo 
+``` r
+> summary(arima2)
+Series: PIBpc 
+ARIMA(1,1,0) 
+
+Coefficients:
+         ar1
+      0.7326
+s.e.  0.0856
+
+sigma^2 = 4.405e+10:  log likelihood = -806.6
+AIC=1617.2   AICc=1617.41   BIC=1621.35
+
+Training set error measures:
+                   ME     RMSE      MAE       MPE     MAPE      MASE       ACF1
+Training set 56740.45 206347.3 157757.3 0.5673997 1.512671 0.6526939 -0.1455209
+```
+
+## 3) Verificación de diagnóstico:
 Una vez estimados los modelos y elegido el mejor de ellos, en este caso ARIMA(1,1,0), se procede a validarlo. Para ello en primer lugar se grafican los correlogramas de los residuos para comprobar que son ruido blanco:
 ``` r
 autoplot(acf(arima2$residuals, plot = FALSE))
