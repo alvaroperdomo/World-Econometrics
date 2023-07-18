@@ -64,7 +64,9 @@ PIBpc <- ts(PIBpc_) # Con el comando ts() identificamos a la variable PIBpc como
 ```
 
 ## 1) Identificación:
-Gráficamos las $FAC$ y $FACP$ muestrales de la variable **C1PIBpc**
+Gráficamos las $FAC$ y $FACP$ muestrales de la variable **C1PIBpc** utilizando el comando _autoplot_[^1]
+
+[^1] : **Observe que el comando _autoplot_ no gráfica las funciones para el rezago 0 porque es redundante hacerlo ta que siempre valen 1**
 
 ``` r
 autoplot(acf(C1PIBpc, plot = FALSE))
