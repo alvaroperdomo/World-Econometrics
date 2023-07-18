@@ -21,3 +21,5 @@ autoplot(pacf(x, plot = FALSE))
 |                      | **FALSE** Saca una sola opción de gráfico                                                                                                                |
 
 [^1]: **El comando _autoplot_ tiene muchisimos más argumentos (buena parte de ellos estéticos), pero por lo pronto sólo nos interesan los dos que presentamos**
+
+## 2) Estimación:
