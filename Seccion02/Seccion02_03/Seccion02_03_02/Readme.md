@@ -48,22 +48,20 @@ La tabla de abajo informa los resultados de las dos estimaciones
 
 **Análicemos el Modelo 1**
 
-El coeficiente del **Modelo 1** satisface la condición de estabilidad $|a_1|<0$ y tiene un error estándar bajo (es decir, menor a dos desviaciones estandar del valor de $|a_1|$). Como una verificación de diagnóstico útil, en el gráfico de abajo se dibuja la $FAC$ de los residuos del modelo ajustado (es decir, los residuos del modelo cuando se estima $y_t=a_1y_{t-1}+\varepsilon_t$). Note que las barras de las autocorrelaciones de todos los rezagos superiores a $0$ son inferiores a $0.2$. Es decir, los residuos parecen ser ruido blanco. 
+El coeficiente del **Modelo 1** satisface la condición de estabilidad $|\hat{a_1}|<0$ y tiene un error estándar bajo (es decir, menor a dos desviaciones estandar del valor de $|\hat{a_1}|$). Como una verificación de diagnóstico útil, en el gráfico de abajo se dibuja la $FAC$ de los residuos del modelo ajustado (es decir, los residuos del modelo cuando se estima $y_t=a_1y_{t-1}+\varepsilon_t$). Note que las barras de las autocorrelaciones de todos los rezagos superiores a $0$ son inferiores a $0.2$. Es decir, los residuos parecen ser ruido blanco. 
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/bf030c21-940a-4842-9971-5a42410f7b52)
 
-El estadistico $Q$ de los residuos a diferentes rezagos indica que:
-* cada una de las autocorrelaciones es menor que dos desviaciones estándar de cero.
-* como grupo, los rezagos $1$ a $8$, $1$ a $16$ y $1$ a $24$ no son significativamente diferentes de cero. 
+Confirmando lo anterior, en la tabla de arriba, el estadistico $Q$ de los residuos del modelo ajustado a diferentes rezagos indica que como grupo, los rezagos $1$ a $8$, $1$ a $16$ y $1$ a $24$ no son significativamente diferentes de cero (es decir, el nivel de significancia, de cada uno de los estadísticos $Q$ es superior al 5%). Esto es  una fuerte evidencia de que el modelo $AR(1)$ se ajusta bien con los datos. Después de todo, si las autocorrelaciones de los residuos fueran significativas, el modelo $AR(1)$ no usaría toda la información disponible sobre los movimientos en la secuencia { $y_t$ }
 
-Esta es una fuerte evidencia de que el modelo $AR(1)$ se ajusta bien con los datos. Después de todo, si las autocorrelaciones de los residuos fueran significativas, el modelo $AR(1)$ no usaría toda la información disponible sobre los movimientos en la secuencia { $y_t$ }
+**Análicemos el Modelo 2**
 
-Al examinar los resultados para el Modelo 2, observe que ambos modelos arrojan estimaciones similares para :
-* el coeficiente autorregresivo de primer orden y
+Al examinar los resultados para el **Modelo 2**, observe que arroja estimaciones similares a las del **Modelo 1** para :
+* el coeficiente autorregresivo de primer orden $|\hat{a_1}|$ y
 * el error estándar asociado. 
 
 Sin embargo, 
-* la estimación para $\beta_{12}\$ es de mala calidad;
+* la estimación para $\hat{beta_{12}}$ es de mala calidad;
 * el valor del estadístico t no es significativo y sugiere que debería eliminarse del modelo.
   
 Además, la comparación de los valores del Criterio de Información de Akaike y del Criterio Bayesianode Schwartz de los dos modelos sugiere que los beneficios de reducir la Suma de Residuos al Cuadrado se ven superados por los efectos perjudiciales de la estimación de un parámetro adicional. 
