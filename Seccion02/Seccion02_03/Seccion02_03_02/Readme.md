@@ -10,12 +10,12 @@ Las figuras de abajo muestran la $FAC$ y la $FACP$ muestrales.
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/d051567c-1c96-4305-9a5b-f2f9340192da)
 
-En la práctica, nunca conocemos el verdadero proceso de generación de datos. Suponga que se nos presentan los $100$ valores muestrales de la figura de arriba y se nos pide descubrir el verdadero proceso utilizando la metodología de Box-Jenkins. 
+En la práctica, nunca conocemos el verdadero proceso de generación de datos. Suponga que se nos presentan los $100$ valores muestrales que originaron las dos figuras de arriba y se nos pide descubrir el verdadero proceso $ARMA(p,q)$ utilizando la metodología de Box-Jenkins. 
 
-El primer paso podría ser comparar la $FAC$ muestral y la $FACP$ muestral con las de los diversos modelos teóricos. 
+El primer paso podría ser comparar la $FAC$ y la $FACP$ muestrales con las de los diversos modelos teóricos. 
 
-#### La parte autorregresiva (AR) del proceso generador de datos (las $FACP$)
-El único pico grande que se observa en el rezago $1$ de la $FACP$ sugiere un modelo $AR(1)$.
+#### La parte autorregresiva ($AR$) del proceso generador de datos (las $FACP$)
+La $FACP$ se utiliza para determinar el componente $AR(p)$ del $ARMA(p,q)$. En el gráfico de la $FACP$ que se encuentra arriba, note que el único pico grande que se observa es en el rezago $1$. Por lo tanto, esto sugiere un potencial compomemte $AR(1)$ dentro del modelo $ARMA$.
 
 ##### Sin embargo, si no conociéramos el verdadero proceso subyacente y estuvieramos utilizando datos mensuales, podríamos preocuparnos por la autocorrelación parcial significativa en el rezago $12$. Después de todo, con los datos mensuales, podríamos esperar alguna relación directa entre $y_t$ y $y_{t-12}$.
 
