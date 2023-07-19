@@ -200,39 +200,52 @@ Como $0.38>0.10$ entonces no se rechaza la hipótesis nula aun al 10% de signifi
 
 ## Pronóstico
 
-Ahora vamos a hacer un pronostico de tres periodos con esta variable (correspondiente al periodo 2020-2022)
+Ahora vamos a hacer un pronostico de tres periodos (correspondiente al periodo 2020-2022) con la especificación $ARIMA$ escogida
 ``` r
-forecast1<-forecast(arima2, level = c(95), h = 3)
+forecast1<-forecast(arima2d, level = c(95), h = 3)
 summary(forecast1)
 autoplot(forecast1)
 ```
 Obteniendo:
 ``` r
-Forecast method: ARIMA(1,1,0)
+> summary(forecast1)
+
+Forecast method: ARIMA(1,1,0) with drift
 
 Model Information:
 Series: PIBpc 
-ARIMA(1,1,0) 
+ARIMA(1,1,0) with drift 
 
 Coefficients:
-         ar1
-      0.7326
-s.e.  0.0856
+         ar1      drift
+      0.5256  205388.50
+s.e.  0.1087   52528.73
 
-sigma^2 = 4.405e+10:  log likelihood = -806.6
-AIC=1617.2   AICc=1617.41   BIC=1621.35
+sigma^2 = 3.933e+10:  log likelihood = -802.52
+AIC=1611.04   AICc=1611.48   BIC=1617.28
 
 Error measures:
-                   ME     RMSE      MAE       MPE     MAPE      MASE       ACF1
-Training set 56740.45 206347.3 157757.3 0.5673997 1.512671 0.6526939 -0.1455209
+                   ME     RMSE      MAE         MPE     MAPE      MASE       ACF1
+Training set 1266.823 193299.6 142613.8 -0.08571389 1.360031 0.5900399 0.01941263
 
 Forecasts:
    Point Forecast    Lo 95    Hi 95
-61       17725632 17314285 18136980
-62       17847959 17025052 18670866
-63       17937581 16693138 19182024
+61       17775884 17387182 18164587
+62       17987489 17278445 18696534
+63       18196145 17199508 19192782
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/09900197-149b-460e-b481-51c942aa0a54)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/75b3233b-dd17-43cc-819f-27e23c508b20)
+
+Noten que la tendencia de la economía antes de la pandemia del Covid-19 era creciente, pero con una tendencia crecimiento había disminuido en los últimos años. Este comportamiento se trasladó al compartamiento de las proyecciones del $PIBpc$. En la siguiente tabla contrastamos las proyecciones del PIB per cápita real (y su banda de confianza al 95%) con los resultados reales durante el periodo en cuention:
+
+| Año    | Dato Real | Pronóstico | Piso de la <br> banda de confianza | Techo de la <br> banda de confianza |
+|:------:|:---------:|:----------:|:----------------------------------:|:-----------------------------------:| 
+| $2019$ |$17558668$ |            |                                    |                                     | 
+| $2020$ |$16047602$ |$17775884$  | $17387182$                         | $18164587$                          | 
+| $2021$ |$17612821$ |$17987489$  | $17278445$                         | $18696534$                          | 
+| $2022$ |$18802572$ |$18196145$  | $17199508$                         | $19192782$                          | 
+
+Durante el año $2020$, a raíz de la cuarentena producto de la pandemia del Covid-19 se dio un crecimiento negativo de la economía que llevo a situar a la producción real por debajo de su valor tendencial. Sin embargo, durante los años $2021$ y $2022$ se dió un repunte bastante fuerte en la producción, colocando a la producción real por encima de su valor promedio de diagnóstico (pero, aún dentro de la banda de confianza del análisis)   
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
