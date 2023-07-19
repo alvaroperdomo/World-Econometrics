@@ -27,7 +27,7 @@ Es importante que los alumnos además de tener instalados $R$ y [_**RStudio**_](
 A las personas que no utilizan regularmente $R$ se les recomienda desarrollar de antemano los tutoriales de https://learnr.numbat.space/
 
 ## Dirigido a
-Los contenidos presentados en este curso están dirigidos a estudiantes y profesionales de diferentes disciplinas que requieran aprender y/o fortalecer sus conocimientos en análisis de series de tiempo en R.
+Los contenidos presentados en este curso están dirigidos a estudiantes y profesionales de diferentes disciplinas que requieran aprender y/o fortalecer sus conocimientos en análisis de series de tiempo en $R$.
 
 ## Metodología
 La primera sección del curso comienza con una explicación de lo que es el análisis de series de tiempo y de las caracteristicas principales de la base de datos "_Indicadores de Desarrollo Mundial_". Posteriormente, se explica cómo se puede descargar y manipular esta base directamente desde $RStudio$. Al final de la sección se hace una evaluación donde se formulan varias preguntas de selección múltiple con respecto a los conceptos vistos en ésta y con respecto a un ejercicio que el alumno debe desarrollar en $RStudio$ utilizando los "Indicadores de Desarrollo Mundial" [^1]. 
