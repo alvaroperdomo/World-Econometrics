@@ -1,9 +1,9 @@
 ## SECCIÓN 3.1.2. (R):
 
-# Pruebas de Hipótesis de un $VAR$ en R
+# Pruebas de Hipótesis de un $VAR$ en $R$
 
 ## 1) Número de rezagos
-Para determinar el número óptimo de rezagos dentro del VAR se utiliza el comando:
+Para determinar el número óptimo de rezagos dentro del $VAR$ se utiliza el comando:
 ``` r
 VARselect(x, lag.max = 10, type = c("const", "trend", "both", "none"), season = NULL, exogen = NULL)
 ```
@@ -22,7 +22,7 @@ VARselect(x, lag.max = 10, type = c("const", "trend", "both", "none"), season = 
 
 
 ## 2) Prueba de estabilidad
-El comando "roots" calcula las raíces caracteristicas del modelo VAR que ha sido previamente estimado. Recuerden que la condición de estabilidad requiere que estas raíces en valor absoluto sean menores que $1$. 
+El comando "roots" calcula las raíces caracteristicas del modelo $VAR$ que ha sido previamente estimado. Recuerden que la condición de estabilidad requiere que estas raíces en valor absoluto sean menores que $1$. 
 
 ``` r
 roots(nombre)
