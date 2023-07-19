@@ -65,7 +65,7 @@ Sin lugar a dudas, este $VAR(p)$ estará sobreparameterizado ya que muchas de la
 # ¿Cómo hacer pronósticos con un modelo $VAR$?
 Una vez que se ha estimado el modelo $VAR$, se puede utilizar como un modelo de pronóstico de múltiples ecuaciones. 
 
-Suponga que estima el modelo de primer orden $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$ para obtener los valores de los coeficientes en $\mathbf{A_0}$ y en $\mathbf{A_1}$. Si sus datos van hasta el período $T$, es sencillo obtener los pronósticos de un periodo hacia adelante de sus variables utilizando la relación $E_T\mathbf{x_{T+1}=A_0+A_1x_T}$. De manera similar, se puede obtener un pronóstico de dos periodos hacia adelante utilizando la relación $E_T\mathbf{x_{T+2}=A_0+A_1x_{T+1}=A_0+A_1(A_0+A_1x_T)}$. 
+Suponga que estima el modelo de primer orden $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$ para obtener los valores de los coeficientes en $\mathbf{A_0}$ y en $\mathbf{A_1}$. Si sus datos van hasta el período $T$, es sencillo obtener los pronósticos de un periodo hacia adelante de sus variables utilizando la relación $E_T\mathbf{x_{T+1}=A_0+A_1x_T}$. De manera similar, se puede obtener un pronóstico de dos periodos hacia adelante utilizando la relación $E_T\mathbf{x_{T+2}=A_0+A_1x_{T+1}=A_0+A_1(A_0+A_1x_T)=(A_0+A_0A_1)+A_0A_1x_T}$. 
 
 Sin embargo, en un modelo de orden superior, puede haber un gran número de coeficientes estimados. Dado que los $VAR$ no restringidos están sobreparametrizados, los pronósticos pueden ser poco confiables. Con el fin de obtener un modelo parsimonioso, muchos pronosticadores eliminarían los coeficientes no significativos del $VAR$. Para después volver a estimar el modelo llamado $near-VAR$ mediante el uso de un $SUR$, para utilizar con fines de pronóstico. 
 
