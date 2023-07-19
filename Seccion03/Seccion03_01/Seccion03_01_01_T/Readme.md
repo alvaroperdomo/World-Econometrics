@@ -4,7 +4,7 @@
 
 Considere el sistema bivariado simple[^1]:
 
-[^1]: **Por razones pedagógicas nos centraremos principalemente en el análisis de este sistema _VAR_ de dos variables. Este _VAR_ es útil para ilustrar los sistemas multivariados de orden superior que se presentaran más adelante**
+[^1]: **Por razones pedagógicas nos centraremos principalemente en el análisis de este sistema _VAR_ de dos variables. Este _VAR_ sencillo es útil para ilustrar sistemas multivariados de orden superior**
 
 $I$) $y_t=b_{10}-b_{12}z_t+\gamma_{11}y_{t-1}+\gamma_{12}z_{t-1}+\varepsilon_{yt}$  
 
