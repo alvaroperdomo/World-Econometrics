@@ -56,6 +56,8 @@ Este tipo de prueba de razón de verosimilitud es aplicable a cualquier tipo de 
 
 Un problema con la prueba de razón de verosimilitud se basa en la teoría asintótica, que puede no ser muy útil en las muestras pequeñas disponibles para los econometristas de series de tiempo. demás, la prueba de razón de verosimilitud sólo es aplicable cuando un modelo es una versión restringida del otro. 
 
+### Prueba de razón de verosimilitud $\text{Criterio de Información de Akaike}$ y  $\text{Criterio Bayesiano de Schwartz}$
+
 No obstante, para determinar el número de rezagos se pueden utilizar las generalizaciones multivariadas del **Criterio de Información de Akaike** y el **Criterio Bayesiano de Schwartz**:
 * $\text{Criterio de Información de Akaike}=T \ln{|\mathbf{\Sigma}|}+2N$
 * $\text{Criterio Bayesiano de Schwartz}=T \ln{|\mathbf{\Sigma}|}+N\ln{T}$ 
