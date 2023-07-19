@@ -42,7 +42,7 @@ A continuación encontrara información más detallada acerca de cada una de las
 | Subsecciones                                             | Contenido                                                                                                                | Dedicación,<br> 2.5 horas   | 
 |----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|:-------------------------:|
 | **1.1. Series de tiempo**                                |¿Qué es una serie de tiempo?, ¿En qué consiste el análisis de series de tiempo?, ¿Qué es una variable discreta aleatoria? |             0.5           | 
-| **1.2. $R$ y los _Indicadores de Desarrollo Mundial_**   |¿Cómo manipular los _Indicadores de Desarrollo Mundial_ en R?                                                             |             2.0           | 
+| **1.2. $R$ y los _Indicadores de Desarrollo Mundial_**   |¿Cómo manipular los _Indicadores de Desarrollo Mundial_ en $R$?                                                           |             2.0           | 
 
 ## [Sección 2 - Análisis Univariado (ARIMA)](Seccion02/Readme.md)
 | Subsecciones                                           | Contenido                                                                                            | Dedicación,<br> 5.5 horas | 
