@@ -5,7 +5,7 @@ Los modelos de series de tiempo univariados pueden ser muy útiles para el anál
 
 Dado que a menudo las variables económicas están estrechamente relacionadas con otras variables, dicha información puede ser potencialmente útil y su uso puede llevar a descripciones más realistas del comportamiento de las variables económicas y también a pronósticos más precisos fuera de la muestra. 
 
-De hecho, ignorar las relaciones con otras variables puede dar lugar a complicaciones en la especificación de un modelo apropiado de series de tiempo univariadas. Puede ser que la especificación empírica de un modelo univariado se vea obstaculizada por los valores atípicos y los cambios estructurales, que pueden atribuirse a una o más variables distintas de la variable $y_t$ en cuestión.
+De hecho, ignorar las relaciones con otras variables puede dar lugar a complicaciones en la especificación apropiada de un modelo univariado series de tiempo. Puede ser que la especificación empírica de un modelo univariado se vea obstaculizada por los valores atípicos y los cambios estructurales, que pueden atribuirse a una o más variables distintas de la variable $y_t$ en cuestión.
 
 Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en la subsección respectiva
 
