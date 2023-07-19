@@ -104,7 +104,7 @@ lb$p.value
 ```
 
 # Pronósticos
-Para hacer pronósticos y gráficarlos, utilice los comandos:
+Para hacer pronósticos y gráficarlos, utilice el comando _forecast_ así[^2]:
 ``` r
 forecast1<-forecast(nombre1, level = c(95), h = 3)
 summary(forecast1)
@@ -116,6 +116,10 @@ autoplot(forecast1)
 | **nombre1**          | nombre del modelo $ARIMA$ para el cual se desean hacer pronósticos                                                                                       |
 | **level**            | valor para determinar el tamaño de la banda de confianza de los pronósticos                                                                              |
 | **h**                | número de periodos que se desean pronósticar                                                                                                             |
+
+Observe que los pronósticos se trabajaron con el nombre **forecast1**. Usted puede escoger un nombre diferente.
+
+[^2]: **Este comando pertenece a la librería _forecast_**
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
