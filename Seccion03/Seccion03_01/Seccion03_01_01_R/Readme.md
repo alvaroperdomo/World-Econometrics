@@ -2,13 +2,9 @@
 
 # Estimando un $VAR$ en R
 
-Llame el paquete "vars"
+Para estimar un $VAR$ se utiliza el comando _VAR_:[^1]
 
-``` r
-library("vars")
-```
-
-Para estimar un VAR se utiliza el comando:
+[^1]: **Este comando pertenece a la librería _vars_**
 
 ``` r
 VAR(x, p = 1, type = c("const", "trend", "both", "none"), season = NULL, exogen = NULL, lag.max = NULL, ic = c("AIC", "HQ", "SC", "FPE"))
