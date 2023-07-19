@@ -73,14 +73,8 @@ Por lo tanto, si cada ecuación en un $VAR$ de $n$ variables tiene $p$ rezagos y
 ## Prueba de Estabilidad
 En el Anexo 1 de la sección 2.1 vimos que en el modelo $AR(1)$ definido como $y_t=a_0+a_1y_{t-1}+ \varepsilon_t$, la condición de estabilidad es $|a_1|<1$. 
 
-Existe un análogo directo entre esta condición de estabilidad y la matriz $\mathbf{A_1}$ en el modelo $VAR(1)$ definido $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$. Iterando esta ecuación hacia atrás se obtiene: $\mathbf{x_t=(I+A_1+\dots+A_1^n)+}
+Existe un análogo directo entre esta condición de estabilidad y la matriz $\mathbf{A_1}$ en el modelo $VAR(1)$ definido $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$. Iterando esta ecuación hacia atrás se obtiene: $\mathbf{x_t=(I+A_1+\dots+A_1^n)A_0+\displaystyle\sum_{i=0}^n A_1^i e_{t-i} +A_1^{n+1}x_{t-n-1} }$. Si continuamos iterando hacia atrás, la convergencia requiere que $A_1^n \to 0$  a medida que $n \to \infty$. La estabilidad requiere que las raíces caracteristicas que resuelven el $VAR(p)$ sean menores que el valor absoluto de $1$. 
 
-\displaystyle\sum_{i=0}^n[A_1^ie_(t-i)]+A_1^{n+1}x_{t-n-1}}$.
-
-Si continuamos iterando hacia atrás, la convergencia requiere que 𝐴_1^𝑛→0 a medida que 𝑛→∞. 
-Como se muestra más adelante, la estabilidad requiere que las raíces de
-(1−𝑎_11 𝐿) (1−𝑎_22 𝐿)−(𝑎_12 𝑎_21 𝐿^2) se encuentren fuera del círculo unitario. 
-Por el momento, asumiendo que se cumple la condición de estabilidad, podemos escribir la solución particular de 𝑥_𝑡  como 𝑥_𝑡=𝜇+∑_(𝑖=0)^∞▒〖𝐴_1^𝑖 𝑒_(𝑡−𝑖) 〗![image]
 
 ## Prueba de Causalidad de Granger y Prueba de Exogeneidad
 Una prueba de causalidad establece si los rezagos de una variable entran en la ecuación de otra variable. En un modelo de dos ecuaciones con $p$ rezagos, { $y_t$ } no causa en el sentido de Granger a { $z_t$ } si y solo si todos los coeficientes del polinomio $A_{21}$ son nulos. Por lo tanto, si { $y_t$ } no mejora el rendimiento de pronóstico de { $z_t$ }, entonces { $y_t$ } no causa en el sentido de Granger a { $z_t$ }. 
