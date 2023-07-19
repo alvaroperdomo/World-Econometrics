@@ -48,7 +48,7 @@ A continuación encontrara información más detallada acerca de cada una de las
 | Subsecciones                                           | Contenido                                                                                            | Dedicación,<br> 5.5 horas | 
 |--------------------------------------------------------|------------------------------------------------------------------------------------------------------|:-------------------------:|
 | **2.1. Series Estacionarias y No Estacionarias**       | Se explica la importancia de las series estacionarias en el análisis univariado de series de tiempo. |              1            | 
-| **2.2* Pruebas de Raíz Unitaria**                      | Explicación acerca de la metodología y lectura de diferentes tipos de pruebas de raíz unitaria       |              1            | 
+| **2.2 Pruebas de Raíz Unitaria**                       | Explicación acerca de la metodología y lectura de diferentes tipos de pruebas de raíz unitaria       |              1            | 
 | **2.2.1.** Las Pruebas $DF$ y $ADF$: _Pruebas de Dickey Fuller y Aumentada de Dickey Fuller_ | Teoría y aplicación en $R$                                     |                           | 
 | **2.2.2.** La Prueba $ADF-GLS$: _Prueba de Elliott, Rothenberg y Stock_                    | Teoría y aplicación en $R$                                       |                           | 
 | **2.2.3.** La Prueba $KPSS$: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_             | Teoría y aplicación en $R$                                       |                           |   
