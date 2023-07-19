@@ -38,8 +38,8 @@ La tabla de abajo informa los resultados de las dos estimaciones
 
 | Indicadores                               | Modelo 1                | Modelo 2                | 
 |-------------------------------------------|:-----------------------:|:-----------------------:|
-| $\hat{a_1}$  <br> (Error estándar)        |$0.7904$ <br> ($0.0624)$ |$0.7938$ <br> ($0.0643$) | 
-| $\hat{\beta_{12}}$  <br> (Error estándar) |                         |$-0.0325$ <br> ($0.11$)  | 
+| $\hat{a}_1$  <br> (Error estándar)        |$0.7904$ <br> ($0.0624)$ |$0.7938$ <br> ($0.0643$) | 
+| $\hat{\beta}_{12}$  <br> (Error estándar) |                         |$-0.0325$ <br> ($0.11$)  | 
 | Criterio de Información de Akaike         |$441.9$                  |$443.9$                  | 
 | Criterio Bayesianode Schwartz             |$444.5$                  |$449.1$                  | 
 | Ljung-Box Estadístico Q para los residuos <br> (nivel de significancia en paréntesis) |$Q(8) = 6.43 (0.490)$ <br> $Q(16) = 15.86 (0.391)$ <br> $Q(24) = 21.74 (0.536)$ |$Q(8) = 6.48 (0.485)$ <br> $Q(16) = 15.75 (0.400)$ <br> $Q(24) = 21.56 (0.547)$ | 
