@@ -10,7 +10,7 @@ La metodología de Box-Jenkins consta de las siguientes tres etapas:
 A continuación se revisa más en detalle cada uno de las etapas. 
 
 ## 1. Identificación
-Se examina visualmente
+Se examina visualmente:
 * el gráfico de la serie de tiempo,
 * la función de autocorrelación ($FAC$)  y
 * la función de autocorrelación parcial ($FACP$).
