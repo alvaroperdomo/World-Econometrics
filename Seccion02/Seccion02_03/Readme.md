@@ -8,7 +8,7 @@ La siguiente tabla presenta tres subsecciones en que esta dividida esta sección
 | Subsecciones                                                                     | Explivación teórica               | Aplicación en R                 |
 |----------------------------------------------------------------------------------|:---------------------------------:|:-------------------------------:|
 | **2.3.1.** Las tres etapas de la metodología de Box-Jenkins                      | [X](Seccion02_03_01_T/Readme.md)  |[X](Seccion02_03_01_R/Readme.md) |
-| **2.3.2.** Estimación de un ARMA - Ejemplos simulados                            |                                   |[X](Seccion02_03_02/Readme.md)   |
+| **2.3.2.** Estimación de un $ARMA$ - Ejemplos simulados                          | [X](Seccion02_03_02/Readme.md)    |                                 |
 | **2.3.3.** Ejemplo utilizando la base de datos Indicadores de Desarrollo Mundial |                                   |[X](Seccion02_03_03/Readme.md)   |
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
