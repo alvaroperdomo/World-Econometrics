@@ -75,7 +75,7 @@ En el Anexo 1 de la sección 2.1 vimos que en el modelo $AR(1)$ definido como $y
 
 Existe un análogo directo entre esta condición de estabilidad y la matriz $\mathbf{A_1}$ en el modelo $VAR(1)$ definido $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$. Iterando esta ecuación hacia atrás se obtiene: $\mathbf{x_t=(I+A_1+\dots+A_1^n)A_0+\displaystyle\sum_{i=0}^n A_1^i e_{t-i} +A_1^{n+1}x_{t-n-1} }$. Si continuamos iterando hacia atrás, la convergencia requiere que $A_1^n \to 0$  a medida que $n \to \infty$. Por lo tanto, la estabilidad requiere que las raíces caracteristicas que resuelven el $VAR(p)$ esten fuera del circulo unitario.[^5] 
 
-Si se cumple la condición de estabilidad, podemos escribir la solución particular de $x_t$ como modelo de Vectores de Media Movil ($VMA$ por sus siglas en inglés) representado por $\mathbf{\mu+\displaystyle\sum_{i=0}^\infty A_1^i e_{t-i}}$ donde $\mu=\left\lbrack \matrix{ \bar{y} \cr \bar{z} } \right\rbrack}$ en el modelo $VAR(2)$ que se manejó en la sección 3.1.1.
+Si se cumple la condición de estabilidad, podemos escribir la solución particular de $x_t$ como modelo de Vectores de Media Movil ($VMA$ por sus siglas en inglés) representado por $\mathbf{\mu+\displaystyle\sum_{i=0}^\infty A_1^i e_{t-i}}$ donde $\mu=\left\lbrack \matrix{ \bar{y} \cr \bar{z} } \right\rbrack$ en el modelo $VAR(2)$ que se manejó en la sección 3.1.1.
 
 [^5]: **Al resolver un sistema de ecuaciones en diferencias, como lo es un modelo $VAR$, las raíces caracteristicas son los valores que determinan la estabilidad del sistema**  
 
