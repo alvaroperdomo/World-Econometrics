@@ -73,7 +73,10 @@ Por lo tanto, si cada ecuación en un $VAR$ de $n$ variables tiene $p$ rezagos y
 ## Prueba de Estabilidad
 En el Anexo 1 de la sección 2.1 vimos que en el modelo $AR(1)$ definido como $y_t=a_0+a_1y_{t-1}+ \varepsilon_t$, la condición de estabilidad es $|a_1|<1$. 
 
-Existe un análogo directo entre esta condición de estabilidad y la matriz $\mathbf{A_1}$ en el modelo $VAR(1)$ definido $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$. Iterando esta ecuación hacia atrás se obtiene: $\mathbf{x_t=(I+A_1+\dots+A_1^n)+\displaystyle\sum_{i=0}^n[A_1^ie_(t-i)]+A_1^{n+1}x_{t-n-1}}$.
+Existe un análogo directo entre esta condición de estabilidad y la matriz $\mathbf{A_1}$ en el modelo $VAR(1)$ definido $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$. Iterando esta ecuación hacia atrás se obtiene: $\mathbf{x_t=(I+A_1+\dots+A_1^n)+}
+
+\displaystyle\sum_{i=0}^n[A_1^ie_(t-i)]+A_1^{n+1}x_{t-n-1}}$.
+
 Si continuamos iterando hacia atrás, la convergencia requiere que 𝐴_1^𝑛→0 a medida que 𝑛→∞. 
 Como se muestra más adelante, la estabilidad requiere que las raíces de
 (1−𝑎_11 𝐿) (1−𝑎_22 𝐿)−(𝑎_12 𝑎_21 𝐿^2) se encuentren fuera del círculo unitario. 
