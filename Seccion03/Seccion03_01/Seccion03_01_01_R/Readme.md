@@ -32,8 +32,22 @@ VAR(x, p = 1, type = c("const", "trend", "both", "none"), season = NULL, exogen 
 |                    | **FPE**: Error Final de Predicción                                                                                  | 
 
 ## (2) Proyectando un modelo $VAR$
-Para proyectar un $VAR$ se utiliza el comando _**forecast**_:[^2]
+Para hacer pronósticos y gráficos de los mismos en un modelo $VAR$, utilice el comando _**forecast**_:[^2]
 
-[^2]: **Este comando pertenece a la librería _vars_**
+``` r
+forecast1<-forecast(nombre1, level = c(95), h = 3)
+summary(forecast1)
+autoplot(forecast1)
+```
+
+| **Argumentos**       | **Descripción**                                                                                                                                          | 
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **nombre1**          | nombre del modelo $VAR$ para el cual se desean hacer pronósticos                                                                                         |
+| **level**            | valor para determinar el tamaño de la banda de confianza de los pronósticos                                                                              |
+| **h**                | número de periodos que se desean pronósticar                                                                                                             |
+
+Observe que los pronósticos se trabajaron con el nombre **forecast1**. Usted puede escoger un nombre diferente.
+
+[^2]: **Este comando pertenece a la librería _forecast_**
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
