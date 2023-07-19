@@ -54,10 +54,9 @@ A continuación encontrara información más detallada acerca de cada una de las
 | **2.2.3.** La Prueba $KPSS$: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_             | Teoría y aplicación en $R$| |  
 | **2.2.4.** Pruebas de Cambio Estructural: _Prueba de Perron y Prueba de Zivot y Andrews_ | Teoría y aplicación en $R$| |
 | **2.3.** Análisis $ARIMA$ (Metodología de Box-Jenkins) | Explicación acerca de cómo estimar un modelo ARIMA                                                   |              1            | 
-| **2.1.** Series Estacionarias y No Estacionarias       | Se explica la importancia de las series estacionarias en el análisis univariado de series de tiempo. |                           | 
-| **2.2.** Pruebas de Raíz Unitaria                      | Explicación acerca de la metodología y lectura de diferentes tipos de pruebas de raíz unitaria       |                           | 
-| **2.3.** Análisis ARIMA (Metodología de Box-Jenkins)]  | Explicación acerca de cómo estimar un modelo ARIMA                                                   |                           | 
-
+| **2.3.1.** Las tres etapas de la metodología de Box-Jenkins                      | Teoría y aplicación en $R$  | |
+| **2.3.2.** Estimación de un $ARMA$ - Ejemplos simulados                          | Ejemplos conceptuales |   |
+| **2.3.3.** Ejemplo utilizando la base de datos :Indicadores de Desarrollo Mundial_ | Aplicación en $R$  | |
 
 ## [Sección 3 - Análisis Multivariado de Series de Tiempo](Seccion03/Readme.md)
 | Subsecciones                                         | Contenido                                     | Dedicación,<br> 5.5 horas | 
