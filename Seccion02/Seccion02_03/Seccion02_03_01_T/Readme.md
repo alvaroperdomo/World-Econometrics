@@ -1,4 +1,4 @@
-## SECCIÓN 2.3.1
+## SECCIÓN 2.3.1 (T)
 # Las tres etapas de la metodología de Box-Jenkins
 
 La metodología de Box-Jenkins consta de las siguientes tres etapas:
