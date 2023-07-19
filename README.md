@@ -67,7 +67,7 @@ A continuación encontrara información más detallada acerca de cada una de las
 | **3.1.3.** La Función Impulso Respuesta y la Descomposición de Varianza                                | Teoría y aplicación en $R$                    |                           |            
 | **3.2. Cointegración y estimación de Modelos $VEC$**                                                   | Metodología para estimar un modelo $VEC$.     |              1            | 
 | **3.2.1.** ¿Qué es y para qué sirve la Cointegración?                                                  | Explicación teórica                           |                           | 
-|  **3.2.2.** La Metodología de Engle y Granger (**2 variables**): <br> ¿Cómo evaluar la presencia de cointegración? ¿Cómo estimar un Modelo $VEC$? |  Teoría y aplicación en $R$    |
+|  **3.2.2.** La Metodología de Engle y Granger (**2 variables**): ¿Cómo evaluar <br> la presencia de cointegración? ¿Cómo estimar un Modelo $VEC$? |  Teoría y aplicación en $R$    |
 | **3.2.3.** La Metodología de Johansen (**2 o más variables**): ¿Cómo evaluar la <br> presencia de cointegración? ¿Cómo estimar un Modelo $VEC$?   |  Teoría y aplicación en $R$    |
 | **3.2.4.** Pruebas de hipótesis adicionales para implementar en un moelo $VEC$                         | Teoría y aplicación en $R$                    |                           |
 
