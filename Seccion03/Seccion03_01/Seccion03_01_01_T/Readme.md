@@ -60,7 +60,7 @@ Por lo tanto, Sims propone que al momento de estimar este $VAR(p)$:
 1) **Las variables que se incluirán en el $VAR$ se seleccionan de acuerdo con el modelo económico relevante.**
 2) **No se hace un intento explícito de "reducir" el número de parámetros estimados.** Es decir, dado que la matriz $\mathbf{A_0}$ contiene $n$ parámetros, y cada matriz $\mathbf{A_i}$ contiene $n^2$ parámetros; entonces, se tienen que estimar $n+pn^2$ coeficientes. 
 
-Sin lugar a dudas, este $VAR(p)$ estará sobreparameterizado ya que muchas de las estimaciones de los coeficientes serán no significativas. Sin embargo, el objetivo es encontrar las interrelaciones importantes entre las variables. Imponer incorrectamente restricciones nulas puede desperdiciar información importante. Además, _es probable que los regresores sean altamente colineales, de modo que las pruebas $t$ sobre los coeficientes individuales no son guías confiables para reducir el modelo_.
+Sin lugar a dudas, este $VAR(p)$ estará sobreparameterizado ya que muchas de las estimaciones de los coeficientes serán no significativas. Sin embargo, el objetivo es encontrar las interrelaciones importantes entre las variables. Imponer incorrectamente restricciones nulas puede desperdiciar información importante. _Además, es probable que los regresores sean altamente colineales, de modo que las pruebas_ $t$ _sobre los coeficientes individuales no sean guías confiables para reducir el modelo_.
 
 # ¿Cómo hacer pronósticos con un modelo $VAR$?
 Una vez que se ha estimado el $VAR$, se puede utilizar como un modelo de pronóstico de múltiples ecuaciones. 
