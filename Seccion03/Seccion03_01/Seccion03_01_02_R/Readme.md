@@ -22,7 +22,7 @@ VARselect(x, lag.max = 10, type = c("const", "trend", "both", "none"), season = 
 
 
 ## 2) Prueba de estabilidad
-El comando "roots" calcula las raíces caracteristicas del modelo $VAR$ que ha sido previamente estimado. Recuerden que la condición de estabilidad requiere que estas raíces en valor absoluto sean menores que $1$. 
+El comando _**roots**_ calcula las raíces caracteristicas del modelo $VAR$ que ha sido previamente estimado.  
 
 ``` r
 roots(nombre)
@@ -30,7 +30,7 @@ roots(nombre)
 
 | **Argumentos**     | **Descripción**                                                                                                     | 
 |--------------------|---------------------------------------------------------------------------------------------------------------------|
-| **nombre**         | Nombre del Vector autorregresivo (VAR) que ha sido estimado                                                         |
+| **nombre**         | Nombre del Vector autorregresivo ($VAR$) que ha sido estimado                                                       |
 
 ## 3)  Pruebas sobre los residuos
 #### a)  Gráficos de la $FAC$ y de la $FACP$ de los residuos para analizar la autocorrelación de los residios de la estimación
