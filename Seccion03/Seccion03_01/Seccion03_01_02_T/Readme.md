@@ -7,7 +7,7 @@ En principio, no hay nada que impida incorporar una gran cantidad de variables e
 
 [^1]: **Por ejemplo, al usar datos con 5 rezagos, la inclusión de una variable adicional usa 5 grados adicionales de libertad en cada ecuación.** 
 
-Un examen cuidadoso del modelo teórico relevante lo ayudará a seleccionar el conjunto de variables para incluir en su modelo $VAR$. Un $VAR$ de $n$ ecuaciones puede ser representado por:
+Un examen cuidadoso del modelo teórico relevante lo ayudará a seleccionar el conjunto de variables para incluir en su modelo $VAR$. Un $VAR(1)$ de $n$ ecuaciones puede ser representado por:
 
 $$ {\left\lbrack \matrix{ x_{1t} \cr x_{2t} \cr \dots \cr x_{nt} } \right\rbrack} = \left\lbrack \matrix{ A_{10} \cr A_{20} \cr \dots \cr A_{n0} } \right\rbrack + \left\lbrack \matrix{A_{11} & A_{12} & \dots & A_{1n} \cr A_{21} & A_{22} & \dots & A_{2n} \cr \dots & \dots & \dots & \dots \cr A_{n1} & A_{n2} & \dots & A_{nn} } \right\rbrack  \left\lbrack \matrix{ x_{1(t-1)} \cr x_{2(t-1)} \cr \dots \cr x_{n(t-1)} } \right\rbrack + \left\lbrack \matrix{ e_{1t} \cr e_{2t} \cr \dots \cr e_{nt} } \right\rbrack
 $$
