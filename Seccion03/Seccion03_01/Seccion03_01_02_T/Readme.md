@@ -32,21 +32,21 @@ Para determinar la longitud del rezago:
 1) Comience con la longitud plausible más larga o la longitud más larga posible dadas las consideraciones de grados de libertad.
 2) Estime el $VAR$ y forme la matriz de varianzas y covarianzas de los residuos.
 
-Por ejemplo, puede comenzar con un rezago de $3$ años basado en la noción a priori de que este tiempo es lo suficientemente largo para capturar la dinámica del sistema. La matriz de varianzas y covarianzas de los residuos del modelo a $3$ rezagos es $\mathbf{\Sigma_3}$. Ahora suponga que quiere determinar si $2$ rezagos son apropiados.  Después de todo, restringir el modelo de $3$ a $2$ rezagos reduciría el número de parámetros estimados en $n$ en cada ecuación. La prueba adecuada para esta restricción de ecuación cruzada es una **prueba de razón de verosimilitud** y, para éste caso, funciona así: 
+Por ejemplo, puede comenzar con un rezago de $5$ años basado en la noción a priori de que este tiempo es lo suficientemente largo para capturar la dinámica del sistema. La matriz de varianzas y covarianzas de los residuos del modelo a $5$ rezagos es $\mathbf{\Sigma_5}$. Ahora suponga que quiere determinar si $3$ rezagos son apropiados.  Después de todo, restringir el modelo de $5$ a $3$ rezagos reduciría el número de parámetros estimados en $2n$ en cada ecuación. La prueba adecuada para esta restricción de ecuación cruzada es una **prueba de razón de verosimilitud** y, para éste caso, funciona así: 
 
-1) Vuelva a estimar el $VAR$ durante el mismo período de muestra utilizando $2$ rezagos y obtenga la matriz de varianzas y covarianzas de los residuos $\mathbf{\Sigma_2}$.
-2) Tenga en cuenta que $\mathbf{\Sigma_2}$ pertenece a un sistema de $n$ ecuaciones con $n$ restricciones en cada ecuación, para un total de $n^2$ restricciones.
-3) Calcule el estadístico de la razón de verosimilitud: $T(\ln{|\mathbf{\Sigma_2}|}-\ln{|\mathbf{\Sigma_3}|})$. Claro esta, que como en el análisis económico los tamaños de muestra que generalmente se encuentran no son muy grandes, entonces Sims (1980) recomienda usar $(T-c)(\ln{|\mathbf{\Sigma_2}|}-\ln{|\mathbf{\Sigma_3}|})$, donde 
+1) Vuelva a estimar el $VAR$ durante el mismo período de muestra utilizando $3$ rezagos y obtenga la matriz de varianzas y covarianzas de los residuos $\mathbf{\Sigma_3}$.
+2) Tenga en cuenta que $\mathbf{\Sigma_3}$ pertenece a un sistema de $n$ ecuaciones con $n$ restricciones en cada ecuación, para un total de $n^3$ restricciones.
+3) Calcule el estadístico de la razón de verosimilitud: $T(\ln{|\mathbf{\Sigma_3}|}-\ln{|\mathbf{\Sigma_5}|})$. Claro esta, que como en el análisis económico los tamaños de muestra que generalmente se encuentran no son muy grandes, entonces Sims (1980) recomienda usar $(T-c)(\ln{|\mathbf{\Sigma_3}|}-\ln{|\mathbf{\Sigma_5}|})$, donde 
       * $T$ es el número de observaciones utilizables,
       * $c$ el número de parámetros estimados en cada ecuación del sistema no restringido [^3], y
       * $\ln{|\mathbf{\Sigma_n}|}$ es el logaritmo natural del determinante de $\mathbf{\Sigma_n}$
 
-[^3]: **En el ejemplo que nos ocupa, _c=1+3n_ ya que cada ecuación del modelo no restringido tiene _3_ rezagos para cada variable más un intercepto**
+[^3]: **En el ejemplo que nos ocupa, _c=1+5n_ ya que cada ecuación del modelo no restringido tiene _5_ rezagos para cada variable más un intercepto**
 
-Este estadístico tiene una distribución asintótica $\chi^2$ con grados de libertad igual al número de restricciones en el sistema. En el ejemplo considerado, hay $n$ restricciones en cada ecuación, para un total de restricciones $n^2$ en el sistema. Si la restricción de un número reducido de rezagos no es vinculante, esperaríamos que $\ln{|\mathbf{\Sigma_2}|}=\ln{|\mathbf{\Sigma_3}|}$. 
+Este estadístico tiene una distribución asintótica $\chi^2$ con grados de libertad igual al número de restricciones en el sistema. En el ejemplo considerado, hay $n$ restricciones en cada ecuación, para un total de restricciones $n^3$ en el sistema. Si la restricción de un número reducido de rezagos no es vinculante, esperaríamos que $\ln{|\mathbf{\Sigma_3}|}=\ln{|\mathbf{\Sigma_5}|}$. 
 
-* Si el valor de la razón de verosimilitud es grande, entonces tener sólo $2$ rezagos es una restricción vinculante; por lo tanto, podemos rechazar la hipótesis nula de que la longitud de rezagos es igual a $2$.
-* Si el valor calculado del estadístico es menor que el $\chi^2$ en un nivel de significación preespecificado, no podremos rechazar la hipótesis nula de sólo $2$ rezagos.
+* Si el valor de la razón de verosimilitud es grande, entonces tener sólo $3$ rezagos es una restricción vinculante; por lo tanto, podemos rechazar la hipótesis nula de que la longitud de rezagos es igual a $3$.
+* Si el valor calculado del estadístico es menor que el $\chi^2$ en un nivel de significación preespecificado, no podremos rechazar la hipótesis nula de sólo $3$ rezagos.
 
 En este último caso, podríamos tratar de determinar si $1$ rezago es apropiado construyendo el estadistico $(T-c)(\ln{|\mathbf{\Sigma_1}|}-\ln{|\mathbf{\Sigma_2}|})$. Se debe tener mucho cuidado al reducir la longitud del rezago de esta manera. A menudo, este procedimiento no rechazará las hipótesis nulas de $2$ versus $3$ rezagos y $1$ versus $2$ rezagos, aunque rechazará una hipótesis nula de $1$ versus $3$ rezagos. El problema con reducir el modelo es que puede perder una pequeña cantidad de poder explicativo en cada etapa. En general, la pérdida total en el poder explicativo puede ser significativa. En tales circunstancias, es mejor utilizar las longitudes de rezago más largas.
 
