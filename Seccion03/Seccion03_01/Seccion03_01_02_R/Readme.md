@@ -32,9 +32,20 @@ roots(nombre)
 |--------------------|---------------------------------------------------------------------------------------------------------------------|
 | **nombre**         | Nombre del Vector autorregresivo ($VAR$) que ha sido estimado                                                       |
 
-## 3)  Pruebas sobre los residuos
-#### a)  Gráficos de la $FAC$ y de la $FACP$ de los residuos para analizar la autocorrelación de los residios de la estimación
+## 3)  Prueba de causalidad de Granger
+El siguiente comando cálcula si la variable "x" causa a la variable "y" en el sentido de Granger
 
+``` r
+grangertest(x, y, order = 1)
+```
+| **Argumentos**        | **Descripción**                                                                                                     | 
+|-----------------------|---------------------------------------------------------------------------------------------------------------------|
+| **x** y **y**         | Nombre de las variables a las cuales se les va a llevar a cabo la prueba                                            |
+| **order**             | Este número específica el orden de los rezagos que se incluirán en la regresión auxiliar.                            |
+
+
+## 4)  Pruebas sobre los residuos
+#### a)  Gráficos de la $FAC$ y de la $FACP$ de los residuos estimados
 Para visualizar la $FAC$ y la $FACP$ copie los siguientes comandos: [^1]
 [^1]: A estos dos comandos se le pueden incluir más argumentos, pero para llevar a cabo las pruebas sobre los residuos del $VAR$, con los que aquí se utilizan es suficiente
 
@@ -74,22 +85,6 @@ normality.test(nombre, multivariate.only={FALSE, TRUE})
 |                       | **TRUE**:  Sólo se calculan las pruebas de normalidad multivariadas **(Opción: Predeterminada)**                    |
 |                       | **FALSE**: Se calculan las pruebas de normalidad multivariadas y univariadas                                        |
 
-## 4)  Prueba de Granger
-Este comando cálcula la prueba de causalidad de Granger entre dos variables
-
-``` r
-grangertest(x, y, order = 1, na.action = na.omit, …)
-grangertest(y, x, order = 1, na.action = na.omit, …)
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-grangertest(diff(y) ~ diff(x),order=1,data=Datos)
-grangertest(diff(x) ~ diff(y),order=1,data=Datos)
-```
-| **Argumentos**        | **Descripción**                                                                                                     | 
-|-----------------------|---------------------------------------------------------------------------------------------------------------------|
-| **x** y **y**         | Nombre de las variables a las cuales se les va a llevar a cabo la prueba                                            |
-| **order**             | Número que específica el orden de los rezagos que se incluirán en la regresión auxiliar.                            |
-|                       | **TRUE**:  Sólo se calculan las pruebas de normalidad multivariadas **(Opción: Predeterminada)**                    |
-|                       | **FALSE**: Se calculan las pruebas de normalidad multivariadas y univariadas                                        |
 
 
 
