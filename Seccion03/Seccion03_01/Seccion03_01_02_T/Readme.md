@@ -36,7 +36,7 @@ Por ejemplo, puede comenzar con un rezago de $3$ años basado en la noción a pr
 
 1) Vuelva a estimar el $VAR$ durante el mismo período de muestra utilizando $2$ rezagos y obtenga la matriz de varianzas y covarianzas de los residuos $\mathbf{\Sigma_2}$.
 2) Tenga en cuenta que $\mathbf{\Sigma_2}$ pertenece a un sistema de $n$ ecuaciones con $n$ restricciones en cada ecuación, para un total de $n^2$ restricciones.
-3) Calcule el estadístico de la razón de verosimilitud: $T(\ln{|\mathbf{\Sigma_2}|}-\ln{|\mathbf{\Sigma_3}|})$. Claro esta, que como en el análisis económico los tamaños de muestra que generalmente se encuentran no son muy grandes, entonces Sims (1980) recomienda usar $(T-c)(\ln{|\mathbf{\Sigma_2}|}-\ln{|\mathbf{\Sigma_3}|})$ donde 
+3) Calcule el estadístico de la razón de verosimilitud: $T(\ln{|\mathbf{\Sigma_2}|}-\ln{|\mathbf{\Sigma_3}|})$. Claro esta, que como en el análisis económico los tamaños de muestra que generalmente se encuentran no son muy grandes, entonces Sims (1980) recomienda usar $(T-c)(\ln{|\mathbf{\Sigma_2}|}-\ln{|\mathbf{\Sigma_3}|})$, donde 
       * $T$ es el número de observaciones utilizables,
       * $c$ el número de parámetros estimados en cada ecuación del sistema no restringido [^3], y
       * $\ln{|\mathbf{\Sigma_n}|}$ es el logaritmo natural del determinante de $\mathbf{\Sigma_n}$
