@@ -78,7 +78,7 @@ Si todas las variables en el $VAR(p)$ son estacionarias, la forma directa de pro
 $$ {\left\lbrack \matrix{ x_{1t} \cr x_{2t} \cr \dots \cr x_{nt} } \right\rbrack} = \left\lbrack \matrix{ A_{10} \cr A_{20} \cr \dots \cr A_{n0} } \right\rbrack + \left\lbrack \matrix{A_{11} & A_{12} & \dots & A_{1n} \cr A_{21} & A_{22} & \dots & A_{2n} \cr \dots & \dots & \dots & \dots \cr A_{n1} & A_{n2} & \dots & A_{nn} } \right\rbrack  \left\lbrack \matrix{ x_{1(t-1)} \cr x_{2(t-1)} \cr \dots \cr x_{n(t-1)} } \right\rbrack + \left\lbrack \matrix{ e_{1t} \cr e_{2t} \cr \dots \cr e_{nt} } \right\rbrack
 $$
 
-Dado que $A_{ij}(L)$ representa los coeficientes de los valores rezagados de la variable $j$ en la variable $i$, la variable $j$ no causa la variable $i$ en el sentido de Granger si todos los coeficientes del polinomio $A_{ij}(L)$ pueden establecerse iguales a cero.
+Dado que $A_{ij}$ representa los coeficientes de los valores rezagados de la variable $j$ en la variable $i$, la variable $j$ no causa la variable $i$ en el sentido de Granger si todos los coeficientes del polinomio $A_{ij}$ pueden establecerse iguales a cero.
 
 La causalidad de Granger es muy diferente de una prueba de exogeneidad. Para que $z_t$ sea exógena, requerimos que no se vea afectada por el valor contemporáneo de $y_t$. Sin embargo, la causalidad de Granger se refiere sólo a los efectos de valores pasados de { $y_t$ } en el valor actual de $z_t$. Por lo tanto, la causalidad de Granger en realidad mide si los valores actuales y pasados de { $y_t$ } ayudan a pronosticar valores futuros de { $z_t$ }. 
 
