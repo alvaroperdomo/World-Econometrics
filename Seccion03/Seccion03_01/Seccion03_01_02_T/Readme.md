@@ -73,8 +73,11 @@ Por lo tanto, si cada ecuación en un $VAR$ de $n$ variables tiene $p$ rezagos y
 ## Prueba de Estabilidad
 En el Anexo 1 de la sección 2.1 vimos que en el modelo $AR(1)$ definido como $y_t=a_0+a_1y_{t-1}+ \varepsilon_t$, la condición de estabilidad es $|a_1|<1$. 
 
-Existe un análogo directo entre esta condición de estabilidad y la matriz $\mathbf{A_1}$ en el modelo $VAR(1)$ definido $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$. Iterando esta ecuación hacia atrás se obtiene: $\mathbf{x_t=(I+A_1+\dots+A_1^n)A_0+\displaystyle\sum_{i=0}^n A_1^i e_{t-i} +A_1^{n+1}x_{t-n-1} }$. Si continuamos iterando hacia atrás, la convergencia requiere que $A_1^n \to 0$  a medida que $n \to \infty$. La estabilidad requiere que las raíces caracteristicas que resuelven el $VAR(p)$ sean menores que el valor absoluto de $1$. 
+Existe un análogo directo entre esta condición de estabilidad y la matriz $\mathbf{A_1}$ en el modelo $VAR(1)$ definido $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$. Iterando esta ecuación hacia atrás se obtiene: $\mathbf{x_t=(I+A_1+\dots+A_1^n)A_0+\displaystyle\sum_{i=0}^n A_1^i e_{t-i} +A_1^{n+1}x_{t-n-1} }$. Si continuamos iterando hacia atrás, la convergencia requiere que $A_1^n \to 0$  a medida que $n \to \infty$. Por lo tanto, la estabilidad requiere que las raíces caracteristicas que resuelven el $VAR(p)$ esten fuera del circulo unitario.[^5] 
 
+Si se cumple la condición de estabilidad, podemos escribir la solución particular de $x_t$ como modelo de Vectores de Media Movil ($VMA$ por sus siglas en inglés) representado por $\mathbf{\mu+\displaystyle\sum_{i=0}^n A_1^i e_{t-i} +A_1^{n+1}x_{t-n-1} }$  𝑥_𝑡=𝜇+∑_(𝑖=0)^∞▒〖𝐴_1^𝑖 𝑒_(𝑡−𝑖) 〗
+
+[^5]: **Al resolver un sistema de ecuaciones en diferencias, como lo es un modelo $VAR$, las raíces caracteristicas son los valores que determinan la estabilidad del sistema**  
 
 ## Prueba de Causalidad de Granger y Prueba de Exogeneidad
 Una prueba de causalidad establece si los rezagos de una variable entran en la ecuación de otra variable. En un modelo de dos ecuaciones con $p$ rezagos, { $y_t$ } no causa en el sentido de Granger a { $z_t$ } si y solo si todos los coeficientes del polinomio $A_{21}$ son nulos. Por lo tanto, si { $y_t$ } no mejora el rendimiento de pronóstico de { $z_t$ }, entonces { $y_t$ } no causa en el sentido de Granger a { $z_t$ }. 
