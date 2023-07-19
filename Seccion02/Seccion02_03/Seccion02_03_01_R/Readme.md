@@ -102,3 +102,16 @@ lb <- Box.test(nombre1$residuals, lag=10, type="Ljung-Box")
 lb$p.value
 ```
 
+# Pronósticos
+Para hacer pronósticos y gráficarlos, utilice los comandos:
+``` r
+forecast1<-forecast(nombre1, level = c(95), h = 3)
+summary(forecast1)
+autoplot(forecast1)
+```
+
+| **Argumentos**       | **Descripción**                                                                                                                                          | 
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **nombre1**          | nombre del modelo $ARIMA$ para el cual se desean hacer pronósticos                                                                                       |
+| **level**            | valor para determinar el tamaño de la banda de confianza de los pronósticos                                                                              |
+| **h**                | número de periodos que se desean pronósticar                                                                                                             |
