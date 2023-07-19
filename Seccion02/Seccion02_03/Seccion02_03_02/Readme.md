@@ -84,9 +84,9 @@ Sin embargo, si se desconoce el verdadero proceso de generación de datos, uno p
 
 | Indicadores                               | Modelo 3               | Modelo 4               |Modelo 5                |
 |-------------------------------------------|:----------------------:|:----------------------:|:----------------------:|
-| $\hat{a_1}$  <br> (Error estándar)        |$-0.835$ <br> $(0.053)$ |$-0.679$ <br> $(0.076)$ |$-1.160$ <br> $(0.093)$ | 
-| $\hat{a_2}$  <br> (Error estándar)        |                        |                        |$-0.378$ <br> $(0.092)$ |
-| $\hat{\beta_1}$  <br> (Error estándar)    |                        |$-0.676$ <br> $(0.081)$ |                        |
+| $\hat{a}_1$  <br> (Error estándar)        |$-0.835$ <br> $(0.053)$ |$-0.679$ <br> $(0.076)$ |$-1.160$ <br> $(0.093)$ | 
+| $\hat{a}_2$  <br> (Error estándar)        |                        |                        |$-0.378$ <br> $(0.092)$ |
+| $\hat{\beta}_1$  <br> (Error estándar)    |                        |$-0.676$ <br> $(0.081)$ |                        |
 | Criterio de Información de Akaike         |$496.5$                 |$471.0$                 |$482.8$                 |  
 | Criterio Bayesiano de Schwartz            |$499.0$                 |$476.2$                 |$487.9$                 |  
 | Ljung-Box Estadístico Q para los residuos <br> (nivel de significancia en paréntesis)      | $Q(8) = 26.19 (0.000)$ <br> $Q(24) = 41.10 (0.001)$ |$Q(8) = 3.86 (0.695)$ <br> $Q(24) = 14.23 (0.892)$ | $Q(8) = 11.44 (0.057)$ <br> $Q(24) = 22.59 (0.424)$ | 
