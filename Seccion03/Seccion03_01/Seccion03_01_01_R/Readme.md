@@ -1,7 +1,5 @@
 ## SECCIÓN 3.1.1. (R):
 
-LEER ESTO: https://otexts.com/fpp2/VAR.html   https://otexts.com/fpp3/VAR.html
-
 # Estimando y proyectando un modelo $VAR$ en $R$
 
 ## (1) Estimando un modelo $VAR$
