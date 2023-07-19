@@ -30,10 +30,14 @@ Para determinar la longitud del rezago:
 1) Comience con la longitud plausible más larga o la longitud más larga posible dadas las consideraciones de grados de libertad.
 2) Estime el $VAR$ y forme la matriz de varianzas y covarianzas de los residuos.
 
-Por ejemplo, puede comenzar con un rezago de $3$ años basado en la noción a priori de que este tiempo es lo suficientemente largo para capturar la dinámica del sistema. La matriz de varianzas y covarianzas de los residuos del modelo a $3$ rezagos es $\mathbf{\Sigma_3}$. Ahora suponga que quiere determinar si $2$ rezagos son apropiados.  Después de todo, restringir el modelo de $3$ a $2$ rezagos reduciría el número de parámetros estimados en $n$ en cada ecuación. La prueba adecuada para esta restricción de ecuación cruzada es una **prueba de razón de verosimilitud**. Vuelva a estimar el $VAR$ durante el mismo período de muestra utilizando $2$ rezagos y obtenga la matriz de varianzas y covarianzas de los residuos $\mathbf{\Sigma_2}$. Tenga en cuenta que $\mathbf{\Sigma_2}$ pertenece a un sistema de $n$ ecuaciones con $n$ restricciones en cada ecuación, para un total de $n^2$ restricciones. El estadístico de la razón de verosimilitud es $T(\ln{|\mathbf{\Sigma_2}|}-\ln{|\mathbf{\Sigma_3}|})$. Sin embargo, dados los tamaños de muestra que generalmente se encuentran en el análisis económico, Sims (1980) recomienda usar $(T-c)(\ln{|\mathbf{\Sigma_2}|}-\ln{|\mathbf{\Sigma_3}|})$ donde 
-* $T$ es el número de observaciones utilizables,
-* $c$ el número de parámetros estimados en cada ecuación del sistema no restringido [^3], y
-* $\ln{|\mathbf{\Sigma_n}|}$ es el logaritmo natural del determinante de $\mathbf{\Sigma_n}$
+Por ejemplo, puede comenzar con un rezago de $3$ años basado en la noción a priori de que este tiempo es lo suficientemente largo para capturar la dinámica del sistema. La matriz de varianzas y covarianzas de los residuos del modelo a $3$ rezagos es $\mathbf{\Sigma_3}$. Ahora suponga que quiere determinar si $2$ rezagos son apropiados.  Después de todo, restringir el modelo de $3$ a $2$ rezagos reduciría el número de parámetros estimados en $n$ en cada ecuación. La prueba adecuada para esta restricción de ecuación cruzada es una **prueba de razón de verosimilitud** y, para éste caso, funciona así: 
+
+1) Vuelva a estimar el $VAR$ durante el mismo período de muestra utilizando $2$ rezagos y obtenga la matriz de varianzas y covarianzas de los residuos $\mathbf{\Sigma_2}$.
+2) Tenga en cuenta que $\mathbf{\Sigma_2}$ pertenece a un sistema de $n$ ecuaciones con $n$ restricciones en cada ecuación, para un total de $n^2$ restricciones.
+3) Calcule el estadístico de la razón de verosimilitud: $T(\ln{|\mathbf{\Sigma_2}|}-\ln{|\mathbf{\Sigma_3}|})$. Claro esta, que como en el análisis económico los tamaños de muestra que generalmente se encuentran no son muy grandes, entonces Sims (1980) recomienda usar $(T-c)(\ln{|\mathbf{\Sigma_2}|}-\ln{|\mathbf{\Sigma_3}|})$ donde 
+  * $T$ es el número de observaciones utilizables,
+  * $c$ el número de parámetros estimados en cada ecuación del sistema no restringido [^3], y
+  * $\ln{|\mathbf{\Sigma_n}|}$ es el logaritmo natural del determinante de $\mathbf{\Sigma_n}$
 
 [^3]: **En el ejemplo que nos ocupa, _c=1+3n_ ya que cada ecuación del modelo no restringido tiene _3_ rezagos para cada variable más un intercepto**
 
