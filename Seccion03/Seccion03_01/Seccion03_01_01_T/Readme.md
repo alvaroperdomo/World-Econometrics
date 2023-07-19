@@ -13,7 +13,7 @@ $II$) $z_t=b_{20}-b_{21}y_t+\gamma_{21}y_{t-1}+\gamma_{22}z_{t-1}+\varepsilon_{z
 donde se supone que 
 * tanto { $y_t$ } como { $z_t$ } son series estacionarias; 
 * { $\varepsilon_{yt}$ }  y { $\varepsilon_{zt}$ } son perturbaciones ruido blanco con desviaciones estándar $\sigma_y$  y $\sigma_z$, respectivamente; y 
-* { $\varepsilon_{yt}$ } y { $\varepsilon_{zt}$ } son perturbaciones ruido blanco no correlacionadas.
+* { $\varepsilon_{yt}$ } y { $\varepsilon_{zt}$ } son perturbaciones ruido blanco no correlacionadas entre sí.
 
 Las ecuaciones $I$ y $II$ constituyen un vector autorregresivo de primer orden $VAR(1)$ porque la longitud de rezago más larga dentro del sistema es $1$. La estructura del sistema incorpora retroalimentación porque permite que $y_t$ y $z_t$ se afecten entre sí. Por ejemplo, $-b_{12}$  es el efecto contemporáneo de un cambio unitario de $z_t$ en $y_t$ y $\gamma_{12}$ es el efecto de un cambio de unitario de $z_{t-1}$ en $y_t$. 
 
