@@ -71,7 +71,7 @@ Por lo tanto, si cada ecuación en un $VAR$ de $n$ variables tiene $p$ rezagos y
 [^4]: **Tenga en cuenta que el _Criterio de Información de Akaike_ y el _Criterio Bayesiano de Schwartz_ multivariados no se pueden usar para probar la importancia estadística de modelos alternativos. En cambio, son medidas del ajuste general de las alternativas.** 
 
 ## Prueba de Causalidad de Granger y Prueba de Exogeneidad
-Una prueba de causalidad establece si los rezagos de una variable entran en la ecuación de otra variable. En un modelo de dos ecuaciones con $p$ rezagos, { $y_t$ } no causa en el sentido de Granger a { $z_t$ } si y solo si todos los coeficientes de $A_{21}(L)$ son nulos. Por lo tanto, si { $y_t$ } no mejora el rendimiento de pronóstico de { $z_t$ }, entonces { $y_t$ } no causa en el sentido de Granger a { $z_t$ }. 
+Una prueba de causalidad establece si los rezagos de una variable entran en la ecuación de otra variable. En un modelo de dos ecuaciones con $p$ rezagos, { $y_t$ } no causa en el sentido de Granger a { $z_t$ } si y solo si todos los coeficientes del polinomio $A_{21}$ son nulos. Por lo tanto, si { $y_t$ } no mejora el rendimiento de pronóstico de { $z_t$ }, entonces { $y_t$ } no causa en el sentido de Granger a { $z_t$ }. 
 
 Si todas las variables en el $VAR$ son estacionarias, la forma directa de probar la causalidad de Granger es usar una prueba $F$ estándar de la restricción $a_21(1)=a_21(2)=a_21(3)= \dots = a_21(p)=0$. Es sencillo generalizar esta noción al caso de $n$ variables
 
