@@ -15,7 +15,7 @@ $$
 * los $A_{i0}$ son los interceptos,
 * los $A_{ij}$ son polinomios en donde sus coeficientes individuales se denotan por $a_{ij}(1), a_{ij}(2), \dots$. Como todas las ecuaciones en el $VAR$ tienen la misma longitud de rezagos, los polinomios $A_{ij}$ son todos del mismo grado.
 * Los términos $e_{it}$ son perturbaciones ruido blanco que pueden estar correlacionadas entre sí.
-* La matriz de varianzas y covarianzas $\mathbf{\Sigma}$ de las perturbaciones tiene dimensión ($n \times n$)
+* La matriz de varianzas y covarianzas $\mathbf{\Sigma}$ de los residuos tiene dimensión ($n \times n$)
 
 ## ¿Cuántos rezagos incluir en un $VAR$?
 Además de la determinación del conjunto de variables a incluir en el $VAR$, es importante determinar la longitud apropiada de rezagos. Un posible procedimiento es permitir diferentes longitudes de rezago para cada variable en cada ecuación. Sin embargo, para preservar la simetría del sistema (y poder usar $MCO$ de manera eficiente), es común usar la misma longitud de rezagos para todas las ecuaciones. [^2] 
@@ -26,8 +26,8 @@ En un $VAR$, los rezagos consumen rápidamente los grados de libertad. Si la lon
 * Si $p$ es demasiado pequeño, el modelo está mal especificado;
 * si $p$ es demasiado grande, se pierden grados de libertad. 
 
-Para determinar la longitud del rezago,
-1) comience con la longitud plausible más larga o la longitud más larga posible dadas las consideraciones de grados de libertad.
+Para determinar la longitud del rezago:
+1) Comience con la longitud plausible más larga o la longitud más larga posible dadas las consideraciones de grados de libertad.
 2) Estime el $VAR$ y forme la matriz de varianzas y covarianzas de los residuos.
 
 Por ejemplo, puede comenzar con un rezago de $3$ años basado en la noción a priori de que este tiempo es lo suficientemente largo para capturar la dinámica del sistema. La matriz de varianzas y covarianzas de los residuos del modelo a $3$ rezagos es $\mathbf{\Sigma_3}$. Ahora suponga que quiere determinar si $2$ rezagos son apropiados.  Después de todo, restringir el modelo de $3$ a $2$ rezagos reduciría el número de parámetros estimados en $n$ en cada ecuación. La prueba adecuada para esta restricción de ecuación cruzada es una **prueba de razón de verosimilitud**. Vuelva a estimar el $VAR$ durante el mismo período de muestra utilizando $2$ rezagos y obtenga la matriz de varianzas y covarianzas de los residuos $\mathbf{\Sigma_2}$. Tenga en cuenta que $\mathbf{\Sigma_2}$ pertenece a un sistema de $n$ ecuaciones con $n$ restricciones en cada ecuación, para un total de $n^2$ restricciones. El estadístico de la razón de verosimilitud es $T(\ln{|\mathbf{\Sigma_2}|}-\ln{|\mathbf{\Sigma_3}|})$. Sin embargo, dados los tamaños de muestra que generalmente se encuentran en el análisis económico, Sims (1980) recomienda usar $(T-c)(\ln{|\mathbf{\Sigma_2}|}-\ln{|\mathbf{\Sigma_3}|})$ donde 
