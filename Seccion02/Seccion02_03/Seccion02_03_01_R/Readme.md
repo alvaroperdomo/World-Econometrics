@@ -1,4 +1,4 @@
-## SECCIÓN 2.3.1.R. 
+## SECCIÓN 2.3.1. (R) 
 # Las tres etapas de la metodología de Box-Jenkins (Aplicación en $R$)
 
 ## 1) Identificación:
