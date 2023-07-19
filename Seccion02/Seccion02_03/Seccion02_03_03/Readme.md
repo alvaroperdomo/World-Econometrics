@@ -138,7 +138,7 @@ ggtsdiag(arima2)
 ```
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/09bbd66d-473b-4cf5-93bb-9b04bb63b38a)
 
-El gráfico de los residuos no muestra señales de autocorrelación y esto se confirma en el gráfico de os _p-values_ de la prueba $Q$ de Ljung-Box en donde se rechaza continuamente el supuesto de autocorrelación en los residuos
+El gráfico de los residuos no muestra señales de autocorrelación y esto se confirma en el gráfico de los _p-values_ de la prueba $Q$ de Ljung-Box en donde se rechaza continuamente el supuesto de autocorrelación en los residuos
 
 Y hacemos la prueba $Q$ de Ljung-Box
 ``` r
