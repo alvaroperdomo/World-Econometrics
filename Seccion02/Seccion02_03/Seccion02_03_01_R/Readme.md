@@ -48,15 +48,13 @@ Después de estimar uno o más modelos Arima, por ejemplo, utilizando los comand
 nombre1<- Arima(PIBpc, order=c(1,1,1))  
 nombre2<- Arima(PIBpc, order=c(0,1,1))
 ```
-La parsimonia se puede evaluar con los comandos 
+La parsimonia se evalua utilizando el _Criterio de Información de Akaike_ (**AIC**) y el _Criterio de Información de Schwartz_ (**BIC**). Para llo, se utilizan los siguientes comandos:
+
 ``` r
 AIC(nombre1,nombre2)
 BIC(nombre1,nombre2)
 ```
-Para, con el _Criterio de Información de Akaike_ (**AIC**) y/o el _Criterio de Información de Schwartz_ (**BIC**), se puede determinar cuál es el modelo más parsimonioso.
-
-Por otro lado, el comando **auto.arima** permite calcular automáticamente cuál es el modelo $ARIMA$ más parsimonioso:
-
+Por otro lado, el comando **auto.arima** (a partir de la estimación implicita de múltiples modelos $ARIMA$) permite calcular automáticamente cuál es el modelo $ARIMA$ más parsimonioso y muestra la estimación del mismo:
 ``` r
 auto.arima(x, ic = c("aicc", "aic", "bic"), stepwise = FALSE, approximation = FALSE)
 ```
@@ -75,12 +73,13 @@ auto.arima(x, ic = c("aicc", "aic", "bic"), stepwise = FALSE, approximation = FA
 |                      | **TRUE** La buscueda del mejor $ARIMA$ se hace con un algoritmo que la acelera (**Opció Predeterminada**)                                                |
 |                      | **FALSE** La busqueda se hace de forma normal                                                                                                            |
 
-[^2]: **Si no inconvenientes computacionales en el calculo de los diferentes modelos ARIMA, se recomienda utilizar las opciones **stepwise = FALSE, approximation = FALSE**. Por otro lado, el comando _auto.arima_ tiene aún más argumentos que los presentados. Sin embargo los principales son los que se estan presentando.**
+[^2]: **Si no hay inconvenientes computacionales en el calculo de los diferentes modelos ARIMA, se recomienda utilizar las opciones **stepwise = FALSE, approximation = FALSE** para un calculo más preciso del modelo más parsimonioso. Por otro lado, el comando _auto.arima_ tiene aún más argumentos que los presentados. Sin embargo los principales son los que se estan presentando.**
 
 ### Pruebas sobre los residuos estimados
 
-Asuma, que el modelo más parsimonioso es el modelo que se llama **nombre1**, y sobre ese modelo se van a hacer las pruebas sobre los residuos estimados.
+Asuma, que el modelo más parsimonioso es el modelo que se llama **nombre1**. Sobre ese modelo se pueden a hacer múltiples pruebas de ruido blanco a los residuos estimados.
 
+#### a)
 Los comandos
 ``` r
 autoplot(acf(nombre1$residuals, plot = FALSE))
