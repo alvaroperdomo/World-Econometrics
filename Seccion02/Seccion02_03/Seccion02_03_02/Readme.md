@@ -79,7 +79,7 @@ Las figuras de abajo muestran la $FAC$ y la $FACP$ muestrales. Las mismas nos da
 Sin embargo, si se desconoce el verdadero proceso de generación de datos, uno podría tener ciertas dudas acerca del modelo real. Entonces, se pueden analizar diferentes modelos como los siguientes:
 
 * **Modelo 3 - $AR(1)$:** $y_t=a_1y_{t-1}+\varepsilon_t$
-* **Modelo 4 - $ARMA(1,1)$:** $y_t=a_1y_{t-1}+\varepsilon_t+\beta_{12}\varepsilon_{t-1}$
+* **Modelo 4 - $ARMA(1,1)$:** $y_t=a_1y_{t-1}+\varepsilon_t+\beta_1\varepsilon_{t-1}$
 * **Modelo 5 - $ARMA(2)$:** $y_t=a_1y_{t-1}+a_2y_{t-2}+\varepsilon_t$
 
 | Indicadores                               | Modelo 3               | Modelo 4               |Modelo 5                |
