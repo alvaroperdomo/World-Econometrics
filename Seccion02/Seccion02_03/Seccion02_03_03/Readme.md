@@ -109,6 +109,26 @@ arima5d  3 1620.260
 ```
 Por consiguiente, según el _Criterio de Información de Akaike_ (AIC) y el _Criterio Bayesiano de Schwartz_ (BIC), dentro de los modelos analizados, el modelo más parsimonioso es el **modelo $ARIMA(1,1,0)$ con intercepto** [el cual, dentro del código de $R$ lo hemos llamado **arima2d**]. Más específicamente, los valores que se obtuvieron con este modelo son: $AIC=1611.045$ y $BIC=1617.277$. 
 
+``` r
+auto.arima(PIBpc, stepwise = FALSE, approximation = FALSE, ic=AIC)
+auto.arima(PIBpc, stepwise = FALSE, approximation = FALSE, ic=BIC)
+```
+Obteniendo
+``` r
+> auto.arima(PIBpc, stepwise = FALSE, approximation = FALSE)
+Series: PIBpc 
+ARIMA(1,1,0) with drift 
+
+Coefficients:
+         ar1      drift
+      0.5256  205388.50
+s.e.  0.1087   52528.73
+
+sigma^2 = 3.933e+10:  log likelihood = -802.52
+AIC=1611.04   AICc=1611.48   BIC=1617.28
+```
+En este caso la función certifica que el mejor modelo que representa a la función PIBpc sería un ARIMA(1,1,0) con intercepto.[1^]
+[1^]: Observen que si se hace el mismo analisis para la variable C1PIBpc obtienen que el mejor modelo ARIMA es el modelo ARIMA(1,0,0)
 Ahora, sabiendo cuál es el modelo más parsimonioso, procedemos a visualizar la estimación del modelo escogido, $y_t=a_0+a_1y_{t-1}+\varepsilon_t$, con el comando:
 ``` r
 summary(arima2d, gof.lag = 30)
@@ -135,6 +155,13 @@ Training set 1266.823 193299.6 142613.8 -0.08571389 1.360031 0.5900399 0.0194126
 
 Note que el coeficiente estimado $\hat{a}_1=0.7326$ del modelo $ARIMA(1,1,0)$ es estadísticamente significativo (es decir, es más de dos veces superior al valor de su error estándar de $0.0856$). Algo similar se puede decir para el coeficiente estimado $\hat{a}_0$
 
+Como último paso, para contrastar nuestros resultados acerca del modelo más parsimonioso utilizamos los comandos:
+``` r
+auto.arima(PIBpc, ic = c("aic"), stepwise = FALSE, approximation = FALSE)
+auto.arima(PIBpc, ic = c("bic"), stepwise = FALSE, approximation = FALSE)
+```
+Al operar ambos comandos, volvemos a obtener el mismo resultado: **El mejor modelo $ARIMA(1,1,0) es el mejor modelo que se ajusta a los datos**
+
 ## 3) Verificación de diagnóstico:
 El último paso de Box-Jenkins consiste en hacer las pruebas de validación del modelo $ARIMA(1,1,0)$. Para ello en primer lugar se grafican los correlogramas de los residuos estimados para comprobar que son ruido blanco:
 
@@ -142,55 +169,36 @@ El último paso de Box-Jenkins consiste en hacer las pruebas de validación del 
 autoplot(acf(arima2d$residuals, plot = FALSE))
 autoplot(pacf(arima2d$residuals, plot = FALSE))
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5b427f75-205e-4d3a-a903-da89bfc762db)
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/71fea7cf-2fbc-458c-bd46-5184a63e76ff)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/2211f0f0-e9b4-4e4a-bd4d-1de5385f6272)
 
-Se puede apreciar en las $FAC$ y en las $FACP$ que no hay ningún rezago significativo que denote algún tipo de estructura, por lo tanto podemos decir que los residuos son ruido blanco. 
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/a5693e0f-3768-4807-bf38-916979e830ce)
+
+Se puede apreciar en las $FAC$ y en las $FACP$ que no hay ningún rezago significativo que denote algún tipo de estructura $ARMA$ adicional, por lo tanto podemos decir que los residuos son ruido blanco. 
 
 Para corroborar aún más este resultado, vamos a utilizar un comando para visualizar en gráficos los residuos estimados estandarizados y los _p-values_ de la prueba $Q$ de Ljung-Box sobre estos residuos: [^2]
 
 [^2]: También se visualiza la _FAC_ de los residuos, pero esto ya la habiamos analizado previamente.
 
 ``` r
-ggtsdiag(arima2, gof.lag = 30)
+ggtsdiag(arima2d, gof.lag = 30)
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9ec4e259-5b13-49ba-8818-ac22653ff244)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/89370a15-3276-4845-9595-eb088c184984)
 
-El gráfico de los residuos no muestra señales de autocorrelación y esto se confirma en el gráfico de los _p-values_ de la prueba $Q$ de Ljung-Box en donde para todos los rezagos no se rechaza la hipótesis nula de no autocorrelación en los residuos. En particular, note que el _p-value_ más bajo corresponde al rezago 16, entonces vamos a utilizar el siguiente comando para conocer exactamente su valor: 
+El gráfico de los residuos no muestra señales de autocorrelación y esto se confirma en el gráfico de los _p-values_ de la prueba $Q$ de Ljung-Box en donde para todos los rezagos no se rechaza la hipótesis nula de no autocorrelación en los residuos. En particular, note que el _p-value_ más bajo corresponde al rezago 18, entonces vamos a utilizar el siguiente comando para conocer exactamente su valor: 
 
 ``` r
-lb <- Box.test(arima2$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
+lb <- Box.test(arima2d$residuals, lag=18, type="Ljung-Box") # Test de Ljung-Box
 lb$p.value
 ```
 
 Obteniendo
 ``` r
 > lb$p.value
-[1] 0.18422910.2478848
+[1] 0.3817737
 ```
-Como $0.18>0.10$ entonces no se rechaza la hipótesis nula aun al 10% de significancia. En consecuencia, se certifica nuevamente que los residuos son ruido blanco.
+Como $0.38>0.10$ entonces no se rechaza la hipótesis nula aun al 10% de significancia. En consecuencia, se certifica nuevamente que los residuos son ruido blanco.
 
-En $R$ existe una función llamada auto.arima que puede calcular automáticamente cuál es la mejor combinación de órdenes para el modelo ARIMA:
-
-``` r
-auto.arima(PIBpc, stepwise = FALSE, approximation = FALSE)
-```
-Obteniendo
-``` r
-> auto.arima(PIBpc, stepwise = FALSE, approximation = FALSE)
-Series: PIBpc 
-ARIMA(1,1,0) with drift 
-
-Coefficients:
-         ar1      drift
-      0.5256  205388.50
-s.e.  0.1087   52528.73
-
-sigma^2 = 3.933e+10:  log likelihood = -802.52
-AIC=1611.04   AICc=1611.48   BIC=1617.28
-```
-En este caso la función certifica que el mejor modelo que representa a la función PIBpc sería un ARIMA(1,1,0) con intercepto.[1^]
-[1^]: Observen que si se hace el mismo analisis para la variable C1PIBpc obtienen que el mejor modelo ARIMA es el modelo ARIMA(1,0,0)
+## Pronóstico
 
 Ahora vamos a hacer un pronostico de tres periodos con esta variable (correspondiente al periodo 2020-2022)
 ``` r
