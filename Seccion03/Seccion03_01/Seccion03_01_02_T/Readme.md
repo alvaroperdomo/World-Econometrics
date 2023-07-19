@@ -14,8 +14,8 @@ $$
 
 * los $A_{i0}$ son los interceptos,
 * los $A_{ij}$ son polinomios en donde sus coeficientes individuales se denotan por $a_{ij}(1), a_{ij}(2), \dots$. Como todas las ecuaciones en el $VAR$ tienen la misma longitud de rezagos, los polinomios $A_{ij}$ son todos del mismo grado.
-* Los términos $e_{1t}$ son perturbaciones ruido blanco que pueden estar correlacionadas entre sí.
-* La matriz de varianzas y covarianza $\mathbf{\Sigma}$ tiene dimensión ($n \times n$)
+* Los términos $e_{it}$ son perturbaciones ruido blanco que pueden estar correlacionadas entre sí.
+* La matriz de varianzas y covarianzas $\mathbf{\Sigma}$ de las perturbaciones tiene dimensión ($n \times n$)
 
 ## ¿Cuántos rezagos incluir en un $VAR$?
 Además de la determinación del conjunto de variables a incluir en el $VAR$, es importante determinar la longitud apropiada de rezagos. Un posible procedimiento es permitir diferentes longitudes de rezago para cada variable en cada ecuación. Sin embargo, para preservar la simetría del sistema (y poder usar $MCO$ de manera eficiente), es común usar la misma longitud de rezagos para todas las ecuaciones. [^2] 
