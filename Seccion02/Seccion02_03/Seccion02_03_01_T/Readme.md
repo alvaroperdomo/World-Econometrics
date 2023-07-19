@@ -59,3 +59,6 @@ Aunque no hay un nivel de significancia que se considere "más apropiado", desco
 En tales circunstancias, generalmente es posible formular un modelo que tenga un mejor rendimiento.
 
 De forma similar, un modelo puede estimarse sólo sobre una parte del conjunto de datos. El modelo estimado se puede usar para pronosticar los valores conocidos de la serie. La suma de los errores de pronóstico al cuadrado es una forma útil de comparar la idoneidad de los modelos alternativos. Los modelos con pronósticos pobres fuera de la muestra deben ser eliminados. 
+
+| [Retornar: 2.3. Análisis ARMA (La Metodología de Box-Jenkins)](../Readme.md) | [:house: Inicio](../../../README.md) | [2.3.1.(R) Las tres etapas de la metodología de Box-Jenkins (Aplicación en _R_)](../Seccion02_03_01_T/Readme.md) |
+|------------------------------------------------------------------------------|--------------------------------------|------------------------------------------------------------------------------------------------------------------|
