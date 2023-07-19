@@ -3,7 +3,9 @@
 # Pruebas de Hipótesis
 
 ## ¿Cuáles variables incluir en un $VAR$?
-En principio, no hay nada que impida incorporar una gran cantidad de variables en el $VAR$. Es posible construir un $VAR$ de $n$ ecuaciones con cada ecuación conteniendo $p$ rezagos de todas las $n$ variables en el sistema. Por lo general, uno quiere incluir aquellas variables que tienen importantes efectos económicos entre sí. No obstante, tenga en cuenta que los grados de libertad disminuyen rápidamente a medida que se incluyen más variables. [^1] 
+En principio, no hay nada que impida incorporar una gran cantidad de variables en el $VAR$. Es posible construir un $VAR$ de $n$ ecuaciones con cada ecuación conteniendo $p$ rezagos de todas las $n$ variables en el sistema. Por lo general, uno quiere incluir aquellas variables que tienen importantes efectos económicos entre sí. No obstante, tenga en cuenta que los grados de libertad disminuyen rápidamente a medida que se incluyen más variables.[^1] 
+
+**En lo que resta de la sección, vamos a suponer que se va a trabajar con un $VAR$ de $n$ variables.**
 
 [^1]: **Por ejemplo, al usar datos con 5 rezagos, la inclusión de una variable adicional usa 5 grados adicionales de libertad en cada ecuación.** 
 
@@ -22,7 +24,7 @@ Además de la determinación del conjunto de variables a incluir en el $VAR$, es
 
 [^2]: **Siempre que haya regresores idénticos en cada ecuación, las estimaciones _MCO_ son consistentes y asintóticamente eficientes.** 
 
-En un $VAR$, los rezagos consumen rápidamente los grados de libertad. Si la longitud del rezago es $p$, cada una de las $p$ ecuaciones contiene $np$ coeficientes más el intercepto. La selección apropiada de la longitud de rezagos puede ser crítica. 
+En un $VAR(p)$, los rezagos consumen rápidamente los grados de libertad. Si la longitud del rezago es $p$, cada una de las $p$ ecuaciones contiene $np$ coeficientes más el intercepto. La selección apropiada de la longitud de rezagos puede ser crítica. 
 * Si $p$ es demasiado pequeño, el modelo está mal especificado;
 * si $p$ es demasiado grande, se pierden grados de libertad. 
 
