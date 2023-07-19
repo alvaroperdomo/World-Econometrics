@@ -2,7 +2,7 @@
 
 # ¿Qué es un modelo VAR?
 
-Considere el sistema bivariado simple[^1]:
+Considere el sistema bivariado simple, es decir un $VAR(1)$[^1]:
 
 [^1]: **Por razones pedagógicas nos centraremos principalemente en el análisis de este sistema _VAR_ de dos variables. Este _VAR_ sencillo es útil para ilustrar sistemas multivariados de orden superior**
 
@@ -48,7 +48,7 @@ Para distinguir entre el sistema representado por las ecuaciones $I$ y $II$ vers
 
 Es importante tener en cuenta que los términos de error (es decir, $e_{1t}$ y $e_{2t}$) son compuestos de los dos choques $\varepsilon_{yt}$  y $\varepsilon_{zt}$. Y se puede demostrar, aunque aquí no lo desarrollaremos, que dado que $\varepsilon_{yt}$ y $\varepsilon_{zt}$ son procesos de ruido blanco, entonces $e_{1t}$ y $e_{2t}$ son ruido blanco
 
-Un objetivo explícito del enfoque de Box-Jenkins es proporcionar una metodología que conduzca a modelos parsimoniosos[^2]. Sin embargo, Sims (1980) aboga por una estrategia de estimación alternativa. Considere la siguiente generalización multivariada de un proceso autorregresivo $\mathbf{x_t=A_0 +  A_1x_{t-1} + \dots + A_p x_{t-p} + e_t}$ donde 
+Un objetivo explícito del enfoque de Box-Jenkins es proporcionar una metodología que conduzca a modelos parsimoniosos[^2]. Sin embargo, Sims (1980) aboga por una estrategia de estimación alternativa. Por ejemplo, considere la siguiente generalización multivariada de un proceso autorregresivo $\mathbf{x_t=A_0 +  A_1x_{t-1} + \dots + A_p x_{t-p} + e_t}$ donde 
 * $\mathbf{x_t}$ es un vector ($n \times 1$) que reúne las $n$ variables incluidas en el $VAR$
 * $\mathbf{A_0}$ es un vector ($n \times 1$) de interceptos
 * $\mathbf{A_i}$ son las matrices ($n \times n$) de coeficientes
