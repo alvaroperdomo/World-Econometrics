@@ -5,7 +5,7 @@ Box y Jenkins (1976) popularizaron una metodología para seleccionar el modelo $
 
 La siguiente tabla presenta tres subsecciones en que esta dividida esta sección. Dando _click_ en la **X** de la segunda columna de la tabla puede redirigirse a la explicación teórica de la respectiva subsección y dando click en la **X** de la tercera columna de la tabla puede redirigirse para ver las diferentes aplicaciones en $R$. Lo ideal es que aborden todas las secciones en el orden establecido, primero viendo la explicación de la prueba y posteriormente su aplicación en $R$.  
 
-| Subsecciones                                                                       | Explivación teórica               | Aplicación en R                 |
+| Subsecciones                                                                       | Explicación teórica               | Aplicación en R                 |
 |------------------------------------------------------------------------------------|:---------------------------------:|:-------------------------------:|
 | **2.3.1.** Las tres etapas de la metodología de Box-Jenkins                        | [X](Seccion02_03_01_T/Readme.md)  |[X](Seccion02_03_01_R/Readme.md) |
 | **2.3.2.** Estimación de un $ARMA$ - Ejemplos simulados                            | [X](Seccion02_03_02/Readme.md)    |                                 |
