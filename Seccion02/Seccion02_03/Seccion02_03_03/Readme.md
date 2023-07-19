@@ -1,9 +1,7 @@
 ## SECCIÓN 2.3.3.
 # Ejemplo utilizando la base de datos Indicadores de Desarrollo Mundial
 
-# Ejemplo utilizando la primera diferencia en el Producto Interno Bruto per cápita de Colombia a precios Constantes en moneda local
-
-Para este ejercicio, dado que previamente ya habiamos demostrado que la variable $PIBpc$ es integrada de orden uno, es decir la variable $C1PIBpc$ es estacionaria. entonces, vamos a retomar parte del código utilizado en secciones previas para analizar el comportamiento de $C1PIBpc$ y a partir del mismo poder deducir el comportamiento de $PIBpc$, tal como se muestra a continuación:
+Vamos a continuar con el ejercicio empírico planteado en la sección 2. Dado que en la sección 2.2.5 se habiamos demostrado que la variable $PIBpc$ es integrada de orden uno, por lo que la variable $C1PIBpc$ es estacionaria. entonces, vamos a retomar parte del código utilizado en secciones previas para analizar el comportamiento de $C1PIBpc$ y a partir del mismo poder deducir el comportamiento de $PIBpc$:
 
 ``` r
 rm(list = ls())
