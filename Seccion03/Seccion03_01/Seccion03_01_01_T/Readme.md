@@ -46,7 +46,7 @@ $ii$) $z_t=a_{20}+a_{21}y_{t-1}+a_{22}z_{t-1}+e_{2t}$
 
 Para distinguir entre el sistema representado por las ecuaciones $I$ y $II$ versus el sistema representado por las ecuaciones $i$ y $ii$, el primero se llama un **$VAR$ estructural o sistema primitivo** y el segundo se llama un **$VAR$ en forma estándar**. 
 
-Es importante tener en cuenta que los términos de error (es decir, $e_{1t}$ y $e_{2t}$) son compuestos de los dos choques $\varepsilon_{yt}$  y $\varepsilon_{zt}$. Y se puede demostrar, aunque aquí no lo desarrollaremos, que dado que como $\varepsilon_{yt}$  y $\varepsilon_{zt}$ son procesos de ruido blanco, entonces $e_{1t}$ y $e_{2t}$ son ruido blanco
+Es importante tener en cuenta que los términos de error (es decir, $e_{1t}$ y $e_{2t}$) son compuestos de los dos choques $\varepsilon_{yt}$  y $\varepsilon_{zt}$. Y se puede demostrar, aunque aquí no lo desarrollaremos, que dado que $\varepsilon_{yt}$ y $\varepsilon_{zt}$ son procesos de ruido blanco, entonces $e_{1t}$ y $e_{2t}$ son ruido blanco
 
 Un objetivo explícito del enfoque de Box-Jenkins es proporcionar una metodología que conduzca a modelos parsimoniosos[^2]. Sin embargo, Sims (1980) aboga por una estrategia de estimación alternativa. Considere la siguiente generalización multivariada de un proceso autorregresivo $\mathbf{x_t=A_0 +  A_1x_{t-1} + \dots + A_p x_{t-p} + e_t}$ donde 
 * $\mathbf{x_t}$ es un vector ($n \times 1$) que reúne las 𝑛 variables incluidas en el $VAR$
