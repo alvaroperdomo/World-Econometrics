@@ -55,7 +55,7 @@ A continuación encontrara información más detallada acerca de cada una de las
 |   **2.2.4.** Pruebas de Cambio Estructural: _Prueba de Perron y Prueba de Zivot y Andrews_ | Teoría y aplicación en $R$| |
 | **2.3.** Análisis $ARIMA$ (Metodología de Box-Jenkins) | Explicación acerca de cómo estimar un modelo ARIMA                                                   |              1            | 
 |   **2.3.1.** Las tres etapas de la metodología de Box-Jenkins                      | Teoría y aplicación en $R$  | |
-|   **2.3.2.** Estimación de un $ARMA$ - Ejemplos simulados                          | Ejemplos conceptuales |   |
+|   **2.3.2.** Estimación de un $ARMA$ - Ejemplos simulados                          | Desarrollo de ejemplos conceptuales |   |
 |   **2.3.3.** Ejemplo utilizando la base de datos :Indicadores de Desarrollo Mundial_ | Aplicación en $R$  | |
 
 ## [Sección 3 - Análisis Multivariado de Series de Tiempo](Seccion03/Readme.md)
