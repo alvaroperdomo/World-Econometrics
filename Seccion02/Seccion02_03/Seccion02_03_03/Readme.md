@@ -58,9 +58,11 @@ autoplot(pacf(C1PIBpc, plot = FALSE))
 
 
 ## 2) Estimación:
-La $FACP$ da a entender que la serie de **C1PIBpc** sigue un proceso autorregresivo de orden $1$, y la $FAC$ revela la existencia de un comportamiento de media movil de orden $1$ o de orden $2$. En consecuencia, vamos a estimar diferentes modelos $ARIMA(p,1,q)$ para la variable $PIBpc$ [^1], para evaluar cuál especificación es más parsimoniosa. Para ello se copian los siguientes comandos:
+La $FACP$ da a entender que la serie de **C1PIBpc** sigue un proceso autorregresivo de orden $1$, y la $FAC$ revela la existencia de un comportamiento de media movil de orden $1$ o de orden $2$. En consecuencia, vamos a estimar diferentes modelos $ARIMA(p,1,q)$ para la variable $PIBpc$ [^1], para evaluar cuál especificación es más parsimoniosa. Para ello se copian los siguientes comandos: [^2]
 
 [^1]: **Recuerden que un modelo _ARIMA(p,1,q)_ para la variable _PIBpc_ es es equivalente a un modelo _ARIMA(p,0,q)_ o _ARMA(p,q)_ para la variable _C1PIBpc_.**
+
+[^2]: **Observen que los diferentes modelos _ARIMA(p,1,q)_ los estimamos con y sin intercepto, para determinar si la presencia del mismo aumenta la parsimonia del modelo**
 
 ``` r
 arima1<- Arima(PIBpc, order=c(0,1,2))
@@ -69,60 +71,76 @@ arima3<- Arima(PIBpc, order=c(1,1,2))  # Este es uno de los modelos que parecen 
 arima4<- Arima(PIBpc, order=c(1,1,1))  
 arima5<- Arima(PIBpc, order=c(0,1,1))
 
-AIC(arima1,arima2,arima3,arima4,arima5)
-BIC(arima1,arima2,arima3,arima4,arima5)
+arima1d<- Arima(PIBpc, order=c(0,1,2), include.drift=TRUE)
+arima2d<- Arima(PIBpc, order=c(1,1,0), include.drift=TRUE)  # Este es uno de los modelos que parecen identificar las FAC y FACP
+arima3d<- Arima(PIBpc, order=c(1,1,2), include.drift=TRUE)  # Este es uno de los modelos que parecen identificar las FAC y FACP
+arima4d<- Arima(PIBpc, order=c(1,1,1), include.drift=TRUE)  
+arima5d<- Arima(PIBpc, order=c(0,1,1), include.drift=TRUE)
+
+AIC(arima1,arima2,arima3,arima4,arima5,arima1d,arima2d,arima3d,arima4d,arima5d)
+BIC(arima1,arima2,arima3,arima4,arima5,arima1d,arima2d,arima3d,arima4d,arima5d)
 ```
 Obteniendose,
 ``` r
-> AIC(arima1,arima2,arima3,arima4,arima5)
-       df      AIC
-arima1  3 1629.190
-arima2  2 1617.199
-arima3  4 1618.947
-arima4  3 1618.328
-arima5  2 1633.899
-> BIC(arima1,arima2,arima3,arima4,arima5)
-       df      BIC
-arima1  3 1635.423
-arima2  2 1621.354
-arima3  4 1627.257
-arima4  3 1624.561
-arima5  2 1638.054
+> AIC(arima1,arima2,arima3,arima4,arima5,arima1d,arima2d,arima3d,arima4d,arima5d)
+        df      AIC
+arima1   3 1629.190
+arima2   2 1617.199
+arima3   4 1618.947
+arima4   3 1618.328
+arima5   2 1633.899
+arima1d  4 1614.331
+arima2d  3 1611.045
+arima3d  5 1614.947
+arima4d  4 1613.007
+arima5d  3 1614.027
+> BIC(arima1,arima2,arima3,arima4,arima5,arima1d,arima2d,arima3d,arima4d,arima5d)
+        df      BIC
+arima1   3 1635.423
+arima2   2 1621.354
+arima3   4 1627.257
+arima4   3 1624.561
+arima5   2 1638.054
+arima1d  4 1622.641
+arima2d  3 1617.277
+arima3d  5 1625.335
+arima4d  4 1621.317
+arima5d  3 1620.260
 ```
-Por consiguiente, según el _Criterio de Información de Akaike_ (AIC) y el _Criterio Bayesiano de Schwartz_ (BIC), dentro de los modelos analizados, el modelo más parsimonioso es el modelo $ARIMA(1,1,0)$ [el cual, dentro del código de $R$ lo hemos llamado **arima2**]. Más específicamente, los valores que se obtuvieron con el modelo $ARIMA(1,1,0)$ son: $AIC=1617.199$ y $BIC=1621.354. 
+Por consiguiente, según el _Criterio de Información de Akaike_ (AIC) y el _Criterio Bayesiano de Schwartz_ (BIC), dentro de los modelos analizados, el modelo más parsimonioso es el **modelo $ARIMA(1,1,0)$ con intercepto** [el cual, dentro del código de $R$ lo hemos llamado **arima2d**]. Más específicamente, los valores que se obtuvieron con este modelo son: $AIC=1611.045$ y $BIC=1617.277$. 
 
-Ahora, sabiendo cuál es el modelo más parsimonioso, procedemos a visualizar la estimación del modelo escogido, $y_t=a_1y_{t-1}+\varepsilon_t$, con el comando:
+Ahora, sabiendo cuál es el modelo más parsimonioso, procedemos a visualizar la estimación del modelo escogido, $y_t=a_0+a_1y_{t-1}+\varepsilon_t$, con el comando:
 ``` r
-summary(arima2)
+summary(arima2d, gof.lag = 30)
 ```
 Obteniendose
 
 ``` r
-> summary(arima2)
+> summary(arima2d, gof.lag = 30)
 Series: PIBpc 
-ARIMA(1,1,0) 
+ARIMA(1,1,0) with drift 
 
 Coefficients:
-         ar1
-      0.7326
-s.e.  0.0856
+         ar1      drift
+      0.5256  205388.50
+s.e.  0.1087   52528.73
 
-sigma^2 = 4.405e+10:  log likelihood = -806.6
-AIC=1617.2   AICc=1617.41   BIC=1621.35
+sigma^2 = 3.933e+10:  log likelihood = -802.52
+AIC=1611.04   AICc=1611.48   BIC=1617.28
 
 Training set error measures:
-                   ME     RMSE      MAE       MPE     MAPE      MASE       ACF1
-Training set 56740.45 206347.3 157757.3 0.5673997 1.512671 0.6526939 -0.1455209
+                   ME     RMSE      MAE         MPE     MAPE      MASE       ACF1
+Training set 1266.823 193299.6 142613.8 -0.08571389 1.360031 0.5900399 0.01941263
 ```
 
-Note que el coeficiente estimado $\hat{a}_1=0.7326$ del modelo $ARIMA(1,1,0)$ es estadísticamente significativo (es decir, es más de dos veces superior al valor de su error estándar de $0.0856$)
+Note que el coeficiente estimado $\hat{a}_1=0.7326$ del modelo $ARIMA(1,1,0)$ es estadísticamente significativo (es decir, es más de dos veces superior al valor de su error estándar de $0.0856$). Algo similar se puede decir para el coeficiente estimado $\hat{a}_0$
 
 ## 3) Verificación de diagnóstico:
 El último paso de Box-Jenkins consiste en hacer las pruebas de validación del modelo $ARIMA(1,1,0)$. Para ello en primer lugar se grafican los correlogramas de los residuos estimados para comprobar que son ruido blanco:
 
 ``` r
-autoplot(acf(arima2$residuals, plot = FALSE))
-autoplot(pacf(arima2$residuals, plot = FALSE))
+autoplot(acf(arima2d$residuals, plot = FALSE))
+autoplot(pacf(arima2d$residuals, plot = FALSE))
 ```
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5b427f75-205e-4d3a-a903-da89bfc762db)
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/71fea7cf-2fbc-458c-bd46-5184a63e76ff)
@@ -134,23 +152,23 @@ Para corroborar aún más este resultado, vamos a utilizar un comando para visua
 [^2]: También se visualiza la _FAC_ de los residuos, pero esto ya la habiamos analizado previamente.
 
 ``` r
-ggtsdiag(arima2)
+ggtsdiag(arima2, gof.lag = 30)
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/09bbd66d-473b-4cf5-93bb-9b04bb63b38a)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9ec4e259-5b13-49ba-8818-ac22653ff244)
 
-El gráfico de los residuos no muestra señales de autocorrelación y esto se confirma en el gráfico de los _p-values_ de la prueba $Q$ de Ljung-Box en donde para todos los rezagos no se rechaza la hipótesis nula de no autocorrelación en los residuos. 
+El gráfico de los residuos no muestra señales de autocorrelación y esto se confirma en el gráfico de los _p-values_ de la prueba $Q$ de Ljung-Box en donde para todos los rezagos no se rechaza la hipótesis nula de no autocorrelación en los residuos. En particular, note que el _p-value_ más bajo corresponde al rezago 16, entonces vamos a utilizar el siguiente comando para conocer exactamente su valor: 
 
-Y hacemos la prueba $Q$ de Ljung-Box
 ``` r
-lb <- Box.test(arima2$residuals, type="Ljung-Box") # Test de Ljung-Box
+lb <- Box.test(arima2$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
 lb$p.value
 ```
+
 Obteniendo
 ``` r
 > lb$p.value
-[1] 0.2478848
+[1] 0.18422910.2478848
 ```
-En consecuencia, la prueba de rechaza la hipótesis nula de correlación cero en los residuos; por lo tanto, se certifica nuevamente que los residuos son ruido blanco.
+Como $0.18>0.10$ entonces no se rechaza la hipótesis nula aun al 10% de significancia. En consecuencia, se certifica nuevamente que los residuos son ruido blanco.
 
 En $R$ existe una función llamada auto.arima que puede calcular automáticamente cuál es la mejor combinación de órdenes para el modelo ARIMA:
 
