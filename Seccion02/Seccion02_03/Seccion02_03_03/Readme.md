@@ -118,7 +118,7 @@ Training set 56740.45 206347.3 157757.3 0.5673997 1.512671 0.6526939 -0.1455209
 Note que el coeficiente estimado $\hat{a}_1=0.7326$ del modelo $ARIMA(1,1,0)$ es estadísticamente significativo (es decir, es más de dos veces superior al valor de su error estándar de $0.0856$)
 
 ## 3) Verificación de diagnóstico:
-Ahora hay que hacer las pruebas de validación del modelo $ARIMA(1,1,0)$. Para ello en primer lugar se grafican los correlogramas de los residuos para comprobar que son ruido blanco:
+El último paso de Box-Jenkins consiste en hacer hacer las pruebas de validación del modelo $ARIMA(1,1,0)$. Para ello en primer lugar se grafican los correlogramas de los residuos estimados para comprobar que son ruido blanco:
 
 ``` r
 autoplot(acf(arima2$residuals, plot = FALSE))
@@ -127,12 +127,18 @@ autoplot(pacf(arima2$residuals, plot = FALSE))
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5b427f75-205e-4d3a-a903-da89bfc762db)
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/71fea7cf-2fbc-458c-bd46-5184a63e76ff)
 
-Se puede apreciar en las $FAC$ y en las $FACP$ que no hay ningún rezago significativo que denote algún tipo de estructura, por lo tanto podemos decir que los residuos son ruido blanco. Ahora, vamos a ver un gráfico de los residuos:
+Se puede apreciar en las $FAC$ y en las $FACP$ que no hay ningún rezago significativo que denote algún tipo de estructura, por lo tanto podemos decir que los residuos son ruido blanco. 
+
+Para corroborar aún más este resultado, vamos a utilizar un comando para visualizar en gráficos los residuos estimados estandarizados y las probabilidades de la prueba $Q$ de Ljung-Box sobre estos residuos: [^2]
+
+[^2]: También se visualiza la _FAC_ de los residuos, pero esto ya la habiamos analizado previamente.
 
 ``` r
 ggtsdiag(arima2)
 ```
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/09bbd66d-473b-4cf5-93bb-9b04bb63b38a)
+
+
 
 Y hacemos la prueba $Q$ de Ljung-Box
 ``` r
