@@ -29,7 +29,8 @@ La parsimonia sugiere usar el _Criterio de Información de Akaike_ y/o el _Crite
 | Criterio de Información de Akaike   | Criterio Bayesiano de Schwatrz |
 |:-----------------------------------:|:------------------------------:|
 | $T \ln{SRC} + 2n$                   | $T \ln{SRC} + n \ln{T}$        |
-| $2n - 2 \ln(L)$                     | $n \ln{T}  - 2 \ln(L)$        |
+| $2n - 2 \ln(L)$                     | $n \ln{T}  - 2 \ln(L)$         |
+| $\eqalign{e^{\frac{2n}{T}}SRC}$     | $\eqalign{T^{\frac{n}{T}}SRC}$  |
 
 donde,
 * $T$ es el número de observaciones
