@@ -79,7 +79,8 @@ auto.arima(x, ic = c("aicc", "aic", "bic"), stepwise = FALSE, approximation = FA
 
 Asuma, que el modelo más parsimonioso es el modelo que se llama **nombre1**. Sobre ese modelo se pueden a hacer múltiples pruebas de ruido blanco a los residuos estimados.
 
-#### a)
+#### a) Visualización de la $FAC$ y la $FACP$
+
 Los comandos
 ``` r
 autoplot(acf(nombre1$residuals, plot = FALSE))
@@ -87,12 +88,13 @@ autoplot(pacf(nombre1$residuals, plot = FALSE))
 ```
 Permiten visualizar la $FAC$ y la $FACP$ de los residuos del modelo **nombre1**
 
-El comando,
+#### b) Visualización de los residuos estimados y de sus _p-value_ del estadistico $Q$ de Ljung-Box
 
+El comando,
 ``` r
-ggtsdiag(nombre1, gof.lag = 10)
+ggtsdiag(nombre1, gof.lag = 15)
 ```
-^gráfica los residuos estándarizados, la $FAC$ de los residuos y los _p-values_ del estadistico $Q$ de Ljung-Box de los residuos estimados para diferentes opciones de rezagos (el número de rezagos en este gráfico se determina en la opción **gof.lag**, la **opción preseterminada** es de $10$ rezagos).
+gráfica los residuos estimados estándarizados, la $FAC$ de los residuos y los _p-values_ del estadistico $Q$ de Ljung-Box de los residuos estimados para diferentes opciones de rezagos (el número de rezagos en este último gráfico se determina en la opción **gof.lag**, la **opción preseterminada** es de $10$ rezagos).
 
 Si se desea determinar con precisión el valor de algún _p-value_ del estadistico $Q$ de Ljung-Box de los residuos estimados para algún rezago en particular, copie los comandos: 
 
