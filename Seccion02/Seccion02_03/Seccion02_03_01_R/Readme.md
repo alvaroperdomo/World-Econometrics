@@ -73,7 +73,7 @@ auto.arima(x, ic = c("aicc", "aic", "bic"), stepwise = FALSE, approximation = FA
 |                      | **TRUE** La buscueda del mejor $ARIMA$ se hace con un algoritmo que la acelera (**Opció Predeterminada**)                                                |
 |                      | **FALSE** La busqueda se hace de forma normal                                                                                                            |
 
-[^2]: **Si no hay inconvenientes computacionales en el calculo de los diferentes modelos ARIMA, se recomienda utilizar las opciones **stepwise = FALSE, approximation = FALSE** para un calculo más preciso del modelo más parsimonioso. Por otro lado, el comando _auto.arima_ tiene aún más argumentos que los presentados. Sin embargo los principales son los que se estan presentando.**
+[^2]: **Si no hay inconvenientes computacionales en el calculo de los diferentes modelos _ARIMA_, se recomienda utilizar las opciones **stepwise = FALSE, approximation = FALSE** para un calculo más preciso del modelo más parsimonioso. Por otro lado, el comando _auto.arima_ tiene aún más argumentos que los presentados. Sin embargo los principales son los que se estan presentando.**
 
 ### Pruebas sobre los residuos estimados
 
