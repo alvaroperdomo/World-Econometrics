@@ -22,7 +22,7 @@ El curso esta dividido en tres secciones principales, a través de las cuales el
 ## Requisitos
 Es deseable que las alumnos tengan como mínimo conocimientos básicos de $R$ y de probabilidad. Sin embargo, en el curso se van a proveer códigos completos de $R$ para ser utilizados por parte de los alumnos.
 
-Es importante que los alumnos además de tener instalados $R$ y [_**RStudio**_](https://posit.co/download/rstudio-desktop/), también tengan instalado el paquete de herramientas [Rtools](https://cran.r-project.org/bin/windows/Rtools/).
+Es importante que los alumnos además de tener instalados $R$ y [_**RStudio**_](https://posit.co/download/rstudio-desktop/), también tengan instalado el paquete de herramientas [$Rtools$](https://cran.r-project.org/bin/windows/Rtools/).
 
 A las personas que no utilizan regularmente $R$ se les recomienda desarrollar de antemano los tutoriales de https://learnr.numbat.space/
 
