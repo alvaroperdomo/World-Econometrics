@@ -49,20 +49,25 @@ A continuación encontrara información más detallada acerca de cada una de las
 |--------------------------------------------------------|------------------------------------------------------------------------------------------------------|:-------------------------:|
 | **2.1.** Series Estacionarias y No Estacionarias       | Se explica la importancia de las series estacionarias en el análisis univariado de series de tiempo. |              1            | 
 | **2.2.** Pruebas de Raíz Unitaria                      | Explicación acerca de la metodología y lectura de diferentes tipos de pruebas de raíz unitaria       |              1            | 
-|   **2.2.1.** Las Pruebas $DF$ y $ADF$: _Pruebas de Dickey Fuller y Aumentada de Dickey Fuller_ | Teoría y aplicación en $R$| | 
-|   **2.2.2.** La Prueba $ADF-GLS$: _Prueba de Elliott, Rothenberg y Stock_                    | Teoría y aplicación en $R$| |
-|   **2.2.3.** La Prueba $KPSS$: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_             | Teoría y aplicación en $R$| |  
-|   **2.2.4.** Pruebas de Cambio Estructural: _Prueba de Perron y Prueba de Zivot y Andrews_ | Teoría y aplicación en $R$| |
+| **2.2.1.** Las Pruebas $DF$ y $ADF$: _Pruebas de Dickey Fuller y Aumentada de Dickey Fuller_ | Teoría y aplicación en $R$                                     |                           | 
+| **2.2.2.** La Prueba $ADF-GLS$: _Prueba de Elliott, Rothenberg y Stock_                    | Teoría y aplicación en $R$                                       |                           | 
+| **2.2.3.** La Prueba $KPSS$: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_             | Teoría y aplicación en $R$                                       |                           |   
+| **2.2.4.** Pruebas de Cambio Estructural: _Prueba de Perron y Prueba de Zivot y Andrews_ | Teoría y aplicación en $R$                                         |                           | 
 | **2.3.** Análisis $ARIMA$ (Metodología de Box-Jenkins) | Explicación acerca de cómo estimar un modelo ARIMA                                                   |              1            | 
-|   **2.3.1.** Las tres etapas de la metodología de Box-Jenkins                      | Teoría y aplicación en $R$  | |
-|   **2.3.2.** Estimación de un $ARMA$ - Ejemplos simulados                          | Desarrollo de ejemplos conceptuales |   |
-|   **2.3.3.** Ejemplo utilizando la base de datos _Indicadores de Desarrollo Mundial_ | Aplicación en $R$  | |
+| **2.3.1.** Las tres etapas de la metodología de Box-Jenkins                      | Teoría y aplicación en $R$                                                 |                           | 
+| **2.3.2.** Estimación de un $ARMA$ - Ejemplos simulados                          | Desarrollo de ejemplos conceptuales                                        |                           | 
+| **2.3.3.** Ejemplo utilizando la base de datos _Indicadores de Desarrollo Mundial_ | Aplicación en $R$                                                        |                           | 
 
 ## [Sección 3 - Análisis Multivariado de Series de Tiempo](Seccion03/Readme.md)
-| Subsecciones                                         | Contenido                                     | Dedicación,<br> 5.5 horas | 
-|------------------------------------------------------|-----------------------------------------------|:-------------------------:|
-| **3.1.** Estimación de Modelos $VAR$                 | Metododología para estimar un modelo $VAR$    |              1            | 
-| **3.2.** Cointegración y estimación de Modelos $VEC$ | Metodología para estimar un modelo $VEC$.     |              1            | 
+| Subsecciones                                                                                           | Contenido                                     | Dedicación,<br> 5.5 horas | 
+|--------------------------------------------------------------------------------------------------------|-----------------------------------------------|:-------------------------:|
+| **3.1.** Estimación de Modelos $VAR$                                                                   | Metododología para estimar un modelo $VAR$    |              1            | 
+| **3.1.1.** ¿Qué es un modelo $VAR$?, <br> ¿Cómo estimar y hacer pronosticos de un modelo $VAR$ en $R$? | Teoría y aplicación en $R$                    |                           | 
+| **3.1.2.** Pruebas de Hipótesis en Modelos $VAR$                                                       | Teoría y aplicación en $R$                    |                           |                                        | **3.1.3.** La Función Impulso Respuesta y la Descomposición de Varianza                                | Teoría y aplicación en $R$                    |                           |                                        | **3.2.** Cointegración y estimación de Modelos $VEC$                                                   | Metodología para estimar un modelo $VEC$.     |              1            | 
+| **3.2.1.** ¿Qué es y para qué sirve la Cointegración?                                                  | Explicación teórica                           |                           | 
+|  **3.2.2.** La Metodología de Engle y Granger (**2 variables**): <br> ¿Cómo evaluar la presencia de cointegración? ¿Cómo estimar un Modelo VEC? |  Teoría y aplicación en $R$      |
+| **3.2.3.** La Metodología de Johansen (**2 o más variables**): <br> ¿Cómo evaluar la presencia de cointegración? ¿Cómo estimar un Modelo VEC?   |  Teoría y aplicación en $R$      |
+| **3.2.4.** Pruebas de hipótesis adicionales para implementar en un moelo VEC                           | Teoría y aplicación en $R$                    |                           |
 
 ### _Durante el desarrollo del curso se van a plantear algunos ejercicios con los cuales al ser resueltos de forma satisfactoria van a permitir optar, previo pago, a la obtención del certificado del curso._
   
