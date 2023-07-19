@@ -101,4 +101,10 @@ Una **prueba de bloques de exogeneidad** es útil para detectar si se debe incor
 
 Esta restricción se prueba adecuadamente usando la **prueba de razón de verosimilitud**. Calcule las ecuaciones $y_t$ y $z_t$  usando valores rezagados de { $y_t$ } , { $z_t$ } y { $w_t$ } y calcule $\mathbf{\Sigma_u}$. Vuelva a estimar excluyendo los valores rezagados de { $w_t$ } y calcule $\mathbf{\Sigma_r}$. Encuentre el estadístico de razón de verosimilitud $(T-c)(\ln{|\mathbf{\Sigma_r}|}-\ln{|\mathbf{\Sigma_u}|})$. Este estadístico tiene una distribución $\chi^2$ con grados de libertad iguales a $2p$ (ya que los $p$ valores de rezagados de { $w_t$ } se excluyen de cada ecuación). Aquí $c=3p+1$ porque las ecuaciones no restringidas de $y_t$ y $z_t$ contienen $p$ rezagos de { $y_t$ } , { $z_t$ } y { $w_t$ } más una constante.
 
+## Pruebas de verificación sobre los residuos estimados
+
+Los residuos estimados del modelo $VAR$ deben ser ruido blanco. Por lo tanto, aquí se le aplican el mismo tipo de pruebas que en los modelos univariados, por ejemplo:
+* La $FAC$ y la $FACP$ deben revelar que no hay autocorrelación en los residuos
+* La prueba de Portmanteau debe revelar que no hay autocorrelación en los residuos
+
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
