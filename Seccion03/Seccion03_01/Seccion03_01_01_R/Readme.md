@@ -1,6 +1,8 @@
 ## SECCIÓN 3.1.1. (R):
 
-# Estimando un $VAR$ en R
+LEER ESTO: https://otexts.com/fpp2/VAR.html
+
+# Estimando un $VAR$ en $R$
 
 Para estimar un $VAR$ se utiliza el comando _**VAR**_:[^1]
 
