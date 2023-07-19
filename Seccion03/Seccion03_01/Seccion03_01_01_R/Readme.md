@@ -2,8 +2,9 @@
 
 LEER ESTO: https://otexts.com/fpp2/VAR.html   https://otexts.com/fpp3/VAR.html
 
-# Estimando un $VAR$ en $R$
+# Estimando y proyectando un modelo $VAR$ en $R$
 
+## (1) Estimando un modelo $VAR$
 Para estimar un $VAR$ se utiliza el comando _**VAR**_:[^1]
 
 [^1]: **Este comando pertenece a la librería _vars_**
@@ -29,5 +30,10 @@ VAR(x, p = 1, type = c("const", "trend", "both", "none"), season = NULL, exogen 
 |                    | **HQ**: Criterio de Información de Hannan-Quinn                                                                     | 
 |                    | **SC**: Criterio Bayesiano de Schwartz                                                                              | 
 |                    | **FPE**: Error Final de Predicción                                                                                  | 
+
+## (2) Proyectando un modelo $VAR$
+Para proyectar un $VAR$ se utiliza el comando _**forecast**_:[^2]
+
+[^2]: **Este comando pertenece a la librería _vars_**
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
