@@ -129,7 +129,7 @@ autoplot(pacf(arima2$residuals, plot = FALSE))
 
 Se puede apreciar en las $FAC$ y en las $FACP$ que no hay ningún rezago significativo que denote algún tipo de estructura, por lo tanto podemos decir que los residuos son ruido blanco. 
 
-Para corroborar aún más este resultado, vamos a utilizar un comando para visualizar en gráficos los residuos estimados estandarizados y las probabilidades de la prueba $Q$ de Ljung-Box sobre estos residuos: [^2]
+Para corroborar aún más este resultado, vamos a utilizar un comando para visualizar en gráficos los residuos estimados estandarizados y los _p-values_ de la prueba $Q$ de Ljung-Box sobre estos residuos: [^2]
 
 [^2]: También se visualiza la _FAC_ de los residuos, pero esto ya la habiamos analizado previamente.
 
@@ -138,7 +138,7 @@ ggtsdiag(arima2)
 ```
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/09bbd66d-473b-4cf5-93bb-9b04bb63b38a)
 
-
+El gráfico de los residuos no muestra señales de autocorrelación y esto se confirma en el gráfico de os _p-values_ de la prueba $Q$ de Ljung-Box en donde se rechaza continuamente el supuesto de autocorrelación en los residuos
 
 Y hacemos la prueba $Q$ de Ljung-Box
 ``` r
