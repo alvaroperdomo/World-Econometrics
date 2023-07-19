@@ -424,17 +424,17 @@ La variable $C1PIBpc$ es estacionaria porque:
 ****************************************************************************************************************************************************************************
 
 ### Prueba KPSS
-Vamos a aplicar las opciones de rezago de $R$. Sin embargo, no olviden que según Newey y West (1994) la longitud de rezago se debe establecer proporcional a $T^{1/3}$, en decir $60^{1/3}=3.92 \sim 4$. Por otro lado, dado que el $PIBpc$ es una variable que presenta tendencia, entonces se decide testear dicha prueba con tendencia; y como el el $C1PIBpc$ es una variable que no presenta tendencia, entonces se decide testear dicha prueba sólo con el intercepto. Los comandos para las dos pruebas son:
+Vamos a aplicar las opciones de rezago de $R$. Sin embargo, no olviden que según Newey y West (1994) la longitud de rezago se debe establecer proporcional a $T^{1/3}$, en decir $60^{1/3}=20$. Por otro lado, dado que el $PIBpc$ es una variable que presenta tendencia, entonces se decide testear dicha prueba con tendencia; y como el el $C1PIBpc$ es una variable que no presenta tendencia, entonces se decide testear dicha prueba sólo con el intercepto. Los comandos para las dos pruebas son:
 
 ``` r
 PIBpc_1t.kpss <- ur.kpss(PIBpc, type = c("tau"), lags = c("nil"), use.lag = NULL)
 PIBpc_2t.kpss <- ur.kpss(PIBpc, type = c("tau"), lags = c("short"), use.lag = NULL)
-PIBpc_3t.kpss <- ur.kpss(PIBpc, type = c("tau"), use.lag = 4)
+PIBpc_3t.kpss <- ur.kpss(PIBpc, type = c("tau"), use.lag = 20)
 PIBpc_4t.kpss <- ur.kpss(PIBpc, type = c("tau"), lags = c("long"), use.lag = NULL)
 
 C1PIBpc_1m.kpss <- ur.kpss(C1PIBpc, type = c("mu"), lags = c("nil"), use.lag = NULL)
 C1PIBpc_2m.kpss <- ur.kpss(C1PIBpc, type = c("mu"), lags = c("short"), use.lag = NULL)
-C1PIBpc_3m.kpss <- ur.kpss(C1PIBpc, type = c("mu"), use.lag = 4)
+C1PIBpc_3m.kpss <- ur.kpss(C1PIBpc, type = c("mu"), use.lag = 20)
 C1PIBpc_4m.kpss <- ur.kpss(C1PIBpc, type = c("mu"), lags = c("long"), use.lag = NULL)
 
 summary(PIBpc_1t.kpss)
