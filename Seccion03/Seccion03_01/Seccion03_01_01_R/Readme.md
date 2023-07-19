@@ -1,6 +1,6 @@
 ## SECCIÓN 3.1.1. (R):
 
-LEER ESTO: https://otexts.com/fpp2/VAR.html
+LEER ESTO: https://otexts.com/fpp2/VAR.html   https://otexts.com/fpp3/VAR.html
 
 # Estimando un $VAR$ en $R$
 
