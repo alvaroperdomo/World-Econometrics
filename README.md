@@ -41,32 +41,32 @@ A continuación encontrara información más detallada acerca de cada una de las
 ## [Sección 1 - Las Series de Tiempo, _R_ y los _Indicadores de Desarrollo Mundial_](Seccion01/Readme.md)
 | Subsecciones                                             | Contenido                                                                                                                | Dedicación,<br> 2.5 horas   | 
 |----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|:-------------------------:|
-| **1.1. Series de tiempo**                                |¿Qué es una serie de tiempo?, ¿En qué consiste el análisis de series de tiempo?, ¿Qué es una variable discreta aleatoria? |             0.5           | 
-| **1.2. $R$ y los _Indicadores de Desarrollo Mundial_**   |¿Cómo manipular los _Indicadores de Desarrollo Mundial_ en $R$?                                                           |             2.0           | 
+| **1.1. Series de tiempo**                                | **¿Qué es una serie de tiempo?, ¿En qué consiste el análisis de series de tiempo?, ¿Qué es una variable aleatoria?** |             0.5           | 
+| **1.2. $R$ y los _Indicadores de Desarrollo Mundial_**   | **¿Cómo manipular los _Indicadores de Desarrollo Mundial_ en $R$?**                                                           |             2.0           | 
 
 ## [Sección 2 - Análisis Univariado (ARIMA)](Seccion02/Readme.md)
 | Subsecciones                                           | Contenido                                                                                            | Dedicación,<br> 5.5 horas | 
-|--------------------------------------------------------|------------------------------------------------------------------------------------------------------|:-------------------------:|
-| **2.1. Series Estacionarias y No Estacionarias**       | Se explica la importancia de las series estacionarias en el análisis univariado de series de tiempo. |              1            | 
-| **2.2 Pruebas de Raíz Unitaria**                       | Explicación acerca de la metodología y lectura de diferentes tipos de pruebas de raíz unitaria       |              1            | 
+|--------------------------------------------------------|------------------------------------------------------------------------------------------------------   |:-------------------------:|
+| **2.1. Series Estacionarias y No Estacionarias**       | **Se explica la importancia de las series estacionarias en el análisis univariado de series de tiempo** |              1            | 
+| **2.2 Pruebas de Raíz Unitaria**                       | **Explicación acerca de la metodología y lectura de diferentes tipos de pruebas de raíz unitaria**      |              1            | 
 | **2.2.1.** Las Pruebas $DF$ y $ADF$: _Pruebas de Dickey Fuller y Aumentada de Dickey Fuller_ | Teoría y aplicación en $R$                                     |                           | 
 | **2.2.2.** La Prueba $ADF-GLS$: _Prueba de Elliott, Rothenberg y Stock_                    | Teoría y aplicación en $R$                                       |                           | 
 | **2.2.3.** La Prueba $KPSS$: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_             | Teoría y aplicación en $R$                                       |                           |   
 | **2.2.4.** Pruebas de Cambio Estructural: _Prueba de Perron y Prueba de Zivot y Andrews_ | Teoría y aplicación en $R$                                         |                           | 
-| **2.3. Análisis $ARIMA$ (Metodología de Box-Jenkins)** | Explicación acerca de cómo estimar un modelo ARIMA                                                   |              1            | 
+| **2.3. Análisis $ARIMA$ (Metodología de Box-Jenkins)** | **Explicación acerca de cómo estimar un modelo $ARIMA$**                                             |              1            | 
 | **2.3.1.** Las tres etapas de la metodología de Box-Jenkins                      | Teoría y aplicación en $R$                                                 |                           | 
 | **2.3.2.** Estimación de un $ARMA$ - Ejemplos simulados                          | Desarrollo de ejemplos conceptuales                                        |                           | 
 | **2.3.3.** Ejemplo utilizando la base de datos _Indicadores de Desarrollo Mundial_ | Aplicación en $R$                                                        |                           | 
 
 ## [Sección 3 - Análisis Multivariado de Series de Tiempo](Seccion03/Readme.md)
 | Subsecciones                                                                                           | Contenido                                     | Dedicación,<br> 5.5 horas | 
-|--------------------------------------------------------------------------------------------------------|-----------------------------------------------|:-------------------------:|
-| **3.1. Estimación de Modelos $VAR$**                                                                   | Metododología para estimar un modelo $VAR$    |              1            | 
+|--------------------------------------------------------------------------------------------------------|------------------------------------------------|:-------------------------:|
+| **3.1. Estimación de Modelos $VAR$**                                                                   | **Metododología para estimar un modelo $VAR$** |              1            | 
 | **3.1.1.** ¿Qué es un modelo $VAR$?, <br> ¿Cómo estimar y hacer pronosticos de un modelo $VAR$ en $R$? | Teoría y aplicación en $R$                    |                           | 
 | **3.1.2.** Pruebas de Hipótesis en Modelos $VAR$                                                       | Teoría y aplicación en $R$                    |                           |                        
 | **3.1.3.** La Función Impulso Respuesta y la Descomposición de Varianza                                | Teoría y aplicación en $R$                    |                           |            
-| **3.1.4** Ejemplo utilizando la base de datos _Indicadores de Desarrollo Mundial_                      | Aplicación en $R$                          |                           | 
-| **3.2. Cointegración y estimación de Modelos $VEC$**                                                   | Metodología para estimar un modelo $VEC$.     |              1            | 
+| **3.1.4** Ejemplo utilizando la base de datos _Indicadores de Desarrollo Mundial_                      | Aplicación en $R$                             |                           | 
+| **3.2. Cointegración y estimación de Modelos $VEC$**                                                   | **Metodología para estimar un modelo $VEC$.** |              1            | 
 | **3.2.1.** ¿Qué es y para qué sirve la Cointegración?                                                  | Explicación teórica                           |                           | 
 |  **3.2.2.** La Metodología de Engle y Granger (**2 variables**): ¿Cómo evaluar la presencia de cointegración? ¿Cómo estimar un Modelo $VEC$? |  Teoría y aplicación en $R$    |
 | **3.2.3.** La Metodología de Johansen (**2 o más variables**): ¿Cómo evaluar la presencia de cointegración? ¿Cómo estimar un Modelo $VEC$?   |  Teoría y aplicación en $R$    |
