@@ -48,7 +48,7 @@ Para distinguir entre el sistema representado por las ecuaciones $I$ y $II$ vers
 
 Es importante tener en cuenta que los términos de error (es decir, $e_{1t}$ y $e_{2t}$) son compuestos de los dos choques $\varepsilon_{yt}$  y $\varepsilon_{zt}$. Y se puede demostrar, aunque aquí no lo desarrollaremos, que dado que $\varepsilon_{yt}$ y $\varepsilon_{zt}$ son procesos de ruido blanco, entonces $e_{1t}$ y $e_{2t}$ son ruido blanco
 
-Un objetivo explícito del enfoque de Box-Jenkins es proporcionar una metodología que conduzca a modelos parsimoniosos[^2]. Sin embargo, Sims (1980) aboga por una estrategia de estimación alternativa. Por ejemplo, considere la siguiente generalización multivariada de un proceso autorregresivo $\mathbf{x_t=A_0 +  A_1x_{t-1} + \dots + A_p x_{t-p} + e_t}$ donde 
+Un objetivo explícito del enfoque de Box-Jenkins es proporcionar una metodología que conduzca a modelos parsimoniosos[^2]. Sin embargo, Sims (1980) aboga por una estrategia de estimación alternativa. Por ejemplo, considere el siguiente $VAR(p)$: $\mathbf{x_t=A_0 +  A_1x_{t-1} + \dots + A_p x_{t-p} + e_t}$ donde 
 * $\mathbf{x_t}$ es un vector ($n \times 1$) que reúne las $n$ variables incluidas en el $VAR$
 * $\mathbf{A_0}$ es un vector ($n \times 1$) de interceptos
 * $\mathbf{A_i}$ son las matrices ($n \times n$) de coeficientes
@@ -56,7 +56,7 @@ Un objetivo explícito del enfoque de Box-Jenkins es proporcionar una metodolog�
 
 [^2]: **El objetivo final de hacer pronósticos precisos a corto plazo se logra mejor eliminando las estimaciones de parámetros insignificantes del modelo.**
 
-Sims propone que:
+Por lo tanto, Sims propone que al momento de estimar este $VAR(p)$:
 1) **Las variables que se incluirán en el $VAR$ se seleccionan de acuerdo con el modelo económico relevante.**
 2) **No se hace un intento explícito de "reducir" el número de parámetros estimados.** La matriz $\mathbf{A_0}$ contiene $n$ parámetros, y cada matriz $\mathbf{A_i}$ contiene $n^2$ parámetros; por lo tanto, $n+pn^2$ coeficientes deben ser estimados. 
 
