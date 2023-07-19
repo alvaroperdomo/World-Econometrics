@@ -2,7 +2,7 @@
 
 # Estimando un $VAR$ en R
 
-Para estimar un $VAR$ se utiliza el comando _VAR_:[^1]
+Para estimar un $VAR$ se utiliza el comando _**VAR**_:[^1]
 
 [^1]: **Este comando pertenece a la librería _vars_**
 
