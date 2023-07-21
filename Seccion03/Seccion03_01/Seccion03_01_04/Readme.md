@@ -1,5 +1,5 @@
 ## SECCIÓN 3.1.4
-# caso de estudio de un modelo $VAR$ utilizando la base de datos _Indicadores de Desarrollo Mundial_
+# Caso de estudio de un modelo $VAR$ utilizando la base de datos _Indicadores de Desarrollo Mundial_
 
 A continuación, se presenta un ejemplo utilizando la base de datos _Indicadores de Desarrollo Económico del Banco Mundial_. 
 
