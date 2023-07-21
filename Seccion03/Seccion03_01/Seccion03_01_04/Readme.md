@@ -86,7 +86,7 @@ Lo más destacable del gráfico de arriba es fuerte caida que tuvó la inversió
 
 Dado que el gráfico previo pareciera indicar que $\Delta GGOV$ y $\Delta INVP$ no tienen pendiente y potencialmente no tienen intercepto, entonces el $VAR$ a estimar lo escogeremos entre los modelos $VAR$ sin intercepto ni tendencia, y los modelos $VAR$ con intercepto pero sin tendencia. Por lo tanto, el orden de los rezagos del $VAR$ a estimar se va a escoger con los siguientes comandos:[^3]
 
-[^3]: **Observe que el vector estimado dentro del _VAR_ es _diff(seriesVAR)_. Es decir, las variables de nuestro vector  _seriesVAR_ se han incluido en primeras diferencias dentro del _VAR_.**
+[^3]: **Observe que el vector estimado dentro del _VAR_ es _diff(seriesVAR)_. Es decir, las variables de nuestro vector _seriesVAR_ se han incluido en primeras diferencias dentro del _VAR_.**
 ``` r
 VARselect(diff(seriesVAR),lag.max=10,type="const")
 VARselect(diff(seriesVAR),lag.max=10,type="none")
@@ -118,11 +118,11 @@ HQ(n)  -0.6740022 -0.6730655 -0.4533397 -0.37824407 -0.1696836  0.01015116  0.18
 SC(n)  -0.5691693 -0.4633998 -0.1388411  0.04108735  0.3544806  0.63914829  0.9212032  1.2158663  1.41869226  1.5183685
 FPE(n)  0.4797369  0.4523829  0.5318560  0.54255717  0.6348628  0.72535827  0.8317011  0.9731772  1.04870588  1.0313483
 ```
-|Estadistico                                       | Número de Rezagos del <br> Modelo más parsimonioso  | Valor       | 
-|--------------------------------------------------|:---------------------------------------------------:|:-----------:|
-|$\text{Criterio de Información de Akaike}$        |2 (con constante)                                    | -0.7302187  | 
-|$\text{Criterio de Información de Hannan-Quinn}$  |1 (con constante)                                    | -0.6392294  | 
-|$\text{Criterio Bayesiano de Schwartz}$           |1 (con constante)                                    | -0.4819802  | 
+|Estadistico                                          | Número de Rezagos del <br> Modelo más Parsimonioso  | Valor       | 
+|-----------------------------------------------------|:---------------------------------------------------:|:-----------:|
+|$\text{Criterio de Información de Akaike}$: AIC      |2 (con constante)                                    | -0.7302187  | 
+|$\text{Criterio de Información de Hannan-Quinn}$: HQ |1 (con constante)                                    | -0.6392294  | 
+|$\text{Criterio Bayesiano de Schwartz}$: SC          |1 (con constante)                                    | -0.4819802  | 
 
 
 Es decir, el modelo $VAR$ tiene uno o dos rezagos (según el criterio de información escogido) y lleva constante. No hay una opción clara acerca de si es mejor con uno o con dos rezagos. Sin embargo, con una brecha relativamente más alta (respecto al resto de criterios de información), el  $\text{Criterio Bayesiano de Schwartz}$ concluye que es mejor un rezago, entonces vamos a seguir dicho criterio.
