@@ -69,9 +69,9 @@ Obteniendo
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/022ef39c-d4ea-4f83-aa14-49f4c5afbccd)
 
-En este gráfico, es interesante ver el impacto que tuvo la crisis financiera del país en 1997-1998 tuvó un efecto en ambas variables superior a la crisis financiera internacional de 2008 y a la crisis del Covid en 2020.
+En este gráfico, es interesante ver el impacto que tuvo la crisis financiera del país en 1997-1998 tuvó un efecto en ambas variables superior a la crisis financiera internacional de 2008 y a la crisis del Covid en 2020. Igualmente, es de destacar que las variables analizadas han sido menos fluctuantes este siglo que lo que fueron el siglo pasado.
 
-En un análisis previo, que no se muestra en esta sección, se concluye que ambas series (GGOV e INVP) son integradas de orden uno. Es decir, en niveles no son estacionarias en niveles, pero si en primeras diferencias. Por lo que el modelo $VAR$ que se va a estimar es con las variables en primeras diverencias. Antes de comenzar el análisis $VAR$, gráfiquemos las variables a estudiar en primeras diferencias
+En un análisis previo, que no vamos a mostrar pero que es similar al de la sección 2, se concluyó que ambas series (GGOV e INVP) son integradas de orden uno. Es decir, en niveles no son estacionarias en niveles, pero si en primeras diferencias. Por lo tanto, el modelo $VAR$ que vamos a estimar va a ser con las variables en primeras diverencias. Antes de comenzar el análisis $VAR$, gráfiquemos las variables a estudiar en primeras diferencias
 ``` r
 ts.plot(diff(seriesVAR), xlab="Años",ylab="% del PIB",col=c("red","blue"), main="Corea del Sur - Series en diferencias: 1970 - 2022")
 legend("topright", legend = c("dif.GGOV","dif.INVP"), col = c("red","blue"), lty = 1)
