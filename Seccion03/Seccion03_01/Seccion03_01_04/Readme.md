@@ -26,9 +26,10 @@ library(forecast)    # Esta libreria sirve para hacer pronósticos.
 library(vars)        # Esta libreria se utiliza para la estimación de los modelos VAR
 
 ```
-Después de revisar la base de datos _Indicadores de Desarrollo Mundial_ se decidió que las dos variables que van a representar el gasto público y la inversión privada se van a manejar como % del PIB [^1] y se definen en lla base de datos como:
+Después de revisar la base de datos _Indicadores de Desarrollo Mundial_ se decidió que las dos variables que van a representar el gasto público y la inversión privada se van a manejar como % del PIB [^1] y se definen en lla base de datos como: [^2]
 
 [^1]: Para de esta forma, como es usual en el manejo econométrico de variables económicas, poder manejarlas en términos reales y así para aislarlas del efecto de la inflación.
+[^2]: El gasto de consumo final del Gobierno general incluye todos los gastos corrientes para la adquisición de bienes y servicios (incluida la remuneración de los empleados). También comprende la mayor parte del gasto en defensa y seguridad nacional, pero no incluye los gastos militares del Gobierno que forman parte de la formación de capital del Gobierno. La formación bruta de capital fijo del sector privado se define como la inversión privada que cubre los desembolsos brutos del sector privado (incluidos organismos privados sin fines de lucro) además de sus activos fijos nacionales.
 
 ``` r
 > WDIsearch(string='NE.CON.GOVT.ZS', field='indicator')
@@ -38,7 +39,7 @@ Después de revisar la base de datos _Indicadores de Desarrollo Mundial_ se deci
            indicator                                                     name
 11117 NE.GDI.FPRV.ZS Gross fixed capital formation, private sector (% of GDP)
 ```
-Llamamos los datos de las dos variables para Corea del Sur, y las denominamos como GGOV (Gasto Público como % del PIB) y INVP (Inversión Privada como % del PIB)
+Con el siguiente comando descargamos ambas variables para Corea del Sur, y las renombramos como GGOV (Gasto Público como % del PIB) y INVP (Inversión Privada como % del PIB)
 ``` r
 dat = WDI(indicator= c(GGOV = "NE.CON.GOVT.ZS", INVP="NE.GDI.FPRV.ZS"), country=c('KR'), language = "es")
 ```
