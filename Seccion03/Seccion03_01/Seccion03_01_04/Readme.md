@@ -1,5 +1,5 @@
 ## SECCIÓN 3.1.4
-# Ejemplo de un $VAR$ utilizando la base de datos _Indicadores de Desarrollo Mundial_
+# caso de estudio de un modelo $VAR$ utilizando la base de datos _Indicadores de Desarrollo Mundial_
 
 A continuación, se presenta un ejemplo utilizando la base de datos _Indicadores de Desarrollo Económico del Banco Mundial_. 
 
@@ -10,9 +10,9 @@ Uno de los debates que existen en economía esta relacionado con el efecto que e
 
 Entonces, alguien podría pensar que con una estimación de Mínimos Cuadrados Ordinarios ($MCO$) se podría resolver este dilema. Sin embargo, hay que tener en cuenta que una mayor inversión privada reactiva la economía, y por esta vía el gobierno recauda más impuestos y puede aumentar su gasto. Por lo tanto, estamos ante un problema de doble causalidad en donde una estimación de $MCO$ no sería recomendable por la potencial presencia se estimaciones sesgadas. Una de las formas de resolver este tipo de inconvenientes es con la utilización de estimaciones de modelos $VAR$. 
 
-Después de la Segunda Guerra Mundial, uno de los países exitosos en términos de desarrollo y crecimiento económico fue Corea del Sur. Entonces, valdría la pena analizar el potencial rol que tuvo el gasto del gobierno en este proceso, en particular en cuanto al estimulo que tuvó sobre la inversión privada del país.
+Después de la Segunda Guerra Mundial, uno de los países exitosos en términos de desarrollo y crecimiento económico fue Corea del Sur. Por lo tanto, valdría la pena analizar el potencial rol que tuvo el gasto del gobierno en este proceso, en particular en cuanto al estimulo o desestimulo que tuvó sobre la inversión privada del país. 
 
-El código de $R$ que se propopone para hacer el análisis es el siguiente:
+El caso de estudio de esta sección esta relacionado con los párrafos que acabamos de platear. El código de $R$ que se propopone para hacer el análisis es el siguiente:
 
 ## Preparando la base de datos y análisis gráfico
 En primera instancia, vamos a limpiar el área de trabajo y a llamar las librerias a utilizar. 
