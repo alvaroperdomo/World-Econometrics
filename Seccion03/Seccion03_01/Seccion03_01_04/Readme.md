@@ -52,7 +52,7 @@ entonces, con los siguientes comandos a procedemos a depurar la base de datos: *
 dat <- na.omit(dat)                                                       # Esta orden elimina los años en los cuales no tenemos información para ambas variables.
 dat <- mutate(dat, year=NULL, country=NULL, iso2c=NULL, iso3c=NULL)       # Esta orden elimina las columnas year, country, iso2c y iso3c de la base de datos.
 ```
-Ahora la base esta así:
+Entonces la base queda así:
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/a4e1a02a-fc5c-4aba-ad82-1f8f6cbf43d3)
 
