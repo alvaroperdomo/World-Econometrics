@@ -91,7 +91,6 @@ Dado que el gráfico previo pareciera indicar que $\Delta GGOV$ y $\Delta INVP$ 
 VARselect(diff(seriesVAR),lag.max=10,type="const")
 VARselect(diff(seriesVAR),lag.max=10,type="none")
 ```
-
 Obteniendo
 ``` r
 > VARselect(diff(seriesVAR),lag.max=10,type="const")
@@ -118,78 +117,115 @@ HQ(n)  -0.6740022 -0.6730655 -0.4533397 -0.37824407 -0.1696836  0.01015116  0.18
 SC(n)  -0.5691693 -0.4633998 -0.1388411  0.04108735  0.3544806  0.63914829  0.9212032  1.2158663  1.41869226  1.5183685
 FPE(n)  0.4797369  0.4523829  0.5318560  0.54255717  0.6348628  0.72535827  0.8317011  0.9731772  1.04870588  1.0313483
 ```
-|Estadistico                                          | Número de Rezagos del <br> Modelo más Parsimonioso  | Valor       | 
-|-----------------------------------------------------|:---------------------------------------------------:|:-----------:|
-|$\text{Criterio de Información de Akaike}$: AIC      |2 (sin constante)                                    | -0.7943845  | 
-|$\text{Criterio de Información de Hannan-Quinn}$: HQ |1 (sin constante)                                    | -0.6740022  | 
-|$\text{Criterio Bayesiano de Schwartz}$: SC          |1 (sin constante)                                    | -0.5691693  | 
+|Estadistico                                          | Modelo más Parsimonioso <br> sin constante  | Valor       | Modelo más Parsimonioso <br> con constante  | Valor       | 
+|-----------------------------------------------------|:-------------------------------------------:|:-----------:|:-------------------------------------------:|:-----------:|
+|$\text{Criterio de Información de Akaike}$: AIC      |2 rezagos                                    | -0.7943845  |2 rezagos                                    | -0.7653847  |    
+|$\text{Criterio de Información de Hannan-Quinn}$: HQ |1 rezago                                     | -0.6740022  |1 rezago                                     | -0.6392294  | 
+|$\text{Criterio Bayesiano de Schwartz}$: SC          |1 rezago                                     | -0.5691693  |1 rezago                                     | -0.4819802  | 
 
 
-Es decir, el modelo $VAR$ más parismonioso tiene uno o dos rezagos (según el criterio de información escogido) y no lleva constante. No hay una opción clara acerca de si es mejor con uno o con dos rezagos. Sin embargo, como con una brecha relativamente más alta (respecto a los otros criterios de información), el  $\text{Criterio Bayesiano de Schwartz}$ concluye que es mejor un rezago, entonces vamos a seguir dicho criterio.
+Es decir, el modelo $VAR$ más parismonioso tiene uno o dos rezagos (según el criterio de información escogido) y no lleva constante. No hay una opción clara acerca de si es mejor con uno o con dos rezagos. Como, con una brecha relativamente más alta (respecto a los otros criterios de información), el  $\text{Criterio Bayesiano de Schwartz}$ concluye que es mejor un rezago, uno estaría tentado a escoger el modelo de un rezago para estimar el $VAR$. Pero, por otro lado, como al hacer la prueba de causalidad de Granger entre $\Delta GGOV$ y $\Delta INVP$ y al estimar el $VAR$, los noveles de significancia son mejores con las variables a dos rezagos, entonces finalmente se decidió estimar el $VAR$ a dos rezagos.
 
-Ahora estimamos el $VAR(1)$ con los siguientes comandos:
+Las relaciones de causalidad, en el sentido de Granger, entre $\Delta GGOV$ y $\Delta INVP$, tomando en cuenta dos rezagos, se obtienen a partir de los comandos:
+
+``` r
+grangertest(diff(GGOV) ~ diff(INVP),order=2,data=seriesVAR)
+grangertest(diff(INVP) ~ diff(GGOV),order=2,data=seriesVAR)
+```
+En donde se llega a
+``` r
+> grangertest(diff(GGOV) ~ diff(INVP),order=2,data=seriesVAR)
+Granger causality test
+
+Model 1: diff(GGOV) ~ Lags(diff(GGOV), 1:2) + Lags(diff(INVP), 1:2)
+Model 2: diff(GGOV) ~ Lags(diff(GGOV), 1:2)
+  Res.Df Df      F  Pr(>F)  
+1     45                    
+2     47 -2 3.3972 0.04226 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> grangertest(diff(INVP) ~ diff(GGOV),order=2,data=seriesVAR)
+Granger causality test
+
+Model 1: diff(INVP) ~ Lags(diff(INVP), 1:2) + Lags(diff(GGOV), 1:2)
+Model 2: diff(INVP) ~ Lags(diff(INVP), 1:2)
+  Res.Df Df      F Pr(>F)
+1     45                 
+2     47 -2 0.6134  0.546
+```
+A partir de la prueba de causalidad de Granger, se revela que va a ser más importante el efecto que causa $\Delta GGOV$ en $\Delta INVP$, que el efecto que causa $\Delta INVP$ en $\Delta GGOV$.
+
+Ahora estimamos el $VAR(2)$ con los siguientes comandos:
 ``` r
 modeloVAR<-VAR(diff(seriesVAR),p=1,type="none")
 summary(modeloVAR)
 ```
 Obteniendo
 ``` r
-> modeloVAR<-VAR(diff(seriesVAR),p=1,type="none")
+> modeloVAR<-VAR(diff(seriesVAR),p=2,type="none")
 > summary(modeloVAR)
 
 VAR Estimation Results:
 ========================= 
 Endogenous variables: GGOV, INVP 
 Deterministic variables: none 
-Sample size: 51 
-Log Likelihood: -136.922 
+Sample size: 50 
+Log Likelihood: -125.952 
 Roots of the characteristic polynomial:
-0.2754 0.2754
+0.7304 0.7304 0.4988 0.323
 Call:
-VAR(y = diff(seriesVAR), p = 1, type = "none")
+VAR(y = diff(seriesVAR), p = 2, type = "none")
 
 
 Estimation results for equation GGOV: 
 ===================================== 
-GGOV = GGOV.l1 + INVP.l1 
+GGOV = GGOV.l1 + INVP.l1 + GGOV.l2 + INVP.l2 
 
-        Estimate Std. Error t value Pr(>|t|)
-GGOV.l1  0.20723    0.15269   1.357    0.181
-INVP.l1  0.09214    0.05623   1.639    0.108
+        Estimate Std. Error t value Pr(>|t|)  
+GGOV.l1  0.08115    0.15503   0.523   0.6032  
+INVP.l1  0.04308    0.05859   0.735   0.4659  
+GGOV.l2  0.03386    0.14919   0.227   0.8214  
+INVP.l2  0.14525    0.05830   2.492   0.0164 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 
-Residual standard error: 0.6167 on 49 degrees of freedom
-Multiple R-Squared: 0.06216,	Adjusted R-squared: 0.02388 
-F-statistic: 1.624 on 2 and 49 DF,  p-value: 0.2076 
+Residual standard error: 0.5906 on 46 degrees of freedom
+Multiple R-Squared: 0.189,	Adjusted R-squared: 0.1185 
+F-statistic:  2.68 on 4 and 46 DF,  p-value: 0.0432 
 
 
 Estimation results for equation INVP: 
 ===================================== 
-INVP = GGOV.l1 + INVP.l1 
+INVP = GGOV.l1 + INVP.l1 + GGOV.l2 + INVP.l2 
 
-        Estimate Std. Error t value Pr(>|t|)
-GGOV.l1  -0.3580     0.4017  -0.891    0.377
-INVP.l1   0.2069     0.1479   1.399    0.168
+         Estimate Std. Error t value Pr(>|t|)   
+GGOV.l1  0.006853   0.374551   0.018  0.98548   
+INVP.l1  0.409020   0.141552   2.890  0.00587 **
+GGOV.l2  0.491871   0.360431   1.365  0.17899   
+INVP.l2 -0.428513   0.140848  -3.042  0.00387 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 
-Residual standard error: 1.622 on 49 degrees of freedom
-Multiple R-Squared: 0.08484,	Adjusted R-squared: 0.04748 
-F-statistic: 2.271 on 2 and 49 DF,  p-value: 0.1139 
+Residual standard error: 1.427 on 46 degrees of freedom
+Multiple R-Squared: 0.3297,	Adjusted R-squared: 0.2714 
+F-statistic: 5.657 on 4 and 46 DF,  p-value: 0.0008661 
 
 
 
 Covariance matrix of residuals:
         GGOV    INVP
-GGOV  0.3649 -0.4783
-INVP -0.4783  2.5838
+GGOV  0.3330 -0.3077
+INVP -0.3077  2.0230
 
 Correlation matrix of residuals:
         GGOV    INVP
-GGOV  1.0000 -0.4926
-INVP -0.4926  1.0000
+GGOV  1.0000 -0.3749
+INVP -0.3749  1.0000
 ```
 
-Observe que en este VAR las dos raíces caracteristicas del polinomio que lo resuelven son iguales 0.2432. Por lo tanto, se encuentran dentro del circulo unitario, lo que nos lleva a que el $VAR$ es estable. No olvide que las raíces caracteristicas, después de estimado el $VAR$ también se pueden recuperar con el comando
+Observe que en este VAR las dos raíces caracteristicas del polinomio que lo resuelven son iguales 0.2754. Por lo tanto, se encuentran dentro del circulo unitario, lo que nos lleva a plantear que el $VAR$ es estable. No olvide que las raíces caracteristicas, después de estimado el $VAR$ también se pueden recuperar con el comando
 
 ```r
 roots(modeloVAR)
@@ -198,10 +234,10 @@ Obteniendo,
 
 ```r
 > roots(modeloVAR)
-[1] 0.243234 0.243234
+[1] 0.2754 0.2754
 
 ```
-A partir de los coeficientes del $VAR$ parece como se hubiera un efecto crowding-out y al mismo tiempo la inversión tuviera un impacto positivo sobre el gasto del gobierno.
+A partir de los coeficientes del $VAR$, aunque no son significativamente diferentes de cero, parece como se hubiera un efecto crowding-out (en donde el gasto del govierno afecta negativamente a la inversión) y al mismo tiempo la inversión tuviera un impacto positivo sobre el gasto del gobierno. Claro que los efectos se visualizaran mucho mejor, más adelante con las funciones impulso-respuesta
 
 #FALTA LO DE ABAJO
 plot(modeloVAR, names="GGOV")
@@ -210,10 +246,6 @@ plot(modelo, names="INVP")
 acf(residuals(modelo)[,1])
 
 serial.test(modelo,lags.pt=10)
-
-grangertest(diff(GGOV) ~ diff(INVP),order=1,data=series)
-
-grangertest(diff(INVP) ~ diff(GGOV),order=1,data=series)
 
 modelo.irf1<-irf(modelo,impulse="GGOV", response="GGOV")
 modelo.irf2<-irf(modelo,impulse="GGOV", response="INVP")
