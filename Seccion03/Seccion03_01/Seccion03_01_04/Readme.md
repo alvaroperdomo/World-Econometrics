@@ -129,7 +129,7 @@ Es decir, el modelo $VAR$ más parismonioso tiene uno o dos rezagos (según el c
 
 Ahora estimamos el $VAR(1)$ con los siguientes comandos:
 ``` r
-modeloVAR<-VAR(diff(seriesVAR),p=1,type="const")
+modeloVAR<-VAR(diff(seriesVAR),p=1,type="none")
 summary(modeloVAR)
 ```
 Obteniendo
