@@ -120,12 +120,12 @@ FPE(n)  0.4797369  0.4523829  0.5318560  0.54255717  0.6348628  0.72535827  0.83
 ```
 |Estadistico                                          | Número de Rezagos del <br> Modelo más Parsimonioso  | Valor       | 
 |-----------------------------------------------------|:---------------------------------------------------:|:-----------:|
-|$\text{Criterio de Información de Akaike}$: AIC      |2 (con constante)                                    | -0.7302187  | 
-|$\text{Criterio de Información de Hannan-Quinn}$: HQ |1 (con constante)                                    | -0.6392294  | 
-|$\text{Criterio Bayesiano de Schwartz}$: SC          |1 (con constante)                                    | -0.4819802  | 
+|$\text{Criterio de Información de Akaike}$: AIC      |2 (sin constante)                                    | -0.7943845  | 
+|$\text{Criterio de Información de Hannan-Quinn}$: HQ |1 (sin constante)                                    | -0.6740022  | 
+|$\text{Criterio Bayesiano de Schwartz}$: SC          |1 (sin constante)                                    | -0.5691693  | 
 
 
-Es decir, el modelo $VAR$ tiene uno o dos rezagos (según el criterio de información escogido) y lleva constante. No hay una opción clara acerca de si es mejor con uno o con dos rezagos. Sin embargo, con una brecha relativamente más alta (respecto al resto de criterios de información), el  $\text{Criterio Bayesiano de Schwartz}$ concluye que es mejor un rezago, entonces vamos a seguir dicho criterio.
+Es decir, el modelo $VAR$ más parismonioso tiene uno o dos rezagos (según el criterio de información escogido) y no lleva constante. No hay una opción clara acerca de si es mejor con uno o con dos rezagos. Sin embargo, como con una brecha relativamente más alta (respecto a los otros criterios de información), el  $\text{Criterio Bayesiano de Schwartz}$ concluye que es mejor un rezago, entonces vamos a seguir dicho criterio.
 
 Ahora estimamos el $VAR(1)$ con los siguientes comandos:
 ``` r
