@@ -70,7 +70,7 @@ legend("topleft", legend = c("GGOV","INVP"), col = c("red","blue"), lty = 1)
 
 En este gráfico, es interesante apreciar que el impacto que tuvó, en ambas variables, la crisis financiera del país de 1997-1998 fue superior al de la crisis financiera internacional de 2008 y al de la crisis del Covid-19 en 2020. Igualmente, es de destacar que las variables analizadas han sido menos fluctuantes este siglo que lo que fueron el siglo pasado.
 
-En un análisis previo, que no mostramos pero que es similar al de la sección 2 (en cuanto a las pruebas de raíz unitaria), se concluyó que ambas series ($GGOV$ e $INVP$) son integradas de orden uno. Es decir, no son estacionarias en niveles, pero si lo son en primeras diferencias. Por lo tanto, el modelo $VAR$ que vamos a estimar va a manejar las variables en primeras diverencias. Las variables a incluir en el $VAR$ las llamaremos $\delta GGOV$ y $\delta INVP$ (representando a la primera diferencia de las variables $GGOV$ e $INVP$ respectivamente). 
+En un análisis previo, que no mostramos pero que es similar al de la sección 2 (en cuanto a las pruebas de raíz unitaria), se concluyó que ambas series ($GGOV$ e $INVP$) son integradas de orden uno. Es decir, no son estacionarias en niveles, pero si lo son en primeras diferencias. Por lo tanto, el modelo $VAR$ que vamos a estimar va a manejar las variables en primeras diverencias. Las variables a incluir en el $VAR$ las llamaremos $\Delta GGOV$ y $\Delta INVP$ (representando a la primera diferencia de las variables $GGOV$ e $INVP$ respectivamente). 
 
 Antes de comenzar el análisis $VAR$, gráfiquemos las variables a estudiar en primeras diferencias
 ``` r
