@@ -7,7 +7,7 @@ Si se quiere tener en cuenta todas las relaciones posibles entre, digamos, $k$ v
 | **3.1.1.** ¿Qué es un modelo $VAR$?, ¿Cómo estimar y hacer pronosticos de un modelo $VAR$ en $R$? |  [X](Seccion03_01_01_T/Readme.md)    | [X](Seccion03_01_01_R/Readme.md)    | 
 | **3.1.2.** Pruebas de Hipótesis en Modelos $VAR$                                                                                                                           |  [X](Seccion03_01_02_T/Readme.md)    | [X](Seccion03_01_02_R/Readme.md)     |
 | **3.1.3.** La Función Impulso Respuesta y la Descomposición de Varianza                                                                                                    |  [X](Seccion03_01_03_T/Readme.md)    | [X](Seccion03_01_03_R/Readme.md) | 
-| **3.1.4** Ejemplo utilizando la base de datos _Indicadores de Desarrollo Mundial_                                                                                            |                                     | [X](Seccion03_01_04/Readme.md)                           | 
+| **3.1.4** Ejemplo de un $VAR$ utilizando la base de datos _Indicadores de Desarrollo Mundial_                                                                              |                                     | [X](Seccion03_01_04/Readme.md)                           | 
 
 
 A continuación, se presenta un ejemplo utilizando la base de datos "Indicadores de Desarrollo Económico del Banco Mundial". Para el ejercicio, se ha escogido analizar la variable más utilizada en términos de desarrollo económico, el PIB per cápita, de un país en vías de desarrollo. Más específicamente, se va a analizar la evolución del PIB per cápita de Colombia a precios constantes.
