@@ -36,6 +36,7 @@ Llamamos los datos de las dos variables para Corea del Sur, y las denominamos co
 dat = WDI(indicator= c(GGOV = "NE.CON.GOVT.ZS", INVP="NE.GDI.FPRV.ZS"), country=c('KR'), language = "es")
 ```
 Al visualizar los datos, se puede ver que ya estan ordenados del más antiguo al más nuevo
+
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/94a117f9-c3b7-41e1-a6ca-495f07af6712)
 
 Entonces, con los siguientes comandos a procedemos depurar la base de datos: (1) eliminando los años en los cuales no tenemos información para ambas variables (es decir, de 1960 a 1969) y (2) eliminando las columnas que no incluyan a las dos variables análizadas:
@@ -44,6 +45,7 @@ dat <- na.omit(dat)
 dat <- mutate(dat, year=NULL, country=NULL, iso2c=NULL, iso3c=NULL)
 ```
 Ahora la base esta así:
+
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/a4e1a02a-fc5c-4aba-ad82-1f8f6cbf43d3)
 
 Ahora se determina que las dos variables conforman un vector en formato de serie de tiempo anual (llamado seriesVAR) que va desde 1970 hasta 2022
