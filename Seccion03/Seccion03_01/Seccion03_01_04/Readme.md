@@ -69,7 +69,7 @@ Obteniendo
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/022ef39c-d4ea-4f83-aa14-49f4c5afbccd)
 
-En este gráfico, es interesante ver el impacto que tuvo la crisis de 1999 en ambas variables.
+En este gráfico, es interesante ver el impacto que tuvo la crisis financiera del país en 1997-1998 tuvó un efecto en ambas variables superior a la crisis financiera internacional de 2008 y a la crisis del Covid en 2020.
 
 En un análisis previo, que no se muestra en esta sección, se concluye que ambas series (GGOV e INVP) son integradas de orden uno. Es decir, en niveles no son estacionarias en niveles, pero si en primeras diferencias. Por lo que el modelo $VAR$ que se va a estimar es con las variables en primeras diverencias. Antes de comenzar el análisis $VAR$, gráfiquemos las variables a estudiar en primeras diferencias
 ``` r
