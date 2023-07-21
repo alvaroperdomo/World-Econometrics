@@ -39,7 +39,7 @@ Después de revisar la base de datos _Indicadores de Desarrollo Mundial_ se deci
            indicator                                                     name
 11117 NE.GDI.FPRV.ZS Gross fixed capital formation, private sector (% of GDP)
 ```
-Con el siguiente comando descargamos ambas variables para Corea del Sur, las renombramos como $GGOV$ (Gasto Público como % del PIB) y $INVP$ (Inversión Privada como % del PIB), y construimos una base de datos llamada "dat":
+Con el siguiente comando descargamos ambas variables para Corea del Sur, las renombramos como $GGOV$ (Gasto Público como % del PIB) e $INVP$ (Inversión Privada como % del PIB), y construimos una base de datos llamada "dat":
 ``` r
 dat = WDI(indicator= c(GGOV = "NE.CON.GOVT.ZS", INVP="NE.GDI.FPRV.ZS"), country=c('KR'), language = "es")
 ```
@@ -56,7 +56,7 @@ Ahora la base esta así:
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/a4e1a02a-fc5c-4aba-ad82-1f8f6cbf43d3)
 
-Ahora se determina que las dos variables conforman un vector en formato de serie de tiempo anual (llamado seriesVAR) que va desde 1970 hasta 2022
+Ahora vamos a determinar que las dos variables ($GGOV$ e $INVP$) conforman un vector en formato de serie de tiempo anual (llamado seriesVAR) que va desde 1970 hasta 2022
 ``` r
 seriesVAR <-ts(dat,frequency=1,start = 1970)
 ```
