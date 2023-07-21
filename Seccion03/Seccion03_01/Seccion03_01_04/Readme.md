@@ -71,7 +71,9 @@ Obteniendo
 
 En este gráfico, es interesante ver el impacto que tuvo la crisis financiera del país en 1997-1998 tuvó un efecto en ambas variables superior a la crisis financiera internacional de 2008 y a la crisis del Covid en 2020. Igualmente, es de destacar que las variables analizadas han sido menos fluctuantes este siglo que lo que fueron el siglo pasado.
 
-En un análisis previo, que no vamos a mostrar pero que es similar al de la sección 2, se concluyó que ambas series (GGOV e INVP) son integradas de orden uno. Es decir, en niveles no son estacionarias en niveles, pero si en primeras diferencias. Por lo tanto, el modelo $VAR$ que vamos a estimar va a ser con las variables en primeras diverencias. Antes de comenzar el análisis $VAR$, gráfiquemos las variables a estudiar en primeras diferencias
+En un análisis previo, que no vamos a mostrar pero que es similar al de la sección 2, se concluyó que ambas series ($GGOV$ e $INVP$) son integradas de orden uno. Es decir, en niveles no son estacionarias en niveles, pero si en primeras diferencias. Por lo tanto, el modelo $VAR$ que vamos a estimar va a ser con las variables en primeras diverencias. Las variables a incluir en el $VAR$ las llamaremos $\delta GGOV$ y $\delta INVP$ (representando a la primera diferencia de las variables $GGOV$ e $INVP$ respectivamente). 
+
+Antes de comenzar el análisis $VAR$, gráfiquemos las variables a estudiar en primeras diferencias
 ``` r
 ts.plot(diff(seriesVAR), xlab="Años",ylab="% del PIB",col=c("red","blue"), main="Corea del Sur - Series en diferencias: 1970 - 2022")
 legend("topright", legend = c("dif.GGOV","dif.INVP"), col = c("red","blue"), lty = 1)
@@ -80,15 +82,17 @@ Obteniendo
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/da96898b-e37e-4709-8ac5-5a34c51b0e48)
 
-Observe la caida fuerte de la inversión en 1999.
+Lo más destacable es la caida fuerte que tuvó la inversión privada a raíz de la crisis financiera de finales de los 1990s.
 
 ## Estimación del $VAR$ en primeras diferencias
 
-El orden del $VAR$ se va a escoger con el siguiente comando:[^3] 
+Dado que el gráfico previo pareciera indicar que $\delta GGOV$ y $\delta INVP$ no tienen pendiente y potencialmente no tienen intercepto, entonces el $VAR$ a estimar lo escogeremos entre los modelos $VAR$ sin intercepto ni tendencia, y los modelos $VAR$ con intercepto pero sin tendencia. Por lo tanto, el orden de los rezagos del $VAR$ a estimar se va a escoger con los siguientes comandos:[^3]
 
+[^3]: Observe que el vector estimado dentro del _**VAR**_ es _**diff(seriesVAR)**_. Es decir, las variables de nuestro vector  _**seriesVAR**_ se han incluido en primeras diferencias dentro del _**VAR**_.
+``` r
 VARselect(diff(seriesVAR),lag.max=10,type="const")
-
-[^3]: **Los gráficos previos parecieran determinar un $VAR$ sin tendencia ni constante para para la estimación de las variables en diferencias. Sin embargo, vamos a estimarlo con constante (por lo que así mismo establecemos la busqueda del orden del mismo.** 
+VARselect(diff(seriesVAR),lag.max=10,type="none")
+```
 
 Obteniendo
 ``` r
@@ -103,11 +107,23 @@ AIC(n) -0.7302187 -0.7653847 -0.59593383 -0.6070840 -0.4428946 -0.33467465 -0.23
 HQ(n)  -0.6392294 -0.6137360 -0.38362561 -0.3341163 -0.1092675  0.05961203  0.2217220  0.3847928  0.4707948  0.4069532
 SC(n)  -0.4819802 -0.3516538 -0.01671062  0.1376315  0.4673133  0.74102559  1.0079684  1.2758721  1.4667069  1.5076982
 FPE(n)  0.4820385  0.4662116  0.55451799  0.5523404  0.6584253  0.74624958  0.8458893  0.9679864  1.0364124  0.9677835
+
+> VARselect(diff(seriesVAR),lag.max=10,type="none")
+$selection
+AIC(n)  HQ(n)  SC(n) FPE(n) 
+     2      1      1      2 
+
+$criteria
+                1          2          3           4          5           6          7          8           9         10
+AIC(n) -0.7346617 -0.7943845 -0.6353181 -0.62088202 -0.4729811 -0.35380577 -0.2372432 -0.1080725 -0.07073884 -0.1365550
+HQ(n)  -0.6740022 -0.6730655 -0.4533397 -0.37824407 -0.1696836  0.01015116  0.1873732  0.3772034  0.47519656  0.4700399
+SC(n)  -0.5691693 -0.4633998 -0.1388411  0.04108735  0.3544806  0.63914829  0.9212032  1.2158663  1.41869226  1.5183685
+FPE(n)  0.4797369  0.4523829  0.5318560  0.54255717  0.6348628  0.72535827  0.8317011  0.9731772  1.04870588  1.0313483
 ```
 
-Es decir, el $VAR$ se estima con uno o dos rezagos. No hay una opción clara acerca de cuál es la mejor opción. Sin embargo, con una brecha relativamente más alta (respecto al resto de criterios de información), el  $\text{Criterio Bayesiano de Schwartz}$ concluye que es mejor un rezago, entonces vamos a seguir dicho criterio.
+Es decir, el modelo $VAR$ tiene uno o dos rezagos (según el criterio de información escogido) y lleva constante. No hay una opción clara acerca de si es mejor con uno o con dos rezagos. Sin embargo, con una brecha relativamente más alta (respecto al resto de criterios de información), el  $\text{Criterio Bayesiano de Schwartz}$ concluye que es mejor un rezago, entonces vamos a seguir dicho criterio.
 
-Ahora estimamos el $VAR$ con los siguientes comandos:
+Ahora estimamos el $VAR(1)$ con los siguientes comandos:
 ``` r
 modeloVAR<-VAR(diff(seriesVAR),p=1,type="const")
 summary(modeloVAR)
