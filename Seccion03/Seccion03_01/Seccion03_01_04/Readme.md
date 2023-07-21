@@ -31,3 +31,38 @@ Las dos variables que van a representar el gasto público y la inversión privad
            indicator                                                     name
 11117 NE.GDI.FPRV.ZS Gross fixed capital formation, private sector (% of GDP)
 ```
+Llamamos los datos de las dos variables para Corea del Sur, y las denominamos como GGOV (Gasto Público como % del PIB) y INVP (Inversión Privada como % del PIB)
+``` r
+dat = WDI(indicator= c(GGOV = "NE.CON.GOVT.ZS", INVP="NE.GDI.FPRV.ZS"), country=c('KR'), language = "es")
+```
+Al visualizar los datos, se puede ver que ya estan ordenados del más antiguo al más nuevo
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/94a117f9-c3b7-41e1-a6ca-495f07af6712)
+
+Entonces, con los siguientes comandos a procedemos depurar la base de datos: (1) eliminando los años en los cuales no tenemos información para ambas variables (es decir, de 1960 a 1969) y (2) eliminando las columnas que no incluyan a las dos variables análizadas:
+``` r
+dat <- na.omit(dat)
+dat <- mutate(dat, year=NULL, country=NULL, iso2c=NULL, iso3c=NULL)
+```
+Ahora la base esta así:
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/a4e1a02a-fc5c-4aba-ad82-1f8f6cbf43d3)
+
+Ahora se determina que las dos variables conforman un vector en formato de serie de tiempo anual (llamado seriesVAR) que va desde 1970 hasta 2022
+``` r
+seriesVAR <-ts(dat,frequency=1,start = 1970)
+```
+Con el siguiente comando, visualizamos las dos variables:
+``` r
+ts.plot(seriesVAR, xlab="Años", ylab="% del PIB", col=c("red","blue"), main="Corea del Sur - Series en niveles: 1970 - 2022")
+legend("topleft", legend = c("GGOV","INVP"), col = c("red","blue"), lty = 1)
+```
+Obteniendo
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/022ef39c-d4ea-4f83-aa14-49f4c5afbccd)
+
+
+En un análisis previo, que no se muestra en esta sección, se concluye que ambas series (GGOV e INVP) son integradas de orden uno. Es decir, en niveles no son estacionarias en niveles, pero si en primeras diferencias. Por lo que el modelo VAR que se va a estimar es con las variables en primeras diverencias. Antes de comenzar el análisis VAR, gráfiquemos las variables a estudiar en primeras diferencias
+``` r
+ts.plot(diff(seriesVAR), xlab="Años",ylab="% del PIB",col=c("red","blue"), main="Corea del Sur - Series en diferencias: 1970 - 2022")
+legend("topright", legend = c("dif.GGOV","dif.INVP"), col = c("red","blue"), lty = 1)
+```
+Obteniendo
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/da96898b-e37e-4709-8ac5-5a34c51b0e48)
