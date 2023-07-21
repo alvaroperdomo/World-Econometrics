@@ -11,6 +11,7 @@ A continuación, se propone analizar la relación econométrica entre el gasto d
 
 En primera instancia, vamos a limpiar el área de trabajo y a llamar las librerias a utilizar. 
 
+## Preparando la base de datos y análisis gráfico
 ``` r
 rm(list = ls())
 
@@ -61,7 +62,9 @@ Obteniendo
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/022ef39c-d4ea-4f83-aa14-49f4c5afbccd)
 
-En un análisis previo, que no se muestra en esta sección, se concluye que ambas series (GGOV e INVP) son integradas de orden uno. Es decir, en niveles no son estacionarias en niveles, pero si en primeras diferencias. Por lo que el modelo VAR que se va a estimar es con las variables en primeras diverencias. Antes de comenzar el análisis VAR, gráfiquemos las variables a estudiar en primeras diferencias
+En este gráfico, es interesante ver el impacto que tuvo la crisis de 1999 en ambas variables.
+
+En un análisis previo, que no se muestra en esta sección, se concluye que ambas series (GGOV e INVP) son integradas de orden uno. Es decir, en niveles no son estacionarias en niveles, pero si en primeras diferencias. Por lo que el modelo $VAR$ que se va a estimar es con las variables en primeras diverencias. Antes de comenzar el análisis $VAR$, gráfiquemos las variables a estudiar en primeras diferencias
 ``` r
 ts.plot(diff(seriesVAR), xlab="Años",ylab="% del PIB",col=c("red","blue"), main="Corea del Sur - Series en diferencias: 1970 - 2022")
 legend("topright", legend = c("dif.GGOV","dif.INVP"), col = c("red","blue"), lty = 1)
@@ -69,3 +72,8 @@ legend("topright", legend = c("dif.GGOV","dif.INVP"), col = c("red","blue"), lty
 Obteniendo
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/da96898b-e37e-4709-8ac5-5a34c51b0e48)
+
+Observe la caida fuerte de la inversión en 1999.
+
+## Estimación del $VAR$ en primeras diferencias
+
