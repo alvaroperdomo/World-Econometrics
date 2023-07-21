@@ -77,3 +77,54 @@ Observe la caida fuerte de la inversión en 1999.
 
 ## Estimación del $VAR$ en primeras diferencias
 
+El orden del $VAR$ se va a escoger con el siguiente comando:[^1] 
+
+VARselect(diff(seriesVAR),lag.max=10,type="const")
+
+[^1]: **Los gráficos previos parecieran determinar un $VAR$ sin tendencia ni constante para para la estimación de las variables en diferencias. Sin embargo, vamos a estimarlo con constante (por lo que así mismo establecemos la busqueda del orden del mismo.** 
+
+Obteniendo
+``` r
+> VARselect(diff(seriesVAR),lag.max=10,type="const")
+$selection
+AIC(n)  HQ(n)  SC(n) FPE(n) 
+     2      1      1      2 
+
+$criteria
+                1          2           3          4          5           6          7          8          9         10
+AIC(n) -0.7302187 -0.7653847 -0.59593383 -0.6070840 -0.4428946 -0.33467465 -0.2332242 -0.1308129 -0.1054703 -0.2299714
+HQ(n)  -0.6392294 -0.6137360 -0.38362561 -0.3341163 -0.1092675  0.05961203  0.2217220  0.3847928  0.4707948  0.4069532
+SC(n)  -0.4819802 -0.3516538 -0.01671062  0.1376315  0.4673133  0.74102559  1.0079684  1.2758721  1.4667069  1.5076982
+FPE(n)  0.4820385  0.4662116  0.55451799  0.5523404  0.6584253  0.74624958  0.8458893  0.9679864  1.0364124  0.9677835
+```
+
+Es decir, el $VAR$ se estima con uno o dos rezagos. No hay una opción clara acerca de cuál es la mejor opción. Sin embargo, con una brecha relativamente más alta (respecto al resto de criterios de información), el  $\text{Criterio Bayesiano de Schwartz}$ concluye que es mejor un rezago, entonces vamos a seguir dicho criterio.
+
+Ahora estimamos el $VAR$ con los siguientes comandos:
+``` r
+detach("package:MTS", unload = TRUE)  #Para evitar incompatibilidades con el siguiente comando, voy a desactivar la librería "MTS"
+modeloVAR<-VAR(diff(seriesVAR),p=1,type="const")
+modeloVAR
+```
+Obteniendo
+``` r
+VAR Estimation Results:
+======================= 
+
+Estimated coefficients for equation GGOV: 
+========================================= 
+Call:
+GGOV = GGOV.l1 + INVP.l1 + const 
+
+   GGOV.l1    INVP.l1      const 
+0.12919063 0.07382022 0.13676461 
+
+
+Estimated coefficients for equation INVP: 
+========================================= 
+Call:
+INVP = GGOV.l1 + INVP.l1 + const 
+
+   GGOV.l1    INVP.l1      const 
+-0.4960385  0.1745102  0.2419343 
+```
