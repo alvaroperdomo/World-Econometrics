@@ -58,8 +58,8 @@ ts.plot(seriesVAR, xlab="Años", ylab="% del PIB", col=c("red","blue"), main="Co
 legend("topleft", legend = c("GGOV","INVP"), col = c("red","blue"), lty = 1)
 ```
 Obteniendo
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/022ef39c-d4ea-4f83-aa14-49f4c5afbccd)
 
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/022ef39c-d4ea-4f83-aa14-49f4c5afbccd)
 
 En un análisis previo, que no se muestra en esta sección, se concluye que ambas series (GGOV e INVP) son integradas de orden uno. Es decir, en niveles no son estacionarias en niveles, pero si en primeras diferencias. Por lo que el modelo VAR que se va a estimar es con las variables en primeras diverencias. Antes de comenzar el análisis VAR, gráfiquemos las variables a estudiar en primeras diferencias
 ``` r
@@ -67,4 +67,5 @@ ts.plot(diff(seriesVAR), xlab="Años",ylab="% del PIB",col=c("red","blue"), main
 legend("topright", legend = c("dif.GGOV","dif.INVP"), col = c("red","blue"), lty = 1)
 ```
 Obteniendo
+
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/da96898b-e37e-4709-8ac5-5a34c51b0e48)
