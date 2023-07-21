@@ -104,27 +104,110 @@ Ahora estimamos el $VAR$ con los siguientes comandos:
 ``` r
 detach("package:MTS", unload = TRUE)  #Para evitar incompatibilidades con el siguiente comando, voy a desactivar la librería "MTS"
 modeloVAR<-VAR(diff(seriesVAR),p=1,type="const")
-modeloVAR
+summary(modeloVAR)
 ```
 Obteniendo
 ``` r
-VAR Estimation Results:
-======================= 
+> summary(modeloVAR)
 
-Estimated coefficients for equation GGOV: 
-========================================= 
+VAR Estimation Results:
+========================= 
+Endogenous variables: GGOV, INVP 
+Deterministic variables: const 
+Sample size: 51 
+Log Likelihood: -133.731 
+Roots of the characteristic polynomial:
+0.2432 0.2432
 Call:
+VAR(y = diff(seriesVAR), p = 1, type = "const")
+
+
+Estimation results for equation GGOV: 
+===================================== 
 GGOV = GGOV.l1 + INVP.l1 + const 
 
-   GGOV.l1    INVP.l1      const 
-0.12919063 0.07382022 0.13676461 
+        Estimate Std. Error t value Pr(>|t|)
+GGOV.l1  0.12919    0.15930   0.811    0.421
+INVP.l1  0.07382    0.05681   1.299    0.200
+const    0.13676    0.09038   1.513    0.137
 
 
-Estimated coefficients for equation INVP: 
-========================================= 
-Call:
+Residual standard error: 0.6087 on 48 degrees of freedom
+Multiple R-Squared: 0.03524,	Adjusted R-squared: -0.004955 
+F-statistic: 0.8767 on 2 and 48 DF,  p-value: 0.4227 
+
+
+Estimation results for equation INVP: 
+===================================== 
 INVP = GGOV.l1 + INVP.l1 + const 
 
-   GGOV.l1    INVP.l1      const 
--0.4960385  0.1745102  0.2419343 
+        Estimate Std. Error t value Pr(>|t|)
+GGOV.l1  -0.4960     0.4245  -1.169    0.248
+INVP.l1   0.1745     0.1514   1.153    0.255
+const     0.2419     0.2409   1.004    0.320
+
+
+Residual standard error: 1.622 on 48 degrees of freedom
+Multiple R-Squared: 0.09242,	Adjusted R-squared: 0.05461 
+F-statistic: 2.444 on 2 and 48 DF,  p-value: 0.09754 
+
+
+
+Covariance matrix of residuals:
+        GGOV    INVP
+GGOV  0.3706 -0.4917
+INVP -0.4917  2.6315
+
+Correlation matrix of residuals:
+       GGOV   INVP
+GGOV  1.000 -0.498
+INVP -0.498  1.000
 ```
+
+Observe que en este VAR las dos raíces caracteristicas del polinomio que lo resuelven son iguales 0.2432. Por lo tanto, se encuentran dentro del circulo unitario, lo que nos lleva a que el $VAR$ es estable. No olvide que las raíces caracteristicas, después de estimado el $VAR$ también se pueden recuperar con el comando
+
+```r
+roots(modeloVAR)
+```
+Obteniendo, 
+
+```r
+> roots(modeloVAR)
+[1] 0.243234 0.243234
+
+```
+A partir de los coeficientes del $VAR$ parece como se hubiera un efecto crowding-out y al mismo tiempo la inversión tuviera un impacto positivo sobre el gasto del gobierno.
+
+#FALTA LO DE ABAJO
+plot(modeloVAR, names="GGOV")
+plot(modelo, names="INVP")
+
+acf(residuals(modelo)[,1])
+
+serial.test(modelo,lags.pt=10)
+
+grangertest(diff(GGOV) ~ diff(INVP),order=1,data=series)
+
+grangertest(diff(INVP) ~ diff(GGOV),order=1,data=series)
+
+modelo.irf1<-irf(modelo,impulse="GGOV", response="GGOV")
+modelo.irf2<-irf(modelo,impulse="GGOV", response="INVP")
+modelo.irf3<-irf(modelo,impulse="INVP", response="GGOV")
+modelo.irf4<-irf(modelo,impulse="INVP", response="INVP")
+
+
+plot(modelo.irf1)
+plot(modelo.irf2)
+plot(modelo.irf3)
+plot(modelo.irf4)
+
+forecast1<-forecast(modelo, level = c(95), h = 3)
+summary(forecast1)
+autoplot(forecast1)
+
+forecasts <- predict(modelo)
+forecasts
+plot(forecasts)
+
+
+
