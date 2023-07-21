@@ -39,15 +39,15 @@ Después de revisar la base de datos _Indicadores de Desarrollo Mundial_ se deci
            indicator                                                     name
 11117 NE.GDI.FPRV.ZS Gross fixed capital formation, private sector (% of GDP)
 ```
-Con el siguiente comando descargamos ambas variables para Corea del Sur, y las renombramos como $GGOV$ (Gasto Público como % del PIB) y $INVP$ (Inversión Privada como % del PIB)
+Con el siguiente comando descargamos ambas variables para Corea del Sur, y las renombramos como $GGOV$ (Gasto Público como % del PIB) y $INVP$ (Inversión Privada como % del PIB).
 ``` r
 dat = WDI(indicator= c(GGOV = "NE.CON.GOVT.ZS", INVP="NE.GDI.FPRV.ZS"), country=c('KR'), language = "es")
 ```
-Al visualizar los datos, se puede ver que ya estan ordenados del más antiguo al más nuevo
+Al visualizar los datos, se puede ver que ya estan ordenados del más antiguo al más nuevo,
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/94a117f9-c3b7-41e1-a6ca-495f07af6712)
 
-Entonces, con los siguientes comandos a procedemos depurar la base de datos: (1) eliminando los años en los cuales no tenemos información para ambas variables (es decir, de 1960 a 1969) y (2) eliminando las columnas que no incluyan a las dos variables análizadas:
+entonces, con los siguientes comandos a procedemos depurar la base de datos: (1) eliminando los años en los cuales no tenemos información para ambas variables (es decir, de 1960 a 1969) y (2) eliminando las columnas que no incluyan a las dos variables analizadás:
 ``` r
 dat <- na.omit(dat)
 dat <- mutate(dat, year=NULL, country=NULL, iso2c=NULL, iso3c=NULL)
