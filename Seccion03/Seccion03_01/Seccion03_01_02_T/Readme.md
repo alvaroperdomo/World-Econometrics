@@ -61,7 +61,7 @@ Un problema con la prueba de razón de verosimilitud se basa en la teoría asint
 Para determinar el número de rezagos, mucho más utilizadas que las pruebas de razón de verosimilitud, son las generalizaciones multivariadas del $\text{Criterio de Información de Akaike}$, el $\text{Criterio Bayesiano de Schwartz}$ y el $\text{Criterio de Información de Hannan-Quinn}$:
 * $\text{Criterio de Información de Akaike}=T \ln{|\mathbf{\Sigma}|}+2N$
 * $\text{Criterio Bayesiano de Schwartz}=T \ln{|\mathbf{\Sigma}|}+N\ln{T}$ 
-* $\text{Criterio de Información de Hannan-Quinn}=T \ln{|\mathbf{\Sigma}|}+N2\ln{\ln{T}}$
+* $\text{Criterio de Información de Hannan-Quinn}=T \ln{|\mathbf{\Sigma}|}+2N\ln{(\ln{T})}$
 
 donde
 * $|\mathbf{\Sigma}|$ es el determinante de la varianza matriz de varianzas y covarianzas de los residuos
