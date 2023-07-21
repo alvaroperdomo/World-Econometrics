@@ -65,7 +65,6 @@ Con el siguiente comando, visualizamos un gráfico de las dos variables:
 ts.plot(seriesVAR, xlab="Años", ylab="% del PIB", col=c("red","blue"), main="Corea del Sur - Series en niveles: 1970 - 2022")
 legend("topleft", legend = c("GGOV","INVP"), col = c("red","blue"), lty = 1)
 ```
-Obteniendo
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/022ef39c-d4ea-4f83-aa14-49f4c5afbccd)
 
