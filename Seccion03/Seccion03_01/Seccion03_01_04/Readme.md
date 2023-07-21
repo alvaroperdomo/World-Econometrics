@@ -1,7 +1,7 @@
 ## SECCIÓN 3.1.4
 # Caso de estudio de un modelo $VAR$ utilizando la base de datos _Indicadores de Desarrollo Mundial_
 
-A continuación, se presenta un ejemplo utilizando la base de datos _Indicadores de Desarrollo Económico del Banco Mundial_. 
+A continuación, se presenta un caso de estudio utilizando la base de datos _Indicadores de Desarrollo Económico del Banco Mundial_. 
 
 ## Contexto del problema a analizar
 Uno de los debates que existen en economía esta relacionado con el efecto que ejerce el el gasto del gobierno (o la inversión del gobieno o la deuda del gobierno) sobre la inversión privada:
@@ -15,18 +15,18 @@ Después de la Segunda Guerra Mundial, uno de los países exitosos en términos 
 El caso de estudio de esta sección esta relacionado con los párrafos que acabamos de platear. El código de $R$ que se propopone para hacer el análisis es el siguiente:
 
 ## Preparando la base de datos y análisis gráfico
-En primera instancia, vamos a limpiar el área de trabajo y a llamar las librerias a utilizar. 
+En primera instancia, vamos a limpiar el área de trabajo y a llamar las librerías a utilizar. 
 ``` r
 rm(list = ls())
 
-library(WDI)         # Esta libreria sirve para trabajar directamente con la base de datos Indicadores de Desarrollo Mundial.
-library(dplyr)       # Esta libreria permite manipular las bases de datos de R de una forma sencilla, por ejemplo utilizando los comandos mutate() y arrange()
+library(WDI)         # Esta librería sirve para trabajar directamente con la base de datos Indicadores de Desarrollo Mundial.
+library(dplyr)       # Esta librería permite manipular las bases de datos de R de una forma sencilla, por ejemplo utilizando los comandos mutate() y arrange()
 library(ggplot2)     # Esta librería sirve para construir gráficos interesantes
-library(forecast)    # Esta libreria sirve para hacer pronósticos.
-library(vars)        # Esta libreria se utiliza para la estimación de los modelos VAR
+library(forecast)    # Esta librería sirve para hacer pronósticos.
+library(vars)        # Esta librería se utiliza para la estimación de los modelos VAR
 
 ```
-Después de revisar la base de datos _Indicadores de Desarrollo Mundial_ se decidió que las dos variables que van a representar el gasto público y la inversión privada se van a manejar como % del PIB [^1] y se definen en la base de datos como: [^2]
+Después de revisar la base de datos _Indicadores de Desarrollo Mundial_ se decidió que las dos variables que representan al gasto público y a la inversión privada se van a manejar como % del PIB [^1] y se llaman en los _Indicadores de Desarrollo Mundial_ como: [^2]
 
 [^1]: **Para de esta forma, como es usual en el manejo econométrico de variables económicas, poder manejarlas en términos reales y así para aislarlas del efecto de la inflación.**
 [^2]: **El gasto de consumo final del Gobierno general incluye todos los gastos corrientes para la adquisición de bienes y servicios (incluida la remuneración de los empleados). También comprende la mayor parte del gasto en defensa y seguridad nacional, pero no incluye los gastos militares del Gobierno que forman parte de la formación de capital del Gobierno. La formación bruta de capital fijo del sector privado se define como la inversión privada que cubre los desembolsos brutos del sector privado (incluidos organismos privados sin fines de lucro) además de sus activos fijos nacionales.**
