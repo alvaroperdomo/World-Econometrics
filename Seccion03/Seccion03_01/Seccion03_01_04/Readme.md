@@ -39,7 +39,7 @@ Después de revisar la base de datos _Indicadores de Desarrollo Mundial_ se deci
            indicator                                                     name
 11117 NE.GDI.FPRV.ZS Gross fixed capital formation, private sector (% of GDP)
 ```
-Con el siguiente comando descargamos ambas variables para Corea del Sur, y las renombramos como GGOV (Gasto Público como % del PIB) y INVP (Inversión Privada como % del PIB)
+Con el siguiente comando descargamos ambas variables para Corea del Sur, y las renombramos como $GGOV$ (Gasto Público como % del PIB) y $INVP$ (Inversión Privada como % del PIB)
 ``` r
 dat = WDI(indicator= c(GGOV = "NE.CON.GOVT.ZS", INVP="NE.GDI.FPRV.ZS"), country=c('KR'), language = "es")
 ```
