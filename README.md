@@ -65,13 +65,13 @@ A continuación encontrara información más detallada acerca de cada una de las
 | **3.1.1.** ¿Qué es un modelo $VAR$?, <br> ¿Cómo estimar y hacer pronosticos de un modelo $VAR$ en $R$? | Teoría y aplicación en $R$                    |                           | 
 | **3.1.2.** Pruebas de Hipótesis en Modelos $VAR$                                                       | Teoría y aplicación en $R$                    |                           |                        
 | **3.1.3.** La Función Impulso Respuesta y la Descomposición de Varianza                                | Teoría y aplicación en $R$                    |                           |            
-| **3.1.4** Ejemplo de un $VAR$ utilizando la base de datos _Indicadores de Desarrollo Mundial_          | Aplicación en $R$                             |                           | 
+| **3.1.4** Caso de estudio de un modelo $VAR$ utilizando la base de datos _Indicadores de Desarrollo Mundial_         | Aplicación en $R$                             |                           | 
 | **3.2. Cointegración y estimación de Modelos $VEC$**                                                   | **Metodología para estimar un modelo $VEC$.** |              1            | 
 | **3.2.1.** ¿Qué es y para qué sirve la Cointegración?                                                  | Explicación teórica                           |                           | 
 |  **3.2.2.** La Metodología de Engle y Granger (**2 variables**): ¿Cómo evaluar la presencia de cointegración? ¿Cómo estimar un Modelo $VEC$? |  Teoría y aplicación en $R$    |
 | **3.2.3.** La Metodología de Johansen (**2 o más variables**): ¿Cómo evaluar la presencia de cointegración? ¿Cómo estimar un Modelo $VEC$?   |  Teoría y aplicación en $R$    |
 | **3.2.4.** Pruebas de hipótesis adicionales para implementar en un modelo $VEC$                        | Teoría y aplicación en $R$                    |                           |
-| **3.2.5.** Ejemplo de un $VEC$ utilizando la base de datos _Indicadores de Desarrollo Mundial_         | Aplicación en $R$                             |                           | 
+| **3.2.5.** Caso de estudio de un modelo $VEC$ utilizando la base de datos _Indicadores de Desarrollo Mundial_         | Aplicación en $R$                             |                           | 
 
 ### _Durante el desarrollo del curso se van a plantear algunos ejercicios con los cuales al ser resueltos de forma satisfactoria van a permitir optar, previo pago, a la obtención del certificado del curso._
   
