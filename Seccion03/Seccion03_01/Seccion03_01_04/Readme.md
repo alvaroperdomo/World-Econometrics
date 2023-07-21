@@ -19,14 +19,17 @@ En primera instancia, vamos a limpiar el área de trabajo y a llamar las libreri
 ``` r
 rm(list = ls())
 
-library(WDI)
-library(dplyr)
-library(ggfortify)
-library(ggplot2)
-library(forecast)
-library(vars)
+library(WDI)         # Esta libreria sirve para trabajar directamente con la base de datos Indicadores de Desarrollo Mundial.
+library(dplyr)       # Esta libreria permite manipular las bases de datos de R de una forma sencilla, por ejemplo utilizando los comandos mutate() y arrange()
+library(ggplot2)     # Esta librería sirve para construir gráficos interesantes
+library(forecast)    # Esta libreria sirve para hacer pronósticos.
+library(vars)        # Esta libreria se utiliza para la estimación de los modelos VAR
+
 ```
-Las dos variables que van a representar el gasto público y la inversión privada se van a manejar como % del PIB y son definidas en los _Indicadores de Desarrollo Mundial_ como:
+Después de revisar la base de datos _Indicadores de Desarrollo Mundial_ se decidió que las dos variables que van a representar el gasto público y la inversión privada se van a manejar como % del PIB [^1] y se definen en lla base de datos como:
+
+[^1]: Para de esta forma, como es usual en el manejo econométrico de variables económicas, poder manejarlas en términos reales y así para aislarlas del efecto de la inflación.
+
 ``` r
 > WDIsearch(string='NE.CON.GOVT.ZS', field='indicator')
            indicator                                                        name
