@@ -80,11 +80,11 @@ legend("topright", legend = c("dif.GGOV","dif.INVP"), col = c("red","blue"), lty
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/da96898b-e37e-4709-8ac5-5a34c51b0e48)
 
-Lo más destacable es la caida fuerte que tuvó la inversión privada a raíz de la crisis financiera de finales de los 1990s.
+Lo más destacable del gráfico de arriba es fuerte caida que tuvó la inversión privada a raíz de la crisis financiera de finales de los 1990s.
 
 ## Estimación del $VAR$ en primeras diferencias
 
-Dado que el gráfico previo pareciera indicar que $\delta GGOV$ y $\delta INVP$ no tienen pendiente y potencialmente no tienen intercepto, entonces el $VAR$ a estimar lo escogeremos entre los modelos $VAR$ sin intercepto ni tendencia, y los modelos $VAR$ con intercepto pero sin tendencia. Por lo tanto, el orden de los rezagos del $VAR$ a estimar se va a escoger con los siguientes comandos:[^3]
+Dado que el gráfico previo pareciera indicar que $\Delta GGOV$ y $\Delta INVP$ no tienen pendiente y potencialmente no tienen intercepto, entonces el $VAR$ a estimar lo escogeremos entre los modelos $VAR$ sin intercepto ni tendencia, y los modelos $VAR$ con intercepto pero sin tendencia. Por lo tanto, el orden de los rezagos del $VAR$ a estimar se va a escoger con los siguientes comandos:[^3]
 
 [^3]: **Observe que el vector estimado dentro del _VAR_ es _diff(seriesVAR)_. Es decir, las variables de nuestro vector  _seriesVAR_ se han incluido en primeras diferencias dentro del _VAR_.**
 ``` r
