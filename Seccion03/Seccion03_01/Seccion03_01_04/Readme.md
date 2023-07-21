@@ -3,15 +3,19 @@
 
 A continuación, se presenta un ejemplo utilizando la base de datos _Indicadores de Desarrollo Económico del Banco Mundial_. 
 
-Después de la Segunda Guerra Mundial, uno de los países exitosos en términos de desarrollo y crecimiento económico fue Corea del Sur. Por otra parte uno de los debates que se tienen en economía esta relacionado con el efecto que ejerce el  el gasto del gobierno (o la inversión del gobieno o la deuda del gobierno) sobre la inversión privada. Por un lado, están quienes establecen que se da un efecto desplazamiento (o efecto _crowding-out_) en donde el mayor gasto del gobierno, presiona a un incremento de la tasa de interés, perjudicando de esta forma a los proyectos privados de inversión. Por otro lado, están quienes afirman que un mayor gasto del gobierno reactiva la demanda, lo que hace que aumente la producción (es decir, la oferta) y por esta vía se afectan positivamente los proyectos de inversión. 
+## Contexto del problema a analizar
+Uno de los debates que existen en economía esta relacionado con el efecto que ejerce el el gasto del gobierno (o la inversión del gobieno o la deuda del gobierno) sobre la inversión privada:
+* Por un lado, están quienes establecen que se da un efecto _crowding-out_ (o efecto desplazamiento) en donde el mayor gasto del gobierno, presiona a un incremento de la tasa de interés, perjudicando de esta forma a los proyectos privados de inversión.
+* Por otro lado, están quienes establecen que se da un efecto _crowding-in_ (o efecto expansión) en donde un mayor gasto del gobierno reactiva la demanda, lo que hace que aumente la producción (es decir, la oferta) y por esta vía se afecta positivamente a los proyectos de inversión privada. 
 
-Igualmente, hay que tener en cuenta que una mayor inversión privada reactiva la economía, y por esta vía el gobierno recauda más impuestos y puede aumentar su gasto. Dado el tipo de trelación de doble vía que hemos establecido, una estimación de Mínimos Cuadrados en este contexto no sería recomendable por la potencial presencia se estimaciones sesgadas. Una de las formas de resolver este tipo de dilemas en con la utilización de estimaciones $VAR$
+Entonces, se podría pensar que con una estimación  de Mínimos Cuadrados Orfinatios ($MCO$) se podría resolver este dilema. Sin emabargo. hay que tener en cuenta que una mayor inversión privada reactiva la economía, y por esta vía el gobierno recauda más impuestos y puede aumentar su gasto. Por lo tanto, estamos ante un problema de doble causalidad en donde una estonación $MCO$ no sería recomendable por la potencial presencia se estimaciones sesgadas. Una de las formas de resolver este tipo de dilemas en con la utilización de estimaciones de modelos $VAR$. 
 
-A continuación, se propone analizar la relación econométrica entre el gasto del gobierno y la inversión privada en Corea del Sur.
+Después de la Segunda Guerra Mundial, uno de los países exitosos en términos de desarrollo y crecimiento económico fue Corea del Sur. Entonces, valdría la pena analizar el potencial rol que tuvo el gasto del gobierno en este proceso, en particular en cuanto al estimulo que tuvó sobre la inversión privada del país.
 
-En primera instancia, vamos a limpiar el área de trabajo y a llamar las librerias a utilizar. 
+El código de $R$ que se propopone para hacer el análisis es el siguiente:
 
 ## Preparando la base de datos y análisis gráfico
+En primera instancia, vamos a limpiar el área de trabajo y a llamar las librerias a utilizar. 
 ``` r
 rm(list = ls())
 
@@ -21,7 +25,6 @@ library(ggfortify)
 library(ggplot2)
 library(forecast)
 library(vars)
-library(MTS)
 ```
 Las dos variables que van a representar el gasto público y la inversión privada se van a manejar como % del PIB y son definidas en los _Indicadores de Desarrollo Mundial_ como:
 ``` r
@@ -102,7 +105,6 @@ Es decir, el $VAR$ se estima con uno o dos rezagos. No hay una opción clara ace
 
 Ahora estimamos el $VAR$ con los siguientes comandos:
 ``` r
-detach("package:MTS", unload = TRUE)  #Para evitar incompatibilidades con el siguiente comando, voy a desactivar la librería "MTS"
 modeloVAR<-VAR(diff(seriesVAR),p=1,type="const")
 summary(modeloVAR)
 ```
