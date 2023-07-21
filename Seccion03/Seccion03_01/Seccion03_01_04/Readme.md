@@ -84,11 +84,11 @@ Observe la caida fuerte de la inversión en 1999.
 
 ## Estimación del $VAR$ en primeras diferencias
 
-El orden del $VAR$ se va a escoger con el siguiente comando:[^1] 
+El orden del $VAR$ se va a escoger con el siguiente comando:[^3] 
 
 VARselect(diff(seriesVAR),lag.max=10,type="const")
 
-[^1]: **Los gráficos previos parecieran determinar un $VAR$ sin tendencia ni constante para para la estimación de las variables en diferencias. Sin embargo, vamos a estimarlo con constante (por lo que así mismo establecemos la busqueda del orden del mismo.** 
+[^3]: **Los gráficos previos parecieran determinar un $VAR$ sin tendencia ni constante para para la estimación de las variables en diferencias. Sin embargo, vamos a estimarlo con constante (por lo que así mismo establecemos la busqueda del orden del mismo.** 
 
 Obteniendo
 ``` r
