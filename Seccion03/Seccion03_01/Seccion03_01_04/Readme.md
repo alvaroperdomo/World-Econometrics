@@ -28,8 +28,8 @@ library(vars)        # Esta libreria se utiliza para la estimación de los model
 ```
 Después de revisar la base de datos _Indicadores de Desarrollo Mundial_ se decidió que las dos variables que van a representar el gasto público y la inversión privada se van a manejar como % del PIB [^1] y se definen en la base de datos como: [^2]
 
-[^1]: Para de esta forma, como es usual en el manejo econométrico de variables económicas, poder manejarlas en términos reales y así para aislarlas del efecto de la inflación.
-[^2]: El gasto de consumo final del Gobierno general incluye todos los gastos corrientes para la adquisición de bienes y servicios (incluida la remuneración de los empleados). También comprende la mayor parte del gasto en defensa y seguridad nacional, pero no incluye los gastos militares del Gobierno que forman parte de la formación de capital del Gobierno. La formación bruta de capital fijo del sector privado se define como la inversión privada que cubre los desembolsos brutos del sector privado (incluidos organismos privados sin fines de lucro) además de sus activos fijos nacionales.
+[^1]: **Para de esta forma, como es usual en el manejo econométrico de variables económicas, poder manejarlas en términos reales y así para aislarlas del efecto de la inflación.**
+[^2]: **El gasto de consumo final del Gobierno general incluye todos los gastos corrientes para la adquisición de bienes y servicios (incluida la remuneración de los empleados). También comprende la mayor parte del gasto en defensa y seguridad nacional, pero no incluye los gastos militares del Gobierno que forman parte de la formación de capital del Gobierno. La formación bruta de capital fijo del sector privado se define como la inversión privada que cubre los desembolsos brutos del sector privado (incluidos organismos privados sin fines de lucro) además de sus activos fijos nacionales.**
 
 ``` r
 > WDIsearch(string='NE.CON.GOVT.ZS', field='indicator')
@@ -88,7 +88,7 @@ Lo más destacable es la caida fuerte que tuvó la inversión privada a raíz de
 
 Dado que el gráfico previo pareciera indicar que $\delta GGOV$ y $\delta INVP$ no tienen pendiente y potencialmente no tienen intercepto, entonces el $VAR$ a estimar lo escogeremos entre los modelos $VAR$ sin intercepto ni tendencia, y los modelos $VAR$ con intercepto pero sin tendencia. Por lo tanto, el orden de los rezagos del $VAR$ a estimar se va a escoger con los siguientes comandos:[^3]
 
-[^3]: Observe que el vector estimado dentro del _**VAR**_ es _**diff(seriesVAR)**_. Es decir, las variables de nuestro vector  _**seriesVAR**_ se han incluido en primeras diferencias dentro del _**VAR**_.
+[^3]: **Observe que el vector estimado dentro del _VAR_ es _diff(seriesVAR)_. Es decir, las variables de nuestro vector  _seriesVAR_ se han incluido en primeras diferencias dentro del _VAR_.**
 ``` r
 VARselect(diff(seriesVAR),lag.max=10,type="const")
 VARselect(diff(seriesVAR),lag.max=10,type="none")
