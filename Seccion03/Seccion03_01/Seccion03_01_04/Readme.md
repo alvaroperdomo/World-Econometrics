@@ -56,11 +56,11 @@ Ahora la base esta así:
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/a4e1a02a-fc5c-4aba-ad82-1f8f6cbf43d3)
 
-Ahora vamos a determinar que las dos variables ($GGOV$ e $INVP$) conforman un vector en formato de serie de tiempo anual (llamado $seriesVAR$) que va desde 1970 hasta 2022
+Ahora vamos a determinar que las dos variables ($GGOV$ e $INVP$) conforman un vector en formato de serie de tiempo anual (llamado $seriesVAR$) que va desde 1970 hasta 2022:
 ``` r
 seriesVAR <-ts(dat,frequency=1,start = 1970)
 ```
-Con el siguiente comando, visualizamos las dos variables:
+Con el siguiente comando, visualizamos un gráfico de las dos variables:
 ``` r
 ts.plot(seriesVAR, xlab="Años", ylab="% del PIB", col=c("red","blue"), main="Corea del Sur - Series en niveles: 1970 - 2022")
 legend("topleft", legend = c("GGOV","INVP"), col = c("red","blue"), lty = 1)
