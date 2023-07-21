@@ -67,7 +67,7 @@ donde
 * $|\mathbf{\Sigma}|$ es el determinante de la varianza matriz de varianzas y covarianzas de los residuos
 * $N$ es el número total de parámetros estimados en todas las ecuaciones. 
 
-Por lo tanto, si cada ecuación en un $VAR$ de $n$ variables tiene $p$ rezagos y un intercepto, entonces $N=n^2p+n$ (porque cada una de las $n$ ecuaciones tiene $np$ regresores rezagados y un intercepto).La adición de regresores adicionales reducirá $|\mathbf{\Sigma}|$ a expensas de aumentar $N$. Como en el caso univariado, seleccione el modelo con el valor más bajo del Criterio de Información de Akaike o del Criterio Bayesiano de Schwartz.[^4] 
+Por lo tanto, si cada ecuación en un $VAR$ de $n$ variables tiene $p$ rezagos y un intercepto, entonces $N=n^2p+n$ (porque cada una de las $n$ ecuaciones tiene $np$ regresores rezagados y un intercepto).La adición de regresores adicionales reducirá $|\mathbf{\Sigma}|$ a expensas de aumentar $N$. Como en el caso univariado, seleccione el modelo con el valor más bajo del $\text{Criterio de Información de Akaike}$, del $\text{Criterio Bayesiano de Schwartz}$ o del $\text{Criterio de Información de Hannan-Quinn}$.[^4] 
 
 [^4]: **Tenga en cuenta que el _Criterio de Información de Akaike_ y el _Criterio Bayesiano de Schwartz_ multivariados no se pueden usar para probar la importancia estadística de modelos alternativos. En cambio, son medidas del ajuste general de las alternativas.** 
 
