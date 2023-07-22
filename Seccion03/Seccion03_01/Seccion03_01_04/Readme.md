@@ -394,10 +394,10 @@ $INVP
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/fae26b8e-e4ee-4d7f-bca8-f782d448d149)
 
 Las funciones impulso-respuesta revelan que:[^*]
-* Un choque de gasto del gobierno afecta positivamente y de manera significativa al gasto del gobierno en algunos de los primeros periodos después del choque: En los periodos $1$ y $5$
-* Un choque de gasto del gobierno tiene un efecto _crowding-out_ significativo sobre la inversión privada los primeros periodos, pero tiene un efecto _crowding-in_ significativo sobre la inversión privada en periodos posteriores: Tiene un efecto negativo en el periodo $1$ y positivo en los periodos $3$ y $4$.
-* Un choque de inversión privada tiene un impacto positivo y significativo sobre el gasto gobierno en algunos de los primeros periodos después del choque: En los periodos $3$ y $8$
-* Un choque de inversión privada tiene un impacto positivo sobre la inversión en algunos de los primeros periodos después del choque: En los periodos $1$, $2$ y $5$
+* Un choque de gasto del gobierno afecta positivamente y de manera significativa al gasto del gobierno en algunos de los primeros periodos después del choque: En los periodos $0$ y $4$ después del choque
+* Un choque de gasto del gobierno tiene un efecto _crowding-out_ significativo sobre la inversión privada los primeros periodos, pero tiene un efecto _crowding-in_ significativo sobre la inversión privada en periodos posteriores: Tiene un efecto negativo en el periodo $0$ y positivo en los periodos $2$ y $3$ después del choque.
+* Un choque de inversión privada tiene un impacto positivo y significativo sobre el gasto gobierno en algunos de los primeros periodos después del choque: En los periodos $2$ y $7$ después del choque
+* Un choque de inversión privada tiene un impacto positivo sobre la inversión en algunos de los primeros periodos después del choque: En los periodos $0$, 1$ y $4$ después del choque
 
 [^*]: **Para las viñetas que siguen a continuación, fijense en las cotas superiores e inferiores de los intervalos de confianza de la función impulso-respuesta, si son del mismo signo, entonces son significativos en ese periodo con ese signo**. 
 
