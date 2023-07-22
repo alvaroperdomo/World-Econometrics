@@ -237,28 +237,37 @@ Obteniendo,
 ```r
 > roots(modeloVAR)
 [1] 0.7304 0.7304 0.4988 0.323
-
 ```
 A partir de los coeficientes del $VAR$, se evidencia un impacto positivo de la inversión sobre el gasto del gobierno y sobre la inversión misma. Claro que los efectos se visualizaran mucho mejor, más adelante con las funciones impulso-respuesta
 
-#FALTA LO DE ABAJO
+## Pruebas sobre los residuos estimados
+
+Con los siguientes comandos podemos visualizar la $FAC$ y la $FACP$ de los residuos estimados en cada una de las ecuaciones estimadas
+```r
+acf(residuals(modeloVAR)[,1])
+pacf(residuals(modeloVAR)[,1])
+acf(residuals(modeloVAR)[,2])
+pacf(residuals(modeloVAR)[,2])
+```
+Con el siguiente comando hacemos la prueba Portmanteau de correlación, 
+```r
+serial.test(modeloVAR,lags.pt=10)
+```
+concluyendo que 
+
 plot(modeloVAR, names="GGOV")
 plot(modelo, names="INVP")
 
-acf(residuals(modelo)[,1])
-
-serial.test(modelo,lags.pt=10)
-
-modelo.irf1<-irf(modelo,impulse="GGOV", response="GGOV")
-modelo.irf2<-irf(modelo,impulse="GGOV", response="INVP")
-modelo.irf3<-irf(modelo,impulse="INVP", response="GGOV")
-modelo.irf4<-irf(modelo,impulse="INVP", response="INVP")
 
 
-plot(modelo.irf1)
-plot(modelo.irf2)
-plot(modelo.irf3)
-plot(modelo.irf4)
+## Funciones impulso-respuesta y análisis de descomposición de varianza
+
+modelo.irf1<-irf(modeloVAR,impulse="GGOV", response="GGOV")
+modelo.irf2<-irf(modeloVAR,impulse="GGOV", response="INVP")
+modelo.irf3<-irf(modeloVAR,impulse="INVP", response="GGOV")
+modelo.irf4<-irf(modeloVAR,impulse="INVP", response="INVP")
+
+## Pronosticos
 
 forecast1<-forecast(modelo, level = c(95), h = 3)
 summary(forecast1)
@@ -267,6 +276,13 @@ autoplot(forecast1)
 forecasts <- predict(modelo)
 forecasts
 plot(forecasts)
+
+plot(modelo.irf1)
+plot(modelo.irf2)
+plot(modelo.irf3)
+plot(modelo.irf4)
+
+
 
 
 
