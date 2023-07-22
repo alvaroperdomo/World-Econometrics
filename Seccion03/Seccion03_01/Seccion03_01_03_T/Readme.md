@@ -9,15 +9,15 @@ Siguiendo la notación de la sección 3.1.1. en un $VAR(1)$ **_estándar_** con 
 La forma más utilizada para resolver el problema de identificación es **la descomposición de Choleski**, la cual consiste, en el modelo $VAR$ con $2$ parámetros es asumir que uno de los coeficientes de retroalimentación es cero (por ejemplo, asumiendo $b_{12}=0$), de tal forma que una variable no tiene efecto contemporaneo sobre otra variable. En la práctica, ¿cómo decidir cuál es la variable que no tiene un efecto contemporaneo sobre la otra variable? En algunos casos, puede haber una razón teórica. Por lo general, no existe tal conocimiento a priori. Desafortunadamente, no hay una manera simple de evitar el problema; la identificación requiere imponer alguna estructura en el sistema. 
 
 ## La Función Impulso-Respuesta
-Al igual que un proceso autorregresivo tiene una representación de media móvil, un vector autorregresivo $VAR$ puede escribirse como un vector de media móvil $VMA$. Más específicamente, $\eqalign{\mathbf{x_t=\mu+\sum_{i=1}^p A_1^i e_{t-i}}}$ es la representación $VMA$ del $VAR$ $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$ en donde todas las variables incluidas en el vector $\mathbf{x_t}$ se expresan en términos de los valores actuales y pasados de los diferentes tipos de choques incluidos en el vector $\mathbf{e_t}$.[^1] 
+Al igual que un proceso autorregresivo tiene una representación de media móvil, un vector autorregresivo $VAR$ puede escribirse como un vector de media móvil $VMA$. Más específicamente, $\eqalign{\mathbf{x_t=\mu+\sum_{i=1}^p A_1^i e_{t-i}}}$ es la representación $VMA$ **_estructural_** del $VAR$ **_estructural_** $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$ en donde todas las variables incluidas en el vector $\mathbf{x_t}$ se expresan en términos de los valores actuales y pasados de los diferentes tipos de choques incluidos en el vector $\mathbf{e_t}$.[^1] 
 
 [^1]: **La representación _VMA_ es una característica esencial de la metodología de Sims (1980), ya que permite rastrear la trayectoria en el tiempo de los diversos choques de las variables contenidas en el sistema _VAR_**. 
 
-Para fines ilustrativos, usaremos el modelo de primer orden de dos variables analizado en el análisis teórico del modelo $VAR$. Escribiendo el $VAR$ estructural de dos variables en forma matricial, 
+Para fines ilustrativos, usaremos el modelo $VAR(1)$ con dos variables analizado en la sección 3.1.1. Escribiendo el $VAR$ **_estructural_** de dos variables en forma matricial, 
 
 ${\left\lbrack \matrix{y_t \cr z_t} \right\rbrack} = {\left\lbrack \matrix{a_{10} \cr a_{20}} \right\rbrack} + {\left\lbrack \matrix{a_{11} & a_{12} \cr a_{21} & a_{22}}\right\rbrack}{\left\lbrack \matrix{y_{t-1} \cr z_{t-1}} \right\rbrack}+{\left\lbrack \matrix{e_{1t} \cr e_{2t}} \right\rbrack}$ 
 
-o partiendo de la representación $VAR$ $\eqalign{\mathbf{x_t=\mu+\sum_{i=1}^p A_1^i e_{t-i}}}$ obtenemos la representación $VMA$ 
+o partiendo de la representación $VAR$ **_estructural_** $\eqalign{\mathbf{x_t=\mu+\sum_{i=1}^p A_1^i e_{t-i}}}$ obtenemos la representación $VMA$ **_estructural_** 
 
 $\eqalign{{\left\lbrack \matrix{y_t \cr z_t} \right\rbrack} = {\left\lbrack \matrix{\overline{y} \cr \overline{z}} \right\rbrack} + \sum_{i=0}^\infty{\left\lbrack \matrix{a_{11} & a_{12} \cr a_{21} & a_{22}}\right\rbrack}^i+{\left\lbrack \matrix{e_{1(t-i)} \cr e_{2(t-i)}} \right\rbrack}}$. 
 
