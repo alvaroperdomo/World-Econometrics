@@ -224,17 +224,24 @@ pacf(residuals(modeloVAR)[,2])
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/c1aa7df6-4183-4437-bf7a-7be8734dc092)
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/b775d203-7a1c-4ba8-ac91-85f32dca1165)
 
+De los cuatro gráficos de arriba se puede apreciar que los errores estimados de la ecuación de $\Delta GGOV$ no estan autocorrelacionados, y en buena medida los errores estimados de la ecuación de $\Delta INVP$ sno estan autocorrelacionados, aunque la información del rezago 8 si muestra una leve autocorrelación.  
 
-
-
-
-Con el siguiente comando hacemos la prueba Portmanteau de correlación, 
+También se llevó a cabo una prueba Portmanteau de correlación, la cual se calcula con el siguiente comando:
 ```r
 serial.test(modeloVAR,lags.pt=10)
 ```
+Obteniendose el siguiente resultado:
+```r
+	Portmanteau Test (asymptotic)
 
-## Funciones impulso-respuesta y análisis de descomposición de varianza
-Las relaciones de causalidad, en el sentido de Granger, entre $\Delta GGOV$ y $\Delta INVP$, tomando en cuenta dos rezagos, se obtienen a partir de los comandos:
+
+data:  Residuals of VAR object modeloVAR
+Chi-squared = 25.257, df = 32, p-value = 0.7955
+```
+Es decir, no se rechaza la hipótesis nula de no correlación en el $VAR$
+
+## Prueba de causalidad de granger, funciones impulso-respuesta y análisis de descomposición de varianza
+Las relaciones de causalidad, en el sentido de Granger, entre $\Delta GGOV$ y $\Delta INVP$, tomando en cuenta los dos rezagos que tiene el $VAR$, se obtienen a partir de los comandos:
 
 ``` r
 grangertest(diff(GGOV) ~ diff(INVP),order=2,data=seriesVAR)
@@ -262,21 +269,23 @@ Model 2: diff(INVP) ~ Lags(diff(INVP), 1:2)
 1     45                 
 2     47 -2 0.6134  0.546
 ```
-A partir de la prueba de causalidad de Granger, se revela que va a ser más importante el efecto causal de $\Delta GGOV$ en $\Delta INVP$, que el efecto causal de $\Delta INVP$ en $\Delta GGOV$. Por lo tanto, al establecer las funciones impulso-respuesta se ha estructurado la descomposición de Choleski del $VAR$ de tal forma que $\Delta GGOV$ tiene efectos contemporaneos y rezagados en $\Delta INVP$, pero  $\Delta INVP$ no tiene un efecto contemporaneo en $\Delta GGOV$, sólo efectos rezagados 
+A partir de la prueba de causalidad de Granger, se revela que va es más importante el efecto causal de $\Delta GGOV$ en $\Delta INVP$, que el efecto causal de $\Delta INVP$ en $\Delta GGOV$. Por lo tanto, al establecer las funciones impulso-respuesta se ha estructurado la descomposición de Choleski del $VAR$ de tal forma que $\Delta GGOV$ tiene efectos contemporaneos y rezagados en $\Delta INVP$, pero  $\Delta INVP$ no tiene un efecto contemporaneo en $\Delta GGOV$, sólo efectos rezagados 
 
 Para calcular y dibujar las funciones impulso-respuesta, se copian los comandos
 ``` r
-modelo.irf1<-irf(modeloVAR,impulse="GGOV", response="GGOV")
-modelo.irf2<-irf(modeloVAR,impulse="GGOV", response="INVP")
-modelo.irf3<-irf(modeloVAR,impulse="INVP", response="GGOV")
-modelo.irf4<-irf(modeloVAR,impulse="INVP", response="INVP")
+modelo.irf1<-irf(modeloVAR,impulse="GGOV", response=NULL, ci=0.9)
+modelo.irf2<-irf(modeloVAR,impulse="INVP", response=NULL, ci=0.9)
 
 plot(modelo.irf1)
 plot(modelo.irf2)
-plot(modelo.irf3)
-plot(modelo.irf4)
 ```
 Se obtiene, 
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5b4f3d89-abde-48e6-9809-c7672a282fba)
+
+
+
+
 ## Pronosticos
 
 forecast1<-forecast(modelo, level = c(95), h = 3)
