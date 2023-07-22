@@ -273,10 +273,10 @@ Model 2: diff(INVP) ~ Lags(diff(INVP), 1:2)
 A partir de la prueba de causalidad de Granger, se revela que va es más importante el efecto causal de $\Delta GGOV$ en $\Delta INVP$, que el efecto causal de $\Delta INVP$ en $\Delta GGOV$. Por lo tanto, al establecer las funciones impulso-respuesta se ha estructurado la descomposición de Choleski del $VAR$ de tal forma que $\Delta GGOV$ tiene efectos contemporaneos y rezagados en $\Delta INVP$, pero  $\Delta INVP$ no tiene un efecto contemporaneo en $\Delta GGOV$, sólo efectos rezagados 
 
 ### Funciones impulso-respuesta
-Para calcular y dibujar las funciones impulso-respuesta, se copian los comandos
+Vamos a calcular y dibujar funciones impulso-respuesta utilizando los siguientes comandos:
 ``` r
-modelo.irf1<-irf(modeloVAR,impulse="GGOV", response=NULL, ci=0.9)
-modelo.irf2<-irf(modeloVAR,impulse="INVP", response=NULL, ci=0.9)
+modelo.irf1<-irf(modeloVAR,impulse="GGOV", response=NULL)
+modelo.irf2<-irf(modeloVAR,impulse="INVP", response=NULL)
 modelo.irf1
 modelo.irf2
 
@@ -286,8 +286,9 @@ plot(modelo.irf2)
 Se obtiene, 
 
 ``` r
-> modelo.irf1<-irf(modeloVAR,impulse="GGOV", response=NULL, ci=0.9)
-> modelo.irf2<-irf(modeloVAR,impulse="INVP", response=NULL, ci=0.9)
+> modelo.irf1<-irf(modeloVAR,impulse="GGOV", response=NULL,)
+> modelo.irf2<-irf(modeloVAR,impulse="INVP", response=NULL,)
+> 
 > modelo.irf1
 
 Impulse response coefficients
@@ -306,36 +307,36 @@ $GGOV
 [11,]  0.003274718 -0.02625336
 
 
-Lower Band, CI= 0.9 
+Lower Band, CI= 0.95 
 $GGOV
-               GGOV         INVP
- [1,]  0.4612368951 -0.987808718
- [2,] -0.0835777644 -0.629472957
- [3,] -0.2039733304  0.076090377
- [4,] -0.0891649486  0.051665578
- [5,]  0.0030164323 -0.306284608
- [6,] -0.0064741203 -0.373988037
- [7,] -0.0708172039 -0.118914232
- [8,] -0.0588894533 -0.001703019
- [9,] -0.0221869019 -0.084583356
-[10,] -0.0009911329 -0.155253431
-[11,] -0.0178927448 -0.105496351
+              GGOV        INVP
+ [1,]  0.448404357 -0.89193356
+ [2,] -0.105700990 -0.64052565
+ [3,] -0.182059558  0.09303440
+ [4,] -0.119333489  0.00629660
+ [5,]  0.007679976 -0.24475296
+ [6,] -0.014499518 -0.31440027
+ [7,] -0.070333072 -0.17241123
+ [8,] -0.058250246 -0.00514314
+ [9,] -0.028107333 -0.06778566
+[10,] -0.004810087 -0.11950295
+[11,] -0.018304354 -0.09324359
 
 
-Upper Band, CI= 0.9 
+Upper Band, CI= 0.95 
 $GGOV
-             GGOV         INVP
- [1,] 0.658037030 -0.132598916
- [2,] 0.154333929  0.164863053
- [3,] 0.068698394  0.747162496
- [4,] 0.058348092  0.501556489
- [5,] 0.150799284  0.086158020
- [6,] 0.077163453 -0.002673337
- [7,] 0.022234893  0.179499557
- [8,] 0.003237764  0.262758484
- [9,] 0.036539478  0.129397281
-[10,] 0.046330565  0.018938981
-[11,] 0.019897417  0.038489435
+            GGOV         INVP
+ [1,] 0.66616927 -0.173970521
+ [2,] 0.14138199  0.254720600
+ [3,] 0.08260326  0.711130678
+ [4,] 0.05881065  0.501118647
+ [5,] 0.14524152  0.153231778
+ [6,] 0.09169154  0.007552665
+ [7,] 0.04565639  0.143952626
+ [8,] 0.01078695  0.215704615
+ [9,] 0.03920627  0.137721706
+[10,] 0.04261747  0.048914355
+[11,] 0.02432740  0.036582845
 
 > modelo.irf2
 
@@ -355,49 +356,50 @@ $INVP
 [11,] -0.005904993  0.04021889
 
 
-Lower Band, CI= 0.9 
+Lower Band, CI= 0.95 
 $INVP
                GGOV        INVP
- [1,]  0.0000000000  1.02848211
- [2,] -0.1013898380  0.26770527
- [3,]  0.0931850408 -0.53622437
- [4,] -0.0036425660 -0.60558698
- [5,] -0.1112843776 -0.09066513
- [6,] -0.0954135688  0.06063382
- [7,] -0.0111818086 -0.13910903
- [8,]  0.0008186713 -0.22483071
- [9,] -0.0330256555 -0.14949646
-[10,] -0.0476310847 -0.03057174
-[11,] -0.0274938627 -0.02331717
+ [1,]  0.0000000000  0.90181734
+ [2,] -0.0659576129  0.19005463
+ [3,]  0.0882737906 -0.65876327
+ [4,] -0.0109366352 -0.63404399
+ [5,] -0.1223958677 -0.11534597
+ [6,] -0.1207293915  0.02108999
+ [7,] -0.0220506125 -0.14628280
+ [8,]  0.0008458852 -0.30946785
+ [9,] -0.0364828488 -0.26282398
+[10,] -0.0622521757 -0.04226737
+[11,] -0.0541283572 -0.02302256
 
 
-Upper Band, CI= 0.9 
+Upper Band, CI= 0.95 
 $INVP
-             GGOV        INVP
- [1,] 0.000000000  1.49576063
- [2,] 0.148687841  0.82222463
- [3,] 0.340868890 -0.01979331
- [4,] 0.152582871 -0.05531108
- [5,] 0.037158017  0.33643610
- [6,] 0.023002660  0.44254760
- [7,] 0.078366068  0.25145458
- [8,] 0.078782877  0.01556297
- [9,] 0.033873465  0.07058687
-[10,] 0.008663633  0.14420700
-[11,] 0.018597136  0.16645116
+             GGOV         INVP
+ [1,] 0.000000000 1.5624005651
+ [2,] 0.228736119 0.7837656718
+ [3,] 0.338436869 0.0008434544
+ [4,] 0.188913794 0.0033266424
+ [5,] 0.026016827 0.3677103850
+ [6,] 0.018781874 0.4825373008
+ [7,] 0.094339134 0.2524289668
+ [8,] 0.094504547 0.0182056996
+ [9,] 0.053452908 0.0852337713
+[10,] 0.006974911 0.2135474677
+[11,] 0.022293212 0.1640822381
 
-> 
 > plot(modelo.irf1)
 > plot(modelo.irf2)
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5b4f3d89-abde-48e6-9809-c7672a282fba)
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/1b7e0faa-650b-409c-801e-564b463d178f)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/dd9947bc-9f67-4f69-bb41-f077bddcafb3)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/fae26b8e-e4ee-4d7f-bca8-f782d448d149)
 
+Las funciones impulso-respuesta revelan que:[^*]
+* Un choque de gasto del gobierno afecta positivamente y de manera significativa al gasto del gobierno en algunos de los primeros periodos después del choque: En los periodos $1$ y $5$
+* Un choque de gasto del gobierno tiene un efecto _crowding-out_ significativo sobre la inversión privada los primeros periodos, pero tiene un efecto _crowding-in_ significativo sobre la inversión privada en periodos posteriores: Tiene un efecto negativo en el periodo $1$ y positivo en los periodos $3$ y $4$.
+* Un choque de inversión privada tiene un impacto positivo y significativo sobre el gasto gobierno en algunos de los primeros periodos después del choque: En los periodos $3$ y $8$
+* Un choque de inversión privada tiene un impacto positivo sobre la inversión en algunos de los primeros periodos después del choque: En los periodos $1$, $2$ y $5$
 
-Las funciones impulso-respuesta revelan que:
-* Un choque de gasto del gobierno afecta positivamente y de manera significativa al gasto del gobierno en el corto plazo.
-* Un choque de gasto del gobierno tiene un efecto crowding-out significativo sobre la inversión privada en el corto plazo, pero tiene un efecto crowding-in significativo sobre la inversión privada en el mediano plazo.
-* Un choque de inversión privada tiene un impacto positivo y significativo sobre el gasto gobierno y la inversión privada en el corto plazo, siendo más importante el efecto sobre la inversión.
+[^*]: **Para las viñetas que siguen a continuación, fijense en las cotas superiores e inferiores de los intervalos de confianza de la función impulso-respuesta, si son del mismo signo, entonces son significativos en ese periodo con ese signo**. 
 
 ###  Análisis de descomposición de varianza
 
