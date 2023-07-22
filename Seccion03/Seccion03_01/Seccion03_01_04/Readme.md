@@ -295,7 +295,6 @@ Las funciones impulso-respuesta revelan que:
 Para hacer un pronóstico de 3 años hacia adelante, operamos el siguiente comando:
 ``` r
 forecast3<-forecast(modeloVAR, level = c(95), h = 3)
-summary(forecast3)
 autoplot(forecast3)
 ```
 Obteniendose,
