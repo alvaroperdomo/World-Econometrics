@@ -1,6 +1,6 @@
 ## SECCIÓN 3.1.3. (T):
 
-# La Función Impulso-Respuesta y la Descoposición de Varianza del Error de Pronóstico
+# La Función Impulso-Respuesta y la Descomposición de Varianza del Error de Pronóstico
 
 En las secciónes previas, casí todo el tiempo hemos estado manejando un $VAR$ **_estándar_**. Sin embargo, la función impulso-respuesta y la descomposición de varianza del error de pronóstico, se determinan en un $VAR$ **_estructural_**. 
 
