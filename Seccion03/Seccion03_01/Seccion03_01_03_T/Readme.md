@@ -61,7 +61,7 @@ El problema es mucho más complicado en los sistemas de orden superior, ya que l
 
 El beneficio de este método es que no necesita hacer supuestos especiales con respecto a la distribución de los coeficientes autorregresivos. El cálculo real de los intervalos de confianza es solo un poco más complicado en un $VAR$. 
 
-# La Descomposición de Varianza
+# La Descomposición de Varianza del Error de Pronóstico
 
 Otra ayuda útil para descubrir las interrelaciones entre las variables en el sistema es la descomposición de varianza del error de pronóstico. 
 
@@ -79,11 +79,11 @@ Centrándonos únicamente en la secuencia { $y_t$ }, vemos que el error de prono
 
 $\eqalign{y_{t+n}-E_t y_{t+n}= \sum_{i=0}^{n-1}[\phi_{11}(i) \varepsilon_{y(t+n-i)} + \phi_{12}(i) \varepsilon_{z(t+n-i)}]}$
 
-La varianza del error de pronóstico $n$ periodos hacia adelante de $y_{t+n}$ es: $\eqalign{[\sigma_y(n)]^2=\sum_{i=0}^{n-1}(\sigma_y^2[\phi_{11}(i)]^2 + \sigma_z^2[\phi_{12}(i)]^2)}$. Debido a que todos los valores $[\phi_{jk}(i)]^2$ son necesariamente no negativos, la varianza del error de pronóstico aumenta a medida que aumenta el horizonte de pronóstico. Por lo tanto, es posible descomponer la varianza del error de previsión $n$ periodos hacia adelante en las proporciones debidas a cada choque. Las proporciones de $[\sigma_y(n)]^2$ debidas a choques en las secuencias { $\varepsilon_{yt}$ } y { $\varepsilon_{zt}$ } son $\eqalign{\frac{\displaystyle\sum_{i=0}^{n-1}\sigma_y^2[\phi_{11}(i)]^2}{[\sigma_y(n)]^2}}$ y  $\eqalign{\frac{\displaystyle\sum_{i=0}^{n-1}\sigma_z^2[\phi_{11}(i)]^2}{[\sigma_y(n)]^2}}$ respectivamente. 
+La varianza del error de pronóstico $n$ periodos hacia adelante de $y_{t+n}$ es: $\eqalign{[\sigma_y(n)]^2=\sum_{i=0}^{n-1}(\sigma_y^2[\phi_{11}(i)]^2 + \sigma_z^2[\phi_{12}(i)]^2)}$. Debido a que todos los valores $[\phi_{jk}(i)]^2$ son necesariamente no negativos, la varianza del error de pronóstico aumenta a medida que aumenta el horizonte de pronóstico. Por lo tanto, es posible descomponer la varianza del error de pronóstico $n$ periodos hacia adelante en las proporciones debidas a cada choque. Las proporciones de $[\sigma_y(n)]^2$ debidas a choques en las secuencias { $\varepsilon_{yt}$ } y { $\varepsilon_{zt}$ } son $\eqalign{\frac{\displaystyle\sum_{i=0}^{n-1}\sigma_y^2[\phi_{11}(i)]^2}{[\sigma_y(n)]^2}}$ y  $\eqalign{\frac{\displaystyle\sum_{i=0}^{n-1}\sigma_z^2[\phi_{11}(i)]^2}{[\sigma_y(n)]^2}}$ respectivamente. 
 
 **La descomposición de varianza del error de pronóstico nos dice la proporción de los movimientos en una secuencia debido a sus choques propios contra los choques de la otra variable.** 
 * Si los choques $\varepsilon_{zt}$ no explican la varianza del error de pronóstico de $y_t$ en todos los horizontes de pronóstico, podemos decir que la secuencia { $y_t$ } es exógena [en esta circunstancia, { $y_t$ } evoluciona independientemente de los choques de $\varepsilon_{zt}$ y de la secuencia { $z_t$ }].
-* En el otro extremo, los shocks $\varepsilon_{zt}$ podrían explicar toda la varianza del error de pronóstico en la secuencia { $y_t$ } en todos los horizontes de pronóstico, de modo que { $y_t$ } sería completamente endógeno. 
+* En el otro extremo, los choques $\varepsilon_{zt}$ podrían explicar toda la varianza del error de pronóstico en la secuencia { $y_t$ } en todos los horizontes de pronóstico, de modo que { $y_t$ } sería completamente endógeno. 
 
 En la investigación aplicada, es usual que una variable explique casi toda su varianza de error de pronóstico en horizontes cortos y proporciones más pequeñas en horizontes más largos. Esperamos este patrón si los choques de $\varepsilon_{zt}$ tuvieran un bajo efecto contemporáneo en $y_t$, pero afectaran la secuencia { $y_t$ } de forma rezagada.
 
