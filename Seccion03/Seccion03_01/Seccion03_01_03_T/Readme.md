@@ -1,6 +1,12 @@
 ## SECCIÓN 3.1.3. (T):
 
-# La Función Impulso-Respuesta
+# La Función Impulso-Respuesta y la Descoposición de Varianza del Error de Pronóstico
+
+En las secciónes previas, casí todo el tiempo hemos estado manejando un **$VAR$ estándar**. Sin embargo, la función impulso-respuesta y la descomposición de varianza del error de pronóstico, se determinan en un **$VAR$ estructural**. 
+
+Siguiendo la notación de la sección 3.1.1. en un **$VAR(2) estandar** se estiman $9$ parámetros [$6$ coeficientes ($a_10$, $a_20$, $a_11$, $a_12$, $a_21$ y $a_22$), $\sigma_e1t^2$, $\sigma_e2t^2$ y $\sigma_e2t,e2t$]. Sin embargo, en un **$VAR(2) estructural** se necesitan $10$ parámetros [$2$ interceptos ($a_10$ y $a_20$), $4$ coeficientes autorregresivos ($\gamma_11$, $\gamma_12$, $\gamma_21$ y $\gamma_22$), $2$ coeficientes de retroalimentación ($b_12$, $b_21$), $\sigma_y$ y $\sigma_z$] 
+
+## La Función Impulso-Respuesta
 Al igual que un proceso autorregresivo tiene una representación de media móvil, un vector autorregresivo $VAR$ puede escribirse como un vector de media móvil $VMA$. Más específicamente, $\eqalign{\mathbf{x_t=\mu+\sum_{i=1}^p A_1^i e_{t-i}}}$ es la representación $VMA$ del $VAR$ $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$ en donde todas las variables incluidas en el vector $\mathbf{x_t}$ se expresan en términos de los valores actuales y pasados de los diferentes tipos de choques incluidos en el vector $\mathbf{e_t}$.[^1] 
 
 [^1]: **La representación _VMA_ es una característica esencial de la metodología de Sims (1980), ya que permite rastrear la trayectoria en el tiempo de los diversos choques de las variables contenidas en el sistema _VAR_**. 
