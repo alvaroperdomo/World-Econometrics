@@ -6,7 +6,7 @@ Si se quiere tener en cuenta todas las relaciones posibles entre, digamos, $k$ v
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------:|:------------------------------------:|
 | **3.1.1.** ¿Qué es un modelo $VAR$?, ¿Cómo estimar y hacer pronosticos de un modelo $VAR$ en $R$? |  [X](Seccion03_01_01_T/Readme.md)    | [X](Seccion03_01_01_R/Readme.md)    | 
 | **3.1.2.** Pruebas de Hipótesis en Modelos $VAR$                                                                                                                           |  [X](Seccion03_01_02_T/Readme.md)    | [X](Seccion03_01_02_R/Readme.md)     |
-| **3.1.3.** La Función Impulso Respuesta y la Descomposición de Varianza                                                                                                    |  [X](Seccion03_01_03_T/Readme.md)    | [X](Seccion03_01_03_R/Readme.md) | 
+| **3.1.3.** La Función Impulso Respuesta y la Descomposición de Varianza del Error de Pron´stico                                                                            |  [X](Seccion03_01_03_T/Readme.md)    | [X](Seccion03_01_03_R/Readme.md) | 
 | **3.1.4** Caso de estudio de un modelo $VAR$ utilizando la base de datos _Indicadores de Desarrollo Mundial_                                                                              |                                     | [X](Seccion03_01_04/Readme.md)                           | 
 
 
