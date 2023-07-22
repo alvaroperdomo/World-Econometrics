@@ -238,7 +238,7 @@ Obteniendose el siguiente resultado:
 data:  Residuals of VAR object modeloVAR
 Chi-squared = 25.257, df = 32, p-value = 0.7955
 ```
-Es decir, no se rechaza la hipótesis nula de no correlación en el $VAR$
+Es decir, no se rechaza la hipótesis nula de no correlación de los residuos estimados en el $VAR$
 
 ## Prueba de causalidad de granger, funciones impulso-respuesta y análisis de descomposición de varianza
 Las relaciones de causalidad, en el sentido de Granger, entre $\Delta GGOV$ y $\Delta INVP$, tomando en cuenta los dos rezagos que tiene el $VAR$, se obtienen a partir de los comandos:
@@ -276,21 +276,31 @@ Para calcular y dibujar las funciones impulso-respuesta, se copian los comandos
 modelo.irf1<-irf(modeloVAR,impulse="GGOV", response=NULL, ci=0.9)
 modelo.irf2<-irf(modeloVAR,impulse="INVP", response=NULL, ci=0.9)
 
-plot(modelo.irf1)
-plot(modelo.irf2)
+plot(modeloVAR.irf1)
+plot(modeloVAR.irf2)
 ```
 Se obtiene, 
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5b4f3d89-abde-48e6-9809-c7672a282fba)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/1b7e0faa-650b-409c-801e-564b463d178f)
 
 
-
+Las funciones impulso-respuesta revelan que:
+* Un choque de gasto del gobierno afecta positivamente y de manera significativa al gasto del gobierno en el corto plazo.
+* Un choque de gasto del gobierno tiene un efecto crowding-out significativo sobre la inversión privada en el corto plazo, pero tiene un efecto crowding-in significativo sobre la inversión privada en el mediano plazo.
+* Un choque de inversión privada tiene un impacto positivo y significativo sobre el gasto gobierno y la inversión privada en el corto plazo, siendo más importante el efecto sobre la inversión.
 
 ## Pronosticos
 
-forecast1<-forecast(modelo, level = c(95), h = 3)
-summary(forecast1)
-autoplot(forecast1)
+Para hacer un pronóstico de 3 años hacia adelante, operamos el siguiente comando:
+``` r
+forecast3<-forecast(modeloVAR, level = c(95), h = 3)
+summary(forecast3)
+autoplot(forecast3)
+```
+Obteniendose,
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/2f6d7218-d82c-45e1-85a5-f5950f23888c)
+
 
 forecasts <- predict(modelo)
 forecasts
