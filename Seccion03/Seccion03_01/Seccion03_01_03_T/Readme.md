@@ -73,7 +73,7 @@ El beneficio de este método es que no necesita hacer supuestos especiales con r
 
 Otra ayuda útil para descubrir las interrelaciones entre las variables en el sistema es la descomposición de varianza del error de pronóstico. 
 
-Retome la ecuación $\mathbf{x_t= A_0 + A_1x_{t-1}+e_t}$, asuma que conoce los coeficientes de $\mathbf{A_0}$ y $\mathbf{A_1}$ y quiere pronosticar los diversos valores de $\mathbf{x_{t+1}}$ condicionados al valor observado de $\mathbf{x_t}$. Actualizando esta ecuación $n$ períodos hacia adelante y tomando la expectativa condicionada en $t$ de $\mathbf{x_{t+n}}$, se obtiene $E_t \mathbf{x_{t+n}}$. Entonces,
+Retome el $VAR$ **_estándar_ $\mathbf{x_t= A_0 + A_1x_{t-1}+e_t}$, asuma que conoce los coeficientes de $\mathbf{A_0}$ y $\mathbf{A_1}$ y quiere pronosticar los diversos valores de $\mathbf{x_{t+1}}$ condicionados al valor observado de $\mathbf{x_t}$. Actualizando esta ecuación $n$ períodos hacia adelante y tomando la expectativa condicionada en $t$ de $\mathbf{x_{t+n}}$, se obtiene $E_t \mathbf{x_{t+n}}$. Entonces,
 
 * El error de pronóstico un periodo hacia adelante es $\mathbf{x_{t+1}} - E_t\mathbf{x_{t+1}}=e_{t+1}$
 * El error de pronóstico dos periodos hacia adelante es $\mathbf{x_{t+2}} - E_t\mathbf{x_{t+2}}=e_{t+2} + A_1e_{t+1}$.
