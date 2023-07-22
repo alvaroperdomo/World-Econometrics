@@ -124,36 +124,7 @@ FPE(n)  0.4797369  0.4523829  0.5318560  0.54255717  0.6348628  0.72535827  0.83
 |$\text{Criterio Bayesiano de Schwartz}$: SC          |1 rezago                                     | -0.5691693  |1 rezago                                     | -0.4819802  | 
 
 
-Es decir, el modelo $VAR$ más parismonioso tiene uno o dos rezagos (según el criterio de información escogido) y no lleva constante. No hay una opción clara acerca de si es mejor con uno o con dos rezagos. Como, con una brecha relativamente más alta (respecto a los otros criterios de información), el  $\text{Criterio Bayesiano de Schwartz}$ concluye que es mejor un rezago, uno estaría tentado a escoger el modelo de un rezago para estimar el $VAR$. Pero, por otro lado, como al hacer la prueba de causalidad de Granger entre $\Delta GGOV$ y $\Delta INVP$ y al estimar el $VAR$, los noveles de significancia son mejores con las variables a dos rezagos, entonces finalmente se decidió estimar el $VAR$ a dos rezagos.
-
-Las relaciones de causalidad, en el sentido de Granger, entre $\Delta GGOV$ y $\Delta INVP$, tomando en cuenta dos rezagos, se obtienen a partir de los comandos:
-
-``` r
-grangertest(diff(GGOV) ~ diff(INVP),order=2,data=seriesVAR)
-grangertest(diff(INVP) ~ diff(GGOV),order=2,data=seriesVAR)
-```
-En donde se llega a
-``` r
-> grangertest(diff(GGOV) ~ diff(INVP),order=2,data=seriesVAR)
-Granger causality test
-
-Model 1: diff(GGOV) ~ Lags(diff(GGOV), 1:2) + Lags(diff(INVP), 1:2)
-Model 2: diff(GGOV) ~ Lags(diff(GGOV), 1:2)
-  Res.Df Df      F  Pr(>F)  
-1     45                    
-2     47 -2 3.3972 0.04226 *
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-> grangertest(diff(INVP) ~ diff(GGOV),order=2,data=seriesVAR)
-Granger causality test
-
-Model 1: diff(INVP) ~ Lags(diff(INVP), 1:2) + Lags(diff(GGOV), 1:2)
-Model 2: diff(INVP) ~ Lags(diff(INVP), 1:2)
-  Res.Df Df      F Pr(>F)
-1     45                 
-2     47 -2 0.6134  0.546
-```
-A partir de la prueba de causalidad de Granger, se revela que va a ser más importante el efecto que causa $\Delta GGOV$ en $\Delta INVP$, que el efecto que causa $\Delta INVP$ en $\Delta GGOV$.
+Es decir, el modelo $VAR$ más parsimonioso tiene uno o dos rezagos (según el criterio de información escogido) y no lleva constante. No hay una opción clara acerca de si es mejor con uno o con dos rezagos. Sin embargo, al hacer las pruebas de diagnóstico, la $FAC$ del modelo con un rezago mostraba algunos problemas de autocorrelación de los residuos estimados. Esto no pasaba con el modelo con dos rezagos, entonces se decidio estimar un modelo $VAR(2)$ sin término constante. 
 
 Ahora estimamos el $VAR(2)$ con los siguientes comandos:
 ``` r
@@ -238,7 +209,6 @@ Obteniendo,
 > roots(modeloVAR)
 [1] 0.7304 0.7304 0.4988 0.323
 ```
-A partir de los coeficientes del $VAR$, se evidencia un impacto positivo de la inversión sobre el gasto del gobierno y sobre la inversión misma. Claro que los efectos se visualizaran mucho mejor, más adelante con las funciones impulso-respuesta
 
 ## Pruebas sobre los residuos estimados
 
@@ -249,24 +219,64 @@ pacf(residuals(modeloVAR)[,1])
 acf(residuals(modeloVAR)[,2])
 pacf(residuals(modeloVAR)[,2])
 ```
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/03ee25ee-ffbd-4702-b385-941346b738e4)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/f1c89158-7f90-4993-a7ab-8a3c0f0c4fd3)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/c1aa7df6-4183-4437-bf7a-7be8734dc092)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/b775d203-7a1c-4ba8-ac91-85f32dca1165)
+
+
+
+
+
 Con el siguiente comando hacemos la prueba Portmanteau de correlación, 
 ```r
 serial.test(modeloVAR,lags.pt=10)
 ```
-concluyendo que 
-
-plot(modeloVAR, names="GGOV")
-plot(modelo, names="INVP")
-
-
 
 ## Funciones impulso-respuesta y análisis de descomposición de varianza
+Las relaciones de causalidad, en el sentido de Granger, entre $\Delta GGOV$ y $\Delta INVP$, tomando en cuenta dos rezagos, se obtienen a partir de los comandos:
 
+``` r
+grangertest(diff(GGOV) ~ diff(INVP),order=2,data=seriesVAR)
+grangertest(diff(INVP) ~ diff(GGOV),order=2,data=seriesVAR)
+```
+En donde se llega a
+``` r
+> grangertest(diff(GGOV) ~ diff(INVP),order=2,data=seriesVAR)
+Granger causality test
+
+Model 1: diff(GGOV) ~ Lags(diff(GGOV), 1:2) + Lags(diff(INVP), 1:2)
+Model 2: diff(GGOV) ~ Lags(diff(GGOV), 1:2)
+  Res.Df Df      F  Pr(>F)  
+1     45                    
+2     47 -2 3.3972 0.04226 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> grangertest(diff(INVP) ~ diff(GGOV),order=2,data=seriesVAR)
+Granger causality test
+
+Model 1: diff(INVP) ~ Lags(diff(INVP), 1:2) + Lags(diff(GGOV), 1:2)
+Model 2: diff(INVP) ~ Lags(diff(INVP), 1:2)
+  Res.Df Df      F Pr(>F)
+1     45                 
+2     47 -2 0.6134  0.546
+```
+A partir de la prueba de causalidad de Granger, se revela que va a ser más importante el efecto causal de $\Delta GGOV$ en $\Delta INVP$, que el efecto causal de $\Delta INVP$ en $\Delta GGOV$. Por lo tanto, al establecer las funciones impulso-respuesta se ha estructurado la descomposición de Choleski del $VAR$ de tal forma que $\Delta GGOV$ tiene efectos contemporaneos y rezagados en $\Delta INVP$, pero  $\Delta INVP$ no tiene un efecto contemporaneo en $\Delta GGOV$, sólo efectos rezagados 
+
+Para calcular y dibujar las funciones impulso-respuesta, se copian los comandos
+``` r
 modelo.irf1<-irf(modeloVAR,impulse="GGOV", response="GGOV")
 modelo.irf2<-irf(modeloVAR,impulse="GGOV", response="INVP")
 modelo.irf3<-irf(modeloVAR,impulse="INVP", response="GGOV")
 modelo.irf4<-irf(modeloVAR,impulse="INVP", response="INVP")
 
+plot(modelo.irf1)
+plot(modelo.irf2)
+plot(modelo.irf3)
+plot(modelo.irf4)
+```
+Se obtiene, 
 ## Pronosticos
 
 forecast1<-forecast(modelo, level = c(95), h = 3)
@@ -277,10 +287,7 @@ forecasts <- predict(modelo)
 forecasts
 plot(forecasts)
 
-plot(modelo.irf1)
-plot(modelo.irf2)
-plot(modelo.irf3)
-plot(modelo.irf4)
+
 
 
 
