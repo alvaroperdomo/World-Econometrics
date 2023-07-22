@@ -240,7 +240,8 @@ Chi-squared = 25.257, df = 32, p-value = 0.7955
 ```
 Es decir, no se rechaza la hipótesis nula de no correlación de los residuos estimados en el $VAR$
 
-## Prueba de causalidad de granger, funciones impulso-respuesta y análisis de descomposición de varianza
+## Prueba de causalidad de Granger, funciones impulso-respuesta y análisis de descomposición de varianza
+### Prueba de causalidad de Granger
 Las relaciones de causalidad, en el sentido de Granger, entre $\Delta GGOV$ y $\Delta INVP$, tomando en cuenta los dos rezagos que tiene el $VAR$, se obtienen a partir de los comandos:
 
 ``` r
@@ -271,6 +272,7 @@ Model 2: diff(INVP) ~ Lags(diff(INVP), 1:2)
 ```
 A partir de la prueba de causalidad de Granger, se revela que va es más importante el efecto causal de $\Delta GGOV$ en $\Delta INVP$, que el efecto causal de $\Delta INVP$ en $\Delta GGOV$. Por lo tanto, al establecer las funciones impulso-respuesta se ha estructurado la descomposición de Choleski del $VAR$ de tal forma que $\Delta GGOV$ tiene efectos contemporaneos y rezagados en $\Delta INVP$, pero  $\Delta INVP$ no tiene un efecto contemporaneo en $\Delta GGOV$, sólo efectos rezagados 
 
+### Funciones impulso-respuesta
 Para calcular y dibujar las funciones impulso-respuesta, se copian los comandos
 ``` r
 modelo.irf1<-irf(modeloVAR,impulse="GGOV", response=NULL, ci=0.9)
@@ -397,6 +399,43 @@ Las funciones impulso-respuesta revelan que:
 * Un choque de gasto del gobierno tiene un efecto crowding-out significativo sobre la inversión privada en el corto plazo, pero tiene un efecto crowding-in significativo sobre la inversión privada en el mediano plazo.
 * Un choque de inversión privada tiene un impacto positivo y significativo sobre el gasto gobierno y la inversión privada en el corto plazo, siendo más importante el efecto sobre la inversión.
 
+###  Análisis de descomposición de varianza
+
+Para el análisis de descomposición de varianza 10 años hacia adelante, copiamos los comandos:
+``` r
+Desc_var<-fevd(modeloVAR, n.ahead=10)
+Desc_var
+```
+Y obtenemos
+``` r
+> Desc_var<-fevd(modeloVAR, n.ahead=10)
+> Desc_var
+$GGOV
+           GGOV        INVP
+ [1,] 1.0000000 0.000000000
+ [2,] 0.9905887 0.009411345
+ [3,] 0.8697516 0.130248392
+ [4,] 0.8548025 0.145197533
+ [5,] 0.8511409 0.148859115
+ [6,] 0.8473351 0.152664912
+ [7,] 0.8464771 0.153522915
+ [8,] 0.8441432 0.155856774
+ [9,] 0.8441407 0.155859315
+[10,] 0.8436112 0.156388777
+
+$INVP
+           GGOV      INVP
+ [1,] 0.1210003 0.8789997
+ [2,] 0.1203981 0.8796019
+ [3,] 0.1734713 0.8265287
+ [4,] 0.1872590 0.8127410
+ [5,] 0.1891218 0.8108782
+ [6,] 0.1927696 0.8072304
+ [7,] 0.1927686 0.8072314
+ [8,] 0.1942706 0.8057294
+ [9,] 0.1943170 0.8056830
+[10,] 0.1946133 0.8053867
+```
 ## Pronosticos
 
 Para hacer un pronóstico de 3 años hacia adelante, operamos el siguiente comando:
@@ -404,7 +443,7 @@ Para hacer un pronóstico de 3 años hacia adelante, operamos el siguiente coman
 forecast3<-forecast(modeloVAR, level = c(95), h = 3)
 autoplot(forecast3)
 ```
-Obteniendose,
+Y obtenemos
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/2f6d7218-d82c-45e1-85a5-f5950f23888c)
 
 
