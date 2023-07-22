@@ -225,7 +225,9 @@ GGOV  1.0000 -0.3749
 INVP -0.3749  1.0000
 ```
 
-Observe que en este VAR las dos raíces caracteristicas del polinomio que lo resuelven son iguales 0.2754. Por lo tanto, se encuentran dentro del circulo unitario, lo que nos lleva a plantear que el $VAR$ es estable. No olvide que las raíces caracteristicas, después de estimado el $VAR$ también se pueden recuperar con el comando
+Observe que en este VAR las cuatro raíces caracteristicas del polinomio que lo resuelven ($0.7304 0.7304 0.4988 0.323$) en valor absoluto son menores que la unidad. Por lo tanto, esto nos lleva a plantear que el $VAR$ es estable [^4]. Por si alcaso, No olvide que las raíces caracteristicas de un $VAR$ que se ha estimado, también se pueden recuperar con el comando
+
+[^4]: **Si hubieramos estimado el _VAR(1)_ en vez del _VAR(2)_, esté hubiera sido más estable con dor raices caracteristicas iguanles a 0.2754.
 
 ```r
 roots(modeloVAR)
@@ -234,10 +236,10 @@ Obteniendo,
 
 ```r
 > roots(modeloVAR)
-[1] 0.2754 0.2754
+[1] 0.7304 0.7304 0.4988 0.323
 
 ```
-A partir de los coeficientes del $VAR$, aunque no son significativamente diferentes de cero, parece como se hubiera un efecto crowding-out (en donde el gasto del govierno afecta negativamente a la inversión) y al mismo tiempo la inversión tuviera un impacto positivo sobre el gasto del gobierno. Claro que los efectos se visualizaran mucho mejor, más adelante con las funciones impulso-respuesta
+A partir de los coeficientes del $VAR$, se evidencia un impacto positivo de la inversión sobre el gasto del gobierno y sobre la inversión misma. Claro que los efectos se visualizaran mucho mejor, más adelante con las funciones impulso-respuesta
 
 #FALTA LO DE ABAJO
 plot(modeloVAR, names="GGOV")
