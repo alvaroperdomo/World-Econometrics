@@ -64,7 +64,7 @@ A continuación encontrara información más detallada acerca de cada una de las
 | **3.1. Estimación de Modelos $VAR$**                                                                   | **Metododología para estimar un modelo $VAR$** |              1            | 
 | **3.1.1.** ¿Qué es un modelo $VAR$?, <br> ¿Cómo estimar y hacer pronosticos de un modelo $VAR$ en $R$? | Teoría y aplicación en $R$                    |                           | 
 | **3.1.2.** Pruebas de Hipótesis en Modelos $VAR$                                                       | Teoría y aplicación en $R$                    |                           |                        
-| **3.1.3.** La Función Impulso Respuesta y la Descomposición de Varianza                                | Teoría y aplicación en $R$                    |                           |            
+| **3.1.3.** La función impulso-respuesta y la descomposición de varianza del error de pronóstico        | Teoría y aplicación en $R$                    |                           |            
 | **3.1.4** Caso de estudio de un modelo $VAR$ utilizando la base de datos _Indicadores de Desarrollo Mundial_         | Aplicación en $R$                             |                           | 
 | **3.2. Cointegración y estimación de Modelos $VEC$**                                                   | **Metodología para estimar un modelo $VEC$.** |              1            | 
 | **3.2.1.** ¿Qué es y para qué sirve la Cointegración?                                                  | Explicación teórica                           |                           | 
