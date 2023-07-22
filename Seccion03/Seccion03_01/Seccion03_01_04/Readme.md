@@ -41,7 +41,7 @@ Después de revisar la base de datos _Indicadores de Desarrollo Mundial_ se deci
 ```
 Con el siguiente comando descargamos ambas variables para Corea del Sur, las renombramos como $GGOV$ (Gasto Público como % del PIB) e $INVP$ (Inversión Privada como % del PIB), y construimos una base de datos llamada "dat":
 ``` r
-dat = WDI(indicator= c(GGOV = "NE.CON.GOVT.ZS", INVP="NE.GDI.FPRV.ZS"), country=c('KR'), language = "es")
+dat = WDI(indicator= c(INVP="NE.GDI.FPRV.ZS", GGOV = "NE.CON.GOVT.ZS"), country=c('KR'), language = "es")
 ```
 Al visualizar los datos, se puede ver que ya estan ordenados del más antiguo al más nuevo,
 
