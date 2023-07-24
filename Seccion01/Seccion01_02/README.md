@@ -167,9 +167,7 @@ labs(subtitle="US$ de 2017", y="Dólares constante de 2017", x="Años", title="P
 ```
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/7096078c-9412-4cf2-a5fb-d0d0d52299f7)
 
-
-
-**ggplot** es una comando que tiene muchas opciones de ser utilizado, a continuación les comparto varias páginas de internet donde a partir de la replica podran obtener el gráfico que desean, y una tabla donde se explican los argumento que hemos utilizado en **ggplot**:
+**ggplot** es una comando que tiene muchas opciones de ser utilizado, a continuación les comparto varias direcciones de internet donde a partir de la réplica podrán obtener el gráfico que desean:
 
 * http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html
 * https://r-graph-gallery.com/ggplot2-package.html
