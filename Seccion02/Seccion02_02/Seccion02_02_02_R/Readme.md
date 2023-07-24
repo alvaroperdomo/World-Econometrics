@@ -18,8 +18,7 @@ urersTest(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"), lag.m
 |                         | el número máximo de diferencias rezagadas que se incluirán en la regresión de prueba para $DF-GLS$                                                       |
 | **model**               | El modelo determinista utilizado para eliminar la tendencias:                                                                                            | 
 |                         | **"constant"** Se refiere al modelo con constante pero sin tendencia (**_Opción Predeterminada_**)                                                       |
-|                         | **"trend"** Se refiere al modelo con constante y tendencia                                                                                               |
-| **lag.max**             | el número máximo de rezagos utilizados en la prueba                                                                                                      |
+|                         | **"trend"** Se refiere al modelo con constante y tendencia                                                                                               
 
 ## 2) Segunda Opción: Utilice el comando ur.ers[^2]
 La estructura para hacer la prueba $ADF-GLS$ es:
