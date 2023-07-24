@@ -9,7 +9,7 @@ Si se desea tener un acceso rápido a la misma utilizando $R$ hay que descargar 
 install.packages('WDI')
 ```
 
-[^1]:**La librera **WDI** permite descargar información de más de 40 bases de datos alojadas por el Banco Mundial, incluidos los Indicadores de Desarrollo Mundial, estadísticas de deuda internacional, la base Doing Business, el índice de capital humano y el índice de pobreza subnacional, entre otras.**
+[^1]:**La librería **WDI** permite descargar información de más de 40 bases de datos alojadas por el Banco Mundial, incluidos los Indicadores de Desarrollo Mundial, estadísticas de deuda internacional, la base Doing Business, el índice de capital humano y el índice de pobreza subnacional, entre otras.**
 
 
 ## Buscando los datos
@@ -40,7 +40,7 @@ Asuma que desea buscar los datos del Producto Interno Bruto per cápita por pari
    
    * En la parte inferior del desplegable se encuentra el nombre de la variable: **NY.GDP.PCAP.PP.KD**
 
-[^2]: **No se preocupen demasiado por el año base reportado en el nombre de la variable.. Noten que cuando ustedes escogen en esta nueva página de Internet que la quieren ver en inglés, el año va a cambias a 2017, pero los datos siguen siendo los mismos**
+[^2]: **No se preocupen demasiado por el año base reportado en el nombre de la variable. Noten que cuando ustedes escogen en esta nueva página de Internet que la quieren ver en inglés, el año va a cambiar a 2017, pero los datos siguen siendo los mismos**
 
 2) **Utilizando $RStudio$:**
 
