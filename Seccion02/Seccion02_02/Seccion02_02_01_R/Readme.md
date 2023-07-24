@@ -47,8 +47,8 @@ urdfTest(x, lags = 1, type = c("nc", "c", "ct"), doplot = TRUE)
 |                         | **"c"** para una prueba con intercepto (constante) pero sin tendencia temporal - **_Opción Predeterminada_**          |
 |                         | **"ct"** para una prueba con intercepto (constante) y con tendencia temporal                                          |
 | **doplot**              | Indicador lógico, para especificar si se desea obtener un gráfico de diagnóstico                                      | 
-|                         | **"TRUE"** para mostrar gráfico de diagnostico **_Opción Predeterminada_**                                            |
-|                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                                    |
+|                         | **"TRUE"** para mostrar gráfico de diagnóstico **_Opción Predeterminada_**                                            |
+|                         | **"FALSE"** para no mostrar gráfico de diagnóstico                                                                    |
 
 ## 3) Tercera Opción: Utilice el comando _ur.df_ [^3]
 
