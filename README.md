@@ -34,7 +34,7 @@ La primera sección del curso comienza con la explicación de algunas generalida
 
 Las otras dos secciones del curso comienzan con una explicación general de las herramientas econométricas a utilizar, tanto en lo teórico como en su aplicación en $R$. Luego, se desarrollan algunos ejercicios y posteriormente se propone un ejercicio empírico para ser realizado por el alumno. Durante el desarrollo de las secciones se harán algunas preguntas de selección múltiple para evaluar si los conceptos principales han sido entendidos de forma apropiada.
 
-A continuación encontrará información más detallada acerca de cada una de las secciones en que se divide el curso. Si quiere ir a alguna sección en particular, dele _click_ con el mouse al titulo de la sección respectiva. 
+A continuación encontrará información más detallada acerca de cada una de las secciones en que se divide el curso. Si quiere ir a alguna sección en particular, dele _click_ con el mouse al título de la sección respectiva. 
 
 ## [Sección 1 - Las Series de Tiempo, _R_ y los _Indicadores de Desarrollo Mundial_](Seccion01/Readme.md)
 | Subsecciones                                             | Contenido                                                                           | Dedicación,<br> 2.5 horas | 
