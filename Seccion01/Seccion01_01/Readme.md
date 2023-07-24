@@ -37,23 +37,23 @@ Un proceso estocástico se define como un conjunto de magnitudes aleatorias que 
 
 1. **¿Cuál de los siguientes items no es una serie de tiempo?**
  
-   a) La lista de los mejores jugadores de poker
+   a) La lista de los mejores jugadores de poker.
 
-   b) La lista diaria del número de visitantes a un museo
+   b) La lista diaria del número de visitantes a un museo.
 
-   c) El valor de la mesada mensual que le dan a un estudiante durante un año
+   c) El valor de la mesada mensual que le dan a un estudiante durante un año.
 
-   d) El número de manzanas por lustro que produce una finca
+   d) El número de manzanas por lustro que produce una finca.
  
 2. **¿Cuál de los siguientes items no es un proceso estocástico?**
 
-   a) La estatura de una persona
+   a) La estatura de una persona.
 
-   b) La cantidad de números reales entre el $0$ y el $1$
+   b) El número de caras de un dado de parques.
 
-   c) El valor de la mesada mensual que le dan a un estudiante durante un año
+   c) El número de goles que se marcan en la final de un mundial de fútbol.
 
-   d) El número de manzanas por lustro que produce una finca
+   d) El número de días que dura una sequía.
 
 | [Siguiente Sección: 1.2. R y los _Indicadores de Desarrollo Mundial_](../Seccion01_02/README.md) | [:house: Inicio](../../README.md) |
 |--------------------------------------------------------------------------------------------------|-----------------------------------|
