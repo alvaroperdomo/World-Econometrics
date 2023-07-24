@@ -185,9 +185,9 @@ rm(list = ls())
 ```
 Llamamos a las librerías que se van a utilizar en el resto de este ejemplo
 ``` r
-library(WDI)       # Esta libreria sirve para trabajar directamente con la base de datos Indicadores de Desarrollo Mundial.
+library(WDI)       # Esta librería sirve para trabajar directamente con la base de datos Indicadores de Desarrollo Mundial.
 library(ggplot2)   # Esta librería sirve para construir gráficos interesantes
-library(dplyr)     # Esta libreria permite manipular las bases de datos de R de una forma sencilla
+library(dplyr)     # Esta librería permite manipular las bases de datos de R de una forma sencilla
 ```
 El siguiente comando lo utilizo para confirmar que la variable "NY.GDP.PCAP.KN" representa el PIB per cápita a precios constantes en moneda local
 ``` r
