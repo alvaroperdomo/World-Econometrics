@@ -63,23 +63,23 @@ ndiffs(x, alpha = 0.05, test = c("kpss"), type = c("level", "trend"), ...)
 ---
 # Preguntas de selección múltiple
 
-1. **¿Cuál comando admite escoger la opción type($ARIMA$)?:**
+1. **¿Cuál de los comandos permite hacer la prueba $KPSS$ con intercepto y tendencia?:**
  
-   a) El comando "unitrootTest".
+   a) El comando _urkpssTest_.
 
-   b) El comando "ur.ers".
+   b) El comando _ur.kpss_.
 
-   c) Todos los anteriores.
+   c) El comando _ndiffs_.
 
-   d) Ninguno de los anteriores.
+   d) Todos los anteriores.
 
-2. **¿Cuál comando admite escoger la opción lag.max?:**
+2. **¿Cuál comando admite hacer de forma directa acorde a la formula $(4 \times \frac{n}{100})^{\frac{1}{4}}$ ?:**
  
-   a) El comando "unitrootTest".
+   a) El comando _urkpssTest_.
 
-   b) El comando "ur.ers".
+   b) El comando _ur.kpss_.
 
-   c) Todos los anteriores.
+   c) El comando _ndiffs_.
 
    d) Ninguno de los anteriores.
 
