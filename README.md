@@ -42,7 +42,7 @@ A continuación encontrara información más detallada acerca de cada una de las
 | **1.1. Series de tiempo**                                | **¿Qué es una serie de tiempo?, ¿En qué consiste el análisis de series de tiempo?, ¿Qué es una variable aleatoria?** |             0.5           | 
 | **1.2. $R$ y los _Indicadores de Desarrollo Mundial_**   | **¿Cómo manipular los _Indicadores de Desarrollo Mundial_ en $R$?**                                                           |             2.0           | 
 
-## [Sección 2 - Análisis Univariado (ARIMA)](Seccion02/Readme.md)
+## [Sección 2 - Análisis Univariado de Series de Tiempo](Seccion02/Readme.md)
 | Subsecciones                                           | Contenido                                                                                               | Dedicación,<br> 9 horas     
 |--------------------------------------------------------|------------------------------------------------------------------------------------------------------   |:-------------------------:|
 | **2.1. Series Estacionarias y No Estacionarias**       | **Se explica la importancia de las series estacionarias en el análisis univariado de series de tiempo** |              1            | 
