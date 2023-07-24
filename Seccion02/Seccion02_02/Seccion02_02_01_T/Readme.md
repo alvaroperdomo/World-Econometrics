@@ -75,6 +75,33 @@ Dado que las pruebas $DF$ y $ADF$ estan sesgadas hacía el no rechazo de la hip�
 
 **Anotación importante en cuanto a las pruebas $DF$ y $ADF$**: Si el valor estimado de $\gamma \notin [-2,0]$, entonces no es necesario hacer prueba de raíz unitaria porque la serie no cumple la condición $|a_1|<1$ y por lo tanto no es estacionaria
 
+
+---
+---
+# Preguntas de selección múltiple
+
+1. **Al comparar dos modelos, bajo que condición un modelo esta mejor específicado según el _Criterío de Información de Akaike_:**
+ 
+   a) Cuando el valor de este críterio sea mayor.
+
+   b) Cuando el valor de este críterio sea igual a cero.
+
+   c) Cuando el valor de este críterio sea menor.
+
+   d) Ninguno de los anteriores.
+
+2. **¿Qué tipo de transformación se le puede hacer a una serie no estacionaria para intentar volverla en estacionarla:**
+ 
+   a) Elevarla al cuadrado.
+
+   b) Sacarle la primera diferencia.
+
+   c) Dividirla por su desviación estándar.
+
+   d) Todas las anteriores.
+
+---
+---
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
 
