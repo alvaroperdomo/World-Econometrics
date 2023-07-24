@@ -29,9 +29,9 @@ unitrootTest(x, lags = 5, type = c("c"), title = "Modelo de Paseo Aleatorio con 
 unitrootTest(x, lags = 5, type = c("ct"), title = "Modelo de Paseo Aleatorio con Intercepto y Tendencia Lineal", description = NULL)
 ```
 
-## 2) Segunda Opción: Utilice el comando _fUnitRoots_ [^2]
+## 2) Segunda Opción: Utilice el comando _urdfTest_ [^2]
 
-[^2]: **Este comando pertenece a la librería _urca_**
+[^2]: **Este comando pertenece a la librería _fUnitRoots_**
 
 La estructura para hacer la prueba $ADF$ es:
 ``` r
@@ -46,7 +46,7 @@ urdfTest(x, lags = 1, type = c("nc", "c", "ct"), doplot = TRUE)
 |                         | **"nc"** para una prueba sin intercepto (constante) ni tendencia temporal                                             |
 |                         | **"c"** para una prueba con intercepto (constante) pero sin tendencia temporal - **_Opción Predeterminada_**          |
 |                         | **"ct"** para una prueba con intercepto (constante) y con tendencia temporal                                          |
-| **doplot**              | Indicador lógico, para especificar si se desea obtener un gráfico de diagnóstico                                      | 
+| **doplot**              | Indicador lógico, para especificar si se desea obtener un gráfico de diagnóstico sobre los residuos estimados         | 
 |                         | **"TRUE"** para mostrar gráfico de diagnóstico **_Opción Predeterminada_**                                            |
 |                         | **"FALSE"** para no mostrar gráfico de diagnóstico                                                                    |
 
@@ -93,6 +93,32 @@ ndiffs(x, alpha = 0.05, test = c("adf"), type = c("level", "trend"), ...)
 #### Posteriormente, se puede utilizar la segunda opción para aprovechar el comando "doplot" y así hacer la prueba sobre los residuos.
 #### Por último, se pueden contrastar los resultados con la cuarta opción para tener una opinión adicional.
 
+---
+---
+# Preguntas de selección múltiple
+
+1. **¿Cuál argumento y en cuál comando le permite hacer gráficos de diagnoóstico sobre los residuos estimados?:**
+ 
+   a) El argumento "_doplot_" en el comando "_ndiffs_".
+
+   b) El argumento "_plot_" en el comando "_ndiffs_".
+
+   c) El argumento "_lot_" en el comando "_ur.df_"..
+
+   d) Todos los procesos paseo aleatorio son estacionarios.
+
+2. **¿Qué tipo de transformación se le puede hacer a una serie no estacionaria para intentar volverla en estacionarla:**
+ 
+   a) Elevarla al cuadrado.
+
+   b) Sacarle la primera diferencia.
+
+   c) Dividirla por su desviación estándar.
+
+   d) Todas las anteriores.
+
+---
+---
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
 
