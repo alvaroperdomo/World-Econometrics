@@ -33,6 +33,7 @@ Una variable discreta $y$ es una variable aleatoria (es decir, estocástica) si,
 Un proceso estocástico se define como un conjunto de magnitudes aleatorias que varían con el tiempo. En consecuencia, a los elementos observados de una serie de tiempo { $y_0, y_1, y_2, ..., y_t$ } se les denota como realizaciones de un proceso estocástico, en donde $y_t$ se refiere a un elemento de la secuencia completa { $y_t$ }. 
 
 ---
+---
 # Preguntas de selección múltiple
 
 1. **¿Cuál de los siguientes ítems no es una serie de tiempo?**
@@ -54,6 +55,8 @@ Un proceso estocástico se define como un conjunto de magnitudes aleatorias que 
    c) El número de goles que se marcan en la final de un mundial de fútbol.
 
    d) El número de días que dura una sequía.
+---
+---  
 
 | [Siguiente Sección: 1.2. R y los _Indicadores de Desarrollo Mundial_](../Seccion01_02/README.md) | [:house: Inicio](../../README.md) |
 |--------------------------------------------------------------------------------------------------|-----------------------------------|
