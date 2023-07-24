@@ -171,6 +171,32 @@ Se debe tener cuidado al usar el procedimiento de Perron, ya que supone que la f
 
 **Paso 3:** Si se rechaza $H_0$, se concluye que no existe raíz unitaria. En caso contrario, se debe identificar el mejor modelo de cambio estructural utilizando la prueba iterativa de Chow.
 
+---
+---
+# Preguntas de selección múltiple
+
+1. **¿Cuando una serie estacionaria tiene un cambio estructural, qué puede ocurrir?**
+ 
+   a) Que no se pueda hacer, de forma confiable, pruebas de raíz unitaria.
+
+   b) Que la prueba $ADF$ concluya acertadamente que la serie tiene raíz unitaria.
+
+   c) Que la prueba $ADF$ concluya erroneamente que la serie tiene raíz unitaria.
+
+   d) Que la prueba iterativa de Chow no funcione.
+
+2. **¿Cuál es la principal ventaja tiene la prueba de Zivot y Andrews (1992) sobre la prueba de Perron (1989)?:**
+ 
+   a) Es más fácil de interpretar porque tiene valores acotados entre $0$ y $1$.
+
+   b) Puede determinar endógenamente la fecha del cambio estructural.
+
+   c) La prueba se puede hacer con cambio en intercepto o con cambio en tendencia.
+   
+   d) Se basa en un promedio ponderado entre las pruebas $ADF$ y $KPSS$.
+
+---
+---
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
 | [Retornar: 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) | [2.2.4.(R) Aplicación en R de la prueba _ZA_](../Seccion02_02_04_R/Readme.md) |
