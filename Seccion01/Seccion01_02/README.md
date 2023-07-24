@@ -28,7 +28,7 @@ Asuma que desea buscar los datos del Producto Interno Bruto per cápita por pari
        
       ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/888b9892-66a4-4ac1-8e99-0dcb0395a497)
 
-     * si coloca PIB per cápita  PPA,  (ver figura de abajo) resulta más fácil que se le sugiera la variable requerida
+     * Si coloca PIB per cápita  PPA,  (ver figura de abajo) resulta más fácil que se le sugiera la variable requerida
    
       ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/fb4214ee-4704-40f6-96e3-69bd90f76bd1)
 
