@@ -125,7 +125,7 @@ WDI tiene el siguiente formato: **WDI(country = "xxx", indicator = "xxx", start 
 
 _Es factible solo especificar los argumentos **'indicador'** y **'country**, en cuyo caso **WDI()** devolverá datos desde 1960 hasta el último año disponible en el sitio web del Banco Mundial. También es posible obtener solo los valores no-NA más recientes, con **'latest'**._
 
-Por ejemplo, vamos a descargar el PIB PPA a dólares constantes de 2017 y la población de México, Canada y los Estados Unidos en una base de datos llamada "dat", la cual continuaremos manejando en el resto de la sección:
+Por ejemplo, vamos a descargar el PIB PPA a dólares constantes de 2017 y la población de México, Canadá y los Estados Unidos en una base de datos llamada "dat", la cual continuaremos manejando en el resto de la sección:
 
 ``` r
 dat = WDI(indicator= c("PIB_per_cápita_PPA_2017US" = "NY.GDP.PCAP.PP.KD", "poblacion" = "SP.POP.TOTL"), country=c('MX','CA','US'), start=1960, end=2012, language = "es")
