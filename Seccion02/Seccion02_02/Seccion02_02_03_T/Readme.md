@@ -34,7 +34,7 @@ La distribución asintótica del estadístico de prueba $\hat{\eta}$, tal como s
 
    c) La serie es ruido blanco.
 
-   d) La serie esta serialmente correlacionada.
+   d) La serie está serialmente correlacionada.
 
 2. **¿La prueba $KPSS$ bajo que condición concluye que hay raíz estacionariedad?:**
  
