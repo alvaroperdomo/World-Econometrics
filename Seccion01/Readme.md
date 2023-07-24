@@ -1,5 +1,5 @@
 
-
+<div align="center">
   <br><b>Análisis Aplicado de Series de Tiempo: Entendiendo un Mundo en Desarrollo</b><br><br><b>Universidad Escuela Colombiana de Ingeniería Julio Garavito</b><br>Alvaro Andrés Perdomo Strauch<br>Profesor del Programa de Economía<br>alvaro.perdomo@escuelaing.edu.co<br>
 </div><br>
 
