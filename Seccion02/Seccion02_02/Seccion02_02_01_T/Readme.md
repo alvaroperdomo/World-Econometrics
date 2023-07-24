@@ -1,6 +1,6 @@
 <div align="center"><a href="https://www.escuelaing.edu.co/es/investigacion-e-innovacion/centro-de-estudios-oikonimia/" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/Centros_%20de_Estudios_Oikonom%C3%ADa.jpg" alt="R.LTWB" width="100%" border="0" /></a></div>
 
-## SECCIÓN 2.2.1. (T)
+## SUBSECCIÓN 2.2.1. (T)
 # Prueba de Dickey-Fuller - $DF$
 
 Cuando en la ecuación $y_t = a_1 y_{t-1} + \varepsilon_t$ se cumple que $a_1=1$, se dice que ésta ecuación es un **paseo aleatorio** (es decir, $y_t$ es una variable no estacionaria). Sin embargo, aunque el valor estimado de $a_1$ cumpla $|a_1|<1$, no se puede afirmar que estadisticamente $a_1 \not= 1$. Por lo tanto, es necesario hacer pruebas de raíz unitaria, en donde se evalua la hipótesis nula $H_0:a_1=1$. Si no se rechaza $H_0$, entonces $y_t$ es no estacionaria (es decir, tiene raíz unitaria); por otro lado, si se rechaza $H_0$, entonces $y_t$ es estacionaria.
