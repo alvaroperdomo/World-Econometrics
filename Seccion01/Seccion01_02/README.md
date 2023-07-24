@@ -61,9 +61,9 @@ Obteniendo:
 [4,]    NY.GDP.PCAP.PP.KD  GDP per capita, PPP (constant 2017 international $)
 [5,] NY.GDP.PCAP.PP.KD.87  GDP per capita, PPP (constant 1987 international $)
 ```
-Por lo tanto, la variable solicitada es **NY.GDP.PCAP.PP.KD** (observen que se llegó a la misma variable que con la primera opción de busqueda). Existe también la opción de tener la variable a precios constantes de 1987 o de 2011, pero generalmente las personas prefieren utilizar la variable con los precios constantes más recientes (es decir, 2017) 
+Por lo tanto, la variable solicitada es **NY.GDP.PCAP.PP.KD** (observen que se llegó a la misma variable que con la primera opción de búsqueda). Existe también la opción de tener la variable a precios constantes de 1987 o de 2011, pero generalmente las personas prefieren utilizar la variable con los precios constantes más recientes (es decir, 2017) 
 
-Observe que si sólo copia:
+Observe que si solo copia:
 
 ``` r
 WDIsearch('gdp')
