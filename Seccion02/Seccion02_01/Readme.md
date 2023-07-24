@@ -1,4 +1,4 @@
-## SECCIÓN 2.1: 
+## SUBSECCIÓN 2.1: 
 # Series Estacionarias y No Estacionarias
 
 ## Los procesos estacionarios
