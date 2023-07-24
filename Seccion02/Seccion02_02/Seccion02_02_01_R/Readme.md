@@ -69,8 +69,8 @@ ur.df(x, type = c("none", "drift", "trend"), lags = 1, selectlags = c("Fixed", "
 |                         | **"trend"** para una prueba con intercepto (constante) y con tendencia temporal                                                        |
 | **selectlags**          | Método escogido para la selección del número de rezagos:                                                                               | 
 |                         | **"Fixed"** el número de rezagos establecidos en la opción "lags" - **_Opción Predeterminada_**                                        |
-|                         | **"AIC"** criterio de selección de Akaike (el número máximo de rezagos analizados se establece en la opción "**lags**")                |
-|                         | **"BIC"** criterio de selección Bayesiano de Schwartz (el número máximo de rezagos analizados se establece en la opción "**lags**")    |
+|                         | **"AIC"** criterio de información de Akaike (el número máximo de rezagos analizados se establece en la opción "**lags**")              |
+|                         | **"BIC"** criterio Bayesiano de Schwartz (el número máximo de rezagos analizados se establece en la opción "**lags**")                 |
 
 ## 4) Cuarta Opción: Utilice el comando _ndiffs_ [^4]
 
