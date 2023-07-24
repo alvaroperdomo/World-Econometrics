@@ -1,5 +1,7 @@
-## SECCIÓN 1.1:
+## SUBSECCIÓN 1.1:
 # Series de Tiempo
+
+Para entender mejor algunas generalidades importantes en el análisis de series de tiempo, se decidió desarrollar esta subsección a partir de la formulación de preguntas con su respectiva respuesta. 
 
 ## ¿Qué es una serie de tiempo?
 Una serie de tiempo es una secuencia de observaciones sobre una variable tomada a intervalos discretos en el tiempo. Donde estos intervalos discretos tienen la misma unidad de medida; es decir, están igualmente distanciados [^1] .
@@ -28,7 +30,7 @@ Un uso importante del análisis de series de tiempo ha sido para el desarrollo d
 ## ¿Qué es una variable discreta aleatoria?
 Una variable discreta $y$ es una variable aleatoria (es decir, estocástica) si, para cualquier número real $r$, existe una probabilidad $p(y\leq r)$ de que $y$ tome un valor menor o igual a $r$. 
 
-## Los procesos estocásticos
+## ¿Qué es un procesos estocástico?
 Un proceso estocástico se define como un conjunto de magnitudes aleatorias que varían con el tiempo. En consecuencia, a los elementos observados de una serie de tiempo { $y_0, y_1, y_2, ..., y_t$ } se les denota como realizaciones de un proceso estocástico, en donde que $y_t$ se refiere a un elemento de la secuencia completa { $y_t$ }. 
 
 | [Siguiente Sección: 1.2. R y los _Indicadores de Desarrollo Mundial_](../Seccion01_02/README.md) | [:house: Inicio](../../README.md) |
