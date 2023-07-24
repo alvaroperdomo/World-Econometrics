@@ -1,4 +1,4 @@
-# Aplicando las pruebas DF y ADF en R
+# Aplicando las pruebas $DF$ y $ADF$ en $R$
 
 Para llevar a cabo la prueba $ADF$ en $R$ existen las siguientes cuatro opciones:
 
@@ -103,7 +103,7 @@ ndiffs(x, alpha = 0.05, test = c("adf"), type = c("level", "trend"), ...)
 
    b) El argumento "_plot_" en el comando "_ndiffs_".
 
-   c) El argumento "_lot_" en el comando "_ur.df_"..
+   c) El argumento "_plot_" en el comando "_ur.df_".
 
    d) Todos los procesos paseo aleatorio son estacionarios.
 
