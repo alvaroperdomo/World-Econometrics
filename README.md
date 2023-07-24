@@ -1,10 +1,14 @@
 <div align="center"><a href="https://www.escuelaing.edu.co/es/investigacion-e-innovacion/centro-de-estudios-oikonimia/" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/Centros_%20de_Estudios_Oikonom%C3%ADa.jpg" alt="R.LTWB" width="100%" border="0" /></a></div>
 
+<div align="center">
+  <br><b>Universidad Escuela Colombiana de Ingeniería Julio Garavito</b><br>Alvaro Andrés Perdomo Strauch<br>Profesor del Centro de Estudios Oikonimia<br>alvaro.perdomo@escuelaing.edu.co<br>
+</div>
 
 ### Entendiendo un Mundo en Desarrollo: 
 # Análisis Aplicado de Series de Tiempo
 Keywords: `Econometría` `Series de Tiempo` `Indicadores de Desarrollo Mundial` `Banco Mundial`
 #### Duración del curso: 17.5 horas
+
 Bienvenido al curso _Entendiendo un Mundo en Desarrollo: Análisis Aplicado de Series de Tiempo_. En este curso aprenderá a hacer análisis básicos de series de tiempo en $R$ utilizando como entorno de desarrollo interactivo al software $RStudio$. Se tomará como referencia, para el análisis empírico, la base de datos del Banco Mundial "[_Indicadores de Desarrollo Mundial_](https://databank.worldbank.org/source/world-development-indicators)", con el fin de aprender las principales técnicas del análisis de series de tiempo de una forma aplicada utilizando la información económica más relevante del contexto internacional.
 
 El curso está dividido en tres secciones principales, a través de las cuales el estudiante desarrollará diferentes habilidades computacionales y analíticas, que podrá aplicar en el análisis de estudios de caso propios.
