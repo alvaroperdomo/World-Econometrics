@@ -137,7 +137,7 @@ Note que en la pantalla _Environment_ de $Rstudio$ aparece la base "dat" (ver fi
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6d3547d6-7a8e-40ee-9ffb-c76d5e31e543)
 
-Si le da _click_ a "dat" con el _mouse_ podra ver los datos en una ventana $RStudio$ (ver figura de abajo), otra opción es copiando el comando **View()**:
+Si le da _click_ a "dat" con el _mouse_ podrá ver los datos en una ventana $RStudio$ (ver figura de abajo), otra opción es copiando el comando **View()**:
 ``` r
 View(dat)
 ```
