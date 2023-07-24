@@ -307,6 +307,7 @@ PIBpc <- ts(PIBpc_, start=1960, end=2019)
 C1PIBpc <- ts(C1PIBpc_, start=1961, end=2019)
 ```
 ---
+---
 # Preguntas de selección múltiple
 
 1. **Para un estudio que está llevando a cabo, necesita la variable "Gasto en consumo final del gobierno general cpmo porcentaje del PIB". Ya sea utilizando una búsqueda por Internet o por $RStudio$, encuentre cuál es el código de la variable que en los _Indicadores de Desarrollo Mundial_" se acerca más a la variable requerida**
@@ -328,6 +329,8 @@ C1PIBpc <- ts(C1PIBpc_, start=1961, end=2019)
    c) 45.4.
 
    d) 43.7.
+---
+---
 
 | [Anterior Sección: 1.1. Series de tiempo](../Seccion01_01/Readme.md) | [:house: Inicio](../../Readme.md) | [Siguiente Sección: 2. Análisis Univariado de Series de Tiempo](../../Seccion02/Readme.md) | 
 |----------------------------------------------------------------------|-----------------------------------|---------------------------------------------------------------------------------------------|
