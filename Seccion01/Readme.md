@@ -22,3 +22,4 @@ Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en
 
 <div align="center"><a href="http://www.escuelaing.edu.co" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/banner-pie-de-pagina.jpg" alt="Support by" width="100%" border="0" />
 
+</div>
