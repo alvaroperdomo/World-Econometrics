@@ -37,7 +37,7 @@ Para el análisis univariado, se va a seguir la metodología de Box y Jenkins (1
 
 La explicación de los requisitos para obtener procesos estacionarios en representaciones $ARMA(p,q)$ es más complejas que para un proceso AR(1). En general, note que un modelo $ARMA(p,q)$ es la representación de una ecuación en diferencias. Por lo tanto, para que esta ecuación no sea explosiva se requiere que todos los valores característicos (o también llamados los valores propios) que resuelven esta ecuación en diferencias sean menores que el valor absoluto de $1$ (usualmente, a este requisito se le denomina _estar dentro del círculo unitario_).[^1]  
 
-[^1]: En el caso de un modelo _AR(1)_ el valor característico que resuelve a la ecuación es coincidente con el coeficiente que multiplica al valor rezagado de la variable analizada. Por lo tanto, en el Anexo 1, vamos a aprovechar esta caracteristica para ver cómo se muestra la estacionariedad en este caso.
+[^1]: **En el caso de un modelo _AR(1)_ el valor característico que resuelve a la ecuación es coincidente con el coeficiente que multiplica al valor rezagado de la variable analizada. Por lo tanto, en el Anexo 1, vamos a aprovechar esta caracteristica para ver cómo se muestra la estacionariedad en este caso.**
 
 En series de tiempo, una forma de ver si una variable cumple el requisito de estacionariedad es a través de las pruebas de raíz unitaria. En la sección 2.2 vamos a explicar teóricamente cómo funcionan este tipo de pruebas y cómo se aplican en $R$.
 
@@ -127,10 +127,16 @@ Al restar los valores estimados de la secuencia { $y_t$ } de los valores reales 
 ---
 ---
    
-<div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
 | [Anterior Sección: 2. Análisis Univariado de Series de Tiempo](../Readme.md) | [:house: Inicio](../../README.md) |[Siguiente Sección: 2.2. Pruebas de Raíz Unitaria](../Seccion02_02/Readme.md) |
 |-------------------------------------------------------------------------------------------------------------|--------------------------------|-------------------------------------------------------------------------------------------|
 
+<div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
+
+##
+
+<div align="center"><a href="http://www.escuelaing.edu.co" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/banner-pie-de-pagina.jpg" alt="Support by" width="100%" border="0" />
+
+</div>
 
 
