@@ -11,14 +11,14 @@ urersTest(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"), lag.m
 [^1]: **Este comando pertenece a la librería _fUnitRoots_**
 
 | **Argumentos**          | **Descripción**                                                                                                                                          | 
-|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **x**                   | vector o variable de series de tiempo                                                                                                                    |
-| **lag.max**             | esta opción puede significar dos cosas:                                                                                                                  |
-|                         | el número máximo de rezagos utilizados para probar el truncamiento del rezago decendente para la $prueba P$, utilizando el Criterio Bayesiano de Schwartz|   
-|                         | el número máximo de diferencias rezagadas que se incluirán en la regresión de prueba para $DF-GLS$                                                       |
-| **model**               | El modelo determinista utilizado para eliminar la tendencias:                                                                                            | 
-|                         | **"constant"** Se refiere al modelo con constante pero sin tendencia (**_Opción Predeterminada_**)                                                       |
-|                         | **"trend"** Se refiere al modelo con constante y tendencia                                                                                               
+|-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| **x**                   | vector o variable de series de tiempo                                                                                                       |
+| **lag.max**             | esta opción puede significar dos cosas:                                                                                                     |
+|                         | el número máximo de rezagos utilizados para, con el Criterio Bayesiano de Schwartz, determinar el número óptimo de rezagos de la $prueba P$ |   
+|                         | el número máximo de diferencias rezagadas que se incluirán en la regresión de prueba para $DF-GLS$                                          |
+| **model**               | El modelo determinista utilizado para eliminar la tendencias:                                                                               | 
+|                         | **"constant"** Se refiere al modelo con constante pero sin tendencia (**_Opción Predeterminada_**)                                          |
+|                         | **"trend"** Se refiere al modelo con constante y tendencia                                                                                  |     
 
 ## 2) Segunda Opción: Utilice el comando ur.ers[^2]
 La estructura para hacer la prueba $ADF-GLS$ es:
