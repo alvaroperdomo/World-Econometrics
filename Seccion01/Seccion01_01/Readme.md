@@ -6,7 +6,7 @@ Para entender mejor algunas generalidades importantes en el análisis de series 
 ## ¿Qué es una serie de tiempo?
 Una serie de tiempo es una secuencia de observaciones sobre una variable tomada a intervalos discretos en el tiempo. Donde estos intervalos discretos tienen la misma unidad de medida; es decir, están igualmente distanciados [^1] .
 
-Muchos tipos de datos aparecen como series de tiempo: 
+Muchos tipos de datos aparecen como series de tiempo, por ejemplo: 
 * la serie anual del PIB de un país en particular,
 * la secuencia trimestral de la tasa de desempleo de una ciudad,
 * una secuencia mensual de la tasa de inflación de una nación,
@@ -31,6 +31,16 @@ Una variable discreta $y$ es una variable aleatoria (es decir, estocástica) si,
 
 ## ¿Qué es un procesos estocástico?
 Un proceso estocástico se define como un conjunto de magnitudes aleatorias que varían con el tiempo. En consecuencia, a los elementos observados de una serie de tiempo { $y_0, y_1, y_2, ..., y_t$ } se les denota como realizaciones de un proceso estocástico, en donde que $y_t$ se refiere a un elemento de la secuencia completa { $y_t$ }. 
+
+---
+# Preguntas de selección múltiple
+
+1. **¿Cuál de los siguientes items no es una serie de tiempo?**
+   a) La lista de los mejores jugadores de poker
+   b) La lista diaria del número de visitantes a un museo
+   c) El valor de la mesada mensual que le dan a un estudiante durante un año
+   d) El número de manzanas por lustro que produce una finca
+ 
 
 | [Siguiente Sección: 1.2. R y los _Indicadores de Desarrollo Mundial_](../Seccion01_02/README.md) | [:house: Inicio](../../README.md) |
 |--------------------------------------------------------------------------------------------------|-----------------------------------|
