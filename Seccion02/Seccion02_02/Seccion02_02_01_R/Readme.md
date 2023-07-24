@@ -1,3 +1,5 @@
+<div align="center"><a href="https://www.escuelaing.edu.co/es/investigacion-e-innovacion/centro-de-estudios-oikonimia/" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/Centros_%20de_Estudios_Oikonom%C3%ADa.jpg" alt="R.LTWB" width="100%" border="0" /></a></div>
+
 # Aplicando las pruebas $DF$ y $ADF$ en $R$
 
 Para llevar a cabo la prueba $ADF$ en $R$ existen las siguientes cuatro opciones:
