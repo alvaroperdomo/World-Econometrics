@@ -28,13 +28,13 @@ Es importante que los alumnos además de tener instalados $R$ y [_**RStudio**_](
 Los contenidos presentados en este curso están dirigidos a estudiantes y profesionales de diferentes disciplinas que requieran aprender y/o fortalecer sus conocimientos en análisis de series de tiempo en $R$.
 
 ## Metodología
-La primera sección del curso comienza con la explicación de de algunas generalidades el análisis de series de tiempo y de las caracteristicas principales de la base de datos "_Indicadores de Desarrollo Mundial_". Posteriormente, se explica cómo se puede descargar y manipular esta base directamente desde $RStudio$. Al final de la sección se hace una evaluación donde se formulan preguntas de selección múltiple con respecto a los conceptos vistos en ésta y con respecto a un ejercicio que el alumno debe desarrollar en $RStudio$ utilizando los _Indicadores de Desarrollo Mundial_ [^1]. 
+La primera sección del curso comienza con la explicación de algunas generalidades el análisis de series de tiempo y de las características principales de la base de datos "_Indicadores de Desarrollo Mundial_". Posteriormente, se explica cómo se puede descargar y manipular esta base directamente desde $RStudio$. Al final de la sección se hace una evaluación donde se formulan preguntas de selección múltiple con respecto a los conceptos vistos en esta y con respecto a un ejercicio que el alumno debe desarrollar en $RStudio$ utilizando los _Indicadores de Desarrollo Mundial_ [^1]. 
 
 [^1]: **Los códigos en _R_ necesarios para el desarrollo del ejercicio serán explicados durante el desarrollo de la sección**
 
-Las otras dos secciones del curso comienzan con una explicación general de las herramientas econométricas a utilizar, tanto en lo teórico como en su aplicación en $R$. Luego, se desarrollan algunos ejercicios y posteriormente se propone un ejercicio empírico para ser realizado por el alumno. Durante el desarrollo de las secciones se haran algunas preguntas de selección múltiple para evaluar si los conceptos principales han sido entendidos de forma apropiada.
+Las otras dos secciones del curso comienzan con una explicación general de las herramientas econométricas a utilizar, tanto en lo teórico como en su aplicación en $R$. Luego, se desarrollan algunos ejercicios y posteriormente se propone un ejercicio empírico para ser realizado por el alumno. Durante el desarrollo de las secciones se harán algunas preguntas de selección múltiple para evaluar si los conceptos principales han sido entendidos de forma apropiada.
 
-A continuación encontrara información más detallada acerca de cada una de las secciones en que se divide el curso. Si quiere ir a alguna sección en particular, dele _click_ con el mouse al titulo de la sección respectiva. 
+A continuación encontrará información más detallada acerca de cada una de las secciones en que se divide el curso. Si quiere ir a alguna sección en particular, dele _click_ con el mouse al titulo de la sección respectiva. 
 
 ## [Sección 1 - Las Series de Tiempo, _R_ y los _Indicadores de Desarrollo Mundial_](Seccion01/Readme.md)
 | Subsecciones                                             | Contenido                                                                           | Dedicación,<br> 2.5 horas | 
