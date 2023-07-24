@@ -10,10 +10,10 @@ En esta primera sección del curso vamos a explicar algunas generalidades del an
 
 Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en la subsección respectiva
 
-| Subsecciones                                                                                                | Contenido                                                                                                                | Dedicación,<br> 2.5 horas | 
-|-------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|:-------------------------:|
-| [**1.1.** Series de tiempo](Seccion01_01/Readme.md)                                                |¿Qué es una serie de tiempo?, ¿En qué consiste el análisis de series de tiempo?, ¿Qué es una variable discreta aleatoria? |             0.5           | 
-| [**1.2.** R y Los Indicadores de Desarrollo Económico del Banco Mundial](Seccion01_02/README.md)   |¿Cómo manipular los Indicadores de Desarrollo Económico del Banco Mundial en R?                                            |             2.0           | 
+| Subsecciones                                                                                       | Contenido                                                                                                                | Dedicación,<br> 2.5 horas | 
+|----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|:--------:|
+| [**1.1.** Series de tiempo](Seccion01_01/Readme.md)                                                |Generalidades del análisis de series de tiempo                                                |    0.5   | 
+| [**1.2.** R y Los Indicadores de Desarrollo Económico del Banco Mundial](Seccion01_02/README.md)   |¿Qué son y cómo manipular los _Indicadores de Desarrollo Económico:_ del Banco Mundial en $R$?|    2.0   | 
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
