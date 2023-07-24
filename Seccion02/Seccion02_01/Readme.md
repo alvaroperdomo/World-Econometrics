@@ -98,7 +98,28 @@ Al restar los valores estimados de la secuencia { $y_t$ } de los valores reales 
 * Igualmente, las pruebas $F$ también se pueden usar para determinar si un grupo de coeficientes, por ejemplo, de $a_{n-i}$  a $a_n$, es estadísticamente diferente de cero.
 * Por último, los Criterios de Información de Akaike y el Criterio Bayesiano de Schwartz se pueden usar para reconfirmar el grado apropiado del polinomio. 
 
+---
+# Preguntas de selección múltiple
 
+1. **Señale la información correcta:**
+ 
+   a) Todos los procesos estacionarios son ruido blanco.
+
+   b) Todos los procesos ruido blanco son estacionarios.
+
+   c) Todos los procesos paseo aleatorio son ruido blanco.
+
+   d) Todos los procesos paseo aleatorio son estacionarios.
+
+2. **Señale la información correcta:**
+ 
+   a) Todos los procesos estacionarios son ruido blanco.
+
+   b) Todos los procesos ruido blanco son estacionarios.
+
+   c) Todos los procesos paseo aleatorio son ruido blanco.
+
+   d) Todos los procesos paseo aleatorio son estacionarios.
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
 | [Anterior Sección: 2. Análisis Univariado de Series de Tiempo](../Readme.md) | [:house: Inicio](../../README.md) |[Siguiente Sección: 2.2. Pruebas de Raíz Unitaria](../Seccion02_02/Readme.md) |
