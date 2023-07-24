@@ -30,7 +30,7 @@ Asuma que desea buscar los datos del Producto Interno Bruto per cápita por pari
    
       ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/fb4214ee-4704-40f6-96e3-69bd90f76bd1)
 
-     * Escoja con el _mouse_ la variable en cuestión "PIB per cápita, PPA ($ a precios internacionales constantes de 2011)" y será redirigido a la página de Internet donde se encuentra la variable en cuestión[^2]
+     * Escoja con el _mouse_ la variable en cuestión "PIB per cápita, PPA ($ a precios internacionales constantes de 2011)" y será redirigido a la página de Internet donde se encuentra la misma [^2]
 
      * Escoja con el _mouse_ la opción ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/d615bae3-bd1b-46e8-99cd-42f3566ef4f0) que se encuentra en la esquina superior derecha de la figura, y se desplegará la siguiente información
        
