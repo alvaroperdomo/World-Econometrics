@@ -45,7 +45,7 @@ urdfTest(x, lags = 1, type = c("nc", "c", "ct"), doplot = TRUE)
 | **type**                | en esta opción se especifica el tipo de prueba $ADF$ que se va a llevar a cabo. Las opciones válidas son:             |
 |                         | **"nc"** para una prueba sin intercepto (constante) ni tendencia temporal                                             |
 |                         | **"c"** para una prueba con intercepto (constante) pero sin tendencia temporal - **_Opción Predeterminada_**          |
-|                         | **"ct"** para una regresión con intercepto (constante) y con tendencia temporal                                       |
+|                         | **"ct"** para una prueba con intercepto (constante) y con tendencia temporal                                          |
 | **doplot**              | Indicador lógico, para especificar si se desea obtener un gráfico de diagnóstico                                      | 
 |                         | **"TRUE"** para mostrar gráfico de diagnostico **_Opción Predeterminada_**                                            |
 |                         | **"FALSE"** para no mostrar gráfico de diagnostico                                                                    |
