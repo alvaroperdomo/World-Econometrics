@@ -112,15 +112,15 @@ Al restar los valores estimados de la secuencia { $y_t$ } de los valores reales 
 
    d) Todos los procesos paseo aleatorio son estacionarios.
 
-2. **Señale la información correcta:**
+2. **¿Qué tipo de transformación se le puede hacer a una serie no estacionaria para intentar volverla en estacionarla:**
  
-   a) Todos los procesos estacionarios son ruido blanco.
+   a) Elevarla al cuadrado.
 
-   b) Todos los procesos ruido blanco son estacionarios.
+   b) Sacarle la primera diferencia.
 
-   c) Todos los procesos paseo aleatorio son ruido blanco.
+   c) Dividirla por su desviación estándar.
 
-   d) Todos los procesos paseo aleatorio son estacionarios.
+   d) Todas las anteriores.
 
 ---
 ---
