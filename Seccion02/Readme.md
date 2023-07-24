@@ -17,8 +17,14 @@ Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en
 | [**2.2.** Pruebas de Raíz Unitaria](Seccion02_02/Readme.md) | Explicación acerca de la metodología y lectura de diferentes tipos de pruebas de raíz unitaria                          |              1            | 
 | [**2.3.** Análisis ARIMA (Metodología de Box-Jenkins)](Seccion02_03/Readme.md) | Explicación acerca de cómo estimar un modelo ARIMA                                                   |              1            | 
 
-<div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
-
 
 | [Anterior Sección: 1.2. _R_ y los _Indicadores de Desarrollo Mundial_/Readme.md](../Seccion01/Seccion01_02/Readme.md) | [:house: Inicio](../README.md) |[Siguiente Sección: 2.1. Series Estacionarias y No Estacionarias](Seccion02_01/Readme.md) |
 |-------------------------------------------------------------------------------------------------------------|--------------------------------|-------------------------------------------------------------------------------------------|
+
+<div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
+
+##
+
+<div align="center"><a href="http://www.escuelaing.edu.co" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/banner-pie-de-pagina.jpg" alt="Support by" width="100%" border="0" />
+
+</div>
