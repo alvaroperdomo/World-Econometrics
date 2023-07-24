@@ -48,3 +48,12 @@ Por lo tanto, un valor grande de $\hat{\lambda_{r+1}^* }$ [y en consecuencia de 
 Sims, Stock y Watson (1990) establecen que no se pueden realizar pruebas de causalidad de Granger en un sistema cointegrado usando una prueba $F$ estándar. Cuando el $rango(\pi)=0$ entonces $\mathbf{\Delta x_t= \displaystyle\sum_{i=1}^{p-1} + \varepsilon_t}$. En este caso (es decir, en un $VAR$ en diferencias), sólo hay variables estacionarias. Por lo tanto, las pruebas de causalidad de Granger se pueden realizar utilizando una distribución $F$ estándar. Sin embargo, si las variables están cointegradas, $\mathbf{\Delta x_t=\pi^* x_{t-1} + \displaystyle\sum_{i=1}^{p-1} + \varepsilon_t}$, una prueba de causalidad de Granger involucra los coeficientes de $\pi$. Dado que estos coeficientes multiplican las variables no estacionarias, no es apropiado usar un estadístico $F$ para probar la causalidad de Granger. Después de todo, si el $rango(\pi)=0$, es imposible escribir las restricciones de la prueba como restricciones en un conjunto de variables $I(0)$. 
 
 Sims, Stock y Watson (1990), también descartan por razones similares las pruebas de exogeneidad en bloque. 
+
+
+<div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
+
+##
+
+<div align="center"><a href="http://www.escuelaing.edu.co" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/banner-pie-de-pagina.jpg" alt="Support by" width="100%" border="0" />
+
+</div>
