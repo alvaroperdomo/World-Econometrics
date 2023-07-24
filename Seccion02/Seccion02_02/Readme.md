@@ -13,7 +13,13 @@ Las pruebas de raíz unitaria sirven para determinar si una serie es estacionari
 | **2.2.4** Pruebas de Cambio Estructural: _Prueba de Perron y Prueba de Zivot y Andrews_ $ZA$     | [X](Seccion02_02_04_T/Readme.md) | [X](Seccion02_02_04_R/Readme.md) |
 | **2.2.5** Ejemplo utilizando la base de datos _Indicadores de Desarrollo Mundial_                |                                  | [X](Seccion02_02_05/Readme.md) |
 
-<div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
-
 | [Anterior Sección: 2.1. Series Estacionarias y No Estacionarias](../Seccion02_01/Readme.md) | [:house: Inicio](../../README.md) |[Siguiente Sección: 2.3. Análisis ARMA (Metodología de Box Y Jenkins)](../Seccion02_03/Readme.md) |
 |---------------------------------------------------------------------------------------------|-----------------------------------|-------------------------------------------------------------------------------------------|
+
+<div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
+
+##
+
+<div align="center"><a href="http://www.escuelaing.edu.co" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/banner-pie-de-pagina.jpg" alt="Support by" width="100%" border="0" />
+
+</div>
