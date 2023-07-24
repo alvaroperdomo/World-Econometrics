@@ -105,17 +105,17 @@ ndiffs(x, alpha = 0.05, test = c("adf"), type = c("level", "trend"), ...)
 
    c) El argumento "_plot_" en el comando "_ur.df_".
 
-   d) Todos los procesos paseo aleatorio son estacionarios.
+   d) El argumento "_doplot_" en todos los comandos.
 
-2. **¿Qué tipo de transformación se le puede hacer a una serie no estacionaria para intentar volverla en estacionarla:**
+2. **¿Cuál comando permite escoger el número óptimo de rezagos segun el Criterio de Información de Akaike?:**
  
-   a) Elevarla al cuadrado.
+   a) _unitrootTest_.
 
-   b) Sacarle la primera diferencia.
+   b) _urdfTest_.
 
-   c) Dividirla por su desviación estándar.
+   c) _ur.df_.
 
-   d) Todas las anteriores.
+   d) Todos los anteriores.
 
 ---
 ---
