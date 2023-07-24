@@ -89,9 +89,9 @@ ndiffs(x, alpha = 0.05, test = c("adf"), type = c("level", "trend"), ...)
 |                         | **"level"** para una prueba con intercepto (constante) pero sin tendencia temporal - **_Opción Predeterminada_**                     |
 |                         | **"trend"** para una regresión con intercepto (constante) y con tendencia temporal                                                   |
 
-#### De las cuatro opciones, mi preferida es la tercera por la opción "selectlags" ya que permite utilizar los criterios de selección de Akaike y el Bayesiano de Schwartz para escoger la prueba apropiada. 
+#### De las cuatro opciones, mi preferida es la tercera por la opción "selectlags" porque permite utilizar el _Criterio de Información de Akaike_ y el _Criterio Bayesiano de Schwartz_ para escoger la prueba apropiada. 
 #### Posteriormente, se puede utilizar la segunda opción para aprovechar el comando "doplot" y así hacer la prueba sobre los residuos.
-#### Por último, se pueden contrastar los resultadoscon la cuarta opción para tener una opinión adicional.
+#### Por último, se pueden contrastar los resultados con la cuarta opción para tener una opinión adicional.
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
