@@ -22,6 +22,32 @@ Siguiendo a Phillips (1987) y Phillips y Perron (1988), $s^2(l)$ se estima como 
 
 La distribución asintótica del estadístico de prueba $\hat{\eta}$, tal como se explica en Kwiatkowski, Phillips, Schmidt y Shin (1992) depende de si la serie tiene tendencia o no. Por último, tenga en cuenta que si el estadistico es menor que el valor crítico reportado en las tablas de Kwiatkowski, Phillips, Schmidt y Shin (1992), entoces no se rechaza la hipóteis nula y se afirma que la serie es estacionaria
 
+---
+---
+# Preguntas de selección múltiple
+
+1. **¿Cuál es la hipótesis nula en una prueba $KPSS$?**
+ 
+   a) La serie es estacionaria.
+
+   b) La serie tiene raíz unitaria.
+
+   c) La serie es ruido blanco.
+
+   d) La serie esta serialmente correlacionada.
+
+2. **¿La prueba $KPSS$ bajo que condición concluye que hay raíz estacionariedad?:**
+ 
+   a) Cuando el estadístico que se calcula en la prueba es menor que el valor crítico reportado en las tablas de Kwiatkowski, Phillips, Schmidt y Shin (1992).
+
+   b) Cuando el estadístico que se calcula en la prueba es igual a cero.
+
+   c) Cuando el estadístico que se calcula en la prueba es igual que el valor crítico reportado en las tablas de Kwiatkowski, Phillips, Schmidt y Shin (1992).
+   
+   d) Cuando el estadístico que se calcula en la prueba es mayor que el valor crítico reportado en las tablas de Kwiatkowski, Phillips, Schmidt y Shin (1992).
+
+---
+---
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
 | [Retornar: 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) | [2.2.3.(R) Aplicación en R de la prueba _KPSS](../Seccion02_02_03_R/Readme.md) |
