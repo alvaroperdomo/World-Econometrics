@@ -38,7 +38,7 @@ Asuma que desea buscar los datos del Producto Interno Bruto per cápita por pari
        
      ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4fd84b83-79f2-4d78-a721-1af9d3ef69ea)
    
-   * En la parte inferior del desplegable se encuentra el nombre de la variable: **NY.GDP.PCAP.PP.KD**
+   * En la parte inferior del desplegable se encuentra el código de la variable: **NY.GDP.PCAP.PP.KD**
 
 [^2]: **No se preocupen demasiado por el año base reportado en el nombre de la variable. Noten que cuando ustedes escogen en esta nueva página de Internet que la quieren ver en inglés, el año va a cambiar a 2017, pero los datos siguen siendo los mismos**
 
@@ -61,7 +61,7 @@ Obteniendo:
 [4,]    NY.GDP.PCAP.PP.KD  GDP per capita, PPP (constant 2017 international $)
 [5,] NY.GDP.PCAP.PP.KD.87  GDP per capita, PPP (constant 1987 international $)
 ```
-Por lo tanto, la variable solicitada es **NY.GDP.PCAP.PP.KD** (observen que se llegó a la misma variable que con la primera opción de búsqueda). Existe también la opción de tener la variable a precios constantes de 1987 o de 2011, pero generalmente las personas prefieren utilizar la variable con los precios constantes más recientes (es decir, 2017) 
+Por lo tanto, el código de la variable solicitada es **NY.GDP.PCAP.PP.KD** (observen que se llegó a la misma variable que con la primera opción de búsqueda). Existe también la opción de tener la variable a precios constantes de 1987 o de 2011, pero generalmente las personas prefieren utilizar la variable con los precios constantes más recientes (es decir, 2017) 
 
 Observe que si solo copia:
 
@@ -269,7 +269,7 @@ En ambos gráficos se visualizan los siguientes hechos estilizados que afectaron
 2) La crisis económica de 1998/1999
 3) La crisis económica del Covid-19 en 2020
 
-Como último paso (por su utilidad para las siguientes secciones), se van a crear las variables PIBpc y C1PIBpc que comienzan en 1960 y finalizan en 2019:
+Como último paso (por su utilidad para las siguientes secciones), se van a crear las variables PIBpc y C1PIBpc como formatos de series de tiempo anuales que comienzan en 1960 y finalizan en 2019:
 ``` r
 PIBpc_ = subset(dat, select = c(PIBpc))
 C1PIBpc_ = subset(dat, select = c(C1PIBpc))
@@ -277,7 +277,7 @@ PIBpc <- ts(PIBpc_, start=1960, end=2019)
 C1PIBpc <- ts(C1PIBpc_, start=1960, end=2019)
 ```
 
-El código completo de R, con los principales comandos, utilizados en este ejemplo es:
+El código completo de $R$, con los principales comandos, utilizados en este ejemplo es:
 ``` r
 ###################
 # Código Completo #
@@ -285,9 +285,9 @@ El código completo de R, con los principales comandos, utilizados en este ejemp
 
 rm(list = ls())
 
-library(WDI)       # Esta libreria sirve para trabajar directamente con la base de datos Indicadores de Desarrollo Mundial.
+library(WDI)       # Esta librería sirve para trabajar directamente con la base de datos Indicadores de Desarrollo Mundial.
 library(ggplot2)   # Esta librería sirve para construir gráficos interesantes
-library(dplyr)     # Esta libreria permite manipular las bases de datos de R de una forma sencilla
+library(dplyr)     # Esta librería permite manipular las bases de datos de R de una forma sencilla
 
 WDIsearch(string='NY.GDP.PCAP.KN', field='indicator')
 
@@ -306,6 +306,19 @@ C1PIBpc_ = subset(dat, select = c(C1PIBpc))
 PIBpc <- ts(PIBpc_, start=1960, end=2019)
 C1PIBpc <- ts(C1PIBpc_, start=1961, end=2019)
 ```
+---
+# Preguntas de selección múltiple
+
+1. **Para un estudio que esta llevando a cabo, necesita la variable "Gasto en consumo final del gobierno general cpmo porcentaje del PIB". Ya sea utilizando una búsqueda por Internet o por $RStudio$, encuentre cuál es el código de la variable que en los _Indicadores de Desarrollo Mundial" se acerca mas a la variable requerida**
+ 
+   a) NE.CON.TOTL.ZS.
+
+   b) NE.CON.TOTL.CN.
+
+   c) NE.GDI.FPRV.ZS.
+
+   d) NE.CON.GOVT.ZS.
+
 
 | [Anterior Sección: 1.1. Series de tiempo](../Seccion01_01/Readme.md) | [:house: Inicio](../../Readme.md) | [Siguiente Sección: 2. Análisis Univariado de Series de Tiempo](../../Seccion02/Readme.md) | 
 |----------------------------------------------------------------------|-----------------------------------|---------------------------------------------------------------------------------------------|
