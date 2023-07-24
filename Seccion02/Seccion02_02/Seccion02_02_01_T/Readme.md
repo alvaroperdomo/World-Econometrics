@@ -41,7 +41,7 @@ Esta prueba es una generalización de la prueba $DF$ y consiste en estimar estas
 2) $\eqalign{\Delta y_t = a_0 + \gamma y_{t-1} +\sum_{i = 2}^{p} \beta_i \Delta y_{t-i+1} + \varepsilon_t}$
 3) $\eqalign{\Delta y_t = a_0 + \gamma y_{t-1} +\sum_{i = 2}^{p} \beta_i \Delta y_{t-i+1} + a_2 t + \varepsilon_t}$
 
-En las cuales se debe contrastar la hipótesis nula $\gamma=0$. Para determinar el número de rezagos óptimos ($p$) dentro de las sumatorias se puede escoger utilizando el **_Críterio de Información de Akaike_** (o el **_Críterio Bayesiano de Schwartz_**). Entre más bajo sea el valor de cualquiera de los dos criterios, la especificación del modelo en cuanto al número de rezagos sera mejor. De todas formas, después de escoger, con cualesquiera de estos dos críterios, el número óptimo de rezagos para incluir en la prueba, es importante hacer una prueba sobre los residuos en la especificación escogida para ver si son ruido blanco (si esto es así, entonces los gráficos de la Función de Autocorrelación $FAC$ y la Función de Autocorrelación Parcial $FACP$ no deben ser estadisticamente diferentes de cero). Si no son ruido blanco, entonces se recomienda ir aumentando el número de rezagos (uno a uno) de la prueba hasta que los residuos sean ruido blanco. 
+En las cuales se debe contrastar la hipótesis nula $\gamma=0$. Para determinar el número de rezagos óptimos ($p$) dentro de las sumatorias se puede escoger utilizando el **_Criterio de Información de Akaike_** (o el **_Criterio Bayesiano de Schwartz_**). Entre más bajo sea el valor de cualquiera de los dos criterios, la especificación del modelo en cuanto al número de rezagos sera mejor. De todas formas, después de escoger, con cualesquiera de estos dos criterios, el número óptimo de rezagos para incluir en la prueba, es importante hacer una prueba sobre los residuos en la especificación escogida para ver si son ruido blanco (si esto es así, entonces los gráficos de la Función de Autocorrelación $FAC$ y la Función de Autocorrelación Parcial $FACP$ no deben ser estadisticamente diferentes de cero). Si no son ruido blanco, entonces se recomienda ir aumentando el número de rezagos (uno a uno) de la prueba hasta que los residuos sean ruido blanco. 
 
 ## El problema con la potencia de la prueba $DF$ y $ADF$
 
@@ -80,13 +80,13 @@ Dado que las pruebas $DF$ y $ADF$ estan sesgadas hacía el no rechazo de la hip�
 ---
 # Preguntas de selección múltiple
 
-1. **Al comparar dos modelos, bajo que condición un modelo esta mejor específicado según el _Criterío de Información de Akaike_:**
+1. **Al comparar dos modelos, bajo que condición un modelo está mejor específicado según el _Criterío de Información de Akaike_:**
  
-   a) Cuando el valor de este críterio sea mayor.
+   a) Cuando el valor de este criterio sea mayor.
 
-   b) Cuando el valor de este críterio sea igual a cero.
+   b) Cuando el valor de este criterio sea igual a cero.
 
-   c) Cuando el valor de este críterio sea menor.
+   c) Cuando el valor de este criterio sea menor.
 
    d) Ninguno de los anteriores.
 
@@ -98,7 +98,7 @@ Dado que las pruebas $DF$ y $ADF$ estan sesgadas hacía el no rechazo de la hip�
 
    c) Tienen una mayor probabilidad de rechazar una hipótesis de estacionariedad cuando esta existe.
 
-   d) Tienen una mayor probabilidad de rechazar una hipótesis de raiz unitaria cuando esta existe.
+   d) Tienen una mayor probabilidad de rechazar una hipótesis de raíz unitaria cuando esta existe.
 
 ---
 ---
