@@ -183,7 +183,7 @@ Al comienzo de cualquier programación en $R$ le recomendamos copiar los siguien
 ``` r
 rm(list = ls())
 ```
-Llamamos a las dos librerias que se van a utilizar en el resto de este ejemplo
+Llamamos a las librerías que se van a utilizar en el resto de este ejemplo
 ``` r
 library(WDI)       # Esta libreria sirve para trabajar directamente con la base de datos Indicadores de Desarrollo Mundial.
 library(ggplot2)   # Esta librería sirve para construir gráficos interesantes
