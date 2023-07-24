@@ -26,7 +26,7 @@ Hay cuatro puntos importantes a tener en cuenta sobre la definición:
 
    Esto no implica que todas las variables integradas estén cointegradas:
 
-   * Por lo general, un conjunto de variables integradas de orden $d$ [es decir, variables que son $I(d)$] no está compuesto por variables cointegradas.[^2]
+   * No es para nada raro que un conjunto de variables integradas de orden $d$ [es decir, variables que son $I(d)$] no está compuesto por variables cointegradas.[^2]
    * **Si dos variables son integradas de órdenes diferentes, no pueden estar cointegradas.**[^3]
 
    Sin embargo, **es posible encontrar relaciones de equilibrio entre grupos de variables que están integradas de diferentes órdenes.** Suponga que $x_{1t}$ y $x_{2t}$ son $I(2)$ y que las otras variables en consideración son $I(1)$. Como tal, no puede haber una relación de cointegración entre $x_{1t}$ (o $x_{2t}$) y $x_{3t}$. Sin embargo, si $x_{1t}$ y $x_{2t}$ son $CI(2,1)$, puede existir una combinación lineal de la forma $\beta_1x_{1t}+\beta_2x_{2t}$ que es $I(1)$, la cual es posible que esté cointegrada con las variables $I(1)$.
