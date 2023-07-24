@@ -45,6 +45,15 @@ Un proceso estocástico se define como un conjunto de magnitudes aleatorias que 
 
    d) El número de manzanas por lustro que produce una finca
  
+2. **¿Cuál de los siguientes items no es un proceso estocástico?**
+
+   a) La estatura de una persona
+
+   b) La cantidad de números reales entre el $0$ y el $1$
+
+   c) El valor de la mesada mensual que le dan a un estudiante durante un año
+
+   d) El número de manzanas por lustro que produce una finca
 
 | [Siguiente Sección: 1.2. R y los _Indicadores de Desarrollo Mundial_](../Seccion01_02/README.md) | [:house: Inicio](../../README.md) |
 |--------------------------------------------------------------------------------------------------|-----------------------------------|
