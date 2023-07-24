@@ -21,25 +21,26 @@ Los valores críticos de la prueba dependen de si se incluye una tendencia en la
 ---
 # Preguntas de selección múltiple
 
-1. **Al comparar dos estimaciones de la prueba $ADF$ con respecto a una misma variable, según el _Criterío de Información de Akaike_ ¿cuál prueba tiene mejor específicado el número de rezagos?:**
+1. ¿Cuál prueba recomiendan los autores de la prueba $ADF-GLS$ para seleccionar el número de rezafos que ésta debe incluir?
+ utilizando el Criterio Bayesiano de Schwartz**
  
-   a) La que tiene mayor valor de este criterio.
+   a) La prueba aumentada de Dickey-Fuller.
 
-   b) La que tiene el valor de este criterio igual a cero.
+   b) La prueba KPSS.
 
-   c) La que tiene menor valor de este criterio.
+   c) El Criterio Bayesiano de Schwartz.
 
-   d) Ninguno de los anteriores.
+   d) La prueba de correlación serial.
 
-2. **¿Cuál es el problema de potencia que tienen las pruebas $DF$ y $ADF$ ?:**
+2. **¿La prueba $ADF-GLS$ bajo que condición concluye que hay raíz unitaria ?:**
  
-   a) Tienen una mayor probabilidad de aceptar una hipótesis de raíz unitaria cuando esta no existe.
+   a) Cuando el estadistico que se calcula en la prueba es menor que el valor crítico reportado en las tablas de Elliott, Rothenberg y Stock (1996).
 
-   b) Tienen una mayor probabilidad de aceptar una hipótesis de estacionariedad cuando esta no existe.
+   b) Cuando el estadistico que se calcula en la prueba es igual a cero.
 
-   c) Tienen una mayor probabilidad de rechazar una hipótesis de estacionariedad cuando esta existe.
-
-   d) Tienen una mayor probabilidad de rechazar una hipótesis de raíz unitaria cuando esta existe.
+   c) Cuando el estadistico que se calcula en la prueba es igual que el valor crítico reportado en las tablas de Elliott, Rothenberg y Stock (1996).
+   
+   d) Cuando el estadistico que se calcula en la prueba es mayor que el valor crítico reportado en las tablas de Elliott, Rothenberg y Stock (1996).
 
 ---
 ---
