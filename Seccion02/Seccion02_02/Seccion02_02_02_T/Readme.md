@@ -21,7 +21,7 @@ Los valores críticos de la prueba dependen de si se incluye una tendencia en la
 ---
 # Preguntas de selección múltiple
 
-1. ¿Cuál prueba recomiendan los autores de la prueba $ADF-GLS$ para seleccionar el número de rezagos que esta debe incluir?
+1. **¿Cuál prueba recomiendan los autores de la prueba $ADF-GLS$ para seleccionar el número de rezagos que esta debe incluir?**
  
    a) La prueba aumentada de Dickey-Fuller.
 
