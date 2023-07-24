@@ -84,3 +84,5 @@ A continuación encontrará información más detallada acerca de cada una de la
 ##
 
 <div align="center"><a href="http://www.escuelaing.edu.co" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/banner-pie-de-pagina.jpg" alt="Support by" width="100%" border="0" />
+
+</div>
