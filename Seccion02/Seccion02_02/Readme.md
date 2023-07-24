@@ -1,7 +1,7 @@
 ## SUBSECCIÓN 2.2:
 # Pruebas de Raíz Unitaria
 
-Las pruebas de raíz unitaria sirven para determinar si una serie es estacionaria o no (cuando no es estacionaria se dice que la serie tiene raíz unitaria). La siguiente tabla presenta las pruebas que vamos a analizar. Dando _click_ en la **X** de la segunda columna de la tabla puede redirigirse a la explicación teórica de la prueba y dando click en la **X** de la tercera columna de la tabla puede redirigirse para ver cómo la misma se lleva a cabo en $R$. Lo ideal es que aborden todas las subsecciones en el orden establecido, primero viendo la explicación de la prueba y posteriormente su aplicación en $R$.  
+Las pruebas de raíz unitaria sirven para determinar si una serie es estacionaria o no (cuando no es estacionaria se dice que la serie tiene raíz unitaria). La siguiente tabla presenta las pruebas que vamos a analizar. Dando _click_ en la **X** de la segunda columna de la tabla puede redirigirse a la explicación teórica de la prueba y dando _click_ en la **X** de la tercera columna de la tabla puede redirigirse para ver cómo la misma se lleva a cabo en $R$. Lo ideal es que aborden todas las subsecciones en el orden establecido, primero viendo la explicación de la prueba y posteriormente su aplicación en $R$.  
 
 | Pruebas                                                                                          | Explicación general de la prueba |  Aplicación en R                 |
 |--------------------------------------------------------------------------------------------------|:--------------------------------:|:--------------------------------:|
