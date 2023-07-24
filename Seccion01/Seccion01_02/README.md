@@ -92,7 +92,7 @@ Y obtiene:
 [10,]    BG.KLT.DINV.GD.ZS           Gross foreign direct investment (% of GDP)
 ```
 
-La mentablemente, observe que con esta forma de busqueda dentro de las 10 primeras variables no se encuentra la variable requerida. 
+Lamentablemente, observe que con esta forma de búsqueda dentro de las 10 primeras variables no se encuentra la variable requerida. 
 
 A partir de la instrucción 
 
