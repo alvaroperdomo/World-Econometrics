@@ -13,18 +13,18 @@ install.packages('WDI')
 
 
 ## Buscando los datos
-A continuación se presenta un ejemplo didáctico que le sugerira ideas acerca de cómo buscar información en la base de datos _Indicadores de Desarrollo Mundial_:.
+A continuación se presenta un ejemplo didáctico que le sugerirá ideas acerca de cómo buscar información en la base de datos _Indicadores de Desarrollo Mundial_:.
 
-Asuma que desea buscar los datos del Producto Interno Bruto per cápita por paridad del poder adquisitivo "PPA" a precios constantes de un país, de un grupo de paises o de todos los paises. Para ello, primero tiene que identificar el nombre exacto de la variable que desea descargar de la base de datos. Se le proponen dos opciones de busqueda:
+Asuma que desea buscar los datos del Producto Interno Bruto per cápita por paridad del poder adquisitivo "PPA" a precios constantes de un país, de un grupo de países o de todos los países. Para ello, primero tiene que identificar el nombre exacto de la variable que desea descargar de la base de datos. Se le proponen dos opciones de búsqueda:
 
 1) **Utilizando internet:**
 
-   * Dirijase a la dirección: https://datos.bancomundial.org/indicator
+   * Diríjase a la dirección: https://datos.bancomundial.org/indicator
    * Busque la variable deseada: Si utiliza el buscador al comienzo de la página, sea específico.
    
      Por ejemplo,
      
-     * si sólo coloca PIB (ver figura de abajo) puede que ninguna de las opciones a escoger incluyan la variable requerida.
+     * si solo coloca PIB (ver figura de abajo) puede que ninguna de las opciones a escoger incluyan la variable requerida.
        
       ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/888b9892-66a4-4ac1-8e99-0dcb0395a497)
 
