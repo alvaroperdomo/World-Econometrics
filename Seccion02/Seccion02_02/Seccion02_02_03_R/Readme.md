@@ -73,7 +73,7 @@ ndiffs(x, alpha = 0.05, test = c("kpss"), type = c("level", "trend"), ...)
 
    d) Todos los anteriores.
 
-2. **¿Cuál comando admite hacer de forma directa acorde a la formula $(4 \times \frac{n}{100})^{\frac{1}{4}}$ ?:**
+2. **¿Cuál comando admite hacer, de forma directa, la prueba $KPSS$ con el número de rezagos determinado por la formula $(4 \times \frac{n}{100})^{\frac{1}{4}}$ ?:**
  
    a) El comando _urkpssTest_.
 
