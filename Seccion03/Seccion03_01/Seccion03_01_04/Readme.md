@@ -451,6 +451,7 @@ forecast3<-forecast(modeloVAR, level = c(95), h = 3)
 autoplot(forecast3)
 ```
 Y obtenemos
+
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/2f6d7218-d82c-45e1-85a5-f5950f23888c)
 
 
