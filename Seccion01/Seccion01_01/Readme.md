@@ -30,7 +30,7 @@ Un uso importante del análisis de series de tiempo ha sido para el desarrollo d
 Una variable discreta $y$ es una variable aleatoria (es decir, estocástica) si, para cualquier número real $r$, existe una probabilidad $p(y\leq r)$ de que $y$ tome un valor menor o igual a $r$. 
 
 ## ¿Qué es un procesos estocástico?
-Un proceso estocástico se define como un conjunto de magnitudes aleatorias que varían con el tiempo. En consecuencia, a los elementos observados de una serie de tiempo { $y_0, y_1, y_2, ..., y_t$ } se les denota como realizaciones de un proceso estocástico, en donde que $y_t$ se refiere a un elemento de la secuencia completa { $y_t$ }. 
+Un proceso estocástico se define como un conjunto de magnitudes aleatorias que varían con el tiempo. En consecuencia, a los elementos observados de una serie de tiempo { $y_0, y_1, y_2, ..., y_t$ } se les denota como realizaciones de un proceso estocástico, en donde $y_t$ se refiere a un elemento de la secuencia completa { $y_t$ }. 
 
 ---
 # Preguntas de selección múltiple
