@@ -309,7 +309,7 @@ C1PIBpc <- ts(C1PIBpc_, start=1961, end=2019)
 ---
 # Preguntas de selección múltiple
 
-1. **Para un estudio que esta llevando a cabo, necesita la variable "Gasto en consumo final del gobierno general cpmo porcentaje del PIB". Ya sea utilizando una búsqueda por Internet o por $RStudio$, encuentre cuál es el código de la variable que en los _Indicadores de Desarrollo Mundial" se acerca mas a la variable requerida**
+1. **Para un estudio que esta llevando a cabo, necesita la variable "Gasto en consumo final del gobierno general cpmo porcentaje del PIB". Ya sea utilizando una búsqueda por Internet o por $RStudio$, encuentre cuál es el código de la variable que en los _Indicadores de Desarrollo Mundial_" se acerca mas a la variable requerida**
  
    a) NE.CON.TOTL.ZS.
 
@@ -319,6 +319,15 @@ C1PIBpc <- ts(C1PIBpc_, start=1961, end=2019)
 
    d) NE.CON.GOVT.ZS.
 
+2. **¿Según los _Indicadores de Desarrollo Mundial_, cuánto vale el índice de Gini de Angola del año 2000?**
+ 
+   a) 63.1.
+
+   b) 52.0.
+
+   c) 45.4.
+
+   d) 43.7.
 
 | [Anterior Sección: 1.1. Series de tiempo](../Seccion01_01/Readme.md) | [:house: Inicio](../../Readme.md) | [Siguiente Sección: 2. Análisis Univariado de Series de Tiempo](../../Seccion02/Readme.md) | 
 |----------------------------------------------------------------------|-----------------------------------|---------------------------------------------------------------------------------------------|
