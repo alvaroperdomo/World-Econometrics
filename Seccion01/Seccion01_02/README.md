@@ -46,7 +46,7 @@ Asuma que desea buscar los datos del Producto Interno Bruto per cápita por pari
 
 #### Dentro del comando _WDIsearch_ coloque, separados con los dos signos .*, palabras (en inglés) relacionadas con la variable que esta buscando. 
 
-Por ejemplo, dado que le interesa el Producto Interno Bruto per cápita por paridad del poder adquisitivo "PPA" a precios constantes, utilice las palabras gdp, capita y constant (en español, pib, cápita y constante):
+Por ejemplo, dado que le interesa el Producto Interno Bruto per cápita por paridad del poder adquisitivo "PPA" a precios constantes, utilice las palabras gdp, capita y constant (en español, PIB, per cápita y constante):
 
 ``` r
 WDIsearch('gdp.*capita.*constant')
