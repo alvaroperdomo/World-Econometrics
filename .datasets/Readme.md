@@ -53,3 +53,6 @@ a_{1,1} & a_{1,2} & a_{1,3}\\
 a_{2,1} & a_{2,2} & a_{2,3}
 \end{array}\right)
 $$
+
+A las personas que no utilizan regularmente $R$ se les recomienda desarrollar de antemano los tutoriales de https://learnr.numbat.space/
+
