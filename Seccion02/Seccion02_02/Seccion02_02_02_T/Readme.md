@@ -1,5 +1,5 @@
 ## SECCIÓN 2.2.2. (T)
-# Prueba de Mínimos Cuadrados Generalizados de Dickey-Fuller (DF-GLS)
+# Prueba de Mínimos Cuadrados Generalizados de Dickey-Fuller (ADF-GLS)
 
 Esta prueba, propuesta por Elliott, Rothenberg y Stock (1996) se estructura tal como se explica a continuación:
 
@@ -17,6 +17,32 @@ Los valores críticos de la prueba dependen de si se incluye una tendencia en la
 
 **Si el estadistico es menor que el valor crítico reportado en las tablas de Elliott, Rothenberg y Stock (1996), entoces se rechaza la hipótesis nula de raíz unitaria y se afirma que la serie es estacionaria**. Por último, vale la pena resaltar que Elliott, Rothenberg y Stock (1996) muestran que la prueba $DF-GLS$ mejora la potencia de la prueba $ADF$. 
 
+---
+---
+# Preguntas de selección múltiple
+
+1. **Al comparar dos estimaciones de la prueba $ADF$ con respecto a una misma variable, según el _Criterío de Información de Akaike_ ¿cuál prueba tiene mejor específicado el número de rezagos?:**
+ 
+   a) La que tiene mayor valor de este criterio.
+
+   b) La que tiene el valor de este criterio igual a cero.
+
+   c) La que tiene menor valor de este criterio.
+
+   d) Ninguno de los anteriores.
+
+2. **¿Cuál es el problema de potencia que tienen las pruebas $DF$ y $ADF$ ?:**
+ 
+   a) Tienen una mayor probabilidad de aceptar una hipótesis de raíz unitaria cuando esta no existe.
+
+   b) Tienen una mayor probabilidad de aceptar una hipótesis de estacionariedad cuando esta no existe.
+
+   c) Tienen una mayor probabilidad de rechazar una hipótesis de estacionariedad cuando esta existe.
+
+   d) Tienen una mayor probabilidad de rechazar una hipótesis de raíz unitaria cuando esta existe.
+
+---
+---
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
 | [Retornar: 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) | [2.2.2.(R) Aplicación en R de la prueba ADF-GLS](../Seccion02_02_02_R/Readme.md) |
