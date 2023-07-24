@@ -37,10 +37,10 @@ Las otras dos secciones del curso comienzan con una explicación general de las 
 A continuación encontrara información más detallada acerca de cada una de las secciones en que se divide el curso. Si quiere ir a alguna sección en particular, dele _click_ con el mouse al titulo de la sección respectiva. 
 
 ## [Sección 1 - Las Series de Tiempo, _R_ y los _Indicadores de Desarrollo Mundial_](Seccion01/Readme.md)
-| Subsecciones                                             | Contenido                                                                  | Dedicación,<br> 2.5 horas | 
-|----------------------------------------------------------|----------------------------------------------------------------------------|:-------------------------:|
-| **1.1. Series de tiempo**                                | **Generalidades acerca del análisis de series de tiempo**                  |             0.5           | 
-| **1.2. $R$ y los _Indicadores de Desarrollo Mundial_**   | **¿Cómo manipular los _Indicadores de Desarrollo Mundial_ en $R$?**        |             2.0           | 
+| Subsecciones                                             | Contenido                                                                           | Dedicación,<br> 2.5 horas | 
+|----------------------------------------------------------|-------------------------------------------------------------------------------------|:-------------------------:|
+| **1.1. Series de tiempo**                                | **Se van a explicar algunas generalidades acerca del análisis de series de tiempo** |             0.5           | 
+| **1.2. $R$ y los _Indicadores de Desarrollo Mundial_**   | **¿Cómo manipular los _Indicadores de Desarrollo Mundial_ en $R$?**                 |             2.0           | 
 
 ## [Sección 2 - Análisis Univariado de Series de Tiempo](Seccion02/Readme.md)
 | Subsecciones                                           | Contenido                                                                                               | Dedicación,<br> 9 horas     
