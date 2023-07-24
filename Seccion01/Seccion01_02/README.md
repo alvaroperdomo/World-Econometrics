@@ -133,7 +133,7 @@ dat = WDI(indicator= c("PIB_per_cápita_PPA_2017US" = "NY.GDP.PCAP.PP.KD", "pobl
 
 ### Visualice los datos
 
-Note que en la pantalla _Environment_ de Rstudio aparece la base "dat" (ver figura de abajo) cuando esta ya se ha construido
+Note que en la pantalla _Environment_ de $Rstudio$ aparece la base "dat" (ver figura de abajo) cuando esta ya se ha construido
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6d3547d6-7a8e-40ee-9ffb-c76d5e31e543)
 
