@@ -69,7 +69,7 @@ Observe que si solo copia:
 WDIsearch('gdp')
 ```
 
-Obtendrá como respuesta todas las variables que tienen dentro dentro de su definición (name) la palabra 'gdp'. El problema con esta forma de visualizar los datos es que muchas variables incluyen "gdp" dentro de su nombre, por lo tanto la visualización de la información es demasiado engorrosa. Una forma más sencilla de ver la información es sólo visualizando un determinado número de variables de la lista, por ejemplo si sólo se desea visualizar las 10 primeras variables de la lista, utilice el comando:
+Obtendrá como respuesta todas las variables que tienen dentro de su definición (name) la palabra 'gdp'. El problema con esta forma de visualizar los datos es que muchas variables incluyen "gdp" dentro de su nombre, por lo tanto la visualización de la información es demasiado engorrosa. Una forma más sencilla de ver la información es solo visualizando un determinado número de variables de la lista, por ejemplo si solamente se desea visualizar las 10 primeras variables de la lista, utilice el comando:
 
 ``` r
 WDIsearch('gdp')[1:10,]
