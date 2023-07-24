@@ -175,7 +175,7 @@ Se debe tener cuidado al usar el procedimiento de Perron, ya que supone que la f
 ---
 # Preguntas de selección múltiple
 
-1. **¿Cuando una serie estacionaria tiene un cambio estructural, qué puede ocurrir?**
+1. **Cuando una serie estacionaria tiene un cambio estructural, ¿qué puede ocurrir?**
  
    a) Que no se pueda hacer, de forma confiable, pruebas de raíz unitaria.
 
