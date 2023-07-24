@@ -179,7 +179,7 @@ labs(subtitle="US$ de 2017", y="Dólares constante de 2017", x="Años", title="P
 
 En la sección 2 del curso se va a hacer buena parte del análisis utilizando el PIB per cápita de Colombia a precios constantes en moneda local (es decir, en pesos). Por lo tanto, a continuación se les muestra como manipular dicha información.
 
-Al comienzo de la programación le recomendamos copiar los siguientes comandos para limpiar el área de trabajo:
+Al comienzo de cualquier programación en $R$ le recomendamos copiar los siguientes comandos para limpiar el área de trabajo:
 ``` r
 rm(list = ls())
 ```
