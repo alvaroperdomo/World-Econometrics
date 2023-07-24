@@ -80,13 +80,13 @@ Dado que las pruebas $DF$ y $ADF$ estan sesgadas hacía el no rechazo de la hip�
 ---
 # Preguntas de selección múltiple
 
-1. **Al comparar dos modelos, bajo que condición un modelo está mejor específicado según el _Criterío de Información de Akaike_:**
+1. **Al comparar dos estimaciones de la prueba $ADF$ con respecto a una misma variable, según el _Criterío de Información de Akaike_ ¿cuál prueba tiene mejor específicado el número de rezagos?:**
  
-   a) Cuando el valor de este criterio sea mayor.
+   a) La que tiene mayor valor de este criterio.
 
-   b) Cuando el valor de este criterio sea igual a cero.
+   b) La que tiene el valor de este criterio igual a cero.
 
-   c) Cuando el valor de este criterio sea menor.
+   c) La que tiene menor valor de este criterio.
 
    d) Ninguno de los anteriores.
 
