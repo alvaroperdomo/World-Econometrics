@@ -90,15 +90,15 @@ Dado que las pruebas $DF$ y $ADF$ estan sesgadas hacía el no rechazo de la hip�
 
    d) Ninguno de los anteriores.
 
-2. **¿Qué tipo de transformación se le puede hacer a una serie no estacionaria para intentar volverla en estacionarla:**
+2. **¿Cuál es el problema de potencia que tienen las pruebas $DF$ y $ADF$ ?:**
  
-   a) Elevarla al cuadrado.
+   a) Tienen una mayor probabilidad de aceptar una hipótesis de raíz unitaria cuando esta no existe.
 
-   b) Sacarle la primera diferencia.
+   b) Tienen una mayor probabilidad de aceptar una hipótesis de estacionariedad cuando esta no existe.
 
-   c) Dividirla por su desviación estándar.
+   c) Tienen una mayor probabilidad de rechazar una hipótesis de estacionariedad cuando esta existe.
 
-   d) Todas las anteriores.
+   d) Tienen una mayor probabilidad de rechazar una hipótesis de raiz unitaria cuando esta existe.
 
 ---
 ---
