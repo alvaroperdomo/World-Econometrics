@@ -123,7 +123,7 @@ WDI tiene el siguiente formato: **WDI(country = "xxx", indicator = "xxx", start 
 | **latest**              | Al escoger un número entero se le señala el número de valores no-NA más recientes que se obtendrán. El valor predeterminado es **NULL**. Si se especifica, anula las fechas de inicio y finalización.                                                                                                                                                          |
 | **language**            | Al copiar el código ISO-2 de un idioma en minúsculas indica el idioma en que se deben proporcionar los caracteres. La lista de idiomas disponibles se puede consultar copiando en R el comando **WDI::languages_supported()**. **El valor predeterminado es inglés**.                                                                                                 |
 
-_Es factible solo specificar los argumentos **'indicador'** y **'country**, en cuyo caso **WDI()** devolverá datos desde 1960 hasta el último año disponible en el sitio web del Banco Mundial. También es posible obtener solo los valores no-NA más recientes, con **'latest'**._
+_Es factible solo especificar los argumentos **'indicador'** y **'country**, en cuyo caso **WDI()** devolverá datos desde 1960 hasta el último año disponible en el sitio web del Banco Mundial. También es posible obtener solo los valores no-NA más recientes, con **'latest'**._
 
 Por ejemplo, vamos a descargar el PIB PPA a dólares constantes de 2017 y la población de México, Canada y los Estados Unidos en una base de datos llamada "dat", la cual continuaremos manejando en el resto de la sección:
 
