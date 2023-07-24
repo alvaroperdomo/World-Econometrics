@@ -22,7 +22,15 @@ Hay cuatro puntos importantes a tener en cuenta sobre la definición:
 
    Normalmente, una de las variables se usa para normalizar el vector de cointegración fijando su coeficiente en $1$. Por ejemplo, para normalizar el vector de cointegración con respecto a $x_{2t}$, simplemente se selecciona un $\tilde{\lambda}=\frac{1}{\beta_2}$ de tal forma que $\mathbf{\tilde{\lambda} B} = {\left\lbrack \matrix{ \frac{\beta_1}{\beta_2} & 1 & \dots & \frac{\beta_n}{\beta_2}} \right\rbrack}$.
 
-2) **La cointegración se refiere a variables que están integradas en el mismo orden**.
+   En el siguiente gráfico se muestra una situación en la que tres variables $y_t$, $z_t$ y $w_t$ son $I(1)$ y estan cointegradas
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/36a62b2e-6b7a-4643-8b77-507b154e0a5f)
+
+Mientras tanto en el gráfico de abajo se muestra una situación en la que dos variables $y_t$ y $z_t$ son $I(1)$ y no estan cointegradas
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4213813c-dae1-49b3-b6d7-f82180ac19fb)
+
+3) **La cointegración se refiere a variables que están integradas en el mismo orden**.
 
    Esto no implica que todas las variables integradas estén cointegradas:
 
@@ -43,14 +51,6 @@ Hay cuatro puntos importantes a tener en cuenta sobre la definición:
 4) **La mayor parte de la literatura sobre cointegración se centra en el caso en el que cada variable tiene una sola raíz unitaria.**
 
    La razón es que la regresión tradicional o el análisis de series de tiempo se aplica cuando las variables son $I(0)$ y pocas variables económicas están integradas en un orden superior a $1$. 
-
-Para terminar la explicación, en el siguiente gráfico se muestra una situación en la que tres variables $y_t$, $z_t$ y $w_t$ son $I(1)$ y estan cointegradas
-
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/36a62b2e-6b7a-4643-8b77-507b154e0a5f)
-
-Mientras tanto en el gráfico de abajo se muestra una situación en la que dos variables $y_t$ y $z_t$ son $I(1)$ y no estan cointegradas
-
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4213813c-dae1-49b3-b6d7-f82180ac19fb)
 
 Para el análisis de la existencia de cointegración las metodologías más utilizadas son la prueba de Engle y Granger (1987) y la prueba de Johansen (1988). En las siguientes secciones se explica cómo funcionan ambas pruebas.
 
