@@ -21,8 +21,7 @@ Los valores críticos de la prueba dependen de si se incluye una tendencia en la
 ---
 # Preguntas de selección múltiple
 
-1. ¿Cuál prueba recomiendan los autores de la prueba $ADF-GLS$ para seleccionar el número de rezafos que ésta debe incluir?
- utilizando el Criterio Bayesiano de Schwartz**
+1. ¿Cuál prueba recomiendan los autores de la prueba $ADF-GLS$ para seleccionar el número de rezagos que esta debe incluir?
  
    a) La prueba aumentada de Dickey-Fuller.
 
@@ -32,15 +31,15 @@ Los valores críticos de la prueba dependen de si se incluye una tendencia en la
 
    d) La prueba de correlación serial.
 
-2. **¿La prueba $ADF-GLS$ bajo que condición concluye que hay raíz unitaria ?:**
+2. **¿La prueba $ADF-GLS$ bajo que condición concluye que hay raíz unitaria?:**
  
-   a) Cuando el estadistico que se calcula en la prueba es menor que el valor crítico reportado en las tablas de Elliott, Rothenberg y Stock (1996).
+   a) Cuando el estadístico que se calcula en la prueba es menor que el valor crítico reportado en las tablas de Elliott, Rothenberg y Stock (1996).
 
-   b) Cuando el estadistico que se calcula en la prueba es igual a cero.
+   b) Cuando el estadístico que se calcula en la prueba es igual a cero.
 
-   c) Cuando el estadistico que se calcula en la prueba es igual que el valor crítico reportado en las tablas de Elliott, Rothenberg y Stock (1996).
+   c) Cuando el estadístico que se calcula en la prueba es igual que el valor crítico reportado en las tablas de Elliott, Rothenberg y Stock (1996).
    
-   d) Cuando el estadistico que se calcula en la prueba es mayor que el valor crítico reportado en las tablas de Elliott, Rothenberg y Stock (1996).
+   d) Cuando el estadístico que se calcula en la prueba es mayor que el valor crítico reportado en las tablas de Elliott, Rothenberg y Stock (1996).
 
 ---
 ---
