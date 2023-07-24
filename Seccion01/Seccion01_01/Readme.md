@@ -36,9 +36,13 @@ Un proceso estocástico se define como un conjunto de magnitudes aleatorias que 
 # Preguntas de selección múltiple
 
 1. **¿Cuál de los siguientes items no es una serie de tiempo?**
+ 
    a) La lista de los mejores jugadores de poker
+
    b) La lista diaria del número de visitantes a un museo
+
    c) El valor de la mesada mensual que le dan a un estudiante durante un año
+
    d) El número de manzanas por lustro que produce una finca
  
 
