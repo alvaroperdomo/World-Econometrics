@@ -1,7 +1,7 @@
 ### Entendiendo un Mundo en Desarrollo: 
 # Análisis Aplicado de Series de Tiempo
 Keywords: `Econometría` `Series de Tiempo` `Indicadores de Desarrollo Mundial` `Banco Mundial`
-#### Duración del curso: 19.5 horas
+#### Duración del curso: 17.5 horas
 Bienvenido al curso _Entendiendo un Mundo en Desarrollo: Análisis Aplicado de Series de Tiempo_. En este curso aprenderá a hacer análisis básicos de series de tiempo en $R$ utilizando como entorno de desarrollo interactivo al software $RStudio$. Se tomará como referencia, para el análisis empírico, la base de datos del Banco Mundial "[_Indicadores de Desarrollo Mundial_](https://databank.worldbank.org/source/world-development-indicators)", con el fin de aprender las principales técnicas del análisis de series de tiempo de una forma aplicada utilizando la información económica más relevante del contexto internacional.
 
 El curso está dividido en tres secciones principales, a través de las cuales el estudiante desarrollará diferentes habilidades computacionales y analíticas, que podrá aplicar en el análisis de estudios de caso propios.
@@ -43,15 +43,15 @@ A continuación encontrará información más detallada acerca de cada una de la
 | **1.2. $R$ y los _Indicadores de Desarrollo Mundial_**   | **¿Cómo manipular los _Indicadores de Desarrollo Mundial_ en $R$?**                 |             2.0           | 
 
 ## [Sección 2 - Análisis Univariado de Series de Tiempo](Seccion02/Readme.md)
-| Subsecciones                                           | Contenido                                                                                               | Dedicación,<br> 9 horas     
+| Subsecciones                                           | Contenido                                                                                               | Dedicación,<br> 7 horas     
 |--------------------------------------------------------|------------------------------------------------------------------------------------------------------   |:-------------------------:|
 | **2.1. Series Estacionarias y No Estacionarias**       | **Se explica la importancia de las series estacionarias en el análisis univariado de series de tiempo** |              1            | 
-| **2.2 Pruebas de Raíz Unitaria**                       | **Explicación acerca de la metodología y lectura de diferentes tipos de pruebas de raíz unitaria**      |              4            | 
+| **2.2 Pruebas de Raíz Unitaria**                       | **Explicación acerca de la metodología y lectura de diferentes tipos de pruebas de raíz unitaria**      |              3            | 
 | **2.2.1.** Las Pruebas $DF$ y $ADF$: _Pruebas de Dickey Fuller y Aumentada de Dickey Fuller_ | Teoría y aplicación en $R$                                        |                           | 
 | **2.2.2.** La Prueba $ADF-GLS$: _Prueba de Elliott, Rothenberg y Stock_                    | Teoría y aplicación en $R$                                          |                           | 
 | **2.2.3.** La Prueba $KPSS$: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_             | Teoría y aplicación en $R$                                          |                           |   
 | **2.2.4.** Pruebas de Cambio Estructural: _Prueba de Perron y Prueba de Zivot y Andrews_ | Teoría y aplicación en $R$                                            |                           | 
-| **2.3. Análisis $ARIMA$ (Metodología de Box-Jenkins)** | **Explicación acerca de cómo estimar un modelo $ARIMA$**                                                |              4            | 
+| **2.3. Análisis $ARIMA$ (Metodología de Box-Jenkins)** | **Explicación acerca de cómo estimar un modelo $ARIMA$**                                                |              3            | 
 | **2.3.1.** Las tres etapas de la metodología de Box-Jenkins                      | Teoría y aplicación en $R$                                                    |                           | 
 | **2.3.2.** Estimación de un $ARMA$ - Ejemplos simulados                          | Desarrollo de ejemplos conceptuales                                           |                           | 
 | **2.3.3.** Ejemplo utilizando la base de datos _Indicadores de Desarrollo Mundial_ | Aplicación en $R$                                                           |                           | 
