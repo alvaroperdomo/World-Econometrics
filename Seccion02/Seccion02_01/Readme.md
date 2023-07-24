@@ -22,7 +22,7 @@ Formalmente, la secuencia { $\varepsilon_t$ } es un proceso ruido blanco si para
 En el resto del curso, { $\varepsilon_t$ } siempre se referirá a un proceso de ruido blanco y $\sigma^2$  se referirá a la varianza de ese proceso. Cuando sea necesario hacer referencia a dos o más procesos que son ruido blanco, se usarán símbolos como { $\varepsilon_{1t}$ } y { $\varepsilon_{2t}$ }. 
 
 ## Los procesos ARMA
-Dados unos parametros $a_i$ y $\beta_i$ donde $i$ es un número natural:
+Dados unos parámetros $a_i$ y $\beta_i$ donde $i$ es un número natural:
 
 * Un proceso autorregresivo de orden $p$, también conocido como $AR(p)$ se define así: $y_t=a_0+\displaystyle\sum_{i = 1}^{p}a_iy_{t-i}+\varepsilon_{t}$.
 * Un proceso de media móvil de orden $q$, también conocido como $MA(q)$ se define así: $y_t=a_0+\displaystyle\sum_{i = 1}^{q} \beta_i\varepsilon_{t-i}+\varepsilon_{t}$
@@ -33,15 +33,15 @@ Observe que si $q=0$, obtenemos un proceso $AR(p)$. Y si $p=0$, obtenemos un pro
 ## Requisito principal para poder aplicar la metodología de Box y Jenkins en el análisis univariado de series de tiempo
 Para el análisis univariado, se va a seguir la metodología de Box y Jenkins (1975). Según esta metodología, el análisis univariado de series de tiempo se hace a partir de la construcción de modelos $ARMA$ de series estacionarias. A modo de ejemplo, en el Anexo 1 se explica qué requisitos debe cumplir un proceso $AR(1)$ para ser estacionario. 
 
-La explicación de los requisitos para obtener procesos estacionarios en representaciones $ARMA(p,q)$ es más complejas que para un proceso AR(1). En general, note que un modelo $ARMA(p,q)$ es la representación de una ecuación en diferencias. Por lo tanto, para que esta ecuación no sea explosiva se requiere que todos los valores caracteristicos (o también llamados los valores propios) que resuelven esta ecuación en diferencias sean menores que el valor absoluto de $1$ (usualmente, a este requisito se le denomina _estar dentro del circulo unitario_).[^1]  
+La explicación de los requisitos para obtener procesos estacionarios en representaciones $ARMA(p,q)$ es más complejas que para un proceso AR(1). En general, note que un modelo $ARMA(p,q)$ es la representación de una ecuación en diferencias. Por lo tanto, para que esta ecuación no sea explosiva se requiere que todos los valores característicos (o también llamados los valores propios) que resuelven esta ecuación en diferencias sean menores que el valor absoluto de $1$ (usualmente, a este requisito se le denomina _estar dentro del círculo unitario_).[^1]  
 
-[^1]: En el caso de un modelo _AR(1)_ el valor caracteristico que resuelve a la ecuación es coincidente con el coeficiente que multiplica al valor rezagado de la variable analizada. Por lo tanto, en el Anexo 1, vamos a aprovechar esta caracteristica para ver cómo se muestra la estacionariedad en este caso.
+[^1]: En el caso de un modelo _AR(1)_ el valor característico que resuelve a la ecuación es coincidente con el coeficiente que multiplica al valor rezagado de la variable analizada. Por lo tanto, en el Anexo 1, vamos a aprovechar esta caracteristica para ver cómo se muestra la estacionariedad en este caso.
 
 En series de tiempo, una forma de ver si una variable cumple el requisito de estacionariedad es a través de las pruebas de raíz unitaria. En la sección 2.2 vamos a explicar teóricamente cómo funcionan este tipo de pruebas y cómo se aplican en $R$.
 
 ## ¿Qué hacer si una serie no es estacionaria?
 
-Apliquele la transformación adecuada. El procedimiento más común es sacandole diferencias a la serie original, en particular:
+Aplíquele la transformación adecuada. El procedimiento más común es sacándole diferencias a la serie original, en particular:
 
 * Si una serie { $y_t$ } es estacionaria, se dice que es integrada de orden $0$ y el modelo de serie que la identifica se le suele denotar como $ARMA(p,q)$ (o como $ARIMA(p,0,q)$ ) donde $p$ y $q$ son los componentes autorregresivo y de media móvil del modelo, respectivamente.
 * Si una serie { $y_t$ } no es estacionaria, pero su primera diferencia $\Delta y_t = y_t-y_{t-1}$ si es estacionaria, se dice que es integrada de orden $1$ y el modelo de serie que la identifica se le suele denotar como $ARIMA(p,1,q)$
