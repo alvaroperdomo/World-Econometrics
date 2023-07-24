@@ -264,12 +264,12 @@ ggplot(dat, aes(year, C1PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$",
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/617610e4-3524-4752-b339-8fd3957e1a87)
 
 
-En ambos gráficos se visualizan los siguientes hechos estilizados que afectaron a el comportamiento del PIB per cápita de Colombia:
-1) La crisis bancaria de comienzos de los 1980s
+En ambos gráficos se visualizan los siguientes hechos estilizados que afectaron al comportamiento del PIB per cápita de Colombia:
+1) La crisis bancaria de comienzos de la década de 1980
 2) La crisis económica de 1998/1999
-3) La crisis economíca del Covid-19 en 2020
+3) La crisis económica del Covid-19 en 2020
 
-Como último paso (por su utilidad para las siguientes secciones), se van a crear las variablse PIBpc y C1PIBpc que comienzan en 1960 y finalizan en 2019:
+Como último paso (por su utilidad para las siguientes secciones), se van a crear las variables PIBpc y C1PIBpc que comienzan en 1960 y finalizan en 2019:
 ``` r
 PIBpc_ = subset(dat, select = c(PIBpc))
 C1PIBpc_ = subset(dat, select = c(C1PIBpc))
