@@ -217,9 +217,9 @@ Obteniendo:
 5 Colombia    CO   COL 2018 17330777
 6 Colombia    CO   COL 2017 17220832
 ```
-Observe que para esta variable los datos estan organizados en orden descendente (es decir, desde el último año hasta el primero). 
+Observe que para esta variable los datos están organizados en orden descendente (es decir, desde el último año hasta el primero). 
 
-Para organizar los datos en orden ascendente copie los siguientes comandos.
+Para organizar los datos en orden ascendente, copie los siguientes comandos.
 ``` r
 dat = WDI(indicator= c(PIBpc = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
 dat <- dat %>% arrange(year)
