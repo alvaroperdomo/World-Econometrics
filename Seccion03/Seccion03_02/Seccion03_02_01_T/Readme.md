@@ -32,7 +32,7 @@ Hay cuatro puntos importantes a tener en cuenta sobre la definición:
    Sin embargo, **es posible encontrar relaciones de equilibrio entre grupos de variables que están integradas de diferentes órdenes.** Suponga que $x_{1t}$ y $x_{2t}$ son $I(2)$ y que las otras variables en consideración son $I(1)$. Como tal, no puede haber una relación de cointegración entre $x_{1t}$ (o $x_{2t}$) y $x_{3t}$. Sin embargo, si $x_{1t}$ y $x_{2t}$ son $CI(2,1)$, puede existir una combinación lineal de la forma $\beta_1x_{1t}+\beta_2x_{2t}$ que es $I(1)$, la cual es posible que esté cointegrada con las variables $I(1)$.
 
 [^2]: **Tal falta de cointegración implica que no hay un equilibrio a largo plazo entre las variables, de modo que puedan desviarse arbitrariamente una de la otra.**
-[^3]: **Por ejemplo, suponga una variable que es _I(m)_ y otra variable que es _I(n)_ donde _m>n_ . Se puede demostrar que cualquier combinación lineal entre ambas variables es necesariameste _I(m)_.**
+[^3]: **Por ejemplo, suponga que una variable es _I(m)_ y que otra variable es _I(n)_ donde _m>n_ . Se puede demostrar, aunque no lo demostraremos en el curso, que cualquier combinación lineal entre ambas variables es necesariameste _I(m)_.**
 
 3) **Puede haber más de un vector de cointegración independiente para un conjunto de variables $I(1)$.**[^4]
 
