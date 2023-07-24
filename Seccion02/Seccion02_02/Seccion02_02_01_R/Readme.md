@@ -97,7 +97,7 @@ ndiffs(x, alpha = 0.05, test = c("adf"), type = c("level", "trend"), ...)
 ---
 # Preguntas de selección múltiple
 
-1. **¿Cuál argumento y en cuál comando le permite hacer gráficos de diagnoóstico sobre los residuos estimados?:**
+1. **¿Cuál argumento y en cuál comando le permite hacer gráficos de diagnóstico sobre los residuos estimados?:**
  
    a) El argumento "_doplot_" en el comando "_ndiffs_".
 
