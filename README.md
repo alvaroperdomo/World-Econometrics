@@ -1,7 +1,7 @@
 <div align="center"><a href="https://www.escuelaing.edu.co/es/investigacion-e-innovacion/centro-de-estudios-oikonimia/" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/Centros_%20de_Estudios_Oikonom%C3%ADa.jpg" alt="R.LTWB" width="100%" border="0" /></a></div>
 
 <div align="center">
-  <br><b>Universidad Escuela Colombiana de Ingeniería Julio Garavito</b><br>Alvaro Andrés Perdomo Strauch<br>Profesor del Centro de Estudios Oikonimia<br>alvaro.perdomo@escuelaing.edu.co<br>
+  <br><b>Universidad Escuela Colombiana de Ingeniería Julio Garavito</b><br>Alvaro Andrés Perdomo Strauch<br>Profesor del Centro de Estudios Oikonomía<br>alvaro.perdomo@escuelaing.edu.co<br>
 </div>
 
 ### Entendiendo un Mundo en Desarrollo: 
