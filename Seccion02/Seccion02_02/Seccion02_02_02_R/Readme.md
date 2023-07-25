@@ -44,7 +44,7 @@ ur.ers(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"),lag.max =
 
 [^3]: **La prueba de punto óptimo factible (_P-test_) tiene en cuenta la correlación serial del término de error y haya el número óptimo de rezagos utilizando el Criterio Bayesiano de Schwartz.** 
 
-#### De las dos opciones, mi preferida es ésta última por la opción "type($P-test$)" que permite obtener el número óptimo de rezagos utilizando el Criterio Bayesiano de Schwartz. 
+#### De las dos opciones, comenzaría utilizando la primera opción con el argumento type = c("DF-GLS"),doplot("TRUE"),lag.max = 1 para fijarme en la prueba gráfica sobre los residuos, si hay problemas de autocorrelación, entonces seguiria aumentando el argumento lag.max hasta que se pasara la prueba de autocorrelación. Ya determinado el número de rezagos, utilizaría la segunda opción con type = c("DF-GLS"), lag.max= "al número de rezagos que no presentó problemas de autocorrelación. Finalmente, utilizaría la segunda opción con type = c("P-test") y el mismo lag.max para confirmar el resultado obtenido.
 
 ---
 ---
