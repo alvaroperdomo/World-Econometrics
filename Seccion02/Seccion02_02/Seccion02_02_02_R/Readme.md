@@ -5,7 +5,7 @@
 
 Para llevar a cabo la prueba $ADF-GLS$ ofrecemos dos opciones:
 
-## 1) Primera Opción:** Utilice el comando **unitrootTest** [^1]
+## 1) Primera Opción:** Utilice el comando **urersTest** [^1]
 La estructura para hacer la prueba $ADF-GLS$ es:
 ``` r
 urersTest(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"), lag.max = 4,)
