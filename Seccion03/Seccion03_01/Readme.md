@@ -1,5 +1,5 @@
 ## SUBSECCIÓN 3.1:
-# Modelos de Vectores Autorregresivos $VAR$
+# Estimacion de Modelos de Vectores Autorregresivos $VAR$
 Si se quiere tener en cuenta todas las relaciones posibles entre, digamos, $k$ variables, parece sensato construir un modelo conjunto que incluya todas estas series de tiempo en lugar de construir modelos para cada una de las series individuales, a este tipo de modelos se les llama modelos de Vectores Autorregresivos $VAR$. A continuación, dando click en la **X** de la segunda columna de la siguiente tabla podra ver la explicación teórica de cada uno de los aspectos que se encuentran en la primera columna de la tabla. Por otra parte, dando click en la **X** de la tercera columna de la tabla podra ver las aplicaciones en R de cada uno de estos temas:
 
 | Subsecciones                                                                                                                                                               | Explicación teórica                 |  Aplicación en R                     |
