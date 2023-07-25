@@ -11,10 +11,10 @@ De hecho, ignorar las relaciones con otras variables puede dar lugar a complicac
 
 Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en la subsección respectiva
 
-| Subsecciones                                                                 | Contenido                                                                           | Dedicación,<br> 5.5 horas       | 
-|--------------------------------------------------------------------------|-------------------------------------------------------------------------------------|:-------------------------:|
-| [**3.1.** Estimación de Modelos VAR](Seccion03_01/Readme.md)                 | Explicación acerca de la metododología para estimar un modelo VAR.                  |              1            | 
-| [**3.2.** Cointegración y Estimación de Modelos VEC](Seccion03_02/Readme.md) | Explicación acerca de lo qué es la cointegración y acerca de la metododología para estimar un modelo VEC. |              1            | 
+| Subsecciones                                                                       | Contenido                                                                           | Dedicación,<br> 5.5 horas | 
+|------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|:-------------------------:|
+| [**3.1.** Estimación de Modelos _**VAR**_](Seccion03_01/Readme.md)                 | Explicación acerca de la metododología para estimar un modelo $VAR$.                |              1            | 
+| [**3.2.** Cointegración y Estimación de Modelos _**VEC**_](Seccion03_02/Readme.md) | Explicación acerca de lo qué es la cointegración y acerca de la metododología para estimar un modelo $VEC$. |        1         | 
 
 
 | [:house: Inicio](../README.md)    | [Siguiente Sección: 3.1. Estimación de Modelos VAR](Seccion03_01/Readme.md) |
