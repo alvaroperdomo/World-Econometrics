@@ -3,9 +3,9 @@
 ## SUBSECCIÓN 3.2.2.
 # La Metodología de Engle y Granger
 
-Para explicar el procedimiento de prueba de Engle-Granger, consideremos la clase de problema que es usual en los estudios aplicados. Suponga que dos variables, digamos $y_t$ y $z_t$, son integradas de orden $1$ y se desea determinar si existe una relación de equilibrio entre las dos. Para ello, Engle y Granger (1987) proponen el siguiente procedimiento de tres pasos para determinar si dos variables $I(1)$ están cointegradas de orden $CI(1,1)$:
+Para explicar el procedimiento de prueba de Engle y Granger (1987), consideremos el tipo de problema que es usual en los estudios aplicados. Suponga que dos variables, digamos $y_t$ y $z_t$, son integradas de orden $1$ y se desea determinar si existe una relación de equilibrio entre las dos. Para ello, se propone el siguiente procedimiento de tres pasos para determinar si dos variables $I(1)$ están cointegradas de orden $CI(1,1)$:
 
-### 1) Haga una prueba preliminar de las variables para conocer su orden de integración.
+### 1) De acuerdo a lo aprendido en la sección 2, haga pruebas para conocer el orden de integración de las variables $y_t$ y $z_t$.
    
    Por definición, la cointegración requiere que dos variables estén integradas en el mismo orden. Por lo tanto, el primer paso en el análisis es determinar para cada variable su orden de integración.[^1] 
    
@@ -54,7 +54,7 @@ Recuerde que:
 
    Dado que la estructura del molelo $VEC$ es la de un $VAR$, entonces puede estimarse utilizando la misma metodología desarrollada en la presentación de los modelos $VAR$. Dado que todas las variables en $i$ y $ii$ son estacionarias (es decir, $\Delta y_t$ y sus rezagos, $\Delta z_t$ y sus rezagos, y $\hat{e}_{t-1}$ son $I(0)$ ), los estadísticos de prueba utilizados en el análisis $VAR$ tradicional son apropiados para $i$ y $ii$. 
 
-### 4) Evaluar la adecuación del modelo
+### Evaluar la adecuación del modelo
 
    Hay varios procedimientos que pueden ayudar a determinar si el $VEC$ es apropiado:
 
