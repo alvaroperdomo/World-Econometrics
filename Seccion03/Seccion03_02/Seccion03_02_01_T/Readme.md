@@ -54,7 +54,7 @@ Hay cuatro puntos importantes a tener en cuenta sobre la definición:
 
    La razón es que la regresión tradicional o el análisis de series de tiempo se aplica cuando las variables son $I(0)$ y pocas variables económicas están integradas en un orden superior a $1$. 
 
-Para el análisis de la existencia de cointegración las metodologías más utilizadas son la prueba de Engle y Granger (1987) y la prueba de Johansen (1988). En las siguientes secciones se explica cómo funcionan ambas pruebas.
+Para el análisis de la existencia de cointegración las metodologías más utilizadas son la prueba de Engle y Granger (1987) y la prueba de Johansen (1988). En las siguientes subsecciones se explica cómo funcionan ambas pruebas.
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
