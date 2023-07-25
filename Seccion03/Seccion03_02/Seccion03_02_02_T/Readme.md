@@ -10,7 +10,7 @@ Para explicar el procedimiento de prueba de Engle-Granger, consideremos la clase
    Por definición, la cointegración requiere que dos variables estén integradas en el mismo orden. Por lo tanto, el primer paso en el análisis es determinar para cada variable su orden de integración.[^1] 
    
 Recuerde que:
-   * Si ambas variables son estacionarias, no es necesario continuar ya que el método $VAR$ se aplica a las variables estacionarias.
+   * Si ambas variables son estacionarias, no es necesario continuar porque el método $VAR$ se aplica a las variables estacionarias.
    * Si las variables están integradas de diferentes órdenes, se concluye que no están cointegradas.
    * Sin embargo, si tiene más de dos variables, de manera que algunas son $I(1)$ y otras son $I(2)$, es posible que desee determinar si las variables están cointegradas en forma múltiple.
 
