@@ -1,7 +1,7 @@
 <div align="center"><a href="https://www.escuelaing.edu.co/es/investigacion-e-innovacion/centro-de-estudios-oikonimia/" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/Centros_%20de_Estudios_Oikonom%C3%ADa.jpg" alt="R.LTWB" width="100%" border="0" /></a></div>
 
 ## SUBSECCIÓN 3.2
-# Cointegración y Modelos de Vectores de Corrección de Errores (_VEC_)
+# Cointegración y Estimación de Modelos de Vectores de Corrección de Errores (_VEC_)
 
 A continuación, dando click en la X de la segunda columna de la siguiente tabla se redirigira a la explicación de cada uno de los aspectos teóricos que se encuentran en la primera columna de la tabla. Por otra parte, dando click en la X de la tercera columna de la tabla podra ver las aplicaciones en $R$ de cada uno de estos temas:
 
