@@ -88,7 +88,7 @@ Aunque el procedimiento de Engle y Granger (1987) se implementa fácilmente, tie
 
 Por ejemplo, en el caso de dos variables, es posible hacer la prueba de cointegración de Engle-Granger utilizando los residuos de cualquiera de las siguientes dos regresiones de "equilibrio":
 
-   * $y_t=\beta_{10}+\beta_{11}z_t+e_{1t}$  o
+   * $y_t=\beta_{10}+\beta_{11}z_t+e_{1t}$ o
    * $y_t=\beta_{20}\beta_{21}y_t+e_{2t}$      
 
 A medida que el tamaño de la muestra crece hacia infinito, la teoría asintótica indica que la prueba de raíz unitaria en la secuencia { $e_{1t}$ } se vuelve equivalente a la prueba de raíz unitaria en la secuencia { $e_{2t}$ } . Desafortunadamente, las propiedades de muestras grandes que obtienen este resultado pueden no ser aplicables a los tamaños de muestra generalmente disponibles. En la práctica, es posible encontrar que una regresión implique que las variables están cointegradas, mientras que revertir el orden implique que no hay cointegración. Esta es una característica muy indeseable del procedimiento porque la prueba de cointegración debe ser invariable a la elección de la variable seleccionada para la normalización. El problema se agrava utilizando tres o más variables, ya que cualquiera de las variables puede seleccionarse como la variable del lado izquierdo. Además, en las pruebas que usan tres o más variables, sabemos que puede haber más de un vector de cointegración. El método de Engle-Granger no tiene un proce-dimiento sistemático para la estimación separada de los múltiples vectores de coin-tegración
