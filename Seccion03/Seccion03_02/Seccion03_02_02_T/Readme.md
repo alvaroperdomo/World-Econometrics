@@ -66,9 +66,9 @@ Recuerde que:
 
    Los valores de $\alpha_y$ y $\alpha_z$ están directamente relacionados con las raíces características del sistema de ecuaciones en diferencias. La convergencia directa requiere $\alpha_y$  que sea negativo y que $\alpha_z$  sea positivo.
 
-   Si nos centramos en $ii$, para cualquier valor dado de $\hat{e_{t-1}}$,
+   Si nos centramos en $ii$, para cualquier valor dado de $\hat{e}_{t-1}$,
    * un gran valor de $\alpha_z$ se asocia con un gran valor de $\Delta z_t$. 
-   * Si $\alpha_z=0$ , el $\Delta z_t$  no responde en absoluto a $\hat{e_{t-1}}$. 
+   * Si $\alpha_z=0$ , el $\Delta z_t$  no responde en absoluto a $\hat{e}_{t-1}$. 
    * Si $\alpha_z=0$ y si todos los $\alpha_{21}=0$, entonces se puede decir que { $\Delta y_t$ } no causa en el sentido de Granger a { $\Delta z_t$ } .
    
      Sabemos que $\alpha_y$ y/o $\alpha_z$ deberían ser significativamente diferentes de cero si las variables están cointegradas. Después de todo, si $\alpha_y=\alpha_z=0$, no hay corrección de errores y $i$ y $ii$ serían nada más que un $VAR$ en las primeras diferencias. Además, los valores absolutos de estas velocidades de ajuste de los coeficientes no deben ser demasiado grandes. Las estimaciones puntuales deberían implicar que $\Delta y_t$ y $\Delta z_t$ convergen a la relación de equilibrio a largo plazo.
