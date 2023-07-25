@@ -364,7 +364,7 @@ Es decir, al 5% de significancia, la variable $PIBpc$ tiene raíz unitaria, y la
 
 ****************************************************************************************************************************************************************************
 
-### Prueba DF-GLS
+### Prueba $ADF-GLSA
 
 Dado que el $PIBpc$ es una variable que presenta tendencia, entonces se va a desarrollar su prueba $DF-GLS$ con tendencia. Dado que el $C1PIBpc$ es una variable que no presenta tendencia, entonces se va a desarrollar su prueba $DF-GLS$  sin tendencia. El número de rezagos se va a escoger utilizando el _Criterio Bayesiano de Schwartz_. Para el desarrollo de la prueba se copiaron los siguientes comandos:
 
@@ -373,7 +373,7 @@ PIBpc_DFGLSt.ers <- ur.ers(PIBpc, type = c("P-test"), model = c("trend"),lag.max
 C1PIBpc_DFGLSc.ers <- ur.ers(C1PIBpc, type = c("P-test"), model = c("constant"),lag.max = 4) 
 
 summary(PIBpc_DFGLSt.ers)
-summary(C1PIBpc_DFGLSt.ers)
+summary(C1PIBpc_DFGLSc.ers)
 ```
 
 ``` r
