@@ -8,8 +8,6 @@ Vamos a continuar con el ejercicio empírico planteado en la sección 2. Dado qu
 ``` r
 rm(list = ls())
 
-rm(list = ls())
-
 library(WDI)         # Esta libreria sirve para trabajar directamente con la base de datos Indicadores de Desarrollo Mundial.
 library(dplyr)       # Esta libreria permite manipular las bases de datos de R de una forma sencilla, por ejemplo utilizando los comandos mutate() y arrange()
 library(ggfortify)   # Esta libreria tienen comando utiles para plantear gráficos de series de tiempo, por ejemplo utilizando ell comando autoplot()
