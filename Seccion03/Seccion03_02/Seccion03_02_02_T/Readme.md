@@ -34,7 +34,7 @@ Recuerde que:
 
 ### 3) Estime el vector de corrección de errores
 
-   Si las variables están cointegradas, los residuos de la regresión de equilibrio se pueden utilizar para estimar el vector de corrección de errores ($VEC$). El $VEC$ es un $VAR$ en primeras diferencias, en donde las variables { $y_t$ } y { $z_t$ } son $CI(1,1)$, y se incluyen dentro del VEC de la siguiente forma:
+   Si las variables están cointegradas, los residuos de la regresión de equilibrio se pueden utilizar para estimar el vector de corrección de errores ($VEC$). El $VEC$ es un $VAR$ en primeras diferencias, en donde las variables { $y_t$ } y { $z_t$ } son $CI(1,1)$, y se incluyen dentro del $VEC$ de la siguiente forma:
 
    $I)$ $\Delta y_t = \alpha_1 + \alpha_y[y_{t-1}-\beta_1z_{t-1}]+\sum_{i=1}\alpha_{11}(i)\Delta y_{t-i}+\sum_{i=1}\alpha_{12}(i)\Delta z_{t-i}+\varepsilon_{yt}$
 
