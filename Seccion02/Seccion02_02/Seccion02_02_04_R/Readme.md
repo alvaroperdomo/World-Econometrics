@@ -5,7 +5,7 @@
 
 Para llevar a cabo la prueba $ZA$ ofrecemos dos opciones:
 
-## 1) Primera Opción: Utilice el comando _urzaTes_[^1]
+## 1) Primera Opción: Utilice el comando _urzaTest_[^1]
 
 [^1]: **Este comando pertenece a la librería _fUnitRoots_**
 
