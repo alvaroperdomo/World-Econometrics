@@ -8,39 +8,45 @@ Para llevar a cabo la prueba $ADF-GLS$ ofrecemos dos opciones:
 ## 1) Primera Opción:** Utilice el comando **urersTest** [^1]
 La estructura para hacer la prueba $ADF-GLS$ es:
 ``` r
-urersTest(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"), lag.max = 4)
+urersTest(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"), lag.max = 4, doplot = TRUE)
 ```
 [^1]: **Este comando pertenece a la librería _fUnitRoots_**
 
-| **Argumentos**          | **Descripción**                                                                                                                             | 
-|-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| **x**                   | vector o variable de series de tiempo a la que se le va a hacer la prueba                                                                   |
-| **lag.max**             | esta opción puede significar dos cosas:                                                                                                     |
-|                         | el número máximo de rezagos utilizados para, con el Criterio Bayesiano de Schwartz, determinar el número óptimo de rezagos de la $prueba P$ |   
-|                         | el número máximo de diferencias rezagadas que se incluirán en la regresión de prueba para $DF-GLS$                                          |
-| **model**               | El modelo determinista utilizado para eliminar la tendencias:                                                                               | 
-|                         | **"constant"** Se refiere al modelo con constante pero sin tendencia (**_Opción Predeterminada_**)                                          |
-|                         | **"trend"** Se refiere al modelo con constante y tendencia                                                                                  |     
+| **Argumentos**          | **Descripción**                                                                                                                                                                      | 
+|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **x**                   | vector o variable de series de tiempo a la que se le va a hacer la prueba                                                                                                            |
+| **type**                | Tipo de prueba que se va a hacer. Las opciones válidas son:                                                                                                                          |
+|                         | **"DF-GLS"** - prueba ADF-GLS estándar **_Opción Predeterminada_**                                                                                                                   |
+|                         | **"P-test"** - prueba de punto óptimo factible                                                                                                                                       |
+| **model**               | El modelo determinista utilizado para eliminar la tendencias:                                                                                                                        | 
+|                         | **"constant"** Se refiere al modelo con constante pero sin tendencia (**_Opción Predeterminada_**)                                                                                   |
+|                         | **"trend"** Se refiere al modelo con constante y tendencia                                                                                                                           |     
+| **lag.max**             | esta opción puede significar dos cosas:                                                                                                                                              |
+|                         | el número máximo de rezagos utilizados con la opción type = c("P-test"), para escoger el número óptimo de rezagos de forma descendente con banse en el Criterio Bayesiano de Schwartz|   
+|                         | el número máximo de diferencias rezagadas que se incluirán en la prueba $ADF-GLS$ que opera con el argumento type = c("DF-GLS")                                                      |
+| **doplot**              | Indicador lógico, para especificar si se desea obtener un gráfico de diagnóstico sobre los residuos estimados                                                                        | 
+|                         | **"TRUE"** para mostrar gráfico de diagnóstico **_Opción Predeterminada_**                                                                                                           |
+|                         | **"FALSE"** para no mostrar gráfico de diagnóstico                                                                                                                                   |
 
 ## 2) Segunda Opción: Utilice el comando ur.ers[^2]
 La estructura para hacer la prueba $ADF-GLS$ es:
 ``` r
-ur.ers(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"),lag.max = 4)
+urersTest(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"),lag.max = 4, doplot = TRUE)
 ```
 [^2]: **Este comando pertenece a la librería _urca_**
 
-| **Argumentos**          | **Descripción**                                                                                                                                          | 
-|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **x**                   | vector o variable de series de tiempo a la que se le va a hacer la prueba                                                                                |
-| **type**                | Tipo de prueba que se va a hacer. Las opciones válidas son:                                                                                              |
-|                         | **"DF-GLS"** - prueba ADF-GLS estándar **_Opción Predeterminada_**                                                                                       |
-|                         | **"P-test"** - prueba de punto óptimo factible                                                                                                           |
-| **lag.max**             | esta opción puede significar dos cosas:                                                                                                                  |
-|                         | el número máximo de rezagos utilizados para probar el truncamiento del rezago decendente para la $prueba P$, utilizando el Criterio Bayesiano de Schwartz|   
-|                         | el número máximo de diferencias rezagadas que se incluirán en la regresión de prueba para $DF-GLS$                                                       |
-| **model**               | El modelo determinista utilizado para eliminar la tendencias:                                                                                            | 
-|                         | **"constant"** Se refiere al modelo con constante pero sin tendencia (**_Opción Predeterminada_**)                                                       |
-|                         | **"trend"** Se refiere al modelo con constante y tendencia                                                                                               |
+| **Argumentos**          | **Descripción**                                                                                                                                                                      | 
+|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **x**                   | vector o variable de series de tiempo a la que se le va a hacer la prueba                                                                                                            |
+| **type**                | Tipo de prueba que se va a hacer. Las opciones válidas son:                                                                                                                          |
+|                         | **"DF-GLS"** - prueba ADF-GLS estándar **_Opción Predeterminada_**                                                                                                                   |
+|                         | **"P-test"** - prueba de punto óptimo factible                                                                                                                                       |
+| **model**               | El modelo determinista utilizado para eliminar la tendencias:                                                                                                                        | 
+|                         | **"constant"** Se refiere al modelo con constante pero sin tendencia (**_Opción Predeterminada_**)                                                                                   |
+|                         | **"trend"** Se refiere al modelo con constante y tendencia                                                                                                                           |
+| **lag.max**             | esta opción puede significar dos cosas:                                                                                                                                              |
+|                         | el número máximo de rezagos utilizados con la opción type = c("P-test"), para escoger el número óptimo de rezagos de forma descendente con banse en el Criterio Bayesiano de Schwartz|   
+|                         | el número máximo de diferencias rezagadas que se incluirán en la prueba $ADF-GLS$ que opera con el argumento type = c("DF-GLS")                                                      |
 
 La prueba $ADF-GLS$  que se explicó en la subsección 2.2.2.(T) es el argumento que en **_urersTest_** y en _**ur.ers**_ aparece denotado como type = c("DF-GLS"). Sin embargo, Elliot, Rothenberg y Stock (1996) también propusieron una prueba de punto óptimo factible, que en los argumentos de **_urersTest_** y  _**ur.ers**_ aparece denotada como type = c("P-test"). La lectura de esta prueba es la misma que la de la prueba $ADF-GLS$: si el estadístico  de la prueba es superior al valor crítico, entonces no se rechaza la hipótesis nula de raíz unitaria, en caso contrario se rechaza la hipótesis de raíz unitaria.
 
