@@ -4,7 +4,7 @@
 
 # ¿Qué es un modelo VAR?
 
-Considere el sistema bivariado simple$[^1]:
+Considere el sistema bivariado simple [^1]:
 
 [^1]: **Por razones pedagógicas nos centraremos principalemente en el análisis de este sistema _VAR_ de dos variables. Este _VAR_ sencillo es útil para ilustrar sistemas multivariados de orden superior**
 
