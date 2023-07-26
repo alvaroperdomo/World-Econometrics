@@ -49,9 +49,9 @@ De los dos comandos, comenzaría utilizando el comando **_urersTest_** con los s
 * doplot("TRUE"),
 * lag.max = 1, 
 
-el resto de argumentos se escogen de acuerdo al contexto. La idea es poder visualizar las pruebas gráficas sobre los residuos estimados. Si no hay problemas de autocorrelación en los residuos estimados, entonces éste es el número de rezagos con el que hago la prueba. Si hay problema de autocorrelación en los residuos estimados, entonces aumento el valor de lagmax, talque lagmax=2. Reviso de nuevo las gráficas de los residuos estimados.  Si no hay problemas de autocorrelación en los residuos estimados, entonces éste es el número de rezagos con el que hago la prueba. Si hay problema de autocorrelación en los residuos estimados, entonces continuo subiendo el número de rezagos hasta que los residuos estimados no esten autocorelacionados.
+el resto de argumentos se escogen de acuerdo al contexto. La idea es poder visualizar las pruebas gráficas sobre los residuos estimados. Si no hay problemas de autocorrelación en los residuos estimados, entonces este es el número de rezagos con el que hago la prueba. Si hay problema de autocorrelación en los residuos estimados, entonces aumento el valor de lagmax, talque lagmax=2. Reviso de nuevo las gráficas de los residuos estimados.  Si no hay problemas de autocorrelación en los residuos estimados, entonces este es el número de rezagos con el que hago la prueba. Si hay problema de autocorrelación en los residuos estimados, entonces continuo subiendo el número de rezagos hasta que los residuos estimados no estén autocorelacionados.
 
-Luego, con el comando _**ur.ers**_ hago la estimación utilizando la opción type = c("DF-GLS") e incorporando el número de rezagos encontrados previamente porque el comando _**ur.ers**_ muestra información númerica más ilustrativa que el comando **_urersTest_**. 
+Luego, con el comando _**ur.ers**_ hago la estimación utilizando la opción type = c("DF-GLS") e incorporando el número de rezagos encontrados previamente porque el comando _**ur.ers**_ muestra información numérica más ilustrativa que el comando **_urersTest_**. 
 
 Finalmente, con el comando utilizaría el comando _**ur.ers**_ con type = c("P-test") para apreciar si los resultados se mantienen.
 
