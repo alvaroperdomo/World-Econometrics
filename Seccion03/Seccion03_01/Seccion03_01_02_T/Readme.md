@@ -124,15 +124,15 @@ Los residuos estimados del modelo $VAR$ deben ser ruido blanco. Por lo tanto, aq
 
    d) Es más fácil pasar la prueba de causalidad de Granger.
  
-2. **¿En un modelo $VAR(1)$ de $4$ variables cuánto mide la matriz de varianzas y covarianzas de los residuos estimados?:**
+2. **¿En un modelo $VAR$ de $4$ variables cuánto mide la matriz de varianzas y covarianzas de los residuos estimados?:**
 
-   a) $4$.
+   a) $4 \times 4$.
 
-   b) $8$.
+   b) $8 \times 8$.
 
-   c) $16$.
+   c) $4 \times 8$.
    
-   d) $20$.
+   d) $2 \times 2$.
 ---
 ---
 
