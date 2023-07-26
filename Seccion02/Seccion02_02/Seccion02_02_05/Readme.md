@@ -1,7 +1,7 @@
 <div align="center"><a href="https://www.escuelaing.edu.co/es/investigacion-e-innovacion/centro-de-estudios-oikonimia/" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/Centros_%20de_Estudios_Oikonom%C3%ADa.jpg" alt="R.LTWB" width="100%" border="0" /></a></div>
 
 ## SUBSECCIÓN 2.2.5 
-# Ejemplo utilizando la base de datos _Indicadores de Desarrollo Mundial_ (primera parte)
+# Caso de estudio utilizando la base de datos _Indicadores de Desarrollo Mundial_ (primera parte)
 
 Para el análisis univariado, se ha escogido estudiar la variable más utilizada en los análisis de desarrollo económico: el PIB per cápita a precios constantes de un país en vías de desarrollo. Más específicamente, se va a analizar la evolución del PIB per cápita de Colombia a pesos constantes. En particular, utilizaremos el **PIB per cápita de Colombia a pesos constantes durante el periodo 1960-2019**  para calcular las proyecciones de esta variable durante el periodo 2020-2025 como si no se hubiera presentado la pandemia del Covid 19. Con ello, lo que se busca es hacer un ejercicio contrafactual para analizar cómo se hubiera comportado esta variable, según su comportamiento histórico, si no hubieran ocurrido los eventos que se dieron desde el año 2020, entre los que se destaca la cuarentena que se dio debido a la pandemia del Covid-19.
 
