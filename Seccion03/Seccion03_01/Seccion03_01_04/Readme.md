@@ -403,7 +403,9 @@ Las funciones impulso-respuesta revelan que:[^*]
 
 [^*]: **Para las viñetas que siguen a continuación, fijense en las cotas superiores e inferiores de los intervalos de confianza de la función impulso-respuesta, si son del mismo signo, entonces son significativos en ese periodo con ese signo. Tenga cuidado porque en la salida de _R_, como número, de las funciones impulso-respuesta, tiene que restarle una unidad al número de la izquierda de cada fila para saber bien el periodo al que se hace referencia después del choque**. 
 
-###  Análisis de descomposición de varianza
+###  Análisis de la descomposición de varianza del error de pronóstico
+
+Las funciones impulso-respuesta ya nos revelaron bastante acerca de la relación entre las variables $\Delta GGOV$ y $\Delta INVP$. Sin embargo, este tipo de análisis se suela acompañar con el análisis de la descomposición de varianza del error de pronóstico para entender mejor la fortaleza de esa relación. 
 
 Para el análisis de descomposición de varianza 10 años hacia adelante, copiamos los comandos:
 ``` r
@@ -441,23 +443,33 @@ $INVP
 [10,] 0.1946133 0.8053867
 ```
 
-Según la descomposición de varianza, más del 80% de la varianza del error de las variables $\Delta GGOV$ y $\Delta INVP$ son explicados por su propio comportamiento. Es decir, menos del 20% de la varianza del error de estas variables es explicado por el comportamiento de la otra variable.
+Según la descomposición de varianza, más del 80% de la varianza del error de las variables $\Delta GGOV$ y $\Delta INVP$ son explicados por su propio comportamiento. Es decir, menos del 20% de la varianza del error de estas variables es explicado por el comportamiento de la otra variable. Por lo tanto, la relación etre estas dos variables, aunque existe, no es que sea demasiado fuerte.
 
 ## Pronosticos
 
-Para hacer un pronóstico de 3 años hacia adelante, operamos el siguiente comando:
+Por último, alejandonos del ejercicio original vamos a hacer un pronóstico de 3 años hacia adelante de las variables $GGOV$ y $INVP$. Para ello, operamos el siguiente comando:
 ``` r
 forecast3<-forecast(modeloVAR, level = c(95), h = 3)
+forecast3
 autoplot(forecast3)
 ```
 Y obtenemos
 
+``` r
+GGOV
+     Point Forecast     Lo 95    Hi 95
+2023     0.15322791 -1.004413 1.310869
+2024     0.11119942 -1.053103 1.275501
+2025     0.02401758 -1.224606 1.272641
+
+INVP
+     Point Forecast     Lo 95    Hi 95
+2023     0.04601959 -2.750839 2.842878
+2024     0.07244331 -2.948292 3.093178
+2025     0.08604130 -3.119753 3.291836
+```
+
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/2f6d7218-d82c-45e1-85a5-f5950f23888c)
-
-
-forecasts <- predict(modelo)
-forecasts
-plot(forecasts)
 
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
