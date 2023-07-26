@@ -58,6 +58,7 @@ A continuación encontrará información más detallada acerca de cada una de la
 | **2.2.2.** La Prueba $ADF-GLS$: _Prueba de Elliott, Rothenberg y Stock_                    | Teoría y aplicación en $R$                                          |                           | 
 | **2.2.3.** La Prueba $KPSS$: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_             | Teoría y aplicación en $R$                                          |                           |   
 | **2.2.4.** Pruebas de Cambio Estructural: _Prueba de Perron y Prueba de Zivot y Andrews_ | Teoría y aplicación en $R$                                            |                           | 
+| **2.2.5.** Ejemplo utilizando la base de datos _Indicadores de Desarrollo Mundial_ | Aplicación en $R$                                                           |                           | 
 | **2.3. Análisis $ARIMA$ (Metodología de Box-Jenkins)** | **Explicación acerca de cómo estimar un modelo $ARIMA$**                                                |              3            | 
 | **2.3.1.** Las tres etapas de la metodología de Box-Jenkins                      | Teoría y aplicación en $R$                                                    |                           | 
 | **2.3.2.** Estimación de un $ARMA$ - Ejemplos simulados                          | Desarrollo de ejemplos conceptuales                                           |                           | 
