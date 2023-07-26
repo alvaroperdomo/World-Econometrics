@@ -15,7 +15,7 @@ VAR(x, p = 1, type = c("const", "trend", "both", "none"), season = NULL, exogen 
 
 | **Argumentos**     | **Descripción**                                                                                                     | 
 |--------------------|---------------------------------------------------------------------------------------------------------------------|
-| **x**              | vector de variables de series de tiempo que incluye las variables endógenas utilizadas en el $VA$                   |
+| **x**              | vector de variables de series de tiempo que incluye las variables endógenas utilizadas en el $VAR$                  |
 | **p**              | número de rezagos que se incluyen en el $VAR$ (la **_Opción Predeterminada es 1_**)                                 |
 | **type**           | en esta opción se especifica si al $VAR$ se le van a incluir algunas variables exógenas predeterminadas:            |
 |                    |  **"const"** para un VAR con intercepto                                                                             |
@@ -49,6 +49,33 @@ autoplot(forecast1)
 Observe que los pronósticos se trabajaron con el nombre **forecast1**. Usted puede escoger un nombre diferente.
 
 [^2]: **Este comando pertenece a la librería _forecast_**
+
+
+---
+---
+# Preguntas de selección múltiple
+
+1. **En el comando _**VAR**_ ¿cuál es el número de rezagos que se estiman de forma predeterminada:**
+ 
+   a) $0$.
+
+   b) $1$.
+
+   c) $2$.
+
+   d) Ninguno de los anteriores.
+ 
+2. **Las variables que se incluyen para estimar un modelo $VAR$ deben ser:**
+
+   a) Estacionarias.
+
+   b) Ruido Blanco.
+
+   c) Paseo aleatorio.
+
+   d) Imaginarias.
+---
+---  
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
