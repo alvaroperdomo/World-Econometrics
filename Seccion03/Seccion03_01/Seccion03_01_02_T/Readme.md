@@ -18,7 +18,7 @@ $$
 
 * los $A_{i0}$ son los interceptos,
 * los $A_{ij}$ son polinomios en donde sus coeficientes individuales se denotan por $a_{ij}(1), a_{ij}(2), \dots$. Como todas las ecuaciones en el $VAR$ tienen la misma longitud de rezagos, los polinomios $A_{ij}$ son todos del mismo grado.
-* Los términos $e_{it}$ son perturbaciones ruido blanco que pueden estar correlacionadas entre sí.
+* Los términos $e_{it}$ son perturbaciones ruido blanco.
 * La matriz de varianzas y covarianzas $\mathbf{\Sigma}$ de los residuos tiene dimensión ($n \times n$)
 
 ## ¿Cuántos rezagos incluir en un $VAR$?
@@ -124,15 +124,15 @@ Los residuos estimados del modelo $VAR$ deben ser ruido blanco. Por lo tanto, aq
 
    d) Es más fácil pasar la prueba de causalidad de Granger.
  
-2. **¿Cuáles criterios de información se puden utilizar para estimar un VAR?:**
+2. **¿En un modelo $VAR(1)$ de $4$ variables cuánto mide la matriz de varianzas y covarianzas de los residuos estimados?:**
 
-   a) El Criterio de Información de Akaike.
+   a) $4$.
 
-   b) El Criterio Bayesiano de Schwartz.
+   b) $8$.
 
-   c) El Criterio de Información de Hannan-Quinn
-
-   d) Todos los anteriores.
+   c) $16$.
+   
+   d) $20$.
 ---
 ---
 
