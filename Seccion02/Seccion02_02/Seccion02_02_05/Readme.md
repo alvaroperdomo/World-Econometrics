@@ -717,19 +717,26 @@ Es decir, al 5% de significancia, la variable $PIBpc$ tiene raíz unitaria, y la
 
 ### Prueba ZA
 
-Las pruebas previas parecen indicar que la variable $PIBpc$ es no estacionaria y la variable $C1PIBpc$ es estacionaria. Sin embargo, los dos gráficos iniciales de esta sección parecen indicar un cambio estructural, alrededor de 1998-1999 (cuando Colombia experimentó una crisis económica), que afecta a $PIBpc$ pero no a $C1PIBpc$. Por consiguiente, se va a hacer la prueba de Zivot y Andrews para analizar la presencia de raíz unitaria en la variable $PIBpc$. Para ello, se copian los siguientes comandos
+Las pruebas previas parecen indicar que la variable $PIBpc$ es no estacionaria y la variable $C1PIBpc$ es estacionaria. Sin embargo, los dos gráficos iniciales de esta sección parecen indicar un cambio estructural, alrededor de 1998-1999 (cuando Colombia experimentó una crisis económica), que afecta a $PIBpc$ pero no a $C1PIBpc$. Por consiguiente, se va a hacer la prueba de Zivot y Andrews para analizar la presencia de raíz unitaria en la variable $PIBpc$. Para ello, se copian los siguientes comandos [^1]
+
+[^1]: **Para no hacer engorroso el análisis de la prueba, note que en el código de _R_ sólo se encuentra habilitado el gráfico del cambio estructural de la última prueba (es decir, en la que ocurre el cambio estructural tanto en intercepto como en tendencia) porque esta prueba es la que reporta la información más acertada acerca de la fecha de dicho cambio estructurtal. Igualmente, se decidió incluir las pruebas sólo con un rezago porque: (1) los rezagos adicionales no resultaban estadísticamente significativos, y (2) el resultado de la prueba de 0 a 5 rezagos en todas las combinaciones de cambios estructurales no era contundente en rechazar la presencia de raíz unitaria en la serie _PIBpc_, y por lo general la conclusión era que había raíz unitaria.** 
 
 ``` r
-ZA1.za <- ur.za(PIBpc, model = c("intercept"), lag=NULL)
-ZA2.za <- ur.za(PIBpc, model = c("trend"), lag=NULL)
-ZA3.za <- ur.za(PIBpc, model = c("both"), lag=NULL)
-
+ZA1.za <- ur.za(PIBpc, model = c("intercept"), lag=1)
 summary(ZA1.za)
+#urzaTest(PIBpc, model = c("intercept"), lag=1, doplot=TRUE)
+
+ZA2.za <- ur.za(PIBpc, model = c("trend"), lag=1)
 summary(ZA2.za)
+#urzaTest(PIBpc, model = c("trend"), lag=1, doplot=TRUE)
+
+ZA3.za <- ur.za(PIBpc, model = c("both"), lag=1)
 summary(ZA3.za)
+urzaTest(PIBpc, model = c("both"), lag=1, doplot=TRUE)
 ```
 Obteniendo
 ``` r
+> ZA1.za <- ur.za(PIBpc, model = c("intercept"), lag=1)
 > summary(ZA1.za)
 
 ################################ 
@@ -742,28 +749,32 @@ lm(formula = testmat)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--779772  -99685    6135  124243  358601 
+-636203  -67652   -2543  100247  369950 
 
 Coefficients:
              Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 7.850e+05  2.099e+05   3.740  0.00044 ***
-y.l1        8.744e-01  4.163e-02  21.004  < 2e-16 ***
-trend       1.933e+04  7.156e+03   2.701  0.00918 ** 
-du          4.745e+05  1.139e+05   4.166  0.00011 ***
+(Intercept) 1.114e+06  2.255e+05   4.942 8.15e-06 ***
+y.l1        7.847e-01  4.571e-02  17.166  < 2e-16 ***
+trend       3.523e+04  7.626e+03   4.620 2.49e-05 ***
+y.dl1       5.682e-01  1.019e-01   5.578 8.43e-07 ***
+du          5.612e+05  1.240e+05   4.525 3.44e-05 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 199600 on 55 degrees of freedom
-  (1 observation deleted due to missingness)
-Multiple R-squared:  0.9969,	Adjusted R-squared:  0.9967 
-F-statistic:  5887 on 3 and 55 DF,  p-value: < 2.2e-16
+Residual standard error: 168400 on 53 degrees of freedom
+  (2 observations deleted due to missingness)
+Multiple R-squared:  0.9978,	Adjusted R-squared:  0.9976 
+F-statistic:  5983 on 4 and 53 DF,  p-value: < 2.2e-16
 
 
-Teststatistic: -3.0165 
+Teststatistic: -4.7099 
 Critical values: 0.01= -5.34 0.05= -4.8 0.1= -4.58 
 
-Potential break point at position: 46 
+Potential break point at position: 50 
 
+> #urzaTest(PIBpc, model = c("intercept"), lag=1)
+> 
+> ZA2.za <- ur.za(PIBpc, model = c("trend"), lag=1)
 > summary(ZA2.za)
 
 ################################ 
@@ -776,28 +787,32 @@ lm(formula = testmat)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--770090 -119124   -6756  129557  429068 
+-598386  -83698  -16324  122255  376584 
 
 Coefficients:
              Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 1.076e+06  3.165e+05   3.398  0.00127 ** 
-y.l1        8.160e-01  6.084e-02  13.412  < 2e-16 ***
-trend       2.862e+04  9.421e+03   3.038  0.00364 ** 
-dt          4.613e+04  1.407e+04   3.279  0.00181 ** 
+(Intercept) 1.293e+06  3.101e+05   4.169 0.000114 ***
+y.l1        7.545e-01  6.050e-02  12.472  < 2e-16 ***
+trend       3.846e+04  9.355e+03   4.111 0.000138 ***
+y.dl1       5.572e-01  1.072e-01   5.200 3.27e-06 ***
+dt          5.588e+04  1.533e+04   3.644 0.000611 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 209300 on 55 degrees of freedom
-  (1 observation deleted due to missingness)
-Multiple R-squared:  0.9966,	Adjusted R-squared:  0.9964 
-F-statistic:  5348 on 3 and 55 DF,  p-value: < 2.2e-16
+Residual standard error: 177300 on 53 degrees of freedom
+  (2 observations deleted due to missingness)
+Multiple R-squared:  0.9976,	Adjusted R-squared:  0.9974 
+F-statistic:  5396 on 4 and 53 DF,  p-value: < 2.2e-16
 
 
-Teststatistic: -3.024 
+Teststatistic: -4.0572 
 Critical values: 0.01= -4.93 0.05= -4.42 0.1= -4.11 
 
-Potential break point at position: 42 
+Potential break point at position: 44 
 
+> #urzaTest(PIBpc, model = c("trend"), lag=1)
+> 
+> ZA3.za <- ur.za(PIBpc, model = c("both"), lag=1)
 > summary(ZA3.za)
 
 ################################ 
@@ -810,50 +825,48 @@ lm(formula = testmat)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--333653 -116006    1991  118176  386430 
+-357621 -112451  -16664   83166  400760 
 
 Coefficients:
               Estimate Std. Error t value Pr(>|t|)    
-(Intercept)  1.788e+06  3.403e+05   5.254 2.59e-06 ***
-y.l1         6.552e-01  7.031e-02   9.319 7.81e-13 ***
-trend        5.986e+04  1.240e+04   4.827 1.18e-05 ***
-du          -6.453e+05  1.620e+05  -3.984 0.000205 ***
-dt           8.533e+04  1.643e+04   5.193 3.23e-06 ***
+(Intercept)  1.386e+06  2.471e+05   5.610 7.88e-07 ***
+y.l1         7.231e-01  5.059e-02  14.295  < 2e-16 ***
+trend        4.853e+04  9.092e+03   5.338 2.09e-06 ***
+y.dl1        4.625e-01  9.883e-02   4.680 2.09e-05 ***
+du          -5.063e+05  1.215e+05  -4.166 0.000117 ***
+dt           5.899e+04  1.128e+04   5.229 3.07e-06 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 188400 on 54 degrees of freedom
-  (1 observation deleted due to missingness)
-Multiple R-squared:  0.9973,	Adjusted R-squared:  0.9971 
-F-statistic:  4958 on 4 and 54 DF,  p-value: < 2.2e-16
+Residual standard error: 161800 on 52 degrees of freedom
+  (2 observations deleted due to missingness)
+Multiple R-squared:  0.998,	Adjusted R-squared:  0.9978 
+F-statistic:  5183 on 5 and 52 DF,  p-value: < 2.2e-16
 
 
-Teststatistic: -4.9037 
+Teststatistic: -5.4732 
 Critical values: 0.01= -5.57 0.05= -5.08 0.1= -4.82 
 
-Potential break point at position: 39 
+Potential break point at position: 38 
+
+> urzaTest(PIBpc, model = c("both"), lag=1)
+
 ```
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/91c7efba-f755-4274-aedb-283908b249db)
 
 Los resultados de las pruebas de Zivot-Andrews son:
 
 | Estadistico      | Año del cambio <br> estructural |¿Es estadisticamente significativo <br> el cambio estructural? | Valor    |  10%    |  5%     |  1%     |
 |------------------|:-------------------------------:|:-------------------------------------------------------------:|:--------:|:-------:|:-------:|:-------:|
-| $ZA_{Intercept}$ |  $2006$ = 1960+46               | Si (du al 1%)                                                 |$-3.6435$ | $-4.58$ | $-4.80$ | $-5.34$ |
-| $ZA_{Trend}$     |  $2004$ = 1960+44               | Si (dt al 1%)                                                 |$-3.024$  | $-4.11$ | $-4.42$ | $-4.93$ |
-| $ZA_{Both}$      |  $1999$ = 1960+39               | Si (du al 0.1% y dt al 0.1%)                                  |$-4.9037$*| $-4.82$ | $-5.08$ | $-5.57$ |
+| $ZA_{Intercept}$ |  $2009$ = 1960+50+1               | Si (du al 1%)                                                 |$-3.6435$ | $-4.58$ | $-4.80$ | $-5.34$ |
+| $ZA_{Trend}$     |  $2003$ = 1960+44+1               | Si (dt al 1%)                                                 |$-3.024$  | $-4.11$ | $-4.42$ | $-4.93$ |
+| $ZA_{Both}$      |  $1998$ = 1960+38+1               | Si (du al 0.1% y dt al 0.1%)                                  |$-4.9037$*| $-4.82$ | $-5.08$ | $-5.57$ |
 
 **Niveles de significancia: *** al 1%, ** al 5% y * al 10%**
 
 De los tres estadisticos, el que cogio bien el año de la crisis económica de los finales de los 1990s fue $ZA_{Both}$. Por lo tanto, es el estadístico que vamos a analizar:
 * Con el estadistico $ZA_{Both}$: -5.08 < **-4.9037** < -4.82, no se rechaza la hipótesis nula de raíz unitaria 1% y 5%, y se rechaza al 10%. Por consiguiente, se concluye que hay raíz unitaria
 
-Copiando los siguientes comandos se puede visualizar gráficamente el comportamiento de los estadisticos, de acuerdo a la especificación escogida del modelo:
-``` r
-urzaTest(PIBpc, model = c("both"))
-```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/1ba0c5be-0e21-43b6-aee6-038d594c5eb7)
-
-Es decir, hay un cambio estructural en pendiente y tendencia en el año 1999.
 
 #### Conclusión:
 Todas las pruebas aplicadas parecen indicar la presencia de raíz unitaria en la variable $PIBpc$ y la estacionariedad en la variable $C1PIBpc$
