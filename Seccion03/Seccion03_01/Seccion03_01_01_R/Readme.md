@@ -36,7 +36,7 @@ Para hacer pronósticos y gráficos de los mismos en un modelo $VAR$, utilice el
 
 ``` r
 forecast1<-forecast(nombre1, level = c(95), h = 3)
-summary(forecast1)
+forecast1
 autoplot(forecast1)
 ```
 
