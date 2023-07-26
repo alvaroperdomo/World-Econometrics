@@ -49,7 +49,7 @@ grangertest(x, y, order = 1)
 ## 4)  Pruebas sobre los residuos
 #### a)  Gráficos de la $FAC$ y de la $FACP$ de los residuos estimados
 Para visualizar la $FAC$ y la $FACP$ copie los siguientes comandos: [^1]
-[^1]: A estos dos comandos se le pueden incluir más argumentos, pero para llevar a cabo las pruebas sobre los residuos del $VAR$, con los que aquí se utilizan es suficiente
+[^1]: **A estos dos comandos se le pueden incluir más argumentos, pero para llevar a cabo las pruebas sobre los residuos del $VAR$, con los que aquí se utilizan es suficiente.**
 
 ``` r
 acf(residuals(nombre)[,1])
@@ -87,7 +87,31 @@ normality.test(nombre, multivariate.only={FALSE, TRUE})
 |                       | **TRUE**:  Sólo se calculan las pruebas de normalidad multivariadas **(Opción: Predeterminada)**                    |
 |                       | **FALSE**: Se calculan las pruebas de normalidad multivariadas y univariadas                                        |
 
+---
+---
+# Preguntas de selección múltiple
 
+1. **En el comando _**VARselect**_ ¿cuál es el número de rezagos con el que de forma predeterminada comienza la prueba de escogencia del _VAR_ más parsimonioso:**
+ 
+   a) $0$.
+
+   b) $5$.
+
+   c) $10$.
+
+   d) Ninguno de los anteriores.
+ 
+2. **¿Cuál argumento se utiliza, en el comando que hace la prueba Portmanteau Multivariada, para escoger el número de Rezagos a utilizar en la prueba:**
+
+   a) lags.pt.
+
+   b) order.
+
+   c) lags.
+
+   d) lagmax.
+---
+---
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
