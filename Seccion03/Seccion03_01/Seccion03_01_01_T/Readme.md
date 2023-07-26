@@ -77,15 +77,15 @@ Sin embargo, en un modelo de orden superior, puede haber un gran número de coef
 ---
 # Preguntas de selección múltiple
 
-1. **¿Cuál de los siguientes ítems no es una serie de tiempo?**
+1. **En los modelos $VAR$ _estructural_ el vector de términos de error $\mathbf{e_t}$ se caracteriza por que cada uno de sus elementos $e_i$ son:**
  
-   a) La lista de los mejores jugadores de póker.
+   a) Heterocedasticos.
 
-   b) La lista diaria del número de visitantes a un museo.
+   b) Paseo aleatorio.
 
-   c) El valor de la mesada mensual que le dan a un estudiante durante un año.
+   c) Correlacionados.
 
-   d) El número de manzanas por lustro que produce una finca.
+   d) Ruido Blanco.
  
 2. **¿Cuál de los siguientes ítems no es un proceso estocástico?**
 
