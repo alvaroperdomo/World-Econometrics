@@ -15,7 +15,7 @@ En el segundo paso del procedimiento, se estima: $\Delta y_t^d = \gamma y_{t-1}^
 
 Los valores críticos de la prueba dependen de si se incluye una tendencia en la prueba. 
 * Si hay un intercepto pero no una tendencia, los valores críticos son precisamente los mismos de la prueba de Dickey-Fuller. En esencia, utiliza los valores críticos de Dickey-Fuller como si no hubiera un intercepto en el proceso generador de datos. 
-* Si hay una tendencia, los valores críticos dependen del valor del $\alpha$ seleccionado para construir la variable $\tilde{y_t}$. Elliott, Rothenberg y Stock (1996) informan que el valor de $\alpha$ que parece proporcionar la mejor potencia global es **$\alpha=(1-\displaystyle\frac{7}{t})$** para el caso de un intercepto y **$\alpha=(1-\displaystyle\frac{13.5}{t})$** si hay un intercepto y una tendencia.
+* Si hay una tendencia, los valores críticos dependen del valor del $\alpha$ seleccionado para construir la variable $\tilde{y_t}$. Elliott, Rothenberg y Stock (1996) informan que el valor de $\alpha$ que parece proporcionar la mejor potencia global para una muestra de tamaño $T$ es **$\alpha=(1-\displaystyle\frac{7}{T})$** para el caso de un intercepto y **$\alpha=(1-\displaystyle\frac{13.5}{T})$** si hay un intercepto y una tendencia.
 
 **Si el estadistico es menor que el valor crítico reportado en las tablas de Elliott, Rothenberg y Stock (1996), entoces se rechaza la hipótesis nula de raíz unitaria y se afirma que la serie es estacionaria**. Por último, vale la pena resaltar que Elliott, Rothenberg y Stock (1996) muestran que la prueba $ADF-GLS$ mejora la potencia de la prueba $ADF$. 
 
