@@ -954,23 +954,25 @@ ndiffs(GGOV, alpha = 0.05, test = c("adf"), type = c("trend"))
 
    d) La primera afirmación es falsa y la segunda afirmación es verdadera.
 
-4. **Las pruebas $ADF-GLS$ para las variables $GGOV$ y $C1GGOV$ se van a hacer con intercepto y tendencia para la primera, y con intercepto para la segunda. Responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de las pruebas $ADF$?:**
+4. **Las pruebas $ADF-GLS$ para las variables $GGOV$ y $C1GGOV$ se van a hacer con intercepto y tendencia para la primera, y con intercepto para la segunda. Responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de las pruebas $ADF-GLS$ a un rezago?:**
 
-   **Primera afirmación: Para la variable $GGOV$, sin importar si se utiliza el Criterio de Información de Akaike o el Criterio Bayesiano de Schwartz, al 10% de significancia no se rechaza la hipótesis nula de raíz unitaria***
+   **Primera afirmación: Para la variable $GGOV$, sin importar si se utiliza la opción type("DF-GLS) o la opción type("P-test"), al 10% de significancia no se rechaza la hipótesis nula de raíz unitaria***
 
-   **Segunda afirmación: Para la variable $C1GGOV$, sin importar si se utiliza el Criterio de Información de Akaike o el Criterio Bayesiano de Schwartz, al 1% de significancia se rechaza la hipótesis nula de raíz unitaria***
+   **Segunda afirmación: Para la variable $C1GGOV$, sin importar si se utiliza la opción type("DF-GLS) o la opción type("P-test"), al 1% de significancia se rechaza la hipótesis nula de raíz unitaria***
 
 ``` r
-urersTest(GGOV, type = c("DF-GLS"), model = c("trend"), lag.max = 2, doplot = TRUE)
+urersTest(GGOV, type = c("DF-GLS"), model = c("trend"), lag.max = 1, doplot = TRUE)
 urersTest(C1GGOV, type = c("DF-GLS"), model = c("constant"), lag.max = 1, doplot = TRUE)
 
-GGOV_DFGLSt.ers <- ur.ers(GGOV, type = c("DF-GLS"), model = c("trend"),lag.max = 2)
+# Como los gráficos de las dos variables no mostraron ningun problema de autocorrelación con los residuos a un rezago, entonces se decidió hacer las pruebas ADF-GLS a un rezago
+
+GGOV_DFGLSt.ers <- ur.ers(GGOV, type = c("DF-GLS"), model = c("trend"),lag.max = 1)
 C1GGOV_DFGLSc.ers <- ur.ers(C1GGOV, type = c("DF-GLS"), model = c("constant"),lag.max = 1)
 
 summary(GGOV_DFGLSt.ers)
 summary(C1GGOV_DFGLSc.ers)
 
-GGOV_Pt.ers <- ur.ers(GGOV, type = c("P-test"), model = c("trend"),lag.max = 2)
+GGOV_Pt.ers <- ur.ers(GGOV, type = c("P-test"), model = c("trend"),lag.max = 1)
 C1GGOV_Pc.ers <- ur.ers(C1GGOV, type = c("P-test"), model = c("constant"),lag.max = 1)
 
 summary(GGOV_Pt.ers)
