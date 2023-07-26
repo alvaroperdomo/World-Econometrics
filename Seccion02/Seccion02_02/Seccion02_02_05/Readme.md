@@ -386,13 +386,14 @@ Similarmente, observe que los residuos no estan correlacionados, entonces la pru
 
 Por lo tanto, digitamos los comandos:
 
-
+``` r
 PIBpc_DFGLSt.ers <- ur.ers(PIBpc, type = c("DF-GLS"), model = c("trend"),lag.max = 1)
 C1PIBpc_DFGLSc.ers <- ur.ers(C1PIBpc, type = c("DF-GLS"), model = c("constant"),lag.max = 1) 
 
 summary(PIBpc_DFGLSt.ers)
 summary(C1PIBpc_DFGLSc.ers)
 ```
+y obtenemos
 
 ``` r
 > summary(PIBpc_DFGLSt.ers)
