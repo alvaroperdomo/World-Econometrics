@@ -862,9 +862,9 @@ Todas las pruebas aplicadas parecen indicar la presencia de raíz unitaria en la
 ---
 # Preguntas de selección múltiple
 
-Para esta sección, vamos a hacer preguntas con respecto a las pruebas de raíz unitaria de la variable  NE.CON.GOVT.ZS [Gasto de consumo final del gobierno general (% del PIB)](https://datos.bancomundial.org/indicator/NE.CON.GOVT.ZS), a la cual llamaremos (GGOV) cuando la manejemos en niveles y (C1GGOV) cuando la manejemos en su primera diferencia.
+Para esta sección, vamos a hacer preguntas con respecto a las pruebas de raíz unitaria de la variable NE.CON.GOVT.ZS [Gasto de consumo final del gobierno general (% del PIB)](https://datos.bancomundial.org/indicator/NE.CON.GOVT.ZS), a la cual llamaremos (GGOV) cuando la manejemos en niveles y (C1GGOV) cuando la manejemos en su primera diferencia.
 
-El código que se utilizó para descargar y preparar los datos para las pruebas es (POR FAVOR, operelo en $R$):
+El código que se utilizó para descargar y preparar los datos para las pruebas es:
 
 ``` r
 # Pruebas UNIT ROOT GGOV
@@ -898,7 +898,6 @@ C1GGOV_ = subset(C1GGOV__, select = c(C1GGOV))
 
 GGOV <- ts(GGOV_, start=1960, end=2022)
 C1GGOV <- ts(C1GGOV_, start=1961, end=2022)
-
 ```
 
 1. **Para confirmar que estemos manejando los mismos datos, responda ¿Entre 2015 y 2022, en cuál año se dio el mayor valor de la variable _GGOV_ y en qué valor (a dos dígitos)?:**
@@ -911,9 +910,20 @@ C1GGOV <- ts(C1GGOV_, start=1961, end=2022)
 
    d) 2015: 15.24.
 
-2. **¿Cuál comando permite escoger el número óptimo de rezagos segun el Criterio de Información de Akaike?:**
- 
-  
+
+2. **¿Gráfique las $FAC$ de $GGOV$ y $C1GGOV$ y responda cuál de las siguientes afirmaciones es errónea?:**
+
+``` r
+autoplot(acf(GGOV, plot = FALSE))
+autoplot(acf(C1GGOV, plot = FALSE))  
+```
+   a) El decrecimiento moderado de la $FAC$ de $GGOV$ da una idea de raíz unitaria en esta variable.
+
+   b) El comportamiento de la $FAC$ de $C1GGOV$ da una idea de estacionariedad en esta variable.
+
+   c) El decrecimiento moderado de la $FAC$ de $GGOV$ da una idea no estacionariedad en esta variable.
+
+   d) El comportamiento de la $FAC$ de $C1GGOV$ da una idea de integración de orden $0$ en esta variable.
 
 ---
 ---
