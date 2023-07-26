@@ -8,13 +8,13 @@ Para llevar a cabo la prueba $ADF-GLS$ ofrecemos dos opciones:
 ## 1) Primera Opción:** Utilice el comando **urersTest** [^1]
 La estructura para hacer la prueba $ADF-GLS$ es:
 ``` r
-urersTest(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"), lag.max = 4,)
+urersTest(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"), lag.max = 4)
 ```
 [^1]: **Este comando pertenece a la librería _fUnitRoots_**
 
-| **Argumentos**          | **Descripción**                                                                                                                                          | 
+| **Argumentos**          | **Descripción**                                                                                                                             | 
 |-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| **x**                   | vector o variable de series de tiempo                                                                                                       |
+| **x**                   | vector o variable de series de tiempo a la que se le va a hacer la prueba                                                                   |
 | **lag.max**             | esta opción puede significar dos cosas:                                                                                                     |
 |                         | el número máximo de rezagos utilizados para, con el Criterio Bayesiano de Schwartz, determinar el número óptimo de rezagos de la $prueba P$ |   
 |                         | el número máximo de diferencias rezagadas que se incluirán en la regresión de prueba para $DF-GLS$                                          |
@@ -31,20 +31,29 @@ ur.ers(x, type = c("DF-GLS", "P-test"), model = c("constant", "trend"),lag.max =
 
 | **Argumentos**          | **Descripción**                                                                                                                                          | 
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **x**                   | vector o variable de series de tiempo                                                                                                                    |
+| **x**                   | vector o variable de series de tiempo a la que se le va a hacer la prueba                                                                                |
+| **type**                | Tipo de prueba que se va a hacer. Las opciones válidas son:                                                                                              |
+|                         | **"DF-GLS"** - prueba ADF-GLS estándar **_Opción Predeterminada_**                                                                                       |
+|                         | **"P-test"** - prueba de punto óptimo factible                                                                                                           |
 | **lag.max**             | esta opción puede significar dos cosas:                                                                                                                  |
 |                         | el número máximo de rezagos utilizados para probar el truncamiento del rezago decendente para la $prueba P$, utilizando el Criterio Bayesiano de Schwartz|   
 |                         | el número máximo de diferencias rezagadas que se incluirán en la regresión de prueba para $DF-GLS$                                                       |
-| **type**                | cadena de caracteres que describa el tipo de regresión de raíz unitaria. Las opciones válidas son:                                                       |
-|                         | **"DF-GLS"** - **_Opción Predeterminada_**                                                                                                               |
-|                         | **"P-test"**[^3]                                                                                                                                         |
 | **model**               | El modelo determinista utilizado para eliminar la tendencias:                                                                                            | 
 |                         | **"constant"** Se refiere al modelo con constante pero sin tendencia (**_Opción Predeterminada_**)                                                       |
 |                         | **"trend"** Se refiere al modelo con constante y tendencia                                                                                               |
 
-[^3]: **La prueba de punto óptimo factible (_P-test_) tiene en cuenta la correlación serial del término de error y haya el número óptimo de rezagos utilizando el Criterio Bayesiano de Schwartz.** 
+La prueba $ADF-GLS$  que se explicó en la subsección 2.2.2.(T) es el argumento que en **_urersTest_** y en _**ur.ers**_ aparece denotado como type = c("DF-GLS"). Sin embargo, Elliot, Rothenberg y Stock(1996) también propusieron una prueba de punto óptimo factible, que en los argumentos de **_urersTest_** y  _**ur.ers**_ aparece denotada como type = c("P-test"). La lectura de esta prueba es la misma que la de la prueba $ADF-GLS$: si el estadístico  de la prueba es superior al valor crítico, entonces no se rechaza la hipótesis nula de raíz unitaria, en caso contrario se rechaza la hipótesis de raíz unitaria.
 
-#### De las dos opciones, comenzaría utilizando la primera opción con el argumento type = c("DF-GLS"),doplot("TRUE"),lag.max = 1 para fijarme en la prueba gráfica sobre los residuos, si hay problemas de autocorrelación, entonces seguiria aumentando el argumento lag.max hasta que se pasara la prueba de autocorrelación. Ya determinado el número de rezagos, utilizaría la segunda opción con type = c("DF-GLS"), lag.max= "al número de rezagos que no presentó problemas de autocorrelación. Finalmente, utilizaría la segunda opción con type = c("P-test") y el mismo lag.max para confirmar el resultado obtenido.
+De los dos comandos, comenzaría utilizando el comando **_urersTest_** con los siguientes argumentos fijos
+* type = c("DF-GLS"),
+* doplot("TRUE"),
+* lag.max = 1, 
+
+el resto de argumentos se escogen de acuerdo al contexto. La idea es poder visualizar las pruebas gráficas sobre los residuos estimados. Si no hay problemas de autocorrelación en los residuos estimados, entonces éste es el número de rezagos con el que hago la prueba. Si hay problema de autocorrelación en los residuos estimados, entonces aumento el valor de lagmax, talque lagmax=2. Reviso de nuevo las gráficas de los residuos estimados.  Si no hay problemas de autocorrelación en los residuos estimados, entonces éste es el número de rezagos con el que hago la prueba. Si hay problema de autocorrelación en los residuos estimados, entonces continuo subiendo el número de rezagos hasta que los residuos estimados no esten autocorelacionados.
+
+Luego, con el comando _**ur.ers**_ hago la estimación utilizando la opción type = c("DF-GLS") e incorporando el número de rezagos encontrados previamente porque el comando _**ur.ers**_ muestra información númerica más ilustrativa que el comando **_urersTest_**. 
+
+Finalmente, con el comando utilizaría el comando _**ur.ers**_ con type = c("P-test") para apreciar si los resultados se mantienen.
 
 ---
 ---
