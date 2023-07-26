@@ -110,6 +110,32 @@ Los residuos estimados del modelo $VAR$ deben ser ruido blanco. Por lo tanto, aq
 * La $FAC$ y la $FACP$ deben revelar que no hay autocorrelación en los residuos
 * La prueba de Portmanteau debe revelar que no hay autocorrelación en los residuos
 
+---
+---
+# Preguntas de selección múltiple
+
+1. **¿Qué pasa si se incluyen demasiados rezagos dentro del modelo $VAR$?:**
+ 
+   a) Los errores estimados se vuelven autocorrelacionados.
+
+   b) El $VAR$ se vuelve estable.
+
+   c) Se pierden muchos grados de libertad.
+
+   d) Es más fácil pasar la prueba de causalidad de Granger.
+ 
+2. **¿Cuáles criterios de información se puden utilizar para estimar un VAR?:**
+
+   a) El Criterio de Información de Akaike.
+
+   b) El Criterio Bayesiano de Schwartz.
+
+   c) El Criterio de Información de Hannan-Quinn
+
+   d) Todos los anteriores.
+---
+---
+
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
 ##
