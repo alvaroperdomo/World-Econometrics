@@ -73,6 +73,31 @@ Sin embargo, en un modelo de orden superior, puede haber un gran número de coef
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
+---
+---
+# Preguntas de selección múltiple
+
+1. **¿Cuál de los siguientes ítems no es una serie de tiempo?**
+ 
+   a) La lista de los mejores jugadores de póker.
+
+   b) La lista diaria del número de visitantes a un museo.
+
+   c) El valor de la mesada mensual que le dan a un estudiante durante un año.
+
+   d) El número de manzanas por lustro que produce una finca.
+ 
+2. **¿Cuál de los siguientes ítems no es un proceso estocástico?**
+
+   a) La estatura de una persona.
+
+   b) El número de caras de un dado de parques.
+
+   c) El número de goles que se marcan en la final de un mundial de fútbol.
+
+   d) El número de días que dura una sequía.
+---
+---  
 ##
 
 <div align="center"><a href="http://www.escuelaing.edu.co" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/banner-pie-de-pagina.jpg" alt="Support by" width="100%" border="0" />
