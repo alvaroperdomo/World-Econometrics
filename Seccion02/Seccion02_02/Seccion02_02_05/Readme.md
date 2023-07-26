@@ -887,9 +887,9 @@ dat <- dat %>% arrange(year)
 dat <- na.omit(dat)
 dat <- mutate(dat, GGOV_lag1 = lag(GGOV, order_by = year), C1GGOV=GGOV-GGOV_lag1, country=NULL, iso2c=NULL, iso3c=NULL)
 
-ggplot(dat, aes(year, GGOV)) + scale_x_continuous(name="Años", limits=c(1970, 2022)) + geom_line (linewidth=0.2) + theme(plot.caption = element_text(size=7)) + labs(subtitle="1960-2019", y="Porcentaje", title="Gasto real del Gobierno (%PIB)", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+ggplot(dat, aes(year, GGOV)) + scale_x_continuous(name="Años", limits=c(1960, 2022)) + geom_line (linewidth=0.2) + theme(plot.caption = element_text(size=7)) + labs(subtitle="1960-2019", y="Porcentaje", title="Gasto real del Gobierno (%PIB)", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 
-ggplot(dat, aes(year, C1GGOV)) + scale_x_continuous(name="Años", limits=c(1971, 2022)) + geom_line (linewidth=0.2) + theme(plot.caption = element_text(size=7)) + labs(subtitle="1960-2019", y="Porcentaje", title="Cambio en el gasto real del Gobierno (%PIB)", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+ggplot(dat, aes(year, C1GGOV)) + scale_x_continuous(name="Años", limits=c(1961, 2022)) + geom_line (linewidth=0.2) + theme(plot.caption = element_text(size=7)) + labs(subtitle="1960-2019", y="Porcentaje", title="Cambio en el gasto real del Gobierno (%PIB)", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 
 GGOV__ <- dat
 C1GGOV__ <- GGOV__[-c(1),]
