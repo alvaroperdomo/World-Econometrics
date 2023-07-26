@@ -65,15 +65,15 @@ Observe que los pronósticos se trabajaron con el nombre **forecast1**. Usted pu
 
    d) Ninguno de los anteriores.
  
-2. **Las variables que se incluyen para estimar un modelo $VAR$ deben ser:**
+2. **¿Cuáles criterios de información se puden utilizar para estimar un VAR?:**
 
-   a) Estacionarias.
+   a) El Criterio de Información de Akaike.
 
-   b) Ruido Blanco.
+   b) El Criterio Bayesiano de Schwartz.
 
-   c) Paseo aleatorio.
+   c) El Criterio de Información de Hannan-Quinn
 
-   d) Imaginarias.
+   d) Todos los anteriores.
 ---
 ---  
 
