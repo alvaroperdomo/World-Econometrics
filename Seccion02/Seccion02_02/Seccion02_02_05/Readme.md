@@ -891,13 +891,13 @@ ggplot(dat, aes(year, GGOV)) + scale_x_continuous(name="Años", limits=c(1970, 2
 
 ggplot(dat, aes(year, C1GGOV)) + scale_x_continuous(name="Años", limits=c(1971, 2022)) + geom_line (linewidth=0.2) + theme(plot.caption = element_text(size=7)) + labs(subtitle="1960-2019", y="Porcentaje", title="Cambio en el gasto real del Gobierno (%PIB)", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 
-GGOV__ <- dat[-c(1:10),]
+GGOV__ <- dat
 C1GGOV__ <- GGOV__[-c(1),]
 GGOV_ = subset(GGOV__, select = c(GGOV))
 C1GGOV_ = subset(C1GGOV__, select = c(C1GGOV))
 
-GGOV <- ts(GGOV_, start=1970, end=2022)
-C1GGOV <- ts(C1GGOV_, start=1971, end=2022)
+GGOV <- ts(GGOV_, start=1960, end=2022)
+C1GGOV <- ts(C1GGOV_, start=1961, end=2022)
 
 ```
 
