@@ -858,6 +858,67 @@ Es decir, hay un cambio estructural en pendiente y tendencia en el año 1999.
 #### Conclusión:
 Todas las pruebas aplicadas parecen indicar la presencia de raíz unitaria en la variable $PIBpc$ y la estacionariedad en la variable $C1PIBpc$
 
+---
+---
+# Preguntas de selección múltiple
+
+Para esta sección, vamos a hacer preguntas con respecto a las pruebas de raíz unitaria de la variable  NE.CON.GOVT.ZS [Gasto de consumo final del gobierno general (% del PIB)](https://datos.bancomundial.org/indicator/NE.CON.GOVT.ZS), a la cual llamaremos (GGOV) cuando la manejemos en niveles y (C1GGOV) cuando la manejemos en su primera diferencia.
+
+El código que se utilizó para descargar y preparar los datos para las pruebas es (POR FAVOR, operelo en $R$):
+
+``` r
+# Pruebas UNIT ROOT GGOV
+
+rm(list = ls())
+
+library(WDI)         # Esta libreria sirve para trabajar directamente con la base de datos Indicadores de Desarrollo Mundial.
+library(dplyr)       # Esta libreria permite manipular las bases de datos de R de una forma sencilla, por ejemplo utilizando los comandos mutate() y arrange()
+library(ggfortify)   # Esta libreria tienen comando utiles para plantear gráficos de series de tiempo, por ejemplo utilizando el comando autoplot()
+library(ggplot2)     # Esta librería sirve para construir gráficos interesantes
+library(fUnitRoots)  # Esta libreria sirve para hacer pruebas de raíz unitaria.
+library(urca)        # Esta libreria sirve para hacer pruebas de raíz unitaria.
+library(forecast)    # Esta libreria sirve para hacer pronósticos.
+
+WDIsearch(string='NE.CON.GOVT.ZS', field='indicator')
+
+dat = WDI(indicator= c(GGOV = "NE.CON.GOVT.ZS"), country=c('CL'), language = "es")
+
+dat <- dat %>% arrange(year)
+dat <- na.omit(dat)
+dat <- mutate(dat, GGOV_lag1 = lag(GGOV, order_by = year), C1GGOV=GGOV-GGOV_lag1, country=NULL, iso2c=NULL, iso3c=NULL)
+
+ggplot(dat, aes(year, GGOV)) + scale_x_continuous(name="Años", limits=c(1970, 2022)) + geom_line (linewidth=0.2) + theme(plot.caption = element_text(size=7)) + labs(subtitle="1960-2019", y="Porcentaje", title="Gasto real del Gobierno (%PIB)", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+
+ggplot(dat, aes(year, C1GGOV)) + scale_x_continuous(name="Años", limits=c(1971, 2022)) + geom_line (linewidth=0.2) + theme(plot.caption = element_text(size=7)) + labs(subtitle="1960-2019", y="Porcentaje", title="Cambio en el gasto real del Gobierno (%PIB)", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+
+GGOV__ <- dat[-c(1:10),]
+C1GGOV__ <- GGOV__[-c(1),]
+GGOV_ = subset(GGOV__, select = c(GGOV))
+C1GGOV_ = subset(C1GGOV__, select = c(C1GGOV))
+
+GGOV <- ts(GGOV_, start=1970, end=2022)
+C1GGOV <- ts(C1GGOV_, start=1971, end=2022)
+
+```
+
+1. **Para confirmar que estemos manejando los mismos datos, responda ¿Entre 2015 y 2022, en cuál año se dio el mayor valor de la variable _GGOV_ y en qué valor (a dos dígitos)?:**
+ 
+   a) 2022: 14.45.
+
+   b) 2020: 16.01.
+
+   c) 2018: 20.02.
+
+   d) 2015: 15.24.
+
+2. **¿Cuál comando permite escoger el número óptimo de rezagos segun el Criterio de Información de Akaike?:**
+ 
+  
+
+---
+---
+
+
 | [Retornar: 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) |
 |---------------------------------------------------------|--------------------------------------|
 
