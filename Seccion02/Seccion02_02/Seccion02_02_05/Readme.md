@@ -910,7 +910,6 @@ C1GGOV <- ts(C1GGOV_, start=1961, end=2022)
 
    d) 2015: 15.24.
 
-
 2. **¿Gráfique las $FAC$ de $GGOV$ y $C1GGOV$ y responda cuál de las siguientes afirmaciones es errónea?:**
 
 ``` r
@@ -924,6 +923,31 @@ autoplot(acf(C1GGOV, plot = FALSE))
    c) El decrecimiento moderado de la $FAC$ de $GGOV$ da una idea no estacionariedad en esta variable.
 
    d) El comportamiento de la $FAC$ de $C1GGOV$ da una idea de integración de orden $0$ en esta variable.
+
+3. **Las pruebas $ADF$ para las variables $GGOV$ y $C1GGOV$ se van a hacer con intercepto y tendencia para la primera, y sin intercepto ni tendencia para la segunda. Responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de esta prueba?:**
+
+   **Primera afirmación: Para la variable $GGOV$, sin importar si se utiliza el Criterio de Información de Akaike o el Criterio Bayesiano de Schwartz, al 10% de significancia no se rechaza la hipótesis nula de raíz unitaria***
+
+   **Segunda afirmación: Para la variable $C1GGOV$, sin importar si se utiliza el Criterio de Información de Akaike o el Criterio Bayesiano de Schwartz, al 10% de significancia se rechaza la hipótesis nula de raíz unitaria***
+
+``` r
+GGOV_ur_trend_AIC.df <- ur.df(y=GGOV, type = c("trend"), lags = 10, selectlags = c("AIC"))
+GGOV_ur_trend_BIC.df <- ur.df(y=GGOV, type = c("trend"), lags = 10, selectlags = c("BIC"))
+C1GGOV_ur_none_AIC.df <- ur.df(C1GGOV, type = c("none"), lags = 10, selectlags = c("AIC"))
+C1GGOV_ur_none_BIC.df <- ur.df(C1GGOV, type = c("none"), lags = 10, selectlags = c("BIC"))
+
+summary(GGOV_ur_trend_AIC.df)
+summary(GGOV_ur_trend_BIC.df)
+summary(C1GGOV_ur_none_AIC.df)
+summary(C1GGOV_ur_none_BIC.df)
+```
+   a) La primera y la segunda afirmación son verdaderas.
+
+   b) La primera y la segunda afirmación son falsas.
+
+   c) La primera afirmación es verdadera y la segunda afirmación es falsa.
+
+   d) La primera afirmación es falsa y la segunda afirmación es verdadera.
 
 ---
 ---
