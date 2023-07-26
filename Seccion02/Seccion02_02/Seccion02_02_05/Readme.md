@@ -924,11 +924,11 @@ autoplot(acf(C1GGOV, plot = FALSE))
 
    d) El comportamiento de la $FAC$ de $C1GGOV$ da una idea de integración de orden $0$ en esta variable.
 
-3. **Las pruebas $ADF$ para las variables $GGOV$ y $C1GGOV$ se van a hacer con intercepto y tendencia para la primera, y sin intercepto ni tendencia para la segunda. Responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de esta prueba?:**
+3. **Las pruebas $ADF$ para las variables $GGOV$ y $C1GGOV$ se van a hacer con intercepto y tendencia para la primera, y sin intercepto ni tendencia para la segunda. Responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de las pruebas $ADF$?:**
 
    **Primera afirmación: Para la variable $GGOV$, sin importar si se utiliza el Criterio de Información de Akaike o el Criterio Bayesiano de Schwartz, al 10% de significancia no se rechaza la hipótesis nula de raíz unitaria***
 
-   **Segunda afirmación: Para la variable $C1GGOV$, sin importar si se utiliza el Criterio de Información de Akaike o el Criterio Bayesiano de Schwartz, al 10% de significancia se rechaza la hipótesis nula de raíz unitaria***
+   **Segunda afirmación: Para la variable $C1GGOV$, sin importar si se utiliza el Criterio de Información de Akaike o el Criterio Bayesiano de Schwartz, al 1% de significancia se rechaza la hipótesis nula de raíz unitaria***
 
 ``` r
 GGOV_ur_trend_AIC.df <- ur.df(y=GGOV, type = c("trend"), lags = 10, selectlags = c("AIC"))
@@ -940,6 +940,11 @@ summary(GGOV_ur_trend_AIC.df)
 summary(GGOV_ur_trend_BIC.df)
 summary(C1GGOV_ur_none_AIC.df)
 summary(C1GGOV_ur_none_BIC.df)
+
+GGOV_urdfTest<- urdfTest(GGOV, lags = 1, type = c("ct"), doplot = TRUE)
+C1GGOV_urdfTest<- urdfTest(C1GGOV, lags = 1, type = c("nc"), doplot = TRUE)
+
+ndiffs(GGOV, alpha = 0.05, test = c("adf"), type = c("trend"))
 ```
    a) La primera y la segunda afirmación son verdaderas.
 
@@ -949,6 +954,35 @@ summary(C1GGOV_ur_none_BIC.df)
 
    d) La primera afirmación es falsa y la segunda afirmación es verdadera.
 
+4. **Las pruebas $ADF-GLS$ para las variables $GGOV$ y $C1GGOV$ se van a hacer con intercepto y tendencia para la primera, y con intercepto para la segunda. Responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de las pruebas $ADF$?:**
+
+   **Primera afirmación: Para la variable $GGOV$, sin importar si se utiliza el Criterio de Información de Akaike o el Criterio Bayesiano de Schwartz, al 10% de significancia no se rechaza la hipótesis nula de raíz unitaria***
+
+   **Segunda afirmación: Para la variable $C1GGOV$, sin importar si se utiliza el Criterio de Información de Akaike o el Criterio Bayesiano de Schwartz, al 1% de significancia se rechaza la hipótesis nula de raíz unitaria***
+
+``` r
+urersTest(GGOV, type = c("DF-GLS"), model = c("trend"), lag.max = 2, doplot = TRUE)
+urersTest(C1GGOV, type = c("DF-GLS"), model = c("constant"), lag.max = 1, doplot = TRUE)
+
+GGOV_DFGLSt.ers <- ur.ers(GGOV, type = c("DF-GLS"), model = c("trend"),lag.max = 2)
+C1GGOV_DFGLSc.ers <- ur.ers(C1GGOV, type = c("DF-GLS"), model = c("constant"),lag.max = 1)
+
+summary(GGOV_DFGLSt.ers)
+summary(C1GGOV_DFGLSc.ers)
+
+GGOV_Pt.ers <- ur.ers(GGOV, type = c("P-test"), model = c("trend"),lag.max = 2)
+C1GGOV_Pc.ers <- ur.ers(C1GGOV, type = c("P-test"), model = c("constant"),lag.max = 1)
+
+summary(GGOV_Pt.ers)
+summary(C1GGOV_Pc.ers)
+```
+   a) La primera y la segunda afirmación son verdaderas.
+
+   b) La primera y la segunda afirmación son falsas.
+
+   c) La primera afirmación es verdadera y la segunda afirmación es falsa.
+
+   d) La primera afirmación es falsa y la segunda afirmación es verdadera.
 ---
 ---
 
