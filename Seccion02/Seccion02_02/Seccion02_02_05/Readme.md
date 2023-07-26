@@ -912,10 +912,6 @@ C1GGOV <- ts(C1GGOV_, start=1961, end=2022)
 
 2. **¿Gráfique las $FAC$ de $GGOV$ y $C1GGOV$ y responda cuál de las siguientes afirmaciones es errónea?:**
 
-``` r
-autoplot(acf(GGOV, plot = FALSE))
-autoplot(acf(C1GGOV, plot = FALSE))  
-```
    a) El decrecimiento moderado de la $FAC$ de $GGOV$ da una idea de raíz unitaria en esta variable.
 
    b) El comportamiento de la $FAC$ de $C1GGOV$ da una idea de estacionariedad en esta variable.
@@ -924,11 +920,24 @@ autoplot(acf(C1GGOV, plot = FALSE))
 
    d) El comportamiento de la $FAC$ de $C1GGOV$ da una idea de integración de orden $0$ en esta variable.
 
+``` r
+autoplot(acf(GGOV, plot = FALSE))
+autoplot(acf(C1GGOV, plot = FALSE))  
+```
+
 3. **Las pruebas $ADF$ para las variables $GGOV$ y $C1GGOV$ se van a hacer con intercepto y tendencia para la primera, y sin intercepto ni tendencia para la segunda. Responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de las pruebas $ADF$?:**
 
    **Primera afirmación: Para la variable $GGOV$, sin importar si se utiliza el Criterio de Información de Akaike o el Criterio Bayesiano de Schwartz, al 10% de significancia no se rechaza la hipótesis nula de raíz unitaria***
 
    **Segunda afirmación: Para la variable $C1GGOV$, sin importar si se utiliza el Criterio de Información de Akaike o el Criterio Bayesiano de Schwartz, al 1% de significancia se rechaza la hipótesis nula de raíz unitaria***
+
+   a) La primera y la segunda afirmación son verdaderas.
+
+   b) La primera y la segunda afirmación son falsas.
+
+   c) La primera afirmación es verdadera y la segunda afirmación es falsa.
+
+   d) La primera afirmación es falsa y la segunda afirmación es verdadera.
 
 ``` r
 GGOV_ur_trend_AIC.df <- ur.df(y=GGOV, type = c("trend"), lags = 10, selectlags = c("AIC"))
@@ -946,6 +955,14 @@ C1GGOV_urdfTest<- urdfTest(C1GGOV, lags = 1, type = c("nc"), doplot = TRUE)
 
 ndiffs(GGOV, alpha = 0.05, test = c("adf"), type = c("trend"))
 ```
+
+4. **Las pruebas $ADF-GLS$ para las variables $GGOV$ y $C1GGOV$ se van a hacer con intercepto y tendencia para la primera, y con intercepto para la segunda. Responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de las pruebas $ADF-GLS$ a un rezago?:**
+
+   **Primera afirmación: Para la variable $GGOV$, sin importar si se utiliza la opción type("DF-GLS) o la opción type("P-test"), al 10% de significancia no se rechaza la hipótesis nula de raíz unitaria***
+
+   **Segunda afirmación: Para la variable $C1GGOV$, sin importar si se utiliza la opción type("DF-GLS) o la opción type("P-test"), al 1% de significancia se rechaza la hipótesis nula de raíz unitaria***
+
+
    a) La primera y la segunda afirmación son verdaderas.
 
    b) La primera y la segunda afirmación son falsas.
@@ -953,12 +970,6 @@ ndiffs(GGOV, alpha = 0.05, test = c("adf"), type = c("trend"))
    c) La primera afirmación es verdadera y la segunda afirmación es falsa.
 
    d) La primera afirmación es falsa y la segunda afirmación es verdadera.
-
-4. **Las pruebas $ADF-GLS$ para las variables $GGOV$ y $C1GGOV$ se van a hacer con intercepto y tendencia para la primera, y con intercepto para la segunda. Responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de las pruebas $ADF-GLS$ a un rezago?:**
-
-   **Primera afirmación: Para la variable $GGOV$, sin importar si se utiliza la opción type("DF-GLS) o la opción type("P-test"), al 10% de significancia no se rechaza la hipótesis nula de raíz unitaria***
-
-   **Segunda afirmación: Para la variable $C1GGOV$, sin importar si se utiliza la opción type("DF-GLS) o la opción type("P-test"), al 1% de significancia se rechaza la hipótesis nula de raíz unitaria***
 
 ``` r
 urersTest(GGOV, type = c("DF-GLS"), model = c("trend"), lag.max = 1, doplot = TRUE)
@@ -978,6 +989,15 @@ C1GGOV_Pc.ers <- ur.ers(C1GGOV, type = c("P-test"), model = c("constant"),lag.ma
 summary(GGOV_Pt.ers)
 summary(C1GGOV_Pc.ers)
 ```
+
+5. **Las pruebas $KPSS$ para las variables $GGOV$ y $C1GGOV$ se van a hacer con intercepto y tendencia para la primera, y con intercepto para la segunda. Responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de las pruebas $KPSS$ con $4$ rezagos [^1]?:**
+
+[^1]: **Recuerden que este es el número óptimo de rezagos para una serie de 63 o 62 datos según el criterio de  Newey y West (1994) que se comentó en la sección 2.2.3.(T).**
+
+   **Primera afirmación: Para la variable $GGOV$ al 1% de significancia se rechaza la hipótesis nula de estacionariedad***
+
+   **Segunda afirmación: Para la variable $C1GGOV$ al 10% de significancia no se rechaza la hipótesis nula de estacionariedad***
+
    a) La primera y la segunda afirmación son verdaderas.
 
    b) La primera y la segunda afirmación son falsas.
@@ -985,6 +1005,47 @@ summary(C1GGOV_Pc.ers)
    c) La primera afirmación es verdadera y la segunda afirmación es falsa.
 
    d) La primera afirmación es falsa y la segunda afirmación es verdadera.
+
+``` r
+GGOV_1t.kpss <- ur.kpss(GGOV, type = c("tau"), lags = c("nil"), use.lag = NULL)
+GGOV_2t.kpss <- ur.kpss(GGOV, type = c("tau"), lags = c("short"), use.lag = NULL)
+GGOV_3t.kpss <- ur.kpss(GGOV, type = c("tau"), use.lag = 4)
+GGOV_4t.kpss <- ur.kpss(GGOV, type = c("tau"), lags = c("long"), use.lag = NULL)
+
+C1GGOV_1m.kpss <- ur.kpss(C1GGOV, type = c("mu"), lags = c("nil"), use.lag = NULL)
+C1GGOV_2m.kpss <- ur.kpss(C1GGOV, type = c("mu"), lags = c("short"), use.lag = NULL)
+C1GGOV_3m.kpss <- ur.kpss(C1GGOV, type = c("mu"), use.lag = 4)
+C1GGOV_4m.kpss <- ur.kpss(C1GGOV, type = c("mu"), lags = c("long"), use.lag = NULL)
+
+summary(GGOV_1t.kpss)
+summary(GGOV_2t.kpss)
+summary(GGOV_3t.kpss)
+summary(GGOV_4t.kpss)
+summary(C1GGOV_1m.kpss)
+summary(C1GGOV_2m.kpss)
+summary(C1GGOV_3m.kpss)
+summary(C1GGOV_4m.kpss)
+
+ndiffs(GGOV, alpha = 0.05, test = c("kpss"), type = c("trend"))
+```
+
+5. **Las pruebas $ZA$ para las variable $GGOV$ se hacen en todas sus variantes. Responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de las pruebas $ZA$ ?:**
+
+   **Primera afirmación: Para la variable $GGOV$, si se asume un cambio estructural en el intercepto, este ocurre en el año 1984 y la serie presenta raíz unitaria***
+
+``` r
+ZA1.za <- ur.za(GGOV, model = c("intercept"), lag=NULL)
+ZA2.za <- ur.za(GGOV, model = c("trend"), lag=NULL)
+ZA3.za <- ur.za(GGOV, model = c("both"), lag=NULL)
+
+summary(ZA1.za)
+urzaTest(GGOV, model = c("intercept"))
+summary(ZA2.za)
+urzaTest(GGOV, model = c("trend"))
+summary(ZA3.za)
+urzaTest(GGOV, model = c("both"))
+```
+
 ---
 ---
 
