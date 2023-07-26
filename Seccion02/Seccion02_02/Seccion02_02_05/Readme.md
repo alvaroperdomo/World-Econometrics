@@ -364,11 +364,31 @@ Es decir, al 5% de significancia, la variable $PIBpc$ tiene raíz unitaria, y la
 
 ### Prueba $ADF-GLS$
 
-Dado que el $PIBpc$ es una variable que presenta tendencia, entonces se va a desarrollar su prueba $DF-GLS$ con tendencia. Dado que el $C1PIBpc$ es una variable que no presenta tendencia, entonces se va a desarrollar su prueba $DF-GLS$  sin tendencia. El número de rezagos se va a escoger utilizando el _Criterio Bayesiano de Schwartz_. Para el desarrollo de la prueba se copiaron los siguientes comandos:
+Dado que el $PIBpc$ es una variable que presenta tendencia, entonces se va a desarrollar su prueba $ADF-GLS$ con tendencia. Dado que el $C1PIBpc$ es una variable que no presenta tendencia, entonces se va a desarrollar su prueba $ADF-GLS$ sin tendencia. El número de rezagos se va a escoger de forma ascendente, tal que los residuos estimados no estés correlacionados. Para el desarrollo de la prueba se copiaron los siguientes comandos:
 
 ``` r
-PIBpc_DFGLSt.ers <- ur.ers(PIBpc, type = c("P-test"), model = c("trend"),lag.max = 4)
-C1PIBpc_DFGLSc.ers <- ur.ers(C1PIBpc, type = c("P-test"), model = c("constant"),lag.max = 4) 
+# Residuos PIBpc con 1 rezago
+urersTest(PIBpc, type = c("DF-GLS"), model = c("trend"), lag.max = 1, doplot = TRUE)
+```
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/1b8a005d-094a-4cf1-9ada-efe164a8f043)
+
+Observe que los residuos no estan correlacionados, entonces la prueba para PIBpc se hará con 1 rezago.
+
+``` r
+* Residuos C1PIBpc con 1 rezago
+urersTest(C1PIBpc, type = c("DF-GLS"), model = c("constant"), lag.max = 1, doplot = TRUE)
+```
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/da4c7100-2d26-42e9-8073-551ca1a83b95)
+
+Similarmente, observe que los residuos no estan correlacionados, entonces la prueba para C1PIBpc se hará con 1 rezago.
+
+Por lo tanto, digitamos los comandos:
+
+
+PIBpc_DFGLSt.ers <- ur.ers(PIBpc, type = c("DF-GLS"), model = c("trend"),lag.max = 1)
+C1PIBpc_DFGLSc.ers <- ur.ers(C1PIBpc, type = c("DF-GLS"), model = c("constant"),lag.max = 1) 
 
 summary(PIBpc_DFGLSt.ers)
 summary(C1PIBpc_DFGLSc.ers)
@@ -381,16 +401,115 @@ summary(C1PIBpc_DFGLSc.ers)
 # Elliot, Rothenberg and Stock Unit Root Test # 
 ############################################### 
 
+Test of type DF-GLS 
+detrending of series with intercept and trend 
+
+
+Call:
+lm(formula = dfgls.form, data = data.dfgls)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-709972  -94205    3638  100824  467202 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+yd.lag       -0.05364    0.03187  -1.683   0.0979 .  
+yd.diff.lag1  0.57317    0.11234   5.102 4.15e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 195000 on 56 degrees of freedom
+Multiple R-squared:  0.3209,	Adjusted R-squared:  0.2967 
+F-statistic: 13.23 on 2 and 56 DF,  p-value: 1.967e-05
+
+
+Value of test-statistic is: -1.683 
+
+Critical values of DF-GLS are:
+                 1pct  5pct 10pct
+critical values -3.58 -3.03 -2.74
+
+> summary(C1PIBpc_DFGLSc.ers)
+
+############################################### 
+# Elliot, Rothenberg and Stock Unit Root Test # 
+############################################### 
+
+Test of type DF-GLS 
+detrending of series with intercept 
+
+
+Call:
+lm(formula = dfgls.form, data = data.dfgls)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-659831  -84615   42646  137049  498871 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+yd.lag       -0.448590   0.127215  -3.526 0.000858 ***
+yd.diff.lag1  0.008424   0.135096   0.062 0.950507    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 203100 on 55 degrees of freedom
+Multiple R-squared:  0.2222,	Adjusted R-squared:  0.1939 
+F-statistic: 7.856 on 2 and 55 DF,  p-value: 0.0009975
+
+
+Value of test-statistic is: -3.5262 
+
+Critical values of DF-GLS are:
+                1pct  5pct 10pct
+critical values -2.6 -1.95 -1.62
+```
+
+Los resultados de las pruebas $DF-GLS$ son:
+
+| Variable   | Estadistico   | Rezagos   | Valor       |  10%      |  5%      |   1%    |
+|------------|---------------|:---------:|:-----------:|:---------:|:--------:|:-------:|
+| $PIBpc$    | $DF-GLS_\tau$ | 1         | $-1.683$    | $-2.74$   | $-3.03$  | $-3.58$ |
+| $C1PIBpc$  | $DF-GLS_\mu$  | 1         | $-3.5262$***| $-1.62$   | $-1.95$  | $-2.60$ |
+
+**Niveles de significancia: *** al 1%, ** al 5% y * al 10%**    
+
+La variable $PIBpc$ es no estacionaria porque:
+* Con el estadistico $P_\tau$: **34.0584** > 6.79, no se rechaza la hipótesis nula de raíz unitaria  10%, 5% y 1% 
+
+La variable $C1PIBpc$ es estacionaria porque:
+* Con el estadistico $P_\mu$: **-3.5262** < -2.6, se rechaza la hipótesis nula de raíz unitaria al 1%, 5% y 10%
+
+Por otra parte, al calcular las pruebas $P$ con el comando:
+
+``` r
+PIBpc_Pt.ers <- ur.ers(PIBpc, type = c("P-test"), model = c("trend"),lag.max = 1)
+C1PIBpc_Pc.ers <- ur.ers(C1PIBpc, type = c("P-test"), model = c("constant"),lag.max = 1) 
+
+summary(PIBpc_Pt.ers)
+summary(C1PIBpc_Pc.ers)
+``` 
+
+Se obtiene, 
+
+``` r
+> summary(PIBpc_Pt.ers)
+
+############################################### 
+# Elliot, Rothenberg and Stock Unit Root Test # 
+############################################### 
+
 Test of type P-test 
 detrending of series with intercept and trend 
 
-Value of test-statistic is: 34.0584 
+Value of test-statistic is: 15.1326 
 
 Critical values of P-test are:
                 1pct 5pct 10pct
 critical values 4.26 5.64  6.79
 
-> summary(C1PIBpc_DFGLSc.ers)
+> summary(C1PIBpc_Pc.ers)
 
 ############################################### 
 # Elliot, Rothenberg and Stock Unit Root Test # 
@@ -399,27 +518,26 @@ critical values 4.26 5.64  6.79
 Test of type P-test 
 detrending of series with intercept 
 
-Value of test-statistic is: 0.319 
+Value of test-statistic is: 1.1421 
 
 Critical values of P-test are:
                 1pct 5pct 10pct
 critical values 1.95 3.11  4.17
 
 ```
-Los resultados de las pruebas $DF-GLS$ son:
 
-| Variable   | Estadistico   | Valor     |  10%    |  5%     |   1%    |
-|------------|---------------|:---------:|:-------:|:-------:|:-------:|
-| $PIBpc$    | $P_\tau$      | $34.0584$ | $6.79$  | $5.64$  | $4.26$  |
-| $C1PIBpc$  | $P_\mu$       | $0.319$***| $4.17$  | $3.11$  | $1.95$  |
+| Variable   | Estadistico   | Rezagos   | Valor      |  10%    |  5%     |   1%    |
+|------------|---------------|:---------:|:----------:|:-------:|:-------:|:-------:|
+| $PIBpc$    | $P_\tau$      | 1         | $15.1326$  | $6.79$  | $5.64$  | $4.26$  |
+| $C1PIBpc$  | $P_\mu$       | 1         | $1.1421$***| $4.17$  | $3.11$  | $1.95$  |
 
 **Niveles de significancia: *** al 1%, ** al 5% y * al 10%**
 
 La variable $PIBpc$ es no estacionaria porque:
-* Con el estadistico $P_\tau$: **34.0584** > 6.79, no se rechaza la hipótesis nula de raíz unitaria  10%, 5% y 1% 
+* Con el estadistico $P_\tau$: **15.1326** > 6.79, no se rechaza la hipótesis nula de raíz unitaria  10%, 5% y 1% 
 
 La variable $C1PIBpc$ es estacionaria porque:
-* Con el estadistico $P_\mu$: **0.319** < 1.95, se rechaza la hipótesis nula de raíz unitaria al 1%, 5% y 10%
+* Con el estadistico $P_\mu$: **1.1421** < 1.95, se rechaza la hipótesis nula de raíz unitaria al 1%, 5% y 10%
 
 ****************************************************************************************************************************************************************************
 
