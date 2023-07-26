@@ -48,6 +48,15 @@ La distribución asintótica del estadístico de prueba $\hat{\eta}$, tal como s
    
    d) Cuando el estadístico que se calcula en la prueba es mayor que el valor crítico reportado en las tablas de Kwiatkowski, Phillips, Schmidt y Shin (1992).
 
+3. **¿Si una serie tiene $63$ datos, según Newey y West (1994), cuál es la longitud de rezagos que se debe utilizar en la prueba $KPSS$ ?:**
+ 
+   a) $63$.
+
+   b) $8$.
+
+   c) $4$.
+   
+   d) $10$.
 ---
 ---
 
