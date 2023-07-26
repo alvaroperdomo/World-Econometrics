@@ -77,15 +77,15 @@ Sin embargo, en un modelo de orden superior, puede haber un gran número de coef
 ---
 # Preguntas de selección múltiple
 
-1. **En los modelos $VAR$ _estructural_ el vector de términos de error $\mathbf{e_t}$ se caracteriza por que cada uno de sus elementos $e_i$ son:**
+1. **En los modelos $VAR$ _estructural_ el vector de términos de error $\mathbf{e_t}$ se caracteriza por que cada uno de sus elementos $e_i$:**
  
-   a) Heterocedasticos.
+   a) Son heterocedasticos.
 
-   b) Paseo aleatorio.
+   b) Son paseo aleatorio.
 
-   c) Correlacionados.
+   c) Están correlacionados.
 
-   d) Ruido Blanco.
+   d) Son ruido Blanco.
  
 2. **¿Cuál de los siguientes ítems no es un proceso estocástico?**
 
