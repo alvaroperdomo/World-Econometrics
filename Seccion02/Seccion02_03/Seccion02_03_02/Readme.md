@@ -253,6 +253,31 @@ Por último, note que en la comparación de los valores del _Criterio de Informa
 
 Utilizemos un segundo ejemplo para ver cómo la $FAC$ y la $FACP$ muestrales sirven para identificar un modelo $ARMA(1,1)$. En este ejemplo se generaron $100$ números aleatorios $\varepsilon_t$ distribuidos normalmente. Comenzando con $t=1$, los valores de $y_t$ se generaron usando la fórmula $y_{t-1}=-0.7y_{t-1}+\varepsilon_t+0.7\varepsilon_{t-1}$ y la condición inicial $y_0=0$ y $\varepsilon_0=0$. 
 
+Para ello se utilizó el siguiente código de $R$: 
+```r
+rm(list = ls())
+
+set.seed(130) # Se establece una semilla para la generación de números aleatorios (puedes usar cualquier número entero)
+
+n <- 100 # Se establece la longitud de la secuencia
+
+epsilon <- rnorm(n, mean = 0, sd = 1)  # Se crea un vector para almacenar los valores simulados de epsilon(t)
+
+
+# Inicializar los vectores para y(t) y e(t)
+y <- numeric(n)  # Se crea un vector para almacenar los valores simulados de y(t)
+e <- numeric(n) # Se crea un vector para almacenar los valores de epsilon (t)
+
+y[1] <- 0  # Se establece y(0) = 0
+e[1] <- 0  # Se establece epsilon(0) = 0
+
+# Se genera la serie de tiempo y(t) y la secuencia epsilon(t)
+for (t in 2:n) {
+  y[t] <- -0.7 * y[t-1] + e[t] + 0.7 * e[t-1]
+  e[t] <- epsilon[t]
+}
+```
+
 A continuación se van a desarrollar cada uno de los pasos de la metodología Box-Jenkins explicados en la sección 2.3.1. 
 
 ### Identificación
