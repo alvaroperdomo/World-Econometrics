@@ -80,7 +80,7 @@ Para una demostración formal, tenga en cuenta que a medida que $a_1$ se acerca 
 
 Por supuesto, un proceso de raíz unitaria también puede exhibir un cambio estructural. La figura de abajo simula un paseo aleatorio con un cambio estructural que se produce en $t=51$. 
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/452c868c-1da9-447c-be1d-bb36eb69e366)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/22eb29f5-59fb-42dd-971a-c84bf0a1af86)
 
 Esta segunda simulación utilizó:
 * Los mismos 100 valores para la secuencia { $\varepsilon_t$ } y 
