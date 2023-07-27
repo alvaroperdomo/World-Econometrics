@@ -64,7 +64,7 @@ En la práctica, nunca conocemos el verdadero proceso de generación de datos. S
 El primer paso podría ser comparar la $FAC$ y la $FACP$ muestrales de $y_t$ con las de los diversos modelos teóricos. 
 
 #### La parte autorregresiva ($AR$) del proceso generador de datos
-La $FACP$ se utiliza para determinar el componente $AR(p)$ del $ARMA(p,q)$. Identifique los rezagos de la $FACP$ de $y_t$ que estan aislados y que son superiores a $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{200}}=0.14$ [^1]. Note que el pico más grande, por mucho, corresponde al rezago $1$ y vale $0.67$. esto sugiere un potencial compomemte $AR(1)$ dentro del modelo $ARMA(p,q)$. Todas las otras $FACP$ (excepto la del rezago $16$) son muy pequeñas.
+La $FACP$ se utiliza para determinar el componente $AR(p)$ del $ARMA(p,q)$. Identifique los rezagos de la $FACP$ de $y_t$ que estan aislados y que son superiores a $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{200}}=0.14$ [^1]. Note que el pico más grande, por mucho, corresponde al rezago $1$ y vale $0.67$. esto sugiere un potencial compomemte $AR(1)$ dentro del modelo $ARMA(p,q)$. Todas las otras $FACP$ (excepto la del rezago $16$ que es aproximadamente $-0.18$) son muy pequeñas.
 
 [^1]: **En ocasiones los gráficos de la _FAC_ y  la _FACP_ incluyen el rezago _0_ , el cuál por definición siempre debe ser igual a $1$.** 
 
