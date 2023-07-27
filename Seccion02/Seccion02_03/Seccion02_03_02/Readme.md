@@ -45,9 +45,9 @@ A continuación se van a desarrollar cada uno de los pasos de la metodología Bo
 ### Identificación
 Las figuras de abajo muestran la $FAC$ en  y la $FACP$ muestrales de { $y_t$ } (en el eje vertical se muestran, respectivamente, el valor de las autocorrelaciones totales y parciales de la muestra para cada uno de los rezagos que se presentan en el eje horizontal). 
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/abf0c298-03a8-4818-80bb-cb4c2c9638ff)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/291346f6-2c58-4a70-841d-7b560b616a4f)
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/05b247a6-d8ba-42cf-96fe-d020aa74cf8b)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/78836a1c-29d7-4b0e-a156-a2f38c6d6e63)
 
 Continuando con el código de $R$ de esta sección, los gráficos de la $FAC$ y la $FACP$ de $y_t$ se generaron con los comandos
 
@@ -59,7 +59,7 @@ pacf_plot <- autoplot(pacf(y, plot = FALSE)) # Se calcula la función de autocor
 pacf_plot + labs(x = "Rezagos", y = "FACP") # Se personalizan las etiquetas de los ejes
 ```
 
-En la práctica, nunca conocemos el verdadero proceso de generación de datos. Suponga que se nos presentan los $100$ valores muestrales de la simulación que estamos manejando en esta sección y se nos pide descubrir el verdadero proceso $ARMA(p,q)$ utilizando la metodología de Box-Jenkins. 
+En la práctica, nunca conocemos el verdadero proceso de generación de datos. Suponga que se nos presentan los $200$ valores muestrales de la simulación que estamos manejando en esta sección y se nos pide descubrir el verdadero proceso $ARMA(p,q)$ utilizando la metodología de Box-Jenkins. 
 
 El primer paso podría ser comparar la $FAC$ y la $FACP$ muestrales de $y_t$ con las de los diversos modelos teóricos. 
 
@@ -68,7 +68,7 @@ La $FACP$ se utiliza para determinar el componente $AR(p)$ del $ARMA(p,q)$. Iden
 
 [^1]: **En ocasiones los gráficos de la _FAC_ y  la _FACP_ incluyen el rezago _0_ , el cuál por definición siempre debe ser igual a $1$.** 
 
-Para saber el valor de la $FACP$ de $y_t$ en los rezagos $1$, $6$ y $8$ se utilizaron los comandos:
+Para conocer el valor númerico exacto de la $FACP$ de $y_t$ en los rezagos $1$ y $16$ se utilizaron los comandos:
 
 ```r
 pacf_result <- pacf(y, plot = FALSE) # Se calcula la función de autocorrelación parcial
@@ -76,11 +76,8 @@ pacf_result <- pacf(y, plot = FALSE) # Se calcula la función de autocorrelació
 pacf_lag_1 <- pacf_result$acf[1]   # Valor de la autocorrelación parcial para el rezago 1
 print(pacf_lag_1)
 
-pacf_lag_6 <- pacf_result$acf[6]   # Valor de la autocorrelación parcial para el rezago 2
-print(pacf_lag_6)
-
-pacf_lag_8 <- pacf_result$acf[8]   # Valor de la autocorrelación parcial para el rezago 3
-print(pacf_lag_8)
+pacf_lag_16 <- pacf_result$acf[16]   # Valor de la autocorrelación parcial para el rezago 2
+print(pacf_lag_16)
 ```
 Obteniendose:
 ```r
