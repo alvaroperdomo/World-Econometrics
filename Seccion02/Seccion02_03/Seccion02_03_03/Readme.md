@@ -160,7 +160,7 @@ Como último paso, para contrastar nuestros resultados acerca del modelo más pa
 auto.arima(PIBpc, ic = c("aic"), stepwise = FALSE, approximation = FALSE)
 auto.arima(PIBpc, ic = c("bic"), stepwise = FALSE, approximation = FALSE)
 ```
-Al operar ambos comandos, volvemos a obtener el mismo resultado: **El mejor modelo $ARIMA(1,1,0) es el mejor modelo que se ajusta a los datos**
+Al operar ambos comandos, volvemos a obtener el mismo resultado: **El mejor modelo $ARIMA(1,1,0)$ es el mejor modelo que se ajusta a los datos**
 
 ## 3) Verificación de diagnóstico:
 El último paso de Box-Jenkins consiste en hacer las pruebas de validación del modelo $ARIMA(1,1,0)$. Para ello en primer lugar se grafican los correlogramas de los residuos estimados para comprobar que son ruido blanco:
