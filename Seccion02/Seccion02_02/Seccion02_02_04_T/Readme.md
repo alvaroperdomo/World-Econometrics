@@ -101,9 +101,9 @@ y[1] <- 4 # Se establece y(0) = 4
 
 dummy_P <- rep(0, n)  # Se crea un vector para almacenar los valores de la variable Dummy de Pulso
 
-dummy_P[51] <- 10 # Se establece que la variable Dummy de Pulso es igual a 10 para t=51, ..., 100
+dummy_P[51] <- 10 # Se establece que la variable Dummy de Pulso es igual a 10 para t=51
 
-# Seestablece la fórmula para generar los valores de y(t)
+# Se establece la fórmula para generar los valores de y(t)
 for (t in 2:n) {
   y[t] <- y[t-1] + epsilon[t] + dummy_P[t]
 }
