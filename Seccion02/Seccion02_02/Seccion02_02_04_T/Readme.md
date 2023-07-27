@@ -168,10 +168,11 @@ $$
 Bajo la hipótesis nula, { $y_t$ } es un proceso de raíz unitaria con un salto de una sola vez en el nivel de la secuencia en el período $t= \tau + 1$. Bajo la hipótesis alternativa, { $y_t$ } es una tendencia estacionaria con un salto de una sola vez en el intercepto. 
 
 La figura de abajo puede ayudar a visualizar las dos hipótesis:
-* Simulando $y_t=0.2+y_{t-1}+\mu_1 D_P(51) + \varepsilon_t$ y usando 100 realizaciones para la secuencia { $\varepsilon_t$ }, la línea discontinua errática representa la trayectoria en el tiempo de { $y_t$ } bajo **$H_0$**. Antes y después del salto en el periodo 51, la secuencia { $y_t$ } sigue el mismo paseo aleatorio con intercepto. 
-* **$H_1$**  postula que la secuencia { $y_t$ }  es estacionaria alrededor de la línea de tendencia discontinua. Hasta $t=\tau$, { $y_t$ } es estacionaria alrededor de $a_0+a_2t$, y comenzando en $\tau+1$, $y_t$ es estacionaria alrededor de $a_0+a_2t+\mu_2$. Como lo ilustra la línea continua, hay un aumento de una sola vez en el intercepto de la tendencia si $\mu_2 \gt 0$.
+* Simulando $y_t=0.5+y_{t-1}+0.9 D_P(51) + \varepsilon_t$ y usando 100 realizaciones para la secuencia { $\varepsilon_t$ }, la línea errática azul representa la trayectoria en el tiempo de { $y_t$ } bajo **$H_0$**. Antes y después del salto en el periodo 51, la secuencia { $y_t$ } sigue el mismo paseo aleatorio con intercepto. 
+* **$H_1$**  postula que la secuencia { $y_t$ } es estacionaria alrededor de la línea de tendencia discontinua. Hasta $t=\tau$ ($50$ en el gráfico), { $y_t$ } es estacionaria alrededor de $a_0+a_2t$ ($0.5+0.5t$ en el gráfico), y comenzando en $\tau+1$ ($1$ en el gráfico), $y_t$ es estacionaria alrededor de $a_0+a_2t+\mu_2$ ($0.5+0.5t+2.5$ en el gráfico). Como lo ilustra la línea roja, hay un aumento de una sola vez en el intercepto de la tendencia si $\mu_2 \gt 0$.
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/3b118e20-4f18-4cfb-907b-6ee107a30d44)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/7e6976dc-00f7-4a1c-baa9-912b639d7f94)
+
 
 El problema econométrico es determinar si una serie observada se modela mejor con $H_0$ o con $H_1$. La implementación de la técnica de Perron (1989) se divide en cuatro sencillos pasos:
 
