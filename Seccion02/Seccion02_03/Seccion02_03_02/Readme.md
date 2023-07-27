@@ -54,7 +54,7 @@ Continuando con el código de $R$ de esta sección, los gráficos de la $FAC$ y 
 acf_plot <- autoplot(acf(y, plot = FALSE)) # Se calcula la función de autocorrelación y se genera el gráfico sin mostrarlo
 acf_plot + labs(x = "Rezagos", y = "FAC") # Se personalizan las etiquetas de los ejes
 
-pacf_plot <- autoplot(acf(y, plot = FALSE)) # Se calcula la función de autocorrelación parcial y se genera el gráfico sin mostrarlo
+pacf_plot <- autoplot(pacf(y, plot = FALSE)) # Se calcula la función de autocorrelación parcial y se genera el gráfico sin mostrarlo
 pacf_plot + labs(x = "Rezagos", y = "FACP") # Se personalizan las etiquetas de los ejes
 ```
 
@@ -68,6 +68,36 @@ La $FACP$ se utiliza para determinar el componente $AR(p)$ del $ARMA(p,q)$. Iden
 [^1]: **En ocasiones los gráficos de la _FAC_ y  la _FACP_ incluyen el rezago _0_ , el cuál por definición siempre debe ser igual a $1$.** 
 [^2]: **Si no conociéramos el verdadero proceso subyacente y estuvieramos utilizando datos mensuales, podría interesarnos incluir el componente AR(12). Después de todo, con los datos mensuales, cabe esperar alguna relación directa entre el valor de una variable y su valor en el mismo mes del año previo.**
 
+Para saber el valor de la $FACP$ en los rezagos $1$, $2$ y $3$ se utilizaron los comandos:
+
+```r
+pacf_result <- pacf(y, plot = FALSE) # Se calcula la función de autocorrelación parcial y se genera el gráfico sin mostrarlo
+
+pacf_lag_1 <- pacf_result$acf[2]   # Valor de autocorrelación parcial para el rezago 1
+print(pacf_lag_1)
+
+pacf_lag_2 <- pacf_result$acf[3]   # Valor de autocorrelación parcial para el rezago 2
+print(pacf_lag_2)
+
+pacf_lag_3 <- pacf_result$acf[4]   # Valor de autocorrelación parcial para el rezago 3
+print(pacf_lag_3)
+```
+Obteniendose:
+```r
+> pacf_result <- pacf(y, plot = FALSE) # Se calcula la función de autocorrelación parcial y se genera el gráfico sin mostrarlo
+> 
+> pacf_lag_1 <- pacf_result$acf[2]   # Valor de autocorrelación parcial para el rezago 1
+> print(pacf_lag_1)
+[1] -0.1894561
+> 
+> pacf_lag_2 <- pacf_result$acf[3]   # Valor de autocorrelación parcial para el rezago 2
+> print(pacf_lag_2)
+[1] 0.001415276
+> 
+> pacf_lag_3 <- pacf_result$acf[4]   # Valor de autocorrelación parcial para el rezago 3
+> print(pacf_lag_3)
+[1] 0.03400592
+```
 #### La parte de media móvil ($MA$) del proceso generador de datos
 La $FAC$ se utiliza para determinar el componente $MA(q)$ del $ARMA(p,q)$. Identifique los rezagos de la $FAC$, del rezago $1$ en adelante, que estan aislados y que son superiores a $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{100}}=\frac{2}{10}=0.2$.[^3] No hay ningún rezago que se comporte así, lo que se observa es que las $FAC$ revelan una decaimieto progresivo (por ejemplo, los primeros tres rezagos de la $FAC$ son $0.74$, $0.58$ y $0.47$.). Por lo tanto, parece que no se genera un proceso $MA(q)$ dentro de nuestro $ARMA(p,q)$. 
 
