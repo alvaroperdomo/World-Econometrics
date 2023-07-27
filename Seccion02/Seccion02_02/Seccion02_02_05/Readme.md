@@ -1042,7 +1042,7 @@ summary(C1GGOV_4m.kpss)
 ndiffs(GGOV, alpha = 0.05, test = c("kpss"), type = c("trend"))
 ```
 
-5. **Las pruebas $ZA$ para las variable $GGOV$ se hicieron en todas sus variantes combinando diferentes longitudes de rezagos (desde $0$ hasta $5$). La especificación que mejor se comportó fue la del cambio estructural en el intercepto y los resultados en todas las combinaciones llegaban a la misma conclusión. Haga la prueba $ZA$ con 4 rezagos y cambio estructural en el intercepto y responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de la prueba $ZA$ ?:**[^9]
+6. **Para esta pregunta, asuma que tiene razones económicas para considerar que la prueba $ZA$ apropiada para la variable $GGOV$  tiene 4 rezagos y cambio estructural en el intercepto pero no en la tendencia. Haga la prueba $ZA$ con esa especificación y responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de la prueba $ZA$ ?:**[^9]
 
 [^9]: Para determinar bien el año del cambio estructural compare la fila de la base de datos "dat" con la columna "year"
 
@@ -1059,13 +1059,6 @@ ZA1.za <- ur.za(GGOV, model = c("intercept"), lag=4)
 summary(ZA1.za)
 urzaTest(GGOV, model = c("intercept"))
 
-# ZA2.za <- ur.za(GGOV, model = c("trend"), lag=4)
-# summary(ZA2.za)
-# urzaTest(GGOV, model = c("trend"))
-
-# ZA3.za <- ur.za(GGOV, model = c("both"), lag=4)
-# summary(ZA3.za)
-# urzaTest(GGOV, model = c("both"))
 ```
 
 ---
