@@ -13,44 +13,50 @@ Para ello se utilizo el siguiente código de $R$:
 ```r
 rm(list = ls())
 
-# Establecemos una semilla para la generación de números aleatorios (puedes usar cualquier número entero)
-set.seed(130)
+library(stats) # Esta librería permite generar números aleatorios con distribución normal
 
-# Cargamos la librería 'stats' para generar números aleatorios con distribución normal
-library(stats)
+set.seed(130) # Se establece una semilla para la generación de números aleatorios (puedes usar cualquier número entero)
 
-# Establecemos la longitud de la secuencia
-n <- 100
+n <- 100 # Se establece la longitud de la secuencia
 
-# Creamos un vector para almacenar los valores simulados de v(t)
-epsilon <- rnorm(n, mean = 0, sd = 1)
+epsilon <- rnorm(n, mean = 0, sd = 1) # Se crea un vector para almacenar los valores simulados de epsilon(t)
 
-# Creamos un vector para almacenar los valores simulados de y(t)
-y <- numeric(n)
+y <- numeric(n) # Se crea un vector para almacenar los valores simulados de y(t)
 
-# Asignamos y(0) = 0
-y[1] <- 0
+y[1] <- 0 # Se establece y(0) = 0
 
-# Aplicamos la fórmula para generar los valores de y(t)
+# Se establece la fórmula para generar los valores de y(t)
 for (t in 2:n) {
   y[t] <- 0.7 * y[t-1] + epsilon[t]
 }
 
-# Creamos el dataframe con la variable y(t)
-#df <- data.frame(y = y)
+plot(1:n, y, type = "l", xlab = "t", ylab = "y(t)", col = "blue") # Gráfico de y(t)
 
-y <- ts(y) # Con el comando ts() identificamos a la variable y como una serie de tiempo
+y <- ts(y) # Con el comando ts() se identifica a la variable "y" como una serie de tiempo
 
-autoplot(acf(y, plot = FALSE))
-autoplot(pacf(y, plot = FALSE))
 ```
+El gráfico de y(t) esta representado por:
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/daf1d3dd-d8dd-49b8-9827-ce581e470158)
 
 A continuación se van a desarrollar cada uno de los pasos de la metodología Box-Jenkins explicados en la sección 2.3.1. 
 
 ### Identificación
-Las figuras de abajo muestran la $FAC$ y la $FACP$ muestrales de { $y_t$ } (en el eje vertical se muestran, respectivamente, el valor de las autocorrelaciones totales y parciales de la muestra para cada uno de los rezagos que se presentan en el eje horizontal). 
+Las figuras de abajo muestran la $FAC$ en  y la $FACP$ muestrales de { $y_t$ } (en el eje vertical se muestran, respectivamente, el valor de las autocorrelaciones totales y parciales de la muestra para cada uno de los rezagos que se presentan en el eje horizontal). 
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/d051567c-1c96-4305-9a5b-f2f9340192da)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/abf0c298-03a8-4818-80bb-cb4c2c9638ff)
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/c1eb2cc5-3757-47bb-9ed9-d653eddcef04)
+
+Continuando con el código de $R$ de esta sección, los gráficos de la $FAC$ y la $FACP$ se generaron con los comandos
+
+```r
+acf_plot <- autoplot(acf(y, plot = FALSE)) # Se calcula la función de autocorrelación y se genera el gráfico sin mostrarlo
+acf_plot + labs(x = "Rezagos", y = "FAC") # Se personalizan las etiquetas de los ejes
+
+pacf_plot <- autoplot(acf(y, plot = FALSE)) # Se calcula la función de autocorrelación parcial y se genera el gráfico sin mostrarlo
+pacf_plot + labs(x = "Rezagos", y = "FACP") # Se personalizan las etiquetas de los ejes
+```
 
 En la práctica, nunca conocemos el verdadero proceso de generación de datos. Suponga que se nos presentan los $100$ valores muestrales que originaron las dos figuras de arriba y se nos pide descubrir el verdadero proceso $ARMA(p,q)$ utilizando la metodología de Box-Jenkins. 
 
