@@ -31,7 +31,7 @@ y[1] <- 0 # Se establece y(0) = 0
 
 dummy_L <- rep(0, n)  # Se crea un vector para almacenar los valores de la variable Dummy de Nivel
 
-dummy_L[51:n] <- 10 # Se establece que la variable Dummy de Nivel es igual a 3 para t=51, ..., 100
+dummy_L[51:n] <- 10 # Se establece que la variable Dummy de Nivel es igual a 10 para t=51, ..., 100
 
 # Se establece la fórmula para generar los valores de y(t)
 for (t in 2:n) {
@@ -82,15 +82,44 @@ Por supuesto, un proceso de raíz unitaria también puede exhibir un cambio estr
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/22eb29f5-59fb-42dd-971a-c84bf0a1af86)
 
+El código de $R$ que se utilizó para construir el gráfico es:
+
+``` r
+rm(list = ls()) 
+
+library(stats) # Esta librería permite generar números aleatorios con distribución normal
+
+set.seed(130) # Se establece una semilla para la generación de números aleatorios (se puede usar cualquier número entero)
+
+n <- 100 # Se establece la longitud de la secuencia
+
+epsilon <- rnorm(n, mean = 0, sd = 1) # Se crea un vector para almacenar los valores simulados de epsilon(t)
+
+y <- numeric(n) # Se crea un vector para almacenar los valores simulados de y(t)
+
+y[1] <- 4 # Se establece y(0) = 4
+
+dummy_P <- rep(0, n)  # Se crea un vector para almacenar los valores de la variable Dummy de Pulso
+
+dummy_P[51] <- 10 # Se establece que la variable Dummy de Pulso es igual a 10 para t=51, ..., 100
+
+# Seestablece la fórmula para generar los valores de y(t)
+for (t in 2:n) {
+  y[t] <- y[t-1] + epsilon[t] + dummy_P[t]
+}
+
+plot(1:n, y, type = "l", xlab = "t", ylab = "y(t)", col = "blue") # Gráfico de y(t)
+```
+
 Esta segunda simulación utilizó:
 * Los mismos 100 valores para la secuencia { $\varepsilon_t$ } y 
-* la condición inicial $y_0=2$. 
+* la condición inicial $y_0=4$. 
 * Las 100 realizaciones siguientes de la secuencia $y_t$ se construyeron como $y_t=y_{t-1}+\varepsilon_t+D_P$ donde
 
 $$
 D_P=\left\[\
 \begin{array}{ll}
-1 & \text{para  } t=51 \\
+10 & \text{para  } t=51 \\
 0 & \text{en los otros casos } 
 \end{array}
 \right.
