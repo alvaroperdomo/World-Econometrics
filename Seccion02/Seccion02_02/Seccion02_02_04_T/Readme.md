@@ -7,7 +7,7 @@ Cuando hay cambios estructurales, los diversos estadísticos de las diferentes p
 
 ## El cambio estructural en series estacionarias 
 
-Como ejemplo, considere la situación en la que hay un cambio único en la media de una secuencia estacionaria. En el gráfico  de abajo la secuencia { $y_t$ } se construyó de manera que es estacionaria alrededor de una media de 0 para $t=0, …, 50$ y luego es estacionaria alrededor de una media de 6 para $t=51, …, 100$. 
+Como ejemplo, considere la situación en la que hay un cambio único en la media de una secuencia estacionaria. En el gráfico  de abajo la secuencia { $y_t$ } se construyó de manera que es estacionaria alrededor de una media de 0 para $t=0, …, 50$ y luego es estacionaria alrededor de una media de 20 para $t=51, …, 100$. 
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/860f2706-9e0a-4783-a3e9-ba75f6f53224)
 
