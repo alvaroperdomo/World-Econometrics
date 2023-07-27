@@ -856,16 +856,16 @@ Potential break point at position: 38
 
 Los resultados de las pruebas de Zivot-Andrews son:
 
-| Estadistico      | Año del cambio <br> estructural |¿Es estadisticamente significativo <br> el cambio estructural? | Valor    |  10%    |  5%     |  1%     |
-|------------------|:-------------------------------:|:-------------------------------------------------------------:|:--------:|:-------:|:-------:|:-------:|
-| $ZA_{Intercept}$ |  $2009$ = 1960+50+1               | Si (du al 1%)                                                 |$-3.6435$ | $-4.58$ | $-4.80$ | $-5.34$ |
-| $ZA_{Trend}$     |  $2003$ = 1960+44+1               | Si (dt al 1%)                                                 |$-3.024$  | $-4.11$ | $-4.42$ | $-4.93$ |
-| $ZA_{Both}$      |  $1998$ = 1960+38+1               | Si (du al 0.1% y dt al 0.1%)                                  |$-4.9037$*| $-4.82$ | $-5.08$ | $-5.57$ |
+| Estadistico      | Año del cambio <br> estructural |¿Es estadisticamente significativo <br> el cambio estructural? | Valor     |  10%    |  5%     |  1%     |
+|------------------|:-------------------------------:|:-------------------------------------------------------------:|:---------:|:-------:|:-------:|:-------:|
+| $ZA_{Intercept}$ |  $2009$ = 1959+50               | Si (du al 1%)                                                 |$-4.7099$* | $-4.58$ | $-4.80$ | $-5.34$ |
+| $ZA_{Trend}$     |  $2003$ = 1959+44               | Si (dt al 0.1%)                                               |$-4.0572$  | $-4.11$ | $-4.42$ | $-4.93$ |
+| $ZA_{Both}$      |  $1997$ = 1959+38               | Si (du al 0.1% y dt al 0.1%)                                  |$-5.4732$**| $-4.82$ | $-5.08$ | $-5.57$ |
 
 **Niveles de significancia: *** al 1%, ** al 5% y * al 10%**
 
-De los tres estadisticos, el que cogio bien el año de la crisis económica de los finales de los 1990s fue $ZA_{Both}$. Por lo tanto, es el estadístico que vamos a analizar:
-* Con el estadistico $ZA_{Both}$: -5.08 < **-4.9037** < -4.82, no se rechaza la hipótesis nula de raíz unitaria 1% y 5%, y se rechaza al 10%. Por consiguiente, se concluye que hay raíz unitaria
+De los tres estadisticos, y como se muestra en el gráfico de arriba, el que acertó bien el año de la crisis económica de los finales de los 1990s fue $ZA_{Both}$. Por lo tanto, es el estadístico que vamos a analizar:
+* Con el estadistico $ZA_{Both}$: -5.57 < **-5.4732** < -2.08, no se rechaza la hipótesis nula de raíz unitaria 1% y se rechaza al 5% y 10%. Por consiguiente, no se puede rechazar de forma contundente que la serie $PIBpc$ tiene raíz unitaria
 
 
 #### Conclusión:
