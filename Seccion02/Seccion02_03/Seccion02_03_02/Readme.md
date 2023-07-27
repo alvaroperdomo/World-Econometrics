@@ -133,7 +133,13 @@ Aunque sabemos que los datos se generaron en realidad a partir de un proceso de 
 * **Modelo 1 - $AR(1)$:** $y_t=a_1y_{t-1}+\varepsilon_t$
 * **Modelo 2 - $ARMA(1,6)$:** $y_t=a_1y_{t-1}+\varepsilon_t+\beta_{6}\varepsilon_{t-6} $
 
-La tabla de abajo informa los resultados de las dos estimaciones
+La estimación en $R$ de ambos modelos, de una vez haciendo la verificación de diagnóstico, se hace con los siguientes comandos:
+
+```r
+
+```
+Obteniendose 
+Las dos primeras lineas de la tabla de abajo resume los resultados de las dos estimaciones
 
 | Indicadores                               | Modelo 1                | Modelo 2                | 
 |-------------------------------------------|:-----------------------:|:-----------------------:|
