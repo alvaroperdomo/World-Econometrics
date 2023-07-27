@@ -127,7 +127,7 @@ $$
 
 El subíndice $P$ indica que $D_P$ es una variable dummy de pulso. 
 
-En un proceso de raíz unitaria, un único pulso en la dummy tendrá un efecto permanente en el nivel de la secuencia { $y_t$ }. En $t=51$, el pulso en la dummy es equivalente a un choque $\varepsilon_{t+51}$ de cuatro unidades adicionales. Por lo tanto, el choque de una sola vez a $D_P(51)$ tiene un efecto permanente en el valor medio de la secuencia para $t \ge 51$. 
+En un proceso de raíz unitaria, un único pulso en la dummy tendrá un efecto permanente en el nivel de la secuencia { $y_t$ }. En $t=51$, el pulso en la dummy es equivalente a un choque $\varepsilon_{t+51}$ de diez unidades adicionales. Por lo tanto, el choque de una sola vez a $D_P(51)$ tiene un efecto permanente en el valor medio de la secuencia para $t \ge 51$. 
 
 El sesgo en las pruebas tradicionales de raíz unitaria, y en particular en la prueba $ADF$ se confirmó en un experimento de Monte Carlo realizado por Perron (1989). Perron generó 10.000 repeticiones de un proceso de la misma naturaleza que $y_t=0.5y_{t-1}+\varepsilon_t+D_L$. Cada replica la formó:
 * generando 100 valores distribuidos normalmente e independientemente para la secuencia { $\varepsilon_t$ }. 
