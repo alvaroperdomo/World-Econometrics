@@ -32,7 +32,7 @@ dummy_L[51:n] <- 3 # Se establece que la variable Dummy de Nivel es igual a 1 pa
 
 # Se establece la fórmula para generar los valores de y(t)
 for (t in 2:n) {
-  y[t] <- 0.5 * y[t-1] + epsilon[t] + dummy[t]
+  y[t] <- 0.5 * y[t-1] + epsilon[t] + dummy_L[t]
 }
 
 plot(1:n, y, type = "l", xlab = "t", ylab = "y(t)", col = "blue") # Gráfico de y(t)
