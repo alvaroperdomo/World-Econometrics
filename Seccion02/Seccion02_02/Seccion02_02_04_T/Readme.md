@@ -9,8 +9,6 @@ Cuando hay cambios estructurales, los diversos estadísticos de las diferentes p
 
 Como ejemplo, considere la situación en la que hay un cambio único en la media de una secuencia estacionaria. En el gráfico  de abajo la secuencia { $y_t$ } se construyó de manera que es estacionaria alrededor de una media de 0 para $t=0, …, 50$ y luego es estacionaria alrededor de una media de 6 para $t=51, …, 100$. 
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5e70a54a-0564-4c7a-bde3-9812c475657d)
-
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/b9962f47-28ac-450d-ad77-e42630ecd08e)
 
 El código de $R$ que se utilizó para construir el gráfico es:
@@ -47,7 +45,7 @@ y_tendencia <- predict(lm_model)
 
 lines(tiempo, y_tendencia, col = "red", lwd = 2) # Se agrega la línea de tendencia al gráfico
 ``` 
-La secuencia se formó:
+En resumen, la secuencia se formó:
 * Simulando 100 valores distribuidos normalmente e independientemente para la secuencia { $\varepsilon_t$ }.  
 * Asumiendo $y_0=0$. 
 * Los siguientes 100 valores en la secuencia fueron generados usando la fórmula: $y_t=0.5y_{t-1}+ \varepsilon_t + D_L$ donde 
