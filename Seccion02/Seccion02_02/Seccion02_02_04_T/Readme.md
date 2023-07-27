@@ -30,7 +30,7 @@ dummy_L <- rep(0, n)  # Se crea un vector para almacenar los valores de la varia
 
 dummy_L[51:n] <- 3 # Se establece que la variable Dummy de Nivel es igual a 1 para t=51, ..., 100
 
-# Seestablece la fórmula para generar los valores de y(t)
+# Se establece la fórmula para generar los valores de y(t)
 for (t in 2:n) {
   y[t] <- 0.5 * y[t-1] + epsilon[t] + dummy[t]
 }
