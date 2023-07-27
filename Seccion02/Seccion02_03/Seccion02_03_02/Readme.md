@@ -35,7 +35,7 @@ plot(1:n, y, type = "l", xlab = "t", ylab = "y(t)", col = "blue") # Gráfico de 
 y <- ts(y) # Con el comando ts() se identifica a la variable "y" como una serie de tiempo
 
 ```
-El gráfico de y(t) esta representado por:
+El gráfico de $y_t$ esta representado por:
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/daf1d3dd-d8dd-49b8-9827-ce581e470158)
 
@@ -58,14 +58,14 @@ pacf_plot <- autoplot(acf(y, plot = FALSE)) # Se calcula la función de autocorr
 pacf_plot + labs(x = "Rezagos", y = "FACP") # Se personalizan las etiquetas de los ejes
 ```
 
-En la práctica, nunca conocemos el verdadero proceso de generación de datos. Suponga que se nos presentan los $100$ valores muestrales que originaron las dos figuras de arriba y se nos pide descubrir el verdadero proceso $ARMA(p,q)$ utilizando la metodología de Box-Jenkins. 
+En la práctica, nunca conocemos el verdadero proceso de generación de datos. Suponga que se nos presentan los $100$ valores muestrales de la simulación que estamos manejando en esta sección y se nos pide descubrir el verdadero proceso $ARMA(p,q)$ utilizando la metodología de Box-Jenkins. 
 
 El primer paso podría ser comparar la $FAC$ y la $FACP$ muestrales con las de los diversos modelos teóricos. 
 
 #### La parte autorregresiva ($AR$) del proceso generador de datos
 La $FACP$ se utiliza para determinar el componente $AR(p)$ del $ARMA(p,q)$. Identifique los rezagos de la $FACP$, del rezago $1$ en adelante, que estan aislados y que son superiores a $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{100}}=\frac{2}{10}=0.2$ [^1]. Note que el pico más grande, por mucho, corresponde al rezago $1$ y vale $0.74$. esto sugiere un potencial compomemte $AR(1)$ dentro del modelo $ARMA(p,q)$. Todas las otras $FACP$ (excepto la del rezago $12$) son muy pequeñas[^2]
 
-[^1]: **Dentro del análisis no se toma en consideración el rezago _0_ porque la autocorrelación parcial en este rezego por definición siempre es igual a $1$.** 
+[^1]: **En ocasiones los gráficos de la _FAC_ y  la _FACP_ incluyen el rezago _0_ , el cuál por definición siempre debe ser igual a $1$.** 
 [^2]: **Si no conociéramos el verdadero proceso subyacente y estuvieramos utilizando datos mensuales, podría interesarnos incluir el componente AR(12). Después de todo, con los datos mensuales, cabe esperar alguna relación directa entre el valor de una variable y su valor en el mismo mes del año previo.**
 
 #### La parte de media móvil ($MA$) del proceso generador de datos
