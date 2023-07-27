@@ -385,13 +385,13 @@ Modelo_5  4 435.6761
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9e35d695-6ab2-41ae-800f-2f8a3c431d40)
 
 
-| Indicadores                               | Modelo 3               | Modelo 4               |Modelo 5                |
-|-------------------------------------------|:----------------------:|:----------------------:|:----------------------:|
-| $\hat{a}_1$  <br> (Error estándar)        |$-0.835$ <br> $(0.053)$ |$-0.679$ <br> $(0.076)$ |$-1.160$ <br> $(0.093)$ | 
-| $\hat{a}_2$  <br> (Error estándar)        |                        |                        |$-0.378$ <br> $(0.092)$ |
-| $\hat{\beta}_1$  <br> (Error estándar)    |                        |$-0.676$ <br> $(0.081)$ |                        |
-| Criterio de Información de Akaike         |$496.5$                 |$471.0$                 |$482.8$                 |  
-| Criterio Bayesiano de Schwartz            |$499.0$                 |$476.2$                 |$487.9$                 |  
+| Indicadores                               | Modelo 3                 | Modelo 4               |Modelo 5                |
+|-------------------------------------------|:------------------------:|:----------------------:|:----------------------:|
+| $\hat{a}_1$  <br> (Error estándar)        |$-0.7450$ <br> $(0.0144)$ |$-0.679$ <br> $(0.076)$ |$-1.160$ <br> $(0.093)$ | 
+| $\hat{a}_2$  <br> (Error estándar)        |                          |                        |$-0.378$ <br> $(0.092)$ |
+| $\hat{\beta}_1$  <br> (Error estándar)    |                          |$-0.676$ <br> $(0.081)$ |                        |
+| Criterio de Información de Akaike         |$496.5$                   |$471.0$                 |$482.8$                 |  
+| Criterio Bayesiano de Schwartz            |$499.0$                   |$476.2$                 |$487.9$                 |  
 
 Al examinar la tabla, note que todos los $\hat{a_1}$ son muy significativos; cada uno de los valores estimados se desvía al menos ocho desviaciones estándar de cero. 
 
