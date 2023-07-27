@@ -14,6 +14,8 @@ Como ejemplo, considere la situación en la que hay un cambio único en la media
 El código de $R$ que se utilizó para construir el gráfico es:
 
 ``` r
+rm(list = ls())
+
 library(stats) # Esta librería permite generar números aleatorios con distribución normal
 
 set.seed(123) # Se establece una semilla para la generación de números aleatorios (se puede usar cualquier número entero)
