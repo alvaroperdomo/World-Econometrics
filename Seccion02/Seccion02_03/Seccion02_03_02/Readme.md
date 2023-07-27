@@ -8,6 +8,43 @@ Una comparación de la función de autocorrelación $FAC$ y la función de autoc
 ## Estimación de un modelo AR(1)
 En este ejemplo se generaron $100$ números aleatorios $\varepsilon_t$ distribuidos normalmente con una varianza teórica igual $1$. Comenzando con $t=1$, los valores de $y_t$ se generaron usando la fórmula $y_{t-1}=0.7y_{t-1}+\varepsilon_t$ y la condición inicial $y_0=0$. Note que la serie { $y_t$ } que se construye es estacionaria, por lo que es factible aplicar la metodología de Box-Jenkins. 
 
+Para ello se utilizo el siguiente código de $R$:
+
+```r
+rm(list = ls())
+
+# Establecemos una semilla para la generación de números aleatorios (puedes usar cualquier número entero)
+set.seed(130)
+
+# Cargamos la librería 'stats' para generar números aleatorios con distribución normal
+library(stats)
+
+# Establecemos la longitud de la secuencia
+n <- 100
+
+# Creamos un vector para almacenar los valores simulados de v(t)
+epsilon <- rnorm(n, mean = 0, sd = 1)
+
+# Creamos un vector para almacenar los valores simulados de y(t)
+y <- numeric(n)
+
+# Asignamos y(0) = 0
+y[1] <- 0
+
+# Aplicamos la fórmula para generar los valores de y(t)
+for (t in 2:n) {
+  y[t] <- 0.7 * y[t-1] + epsilon[t]
+}
+
+# Creamos el dataframe con la variable y(t)
+#df <- data.frame(y = y)
+
+y <- ts(y) # Con el comando ts() identificamos a la variable y como una serie de tiempo
+
+autoplot(acf(y, plot = FALSE))
+autoplot(pacf(y, plot = FALSE))
+```
+
 A continuación se van a desarrollar cada uno de los pasos de la metodología Box-Jenkins explicados en la sección 2.3.1. 
 
 ### Identificación
