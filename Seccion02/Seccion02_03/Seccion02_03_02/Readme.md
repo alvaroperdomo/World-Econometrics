@@ -6,7 +6,7 @@
 Una comparación de la función de autocorrelación $FAC$ y la función de autocorrelación parcial $FACP$ muestrales con las de varios procesos $ARMA(p,q)$ teóricos puede sugerir varios modelos plausibles. Por medio de dos ejemplos sencillos, vamos a mostrar cómo se identifica el proceso $ARMA(p,q)$ generador de una variable.
 
 ## Estimación de un modelo AR(1)
-En este ejemplo se generaron $200$ números aleatorios $\varepsilon_t$ distribuidos normalmente con una varianza teórica igual $1$. Comenzando con $t=1$, los valores de $y_t$ se generaron usando la fórmula $y_{t-1}=0.7y_{t-1}+\varepsilon_t$ y la condición inicial $y_0=0$. Note que la serie { $y_t$ } que se construye es estacionaria, por lo que es factible aplicar la metodología de Box-Jenkins. 
+En este ejemplo se generaron $200$ números aleatorios $\varepsilon_t$ distribuidos normalmente con una varianza teórica igual $1$. Comenzando con $t=1$, los valores de $y_t$ se generaron usando la fórmula $y_t=0.7y_{t-1}+\varepsilon_t$ y la condición inicial $y_0=0$. Note que la serie { $y_t$ } que se construye es estacionaria, por lo que es factible aplicar la metodología de Box-Jenkins. 
 
 Para ello se utilizo el siguiente código de $R$:
 
@@ -283,7 +283,18 @@ A continuación se van a desarrollar cada uno de los pasos de la metodología Bo
 ### Identificación
 Las figuras de abajo muestran la $FAC$ y la $FACP$ muestrales. Las mismas nos dan idea de un $ARMA(1,1)$, aunque el decaimiento de la $FAC$ no muestra el componente $MA(1)$ de una forma demasiado clara.
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/49d0c43b-c2a0-4f54-a68c-baa66931aafd)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/1a1bc6db-e3fc-4661-9cde-a5d60665d224)
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/99c5d007-874c-4d86-8802-c7fe17fd16ca)
+
+Continuando con el código de $R$ de esta parte de la subsección, los gráficos de la $FAC$ y la $FACP$ de $y_t$ se generaron con los comandos
+```r
+acf_plot <- autoplot(acf(y, plot = FALSE)) # Se calcula la función de autocorrelación y se genera el gráfico sin mostrarlo
+acf_plot + labs(x = "Rezagos", y = "FAC") # Se personalizan las etiquetas de los ejes
+
+pacf_plot <- autoplot(pacf(y, plot = FALSE)) # Se calcula la función de autocorrelación parcial y se genera el gráfico sin mostrarlo
+pacf_plot + labs(x = "Rezagos", y = "FACP") # Se personalizan las etiquetas de los ejes
+```
 
 ### Estimación y verificación de diagnóstico
 Sin embargo, si se desconoce el verdadero proceso de generación de datos, uno podría tener ciertas dudas acerca del modelo real. Entonces, se pueden analizar diferentes modelos como los siguientes:
