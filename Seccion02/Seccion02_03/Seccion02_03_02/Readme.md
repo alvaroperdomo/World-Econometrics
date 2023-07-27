@@ -140,14 +140,6 @@ summary(Modelo_2) # Se reportan los resultados del Modelo_2
 AIC(Modelo_1,Modelo_2) # Se reportan los Criterios de Información de Akaike para todos los modelos considerados
 BIC(Modelo_1,Modelo_2) # Se reportan los Criterios Bayesianos de Schwartz para todos los modelos considerados
 
-Box.test(Modelo_1$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
-Box.test(Modelo_1$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
-Box.test(Modelo_1$residuals, lag=24, type="Ljung-Box") # Test de Ljung-Box
-
-Box.test(Modelo_2$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
-Box.test(Modelo_2$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
-Box.test(Modelo_2$residuals, lag=24, type="Ljung-Box") # Test de Ljung-Box
-
 ggtsdiag(Modelo_1, gof.lag = 30) +  labs(subtitle = "Modelo 1") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 1.
 ggtsdiag(Modelo_2, gof.lag = 30) +  labs(subtitle = "Modelo 2") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 2.
 ```
@@ -193,29 +185,47 @@ Modelo_2  3 597.9132
          df      BIC
 Modelo_1  3 569.2524
 Modelo_2  3 607.8082
+```
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4134f837-f314-482a-99b3-9e260a18084c)
 
-> Box.test(Modelo_1$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/b06f9ec4-94ba-431c-9bc3-7b5046620ec4)
 
-	Box-Ljung test
 
-data:  Modelo_1$residuals
-X-squared = 9.0818, df = 8, p-value = 0.3354
+La tabla de abajo y los dos gráficos de arriba resumen los resultados de las dos estimaciones
 
-> Box.test(Modelo_1$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
+| Indicadores                               | Modelo 1                | Modelo 2                | 
+|-------------------------------------------|:-----------------------:|:-----------------------:|
+| $\hat{a}_1$  <br> (Error estándar)        |$0.6752$ <br> ($0.0516)$ |                         | 
+| $\hat{\beta}_{1}$  <br> (Error estándar)  |                         |$0.5384$ <br> ($0.0455$) | 
+| Criterio de Información de Akaike         |$559.3574$               |$597.9132$               | 
+| Criterio Bayesianode Schwartz             |$569.2524$               |$607.8082$               | 
 
-	Box-Ljung test
+**Análicemos el Modelo 1**
 
-data:  Modelo_1$residuals
-X-squared = 12.086, df = 16, p-value = 0.738
+El coeficiente del **Modelo 1** satisface la condición de estabilidad $|\hat{a}_1| < 0$ y tiene un error estándar bajo (es decir, el coeficente estimado es menor a dos desviaciones estandar del valor de $|\hat{a}_1|$).
 
-> Box.test(Modelo_1$residuals, lag=24, type="Ljung-Box") # Test de Ljung-Box
+Como una verificación de diagnóstico útil, arriba en el gráfico de la $FAC$ de los residuos estimados del Modelo 1. Note que las barras de las autocorrelaciones de todos los rezagos superiores a $0$ son inferiores a $0.14$. Es decir, los residuos estimados parecen ser ruido blanco. Confirmando lo anterior, en el gráfico de la prueba de Ljung-Box sobre los residuos estimados del Modelo 1 note que los p-values son superiores al 5%. Esto es  una fuerte evidencia de que el modelo $AR(1)$ se ajusta bien con los datos. Después de todo, si las autocorrelaciones de los residuos fueran significativas, el modelo $AR(1)$ no usaría toda la información disponible sobre los movimientos en la serie { $y_t$ }
 
-	Box-Ljung test
+**Análicemos el Modelo 2**
 
-data:  Modelo_1$residuals
-X-squared = 13.218, df = 24, p-value = 0.9624
+Al examinar los resultados para el **Modelo 2**, observe que la estimación del $\hat{\beta}_1$ es de biuena calidad (es decir, el coeficiente estimado es menor a dos desviaciones estandar del valor de $|\hat{\beta}_1|$). Sin embargo, el Modelo 2 tiene problemas de autocorrelación en los residuos por lo que no serían ruido blanco. Los problemas de autocorrelación se evidencian en:
+* El gráfico de la $FAC$ de sus residuos estimados. Note que las barras de los rezagos $1$ y $2$ son muy superiores a $0.14$.
+* El  gráfico de la prueba de Ljung-Box sobre los residuos estimados del Modelo 1, note que los p-values son inferiores al 5%. Es decir, se rechaza la hipótesis nula de que los residuos de la estimación no estan corelacionados.
 
-> 
+Con los siguientes comandos puede ver, para los residuos del Modelo 2, los resultados detallados de la prueba de Lung-Box cuando se hace para los rezagos $1$ a $8$, $1$ a $16$ y $1$ a $24$:
+
+```r
+Box.test(Modelo_1$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
+Box.test(Modelo_1$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
+Box.test(Modelo_1$residuals, lag=24, type="Ljung-Box") # Test de Ljung-Box
+
+Box.test(Modelo_2$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
+Box.test(Modelo_2$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
+Box.test(Modelo_2$residuals, lag=24, type="Ljung-Box") # Test de Ljung-Box
+```
+
+Obteniendose 
+```r
 > Box.test(Modelo_2$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
 
 	Box-Ljung test
@@ -237,45 +247,7 @@ X-squared = 62.731, df = 16, p-value = 1.803e-07
 data:  Modelo_2$residuals
 X-squared = 64.588, df = 24, p-value = 1.398e-05
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4134f837-f314-482a-99b3-9e260a18084c)
-
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/b06f9ec4-94ba-431c-9bc3-7b5046620ec4)
-
-
-La tabla de abajo resume los resultados de las dos estimaciones
-
-| Indicadores                               | Modelo 1                | Modelo 2                | 
-|-------------------------------------------|:-----------------------:|:-----------------------:|
-| $\hat{a}_1$  <br> (Error estándar)        |$0.6752$ <br> ($0.0516)$ |                         | 
-| $\hat{\beta}_{1}$  <br> (Error estándar)  |                         |$0.5384$ <br> ($0.0455$) | 
-| Criterio de Información de Akaike         |$559.3574$               |$597.9132$               | 
-| Criterio Bayesianode Schwartz             |$569.2524$               |$607.8082$               | 
-| Ljung-Box Estadístico Q para los residuos <br> (nivel de significancia en paréntesis) |$Q(8) = 9.0818 (0.3354)$ <br> $Q(16) = 12.086 (0.738)$ <br> $Q(24) = 13.218 (0.9624)$ |$Q(8) = 56.172 (2.611e-09)$ <br> $Q(16) = 62.731 (1.803e-07)$ <br> $Q(24) = 64.588 (1.398e-05)$ | 
-
-
-**Análicemos el Modelo 1**
-
-El coeficiente del **Modelo 1** satisface la condición de estabilidad $|\hat{a}_1| < 0$ y tiene un error estándar bajo (es decir, el coeficente estimado es menor a dos desviaciones estandar del valor de $|\hat{a}_1|$).
-
-Como una verificación de diagnóstico útil, en el gráfico de abajo se dibuja la $FAC$ de los residuos del modelo ajustado (es decir, los residuos del modelo cuando se estima $y_t=a_1y_{t-1}+\varepsilon_t$). Note que las barras de las autocorrelaciones de todos los rezagos superiores a $0$ son inferiores a $0.2$. Es decir, los residuos parecen ser ruido blanco. 
-
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/bf030c21-940a-4842-9971-5a42410f7b52)
-
-Confirmando lo anterior, en la tabla de arriba, el estadistico $Q$ de los residuos del modelo ajustado a diferentes rezagos indica que como grupo, los rezagos $1$ a $8$, $1$ a $16$ y $1$ a $24$ no son significativamente diferentes de cero (es decir, el nivel de significancia, de cada uno de los estadísticos $Q$ es superior al 5%). Esto es  una fuerte evidencia de que el modelo $AR(1)$ se ajusta bien con los datos. Después de todo, si las autocorrelaciones de los residuos fueran significativas, el modelo $AR(1)$ no usaría toda la información disponible sobre los movimientos en la secuencia { $y_t$ }
-
-**Análicemos el Modelo 2**
-
-Al examinar los resultados para el **Modelo 2**, observe que arroja estimaciones similares a las del **Modelo 1** para :
-* el coeficiente autorregresivo de primer orden $|\hat{a}_1|$ y
-* el error estándar asociado. 
-
-Sin embargo, la estimación del $\hat{\beta}_{12}$ es de mala calidad (es decir, el error estándar es superior a dos veces el valor absoluto de este coeficiente estimado)
-
-Además, la comparación de los valores del _Criterio de Información de Akaike_ y del _Criterio Bayesiano de Schwartz_ de los dos modelos sugiere que es mucho mejor el **Modelo 1** al ser comparado con el **Modelo 2**. Por lo tanto, apunta a la elección del **Modelo 1**.
-
-library(forecast) # Esta librería permite operar el comando auto.arima
-auto.arima(y, ic = c("aic"), stepwise = FALSE, approximation = FALSE) # Con este comando R, según el Criterio de Información de Akaike, especifica cuál es el mejor modelo.
-auto.arima(y, ic = c("bic"), stepwise = FALSE, approximation = FALSE) # Con este comando R, según el Criterio Bayesiano De Schwartz, especifica cuál es el mejor modelo.
+Por último, note que en la comparación de los valores del _Criterio de Información de Akaike_ y del _Criterio Bayesiano de Schwartz_ de los dos modelos sugiere que es mucho mejor el **Modelo 1** al ser comparado con el **Modelo 2**. Por lo tanto, apunta a la elección del **Modelo 1**.
 
 ## Estimación de un modelo $ARMA(1,1)$
 
