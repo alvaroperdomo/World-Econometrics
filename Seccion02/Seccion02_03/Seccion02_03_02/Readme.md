@@ -100,3 +100,12 @@ Está claro que el modelo $AR(1)$ es inapropiado. Los estadísticos $Q$ para el 
 El modelo estimado $ARMA(1,1)$ (es decir. el **Modelo 4**) no sufre este problema. Además, tanto el _Criterio de Información de Akaike_ como el _Criterio Bayesiano de Schwartz_ seleccionan el **Modelo 4** sobre el **Modelo 3**. 
 
 El mismo tipo de razonamiento indica que el **Modelo 4** es preferible al **Modelo 5**. Tenga en cuenta que, para cada modelo, los coeficientes estimados son altamente significativos y las estimaciones puntuales implican convergencia. Aunque el estadístico $Q$ en $24$ rezagos indica que estos dos modelos no tienen residuos correlacionados, el estadístico $Q$ de $8$ rezagos indica una correlación serial en los residuos del $Modelo 5$. Por lo tanto, el modelo $AR(2)$ no capta la dinámica de corto plazo como lo hace el modelo $ARMA(1,1)$. También tenga en cuenta que tanto el _Criterio de Información de Akaike_ como el _Criterio Bayesiano de Schwartz_ seleccionan el **Modelo 4**.
+
+
+<div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
+
+##
+
+<div align="center"><a href="http://www.escuelaing.edu.co" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/banner-pie-de-pagina.jpg" alt="Support by" width="100%" border="0" />
+
+</div>
