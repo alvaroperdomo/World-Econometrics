@@ -717,9 +717,9 @@ Es decir, al 5% de significancia, la variable $PIBpc$ tiene raíz unitaria, y la
 
 ### Prueba ZA
 
-Las pruebas previas parecen indicar que la variable $PIBpc$ es no estacionaria y la variable $C1PIBpc$ es estacionaria. Sin embargo, los dos gráficos iniciales de esta sección parecen indicar un cambio estructural, alrededor de 1998-1999 (cuando Colombia experimentó una crisis económica), que afecta a $PIBpc$ pero no a $C1PIBpc$. Por consiguiente, se va a hacer la prueba de Zivot y Andrews para analizar la presencia de raíz unitaria en la variable $PIBpc$. Para ello, se copian los siguientes comandos [^6]
+Las pruebas previas parecen indicar que la variable $PIBpc$ es no estacionaria y la variable $C1PIBpc$ es estacionaria. Sin embargo, los dos gráficos iniciales de esta sección parecen indicar un cambio estructural, alrededor de 1998-1999 (cuando Colombia experimentó una crisis económica), que afecta a $PIBpc$ pero no a $C1PIBpc$. Por consiguiente, se va a hacer la prueba de Zivot y Andrews para analizar la presencia de raíz unitaria en la variable $PIBpc$. Para ello, se copian los siguientes comandos [^7]
 
-[^6]: **Para no hacer engorroso el análisis de la prueba de Zivot y Andrews, note que en el código de _R_ sólo se encuentra habilitado el gráfico del cambio estructural de la prueba de Zivot y Andrews en la que ocurre el cambio estructural tanto en intercepto como en tendencia y donde sólo se tiene un rezago. Esto se hace así por dos razones: (1) porque los rezagos superiores a 1 no eran estadisticamente significativos, y (2) la prueba de Zivot y Andrews con cambio estructural tanto en intercepto como en tendencia ubicó la fecha del cambio estructural a finales de los años noventas, conincidiendo con la época de la mayor crisis económica que ha enfrentado la economía colombiana en el perido análizado, mientras que las otras especificaciones de la prueba de Zivot y Andrews no ubican el cambio estructural en fechas tan relevantes.** 
+[^7]: **Para no hacer engorroso el análisis de la prueba de Zivot y Andrews, note que en el código de _R_ sólo se encuentra habilitado el gráfico del cambio estructural de la prueba de Zivot y Andrews en la que ocurre el cambio estructural tanto en intercepto como en tendencia y donde sólo se tiene un rezago. Esto se hace así por dos razones: (1) porque los rezagos superiores a 1 no eran estadisticamente significativos, y (2) la prueba de Zivot y Andrews con cambio estructural tanto en intercepto como en tendencia ubicó la fecha del cambio estructural a finales de los años noventas, conincidiendo con la época de la mayor crisis económica que ha enfrentado la economía colombiana en el perido análizado, mientras que las otras especificaciones de la prueba de Zivot y Andrews no ubican el cambio estructural en fechas tan relevantes.** 
 
 ``` r
 ZA1.za <- ur.za(PIBpc, model = c("intercept"), lag=1)
@@ -1003,9 +1003,9 @@ summary(GGOV_Pt.ers)
 summary(C1GGOV_Pc.ers)
 ```
 
-5. **Las pruebas $KPSS$ para las variables $GGOV$ y $C1GGOV$ se van a hacer con intercepto y tendencia para la primera, y con intercepto para la segunda. Responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de las pruebas $KPSS$ con $4$ rezagos [^1]?:**
+5. **Las pruebas $KPSS$ para las variables $GGOV$ y $C1GGOV$ se van a hacer con intercepto y tendencia para la primera, y con intercepto para la segunda. Responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de las pruebas $KPSS$ con $4$ rezagos [^8]?:**
 
-[^1]: **Recuerden que este es el número óptimo de rezagos para una serie de 63 o 62 datos según el criterio de  Newey y West (1994) que se comentó en la sección 2.2.3.(T).**
+[^8]: **Recuerden que este es el número óptimo de rezagos para una serie de 63 o 62 datos según el criterio de  Newey y West (1994) que se comentó en la sección 2.2.3.(T).**
 
    **Primera afirmación: Para la variable $GGOV$ al 1% de significancia se rechaza la hipótesis nula de estacionariedad***
 
@@ -1042,9 +1042,9 @@ summary(C1GGOV_4m.kpss)
 ndiffs(GGOV, alpha = 0.05, test = c("kpss"), type = c("trend"))
 ```
 
-5. **Las pruebas $ZA$ para las variable $GGOV$ se hicieron en todas sus variantes combinando diferentes longitudes de rezagos (desde $0$ hasta $5$). La especificación que mejor se comportó fue la del cambio estructural en el intercepto y los resultados en todas las combinaciones llegaban a la misma conclusión. Haga la prueba $ZA$ con 4 rezagos y cambio estructural en el intercepto y responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de la prueba $ZA$ ?:**[^7]
+5. **Las pruebas $ZA$ para las variable $GGOV$ se hicieron en todas sus variantes combinando diferentes longitudes de rezagos (desde $0$ hasta $5$). La especificación que mejor se comportó fue la del cambio estructural en el intercepto y los resultados en todas las combinaciones llegaban a la misma conclusión. Haga la prueba $ZA$ con 4 rezagos y cambio estructural en el intercepto y responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de la prueba $ZA$ ?:**[^9]
 
-[^7]: Para determinar bien el año del cambio estructural compare la fila de la base de datos "dat" con la columna "year"
+[^9]: Para determinar bien el año del cambio estructural compare la fila de la base de datos "dat" con la columna "year"
 
 a) Para la variable $GGOV$, si se asume un cambio estructural en el intercepto, este ocurre en el año 1984 y la serie presenta raíz unitaria***
    
