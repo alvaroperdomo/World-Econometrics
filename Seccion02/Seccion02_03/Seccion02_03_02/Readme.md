@@ -140,28 +140,16 @@ summary(Modelo_2) # Se reportan los resultados del Modelo_2
 AIC(Modelo_1,Modelo_2) # Se reportan los Criterios de Información de Akaike para todos los modelos considerados
 BIC(Modelo_1,Modelo_2) # Se reportan los Criterios Bayesianos de Schwartz para todos los modelos considerados
 
-library(forecast) # Esta librería permite operar el comando auto.arima
-auto.arima(y, ic = c("aic"), stepwise = FALSE, approximation = FALSE) # Con este comando R, según el Criterio de Información de Akaike, especifica cuál es el mejor modelo.
-auto.arima(y, ic = c("bic"), stepwise = FALSE, approximation = FALSE) # Con este comando R, según el Criterio Bayesiano De Schwartz, especifica cuál es el mejor modelo.
+Box.test(Modelo_1$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
+Box.test(Modelo_1$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
+Box.test(Modelo_1$residuals, lag=24, type="Ljung-Box") # Test de Ljung-Box
+
+Box.test(Modelo_2$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
+Box.test(Modelo_2$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
+Box.test(Modelo_2$residuals, lag=24, type="Ljung-Box") # Test de Ljung-Box
 
 ggtsdiag(Modelo_1, gof.lag = 30) +  labs(subtitle = "Modelo 1") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 1.
 ggtsdiag(Modelo_2, gof.lag = 30) +  labs(subtitle = "Modelo 2") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 2.
-
-Modelo_1_lb8 <- Box.test(Modelo_1$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
-Modelo_1_lb16 <- Box.test(Modelo_1$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
-Modelo_1_lb24 <- Box.test(Modelo_1$residuals, lag=24, type="Ljung-Box") # Test de Ljung-Box
-
-Modelo_1_lb8$p.value
-Modelo_1_lb16$p.value
-Modelo_1_lb24$p.value
-
-Modelo_2_lb8 <- Box.test(Modelo_2$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
-Modelo_2_lb16 <- Box.test(Modelo_2$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
-Modelo_2_lb24 <- Box.test(Modelo_2$residuals, lag=24, type="Ljung-Box") # Test de Ljung-Box
-
-Modelo_2_lb8$p.value
-Modelo_2_lb16$p.value
-Modelo_2_lb24$p.value
 ```
 Obteniendose 
 
@@ -205,13 +193,56 @@ Modelo_2  3 597.9132
          df      BIC
 Modelo_1  3 569.2524
 Modelo_2  3 607.8082
+
+> Box.test(Modelo_1$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
+
+	Box-Ljung test
+
+data:  Modelo_1$residuals
+X-squared = 9.0818, df = 8, p-value = 0.3354
+
+> Box.test(Modelo_1$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
+
+	Box-Ljung test
+
+data:  Modelo_1$residuals
+X-squared = 12.086, df = 16, p-value = 0.738
+
+> Box.test(Modelo_1$residuals, lag=24, type="Ljung-Box") # Test de Ljung-Box
+
+	Box-Ljung test
+
+data:  Modelo_1$residuals
+X-squared = 13.218, df = 24, p-value = 0.9624
+
+> 
+> Box.test(Modelo_2$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
+
+	Box-Ljung test
+
+data:  Modelo_2$residuals
+X-squared = 56.172, df = 8, p-value = 2.611e-09
+
+> Box.test(Modelo_2$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
+
+	Box-Ljung test
+
+data:  Modelo_2$residuals
+X-squared = 62.731, df = 16, p-value = 1.803e-07
+
+> Box.test(Modelo_2$residuals, lag=24, type="Ljung-Box") # Test de Ljung-Box
+
+	Box-Ljung test
+
+data:  Modelo_2$residuals
+X-squared = 64.588, df = 24, p-value = 1.398e-05
 ```
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4134f837-f314-482a-99b3-9e260a18084c)
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/b06f9ec4-94ba-431c-9bc3-7b5046620ec4)
 
 
-Las dos primeras lineas de la tabla de abajo resume los resultados de las dos estimaciones
+La tabla de abajo resume los resultados de las dos estimaciones
 
 | Indicadores                               | Modelo 1                | Modelo 2                | 
 |-------------------------------------------|:-----------------------:|:-----------------------:|
@@ -219,7 +250,7 @@ Las dos primeras lineas de la tabla de abajo resume los resultados de las dos es
 | $\hat{\beta}_{1}$  <br> (Error estándar)  |                         |$0.5384$ <br> ($0.0455$) | 
 | Criterio de Información de Akaike         |$559.3574$               |$597.9132$               | 
 | Criterio Bayesianode Schwartz             |$569.2524$               |$607.8082$               | 
-| Ljung-Box Estadístico Q para los residuos <br> (nivel de significancia en paréntesis) |$Q(8) = 6.43 (0.490)$ <br> $Q(16) = 15.86 (0.391)$ <br> $Q(24) = 21.74 (0.536)$ |$Q(8) = 6.48 (0.485)$ <br> $Q(16) = 15.75 (0.400)$ <br> $Q(24) = 21.56 (0.547)$ | 
+| Ljung-Box Estadístico Q para los residuos <br> (nivel de significancia en paréntesis) |$Q(8) = 9.0818 (0.3354)$ <br> $Q(16) = 12.086 (0.738)$ <br> $Q(24) = 13.218 (0.9624)$ |$Q(8) = 56.172 (2.611e-09)$ <br> $Q(16) = 62.731 (1.803e-07)$ <br> $Q(24) = 64.588 (1.398e-05)$ | 
 
 
 **Análicemos el Modelo 1**
@@ -241,6 +272,10 @@ Al examinar los resultados para el **Modelo 2**, observe que arroja estimaciones
 Sin embargo, la estimación del $\hat{\beta}_{12}$ es de mala calidad (es decir, el error estándar es superior a dos veces el valor absoluto de este coeficiente estimado)
 
 Además, la comparación de los valores del _Criterio de Información de Akaike_ y del _Criterio Bayesiano de Schwartz_ de los dos modelos sugiere que es mucho mejor el **Modelo 1** al ser comparado con el **Modelo 2**. Por lo tanto, apunta a la elección del **Modelo 1**.
+
+library(forecast) # Esta librería permite operar el comando auto.arima
+auto.arima(y, ic = c("aic"), stepwise = FALSE, approximation = FALSE) # Con este comando R, según el Criterio de Información de Akaike, especifica cuál es el mejor modelo.
+auto.arima(y, ic = c("bic"), stepwise = FALSE, approximation = FALSE) # Con este comando R, según el Criterio Bayesiano De Schwartz, especifica cuál es el mejor modelo.
 
 ## Estimación de un modelo $ARMA(1,1)$
 
