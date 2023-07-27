@@ -64,7 +64,7 @@ En la práctica, nunca conocemos el verdadero proceso de generación de datos. S
 El primer paso podría ser comparar la $FAC$ y la $FACP$ muestrales de $y_t$ con las de los diversos modelos teóricos. 
 
 #### La parte autorregresiva ($AR$) del proceso generador de datos
-La $FACP$ se utiliza para determinar el componente $AR(p)$ del $ARMA(p,q)$. Identifique los rezagos de la $FACP$ de $y_t$ que estan aislados y que son superiores a $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{100}}=\frac{2}{10}=0.2$ [^1]. Note que el pico más grande, por mucho, corresponde al rezago $1$ y vale $0.71$. esto sugiere un potencial compomemte $AR(1)$ dentro del modelo $ARMA(p,q)$. Todas las otras $FACP$ (excepto la de los rezagos $6$ y $8$) son muy pequeñas.
+La $FACP$ se utiliza para determinar el componente $AR(p)$ del $ARMA(p,q)$. Identifique los rezagos de la $FACP$ de $y_t$ que estan aislados y que son superiores a $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{200}}=0.14$ [^1]. Note que el pico más grande, por mucho, corresponde al rezago $1$ y vale $0.71$. esto sugiere un potencial compomemte $AR(1)$ dentro del modelo $ARMA(p,q)$. Todas las otras $FACP$ (excepto la de los rezagos $6$ y $8$) son muy pequeñas.
 
 [^1]: **En ocasiones los gráficos de la _FAC_ y  la _FACP_ incluyen el rezago _0_ , el cuál por definición siempre debe ser igual a $1$.** 
 
@@ -94,7 +94,7 @@ Obteniendose:
 [1] 0.2255734
 ```
 #### La parte de media móvil ($MA$) del proceso generador de datos
-La $FAC$ se utiliza para determinar el componente $MA(q)$ del $ARMA(p,q)$. Identifique los rezagos de la $FAC$, del rezago $1$ en adelante, que estan aislados y que son superiores a $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{100}}=\frac{2}{10}=0.2$. No hay ningún rezago que se comporte así, lo que se observa es que la $FAC$ revela una decaimieto progresivo (por ejemplo, los primeros tres rezagos de la $FAC$ son $0.71$, $0.41$ y $0.21$.). Por lo tanto, parece que no se genera un proceso $MA(q)$ dentro de nuestro $ARMA(p,q)$. 
+La $FAC$ se utiliza para determinar el componente $MA(q)$ del $ARMA(p,q)$. Identifique los rezagos de la $FAC$, del rezago $1$ en adelante, que estan aislados y que son superiores a $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{200}}=0.14$. No hay ningún rezago que se comporte así, lo que se observa es que la $FAC$ revela una decaimieto progresivo (por ejemplo, los primeros tres rezagos de la $FAC$ son $0.71$, $0.41$ y $0.21$.). Por lo tanto, parece que no se genera un proceso $MA(q)$ dentro de nuestro $ARMA(p,q)$. 
 
 Para saber el valor de la $FAC$ de $y_t$ en los rezagos $1$, $2$ y $3$ se utilizaron los comandos:
 
