@@ -11,6 +11,42 @@ Como ejemplo, considere la situación en la que hay un cambio único en la media
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5e70a54a-0564-4c7a-bde3-9812c475657d)
 
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/b9962f47-28ac-450d-ad77-e42630ecd08e)
+
+El código de $R$ que se utilizó para construir el gráfico es:
+
+``` r
+library(stats) # Esta librería permite generar números aleatorios con distribución normal
+
+set.seed(123) # Se establece una semilla para la generación de números aleatorios (se puede usar cualquier número entero)
+
+n <- 100 # Se establece la longitud de la secuencia
+
+epsilon <- rnorm(n, mean = 0, sd = 1) # Se crea un vector para almacenar los valores simulados de epsilon(t)
+
+y <- numeric(n) # Se crea un vector para almacenar los valores simulados de y(t)
+
+y[1] <- 0 # Se establece y(0) = 0
+
+dummy_L <- rep(0, n)  # Se crea un vector para almacenar los valores de la variable Dummy de Nivel
+
+dummy_L[51:n] <- 3 # Se establece que la variable Dummy de Nivel es igual a 1 para t=51, ..., 100
+
+# Seestablece la fórmula para generar los valores de y(t)
+for (t in 2:n) {
+  y[t] <- 0.5 * y[t-1] + epsilon[t] + dummy[t]
+}
+
+plot(1:n, y, type = "l", xlab = "t", ylab = "y(t)", col = "blue") # Gráfico de y(t)
+
+
+tiempo <- 1:n # Se crea un vector para representar la secuencia de tiempo (t)
+
+lm_model <- lm(y ~ tiempo) # Se estima por Mínimos Cuadrados Ordinarios la línea de tendencia de y(t)
+y_tendencia <- predict(lm_model)
+
+lines(tiempo, y_tendencia, col = "red", lwd = 2) # Se agrega la línea de tendencia al gráfico
+``` 
 La secuencia se formó:
 * Simulando 100 valores distribuidos normalmente e independientemente para la secuencia { $\varepsilon_t$ }.  
 * Asumiendo $y_0=0$. 
