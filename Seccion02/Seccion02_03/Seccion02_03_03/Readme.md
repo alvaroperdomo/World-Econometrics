@@ -127,8 +127,9 @@ s.e.  0.1087   52528.73
 sigma^2 = 3.933e+10:  log likelihood = -802.52
 AIC=1611.04   AICc=1611.48   BIC=1617.28
 ```
-En este caso la función certifica que el mejor modelo que representa a la función PIBpc sería un ARIMA(1,1,0) con intercepto.[1^]
-[1^]: Observen que si se hace el mismo analisis para la variable C1PIBpc obtienen que el mejor modelo ARIMA es el modelo ARIMA(1,0,0)
+En este caso la función certifica que el mejor modelo que representa a la función PIBpc sería un $ARIMA(1,1,0)$ con intercepto.[^3]
+[^3]: **Observen que si se hace el mismo analisis para la variable C1PIBpc obtienen que el mejor modelo ARIMA es el modelo _ARIMA(1,0,0)_**
+
 Ahora, sabiendo cuál es el modelo más parsimonioso, procedemos a visualizar la estimación del modelo escogido, $y_t=a_0+a_1y_{t-1}+\varepsilon_t$, con el comando:
 ``` r
 summary(arima2d, gof.lag = 30)
