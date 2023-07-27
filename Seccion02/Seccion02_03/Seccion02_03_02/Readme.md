@@ -17,7 +17,7 @@ library(stats) # Esta librería permite generar números aleatorios con distribu
 
 set.seed(130) # Se establece una semilla para la generación de números aleatorios (puedes usar cualquier número entero)
 
-n <- 100 # Se establece la longitud de la secuencia
+n <- 200 # Se establece la longitud de la secuencia
 
 epsilon <- rnorm(n, mean = 0, sd = 1) # Se crea un vector para almacenar los valores simulados de epsilon(t)
 
@@ -37,7 +37,8 @@ y <- ts(y) # Con el comando ts() se identifica a la variable "y" como una serie 
 ```
 El gráfico de $y_t$ esta representado por:
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/daf1d3dd-d8dd-49b8-9827-ce581e470158)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/d2ea67cf-496a-431d-9c8c-f35d8c680293)
+
 
 A continuación se van a desarrollar cada uno de los pasos de la metodología Box-Jenkins explicados en la sección 2.3.1. 
 
