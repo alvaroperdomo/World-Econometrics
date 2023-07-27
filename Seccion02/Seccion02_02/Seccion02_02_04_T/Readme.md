@@ -18,7 +18,7 @@ rm(list = ls())
 
 library(stats) # Esta librería permite generar números aleatorios con distribución normal
 
-set.seed(123) # Se establece una semilla para la generación de números aleatorios (se puede usar cualquier número entero)
+set.seed(130) # Se establece una semilla para la generación de números aleatorios (se puede usar cualquier número entero)
 
 n <- 100 # Se establece la longitud de la secuencia
 
@@ -30,7 +30,7 @@ y[1] <- 0 # Se establece y(0) = 0
 
 dummy_L <- rep(0, n)  # Se crea un vector para almacenar los valores de la variable Dummy de Nivel
 
-dummy_L[51:n] <- 3 # Se establece que la variable Dummy de Nivel es igual a 1 para t=51, ..., 100
+dummy_L[51:n] <- 10 # Se establece que la variable Dummy de Nivel es igual a 3 para t=51, ..., 100
 
 # Se establece la fórmula para generar los valores de y(t)
 for (t in 2:n) {
@@ -56,7 +56,7 @@ $$
 D_L=\left\[\
 \begin{array}{ll}
 0 & \text{para  } t=1,...,50 \\
-3 & \text{para  } t=51,...,100
+10 & \text{para  } t=51,...,100
 \end{array}
 \right.
 $$
