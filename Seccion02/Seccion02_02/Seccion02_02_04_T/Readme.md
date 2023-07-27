@@ -173,7 +173,47 @@ La figura de abajo puede ayudar a visualizar las dos hipótesis:
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/7e6976dc-00f7-4a1c-baa9-912b639d7f94)
 
+El código de $R$ que se utilizó para construir el gráfico es:
 
+``` r
+rm(list = ls())
+
+library(stats) # Esta librería permite generar números aleatorios con distribución normal
+
+set.seed(130) # Se establece una semilla para la generación de números aleatorios (se puede usar cualquier número entero)
+
+n <- 100 # Se establece la longitud de la secuencia
+
+epsilon <- rnorm(n, mean = 0, sd = 1) # Se crea un vector para almacenar los valores simulados de epsilon(t)
+
+dummy_L <- rep(0, n)  # Se crea un vector para almacenar los valores de la variable Dummy de Nivel
+dummy_P <- rep(0, n)  # Se crea un vector para almacenar los valores de la variable Dummy de Pulso
+
+dummy_L[51:n] <- 10 # Se establece que la variable Dummy de Nivel es igual a 10 para t=51, ..., 100
+dummy_P[51] <- 20 # Se establece que la variable Dummy de Pulso es igual a 10 para t=51
+
+# Se calcula y(t) en H1
+y <- numeric(n) # Se crea un vector para almacenar los valores simulados de y(t) en H0
+y[1] <- 0 # Se establece y(0) en H0
+# Se establece la fórmula para generar los valores de y(t) en H0
+for (t in 2:n) {
+  y[t] <- 0.5 + y[t-1] + epsilon[t] + 0.9*dummy_P[t]
+}
+
+plot(1:n, y, type = "l", xlab = "t", ylab = "y(t)", col = "blue") # Gráfico de y(t) en H0
+
+tiempo <- 1:n # Se crea un vector para representar la secuencia de tiempo (t)
+
+# Se calcula y(t) en H1
+y_tendencia <- numeric(n) # Se crea un vector para almacenar los valores simulados de y(t) en H1
+y_tendencia[1] <- 0.5 # Se establece y(0) en H1
+# Se establece la fórmula para generar los valores de y(t) en H1
+for (t in 2:n) {
+  y_tendencia[t] <- 0.5 + 0.5 * tiempo[t] + 2.5*dummy_L[t]
+}
+
+lines(1:n, y_tendencia, col = "red", lwd = 2) # Agregamos y(t) en H1 al gráfico
+```
 El problema econométrico es determinar si una serie observada se modela mejor con $H_0$ o con $H_1$. La implementación de la técnica de Perron (1989) se divide en cuatro sencillos pasos:
 
 **PASO 1:** No hay una forma directa de restringir los coeficientes de $H_1$  para obtener $H_0$. Como tal, necesitamos combinar ambas hipótesis de la siguiente manera: $y_t=a_0+a_1y_{t-1}+a_2t+\mu_1 D_P+\mu_2 D_L+ \varepsilon_t$
