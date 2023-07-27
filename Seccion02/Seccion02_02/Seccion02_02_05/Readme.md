@@ -1046,13 +1046,13 @@ ndiffs(GGOV, alpha = 0.05, test = c("kpss"), type = c("trend"))
 
 [^9]: Para determinar bien el año del cambio estructural compare la fila de la base de datos "dat" con la columna "year"
 
-a) Para la variable $GGOV$, si se asume un cambio estructural en el intercepto, este ocurre en el año 1984 y la serie presenta raíz unitaria***
+a) Para la variable $GGOV$, si se asume un cambio estructural en el intercepto, este ocurre en el año 1984 y la serie presenta raíz unitaria
    
-b) Para la variable $GGOV$, si se asume un cambio estructural en el intercepto, este ocurre en el año 1984 y la serie es estacionaria***
+b) Para la variable $GGOV$, si se asume un cambio estructural en el intercepto, este ocurre en el año 1984 y la serie es estacionaria
 
-c) Para la variable $GGOV$, si se asume un cambio estructural en el intercepto, este ocurre en el año 1992 y la serie presenta raíz unitaria***
+c) Para la variable $GGOV$, si se asume un cambio estructural en el intercepto, este ocurre en el año 1992 y la serie presenta raíz unitaria
 
-d) Para la variable $GGOV$, si se asume un cambio estructural en el intercepto, este ocurre en el año 1992 y la serie es estacionaria***
+d) Para la variable $GGOV$, si se asume un cambio estructural en el intercepto, este ocurre en el año 1992 y la serie es estacionaria
 
 ``` r
 ZA1.za <- ur.za(GGOV, model = c("intercept"), lag=4)
