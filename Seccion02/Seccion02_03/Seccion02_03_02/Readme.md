@@ -128,17 +128,17 @@ Obteniendose:
 ```
 
 ### Estimación y verificación de diagnóstico
-Aunque sabemos que los datos se generaron en realidad a partir de un proceso de $AR(1)$, es ilustrativo comparar las estimaciones de dos modelos diferentes. Suponga que estimamos un modelo $AR(1)$ e intentamos capturar el pico en el desfase $12$ con un coeficiente $MA$. Por lo tanto, consideramos los dos modelos tentativos:
+Aunque sabemos que los datos se generaron en realidad a partir de un proceso de $AR(1)$, es ilustrativo comparar las estimaciones de dos modelos diferentes. Suponga que estimamos un modelo $AR(1)$ e intentamos capturar el pico de la $FAC$ en el rezago $6$ con un coeficiente $MA$. Por lo tanto, consideramos los dos modelos tentativos:
 
 * **Modelo 1 - $AR(1)$:** $y_t=a_1y_{t-1}+\varepsilon_t$
-* **Modelo 2 - $ARMA(1,12)$:** $y_t=a_1y_{t-1}+\varepsilon_t+\beta_{12}\varepsilon_{t-12} $
+* **Modelo 2 - $ARMA(1,6)$:** $y_t=a_1y_{t-1}+\varepsilon_t+\beta_{6}\varepsilon_{t-6} $
 
 La tabla de abajo informa los resultados de las dos estimaciones
 
 | Indicadores                               | Modelo 1                | Modelo 2                | 
 |-------------------------------------------|:-----------------------:|:-----------------------:|
 | $\hat{a}_1$  <br> (Error estándar)        |$0.7904$ <br> ($0.0624)$ |$0.7938$ <br> ($0.0643$) | 
-| $\hat{\beta}_{12}$  <br> (Error estándar) |                         |$-0.0325$ <br> ($0.11$)  | 
+| $\hat{\beta}_{6}$  <br> (Error estándar)  |                         |$-0.0325$ <br> ($0.11$)  | 
 | Criterio de Información de Akaike         |$441.9$                  |$443.9$                  | 
 | Criterio Bayesianode Schwartz             |$444.5$                  |$449.1$                  | 
 | Ljung-Box Estadístico Q para los residuos <br> (nivel de significancia en paréntesis) |$Q(8) = 6.43 (0.490)$ <br> $Q(16) = 15.86 (0.391)$ <br> $Q(24) = 21.74 (0.536)$ |$Q(8) = 6.48 (0.485)$ <br> $Q(16) = 15.75 (0.400)$ <br> $Q(24) = 21.56 (0.547)$ | 
