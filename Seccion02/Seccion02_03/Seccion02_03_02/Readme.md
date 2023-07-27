@@ -191,7 +191,7 @@ Modelo_2  3 607.8082
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/b06f9ec4-94ba-431c-9bc3-7b5046620ec4)
 
 
-La tabla de abajo y los dos gráficos de arriba resumen los resultados de las dos estimaciones
+La tabla de abajo y los dos conji¿untos de tres gráficos de arriba (un conjunto por modelo) resumen los resultados de las dos estimaciones
 
 | Indicadores                               | Modelo 1                | Modelo 2                | 
 |-------------------------------------------|:-----------------------:|:-----------------------:|
