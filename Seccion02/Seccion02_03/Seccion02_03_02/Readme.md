@@ -15,7 +15,7 @@ rm(list = ls())
 
 library(stats) # Esta librería permite generar números aleatorios con distribución normal
 
-set.seed(130) # Se establece una semilla para la generación de números aleatorios (puedes usar cualquier número entero)
+set.seed(150) # Se establece una semilla para la generación de números aleatorios (puedes usar cualquier número entero)
 
 n <- 200 # Se establece la longitud de la secuencia
 
@@ -37,17 +37,17 @@ y <- ts(y) # Con el comando ts() se identifica a la variable "y" como una serie 
 ```
 El gráfico de $y_t$ esta representado por:
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/d2ea67cf-496a-431d-9c8c-f35d8c680293)
-
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/99b3d3f2-b1b7-4edc-9471-8a9705f00387)
 
 A continuación se van a desarrollar cada uno de los pasos de la metodología Box-Jenkins explicados en la sección 2.3.1. 
 
 ### Identificación
 Las figuras de abajo muestran la $FAC$ en  y la $FACP$ muestrales de { $y_t$ } (en el eje vertical se muestran, respectivamente, el valor de las autocorrelaciones totales y parciales de la muestra para cada uno de los rezagos que se presentan en el eje horizontal). 
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/291346f6-2c58-4a70-841d-7b560b616a4f)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/02f95011-4d78-4ab5-87ff-81624747a451)
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/78836a1c-29d7-4b0e-a156-a2f38c6d6e63)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/caad4385-a45e-4496-8ff7-fbdefc2b8db7)
+
 
 Continuando con el código de $R$ de esta sección, los gráficos de la $FAC$ y la $FACP$ de $y_t$ se generaron con los comandos
 
@@ -64,11 +64,11 @@ En la práctica, nunca conocemos el verdadero proceso de generación de datos. S
 El primer paso podría ser comparar la $FAC$ y la $FACP$ muestrales de $y_t$ con las de los diversos modelos teóricos. 
 
 #### La parte autorregresiva ($AR$) del proceso generador de datos
-La $FACP$ se utiliza para determinar el componente $AR(p)$ del $ARMA(p,q)$. Identifique los rezagos de la $FACP$ de $y_t$ que estan aislados y que son superiores a $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{200}}=0.14$ [^1]. Note que el pico más grande, por mucho, corresponde al rezago $1$ y vale $0.67$. esto sugiere un potencial compomemte $AR(1)$ dentro del modelo $ARMA(p,q)$. Todas las otras $FACP$ (excepto la del rezago $16$ que es aproximadamente $-0.18$) son muy pequeñas.
+La $FACP$ se utiliza para determinar el componente $AR(p)$ del $ARMA(p,q)$. Identifique los rezagos de la $FACP$ de $y_t$ que estan aislados y que son superiores a $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{200}}=0.14$ o inferiores a $-0.14$ [^1]. Note que el pico más grande, por mucho, corresponde al rezago $1$ y vale $0.68$. esto sugiere un potencial compomemte $AR(1)$ dentro del modelo $ARMA(p,q)$. Todas las otras $FACP$ (excepto la del rezago $9$ que es aproximadamente $0.17$) son muy pequeñas.
 
 [^1]: **En ocasiones los gráficos de la _FAC_ y  la _FACP_ incluyen el rezago _0_ , el cuál por definición siempre debe ser igual a $1$.** 
 
-Para conocer el valor númerico exacto de la $FACP$ de $y_t$ en los rezagos $1$ y $16$ se utilizaron los comandos:
+Para conocer el valor númerico exacto de la $FACP$ de $y_t$ en los rezagos $1$ y $8$ se utilizaron los comandos:
 
 ```r
 pacf_result <- pacf(y, plot = FALSE) # Se calcula la función de autocorrelación parcial
@@ -76,21 +76,20 @@ pacf_result <- pacf(y, plot = FALSE) # Se calcula la función de autocorrelació
 pacf_lag_1 <- pacf_result$acf[1]   # Valor de la autocorrelación parcial para el rezago 1
 print(pacf_lag_1)
 
-pacf_lag_16 <- pacf_result$acf[16]   # Valor de la autocorrelación parcial para el rezago 2
-print(pacf_lag_16)
+pacf_lag_8 <- pacf_result$acf[8]   # Valor de la autocorrelación parcial para el rezago 8
+print(pacf_lag_8)
 ```
 Obteniendose:
 ```r
 > pacf_lag_1 <- pacf_result$acf[1]   # Valor de la autocorrelación parcial para el rezago 1
 > print(pacf_lag_1)
-[1] 0.6761093
-> 
-> pacf_lag_16 <- pacf_result$acf[16]   # Valor de la autocorrelación parcial para el rezago 16
-> print(pacf_lag_16)
-[1] -0.1760457
+[1] 0.6784294
+> pacf_lag_8 <- pacf_result$acf[8]   # Valor de la autocorrelación parcial para el rezago 8
+> print(pacf_lag_8)
+[1] 0.1651488
 ```
 #### La parte de media móvil ($MA$) del proceso generador de datos
-La $FAC$ se utiliza para determinar el componente $MA(q)$ del $ARMA(p,q)$. Identifique los rezagos de la $FAC$, del rezago $1$ en adelante, que estan aislados y que son superiores a $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{200}}=0.14$. No hay ningún rezago que se comporte así, lo que se observa es que la $FAC$ revela una decaimieto progresivo (por ejemplo, los primeros tres rezagos de la $FAC$ son $0.71$, $0.41$ y $0.21$.). Por lo tanto, parece que no se genera un proceso $MA(q)$ dentro de nuestro $ARMA(p,q)$. 
+La $FAC$ se utiliza para determinar el componente $MA(q)$ del $ARMA(p,q)$. Identifique los rezagos de la $FAC$, del rezago $1$ en adelante, que estan aislados y que son superiores a $\frac{2}{\sqrt{T}}=\frac{2}{\sqrt{200}}=0.14$ o inferiores a $-0.14$. Lo que se observa en la $FAC$ es un decaimieto progresivo (por ejemplo, los primeros tres rezagos de la $FAC$ son $0.68$, $0.45$ y $0.27$). Por lo tanto, parece que no se genera un proceso $MA(q)$ dentro de nuestro $ARMA(p,q)$. 
 
 Para saber el valor de la $FAC$ de $y_t$ en los rezagos $1$, $2$ y $3$ se utilizaron los comandos:
 
@@ -108,40 +107,120 @@ print(acf_lag_3)
 ```
 Obteniendose:
 ```r
+> acf_result <- acf(y, plot = FALSE) # Se calcula la función de autocorrelación total
+> 
 > acf_lag_1 <- acf_result$acf[2]   # Valor de la autocorrelación total para el rezago 1
 > print(acf_lag_1)
-[1] 0.7079901
+[1] 0.6784294
 > 
 > acf_lag_2 <- acf_result$acf[3]   # Valor de la autocorrelación total para el rezago 2
 > print(acf_lag_2)
-[1] 0.4067588
+[1] 0.4482265
 > 
 > acf_lag_3 <- acf_result$acf[4]   # Valor de la autocorrelación total para el rezago3
 > print(acf_lag_3)
-[1] 0.2090885
+[1] 0.2704874
 ```
 
 ### Estimación y verificación de diagnóstico
-Aunque sabemos que los datos se generaron en realidad a partir de un proceso de $AR(1)$, es ilustrativo comparar las estimaciones de dos modelos diferentes. Suponga que estimamos un modelo $AR(1)$ e intentamos capturar el pico de la $FAC$ en el rezago $6$ con un coeficiente $MA$. Por lo tanto, consideramos los dos modelos tentativos:
+Aunque sabemos que los datos se generaron en realidad a partir de un proceso de $AR(1)$, es ilustrativo comparar las estimaciones de dos modelos diferentes. Suponga que estimamos un modelo $AR(1)$ y un modelo $ARMA(1,1)$. Por lo tanto, consideramos los dos modelos tentativos:
 
 * **Modelo 1 - $AR(1)$:** $y_t=a_1y_{t-1}+\varepsilon_t$
-* **Modelo 2 - $ARMA(1,6)$:** $y_t=a_1y_{t-1}+\varepsilon_t+\beta_{6}\varepsilon_{t-6} $
+* **Modelo 2 - $ARMA(1,1)$:** $y_t=a_1y_{t-1}+\varepsilon_t+\beta_{1}\varepsilon_{t1} $
 
 La estimación en $R$ de ambos modelos, de una vez haciendo la verificación de diagnóstico, se hace con los siguientes comandos:
 
 ```r
+Modelo_1<- Arima(y, order=c(1,0,0))  # Se calcula la función AR(1) sin mostrarla
+Modelo_2<- Arima(y, order=c(1,0,))  # Se calcula la función MA(1) sin mostrarla. 
 
+summary(Modelo_1) # Se reportan los resultados del Modelo_1
+summary(Modelo_2) # Se reportan los resultados del Modelo_2
+
+AIC(Modelo_1,Modelo_2) # Se reportan los Criterios de Información de Akaike para todos los modelos considerados
+BIC(Modelo_1,Modelo_2) # Se reportan los Criterios Bayesianos de Schwartz para todos los modelos considerados
+
+library(forecast) # Esta librería permite operar el comando auto.arima
+auto.arima(y, ic = c("aic"), stepwise = FALSE, approximation = FALSE) # Con este comando R, según el Criterio de Información de Akaike, especifica cuál es el mejor modelo.
+auto.arima(y, ic = c("bic"), stepwise = FALSE, approximation = FALSE) # Con este comando R, según el Criterio Bayesiano De Schwartz, especifica cuál es el mejor modelo.
+
+ggtsdiag(Modelo_1, gof.lag = 30) +  labs(subtitle = "Modelo 1") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 1.
+ggtsdiag(Modelo_2, gof.lag = 30) +  labs(subtitle = "Modelo 2") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 2.
+
+Modelo_1_lb8 <- Box.test(Modelo_1$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
+Modelo_1_lb16 <- Box.test(Modelo_1$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
+Modelo_1_lb24 <- Box.test(Modelo_1$residuals, lag=24, type="Ljung-Box") # Test de Ljung-Box
+
+Modelo_1_lb8$p.value
+Modelo_1_lb16$p.value
+Modelo_1_lb24$p.value
+
+Modelo_2_lb8 <- Box.test(Modelo_2$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
+Modelo_2_lb16 <- Box.test(Modelo_2$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
+Modelo_2_lb24 <- Box.test(Modelo_2$residuals, lag=24, type="Ljung-Box") # Test de Ljung-Box
+
+Modelo_2_lb8$p.value
+Modelo_2_lb16$p.value
+Modelo_2_lb24$p.value
 ```
 Obteniendose 
+
+```r
+> summary(Modelo_1)   # Se reportan los resultados del Modelo_1
+Series: y 
+ARIMA(1,0,0) with non-zero mean 
+
+Coefficients:
+         ar1    mean
+      0.6752  0.1289
+s.e.  0.0516  0.2077
+
+sigma^2 = 0.9379:  log likelihood = -276.68
+AIC=559.36   AICc=559.48   BIC=569.25
+
+Training set error measures:
+                      ME      RMSE       MAE  MPE MAPE      MASE      ACF1
+Training set 0.000604357 0.9636119 0.7719439 -Inf  Inf 0.9465626 0.0182812
+> summary(Modelo_2) # Se reportan los resultados del Modelo_2
+Series: y 
+ARIMA(0,0,1) with non-zero mean 
+
+Coefficients:
+         ma1    mean
+      0.5384  0.1278
+s.e.  0.0455  0.1153
+
+sigma^2 = 1.139:  log likelihood = -295.96
+AIC=597.91   AICc=598.04   BIC=607.81
+
+Training set error measures:
+                       ME     RMSE       MAE  MPE MAPE     MASE      ACF1
+Training set 0.0003588097 1.061824 0.8465603 -Inf  Inf 1.038058 0.2193961
+> 
+> AIC(Modelo_1,Modelo_2) # Se reportan los Criterios de Información de Akaike para todos los modelos considerados
+         df      AIC
+Modelo_1  3 559.3574
+Modelo_2  3 597.9132
+> BIC(Modelo_1,Modelo_2) # Se reportan los Criterios Bayesianos de Schwartz para todos los modelos considerados
+         df      BIC
+Modelo_1  3 569.2524
+Modelo_2  3 607.8082
+```
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4134f837-f314-482a-99b3-9e260a18084c)
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/b06f9ec4-94ba-431c-9bc3-7b5046620ec4)
+
+
 Las dos primeras lineas de la tabla de abajo resume los resultados de las dos estimaciones
 
 | Indicadores                               | Modelo 1                | Modelo 2                | 
 |-------------------------------------------|:-----------------------:|:-----------------------:|
-| $\hat{a}_1$  <br> (Error estándar)        |$0.7904$ <br> ($0.0624)$ |$0.7938$ <br> ($0.0643$) | 
-| $\hat{\beta}_{6}$  <br> (Error estándar)  |                         |$-0.0325$ <br> ($0.11$)  | 
-| Criterio de Información de Akaike         |$441.9$                  |$443.9$                  | 
-| Criterio Bayesianode Schwartz             |$444.5$                  |$449.1$                  | 
+| $\hat{a}_1$  <br> (Error estándar)        |$0.6752$ <br> ($0.0516)$ |                         | 
+| $\hat{\beta}_{1}$  <br> (Error estándar)  |                         |$0.5384$ <br> ($0.0455$) | 
+| Criterio de Información de Akaike         |$559.3574$               |$597.9132$               | 
+| Criterio Bayesianode Schwartz             |$569.2524$               |$607.8082$               | 
 | Ljung-Box Estadístico Q para los residuos <br> (nivel de significancia en paréntesis) |$Q(8) = 6.43 (0.490)$ <br> $Q(16) = 15.86 (0.391)$ <br> $Q(24) = 21.74 (0.536)$ |$Q(8) = 6.48 (0.485)$ <br> $Q(16) = 15.75 (0.400)$ <br> $Q(24) = 21.56 (0.547)$ | 
+
 
 **Análicemos el Modelo 1**
 
