@@ -303,6 +303,24 @@ Sin embargo, si se desconoce el verdadero proceso de generación de datos, uno p
 * **Modelo 4 - $ARMA(1,1)$:** $y_t=a_1y_{t-1}+\varepsilon_t+\beta_1\varepsilon_{t-1}$
 * **Modelo 5 - $ARMA(2)$:** $y_t=a_1y_{t-1}+a_2y_{t-2}+\varepsilon_t$
 
+La estimación en $R$ de los tres modelos, de una vez haciendo la verificación de diagnóstico, se hace con los siguientes comandos:
+```r
+Modelo_3<- Arima(y, order=c(1,0,0))  # Se calcula la función AR(1) sin mostrarla
+Modelo_4<- Arima(y, order=c(1,0,1))  # Se calcula la función ARMA(1,1) sin mostrarla. 
+Modelo_5<- Arima(y, order=c(2,0,0))  # Se calcula la función AR(2) sin mostrarla. 
+
+summary(Modelo_3)   # Se reportan los resultados del Modelo_3
+summary(Modelo_4) # Se reportan los resultados del Modelo_4
+summary(Modelo_5) # Se reportan los resultados del Modelo_5
+
+AIC(Modelo_3,Modelo_4,Modelo_5) # Se reportan los Criterios de Información de Akaike para todos los modelos considerados
+BIC(Modelo_3,Modelo_4,Modelo_5) # Se reportan los Criterios Bayesianos de Schwartz para todos los modelos considerados
+
+ggtsdiag(Modelo_3, gof.lag = 30) +  labs(subtitle = "Modelo 3") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 3.
+ggtsdiag(Modelo_4, gof.lag = 30) +  labs(subtitle = "Modelo 4") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 4.
+ggtsdiag(Modelo_5, gof.lag = 30) +  labs(subtitle = "Modelo 5") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 5.
+```
+
 | Indicadores                               | Modelo 3               | Modelo 4               |Modelo 5                |
 |-------------------------------------------|:----------------------:|:----------------------:|:----------------------:|
 | $\hat{a}_1$  <br> (Error estándar)        |$-0.835$ <br> $(0.053)$ |$-0.679$ <br> $(0.076)$ |$-1.160$ <br> $(0.093)$ | 
@@ -310,7 +328,6 @@ Sin embargo, si se desconoce el verdadero proceso de generación de datos, uno p
 | $\hat{\beta}_1$  <br> (Error estándar)    |                        |$-0.676$ <br> $(0.081)$ |                        |
 | Criterio de Información de Akaike         |$496.5$                 |$471.0$                 |$482.8$                 |  
 | Criterio Bayesiano de Schwartz            |$499.0$                 |$476.2$                 |$487.9$                 |  
-| Ljung-Box Estadístico Q para los residuos <br> (nivel de significancia en paréntesis)      | $Q(8) = 26.19 (0.000)$ <br> $Q(24) = 41.10 (0.001)$ |$Q(8) = 3.86 (0.695)$ <br> $Q(24) = 14.23 (0.892)$ | $Q(8) = 11.44 (0.057)$ <br> $Q(24) = 22.59 (0.424)$ | 
 
 Al examinar la tabla, note que todos los $\hat{a_1}$ son muy significativos; cada uno de los valores estimados se desvía al menos ocho desviaciones estándar de cero. 
 
