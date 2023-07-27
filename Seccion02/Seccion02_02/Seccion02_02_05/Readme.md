@@ -1042,9 +1042,9 @@ summary(C1GGOV_4m.kpss)
 ndiffs(GGOV, alpha = 0.05, test = c("kpss"), type = c("trend"))
 ```
 
-5. **Las pruebas $ZA$ para las variable $GGOV$ se hicieron en todas sus variantes combinando diferentes longitudes de rezagos (desde $0$ hasta $5$). La especificación que mejor se comportó fue la del cambio estructural en el intercepto y los resultados en todas las combinaciones llegaban a la misma conclusión. Haga la prueba $ZA$ con 4 rezagos y cambio estructural en el intercepto y responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de la prueba $ZA$ ?:**[^2]
+5. **Las pruebas $ZA$ para las variable $GGOV$ se hicieron en todas sus variantes combinando diferentes longitudes de rezagos (desde $0$ hasta $5$). La especificación que mejor se comportó fue la del cambio estructural en el intercepto y los resultados en todas las combinaciones llegaban a la misma conclusión. Haga la prueba $ZA$ con 4 rezagos y cambio estructural en el intercepto y responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de la prueba $ZA$ ?:**[^7]
 
-[^2]: Para determinar bien el año del cambio estructural compare la fila de la base de datos "dat" con la culumna "year"
+[^7]: Para determinar bien el año del cambio estructural compare la fila de la base de datos "dat" con la columna "year"
 
 a) Para la variable $GGOV$, si se asume un cambio estructural en el intercepto, este ocurre en el año 1984 y la serie presenta raíz unitaria***
    
