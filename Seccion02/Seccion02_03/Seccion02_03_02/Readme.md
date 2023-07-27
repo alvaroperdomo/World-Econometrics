@@ -257,12 +257,11 @@ Para ello se utilizó el siguiente código de $R$:
 ```r
 rm(list = ls())
 
-set.seed(130) # Se establece una semilla para la generación de números aleatorios (puedes usar cualquier número entero)
+set.seed(180) # Se establece una semilla para la generación de números aleatorios (puedes usar cualquier número entero)
 
-n <- 100 # Se establece la longitud de la secuencia
+n <- 200 # Se establece la longitud de la secuencia
 
 epsilon <- rnorm(n, mean = 0, sd = 1)  # Se crea un vector para almacenar los valores simulados de epsilon(t)
-
 
 # Inicializar los vectores para y(t) y e(t)
 y <- numeric(n)  # Se crea un vector para almacenar los valores simulados de y(t)
@@ -283,9 +282,9 @@ A continuación se van a desarrollar cada uno de los pasos de la metodología Bo
 ### Identificación
 Las figuras de abajo muestran la $FAC$ y la $FACP$ muestrales. Las mismas nos dan idea de un $ARMA(1,1)$, aunque el decaimiento de la $FAC$ no muestra el componente $MA(1)$ de una forma demasiado clara.
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/1a1bc6db-e3fc-4661-9cde-a5d60665d224)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/8e6bd571-97ed-4586-bb20-c2f105bbc3ba)
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/99c5d007-874c-4d86-8802-c7fe17fd16ca)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/32447870-b8ce-4f03-892b-e6560c553b71)
 
 Continuando con el código de $R$ de esta parte de la subsección, los gráficos de la $FAC$ y la $FACP$ de $y_t$ se generaron con los comandos
 ```r
@@ -320,6 +319,71 @@ ggtsdiag(Modelo_3, gof.lag = 30) +  labs(subtitle = "Modelo 3") # Con este coman
 ggtsdiag(Modelo_4, gof.lag = 30) +  labs(subtitle = "Modelo 4") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 4.
 ggtsdiag(Modelo_5, gof.lag = 30) +  labs(subtitle = "Modelo 5") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 5.
 ```
+Obteniendose
+```r
+> summary(Modelo_3)   # Se reportan los resultados del Modelo_3
+Series: y 
+ARIMA(1,0,0) with non-zero mean 
+
+Coefficients:
+          ar1    mean
+      -0.7450  0.0144
+s.e.   0.0466  0.0277
+
+sigma^2 = 0.4694:  log likelihood = -207.56
+AIC=421.12   AICc=421.25   BIC=431.02
+
+Training set error measures:
+                        ME      RMSE      MAE  MPE MAPE     MASE        ACF1
+Training set -2.969578e-05 0.6817082 0.551883 -Inf  Inf 0.342004 -0.04598221
+> summary(Modelo_4) # Se reportan los resultados del Modelo_4
+Series: y 
+ARIMA(1,0,1) with non-zero mean 
+
+Coefficients:
+          ar1      ma1    mean
+      -0.7088  -0.0830  0.0148
+s.e.   0.0668   0.0966  0.0259
+
+sigma^2 = 0.4701:  log likelihood = -207.21
+AIC=422.42   AICc=422.63   BIC=435.61
+
+Training set error measures:
+                        ME      RMSE       MAE  MPE MAPE      MASE        ACF1
+Training set -0.0006490796 0.6804963 0.5522538 -Inf  Inf 0.3422338 -0.00178085
+> summary(Modelo_5) # Se reportan los resultados del Modelo_5
+Series: y 
+ARIMA(2,0,0) with non-zero mean 
+
+Coefficients:
+          ar1      ar2    mean
+      -0.7874  -0.0564  0.0145
+s.e.   0.0705   0.0704  0.0262
+
+sigma^2 = 0.4703:  log likelihood = -207.24
+AIC=422.48   AICc=422.69   BIC=435.68
+
+Training set error measures:
+                        ME      RMSE       MAE  MPE MAPE      MASE         ACF1
+Training set -3.671721e-05 0.6806037 0.5521254 -Inf  Inf 0.3421542 -0.006216286
+> 
+> AIC(Modelo_3,Modelo_4,Modelo_5) # Se reportan los Criterios de Información de Akaike para todos los modelos considerados
+         df      AIC
+Modelo_3  3 421.1237
+Modelo_4  4 422.4214
+Modelo_5  4 422.4828
+> BIC(Modelo_3,Modelo_4,Modelo_5) # Se reportan los Criterios Bayesianos de Schwartz para todos los modelos considerados
+         df      BIC
+Modelo_3  3 431.0187
+Modelo_4  4 435.6147
+Modelo_5  4 435.6761
+```
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/d6daf84a-0d81-4147-b948-a3fefe097f22)
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/c7f2e4fa-b36f-4c73-9ca8-2959825e9cb4)
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9e35d695-6ab2-41ae-800f-2f8a3c431d40)
+
 
 | Indicadores                               | Modelo 3               | Modelo 4               |Modelo 5                |
 |-------------------------------------------|:----------------------:|:----------------------:|:----------------------:|
