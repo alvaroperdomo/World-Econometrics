@@ -1,9 +1,9 @@
 <div align="center"><a href="https://www.escuelaing.edu.co/es/investigacion-e-innovacion/centro-de-estudios-oikonimia/" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/Centros_%20de_Estudios_Oikonom%C3%ADa.jpg" alt="R.LTWB" width="100%" border="0" /></a></div>
 
 ## SECCIÓN 2.3.2
-# Estimación de un $ARMA$ - Ejemplos simulados 
+# Estimación de un $ARMA$ - Ejemplo simulado 
 
-Una comparación de la función de autocorrelación $FAC$ y la función de autocorrelación parcial $FACP$ muestrales con las de varios procesos $ARMA(p,q)$ teóricos puede sugerir varios modelos plausibles. Por medio de dos ejemplos sencillos, vamos a mostrar cómo se identifica el proceso $ARMA(p,q)$ generador de una variable.
+Una comparación de la función de autocorrelación $FAC$ y la función de autocorrelación parcial $FACP$ muestrales con las de varios procesos $ARMA(p,q)$ teóricos puede sugerir varios modelos plausibles. Por medio de un ejemplo sencillo, vamos a mostrar cómo se identifica el proceso $ARMA(p,q)$ generador de una variable.
 
 ## Estimación de un modelo AR(1)
 En este ejemplo se generaron $200$ números aleatorios $\varepsilon_t$ distribuidos normalmente con una varianza teórica igual $1$. Comenzando con $t=1$, los valores de $y_t$ se generaron usando la fórmula $y_t=0.7y_{t-1}+\varepsilon_t$ y la condición inicial $y_0=0$. Note que la serie { $y_t$ } que se construye es estacionaria, por lo que es factible aplicar la metodología de Box-Jenkins. 
@@ -31,8 +31,6 @@ for (t in 2:n) {
 }
 
 plot(1:n, y, type = "l", xlab = "t", ylab = "y(t)", col = "blue") # Gráfico de y(t)
-
-y <- ts(y) # Con el comando ts() se identifica a la variable "y" como una serie de tiempo
 
 ```
 El gráfico de $y_t$ esta representado por:
@@ -123,30 +121,62 @@ Obteniendose:
 ```
 
 ### Estimación y verificación de diagnóstico
-Aunque sabemos que los datos se generaron en realidad a partir de un proceso de $AR(1)$, es ilustrativo comparar las estimaciones de dos modelos diferentes. Suponga que estimamos un modelo $AR(1)$ y un modelo $ARMA(1,1)$. Por lo tanto, consideramos los dos modelos tentativos:
+Aunque sabemos que los datos se generaron en realidad a partir de un proceso de $AR(1)$, es ilustrativo comparar las estimaciones de varios modelos diferentes. Suponga que estimamos un modelo $AR(1)$, un modelo $MA(1)$ y un modelo $ARMA(1,1)$, en todos los casos los estimamos con y sin intercepto. Por lo tanto, consideramos los seis modelos tentativos:
 
 * **Modelo 1 - $AR(1)$:** $y_t=a_1y_{t-1}+\varepsilon_t$
-* **Modelo 2 - $ARMA(1,1)$:** $y_t=a_1y_{t-1}+\varepsilon_t+\beta_{1}\varepsilon_{t1} $
-
-La estimación en $R$ de ambos modelos, de una vez haciendo la verificación de diagnóstico, se hace con los siguientes comandos:
+* **Modelo 2 - $AR(1)$:** $y_t=a_0+a_1y_{t-1}+\varepsilon_t$
+* **Modelo 3 - $MA(1)$:** $y_t=\varepsilon_t+\beta_{1}\varepsilon_{t1} $
+* **Modelo 4 - $MA(1)$:** $y_t=a_0+\varepsilon_t+\beta_{1}\varepsilon_{t1}$
+* **Modelo 5 - $ARMA(1,1)$:** $y_t=a_0+a_1y_{t-1}+\varepsilon_t+\beta_{1}\varepsilon_{t1}$
+* **Modelo 6 - $ARMA(1,1)$:** $y_t=a_1y_{t-1}+\varepsilon_t+\beta_{1}\varepsilon_{t1} $
+* 
+La estimación en $R$ de los seis modelos, de una vez haciendo la verificación de diagnóstico, se hace con los siguientes comandos:
 
 ```r
-Modelo_1<- Arima(y, order=c(1,0,0))  # Se calcula la función AR(1) sin mostrarla
-Modelo_2<- Arima(y, order=c(1,0,))  # Se calcula la función MA(1) sin mostrarla. 
+Modelo_1<- Arima(y, order=c(1,0,0), include.constant=FALSE)  # Se calcula la función AR(1) sin mostrarla
+Modelo_2<- Arima(y, order=c(1,0,0))  # Se calcula la función AR(1) sin mostrarla
+Modelo_3<- Arima(y, order=c(0,0,1), include.constant=FALSE)  # Se calcula la función MA(1) sin mostrarla. 
+Modelo_4<- Arima(y, order=c(0,0,1))  # Se calcula la función MA(1) sin mostrarla. 
+Modelo_5<- Arima(y, order=c(1,0,1), include.constant=FALSE)  # Se calcula la función ARMA(1,1) sin mostrarla. 
+Modelo_6<- Arima(y, order=c(1,0,1))  # Se calcula la función ARMA(1,1) sin mostrarla. 
 
 summary(Modelo_1) # Se reportan los resultados del Modelo_1
 summary(Modelo_2) # Se reportan los resultados del Modelo_2
+summary(Modelo_3) # Se reportan los resultados del Modelo_3
+summary(Modelo_4) # Se reportan los resultados del Modelo_4
+summary(Modelo_5) # Se reportan los resultados del Modelo_5
+summary(Modelo_6) # Se reportan los resultados del Modelo_6
 
-AIC(Modelo_1,Modelo_2) # Se reportan los Criterios de Información de Akaike para todos los modelos considerados
-BIC(Modelo_1,Modelo_2) # Se reportan los Criterios Bayesianos de Schwartz para todos los modelos considerados
+AIC(Modelo_1,Modelo_2, Modelo_3, Modelo_4, Modelo_5, Modelo_6) # Se reportan los Criterios de Información de Akaike para todos los modelos considerados
+BIC(Modelo_1,Modelo_2, Modelo_3, Modelo_4, Modelo_5, Modelo_6) # Se reportan los Criterios Bayesianos de Schwartz para todos los modelos considerados
 
 ggtsdiag(Modelo_1, gof.lag = 30) +  labs(subtitle = "Modelo 1") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 1.
 ggtsdiag(Modelo_2, gof.lag = 30) +  labs(subtitle = "Modelo 2") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 2.
+ggtsdiag(Modelo_3, gof.lag = 30) +  labs(subtitle = "Modelo 3") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 3.
+ggtsdiag(Modelo_4, gof.lag = 30) +  labs(subtitle = "Modelo 4") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 4.
+ggtsdiag(Modelo_5, gof.lag = 30) +  labs(subtitle = "Modelo 5") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 5.
+ggtsdiag(Modelo_6, gof.lag = 30) +  labs(subtitle = "Modelo 6") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 6.
+
 ```
 Obteniendose 
 
 ```r
-> summary(Modelo_1)   # Se reportan los resultados del Modelo_1
+> summary(Modelo_1) # Se reportan los resultados del Modelo_1
+Series: y 
+ARIMA(1,0,0) with zero mean 
+
+Coefficients:
+         ar1
+      0.6783
+s.e.  0.0514
+
+sigma^2 = 0.935:  log likelihood = -276.87
+AIC=557.74   AICc=557.8   BIC=564.34
+
+Training set error measures:
+                   ME      RMSE       MAE      MPE     MAPE      MASE       ACF1
+Training set 0.042355 0.9645131 0.7702037 31.32772 197.8036 0.9444288 0.01526996
+> summary(Modelo_2) # Se reportan los resultados del Modelo_2
 Series: y 
 ARIMA(1,0,0) with non-zero mean 
 
@@ -161,7 +191,22 @@ AIC=559.36   AICc=559.48   BIC=569.25
 Training set error measures:
                       ME      RMSE       MAE  MPE MAPE      MASE      ACF1
 Training set 0.000604357 0.9636119 0.7719439 -Inf  Inf 0.9465626 0.0182812
-> summary(Modelo_2) # Se reportan los resultados del Modelo_2
+> summary(Modelo_3) # Se reportan los resultados del Modelo_3
+Series: y 
+ARIMA(0,0,1) with zero mean 
+
+Coefficients:
+         ma1
+      0.5401
+s.e.  0.0454
+
+sigma^2 = 1.14:  log likelihood = -296.57
+AIC=597.14   AICc=597.2   BIC=603.73
+
+Training set error measures:
+                     ME    RMSE       MAE      MPE     MAPE     MASE      ACF1
+Training set 0.08345461 1.06507 0.8467178 79.27278 141.0902 1.038251 0.2171121
+> summary(Modelo_4) # Se reportan los resultados del Modelo_4
 Series: y 
 ARIMA(0,0,1) with non-zero mean 
 
@@ -176,15 +221,53 @@ AIC=597.91   AICc=598.04   BIC=607.81
 Training set error measures:
                        ME     RMSE       MAE  MPE MAPE     MASE      ACF1
 Training set 0.0003588097 1.061824 0.8465603 -Inf  Inf 1.038058 0.2193961
+> summary(Modelo_5) # Se reportan los resultados del Modelo_5
+Series: y 
+ARIMA(1,0,1) with zero mean 
+
+Coefficients:
+         ar1     ma1
+      0.6641  0.0264
+s.e.  0.0748  0.0980
+
+sigma^2 = 0.9393:  log likelihood = -276.83
+AIC=559.67   AICc=559.79   BIC=569.56
+
+Training set error measures:
+                     ME      RMSE       MAE      MPE    MAPE      MASE        ACF1
+Training set 0.04300838 0.9643357 0.7707917 32.23084 198.014 0.9451498 0.002210626
+> summary(Modelo_6) # Se reportan los resultados del Modelo_6
+Series: y 
+ARIMA(1,0,1) with non-zero mean 
+
+Coefficients:
+         ar1     ma1    mean
+      0.6598  0.0287  0.1289
+s.e.  0.0754  0.0983  0.2040
+
+sigma^2 = 0.9423:  log likelihood = -276.64
+AIC=561.27   AICc=561.48   BIC=574.47
+
+Training set error measures:
+                      ME      RMSE       MAE  MPE MAPE      MASE        ACF1
+Training set 0.000551532 0.9634029 0.7728966 -Inf  Inf 0.9477308 0.004247725
 > 
-> AIC(Modelo_1,Modelo_2) # Se reportan los Criterios de Información de Akaike para todos los modelos considerados
+> AIC(Modelo_1,Modelo_2, Modelo_3, Modelo_4, Modelo_5, Modelo_6) # Se reportan los Criterios de Información de Akaike para todos los modelos considerados
          df      AIC
-Modelo_1  3 559.3574
-Modelo_2  3 597.9132
-> BIC(Modelo_1,Modelo_2) # Se reportan los Criterios Bayesianos de Schwartz para todos los modelos considerados
+Modelo_1  2 557.7390
+Modelo_2  3 559.3574
+Modelo_3  2 597.1365
+Modelo_4  3 597.9132
+Modelo_5  3 559.6663
+Modelo_6  4 561.2718
+> BIC(Modelo_1,Modelo_2, Modelo_3, Modelo_4, Modelo_5, Modelo_6) # Se reportan los Criterios Bayesianos de Schwartz para todos los modelos considerados
          df      BIC
-Modelo_1  3 569.2524
-Modelo_2  3 607.8082
+Modelo_1  2 564.3356
+Modelo_2  3 569.2524
+Modelo_3  2 603.7332
+Modelo_4  3 607.8082
+Modelo_5  3 569.5613
+Modelo_6  4 574.4651
 ```
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4134f837-f314-482a-99b3-9e260a18084c)
 
@@ -193,14 +276,15 @@ Modelo_2  3 607.8082
 
 La tabla de abajo y los dos conji¿untos de tres gráficos de arriba (un conjunto por modelo) resumen los resultados de las dos estimaciones
 
-| Indicadores                               | Modelo 1                | Modelo 2                | 
-|-------------------------------------------|:-----------------------:|:-----------------------:|
-| $\hat{a}_1$  <br> (Error estándar)        |$0.6752$ <br> ($0.0516)$ |                         | 
-| $\hat{\beta}_{1}$  <br> (Error estándar)  |                         |$0.5384$ <br> ($0.0455$) | 
-| Criterio de Información de Akaike         |$559.3574$               |$597.9132$               | 
-| Criterio Bayesianode Schwartz             |$569.2524$               |$607.8082$               | 
+| Indicadores                               | Modelo 1                | Modelo 2                |  Modelo 3              | Modelo 4                |  Modelo 5               | Modelo 6                | 
+|-------------------------------------------|:-----------------------:|:-----------------------:|:----------------------:|:-----------------------:|:-----------------------:|:-----------------------:|
+| $\hat{a}_0$  <br> (Error estándar)        |                         |$0.6752$ <br> ($0.0516)$ |                        |$0.1278$ <br> ($0.1153)$ |                         |$0.1289$ <br> ($0.2040)$ | 
+| $\hat{a}_1$  <br> (Error estándar)        |$0.6783$ <br> ($0.0514)$ |$0.1289$ <br> ($0.2077)$ |                        |                         |$0.6641$ <br> ($0.0748)$ |$0.6598$ <br> ($0.0754)$ | 
+| $\hat{\beta}_{1}$  <br> (Error estándar)  |                         |                         |$0.5401 <br> ($0.0454)$ |$0.5384 <br> ($0.0455)$  |$0.0264$ <br> ($0.0980)$ |$0.0287$ <br> ($0.0983)$ |
+| Criterio de Información de Akaike         |$557.7390$               |$559.3574$               |$597.1365$              | $597.9132$              | $559.6663$              | $561.2718$              | 
+| Criterio Bayesianode Schwartz             |$564.3356$               |$569.2524$               |$603.7332$              | $607.8082$              | $569.5613$              | $574.4651$              |   
 
-**Análicemos el Modelo 1**
+**Análicemos el Modelo 1** 0.5384$ <br> ($0.0455$)    $597.9132$    $607.8082$ 
 
 El coeficiente del **Modelo 1** satisface la condición de estabilidad $|\hat{a}_1| < 0$ y tiene un error estándar bajo (es decir, el coeficente estimado es menor a dos desviaciones estandar del valor de $|\hat{a}_1|$).
 
@@ -282,7 +366,8 @@ A continuación se van a desarrollar cada uno de los pasos de la metodología Bo
 ### Identificación
 Las figuras de abajo muestran la $FAC$ y la $FACP$ muestrales. Las mismas nos dan idea de un $ARMA(1,1)$, aunque el decaimiento de la $FAC$ no muestra el componente $MA(1)$ de una forma demasiado clara.
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/8e6bd571-97ed-4586-bb20-c2f105bbc3ba)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/e312a257-f7cb-4288-9d55-05ad83bb8b77)
+
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/32447870-b8ce-4f03-892b-e6560c553b71)
 
