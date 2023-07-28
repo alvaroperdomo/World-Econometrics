@@ -63,7 +63,7 @@ pacf_plot + labs(x = "Rezagos", y = "FACP") # Se personalizan las etiquetas de l
 
 
 ## 2) Estimación:
-La $FACP$ da a entender que la serie de $C1PIBpc$ sigue un proceso autorregresivo de orden $1$, y la $FAC$ revela la existencia de un comportamiento de media movil de orden $1$ o de orden $2$. En consecuencia, vamos a estimar diferentes modelos $ARIMA(p,1,q)$ para la variable $PIBpc$ [^1], para evaluar cuál especificación es más parsimoniosa. Para ello se copian los siguientes comandos: [^2]
+La $FACP$ da a entender que la serie de $C1PIBpc$ sigue un proceso autorregresivo de orden $1$, y la $FAC$ revela la existencia de un comportamiento de media movil de orden $1$. En consecuencia, vamos a estimar diferentes modelos $ARIMA(p,1,q)$ para la variable $PIBpc$ [^1], para evaluar cuál especificación es más parsimoniosa. Para ello se copian los siguientes comandos: [^2]
 
 [^1]: **Recuerden que un modelo _ARIMA(p,1,q)_ para la variable _PIBpc_ es es equivalente a un modelo _ARIMA(p,0,q)_ o _ARMA(p,q)_ para la variable _C1PIBpc_.**
 
@@ -72,13 +72,13 @@ La $FACP$ da a entender que la serie de $C1PIBpc$ sigue un proceso autorregresiv
 ``` r
 arima1<- Arima(PIBpc, order=c(0,1,2))
 arima2<- Arima(PIBpc, order=c(1,1,0))  # Este es uno de los modelos que parecen identificar las FAC y FACP
-arima3<- Arima(PIBpc, order=c(1,1,2))  # Este es uno de los modelos que parecen identificar las FAC y FACP
+arima3<- Arima(PIBpc, order=c(1,1,2))  
 arima4<- Arima(PIBpc, order=c(1,1,1))  
 arima5<- Arima(PIBpc, order=c(0,1,1))
 
 arima1d<- Arima(PIBpc, order=c(0,1,2), include.drift=TRUE)
 arima2d<- Arima(PIBpc, order=c(1,1,0), include.drift=TRUE)  # Este es uno de los modelos que parecen identificar las FAC y FACP
-arima3d<- Arima(PIBpc, order=c(1,1,2), include.drift=TRUE)  # Este es uno de los modelos que parecen identificar las FAC y FACP
+arima3d<- Arima(PIBpc, order=c(1,1,2), include.drift=TRUE)  
 arima4d<- Arima(PIBpc, order=c(1,1,1), include.drift=TRUE)  
 arima5d<- Arima(PIBpc, order=c(0,1,1), include.drift=TRUE)
 
