@@ -42,7 +42,7 @@ Previamente, aunque no se muestra en esta sección, se hicieron pruebas de raíz
 
 Para el análisis con el estadístico de la traza se utilizan los siguientes comandos de $R$:
 
-
+``` r
 rm(list = ls())
 
 library(WDI)
@@ -98,3 +98,4 @@ summary(Johansen_eigen_const)
 summary(Johansen_eigen_trend)
 
 cajorls(x, r = 1, reg.number = NULL)
+``` 
