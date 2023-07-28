@@ -357,9 +357,12 @@ X-squared = 64.443, df = 24, p-value = 1.469e-05
 ```
 Note que el estadistico Ljung-Box en el Modelo 1 es muy superior al 5% y en el Modelo 3 es muy inferior al 5%.
 
-Por último, note que en la comparación de los valores del _Criterio de Información de Akaike_ y del _Criterio Bayesiano de Schwartz_ de los dos modelos sugiere que es mucho mejor el **Modelo 1** al ser comparado con el **Modelo 2**. Por lo tanto, apunta a la elección del **Modelo 1**.
 
 **Análicemos los modelos 5 y 6**
+
+En ambos modelos se cumplen las pruebas de verificación de los residuos estimados; sin embargo el coeficiente $\hat{\beta}_{1}$ no es significativo (el coeficiente estimado es menor a dos desviaciones estandar del valor de $|\hat{\beta}_1|$); por lo que nos se podrían considrear buenos modelos.
+
+Por último, note que en la comparación de los valores del _Criterio de Información de Akaike_ y del _Criterio Bayesiano de Schwartz_ de los todos los modelos analizados sugiere que es mucho mejor estimar el **Modelo 1** .
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
