@@ -55,9 +55,10 @@ acf_plot + labs(x = "Rezagos", y = "FAC") # Se personalizan las etiquetas de los
 pacf_plot <- autoplot(pacf(C1PIBpc, plot = FALSE)) # Se calcula la función de autocorrelación parcial y se genera el gráfico sin mostrarlo
 pacf_plot + labs(x = "Rezagos", y = "FACP") # Se personalizan las etiquetas de los ejes
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/a26c22c6-0c48-4e5c-8383-88ff83c7c16a)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/490cc0c5-6a52-41b7-81af-ad396f61c581)
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/23f5f1ea-291b-4722-9635-37fefbf30dfe)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5653ea93-2a6f-4798-b893-cd2c46566cda)
+
 
 
 ## 2) Estimación:
