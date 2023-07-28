@@ -49,8 +49,11 @@ Gráficamos las $FAC$ y $FACP$ muestrales de la variable **C1PIBpc** utilizando 
 [^1]: **Observe que el comando _autoplot_ no gráfica las funciones para el rezago 0 porque es redundante hacerlo ta que siempre valen 1**
 
 ``` r
-autoplot(acf(C1PIBpc, plot = FALSE))
-autoplot(pacf(C1PIBpc, plot = FALSE))
+acf_plot <- autoplot(acf(C1PIBpc, plot = FALSE)) # Se calcula la función de autocorrelación y se genera el gráfico sin mostrarlo
+acf_plot + labs(x = "Rezagos", y = "FAC") # Se personalizan las etiquetas de los ejes
+
+pacf_plot <- autoplot(pacf(C1PIBpc, plot = FALSE)) # Se calcula la función de autocorrelación parcial y se genera el gráfico sin mostrarlo
+pacf_plot + labs(x = "Rezagos", y = "FACP") # Se personalizan las etiquetas de los ejes
 ```
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/a26c22c6-0c48-4e5c-8383-88ff83c7c16a)
 
