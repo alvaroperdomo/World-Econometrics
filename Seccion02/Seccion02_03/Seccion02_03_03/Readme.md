@@ -58,11 +58,11 @@ autoplot(pacf(C1PIBpc, plot = FALSE))
 
 
 ## 2) Estimación:
-La $FACP$ da a entender que la serie de **C1PIBpc** sigue un proceso autorregresivo de orden $1$, y la $FAC$ revela la existencia de un comportamiento de media movil de orden $1$ o de orden $2$. En consecuencia, vamos a estimar diferentes modelos $ARIMA(p,1,q)$ para la variable $PIBpc$ [^1], para evaluar cuál especificación es más parsimoniosa. Para ello se copian los siguientes comandos: [^2]
+La $FACP$ da a entender que la serie de $C1PIBpc$ sigue un proceso autorregresivo de orden $1$, y la $FAC$ revela la existencia de un comportamiento de media movil de orden $1$ o de orden $2$. En consecuencia, vamos a estimar diferentes modelos $ARIMA(p,1,q)$ para la variable $PIBpc$ [^1], para evaluar cuál especificación es más parsimoniosa. Para ello se copian los siguientes comandos: [^2]
 
 [^1]: **Recuerden que un modelo _ARIMA(p,1,q)_ para la variable _PIBpc_ es es equivalente a un modelo _ARIMA(p,0,q)_ o _ARMA(p,q)_ para la variable _C1PIBpc_.**
 
-[^2]: **Observen que los diferentes modelos _ARIMA(p,1,q)_ los estimamos con y sin intercepto, para determinar si la presencia del mismo aumenta la parsimonia del modelo**
+[^2]: **Observen que los diferentes modelos _ARIMA(p,1,q)_ los estimamos con y sin intercepto, para determinar si la presencia del mismo aumenta la parsimonia del modelo. Recuerden que el argumento include.drift=TRUE implica que se esta asumiendo que la variable integrada de orden _1_ en niveles depende de una tendencia, por lo que al aplicarle la primera diferencia esa tendencia se vuelve una constante**
 
 ``` r
 arima1<- Arima(PIBpc, order=c(0,1,2))
