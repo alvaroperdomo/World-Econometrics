@@ -18,30 +18,31 @@ library(forecast)    # Esta libreria sirve para hacer pronósticos.
 
 WDIsearch(string='NY.GDP.PCAP.KN', field='indicator')
 
-dat = WDI(indicator= c(PIBpc = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
+# Obtenemos los datos de PIBpc para Colombia desde 1960 hasta 2019
+dat <- WDI(indicator = "NY.GDP.PCAP.KN", country = "CO", start = 1960, end = 2019)
 dat <- dat %>% arrange(year)
 dat <- na.omit(dat)
-dat <- mutate(dat, PIBpc_lag1 = lag(PIBpc, order_by = year), C1PIBpc=PIBpc-PIBpc_lag1, country=NULL, iso2c=NULL, iso3c=NULL)
-
-ggplot(dat, aes(year, C1PIBpc)) + scale_x_continuous(name="Años", limits=c(1961, 2019))  + geom_line (linewidth=0.2) + labs(subtitle="1960-2019", y="Pesos constantes", title="Cambio en el PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 ```
-
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/a42692a0-f034-42b7-82b5-9aae03615a37)
-
-Del gráfico de **C1PIBpc** ya hablamos en la subsección 2.2.5, por lo que no diremos nada mas al respecto. Antes de pasar a la etapa de identificación, vamos a preparar un poco la base de datos para que $R$ identifique a la variable **C1PIBpc** como una serie de tiempo
-
+Creamos las variables de series de tiempo $PIBpc$ y $C1PIBpc$ y gráficamos $C1PIBpc$:
 ``` r
-C1PIBpc_ <- dat[-c(1,61:63),] # Con este comando creamos la base de datos "C1PIBpc_" la cual es igual a la base de datos "dat", pero sin incluir el año 1961 (Fila (1) - del cual "dat" no existe información para C1PIBpc) y los años 2020-2023 (Filas (61-63) - los cuales no vamos a utilizar en la estimación de C1PIBpc) 
-C1PIBpc_ = subset(C1PIBpc_, select = c(C1PIBpc)) # Con este comando depuramos la base de datos C1PIBpc_ para que sólo incluya la variable C1PIBpc
-C1PIBpc <- ts(C1PIBpc_, frequency = 1, start = c(1961)) # Con el comando ts() identificamos a la variable C1PIBpc como una serie de tiempo que se encuentra en la base de datos C1PIBpc_
-```
-Algo similar hacemos con la variable PIBpc porque algunos comandos permiten manejar la variable original sin diferenciar:
+PIBpc <- ts(dat$NY.GDP.PCAP.KN, frequency = 1, start = c(1960)) # Creamos la variable PIBpc
 
-``` r
-PIBpc_ <- dat[-c(61:63),] # Con este comando creamos la base de datos "PIBpc_" la cual es igual a la base de datos "dat", pero sin incluir los años y los años 2020-2023 (Filas (61-63) - los cuales no vamos a utilizar en la estimación de C1PIBpc) 
-PIBpc_ = subset(PIBpc_, select = c(PIBpc)) # Con este comando depuramos la base de datos PIBpc_ para que sólo incluya la variable PIBpc
-PIBpc <- ts(PIBpc_, frequency = 1, start = c(1960)) # Con el comando ts() identificamos a la variable PIBpc como una serie de tiempo que se encuentra en la base de datos PIBpc_
+C1PIBpc <- diff(PIBpc, differences = 1) # Creamos la variable C1PIBpc
+
+df <- data.frame(Año = time(C1PIBpc), C1PIBpc = as.numeric(C1PIBpc)) # Convertimos C1PIBpc a un dataframe
+
+# Gráfico de C1PIBpc
+ggplot(df, aes(x = Año, y = C1PIBpc)) + 
+  geom_line(linewidth = 0.2) + 
+  labs(subtitle = "1961-2019", y = "Pesos constantes", 
+       title = "Cambio en el PIB per cápita real de Colombia", 
+       caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial") +
+  scale_x_continuous(name = "Años", breaks = seq(1960, 2020, by = 5))
 ```
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/249d7c19-9de7-480b-b755-b91e5ac03a55)
+
+Del gráfico de $C1PIBpc$ ya hablamos en la subsección 2.2.5, por lo que no diremos nada mas al respecto. Ahora vamos a comenzar a aplicar la metodología de tres pasos de Box y Jenkins para identificar el modelo que vamos a utilizar en el pronóstico de la variable PIBpc para el periodo 2020-2025.
 
 ## 1) Identificación:
 Gráficamos las $FAC$ y $FACP$ muestrales de la variable **C1PIBpc** utilizando el comando _autoplot_[^1]
