@@ -67,6 +67,9 @@ A partir de los dos gráficos de arriba se puede comenzar a inferir que la varia
 
 Para el gráfico de la $FAC$ se ejecuta el comando
 ``` r
+acf_plot <- autoplot(acf(PIBpc, plot = FALSE)) # Se calcula la función de autocorrelación y se genera el gráfico sin mostrarlo
+acf_plot + labs(x = "Rezagos", y = "FAC") # Se personalizan las etiquetas de los ejes
+
 acf_plot <- autoplot(acf(C1PIBpc, plot = FALSE)) # Se calcula la función de autocorrelación y se genera el gráfico sin mostrarlo
 acf_plot + labs(x = "Rezagos", y = "FAC") # Se personalizan las etiquetas de los ejes
 ```
