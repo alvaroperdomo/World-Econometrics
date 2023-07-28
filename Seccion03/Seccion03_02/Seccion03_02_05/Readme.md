@@ -29,7 +29,8 @@ seriesVEC <- ts(PIBpc_paises[, -1], frequency = 1, start = 1960) # Se crea la se
 
 Un gráfico rápido de los datos se puede obteenr con el siguiente comando
 ``` r
-plot(seriesVEC, main = "PIB per cápita", xlab = "años")
+plot(diff(seriesVEC), main = "PIB per cápita", xlab = "Años")
+plot(diff(seriesVEC), main = "Variación del PIB per cápita", xlab = "Años")
 ```
 
 VARselect(diff(seriesVEC),lag.max=10,type="const")
