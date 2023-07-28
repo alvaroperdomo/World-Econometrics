@@ -171,21 +171,24 @@ Al operar ambos comandos, volvemos a obtener el mismo resultado: **El mejor mode
 El último paso de Box-Jenkins consiste en hacer las pruebas de validación del modelo $ARIMA(1,1,0)$. Para ello en primer lugar se grafican los correlogramas de los residuos estimados para comprobar que son ruido blanco:
 
 ``` r
-autoplot(acf(arima2d$residuals, plot = FALSE))
-autoplot(pacf(arima2d$residuals, plot = FALSE))
-```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/2211f0f0-e9b4-4e4a-bd4d-1de5385f6272)
+acf_plot <- autoplot(acf(arima2d$residuals, plot = FALSE)) # Se calcula la función de autocorrelación y se genera el gráfico sin mostrarlo
+acf_plot + labs(x = "Rezagos", y = "FAC") # Se personalizan las etiquetas de los ejes
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/a5693e0f-3768-4807-bf38-916979e830ce)
+pacf_plot <- autoplot(pacf(arima2d$residuals, plot = FALSE)) # Se calcula la función de autocorrelación parcial y se genera el gráfico sin mostrarlo
+pacf_plot + labs(x = "Rezagos", y = "FACP") # Se personalizan las etiquetas de los ejes
+```
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/c7ba9561-94d2-4657-a740-c7dc2544a020)
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/c591440a-4a94-4a8b-8fa6-1983e7eef53b)
 
 Se puede apreciar en las $FAC$ y en las $FACP$ que no hay ningún rezago significativo que denote algún tipo de estructura $ARMA$ adicional, por lo tanto podemos decir que los residuos son ruido blanco. 
 
-Para corroborar aún más este resultado, vamos a utilizar un comando para visualizar en gráficos los residuos estimados estandarizados y los _p-values_ de la prueba $Q$ de Ljung-Box sobre estos residuos: [^2]
+Para corroborar aún más este resultado, vamos a utilizar un comando para visualizar en gráficos los residuos estimados estandarizados y los _p-values_ de la prueba de Ljung-Box sobre estos residuos: [^2]
 
 [^2]: También se visualiza la _FAC_ de los residuos, pero esto ya la habiamos analizado previamente.
 
 ``` r
-ggtsdiag(arima2d, gof.lag = 30)
+ggtsdiag(arima2d, gof.lag = 30) +  labs(subtitle = "arima2d") # Con este comando se pueden hacer pruebas sobre los residuos del arima2d.
 ```
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/89370a15-3276-4845-9595-eb088c184984)
 
