@@ -5,7 +5,7 @@
 
 La metodología de Box-Jenkins consta de las siguientes tres etapas:
 
-1. **Identificación.** 
+1. **Identificación.** Se revisa la información gráfica de la serie
 2. **Estimación.** De acuerdo a la información de los gráficos, se plantean y se estiman modelos potenciales, se examinan los diferentes coeficientes $a_i$ y $\beta_i$ y se evaluan indicadores de parsimonia.
 3. **Verificación de diagnóstico.** Se garantiza que los residuos del modelo estimado imiten un proceso de ruido blanco.
 
@@ -46,22 +46,36 @@ donde,
 
 La práctica estándar es dibujar los residuos para buscar valores atípicos y evidencia de períodos en los que el modelo no se ajusta bien a los datos. Una práctica común es crear residuos estandarizados dividiendo cada residuo, $\varepsilon_t$ , por su desviación estándar estimada, $\sigma$. Si los residuos se distribuyen normalmente, el gráfico de la serie $\frac{\varepsilon_t}{\sigma}$ debe ser tal que no más del $5$% queden fuera de la banda de $-1.96$ a $1.96$. Si los residuos estandarizados parecen ser mucho más grandes en algunos períodos que en otros, puede ser evidencia de un cambio estructural. 
 
-Si todos los modelos _ARMA_ plausibles muestran evidencia de un mal ajuste durante una porción razonablemente larga de la muestra, es aconsejable considerar el uso de hacer un análisis multivariado de series de tiempo[2^]. Si la varianza de los residuos está aumentando, una transformación logarítmica puede ser apropiada. Alternativamente, es posible que se desee modelar cualquier tendencia de la varianza utilizando las técnicas $ARCH$ (las cuales no serán objeto de este curso).
+Si todos los modelos $ARMA$ plausibles muestran evidencia de un mal ajuste durante una porción razonablemente larga de la muestra, es aconsejable considerar el uso de hacer un análisis multivariado de series de tiempo[^2]. Si la varianza de los residuos está aumentando, una transformación logarítmica puede ser apropiada. Alternativamente, es posible que se desee modelar cualquier tendencia de la varianza utilizando las técnicas $ARCH$ (las cuales no serán objeto de este curso).
 
-[2^]: **Tambiém se puede considerar la opción de estimar análisis de intervención o funciones de transferencia. Sin embargo, estos temas no serán objeto de análisis en este curso**
+[^2]: **También se puede considerar la opción de estimar análisis de intervención o funciones de transferencia. Sin embargo, estos últimos temas no serán objeto de análisis en este curso**
 
-Es particularmente importante que los residuos de un modelo estimado no estén serialmente correlacionados. Cualquier evidencia de correlación serial implica un movimiento sistemático en la secuencia { $y_t$ } que no es explicado por los coeficientes $ARMA$ incluidos en el modelo. Por lo tanto, cualquiera de los modelos tentativos que producen residuos no aleatorios debería eliminarse de la consideración. Para verificar la correlación en los residuos, construya la $FAC$ y la $FACP$ de los residuos del modelo estimado. Luego puede usar el estadístico $Q$ de Ljung-Box para determinar si alguna o todas las autocorrelaciones o autocorrelaciones parciales de los residuos son estadísticamente significativas[^2].
+Es particularmente importante que los residuos de un modelo estimado no estén serialmente correlacionados. Cualquier evidencia de correlación serial implica un movimiento sistemático en la secuencia { $y_t$ } que no es explicado por los coeficientes $ARMA$ incluidos en el modelo. Por lo tanto, cualquiera de los modelos tentativos que producen residuos no aleatorios debería eliminarse de la consideración. Para verificar la correlación en los residuos, construya la $FAC$ y la $FACP$ de los residuos del modelo estimado. Luego puede usar el estadístico de Ljung-Box (también conocido como estadistico $Q$ de Ljung-Box) para determinar si alguna o todas las autocorrelaciones o autocorrelaciones parciales de los residuos son estadísticamente significativas[^2]. El estadistico $Q$ de Ljung-Box se explica al final de esta subsección.
 
-[^2]: Algunos programas econométricos informan el resultado de la prueba de Durbin-Watson como un control para la correlación serial de primer orden. Esta prueba está sesgada hacia la búsqueda de una correlación serial en presencia de variables dependientes rezagadas. Por lo tanto, generalmente no se usa en modelos $ARMA$.
+[^2]: **Algunos programas econométricos informan el resultado de la prueba de Durbin-Watson como un control para la correlación serial de primer orden. Esta prueba está sesgada hacia la búsqueda de una correlación serial en presencia de variables dependientes rezagadas. Por lo tanto, generalmente no se usa en modelos _ARMA_.**
 
 Aunque no hay un nivel de significancia que se considere "más apropiado", desconfíe de cualquier modelo que arroje:
 
 1. varias correlaciones de los residuos que sean marginalmente significativas y
-2. un estadístico Q que apenas sea significativo al nivel del $10%$. 
+2. un estadístico de Ljung-Box que apenas sea significativo al nivel del $10%$. 
 
 En tales circunstancias, generalmente es posible formular un modelo que tenga un mejor rendimiento.
 
-De forma similar, un modelo puede estimarse sólo sobre una parte del conjunto de datos. El modelo estimado se puede usar para pronosticar los valores conocidos de la serie. La suma de los errores de pronóstico al cuadrado es una forma útil de comparar la idoneidad de los modelos alternativos. Los modelos con pronósticos pobres fuera de la muestra deben ser eliminados. 
+**El estadistico $Q$ de Ljung-Box**
+
+Box y Pierce (1970) utilizaron las autocorrelaciones muéstrales para formar el estadístico $Q=T\displaystyle\sum_{k=1}^s r_k^2 \sim \chi_s^2$ para estimar la hipótesis nula de que todos los valores $r_k=0$. En donde, 
+
+* $T$ es el número de observaciones
+* $r_k$ es la autocorrelación estimada de $k$ rezagos
+  
+La intuición detrás del uso de este estadístico es que autocorrelaciones muéstrales altas conllevan valores grandes de $Q$ [^3]. Si el valor calculado de $Q$ excede el valor respectivo en una tabla $\chi^2$, podemos rechazar la hipótesis nula de autocorrelaciones no significativas. Tenga en cuenta que rechazar la hipótesis nula significa aceptar la hipótesis alternativa de que al menos un $r_k \not= 0$.
+
+[^3]: **Note que un proceso ruido blanco, en el que todas las autocorrelaciones deberían ser cero, tiene un valor _Q=0_.**
+
+Un problema con el estadístico _Q_ de Box-Pierce es que funciona mal incluso en muestras moderadamente grandes. Ljung y Box (1978) encontraron que el estadístico _Q_ modificado $Q=T(T+2)\displaystyle\sum_{k=1}^s \frac{r_k^2}{T-K} \sim \chi_s^2$ presenta un rendimiento superior. Si el valor muestral de $Q$ excede el valor respectivo en una tabla $\chi^2$, entonces al menos un valor de $r_k \not= 0$. 
+
+
+
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
