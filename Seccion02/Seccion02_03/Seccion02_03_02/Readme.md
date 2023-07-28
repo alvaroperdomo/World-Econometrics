@@ -129,7 +129,7 @@ Aunque sabemos que los datos se generaron en realidad a partir de un proceso de 
 * **Modelo 4 - $MA(1)$:** $y_t=a_0+\varepsilon_t+\beta_{1}\varepsilon_{t1}$
 * **Modelo 5 - $ARMA(1,1)$:** $y_t=a_0+a_1y_{t-1}+\varepsilon_t+\beta_{1}\varepsilon_{t1}$
 * **Modelo 6 - $ARMA(1,1)$:** $y_t=a_1y_{t-1}+\varepsilon_t+\beta_{1}\varepsilon_{t1} $
-* 
+  
 La estimación en $R$ de los seis modelos, de una vez haciendo la verificación de diagnóstico, se hace con los siguientes comandos:
 
 ```r
@@ -280,17 +280,17 @@ La tabla de abajo y los seis conjuuntos de tres gráficos de arriba (un conjunto
 
 | Indicadores                               | Modelo 1                | Modelo 2                |  Modelo 3              | Modelo 4                |  Modelo 5               | Modelo 6                | 
 |-------------------------------------------|:-----------------------:|:-----------------------:|:----------------------:|:-----------------------:|:-----------------------:|:-----------------------:|
-| $\hat{a}_0$  <br> (Error estándar)        |                         |$0.6752$ <br> ($0.0516)$ |                        |$0.1278$ <br> ($0.1153)$ |                         |$0.1289$ <br> ($0.2040)$ | 
-| $\hat{a}_1$  <br> (Error estándar)        |$0.6783$ <br> ($0.0514)$ |$0.1289$ <br> ($0.2077)$ |                        |                         |$0.6641$ <br> ($0.0748)$ |$0.6598$ <br> ($0.0754)$ | 
+| $\hat{a}_0$  <br> (Error estándar)        |                         |$0.1289$ <br> ($0.2077)$ |                        |$0.1278$ <br> ($0.1153)$ |                         |$0.1289$ <br> ($0.2040)$ | 
+| $\hat{a}_1$  <br> (Error estándar)        |$0.6783$ <br> ($0.0514)$ |$0.6752$ <br> ($0.0516$) |                        |                         |$0.6641$ <br> ($0.0748)$ |$0.6598$ <br> ($0.0754)$ | 
 | $\hat{\beta}_{1}$  <br> (Error estándar)  |                         |                         |$0.5401 <br> ($0.0454)$ |$0.5384 <br> ($0.0455)$  |$0.0264$ <br> ($0.0980)$ |$0.0287$ <br> ($0.0983)$ |
 | Criterio de Información de Akaike         |$557.7390$               |$559.3574$               |$597.1365$              | $597.9132$              | $559.6663$              | $561.2718$              | 
 | Criterio Bayesianode Schwartz             |$564.3356$               |$569.2524$               |$603.7332$              | $607.8082$              | $569.5613$              | $574.4651$              |   
 
-**Análicemos el Modelo 1** 0.5384$ <br> ($0.0455$)    $597.9132$    $607.8082$ 
+**Análicemos los Modelo 1 y 2**
 
-El coeficiente del **Modelo 1** satisface la condición de estabilidad $|\hat{a}_1| < 0$ y tiene un error estándar bajo (es decir, el coeficente estimado es menor a dos desviaciones estandar del valor de $|\hat{a}_1|$).
+El coeficiente de ambos modelos satisface la condición de estabilidad $|\hat{a}_1| < 0$ y tiene un error estándar bajo (es decir, el coeficente estimado es menor a dos desviaciones estandar del valor de $|\hat{a}_1|$).
 
-Como una verificación de diagnóstico útil, arriba en el gráfico de la $FAC$ de los residuos estimados del Modelo 1. Note que las barras de las autocorrelaciones de todos los rezagos superiores a $0$ son inferiores a $0.14$. Es decir, los residuos estimados parecen ser ruido blanco. Confirmando lo anterior, en el gráfico de la prueba de Ljung-Box sobre los residuos estimados del Modelo 1 note que los p-values son superiores al 5%. Esto es  una fuerte evidencia de que el modelo $AR(1)$ se ajusta bien con los datos. Después de todo, si las autocorrelaciones de los residuos fueran significativas, el modelo $AR(1)$ no usaría toda la información disponible sobre los movimientos en la serie { $y_t$ }
+Como una verificación de diagnóstico útil, arriba en el gráfico de la $FAC$ de los residuos estimados de los Modelos 1 y 2. Note que las barras de las autocorrelaciones de todos los rezagos superiores a $0$ son inferiores a $0.14$. Es decir, los residuos estimados parecen ser ruido blanco. Confirmando lo anterior, en el gráfico de la prueba de Ljung-Box sobre los residuos estimados del Modelo 1 note que los p-values son superiores al 5%. Esto es  una fuerte evidencia de que el modelo $AR(1)$ se ajusta bien con los datos. Después de todo, si las autocorrelaciones de los residuos fueran significativas, el modelo $AR(1)$ no usaría toda la información disponible sobre los movimientos en la serie { $y_t$ }
 
 **Análicemos el Modelo 2**
 
