@@ -20,11 +20,11 @@ El curso está dividido en tres secciones principales, a través de las cuales e
 | 03. Análisis Multivariado de Series de Tiempo                                                           | 
 
 
-## Objetivos generales
+## Objetivos
 * Explicar y aplicar los principales fundamentos del análisis de series de tiempo.
-* Estudiar los modelos de series de tiempo más relevantes.
+* Estudiar los modelos más relevantes en el análisis de series de tiempo.
 * Explicar la construcción y análisis de modelos de series de tiempo univariados y multivariados.
-* Explicar cómo hacer análisis de series de tiempo en $R$ utilizando la base _Indicadores de Desarrollo Mundial_.
+* Realizar análisis de series de tiempo utilizando la base de datos _Indicadores de Desarrollo Mundial_ en $R$.
 
 ## Requisitos
 Es deseable que los alumnos tengan como mínimo conocimientos básicos de $R$ y de probabilidad. Sin embargo, en el curso se van a proveer códigos completos de $R$ para ser utilizados por parte de los alumnos.
