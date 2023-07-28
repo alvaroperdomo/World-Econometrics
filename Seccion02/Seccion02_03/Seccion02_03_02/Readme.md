@@ -288,13 +288,15 @@ La tabla de abajo y los seis conjuuntos de tres gráficos de arriba (un conjunto
 
 **Análicemos los Modelo 1 y 2**
 
-El coeficiente de ambos modelos satisface la condición de estabilidad $|\hat{a}_1| < 0$ y tiene un error estándar bajo (es decir, el coeficente estimado es menor a dos desviaciones estandar del valor de $|\hat{a}_1|$).
+El coeficiente de ambos modelos satisface la condición de estabilidad $|\hat{a}_1| < 0$ y tiene un error estándar bajo (es decir, el coeficente estimado es mator a dos desviaciones estandar del valor de $|\hat{a}_1|$).
 
-Como una verificación de diagnóstico útil, arriba en el gráfico de la $FAC$ de los residuos estimados de los Modelos 1 y 2. Note que las barras de las autocorrelaciones de todos los rezagos superiores a $0$ son inferiores a $0.14$. Es decir, los residuos estimados parecen ser ruido blanco. Confirmando lo anterior, en el gráfico de la prueba de Ljung-Box sobre los residuos estimados del Modelo 1 note que los p-values son superiores al 5%. Esto es  una fuerte evidencia de que el modelo $AR(1)$ se ajusta bien con los datos. Después de todo, si las autocorrelaciones de los residuos fueran significativas, el modelo $AR(1)$ no usaría toda la información disponible sobre los movimientos en la serie { $y_t$ }
+Como una verificación de diagnóstico útil, arriba en el gráfico de la $FAC$ de los residuos estimados de los Modelos 1 y 2. Note que las barras de las autocorrelaciones de todos los rezagos superiores a $0$ son inferiores a $0.14$. Es decir, en ambos modelos los residuos estimados parecen ser ruido blanco. Confirmando lo anterior, en el gráfico de la prueba de Ljung-Box sobre los residuos estimados de ambos modelos note que los p-values son superiores al 5%. Esto es  una fuerte evidencia de que ambos modelos $AR(1)$ se ajustan bien con los datos. Después de todo, si las autocorrelaciones de los residuos fueran significativas, el modelo $AR(1)$ no usaría toda la información disponible sobre los movimientos en la serie { $y_t$ }
 
-**Análicemos el Modelo 2**
+Sin embargo, de los dos modelos, **el Modelo 1 es mejor que el Modelo 2**, porque  $\hat{a}_0$ no es estadíticamente significativa, y además los valores del _Criterio de Información de Akaike_ y del _Criterio Bayesiano de Schwartz_ del Modelo 1 son menores.
 
-Al examinar los resultados para el **Modelo 2**, observe que la estimación del $\hat{\beta}_1$ es de biuena calidad (es decir, el coeficiente estimado es menor a dos desviaciones estandar del valor de $|\hat{\beta}_1|$). Sin embargo, el Modelo 2 tiene problemas de autocorrelación en los residuos por lo que no serían ruido blanco. Los problemas de autocorrelación se evidencian en:
+**Análicemos los modelos 3 y 4**
+
+En ambos modelos, observe que la estimación del $\hat{\beta}_1$ es de buena calidad (es decir, el coeficiente estimado es mayor a dos desviaciones estandar del valor de $|\hat{\beta}_1|$). Sin embargo, ambos modelos tienen problemas de autocorrelación en los residuos por lo que no serían ruido blanco. Los problemas de autocorrelación se evidencian en:
 * El gráfico de la $FAC$ de sus residuos estimados. Note que las barras de los rezagos $1$ y $2$ son muy superiores a $0.14$.
 * El  gráfico de la prueba de Ljung-Box sobre los residuos estimados del Modelo 1, note que los p-values son inferiores al 5%. Es decir, se rechaza la hipótesis nula de que los residuos de la estimación no estan corelacionados.
 
