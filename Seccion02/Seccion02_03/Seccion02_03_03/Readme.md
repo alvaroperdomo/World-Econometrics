@@ -190,9 +190,9 @@ Para corroborar aún más este resultado, vamos a utilizar un comando para visua
 ``` r
 ggtsdiag(arima2d, gof.lag = 30) +  labs(subtitle = "arima2d") # Con este comando se pueden hacer pruebas sobre los residuos del arima2d.
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/89370a15-3276-4845-9595-eb088c184984)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5c487f6a-f726-46d7-84cf-2de088626ee0)
 
-El gráfico de los residuos no muestra señales de autocorrelación y esto se confirma en el gráfico de los _p-values_ de la prueba $Q$ de Ljung-Box en donde para todos los rezagos no se rechaza la hipótesis nula de no autocorrelación en los residuos. En particular, note que el _p-value_ más bajo corresponde al rezago 18, entonces vamos a utilizar el siguiente comando para conocer exactamente su valor: 
+El gráfico de los residuos no muestra señales de autocorrelación y esto se confirma en el gráfico de los _p-values_ de la prueba de Ljung-Box en donde para todos los rezagos no se rechaza la hipótesis nula de no autocorrelación en los residuos. En particular, note que el _p-value_ más bajo corresponde al rezago 18, entonces vamos a utilizar el siguiente comando para conocer exactamente su valor: 
 
 ``` r
 lb <- Box.test(arima2d$residuals, lag=18, type="Ljung-Box") # Test de Ljung-Box
