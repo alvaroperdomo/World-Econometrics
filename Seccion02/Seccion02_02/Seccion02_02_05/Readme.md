@@ -58,7 +58,7 @@ C1PIBpc_ = subset(C1PIBpc__, select = c(C1PIBpc))
 Para el análisis de raíz unitaria que viene, se va a llamar (desde la base de datos PIBpc_) a una variable llamada $PIBpc$ que representa una serie de tiempo anual (la del PIB) que va desde 1960 hasta 2019. Por otro lado, se va a llamar (desde la base de datos C1PIBpc_) a una variable llamada $C1PIBpc$ que representa una serie de tiempo anual (la del cambio en el PIB) que va desde 1961 hasta 2019.
 
 ``` r
-PIBpc <- ts(PIBpc_, frequency = 1, start = c(19601))
+PIBpc <- ts(PIBpc_, frequency = 1, start = c(1960))
 C1PIBpc <- ts(C1PIBpc_, frequency = 1, start = c(1961))
 ```
 
