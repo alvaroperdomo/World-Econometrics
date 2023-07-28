@@ -237,12 +237,13 @@ Error measures:
 Training set 1266.823 193299.6 142613.8 -0.08571389 1.360031 0.5900399 0.01941263
 
 Forecasts:
-   Point Forecast    Lo 95    Hi 95
-61       17775884 17387182 18164587
-62       17987489 17278445 18696534
-63       18196145 17199508 19192782
+     Point Forecast    Lo 95    Hi 95
+2020       17775884 17387182 18164587
+2021       17987489 17278445 18696534
+2022       18196145 17199508 19192782
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/75b3233b-dd17-43cc-819f-27e23c508b20)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/26deeca9-b18b-401a-ba0f-18f84c9487b8)
+
 
 Noten que la tendencia de la economía antes de la pandemia del Covid-19 era creciente, pero con una tendencia crecimiento había disminuido en los últimos años. Este comportamiento se trasladó al compartamiento de las proyecciones del $PIBpc$. En la siguiente tabla contrastamos las proyecciones del PIB per cápita real (y su banda de confianza al 95%) con los resultados reales durante el periodo en cuention:
 
