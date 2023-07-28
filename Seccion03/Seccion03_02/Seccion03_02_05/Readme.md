@@ -11,6 +11,7 @@ library(WDI)
 library(dplyr)
 library(vars)
 library(tidyr) # esta librería es útil para manipular los datos, por ejemplo con el comando "spread"
+library(ggplot2)
 
 WDIsearch(string='NY.GDP.PCAP.KD', field='indicator') # Confirmamos el nombre de la variable que se va a analizar
 
@@ -27,11 +28,15 @@ PIBpc_paises <- spread(dat, key = country, value = PIBpc) # Se convierten los da
 seriesVEC <- ts(PIBpc_paises[, -1], frequency = 1, start = 1960) # Se crea la serie de tiempo
 ```
 
-Un gráfico rápido de los datos se puede obteenr con el siguiente comando
+Un gráfico de los datos se puede obteenr con el siguiente comando
 ``` r
-plot(diff(seriesVEC), main = "PIB per cápita", xlab = "Años")
-plot(diff(seriesVEC), main = "Variación del PIB per cápita", xlab = "Años")
+ggplot(dat, aes(x = year, y = PIBpc, color = country)) +
+  geom_line() +
+  labs(x = "Años", y = "Dólares constantes de 2015", color = "País") +
+  ggtitle("PIB per cápita para Chile, Colombia y México") +
+  theme_minimal()
 ```
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/2f9cca6d-266f-4df7-b883-057406f658ef)
 
 VARselect(diff(seriesVEC),lag.max=10,type="const")
 
