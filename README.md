@@ -59,7 +59,7 @@ A continuación encontrará información más detallada acerca de cada una de la
 | **2.2.3.** La Prueba $KPSS$: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_             | Teoría y aplicación en $R$                                          |                           |   
 | **2.2.4.** Pruebas de Cambio Estructural: _Prueba de Perron y Prueba de Zivot y Andrews_ | Teoría y aplicación en $R$                                            |                           | 
 | **2.2.5.** Caso de estudio utilizando la base de datos _Indicadores de Desarrollo Mundial_ (primera parte) | Aplicación en $R$                                   |                           | 
-| **2.3. Análisis $ARIMA$ (Metodología de Box-Jenkins)** | **Metodología para estimar un modelo $ARIMA$**                                                          |              3            | 
+| **2.3. Análisis $ARMA$ (Metodología de Box-Jenkins)** | **Metodología para estimar un modelo $ARMA$**                                                            |              3            | 
 | **2.3.1.** Las tres etapas de la metodología de Box-Jenkins                      | Teoría y aplicación en $R$                                                    |                           | 
 | **2.3.2.** Estimación de un $ARMA$ - Ejemplo simulado                            | Aplicación en $R$                                                             |                           | 
 | **2.3.3.** Caso de estudio utilizando la base de datos _Indicadores de Desarrollo Mundial_ (segunda parte) | Aplicación en $R$                                   |                           | 
