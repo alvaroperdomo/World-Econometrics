@@ -46,20 +46,20 @@ A continuación encontrará información más detallada acerca de cada una de la
 ## [Sección 1 - Las Series de Tiempo, _R_ y los _Indicadores de Desarrollo Mundial_](Seccion01/Readme.md)
 | Subsecciones                                             | Contenido                                                                           | Dedicación,<br> 2.5 horas | 
 |----------------------------------------------------------|-------------------------------------------------------------------------------------|:-------------------------:|
-| **1.1. Series de tiempo**                                | **Se van a explicar algunas generalidades acerca del análisis de series de tiempo** |             0.5           | 
+| **1.1. Series de tiempo**                                | **Generalidades acerca del análisis de series de tiempo**                           |             0.5           | 
 | **1.2. $R$ y los _Indicadores de Desarrollo Mundial_**   | **¿Cómo manipular los _Indicadores de Desarrollo Mundial_ en $R$?**                 |             2.0           | 
 
 ## [Sección 2 - Análisis Univariado de Series de Tiempo](Seccion02/Readme.md)
 | Subsecciones                                           | Contenido                                                                                               | Dedicación,<br> 7 horas     
 |--------------------------------------------------------|------------------------------------------------------------------------------------------------------   |:-------------------------:|
-| **2.1. Series Estacionarias y No Estacionarias**       | **Se explica la importancia de las series estacionarias en el análisis univariado de series de tiempo** |              1            | 
-| **2.2 Pruebas de Raíz Unitaria**                       | **Explicación acerca de la metodología y lectura de diferentes tipos de pruebas de raíz unitaria**      |              3            | 
+| **2.1. Series Estacionarias y No Estacionarias**       | **Importancia de las series estacionarias en el análisis univariado de series de tiempo**               |              1            | 
+| **2.2 Pruebas de Raíz Unitaria**                       | **Metodología para aplicar e interpretar diferentes tipos de pruebas de raíz unitaria**                 |              3            | 
 | **2.2.1.** Las Pruebas $DF$ y $ADF$: _Pruebas de Dickey Fuller y Aumentada de Dickey Fuller_ | Teoría y aplicación en $R$                                        |                           | 
 | **2.2.2.** La Prueba $ADF-GLS$: _Prueba de Elliott, Rothenberg y Stock_                    | Teoría y aplicación en $R$                                          |                           | 
 | **2.2.3.** La Prueba $KPSS$: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_             | Teoría y aplicación en $R$                                          |                           |   
 | **2.2.4.** Pruebas de Cambio Estructural: _Prueba de Perron y Prueba de Zivot y Andrews_ | Teoría y aplicación en $R$                                            |                           | 
 | **2.2.5.** Caso de estudio utilizando la base de datos _Indicadores de Desarrollo Mundial_ (primera parte) | Aplicación en $R$                                   |                           | 
-| **2.3. Análisis $ARIMA$ (Metodología de Box-Jenkins)** | **Explicación acerca de cómo estimar un modelo $ARIMA$**                                                |              3            | 
+| **2.3. Análisis $ARIMA$ (Metodología de Box-Jenkins)** | **Metodología para estimar un modelo $ARIMA$**                                                          |              3            | 
 | **2.3.1.** Las tres etapas de la metodología de Box-Jenkins                      | Teoría y aplicación en $R$                                                    |                           | 
 | **2.3.2.** Estimación de un $ARMA$ - Ejemplo simulado                            | Aplicación en $R$                                                             |                           | 
 | **2.3.3.** Caso de estudio utilizando la base de datos _Indicadores de Desarrollo Mundial_ (segunda parte) | Aplicación en $R$                                   |                           | 
