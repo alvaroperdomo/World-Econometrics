@@ -114,8 +114,8 @@ arima5d  3 1620.260
 Por consiguiente, según el _Criterio de Información de Akaike_ (AIC) y el _Criterio Bayesiano de Schwartz_ (BIC), dentro de los modelos analizados, el modelo más parsimonioso es el **modelo $ARIMA(1,1,0)$ con intercepto** [el cual, dentro del código de $R$ lo hemos llamado **arima2d**]. Más específicamente, los valores que se obtuvieron con este modelo son: $AIC=1611.045$ y $BIC=1617.277$. 
 
 ``` r
-auto.arima(PIBpc, stepwise = FALSE, approximation = FALSE, ic=AIC)
-auto.arima(PIBpc, stepwise = FALSE, approximation = FALSE, ic=BIC)
+auto.arima(PIBpc, stepwise = FALSE, approximation = FALSE, ic="aic")
+auto.arima(PIBpc, stepwise = FALSE, approximation = FALSE, ic="bic")
 ```
 Obteniendo
 ``` r
