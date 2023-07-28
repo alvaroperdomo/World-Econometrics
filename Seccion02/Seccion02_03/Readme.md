@@ -10,7 +10,7 @@ La siguiente tabla presenta tres subsecciones en que esta dividida esta sección
 | Subsecciones                                                                       | Explicación teórica               | Aplicación en R                 |
 |------------------------------------------------------------------------------------|:---------------------------------:|:-------------------------------:|
 | **2.3.1.** Las tres etapas de la metodología de Box-Jenkins                        | [X](Seccion02_03_01_T/Readme.md)  |[X](Seccion02_03_01_R/Readme.md) |
-| **2.3.2.** Estimando un $ARMA$ - Ejemplos simulad                                  |                                   | [X](Seccion02_03_02/Readme.md)  |
+| **2.3.2.** Estimando un $ARMA$ - Ejemplos simulado                                 |                                   | [X](Seccion02_03_02/Readme.md)  |
 | **2.3.3.** Caso de estudio utilizando la base de datos _Indicadores de Desarrollo Mundial_ (segunda parte) |           |[X](Seccion02_03_03/Readme.md)   |
 
 | [Anterior Sección: 2.2. Pruebas de Raíz Unitaria](../Seccion02_02/Readme.md) | [:house: Inicio](../../README.md) |[Siguiente Sección: 3. Análisis Multivariado (Modelos _VAR_ y _VEC_)](../../Seccion03/Readme.md) |
