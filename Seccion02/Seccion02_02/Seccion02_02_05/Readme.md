@@ -74,9 +74,8 @@ acf_plot <- autoplot(acf(C1PIBpc, plot = FALSE)) # Se calcula la función de aut
 acf_plot + labs(x = "Rezagos", y = "FAC") # Se personalizan las etiquetas de los ejes
 ```
 Obteniendose
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/e48c24fd-7cc2-481e-a51f-3e81a71e22ae)
-
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/bde961de-2060-425e-9504-d7c71846de8e)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9ad57ace-04de-4110-a855-035e07bc8161)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6ec606b0-1d2f-4391-a137-c4fa8eca1958)
 
 El decaimiento continuo pero moderado de la $FAC$ de la variable $PIBpc$ da una idea de raíz unitaria. Por otro lado, la $FAC$ de la variable $C1PIBpc$ desde el comienzo cae rapidamente, dando así una idea de estacionariedad. 
 
