@@ -74,6 +74,7 @@ acf_plot <- autoplot(acf(C1PIBpc, plot = FALSE)) # Se calcula la función de aut
 acf_plot + labs(x = "Rezagos", y = "FAC") # Se personalizan las etiquetas de los ejes
 ```
 Obteniendose
+
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9ad57ace-04de-4110-a855-035e07bc8161)
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/6ec606b0-1d2f-4391-a137-c4fa8eca1958)
 
