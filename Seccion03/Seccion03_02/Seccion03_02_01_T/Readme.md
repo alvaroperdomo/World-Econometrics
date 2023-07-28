@@ -24,14 +24,6 @@ Hay cuatro puntos importantes a tener en cuenta sobre la definición:
 
    Normalmente, una de las variables se usa para normalizar el vector de cointegración fijando su coeficiente en $1$. Por ejemplo, para normalizar el vector de cointegración con respecto a $x_{2t}$, simplemente se selecciona un $\tilde{\lambda}=\frac{1}{\beta_2}$ de tal forma que $\mathbf{\tilde{\lambda} B} = {\left\lbrack \matrix{ \frac{\beta_1}{\beta_2} & 1 & \dots & \frac{\beta_n}{\beta_2}} \right\rbrack}$.
 
-   En el siguiente gráfico se muestra una situación en la que tres variables $y_t$, $z_t$ y $w_t$ son $I(1)$ y estan cointegradas
-
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/36a62b2e-6b7a-4643-8b77-507b154e0a5f)
-  
-   Mientras tanto en el gráfico de abajo se muestra una situación en la que dos variables $y_t$ y $z_t$ son $I(1)$ y no estan cointegradas
-
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4213813c-dae1-49b3-b6d7-f82180ac19fb)
-
 2) **La cointegración se refiere a variables que están integradas en el mismo orden**.
 
    Esto no implica que todas las variables integradas estén cointegradas:
