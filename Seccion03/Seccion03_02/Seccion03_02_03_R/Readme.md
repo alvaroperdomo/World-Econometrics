@@ -24,9 +24,14 @@ ca.jo(x, type = c("eigen", "trace"), ecdet = c("none", "const", "trend"), K = 2,
 |                    |  **"longrun"**                                                                                                                                           |
 |                    |  **"transitory"**                                                                                                                                        |
 
-
 [^1]: **ANOTACIÓN DE R: Independientemente de la especificación elegida, el poder explicativo también es el mismo.**
 
+En cuanto a la opción a escoger en el argumento $ecdet$, tenga en cuenta que:
+
+* (ecdet = "none"): Esta opción asume que no hay ningún término de tendencia o constante en el modelo. Es apropiado cuando se cree que las variables están cointegradas sin ninguna tendencia o desviación sistemática en el largo plazo.
+* (ecdet = "const"): Esta opción incluye un término de constante en el modelo. Es adecuado cuando se sospecha que hay una desviación sistemática en el largo plazo, pero no se espera una tendencia lineal.
+* (ecdet = "trend"): Esta opción incluye un término de tendencia lineal en el modelo. Es apropiado cuando se espera que las variables cointegradas tengan una tendencia lineal en el largo plazo.
+* (ecdet = "both"): Esta opción incluye tanto un término de constante como un término de tendencia lineal en el modelo. Es adecuado cuando se sospecha que hay una desviación sistemática y una tendencia lineal en el largo plazo.
 
 # Estimación del $VEC$ 
 Para estimar el modelo $VEC$ copie el comando:
