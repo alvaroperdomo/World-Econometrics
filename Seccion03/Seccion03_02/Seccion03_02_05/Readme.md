@@ -28,7 +28,7 @@ PIBpc_paises <- spread(dat, key = country, value = PIBpc) # Se convierten los da
 seriesVEC <- ts(PIBpc_paises[, -1], frequency = 1, start = 1960) # Se crea la serie de tiempo
 ```
 
-Un gráfico de los datos se puede obteenr con el siguiente comando
+Un gráfico de los datos se puede obtener con el siguiente comando
 ``` r
 ggplot(dat, aes(x = year, y = PIBpc, color = country)) +
   geom_line() +
