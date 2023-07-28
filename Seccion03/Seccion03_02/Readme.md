@@ -10,7 +10,7 @@ A continuación, dando click en la **X** de la segunda columna de la siguiente t
 |  **3.2.1.** ¿Qué es y para qué sirve la Cointegración?                                              |  [X](Seccion03_02_01_T/Readme.md)                     | 
 |  **3.2.2.** La Metodología de Engle y Granger (**2 variables**): <br> ¿Cómo evaluar la presencia de cointegración? ¿Cómo estimar un Modelo $VEC$? |  [X](Seccion03_02_02_T/Readme.md)     |      |
 | **3.2.3.** La Metodología de Johansen (**2 o más variables**): <br> ¿Cómo evaluar la presencia de cointegración? ¿Cómo estimar un Modelo $VEC$?   |  [X](Seccion03_02_03_T/Readme.md) | [X](Seccion03_02_03_R/Readme.md) |
-| **3.2.4.** Pruebas de hipótesis adicionales para implementar en un modelo $VEC$                     |  [X](Seccion03_02_04_T/Readme.md)           | [X](Seccion03_02_05_R/Readme.md) |
+| **3.2.4.** Pruebas de hipótesis adicionales para implementar en un modelo $VEC$                     |  [X](Seccion03_02_04_T/Readme.md)           | [X](Seccion03_02_04_R/Readme.md) |
 | **3.2.5.** Caso de estudio de un modelo $VEC$ utilizando la base de datos _Indicadores de Desarrollo Mundial_  |            | [X](Seccion03_02_05/Readme.md) |
 
 
