@@ -11,11 +11,11 @@ En esta sección se van a revisar las técnicas de análisis univariado de serie
 
 Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en la subsección respectiva. Sin embargo, lo ideal es que se aborden las tres secciones en el orden que está prescrito.
 
-| Subsecciones                                                                   | Contenido                                                                                            | Dedicación,<br> 5.5 horas | 
+| Subsecciones                                                                   | Contenido                                                                                            | Dedicación,<br> 7 horas   | 
 |--------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|:-------------------------:|
 | [**2.1.** Series Estacionarias y No Estacionarias](Seccion02_01/Readme.md)     | Se explica la importancia de las series estacionarias en el análisis univariado de series de tiempo. |              1            | 
-| [**2.2.** Pruebas de Raíz Unitaria](Seccion02_02/Readme.md) | Explicación acerca de la metodología y lectura de diferentes tipos de pruebas de raíz unitaria                          |              1            | 
-| [**2.3.** Análisis **_ARMA_** (Metodología de Box-Jenkins)](Seccion02_03/Readme.md) | Explicación acerca de cómo estimar un modelo **_ARMA_**                                         |              1            | 
+| [**2.2.** Pruebas de Raíz Unitaria](Seccion02_02/Readme.md) | Explicación acerca de la metodología y lectura de diferentes tipos de pruebas de raíz unitaria                          |              3            | 
+| [**2.3.** Análisis **_ARMA_** (Metodología de Box-Jenkins)](Seccion02_03/Readme.md) | Explicación acerca de cómo estimar un modelo **_ARMA_**                                         |              3            | 
 
 
 | [Anterior Sección: 1.2. _R_ y los _Indicadores de Desarrollo Mundial_/Readme.md](../Seccion01/Seccion01_02/Readme.md) | [:house: Inicio](../README.md) |[Siguiente Sección: 2.1. Series Estacionarias y No Estacionarias](Seccion02_01/Readme.md) |
