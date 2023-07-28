@@ -33,14 +33,14 @@ Del gráfico de **C1PIBpc** ya hablamos en la subsección 2.2.5, por lo que no d
 ``` r
 C1PIBpc_ <- dat[-c(1,61:63),] # Con este comando creamos la base de datos "C1PIBpc_" la cual es igual a la base de datos "dat", pero sin incluir el año 1961 (Fila (1) - del cual "dat" no existe información para C1PIBpc) y los años 2020-2023 (Filas (61-63) - los cuales no vamos a utilizar en la estimación de C1PIBpc) 
 C1PIBpc_ = subset(C1PIBpc_, select = c(C1PIBpc)) # Con este comando depuramos la base de datos C1PIBpc_ para que sólo incluya la variable C1PIBpc
-C1PIBpc <- ts(C1PIBpc_) # Con el comando ts() identificamos a la variable C1PIBpc como una serie de tiempo que se encuentra en la base de datos C1PIBpc_
+C1PIBpc <- ts(C1PIBpc_, frequency = 1, start = c(1961)) # Con el comando ts() identificamos a la variable C1PIBpc como una serie de tiempo que se encuentra en la base de datos C1PIBpc_
 ```
 Algo similar hacemos con la variable PIBpc porque algunos comandos permiten manejar la variable original sin diferenciar:
 
 ``` r
 PIBpc_ <- dat[-c(61:63),] # Con este comando creamos la base de datos "PIBpc_" la cual es igual a la base de datos "dat", pero sin incluir los años y los años 2020-2023 (Filas (61-63) - los cuales no vamos a utilizar en la estimación de C1PIBpc) 
 PIBpc_ = subset(PIBpc_, select = c(PIBpc)) # Con este comando depuramos la base de datos PIBpc_ para que sólo incluya la variable PIBpc
-PIBpc <- ts(PIBpc_) # Con el comando ts() identificamos a la variable PIBpc como una serie de tiempo que se encuentra en la base de datos PIBpc_
+PIBpc <- ts(PIBpc_, frequency = 1, start = c(1960)) # Con el comando ts() identificamos a la variable PIBpc como una serie de tiempo que se encuentra en la base de datos PIBpc_
 ```
 
 ## 1) Identificación:
