@@ -164,10 +164,12 @@ Y obtiene:
 Existen varios paquetes en $R$ para graficar los datos, a continuación utilizamos uno de ellos:
 ``` r
 library(ggplot2)
-ggplot(dat, aes(year, PIB_per_cápita_PPA_2017US, color=country)) + geom_line (size = 1) + theme(plot.caption = element_text(size=7)) +
+# Como los datos de la variable "PIB_per_cápita_PPA_2017US" sólo están disponibles desde 1990 hasta 2012, entonces vamos construirla base de datos "dat2" que solo abarca ese periodo de tiempo para hacer el gráfico de forma ágil
+dat2 = WDI(indicator= c("PIB_per_cápita_PPA_2017US" = "NY.GDP.PCAP.PP.KD", "poblacion" = "SP.POP.TOTL"), country=c('MX','CA','US'), start=1990, end=2012, language = "es")
+ggplot(dat2, aes(year, PIB_per_cápita_PPA_2017US, color=country)) + geom_line (size = 1) + theme(plot.caption = element_text(size=7)) +
 labs(subtitle="US$ de 2017", y="Dólares constante de 2017", x="Años", title="PIB per cápita PPA real", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial") 
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/7096078c-9412-4cf2-a5fb-d0d0d52299f7)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5c3cf20b-9f13-4b9b-a898-efec63a96a60)
 
 **ggplot** es una comando que tiene muchas opciones de ser utilizado, a continuación les comparto varias direcciones de internet donde a partir de la réplica podrán obtener el gráfico que desean:
 
@@ -223,8 +225,8 @@ Observe que para esta variable los datos están organizados en orden descendente
 
 Para organizar los datos en orden ascendente, copie los siguientes comandos.
 ``` r
-dat = WDI(indicator= c(PIBpc = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
-dat <- dat %>% arrange(year)
+dat = WDI(indicator= c(PIBpc = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es") # Obtenemos los datos de PIBpc para Colombia desde 1960 hasta 2019
+dat <- dat %>% arrange(year) # Ordenamos los datos desde el más antiguo hasta el más nuevo
 dat <- na.omit(dat)       # Este comando sirve para eliminar una fila para la cual no existe información
 head(dat)
 ```
@@ -239,7 +241,7 @@ Obteniendo:
 5 Colombia    CO   COL 1964 5746356
 6 Colombia    CO   COL 1965 5778607
 ```
-Ahora vamos a crear dos series: Una que represente el PIBpc del periodo anterior (PIBpc_lag1) y otra que represente la diferencia del PIBpc entre periodos (es decir, C1PIBpc=PIBpc-PIBpc_lag1). De paso, dado que la base de datos "dat" contiene muchas más variables que las que se desea utilizar, entonces se puede depurar la base de datos con el siguiente comando:
+Ahora vamos a crear una base de datos con las dos series: Una que represente el PIBpc del periodo anterior (PIBpc_lag1) y otra que represente la diferencia del PIBpc entre periodos (es decir, C1PIBpc=PIBpc-PIBpc_lag1). De paso, dado que la base de datos "dat" contiene muchas más variables que las que se desea utilizar, entonces se puede depurar la base de datos con el siguiente comando:
 ``` r
 dat <- mutate(dat, PIBpc_lag1 = lag(PIBpc, order_by = year), C1PIBpc=PIBpc-PIBpc_lag1, country=NULL, iso2c=NULL, iso3c=NULL)
 head(dat)
@@ -303,10 +305,11 @@ Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco
 
 ggplot(dat, aes(year, C1PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="Cambio en el PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 
-PIBpc_ = subset(dat, select = c(PIBpc))
-C1PIBpc_ = subset(dat, select = c(C1PIBpc))
-PIBpc <- ts(PIBpc_, start=1960, end=2019)
-C1PIBpc <- ts(C1PIBpc_, start=1961, end=2019)
+PIBpc <- ts(dat$NY.GDP.PCAP.KN, frequency = 1, start = c(1960)) # Creamos la variable PIBpc
+C1PIBpc <- diff(PIBpc, differences = 1) # Creamos la variable C1PIBpc
+
+PIBpc <- ts(dat$PIBpc, frequency = 1, start = c(1960)) # Creamos la variable PIBpc
+C1PIBpc <- diff(PIBpc, differences = 1) # Creamos la variable C1PIBpc
 ```
 ---
 ---
