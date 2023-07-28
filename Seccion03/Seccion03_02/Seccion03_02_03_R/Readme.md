@@ -43,7 +43,7 @@ cajorls(x, r = 1, reg.number = NULL)
 |--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **x**              | vector de variables de series de tiempo que incluye las variables endógenas utilizadas en el VEC                                                                     |
 | **r**              | valor que determina el número de vectores de cointegración obtenidos en $\lambda_{max}$ y/o en  $\lambda_{traza}$                                                   |
-| **reg.number**     | El número de la ecuación del VEC que se debe estimar o, si se escoge en NULL ( esta es la **_Opción Predeterminada_**), se estiman todas las ecuaciones dentro del VEC. |
+| **reg.number**     | El número de la ecuación del VEC que se debe estimar o, si se escoge en NULL ( esta es la **_Opción Predeterminada_** ), se estiman todas las ecuaciones dentro del VEC. |
 
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
