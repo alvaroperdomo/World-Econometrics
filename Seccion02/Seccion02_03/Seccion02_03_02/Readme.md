@@ -297,46 +297,69 @@ Sin embargo, de los dos modelos, **el Modelo 1 es mejor que el Modelo 2**, porqu
 **Análicemos los modelos 3 y 4**
 
 En ambos modelos, observe que la estimación del $\hat{\beta}_1$ es de buena calidad (es decir, el coeficiente estimado es mayor a dos desviaciones estandar del valor de $|\hat{\beta}_1|$). Sin embargo, ambos modelos tienen problemas de autocorrelación en los residuos por lo que no serían ruido blanco. Los problemas de autocorrelación se evidencian en:
-* El gráfico de la $FAC$ de sus residuos estimados. Note que las barras de los rezagos $1$ y $2$ son muy superiores a $0.14$.
-* El  gráfico de la prueba de Ljung-Box sobre los residuos estimados del Modelo 1, note que los p-values son inferiores al 5%. Es decir, se rechaza la hipótesis nula de que los residuos de la estimación no estan corelacionados.
+* El gráfico de la $FAC$ de sus residuos estimados: Note que las barras de los rezagos $1$ y $2$ son muy superiores a $0.14$.
+* El  gráfico de la prueba de Ljung-Box sobre los residuos estimados de ambos modelos: Note que los p-values son inferiores al 5%. Es decir, se rechaza la hipótesis nula de que los residuos de la estimación no estan corelacionados.
 
-Con los siguientes comandos puede ver, para los residuos del Modelo 2, los resultados detallados de la prueba de Lung-Box cuando se hace para los rezagos $1$ a $8$, $1$ a $16$ y $1$ a $24$:
+Por ejemplo, contraste usando el siguiente comando de R, los resultados detallados de la prueba de Lung-Box cuando se hace para los rezagos $1$ a $8$, $1$ a $16$ y $1$ a $24$, en ell Modelo 1 y en el Modelo 3:
 
 ```r
 Box.test(Modelo_1$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
 Box.test(Modelo_1$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
 Box.test(Modelo_1$residuals, lag=24, type="Ljung-Box") # Test de Ljung-Box
 
-Box.test(Modelo_2$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
-Box.test(Modelo_2$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
-Box.test(Modelo_2$residuals, lag=24, type="Ljung-Box") # Test de Ljung-Box
+Box.test(Modelo_3$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
+Box.test(Modelo_3$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
+Box.test(Modelo_3$residuals, lag=24, type="Ljung-Box") # Test de Ljung-Box
 ```
 
 Obteniendose 
 ```r
-> Box.test(Modelo_2$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
+	Box-Ljung test
+
+data:  Modelo_1$residuals
+X-squared = 9.0987, df = 8, p-value = 0.334
+
+> Box.test(Modelo_1$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
 
 	Box-Ljung test
 
-data:  Modelo_2$residuals
-X-squared = 56.172, df = 8, p-value = 2.611e-09
+data:  Modelo_1$residuals
+X-squared = 12.059, df = 16, p-value = 0.7399
 
-> Box.test(Modelo_2$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
-
-	Box-Ljung test
-
-data:  Modelo_2$residuals
-X-squared = 62.731, df = 16, p-value = 1.803e-07
-
-> Box.test(Modelo_2$residuals, lag=24, type="Ljung-Box") # Test de Ljung-Box
+> Box.test(Modelo_1$residuals, lag=24, type="Ljung-Box") # Test de Ljung-Box
 
 	Box-Ljung test
 
-data:  Modelo_2$residuals
-X-squared = 64.588, df = 24, p-value = 1.398e-05
+data:  Modelo_1$residuals
+X-squared = 13.166, df = 24, p-value = 0.9633
+
+> 
+> Box.test(Modelo_3$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
+
+	Box-Ljung test
+
+data:  Modelo_3$residuals
+X-squared = 56.072, df = 8, p-value = 2.731e-09
+
+> Box.test(Modelo_3$residuals, lag=16, type="Ljung-Box") # Test de Ljung-Box
+
+	Box-Ljung test
+
+data:  Modelo_3$residuals
+X-squared = 62.598, df = 16, p-value = 1.899e-07
+
+> Box.test(Modelo_3$residuals, lag=24, type="Ljung-Box") # Test de Ljung-Box
+
+	Box-Ljung test
+
+data:  Modelo_3$residuals
+X-squared = 64.443, df = 24, p-value = 1.469e-05
 ```
+Note que el estadistico Ljung-Box en el Modelo 1 es muy superior al 5% y en el Modelo 3 es muy inferior al 5%.
+
 Por último, note que en la comparación de los valores del _Criterio de Información de Akaike_ y del _Criterio Bayesiano de Schwartz_ de los dos modelos sugiere que es mucho mejor el **Modelo 1** al ser comparado con el **Modelo 2**. Por lo tanto, apunta a la elección del **Modelo 1**.
 
+**Análicemos los modelos 5 y 6**
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
