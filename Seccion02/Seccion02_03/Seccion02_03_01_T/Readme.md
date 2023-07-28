@@ -28,11 +28,11 @@ Una idea fundamental en el enfoque de Box y Jenkins es el principio de parsimoni
 
 La parsimonia sugiere usar el $\text{Criterio de Información de Akaike}$ y/o el $\text{Criterio Bayesiano de Schwartz}$ como medidas más apropiadas del ajuste general del modelo. En ambos casos, el modelo más parsimonioso es el que reporta un menor valor según el criterio escogido. Hay varias formas equivalentes de calcular ambos criterios, que pueden diferir en valor. Sin embargo, lo importante es que la forma escogida mantenga el orden en la parsimonia del criterio escogido. A continuación se presenta una tabla con diferentes formas de cálculo de ambos criterios.
 
-| Criterio de Información de Akaike   | Criterio Bayesiano de Schwatrz |
+| Criterio de Información de Akaike   | Criterio Bayesiano de Schwartz |
 |:-----------------------------------:|:------------------------------:|
 | $T \ln{SRC} + 2n$                   | $T \ln{SRC} + n \ln{T}$        |
 | $2n - 2 \ln(L)$                     | $n \ln{T}  - 2 \ln(L)$         |
-| $\eqalign{e^{\frac{2n}{T}}SRC}$     | $\eqalign{T^{\frac{n}{T}}SRC}$  |
+| $\eqalign{e^{\frac{2n}{T}}SRC}$     | $\eqalign{T^{\frac{n}{T}}SRC}$ |
 
 donde,
 * $T$ es el número de observaciones
@@ -74,7 +74,32 @@ La intuición detrás del uso de este estadístico es que autocorrelaciones mué
 
 Un problema con el estadístico _Q_ de Box-Pierce es que funciona mal incluso en muestras moderadamente grandes. Ljung y Box (1978) encontraron que el estadístico _Q_ modificado $Q=T(T+2)\displaystyle\sum_{k=1}^s \frac{r_k^2}{T-K} \sim \chi_s^2$ presenta un rendimiento superior. Si el valor muestral de $Q$ excede el valor respectivo en una tabla $\chi^2$, entonces al menos un valor de $r_k \not= 0$. 
 
+---
+---
+# Preguntas de selección múltiple
 
+1. **¿Cuál de las siguientes pruebas sirve para analizar la autocorrelación serial?**
+ 
+   a) La prueba de Akaike.
+
+   b) La prueba de Schwartz.
+
+   c) La prueba de Ljung-Box.
+
+   d) La prieba de Box y Jenkins.
+
+2. **¿En el análisis se series de tiempo cuál de los siguientes requerimientos se le hace a los residuos de las estimaciones?**
+ 
+   a) Que esten correlacionados.
+
+   b) Que no esten correlacionados.
+
+   c) Que cumplan el _Criterio de Información de Akaike_.
+
+   d) Que cumplan el _Criterio Bayesiano de Schwartz_.
+
+---
+---
 
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
