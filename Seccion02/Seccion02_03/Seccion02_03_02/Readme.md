@@ -269,12 +269,14 @@ Modelo_4  3 607.8082
 Modelo_5  3 569.5613
 Modelo_6  4 574.4651
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4134f837-f314-482a-99b3-9e260a18084c)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5ba8ff9f-4170-4ed3-afdd-c85a1b3abcf8)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/18a531a2-7baf-48c1-8f9e-792469a87486)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/12b7cd53-df2a-4966-8eef-fe9102fa19f3)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4d29f7e1-e5aa-4edc-a3a5-24bff8ce6972)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/3bfb6490-38c5-437a-a049-d5b15aedc554)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/991c5c19-f4d5-4899-8bc2-93cb116b450f)
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/b06f9ec4-94ba-431c-9bc3-7b5046620ec4)
-
-
-La tabla de abajo y los dos conji¿untos de tres gráficos de arriba (un conjunto por modelo) resumen los resultados de las dos estimaciones
+La tabla de abajo y los seis conjuuntos de tres gráficos de arriba (un conjunto por modelo) resumen los resultados de las seis estimaciones
 
 | Indicadores                               | Modelo 1                | Modelo 2                |  Modelo 3              | Modelo 4                |  Modelo 5               | Modelo 6                | 
 |-------------------------------------------|:-----------------------:|:-----------------------:|:----------------------:|:-----------------------:|:-----------------------:|:-----------------------:|
@@ -332,159 +334,6 @@ data:  Modelo_2$residuals
 X-squared = 64.588, df = 24, p-value = 1.398e-05
 ```
 Por último, note que en la comparación de los valores del _Criterio de Información de Akaike_ y del _Criterio Bayesiano de Schwartz_ de los dos modelos sugiere que es mucho mejor el **Modelo 1** al ser comparado con el **Modelo 2**. Por lo tanto, apunta a la elección del **Modelo 1**.
-
-## Estimación de un modelo $ARMA(1,1)$
-
-Utilizemos un segundo ejemplo para ver cómo la $FAC$ y la $FACP$ muestrales sirven para identificar un modelo $ARMA(1,1)$. En este ejemplo se generaron $100$ números aleatorios $\varepsilon_t$ distribuidos normalmente. Comenzando con $t=1$, los valores de $y_t$ se generaron usando la fórmula $y_{t-1}=-0.7y_{t-1}+\varepsilon_t+0.7\varepsilon_{t-1}$ y la condición inicial $y_0=0$ y $\varepsilon_0=0$. 
-
-Para ello se utilizó el siguiente código de $R$: 
-```r
-rm(list = ls())
-
-set.seed(180) # Se establece una semilla para la generación de números aleatorios (puedes usar cualquier número entero)
-
-n <- 200 # Se establece la longitud de la secuencia
-
-epsilon <- rnorm(n, mean = 0, sd = 1)  # Se crea un vector para almacenar los valores simulados de epsilon(t)
-
-# Inicializar los vectores para y(t) y e(t)
-y <- numeric(n)  # Se crea un vector para almacenar los valores simulados de y(t)
-e <- numeric(n) # Se crea un vector para almacenar los valores de epsilon (t)
-
-y[1] <- 0  # Se establece y(0) = 0
-e[1] <- 0  # Se establece epsilon(0) = 0
-
-# Se genera la serie de tiempo y(t) y la secuencia epsilon(t)
-for (t in 2:n) {
-  y[t] <- -0.7 * y[t-1] + e[t] + 0.7 * e[t-1]
-  e[t] <- epsilon[t]
-}
-```
-
-A continuación se van a desarrollar cada uno de los pasos de la metodología Box-Jenkins explicados en la sección 2.3.1. 
-
-### Identificación
-Las figuras de abajo muestran la $FAC$ y la $FACP$ muestrales. Las mismas nos dan idea de un $ARMA(1,1)$, aunque el decaimiento de la $FAC$ no muestra el componente $MA(1)$ de una forma demasiado clara.
-
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/e312a257-f7cb-4288-9d55-05ad83bb8b77)
-
-
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/32447870-b8ce-4f03-892b-e6560c553b71)
-
-Continuando con el código de $R$ de esta parte de la subsección, los gráficos de la $FAC$ y la $FACP$ de $y_t$ se generaron con los comandos
-```r
-acf_plot <- autoplot(acf(y, plot = FALSE)) # Se calcula la función de autocorrelación y se genera el gráfico sin mostrarlo
-acf_plot + labs(x = "Rezagos", y = "FAC") # Se personalizan las etiquetas de los ejes
-
-pacf_plot <- autoplot(pacf(y, plot = FALSE)) # Se calcula la función de autocorrelación parcial y se genera el gráfico sin mostrarlo
-pacf_plot + labs(x = "Rezagos", y = "FACP") # Se personalizan las etiquetas de los ejes
-```
-
-### Estimación y verificación de diagnóstico
-Sin embargo, si se desconoce el verdadero proceso de generación de datos, uno podría tener ciertas dudas acerca del modelo real. Entonces, se pueden analizar diferentes modelos como los siguientes:
-
-* **Modelo 3 - $AR(1)$:** $y_t=a_1y_{t-1}+\varepsilon_t$
-* **Modelo 4 - $ARMA(1,1)$:** $y_t=a_1y_{t-1}+\varepsilon_t+\beta_1\varepsilon_{t-1}$
-* **Modelo 5 - $ARMA(2)$:** $y_t=a_1y_{t-1}+a_2y_{t-2}+\varepsilon_t$
-
-La estimación en $R$ de los tres modelos, de una vez haciendo la verificación de diagnóstico, se hace con los siguientes comandos:
-```r
-Modelo_3<- Arima(y, order=c(1,0,0))  # Se calcula la función AR(1) sin mostrarla
-Modelo_4<- Arima(y, order=c(1,0,1))  # Se calcula la función ARMA(1,1) sin mostrarla. 
-Modelo_5<- Arima(y, order=c(2,0,0))  # Se calcula la función AR(2) sin mostrarla. 
-
-summary(Modelo_3)   # Se reportan los resultados del Modelo_3
-summary(Modelo_4) # Se reportan los resultados del Modelo_4
-summary(Modelo_5) # Se reportan los resultados del Modelo_5
-
-AIC(Modelo_3,Modelo_4,Modelo_5) # Se reportan los Criterios de Información de Akaike para todos los modelos considerados
-BIC(Modelo_3,Modelo_4,Modelo_5) # Se reportan los Criterios Bayesianos de Schwartz para todos los modelos considerados
-
-ggtsdiag(Modelo_3, gof.lag = 30) +  labs(subtitle = "Modelo 3") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 3.
-ggtsdiag(Modelo_4, gof.lag = 30) +  labs(subtitle = "Modelo 4") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 4.
-ggtsdiag(Modelo_5, gof.lag = 30) +  labs(subtitle = "Modelo 5") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo 5.
-```
-Obteniendose
-```r
-> summary(Modelo_3)   # Se reportan los resultados del Modelo_3
-Series: y 
-ARIMA(1,0,0) with non-zero mean 
-
-Coefficients:
-          ar1    mean
-      -0.7450  0.0144
-s.e.   0.0466  0.0277
-
-sigma^2 = 0.4694:  log likelihood = -207.56
-AIC=421.12   AICc=421.25   BIC=431.02
-
-Training set error measures:
-                        ME      RMSE      MAE  MPE MAPE     MASE        ACF1
-Training set -2.969578e-05 0.6817082 0.551883 -Inf  Inf 0.342004 -0.04598221
-> summary(Modelo_4) # Se reportan los resultados del Modelo_4
-Series: y 
-ARIMA(1,0,1) with non-zero mean 
-
-Coefficients:
-          ar1      ma1    mean
-      -0.7088  -0.0830  0.0148
-s.e.   0.0668   0.0966  0.0259
-
-sigma^2 = 0.4701:  log likelihood = -207.21
-AIC=422.42   AICc=422.63   BIC=435.61
-
-Training set error measures:
-                        ME      RMSE       MAE  MPE MAPE      MASE        ACF1
-Training set -0.0006490796 0.6804963 0.5522538 -Inf  Inf 0.3422338 -0.00178085
-> summary(Modelo_5) # Se reportan los resultados del Modelo_5
-Series: y 
-ARIMA(2,0,0) with non-zero mean 
-
-Coefficients:
-          ar1      ar2    mean
-      -0.7874  -0.0564  0.0145
-s.e.   0.0705   0.0704  0.0262
-
-sigma^2 = 0.4703:  log likelihood = -207.24
-AIC=422.48   AICc=422.69   BIC=435.68
-
-Training set error measures:
-                        ME      RMSE       MAE  MPE MAPE      MASE         ACF1
-Training set -3.671721e-05 0.6806037 0.5521254 -Inf  Inf 0.3421542 -0.006216286
-> 
-> AIC(Modelo_3,Modelo_4,Modelo_5) # Se reportan los Criterios de Información de Akaike para todos los modelos considerados
-         df      AIC
-Modelo_3  3 421.1237
-Modelo_4  4 422.4214
-Modelo_5  4 422.4828
-> BIC(Modelo_3,Modelo_4,Modelo_5) # Se reportan los Criterios Bayesianos de Schwartz para todos los modelos considerados
-         df      BIC
-Modelo_3  3 431.0187
-Modelo_4  4 435.6147
-Modelo_5  4 435.6761
-```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/d6daf84a-0d81-4147-b948-a3fefe097f22)
-
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/c7f2e4fa-b36f-4c73-9ca8-2959825e9cb4)
-
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9e35d695-6ab2-41ae-800f-2f8a3c431d40)
-
-
-| Indicadores                               | Modelo 3                 | Modelo 4               |Modelo 5                |
-|-------------------------------------------|:------------------------:|:----------------------:|:----------------------:|
-| $\hat{a}_1$  <br> (Error estándar)        |$-0.7450$ <br> $(0.0144)$ |$-0.679$ <br> $(0.076)$ |$-1.160$ <br> $(0.093)$ | 
-| $\hat{a}_2$  <br> (Error estándar)        |                          |                        |$-0.378$ <br> $(0.092)$ |
-| $\hat{\beta}_1$  <br> (Error estándar)    |                          |$-0.676$ <br> $(0.081)$ |                        |
-| Criterio de Información de Akaike         |$496.5$                   |$471.0$                 |$482.8$                 |  
-| Criterio Bayesiano de Schwartz            |$499.0$                   |$476.2$                 |$487.9$                 |  
-
-Al examinar la tabla, note que todos los $\hat{a_1}$ son muy significativos; cada uno de los valores estimados se desvía al menos ocho desviaciones estándar de cero. 
-
-Está claro que el modelo $AR(1)$ es inapropiado. Los estadísticos $Q$ para el **Modelo 3** indican que existe una autocorrelación significativa en los residuos (es decir, el nivel de significancia, de cada uno de los estadísticos $Q$ es inferior al 5%).
-
-El modelo estimado $ARMA(1,1)$ (es decir. el **Modelo 4**) no sufre este problema. Además, tanto el _Criterio de Información de Akaike_ como el _Criterio Bayesiano de Schwartz_ seleccionan el **Modelo 4** sobre el **Modelo 3**. 
-
-El mismo tipo de razonamiento indica que el **Modelo 4** es preferible al **Modelo 5**. Tenga en cuenta que, para cada modelo, los coeficientes estimados son altamente significativos y las estimaciones puntuales implican convergencia. Aunque el estadístico $Q$ en $24$ rezagos indica que estos dos modelos no tienen residuos correlacionados, el estadístico $Q$ de $8$ rezagos indica una correlación serial en los residuos del $Modelo 5$. Por lo tanto, el modelo $AR(2)$ no capta la dinámica de corto plazo como lo hace el modelo $ARMA(1,1)$. También tenga en cuenta que tanto el _Criterio de Información de Akaike_ como el _Criterio Bayesiano de Schwartz_ seleccionan el **Modelo 4**.
 
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
