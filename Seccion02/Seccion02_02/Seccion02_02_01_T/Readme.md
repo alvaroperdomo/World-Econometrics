@@ -105,8 +105,8 @@ Dado que las pruebas $DF$ y $ADF$ estan sesgadas hacía el no rechazo de la hip�
 ---
 ---
 
-| [Subsección 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [Subsección 2.2.1.(R) Aplicación en _R_ de las pruebas _DF_ y _ADF_](../Seccion02_02_01_R/Readme.md) |
-|----------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| [Subsección 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [Subsección 2.2.1.(R) Aplicando las pruebas _DF_ y _ADF_en _R_ de ](../Seccion02_02_01_R/Readme.md) |
+|----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
