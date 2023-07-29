@@ -2,7 +2,7 @@
 
 ## SUBSECCIÓN 3.1.2. (R):
 
-# Pruebas de Hipótesis de un $VAR$ en $R$
+# Pruebas de Hipótesis de Modelos $VAR$ en $R$
 
 ## 1) Número de rezagos
 Para determinar el número óptimo de rezagos dentro del $VAR$ se utiliza el comando:
