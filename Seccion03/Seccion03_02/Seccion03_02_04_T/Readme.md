@@ -1,9 +1,9 @@
 <div align="center"><a href="https://www.escuelaing.edu.co/es/investigacion-e-innovacion/centro-de-estudios-oikonimia/" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/Centros_%20de_Estudios_Oikonom%C3%ADa.jpg" alt="R.LTWB" width="100%" border="0" /></a></div>
 
 ## SUBSECCIÓN 3.2.4 (T):
-# Pruebas de Hipótesis Adicionales en modelos VEC
+# Pruebas de Hipótesis Adicionales en modelos $VEC$
 
-## ¿Cómo determinar la longitud de rezagos del VEC?
+## ¿Cómo determinar la longitud de rezagos del $VEC$?
 
 El procedimiento más común es estimar el $VAR$ de los datos no diferenciados. Luego se utilizan las mismas pruebas de longitud de rezagos que en un $VAR$ tradicional. Comience con el rezago mas largo que considere razonable y verifique si se puede acortar. Por ejemplo, si queremos probar si los rezagos $2$ a $4$ son importantes, podemos estimar los siguientes dos $VAR$:
    * $\mathbf{x_t=A_0+A_1 x_{t-1}+A_2 x_{t-2}+A_3 x_{t-3}+A_4 x_{t-4}+e_{1t}}$
@@ -49,6 +49,8 @@ Sims, Stock y Watson (1990) establecen que no se pueden realizar pruebas de caus
 
 Sims, Stock y Watson (1990), también descartan por razones similares las pruebas de exogeneidad en bloque. 
 
+| [Subsección: 3.2 - Cointegración y estimación de Modelos _VEC_](../Readme.md) |[Subsección: 3.2.4.(R)  Pruebas de Hipótesis Adicionales de Modelos $VEC$ en _R_](../Seccion03_02_03_R/Readme.md) |
+|-------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
