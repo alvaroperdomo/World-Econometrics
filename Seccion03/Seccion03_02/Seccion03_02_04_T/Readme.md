@@ -49,8 +49,8 @@ Sims, Stock y Watson (1990) establecen que no se pueden realizar pruebas de caus
 
 Sims, Stock y Watson (1990), también descartan por razones similares las pruebas de exogeneidad en bloque. 
 
-| [Subsección: 3.2 - Cointegración y estimación de Modelos _VEC_](../Readme.md) |[Subsección: 3.2.4.(R)  Pruebas de Hipótesis Adicionales de Modelos $VEC$ en _R_](../Seccion03_02_03_R/Readme.md) |
-|-------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| [Subsección: 3.2 - Cointegración y estimación de Modelos _VEC_](../Readme.md) |[Subsección: 3.2.4.(R)  Pruebas de Hipótesis Adicionales de Modelos VEC en _R_](../Seccion03_02_04_R/Readme.md) |
+|-------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
