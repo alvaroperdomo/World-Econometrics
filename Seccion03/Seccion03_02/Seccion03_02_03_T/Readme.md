@@ -194,7 +194,7 @@ Utilice los siguientes cuatro pasos cuando implemente el procedimiento Johansen:
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
-| [Subsección: 3.2 - Cointegración y estimación de Modelos _VEC_](../Readme.md) |[Subsección: 3.2.3.(R)  Aplicación en _R_ de la Metodología de Johansen (2 o más variables)](../Seccion03_02_03_T/Readme.md) |
+| [Subsección: 3.2 - Cointegración y estimación de Modelos _VEC_](../Readme.md) |[Subsección: 3.2.3.(R)  Aplicación en _R_ de la Metodología de Johansen (2 o más variables)](../Seccion03_02_03_R/Readme.md) |
 |-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 
 ##
