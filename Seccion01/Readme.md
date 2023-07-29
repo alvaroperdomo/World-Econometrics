@@ -13,7 +13,7 @@ Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en
 | [**1.2.** _**R**_ y Los Indicadores de Desarrollo Económico del Banco Mundial](Seccion01_02/README.md)   |¿Qué son y cómo manipular los _Indicadores de Desarrollo Económico:_ del Banco Mundial en $R$?|    2.0   | 
 
 
-| [:house: Inicio](../README.md) | [Sección 2 - Análisis Univariado de Series de Tiempo](../Seccion01/README.md) |
+| [:house: Inicio](../README.md) | [Sección 2 - Análisis Univariado de Series de Tiempo](../Seccion02/README.md) |
 |--------------------------------|-------------------------------------------------------------------------------|
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
