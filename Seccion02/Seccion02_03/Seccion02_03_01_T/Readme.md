@@ -104,5 +104,5 @@ Un problema con el estadístico _Q_ de Box-Pierce es que funciona mal incluso en
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
-| [Retornar: 2.3. Análisis ARMA (La Metodología de Box-Jenkins)](../Readme.md) | [:house: Inicio](../../../README.md) | [2.3.1.(R) Las tres etapas de la metodología de Box-Jenkins (Aplicación en _R_)](../Seccion02_03_01_R/Readme.md) |
-|------------------------------------------------------------------------------|--------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| [Subsección 2.3. Análisis ARMA (La Metodología de Box-Jenkins)](../Readme.md) | [Subsección 2.3.1.(R) Las tres etapas de la metodología de Box-Jenkins (Aplicación en _R_)](../Seccion02_03_01_R/Readme.md) |
+|-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
