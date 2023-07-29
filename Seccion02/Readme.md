@@ -18,8 +18,8 @@ Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en
 | [**2.3.** Análisis **_ARMA_** (Metodología de Box-Jenkins)](Seccion02_03/Readme.md) | Explicación acerca de cómo estimar un modelo **_ARMA_**                                         |              3            | 
 
 
-| [Anterior Sección: 1. Las Series de Tiempo, _R_ y los _Indicadores de Desarrollo Mundial__/Readme.md](../Seccion01/Readme.md) | [:house: Inicio](../README.md) |[Siguiente Sección: 3. Análisis Multivariado de Series de Tiempo_/Readme.md](../Seccion03/Readme.md) |
-|-----------------------------------------------------------------------------------------------------------------------------|--------------------------------|-------------------------------------------------------------------------------------------|
+| [Anterior Sección: 1. Las Series de Tiempo, _R_ y los _Indicadores de Desarrollo Mundial_](../Seccion01/Readme.md) | [:house: Inicio](../README.md) |[Siguiente Sección: 3. Análisis Multivariado de Series de Tiempo_/Readme.md](../Seccion03/Readme.md) |
+|--------------------------------------------------------------------------------------------------------------------|--------------------------------|-----------------------------------------------------------------------------------------------------|
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
