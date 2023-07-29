@@ -42,7 +42,32 @@ ur.za(x, model = c("intercept", "trend", "both"), lag=NULL)
 
 #### De las dos opciones, mi preferida es la segunda por la información que revela al hacer la prueba. Después se puede utilizar la primera opciónvisualizar la prueba gráficamente. 
 
+---
+---
+# Preguntas de selección múltiple
 
+1. **¿Cuál de los comandos permite hacer la prueba $ZA$ con la opción _doplot_?:**
+ 
+   a) El comando _urzaTest_.
+
+   b) El comando _ur.za_.
+
+   c) Ninguno de las anteriores.
+
+   d) Todos los anteriores.
+
+2. **¿Cuál de los comandos permite hacer la prueba $ZA$ con la opción _model= c("intercept", "trend", "both")_?:**
+ 
+   a) El comando _urzaTest_.
+
+   b) El comando _ur.za_.
+
+   c) Ninguno de las anteriores.
+
+   d) Todos los anteriores.
+
+---
+---
 | [Subsección 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [Subsección 2.2.4.(T) Explicación general de las pruebas de cambio estructural (la prueba de Perron y la prueba _ZA_)](../Seccion02_02_03_T/Readme.md)  |
 |---------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
 
