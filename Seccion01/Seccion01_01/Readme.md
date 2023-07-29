@@ -58,15 +58,6 @@ Un proceso estocástico se define como un conjunto de magnitudes aleatorias que 
 
    d) El número de días que dura una sequía.
 
-## Pregunta de selección múltiple
-
-¿Cuál es la capital de Francia?
-
-- [ ] Berlín
-- [x] París
-- [ ] Londres
-- [ ] Roma
-
 ---
 ---  
 
