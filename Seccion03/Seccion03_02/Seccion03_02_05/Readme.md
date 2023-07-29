@@ -1,3 +1,5 @@
+<div align="center"><a href="https://www.escuelaing.edu.co/es/investigacion-e-innovacion/centro-de-estudios-oikonimia/" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/Centros_%20de_Estudios_Oikonom%C3%ADa.jpg" alt="R.LTWB" width="100%" border="0" /></a></div>
+
 ## SUBSECCIÓN 3.2.5
 # Caso de estudio de un modelo _VEC_ utilizando la base de datos _Indicadores de Desarrollo Mundial_
 
@@ -101,3 +103,9 @@ cajorls(x, r = 1, reg.number = NULL)
 ``` 
 | [Subsección: 3.2 - Cointegración y estimación de Modelos _VEC_](../Readme.md) |
 |-------------------------------------------------------------------------------|
+
+##
+
+<div align="center"><a href="http://www.escuelaing.edu.co" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/banner-pie-de-pagina.jpg" alt="Support by" width="100%" border="0" />
+
+</div>
