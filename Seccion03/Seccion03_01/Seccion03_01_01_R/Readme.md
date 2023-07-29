@@ -55,7 +55,7 @@ Observe que los pronósticos se trabajaron con el nombre **forecast1**. Usted pu
 ---
 # Preguntas de selección múltiple
 
-1. **En el comando _**VAR**_ ¿cuál es el número de rezagos que se estiman de forma predeterminada:**
+1. **En el comando $VAR-4 ¿cuál es el número de rezagos que se estiman de forma predeterminada?:**
  
    a) $0$.
 
@@ -65,7 +65,7 @@ Observe que los pronósticos se trabajaron con el nombre **forecast1**. Usted pu
 
    d) Ninguno de los anteriores.
  
-2. **¿Cuáles criterios de información se puden utilizar para estimar un VAR?:**
+2. **¿Cuáles criterios de información se puden utilizar para estimar un $VAR$?:**
 
    a) El Criterio de Información de Akaike.
 
