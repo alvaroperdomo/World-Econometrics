@@ -87,8 +87,8 @@ normality.test(nombre, multivariate.only={FALSE, TRUE})
 |                       | **TRUE**:  Sólo se calculan las pruebas de normalidad multivariadas **(Opción: Predeterminada)**                    |
 |                       | **FALSE**: Se calculan las pruebas de normalidad multivariadas y univariadas                                        |
 
-| [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |[Subsección: 3.1.1.(R) ¿Cómo estimar y hacer pronosticos de un modelo _VAR_ en _R_?](../Seccion03_01_01_R/Readme.md) |
-|--------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
+| [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |[Subsección: 3.1.2.(T) Pruebas de Hipótesis de Modelos _VAR_?](../Seccion03_01_02_T/Readme.md) |
+|--------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 
 ---
 ---
