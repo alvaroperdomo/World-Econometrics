@@ -17,8 +17,8 @@ Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en
 | [**3.2.** Cointegración y Estimación de Modelos _**VEC**_](Seccion03_02/Readme.md) | Explicación acerca de lo qué es la cointegración y acerca de la metododología para estimar un modelo $VEC$. |        4         | 
 
 
-| [:house: Inicio](../README.md)    | [Siguiente Sección: 3.1. Estimación de Modelos VAR](Seccion03_01/Readme.md) |
-|-----------------------------------|-----------------------------------------------------------------------------|
+| [Anterior Sección: 2 - Análisis Univariado de Series de Tiempo](../Seccion02/Readme.md)| [:house: Inicio](../README.md) |  
+|----------------------------------------------------------------------------------------|--------------------------------|
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
