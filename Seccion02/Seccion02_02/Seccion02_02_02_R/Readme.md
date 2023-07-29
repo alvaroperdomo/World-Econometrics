@@ -65,25 +65,26 @@ Finalmente, con el comando utilizaría el comando _**ur.ers**_ con type = c("P-t
 ---
 # Preguntas de selección múltiple
 
-1. **¿Cuál comando admite escoger la opción type($ARIMA$)?:**
+1. **¿Cuál comando admite escoger la opción _doplot_?:**
  
-   a) El comando "unitrootTest".
+   a) El comando "ur.ers".
 
-   b) El comando "ur.ers".
+   b) El comando "urersTest".
 
    c) Todos los anteriores.
 
    d) Ninguno de los anteriores.
 
-2. **¿Cuál comando admite escoger la opción lag.max?:**
+2. **¿Cuál comando admite escoger la opción type(P-test)?:**
  
-   a) El comando "unitrootTest".
+   a) El comando "ur.ers".
 
-   b) El comando "ur.ers".
+   b) El comando "urersTest".
 
    c) Todos los anteriores.
 
    d) Ninguno de los anteriores.
+
 
 ---
 ---
