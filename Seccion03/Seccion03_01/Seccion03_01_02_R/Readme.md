@@ -87,9 +87,6 @@ normality.test(nombre, multivariate.only={FALSE, TRUE})
 |                       | **TRUE**:  Sólo se calculan las pruebas de normalidad multivariadas **(Opción: Predeterminada)**                    |
 |                       | **FALSE**: Se calculan las pruebas de normalidad multivariadas y univariadas                                        |
 
-| [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |[Subsección: 3.1.2.(T) Pruebas de Hipótesis de Modelos _VAR_?](../Seccion03_01_02_T/Readme.md) |
-|--------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-
 ---
 ---
 # Preguntas de selección múltiple
@@ -115,6 +112,9 @@ normality.test(nombre, multivariate.only={FALSE, TRUE})
    d) lagmax.
 ---
 ---
+
+| [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |[Subsección: 3.1.2.(T) Pruebas de Hipótesis de Modelos _VAR_?](../Seccion03_01_02_T/Readme.md) |
+|--------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
