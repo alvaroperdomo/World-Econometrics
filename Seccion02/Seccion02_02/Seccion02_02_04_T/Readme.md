@@ -307,8 +307,8 @@ Se debe tener cuidado al usar el procedimiento de Perron, ya que supone que la f
 ---
 ---
 
-| [Subsección 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [Subsección 2.2.4.(R) Aplicando la prueba _ZA_en _R_](../Seccion02_02_04_R/Readme.md) |
-|----------------------------------------------------------|---------------------------------------------------------------------------------------|
+| [Subsección 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [Subsección 2.2.4.(R) Aplicando la prueba _ZA_ en _R_](../Seccion02_02_04_R/Readme.md) |
+|----------------------------------------------------------|----------------------------------------------------------------------------------------|
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
