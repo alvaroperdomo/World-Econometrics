@@ -13,8 +13,8 @@ La siguiente tabla presenta tres subsecciones en que esta dividida esta sección
 | **2.3.2.** Estimando un $ARMA$ - Ejemplo simulado                                  |                                   | [X](Seccion02_03_02/Readme.md)  |
 | **2.3.3.** Caso de estudio utilizando la base de datos _Indicadores de Desarrollo Mundial_ (segunda parte) |           |[X](Seccion02_03_03/Readme.md)   |
 
-| [Anterior Subección: 2.2. Pruebas de Raíz Unitaria](../Seccion02_02/Readme.md) | [Sección 2 - Análisis Univariado de Series de Tiempo](Seccion02/Readme.md) |
-|--------------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| [Anterior Subección: 2.2. Pruebas de Raíz Unitaria](../Seccion02_02/Readme.md) | [Sección 2 - Análisis Univariado de Series de Tiempo](../Readme.md) |
+|--------------------------------------------------------------------------------|---------------------------------------------------------------------|
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
