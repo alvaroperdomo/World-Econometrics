@@ -2,8 +2,8 @@
 
 En esta dirección se encuentran bases de datos utilizadas en ejercicios particulares:
 
-* Subsecciones 2.2.5 y 2.3.3 - Estudio de Caso: $NY.GDP.PCAP.KN$ - **PIB per cápita de Colombia a pesos constantes**
-* Subsección 2.2.5 y 2.3.3 - Ejercicio: $NE.CON.GOVT.ZS$ - **Gasto en consumo final del gobierno general de Chile como % del PIB**
-* Subsección 3.1. - Estudio de caso: $NE.CON.GOVT.ZS$ - **Gasto en consumo final del gobierno general de Corea del Sur como % del PIB** y $NE.GDI.FPRV.ZS$ - **Inversión privada de Corea del Sur como % del PIB**
+* Subsecciones 2.2.5 y 2.3.3 - Estudio de Caso: $NY.GDP.PCAP.KN$ - **PIB per cápita de Colombia a pesos constantes**.
+* Subsección 2.2.5 y 2.3.3 - Ejercicio: $NE.CON.GOVT.ZS$ - **Gasto en consumo final del gobierno general de Chile como % del PIB**.
+* Subsección 3.1. - Estudio de caso: $NE.CON.GOVT.ZS$ - **Gasto en consumo final del gobierno general de Corea del Sur como % del PIB** y $NE.GDI.FPRV.ZS$ - **Inversión privada de Corea del Sur como % del PIB**.
 * Subsección 3.1. - Ejercicio:
-* Subsección 3.2.5 - Estudio de Caso: $NY.GDP.PCAP.KD$ - **PIB per capita de Chile, Colombia y México a dólares constantes de 2015** 
+* Subsección 3.2.5 - Estudio de Caso: $NY.GDP.PCAP.KD$ - **PIB per capita de Chile, Colombia y México a dólares constantes de 2015**.
