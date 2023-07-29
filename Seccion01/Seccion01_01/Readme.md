@@ -57,6 +57,16 @@ Un proceso estocástico se define como un conjunto de magnitudes aleatorias que 
    c) El número de goles que se marcan en la final de un mundial de fútbol.
 
    d) El número de días que dura una sequía.
+
+## Pregunta de selección múltiple
+
+¿Cuál es la capital de Francia?
+
+- [ ] Berlín
+- [x] París
+- [ ] Londres
+- [ ] Roma
+
 ---
 ---  
 
