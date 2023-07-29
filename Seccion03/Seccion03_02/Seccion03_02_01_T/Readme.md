@@ -1,6 +1,6 @@
 <div align="center"><a href="https://www.escuelaing.edu.co/es/investigacion-e-innovacion/centro-de-estudios-oikonimia/" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/Centros_%20de_Estudios_Oikonom%C3%ADa.jpg" alt="R.LTWB" width="100%" border="0" /></a></div>
 
-## SUBSECCIÓN 3.2.1. (T)
+## SUBSECCIÓN 3.2.1.
 # ¿Qué es y para qué sirve la cointegración?
 
 En los modelos univariados la tendencia estocástica de una serie de tiempo puede eliminarse por diferenciación, y las series estacionarias resultantes se pueden estimar utilizando las técnicas univariadas de Box-Jenkins analizadas previamente en la sección 2. Anteriormente, la práctica convencional era generalizar esta idea a los modelos multivariados y diferenciar todas las variables no estacionarias utilizadas en un análisis de regresión para luego estimar un modelo $VAR$ en diferencias. Sin embargo, hoy en día la forma adecuada de tratar las variables no estacionarias no es tan sencilla en un contexto multivariado. Es bastante posible que haya una combinación lineal de variables integradas que sea estacionaria y que por lo tanto configuren una relación de largo plazo; si esto ocurre se dice que tales variables están **cointegradas**[^1]. 
