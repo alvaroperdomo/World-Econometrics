@@ -4,12 +4,12 @@
 # Análisis Univariado de Series de Tiempo
 
 En esta sección se van a revisar las técnicas de análisis univariado de series de tiempo, en particular:
-* Se van a explicar los aspectos teóricos más relevantes del análisis univariado de series de tiempo
-* Se va a explicar la forma cómo se utiliza $R$ para hacer un análisis univariado de series de tiempo
-* En las secciones 2.2. y 2.3 se va a desarrollar un ejemplo empírico utilizando la base de datos "_Indicadores de Desarrollo Mundial_" del Banco Mundial
-* Más específicamente, durante el desarrollo de la sección **utilizaremos el _PIB per cápita de Colombia a pesos constantes durante el periodo 1960-2019_ para calcular las proyecciones de esta variable durante el periodo 2020-2025 como si no se hubiera presentado la pandemia del Covid 19**. Con ello, lo que se busca es cómo se hubiera comportado esta variable, según su comportamiento histórico, sin la cuarentena que se dio en la pandemia. 
+* Se van a explicar los aspectos teóricos más relevantes del análisis univariado de series de tiempo.
+* Se va a explicar la forma cómo se utiliza $R$ para hacer un análisis univariado de series de tiempo.
+* En las subsecciones 2.2.5. y 2.3.3 se va a desarrollar un ejemplo empírico en $R$ utilizando la base de datos "_Indicadores de Desarrollo Mundial_" del Banco Mundial. Más específicamente, **utilizaremos el _PIB per cápita de Colombia a pesos constantes durante el periodo 1960-2019_ para calcular las proyecciones de esta variable durante el periodo 2020-2025 como si no se hubiera presentado la pandemia del Covid 19**. Con ello, lo que se busca es cómo se hubiera comportado esta variable, según su comportamiento histórico, sin la cuarentena que se dio en la pandemia.
+* En las subsecciones 2.2.5. y 2.3.3. se ha dejado un ejercicicio empírico guiado en el que, utilizando $R$ y la base de datos "_Indicadores de Desarrollo Mundial_" del Banco Mundial va a tener que hacer proyecciones acerca del comportamiento del gasto en consumo final del gobierno general de Chile como % del PIB.
 
-Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en la subsección respectiva. Sin embargo, lo ideal es que se aborden las tres secciones en el orden que está prescrito.
+Para acceder a cada una de las subsecciones haga _click_ en la tabla de abajo en la subsección respectiva. Sin embargo, lo ideal es que aborde las tres secciones en el orden que está prescrito.
 
 | Subsecciones                                                                   | Contenido                                                                                            | Dedicación,<br> 7 horas   | 
 |--------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|:-------------------------:|
