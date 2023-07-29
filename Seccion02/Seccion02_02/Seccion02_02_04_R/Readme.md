@@ -1,7 +1,7 @@
 <div align="center"><a href="https://www.escuelaing.edu.co/es/investigacion-e-innovacion/centro-de-estudios-oikonimia/" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/Centros_%20de_Estudios_Oikonom%C3%ADa.jpg" alt="R.LTWB" width="100%" border="0" /></a></div>
 
 ## SUBSECCIÓN 2.2.4. (R)
-# Aplicando la pruebas $ZA$ en $R$
+# Aplicando la prueba $ZA$ en $R$
 
 Para llevar a cabo la prueba $ZA$ ofrecemos dos opciones:
 
@@ -43,8 +43,8 @@ ur.za(x, model = c("intercept", "trend", "both"), lag=NULL)
 #### De las dos opciones, mi preferida es la segunda por la información que revela al hacer la prueba. Después se puede utilizar la primera opciónvisualizar la prueba gráficamente. 
 
 
-| [Subsección 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) | [2.2.4.(T) Explicación general de las pruebas de cambio estructural (la prueba de Perron y la prueba _ZA_)](../Seccion02_02_03_T/Readme.md)  |
-|---------------------------------------------------------|--------------------------------------|--------------------------------------------------------------------------------------|
+| [Subsección 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [Subsección 2.2.4.(T) Explicación general de las pruebas de cambio estructural (la prueba de Perron y la prueba _ZA_)](../Seccion02_02_03_T/Readme.md)  |
+|---------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
