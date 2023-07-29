@@ -878,13 +878,11 @@ Todas las pruebas aplicadas parecen indicar la presencia de raíz unitaria en la
 ---
 # Preguntas de selección múltiple
 
-Para esta sección, vamos a hacer preguntas con respecto a las pruebas de raíz unitaria de la variable NE.CON.GOVT.ZS [Gasto de consumo final del gobierno general (% del PIB)](https://datos.bancomundial.org/indicator/NE.CON.GOVT.ZS), a la cual llamaremos (GGOV) cuando la manejemos en niveles y (C1GGOV) cuando la manejemos en su primera diferencia.
+En estas preguntas de selección múltiple y en las de la sección 2.3.3., van a analizar el **Gasto en consumo final del gobierno general de Chile como % del PIB". Esta variable aparece identificada en los _Indicadores de Desarrollo Mundial_ como [NE.CON.GOVT.ZS](https://datos.bancomundial.org/indicator/NE.CON.GOVT.ZS). Sin embargo, al manejarla en niveles la llamaran $GGOV$ y cuando la manejen en primeras diferencias la llemaran $C1GGOV$ cuando la manejemos en su primera diferencia. En particular, en esta sección van a hacer análisis de raíz unitaria tanto a $GGOV$ como a $C1GGOV$:
 
-El código que se utilizó para descargar y preparar los datos para las pruebas es:
+El código que se utiliza para descargar y preparar los datos de esta variable es:
 
 ``` r
-# Pruebas UNIT ROOT GGOV
-
 rm(list = ls())
 
 library(WDI)         # Esta libreria sirve para trabajar directamente con la base de datos Indicadores de Desarrollo Mundial.
