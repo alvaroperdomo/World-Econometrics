@@ -89,7 +89,7 @@ ndiffs(x, alpha = 0.05, test = c("kpss"), type = c("level", "trend"), ...)
 ---
 
 
-| [Retornar: 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) | [2.2.1.(T) Explicación general de la prueba _KPSS_](../Seccion02_02_03_T/Readme.md)  |
+| [Subsección 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) | [2.2.1.(T) Explicación general de la prueba _KPSS_](../Seccion02_02_03_T/Readme.md)  |
 |---------------------------------------------------------|--------------------------------------|--------------------------------------------------------------------------------------|
 
 
