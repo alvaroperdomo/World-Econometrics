@@ -13,6 +13,8 @@ A continuación, dando click en la **X** de la segunda columna de la siguiente t
 | **3.2.4.** Pruebas de hipótesis adicionales para implementar en un modelo $VEC$                     |  [X](Seccion03_02_04_T/Readme.md)           | [X](Seccion03_02_04_R/Readme.md) |
 | **3.2.5.** Caso de estudio de un modelo $VEC$ utilizando la base de datos _Indicadores de Desarrollo Mundial_  |            | [X](Seccion03_02_05/Readme.md) |
 
+|[Anterior Subsección: 3.2. Estimación de Modelos _VAR_](../Seccion03_01/Readme.md) | [Sección: 3. Análisis Multivariado de Series de Tiempo](../Readme.md) |
+|-----------------------------------------------------------------------------------|-----------------------------------------------------------------------|
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
