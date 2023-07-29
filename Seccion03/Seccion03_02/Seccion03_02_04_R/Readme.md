@@ -1,7 +1,7 @@
 <div align="center"><a href="https://www.escuelaing.edu.co/es/investigacion-e-innovacion/centro-de-estudios-oikonimia/" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/Centros_%20de_Estudios_Oikonom%C3%ADa.jpg" alt="R.LTWB" width="100%" border="0" /></a></div>
 
 ## SUBSECCIÓN 3.2.4_R:
-# Pruebas de Hipótesis de un $VEC$ en $R$
+# Pruebas de Hipótesis de modelos $VEC$ en $R$
 ## 1) Número de rezagos
 Para determinar el número óptimo de rezagos dentro del VEC se utiliza el comando:
 
@@ -22,6 +22,9 @@ plotres(nombre)
 | **Argumentos**     | **Descripción**                                                        | 
 |--------------------|------------------------------------------------------------------------|
 | **nombre**         | nombre del $VEC$ que se estimó  con el comando "ca.jo"                 |
+
+| [Subsección: 3.2 - Cointegración y estimación de Modelos _VEC_](../Readme.md) |[Subsección: 3.2.4.(T)  Pruebas de Hipótesis Adicionales de Modelos _VEC_](../Seccion03_02_03_R/Readme.md) |
+|-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
