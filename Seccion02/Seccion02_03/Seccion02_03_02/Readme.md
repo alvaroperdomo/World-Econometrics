@@ -5,9 +5,11 @@
 
 Una comparación de la función de autocorrelación $FAC$ y la función de autocorrelación parcial $FACP$ muestrales con las de varios procesos $ARMA(p,q)$ teóricos puede sugerir varios modelos plausibles. Por medio de un ejemplo sencillo, vamos a mostrar cómo se identifica el proceso $ARMA(p,q)$ generador de una variable.
 
-En este ejemplo se generaron $200$ números aleatorios $\varepsilon_t$ distribuidos normalmente con una varianza teórica igual $1$. Comenzando con $t=1$, los valores de $y_t$ se generaron usando la fórmula $y_t=0.7y_{t-1}+\varepsilon_t$ y la condición inicial $y_0=0$. Note que la serie { $y_t$ } que se construye es estacionaria, por lo que es factible aplicar la metodología de Box-Jenkins. 
+En este ejemplo se va a simular un modelo _AR(1)_ y se va a utilizar la metodología de Box y Jenkins para tratar de identificarlo. Para ello, en _R_:
+* Se generaron $200$ números aleatorios $\varepsilon_t$ distribuidos normalmente con una varianza teórica igual $1$.
+* Comenzando con $t=1$, los valores de $y_t$ se generaron usando la fórmula $y_t=0.7y_{t-1}+\varepsilon_t$ y la condición inicial $y_0=0$. Note que la serie { $y_t$ } que se construye es estacionaria, por lo que es factible aplicar la metodología de Box-Jenkins. 
 
-Para ello se utilizo el siguiente código de $R$:
+El código de $R$ utilizado en la simulación es:
 
 ```r
 rm(list = ls())
