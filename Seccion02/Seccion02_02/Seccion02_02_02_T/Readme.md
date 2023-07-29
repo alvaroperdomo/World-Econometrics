@@ -46,8 +46,8 @@ Los valores críticos de la prueba dependen de si se incluye una tendencia en la
 ---
 ---
 
-| [Subsección 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [:house: Inicio](../../../README.md) | [2.2.2.(R) Aplicación en R de la prueba ADF-GLS](../Seccion02_02_02_R/Readme.md) |
-|---------------------------------------------------------|--------------------------------------|----------------------------------------------------------------------------------|
+| [Subsección 2.2. Pruebas de Raíz Unitaria](../Readme.md) | [2.2.2.(R) Aplicación en _R_ de la prueba _ADF-GLS_](../Seccion02_02_02_R/Readme.md) |
+|----------------------------------------------------------|--------------------------------------------------------------------------------------|
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
