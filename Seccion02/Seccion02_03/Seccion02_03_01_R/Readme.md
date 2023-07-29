@@ -125,5 +125,5 @@ Observe que los pronósticos se trabajaron con el nombre **forecast1**. Usted pu
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
-| [Retornar: 2.3. Análisis ARMA (La Metodología de Box-Jenkins)](../Readme.md) | [:house: Inicio](../../../README.md) | [2.3.1.(T) Las tres etapas de la metodología de Box-Jenkins](../Seccion02_03_01_T/Readme.md) |
-|------------------------------------------------------------------------------|--------------------------------------|----------------------------------------------------------------------------------------------|
+| [Subsección 2.3. Análisis ARMA (La Metodología de Box-Jenkins)](../Readme.md) | [2.3.1.(T) Explicación general de las tres etapas de la metodología de Box-Jenkins](../Seccion02_03_01_T/Readme.md) |
+|-------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
