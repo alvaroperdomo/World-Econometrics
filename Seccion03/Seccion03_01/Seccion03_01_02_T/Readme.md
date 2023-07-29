@@ -136,6 +136,9 @@ Los residuos estimados del modelo $VAR$ deben ser ruido blanco. Por lo tanto, aq
 ---
 ---
 
+| [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |[Subsección: 3.1.1.(R) ¿Cómo estimar y hacer pronosticos de un modelo _VAR_ en _R_?](../Seccion03_01_01_R/Readme.md) |
+|--------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
+
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
 ##
