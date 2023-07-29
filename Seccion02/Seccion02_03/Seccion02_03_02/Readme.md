@@ -365,8 +365,8 @@ En ambos modelos se cumplen las pruebas de verificación de los residuos estimad
 
 Por último, note que en la comparación de los valores del _Criterio de Información de Akaike_ y del _Criterio Bayesiano de Schwartz_ de los todos los modelos analizados sugiere que es mucho mejor estimar el **Modelo 1** .
 
-| [Subsección 2.3. - Análisis _ARMA_ (La Metodología de Box-Jenkins)](../Readme.md)| [Siguiente Subsección: 2.3.2 Estimando un _ARMA_ - Ejemplo simulado](../Seccion02_03_02/Readme.md) |
-|----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| [Subsección 2.3. - Análisis _ARMA_ (La Metodología de Box-Jenkins)](../Readme.md)| [Siguiente Subsección: 2.3.3 Caso de estudio utilizando la base de datos _Indicadores de Desarrollo Mundial_ (segunda parte)](../Seccion02_03_03/Readme.md) |
+|----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
