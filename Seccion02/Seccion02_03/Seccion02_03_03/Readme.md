@@ -257,10 +257,16 @@ Noten que la tendencia de la economía antes de la pandemia del Covid-19 era cre
 
 Durante el año $2020$, a raíz de la cuarentena producto de la pandemia del Covid-19 se dio un crecimiento negativo de la economía que llevo a situar a la producción real por debajo de su valor tendencial. Sin embargo, durante los años $2021$ y $2022$ se dió un repunte bastante fuerte en la producción, colocando a la producción real por encima de su valor promedio de diagnóstico (pero, aún dentro de la banda de confianza del análisis)   
 
+| [Anterior Subsección: 2.3.2. Estimando un $ARMA$ - Ejemplo simulado](../Seccion02_02/Readme.md) | [Subección 2.3 - Análisis _ARMA_ (La Metodología de Box-Jenkins)](../Readme.md) |
+|-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
+##
 
+<div align="center"><a href="http://www.escuelaing.edu.co" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/banner-pie-de-pagina.jpg" alt="Support by" width="100%" border="0" />
 
+</div>
 
 
 
