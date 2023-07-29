@@ -315,7 +315,7 @@ C1PIBpc <- diff(PIBpc, differences = 1) # Creamos la variable C1PIBpc
 ---
 # Preguntas de selección múltiple
 
-1. **Para un estudio que está llevando a cabo, necesita la variable "Gasto en consumo final del gobierno general cpmo porcentaje del PIB". Ya sea utilizando una búsqueda por Internet o por $RStudio$, encuentre cuál es el código de la variable que en los _Indicadores de Desarrollo Mundial_" se acerca más a la variable requerida**
+1. **Para un estudio que está llevando a cabo, necesita la variable "Gasto en consumo final del gobierno general cpmo porcentaje del PIB". Ya sea utilizando una búsqueda por Internet o por $RStudio$, encuentre cuál es el código de la variable que en los _Indicadores de Desarrollo Mundial_" se acerca más a la variable requerida:**
  
    a) NE.CON.TOTL.ZS.
 
