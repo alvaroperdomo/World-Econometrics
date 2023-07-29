@@ -99,6 +99,10 @@ Sin embargo, en un modelo de orden superior, puede haber un gran número de coef
 ---
 ---  
 
+| [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |[Subsección: 3.1.1.(R) ¿Cómo estimar y hacer pronosticos de un modelo _VAR_ en _R_?](../Seccion03_01_01_R/Readme.md) |
+|--------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
+
+
 ##
 
 <div align="center"><a href="http://www.escuelaing.edu.co" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/banner-pie-de-pagina.jpg" alt="Support by" width="100%" border="0" />
