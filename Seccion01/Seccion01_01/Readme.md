@@ -60,8 +60,8 @@ Un proceso estocástico se define como un conjunto de magnitudes aleatorias que 
 ---
 ---  
 
-| [Sección 2 - Análisis Univariado de Series de Tiempo](../Readme.md) | [:house: Inicio](../../README.md) |[Siguiente Sección: 1.2. R y los _Indicadores de Desarrollo Mundial_](../Seccion01_02/README.md) |
-|---------------------------------------------------------------------|-----------------------------------|-------------------------------------------------------------------------------------------------|
+| [Sección 1 - Las Series de Tiempo, _R_ y los _Indicadores de Desarrollo Mundial_](../Readme.md) | [:house: Inicio](../../README.md) |[Siguiente Sección: 1.2. R y los _Indicadores de Desarrollo Mundial_](../Seccion01_02/README.md) |
+|-------------------------------------------------------------------------------------------------|-----------------------------------|-------------------------------------------------------------------------------------------------|
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
