@@ -84,11 +84,11 @@ Dado que las pruebas $DF$ y $ADF$ estan sesgadas hacía el no rechazo de la hip�
 
 1. **Al comparar dos estimaciones de la prueba $ADF$ con respecto a una misma variable, según el _Criterío de Información de Akaike_ ¿cuál prueba tiene mejor específicado el número de rezagos?:**
  
-   a) La que tiene mayor valor de este criterio.
+   a) La que tiene un mayor valor de este criterio.
 
    b) La que tiene el valor de este criterio igual a cero.
 
-   c) La que tiene menor valor de este criterio.
+   c) La que tiene un menor valor de este criterio.
 
    d) Ninguno de los anteriores.
 
