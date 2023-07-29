@@ -1,6 +1,6 @@
 <div align="center"><a href="https://www.escuelaing.edu.co/es/investigacion-e-innovacion/centro-de-estudios-oikonimia/" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/Centros_%20de_Estudios_Oikonom%C3%ADa.jpg" alt="R.LTWB" width="100%" border="0" /></a></div>
 
-## SECCIÓN 2.3.2
+## SUBSECCIÓN 2.3.2
 # Estimación de un $ARMA$ - Ejemplo simulado 
 
 Una comparación de la función de autocorrelación $FAC$ y la función de autocorrelación parcial $FACP$ muestrales con las de varios procesos $ARMA(p,q)$ teóricos puede sugerir varios modelos plausibles. Por medio de un ejemplo sencillo, vamos a mostrar cómo se identifica el proceso $ARMA(p,q)$ generador de una variable.
@@ -362,6 +362,9 @@ Note que el estadistico Ljung-Box en el Modelo 1 es muy superior al 5% y en el M
 En ambos modelos se cumplen las pruebas de verificación de los residuos estimados; sin embargo el coeficiente $\hat{\beta}_{1}$ no es significativo (el coeficiente estimado es menor a dos desviaciones estandar del valor de $|\hat{\beta}_1|$); por lo que nos se podrían considrear buenos modelos.
 
 Por último, note que en la comparación de los valores del _Criterio de Información de Akaike_ y del _Criterio Bayesiano de Schwartz_ de los todos los modelos analizados sugiere que es mucho mejor estimar el **Modelo 1** .
+
+| [Subsección 2.3. - Análisis _ARMA_ (La Metodología de Box-Jenkins)](../Readme.md)| [Siguiente Subsección: 2.3.2 Estimando un _ARMA_ - Ejemplo simulado](../Seccion02_02/Readme.md) |
+|----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
