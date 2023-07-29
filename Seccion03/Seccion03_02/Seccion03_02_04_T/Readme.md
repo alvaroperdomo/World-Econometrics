@@ -1,7 +1,7 @@
 <div align="center"><a href="https://www.escuelaing.edu.co/es/investigacion-e-innovacion/centro-de-estudios-oikonimia/" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/Centros_%20de_Estudios_Oikonom%C3%ADa.jpg" alt="R.LTWB" width="100%" border="0" /></a></div>
 
 ## SUBSECCIÓN 3.2.4 (T):
-# Pruebas de Hipótesis Adicionales en modelos $VEC$
+# Pruebas de Hipótesis Adicionales en Modelos $VEC$
 
 ## ¿Cómo determinar la longitud de rezagos del $VEC$?
 
