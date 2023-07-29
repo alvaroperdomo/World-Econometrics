@@ -2,7 +2,7 @@
 
 ## SUBSECCIÓN 3.1.2. (T):
 
-# Pruebas de Hipótesis
+# Pruebas de Hipótesis de Modelos _VAR_
 
 ## ¿Cuáles variables incluir en un $VAR$?
 En principio, no hay nada que impida incorporar una gran cantidad de variables en el $VAR$. Es posible construir un $VAR$ de $n$ ecuaciones con cada ecuación conteniendo $p$ rezagos de todas las $n$ variables en el sistema. Por lo general, uno quiere incluir aquellas variables que tienen importantes efectos económicos entre sí. No obstante, tenga en cuenta que los grados de libertad disminuyen rápidamente a medida que se incluyen más variables.[^1] 
@@ -136,8 +136,8 @@ Los residuos estimados del modelo $VAR$ deben ser ruido blanco. Por lo tanto, aq
 ---
 ---
 
-| [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |[Subsección: 3.1.1.(R) ¿Cómo estimar y hacer pronosticos de un modelo _VAR_ en _R_?](../Seccion03_01_01_R/Readme.md) |
-|--------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
+| [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |[Subsección: 3.1.2.(R) Pruebas de Hipótesis de Modelos _VAR_ en _R_](../Seccion03_01_02_R/Readme.md) |
+|--------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
