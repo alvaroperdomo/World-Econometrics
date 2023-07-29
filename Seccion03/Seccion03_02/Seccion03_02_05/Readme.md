@@ -99,3 +99,5 @@ summary(Johansen_eigen_trend)
 
 cajorls(x, r = 1, reg.number = NULL)
 ``` 
+| [Subsección: 3.2 - Cointegración y estimación de Modelos _VEC_](../Readme.md) |
+|-------------------------------------------------------------------------------|
