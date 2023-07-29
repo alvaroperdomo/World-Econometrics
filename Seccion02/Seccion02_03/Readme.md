@@ -1,6 +1,6 @@
 <div align="center"><a href="https://www.escuelaing.edu.co/es/investigacion-e-innovacion/centro-de-estudios-oikonimia/" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/Centros_%20de_Estudios_Oikonom%C3%ADa.jpg" alt="R.LTWB" width="100%" border="0" /></a></div>
 
-## SECCIÓN 2.3:
+## SUBSECCIÓN 2.3:
 # Análisis ARMA (La Metodología de Box-Jenkins)
 
 Box y Jenkins (1976) popularizaron una metodología para seleccionar el modelo $ARMA(p,q)$ apropiado para estimar una serie de tiempo univariada. Tenga, en cuenta que la misma sólo es valida en series estacionarias. Por lo tanto, como se comento anteriormente, si una serie de tiempo no es estacionaria, transformela en una serie estacionaria para poder aplicar la propuesta de Box y Jenkins.
