@@ -337,8 +337,8 @@ C1PIBpc <- diff(PIBpc, differences = 1) # Creamos la variable C1PIBpc
 ---
 ---
 
-| [Anterior Sección: 1.1. Series de tiempo](../Seccion01_01/Readme.md) | [:house: Inicio](../../Readme.md) | [Siguiente Sección: 2. Análisis Univariado de Series de Tiempo](../../Seccion02/Readme.md) | 
-|----------------------------------------------------------------------|-----------------------------------|---------------------------------------------------------------------------------------------|
+| [Anterior Sección: 1.1. Series de tiempo](../Seccion01_01/Readme.md) | [Sección 1 - Las Series de Tiempo, _R_ y los _Indicadores de Desarrollo Mundial_](../Readme.md) |
+|----------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
