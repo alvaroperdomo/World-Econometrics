@@ -71,8 +71,6 @@ Suponga que estima el modelo de primer orden $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$ p
 
 Sin embargo, en un modelo de orden superior, puede haber un gran número de coeficientes estimados. Dado que los $VAR$ no restringidos están sobreparametrizados, los pronósticos pueden ser poco confiables. Con el fin de obtener un modelo parsimonioso, algunos pronosticadores eliminarían los coeficientes no significativos del $VAR$ para utilizarlo con fines de pronóstico. 
 
-<div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
-
 ---
 ---
 # Preguntas de selección múltiple
@@ -102,6 +100,7 @@ Sin embargo, en un modelo de orden superior, puede haber un gran número de coef
 | [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |[Subsección: 3.1.1.(R) ¿Cómo estimar y hacer pronosticos de un modelo _VAR_ en _R_?](../Seccion03_01_01_R/Readme.md) |
 |--------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
 
+<div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
 ##
 
