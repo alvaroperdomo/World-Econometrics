@@ -11,7 +11,7 @@ Las pruebas de raíz unitaria sirven para determinar si una serie es estacionari
 | **2.2.2.** La Prueba $ADF-GLS$: _Prueba de Elliott, Rothenberg y Stock_                                  | [X](Seccion02_02_02_T/Readme.md) | [X](Seccion02_02_02_R/Readme.md) |
 | **2.2.3.** La Prueba $KPSS$: _Prueba de Kwiatkowski, Phillips, Schmidt y Shin_                           | [X](Seccion02_02_03_T/Readme.md) | [X](Seccion02_02_03_R/Readme.md) |  
 | **2.2.4** Pruebas de Cambio Estructural: _Prueba de Perron y Prueba de Zivot y Andrews_ $ZA$             | [X](Seccion02_02_04_T/Readme.md) | [X](Seccion02_02_04_R/Readme.md) |
-| **2.2.5** Caso de estudio utilizando la base de datos _Indicadores de Desarrollo Mundial_ (priemra parte)|                                  | [X](Seccion02_02_05/Readme.md) |
+| **2.2.5** Caso de estudio utilizando la base de datos _Indicadores de Desarrollo Mundial_ (primera parte)|                                  | [X](Seccion02_02_05/Readme.md) |
 
 |[Anterior Subsección: 2.1. Series Estacionarias y No Estacionarias](../Seccion02_01/Readme.md)|[Sección 2 - Análisis Univariado de Series de Tiempo](../Readme.md)|[Siguiente Subsección: 2.3. Análisis _ARMA_ (Metodología de Box y Jenkins)](../Seccion02_03/Readme.md) |
 |----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|-------------------------------------------------------------------|
