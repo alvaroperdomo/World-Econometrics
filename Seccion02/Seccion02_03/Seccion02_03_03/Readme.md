@@ -330,14 +330,34 @@ pacf_plot + labs(x = "Rezagos", y = "FACP") # Se personalizan las etiquetas de l
    f) $ARMA(1,1)$ con tendencia en $GGOV$.
 
 ``` r
-arima1<- Arima(PIBpc, order=c(1,1,0))
-arima2<- Arima(PIBpc, order=c(0,1,1))  
-arima3<- Arima(PIBpc, order=c(1,1,1))  
+arima1<- Arima(GGOV, order=c(1,1,0))
+arima2<- Arima(GGOV, order=c(0,1,1))  
+arima3<- Arima(GGOV, order=c(1,1,1))  
 
-arima1d<- Arima(PIBpc, order=c(1,1,0), include.drift=TRUE)
-arima2d<- Arima(PIBpc, order=c(0,1,1), include.drift=TRUE)  
-arima3d<- Arima(PIBpc, order=c(1,1,1), include.drift=TRUE)  
+arima1d<- Arima(GGOV, order=c(1,1,0), include.drift=TRUE)
+arima2d<- Arima(GGOV, order=c(0,1,1), include.drift=TRUE)  
+arima3d<- Arima(GGOV, order=c(1,1,1), include.drift=TRUE)  
 ```
+
+3. **Según el comando auto.arima cuál debería ser la especificación escogida?**:
+
+``` r
+auto.arima(GGOV, stepwise = FALSE, approximation = FALSE, ic="aic")
+auto.arima(GGOV, stepwise = FALSE, approximation = FALSE, ic="bic")
+```
+
+   a) $AR(1)$.
+
+   b) $AR(1)$ con tendencia en $GGOV$.
+
+   c) $MA(1)$.
+
+   d) $MA(1)$ con tendencia en $GGOV$.
+
+   e) $ARMA(1,1)$.
+
+   f) $ARMA(1,1)$ con tendencia en $GGOV$.
+
 ---
 ---
 
