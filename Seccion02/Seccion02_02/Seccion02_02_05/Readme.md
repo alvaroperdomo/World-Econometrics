@@ -879,15 +879,10 @@ Uno de los países latinoamericanos más exitosos en términos de desarrollo eco
 El código que se utiliza para descargar y preparar los datos de esta variable es:
 
 ``` r
-rm(list = ls())
-
-library(WDI)         # Esta libreria sirve para trabajar directamente con la base de datos Indicadores de Desarrollo Mundial.
-library(dplyr)       # Esta libreria permite manipular las bases de datos de R de una forma sencilla, por ejemplo utilizando los comandos mutate() y arrange()
-library(ggfortify)   # Esta libreria tienen comando utiles para plantear gráficos de series de tiempo, por ejemplo utilizando el comando autoplot()
-library(ggplot2)     # Esta librería sirve para construir gráficos interesantes
-library(fUnitRoots)  # Esta libreria sirve para hacer pruebas de raíz unitaria.
-library(urca)        # Esta libreria sirve para hacer pruebas de raíz unitaria.
-library(forecast)    # Esta libreria sirve para hacer pronósticos.
+library(WDI)
+library(dplyr)
+library(ggfortify)
+library(ggplot2)
 
 WDIsearch(string='NE.CON.GOVT.ZS', field='indicator')
 
@@ -895,14 +890,24 @@ dat = WDI(indicator= c(GGOV = "NE.CON.GOVT.ZS"), country=c('CL'), language = "es
 
 dat <- dat %>% arrange(year)
 dat <- na.omit(dat)
-dat <- mutate(dat, GGOV_lag1 = lag(GGOV, order_by = year), C1GGOV=GGOV-GGOV_lag1, country=NULL, iso2c=NULL, iso3c=NULL)
+dat <- mutate(dat, GGOV_lag1 = lag(GGOV, order_by = year), C1GGOV = GGOV - GGOV_lag1, country = NULL, iso2c = NULL, iso3c = NULL) # mutate lo utilizamos para adicionar las columnas GGOV_lag1 y C1GGOV en "dat" y para eliminar las columnas country, iso2c y iso3c
 
-ggplot(dat, aes(year, GGOV)) + scale_x_continuous(name="Años") + geom_line (linewidth=0.2) + theme(plot.caption = element_text(size=7)) + labs(subtitle="1960-2022", y="Pesos constantes", title="Gasto en el consumo final del gobierno general de Chile como % del PIB", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+ggplot(dat, aes(year, GGOV)) + 
+  geom_line(linewidth=0.2) + 
+  scale_x_continuous(name = "Años") + 
+  theme(plot.caption = element_text(size=7)) + 
+  labs(subtitle = "1960-2022", y = "Pesos constantes", title = "Gasto en el consumo final del gobierno general de Chile como % del PIB", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 
-ggplot(dat, aes(year, C1GGOV)) + scale_x_continuous(name="Años")  + geom_line (linewidth=0.2) + theme(plot.caption = element_text(size=7)) + labs(subtitle="1961-2022", y="Pesos constantes", title="Cambio en el gasto en el consumo final del gobierno general de Chile como % del PIB", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+ggplot(dat, aes(year, C1GGOV)) + 
+  geom_line(linewidth=0.2) + 
+  scale_x_continuous(name = "Años") + 
+  theme(plot.caption = element_text(size=7)) + 
+  labs(subtitle = "1961-2022", y = "Pesos constantes", title = "Cambio en el gasto en el consumo final del gobierno general de Chile como % del PIB", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 
-PIBpc <- ts(dat$PIBpc, frequency = 1, start = c(1960)) # Creamos la variable PIBpc
-C1PIBpc <- diff(PIBpc, differences = 1) # Creamos la variable C1PIBpc
+GGOV <- ts(dat$GGOV, frequency = 1, start = c(1960)) # Creamos la variable GGOV como serie de tiempo
+
+C1GGOV <- diff(GGOV, differences = 1) # Creamos la variable C1PIBpc como serie de tiempo 
+
 ```
 
 1. **Para confirmar que estemos manejando los mismos datos, responda ¿Entre 2015 y 2022, en cuál año se dio el mayor valor de la variable _GGOV_ y en qué valor (a dos dígitos)?:**
