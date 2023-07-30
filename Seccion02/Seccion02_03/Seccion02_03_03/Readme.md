@@ -257,6 +257,70 @@ Noten que la tendencia de la economía antes de la pandemia del Covid-19 era cre
 
 Durante el año $2020$, a raíz de la cuarentena producto de la pandemia del Covid-19 se dio un crecimiento negativo de la economía que llevo a situar a la producción real por debajo de su valor tendencial. Sin embargo, durante los años $2021$ y $2022$ se dió un repunte bastante fuerte en la producción, colocando a la producción real por encima de su valor promedio de diagnóstico (pero, aún dentro de la banda de confianza del análisis)   
 
+
+---
+---
+# Preguntas de selección múltiple
+
+Cómo se comentó en la subsección 2.2.5, en esta sesión de preguntas se va a continuar con el análisis de la variable **Gasto en consumo final del gobierno general de Chile como % del PIB** la cual ya se habia demostrado que es integrada de orden "1". Por lo tanto, van a aplicarle la metodología de Box y Jentins a la primera diferencia de esta variable, la cual se ha denominado como $C1GGOV$
+
+Retomen parte del código utilizado en secciones previas para preparar los datos para el análisis:
+
+``` r
+library(WDI)
+library(dplyr)
+library(ggfortify)
+library(ggplot2)
+
+WDIsearch(string='NE.CON.GOVT.ZS', field='indicator')
+
+dat = WDI(indicator= c(GGOV = "NE.CON.GOVT.ZS"), country=c('CL'), language = "es")
+
+dat <- dat %>% arrange(year)
+dat <- na.omit(dat)
+dat <- mutate(dat, GGOV_lag1 = lag(GGOV, order_by = year), C1GGOV = GGOV - GGOV_lag1, country = NULL, iso2c = NULL, iso3c = NULL) # mutate lo utilizamos para adicionar las columnas GGOV_lag1 y C1GGOV en "dat" y para eliminar las columnas country, iso2c y iso3c
+
+ggplot(dat, aes(year, GGOV)) + 
+  geom_line(linewidth=0.2) + 
+  scale_x_continuous(name = "Años") + 
+  theme(plot.caption = element_text(size=7)) + 
+  labs(subtitle = "1960-2022", y = "Pesos constantes", title = "Gasto en el consumo final del gobierno general de Chile como % del PIB", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+
+ggplot(dat, aes(year, C1GGOV)) + 
+  geom_line(linewidth=0.2) + 
+  scale_x_continuous(name = "Años") + 
+  theme(plot.caption = element_text(size=7)) + 
+  labs(subtitle = "1961-2022", y = "Pesos constantes", title = "Cambio en el gasto en el consumo final del gobierno general de Chile como % del PIB", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+
+GGOV <- ts(dat$GGOV, frequency = 1, start = c(1960)) # Creamos la variable GGOV como serie de tiempo
+C1GGOV <- diff(GGOV, differences = 1) # Creamos la variable C1PIBpc como serie de tiempo 
+
+```
+
+1. **Gráfiquen la $FAC$ y $FACP$ muestrales de la variable $C1GGOV$. En su orden, ¿cuántos barras, superiores a la del rezago $0$, de ambas funciones se salen por fuera de la banda de confianza?**:
+ 
+   a) 0 y 0.
+
+   b) 1 y 0.
+
+   c) 0 y 1.
+
+   d) 1 y 1.
+
+``` r
+acf_plot <- autoplot(acf(C1GGOV, plot = FALSE)) # Se calcula la función de autocorrelación y se genera el gráfico sin mostrarlo
+acf_plot + labs(x = "Rezagos", y = "FAC") # Se personalizan las etiquetas de los ejes
+
+pacf_plot <- autoplot(pacf(C1GGOV, plot = FALSE)) # Se calcula la función de autocorrelación parcial y se genera el gráfico sin mostrarlo
+pacf_plot + labs(x = "Rezagos", y = "FACP") # Se personalizan las etiquetas de los ejes
+```
+
+2. ** La variable $C1GGOV$ pareciera no estar correlacionada con su pasado inmediato**:
+
+---
+---
+
+
 | [Anterior Subsección: 2.3.2. Estimando un _ARMA_ - Ejemplo simulado](../Seccion02_03_02/Readme.md) | [Subsección 2.3 - Análisis _ARMA_ (La Metodología de Box-Jenkins)](../Readme.md) |
 |----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 
