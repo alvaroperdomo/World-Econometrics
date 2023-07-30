@@ -305,8 +305,11 @@ Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco
 
 ggplot(dat, aes(year, C1PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="Cambio en el PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 
-PIBpc <- ts(dat$PIBpc, frequency = 1, start = c(1960)) # Creamos la variable PIBpc
-C1PIBpc <- diff(PIBpc, differences = 1) # Creamos la variable C1PIBpc
+PIBpc_ = subset(dat, select = c(PIBpc))
+C1PIBpc_ = subset(dat, select = c(C1PIBpc))
+PIBpc <- ts(PIBpc_, start=1960, end=2019)
+C1PIBpc <- ts(C1PIBpc_, start=1960, end=2019)
+
 ```
 ---
 ---
