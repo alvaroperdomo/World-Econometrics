@@ -896,13 +896,13 @@ ggplot(dat, aes(year, GGOV)) +
   geom_line(linewidth=0.2) + 
   scale_x_continuous(name = "Años") + 
   theme(plot.caption = element_text(size=7)) + 
-  labs(subtitle = "1960-2022", y = "Pesos constantes", title = "Gasto en el consumo final del gobierno general de Chile como % del PIB", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+  labs(subtitle = "1960-2022", y = "%", title = "Gasto en el consumo final del gobierno general de Chile como % del PIB", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 
 ggplot(dat, aes(year, C1GGOV)) + 
   geom_line(linewidth=0.2) + 
   scale_x_continuous(name = "Años") + 
   theme(plot.caption = element_text(size=7)) + 
-  labs(subtitle = "1961-2022", y = "Pesos constantes", title = "Cambio en el gasto en el consumo final del gobierno general de Chile como % del PIB", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+  labs(subtitle = "1961-2022", y = "%", title = "Cambio en el gasto en el consumo final del gobierno general de Chile como % del PIB", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 
 GGOV <- ts(dat$GGOV, frequency = 1, start = c(1960)) # Creamos la variable GGOV como serie de tiempo
 
