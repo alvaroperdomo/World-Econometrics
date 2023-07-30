@@ -137,12 +137,12 @@ En este caso la función certifica que el mejor modelo que representa a la funci
 
 Ahora, sabiendo cuál es el modelo más parsimonioso, procedemos a visualizar la estimación del modelo escogido, $y_t=a_0+a_1y_{t-1}+\varepsilon_t$, con el comando:
 ``` r
-summary(arima2d, gof.lag = 30)
+summary(arima2d)
 ```
 Obteniendose
 
 ``` r
-> summary(arima2d, gof.lag = 30)
+> summary(arima2d)
 Series: PIBpc 
 ARIMA(1,1,0) with drift 
 
@@ -358,6 +358,36 @@ auto.arima(GGOV, stepwise = FALSE, approximation = FALSE, ic="bic")
 
    f) $ARMA(1,1)$ con tendencia en $GGOV$.
 
+4. **Utilizando el comando ggtsdiag, gráfique las pruebas de diagnóstico sobre los errores estimados del modelo escogido y responda ¿En cuál año los residuos estandarizados tuvieron un valor más bajo.**:
+
+   a) $1960$.
+
+   b) $1980$.
+
+   c) $1990$.
+
+   d) $2000$.
+
+   e) $2010$.
+
+   f) $2020$.
+
+``` r
+ggtsdiag(arima1, gof.lag = 30)
+```
+5. **¿En cuál rezago la prueba de Ljung-Box sobre los residuos estinados tuvó el p-value más alto? ¿Cuánto valía ese p-value (a dos dígitos)?**:
+
+   a) $1$.
+
+   b) $2$.
+
+   c) $3$.
+
+   d) $4$.
+
+``` r
+ggtsdiag(arima1, gof.lag = 30)
+```
 ---
 ---
 
