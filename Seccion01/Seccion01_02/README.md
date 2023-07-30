@@ -241,44 +241,45 @@ Obteniendo:
 5 Colombia    CO   COL 1964 5746356
 6 Colombia    CO   COL 1965 5778607
 ```
-Ahora vamos a crear una base de datos con las dos series: Una que represente el PIBpc del periodo anterior (PIBpc_lag1) y otra que represente la diferencia del PIBpc entre periodos (es decir, C1PIBpc=PIBpc-PIBpc_lag1). De paso, dado que la base de datos "dat" contiene muchas más variables que las que se desea utilizar, entonces se puede depurar la base de datos con el siguiente comando:
+Se van a crear las variables PIBpc y C1PIBpc como formatos de series de tiempo anuales que comienzan en 1960 y vamos a construir dos bases de datos, 
+* una, llamada df1, con las variables Año y PIBpc y
+* otra, llamada df2, con la variable Año y C1PIBpc 
 ``` r
-dat <- mutate(dat, PIBpc_lag1 = lag(PIBpc, order_by = year), C1PIBpc=PIBpc-PIBpc_lag1, country=NULL, iso2c=NULL, iso3c=NULL)
-head(dat)
+PIBpc <- ts(dat$NY.GDP.PCAP.KN, frequency = 1, start = c(1960)) # Creamos la variable PIBpc como serie de tiempo
+
+C1PIBpc <- diff(PIBpc, differences = 1) # Creamos la variable C1PIBpc  # Creamos la variable C1PIBpc como serie de tiempo
+
+df1 <- data.frame(Año = time(PIBpc), C1PIBpc = as.numeric(PIBpc)) # Convertimos PIBpc a un dataframe
+df2 <- data.frame(Año = time(C1PIBpc), C1PIBpc = as.numeric(C1PIBpc)) # Convertimos C1PIBpc a un dataframe
 ```
-Obteniendo:
-``` r
-> head(dat)
-  year   PIBpc PIBpc_lag1   C1PIBpc
-1 1960 5349334         NA        NA
-2 1961 5449711    5349334 100377.43
-3 1962 5569506    5449711 119795.10
-4 1963 5578865    5569506   9358.46
-5 1964 5746356    5578865 167491.40
-6 1965 5778607    5746356  32251.47
-```
+
 Grafique PIBpc y C1PIBpc utilizando los siguientes comandos:
 ``` r
-ggplot(dat, aes(year, PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
+# Gráfico de PIBpc
+ggplot(df1, aes(x = Año, y = PIBpc)) + 
+  geom_line(linewidth = 0.2) + 
+  labs(subtitle = "1961-2019", y = "Pesos constantes", 
+       title = "PIB per cápita real de Colombia", 
+       caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial") +
+  scale_x_continuous(name = "Años", breaks = seq(1960, 2020, by = 5))
 
-ggplot(dat, aes(year, C1PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="Cambio en el PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Económico del Banco Mundial")
+# Gráfico de C1PIBpc
+ggplot(df2, aes(x = Año, y = C1PIBpc)) + 
+  geom_line(linewidth = 0.2) + 
+  labs(subtitle = "1961-2019", y = "Pesos constantes", 
+       title = "Cambio en el PIB per cápita real de Colombia", 
+       caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial") +
+  scale_x_continuous(name = "Años", breaks = seq(1960, 2020, by = 5))
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/b7b0b094-d689-4975-b6eb-e2348fe84fb1)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9044f2e3-90f8-4237-869f-7f557a3fdec4)
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/617610e4-3524-4752-b339-8fd3957e1a87)
-
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/08edcadd-11e5-4846-b313-cef6a07070e4)
 
 En ambos gráficos se visualizan los siguientes hechos estilizados que afectaron al comportamiento del PIB per cápita de Colombia:
 1) La crisis bancaria de comienzos de la década de 1980
 2) La crisis económica de 1998/1999
-3) La crisis económica del Covid-19 en 2020
+3) No se alcanza a gráficar la crisis económica del Covid-19 en 2020 porque los gráficos sólo van hasta 2019
 
-Como último paso (por su utilidad para las siguientes secciones), se van a crear las variables PIBpc y C1PIBpc como formatos de series de tiempo anuales que comienzan en 1960 y finalizan en 2019:
-``` r
-PIBpc_ = subset(dat, select = c(PIBpc))
-C1PIBpc_ = subset(dat, select = c(C1PIBpc))
-PIBpc <- ts(PIBpc_, start=1960, end=2019)
-C1PIBpc <- ts(C1PIBpc_, start=1960, end=2019)
 ```
 
 El código completo de $R$, con los principales comandos, utilizados en este ejemplo es:
@@ -295,21 +296,33 @@ library(dplyr)     # Esta librería permite manipular las bases de datos de R de
 
 WDIsearch(string='NY.GDP.PCAP.KN', field='indicator')
 
-dat = WDI(indicator= c(PIBpc = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
+# Obtenemos los datos de PIBpc para Colombia desde 1960 hasta 2019
+dat <- WDI(indicator = "NY.GDP.PCAP.KN", country = "CO", start = 1960, end = 2019)
 dat <- dat %>% arrange(year)
 dat <- na.omit(dat)
-dat <- mutate(dat, PIBpc_lag1 = lag(PIBpc, order_by = year), C1PIBpc=PIBpc-PIBpc_lag1, country=NULL, iso2c=NULL, iso3c=NULL)
 
-ggplot(dat, aes(year, PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="PIB per cápita real de Colombia", caption = "Fuente: 
-Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+PIBpc <- ts(dat$NY.GDP.PCAP.KN, frequency = 1, start = c(1960)) # Creamos la variable PIBpc
 
-ggplot(dat, aes(year, C1PIBpc)) + geom_line (linewidth=0.2) + labs(subtitle="$", y="Pesos constantes", x="Años", title="Cambio en el PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+C1PIBpc <- diff(PIBpc, differences = 1) # Creamos la variable C1PIBpc # Creamos la variable C1PIBpc como serie de tiempo
 
-PIBpc_ = subset(dat, select = c(PIBpc))
-C1PIBpc_ = subset(dat, select = c(C1PIBpc))
-PIBpc <- ts(PIBpc_, start=1960, end=2019)
-C1PIBpc <- ts(C1PIBpc_, start=1960, end=2019)
+df1 <- data.frame(Año = time(PIBpc), C1PIBpc = as.numeric(PIBpc)) # Convertimos PIBpc a un dataframe
+df2 <- data.frame(Año = time(C1PIBpc), C1PIBpc = as.numeric(C1PIBpc)) # Convertimos C1PIBpc a un dataframe
 
+# Gráfico de PIBpc
+ggplot(df1, aes(x = Año, y = PIBpc)) + 
+  geom_line(linewidth = 0.2) + 
+  labs(subtitle = "1961-2019", y = "Pesos constantes", 
+       title = "PIB per cápita real de Colombia", 
+       caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial") +
+  scale_x_continuous(name = "Años", breaks = seq(1960, 2020, by = 5))
+
+# Gráfico de C1PIBpc
+ggplot(df2, aes(x = Año, y = C1PIBpc)) + 
+  geom_line(linewidth = 0.2) + 
+  labs(subtitle = "1961-2019", y = "Pesos constantes", 
+       title = "Cambio en el PIB per cápita real de Colombia", 
+       caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial") +
+  scale_x_continuous(name = "Años", breaks = seq(1960, 2020, by = 5))
 ```
 ---
 ---
