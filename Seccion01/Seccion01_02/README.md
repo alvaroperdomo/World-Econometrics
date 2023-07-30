@@ -258,7 +258,7 @@ Grafique PIBpc y C1PIBpc utilizando los siguientes comandos:
 # Gráfico de PIBpc
 ggplot(df1, aes(x = Año, y = PIBpc)) + 
   geom_line(linewidth = 0.2) + 
-  labs(subtitle = "1961-2019", y = "Pesos constantes", 
+  labs(subtitle = "1960-2019", y = "Pesos constantes", 
        title = "PIB per cápita real de Colombia", 
        caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial") +
   scale_x_continuous(name = "Años", breaks = seq(1960, 2020, by = 5))
@@ -271,7 +271,8 @@ ggplot(df2, aes(x = Año, y = C1PIBpc)) +
        caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial") +
   scale_x_continuous(name = "Años", breaks = seq(1960, 2020, by = 5))
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9044f2e3-90f8-4237-869f-7f557a3fdec4)
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/63141ce0-dbc9-4de4-9aa2-4873f000a28e)
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/08edcadd-11e5-4846-b313-cef6a07070e4)
 
@@ -311,7 +312,7 @@ df2 <- data.frame(Año = time(C1PIBpc), C1PIBpc = as.numeric(C1PIBpc)) # Convert
 # Gráfico de PIBpc
 ggplot(df1, aes(x = Año, y = PIBpc)) + 
   geom_line(linewidth = 0.2) + 
-  labs(subtitle = "1961-2019", y = "Pesos constantes", 
+  labs(subtitle = "1960-2019", y = "Pesos constantes", 
        title = "PIB per cápita real de Colombia", 
        caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial") +
   scale_x_continuous(name = "Años", breaks = seq(1960, 2020, by = 5))
