@@ -878,7 +878,7 @@ Todas las pruebas aplicadas parecen indicar la presencia de raíz unitaria en la
 ---
 # Preguntas de selección múltiple
 
-Uno de los paises latinoamericanos más exitosos en términos de desarrollo económico es Chile, entonces en este apartado de preguntas y en el de la subsección 2.3.3, se va a aprovechar a analizar una variable relevante para el desarrollo de este país. En particular, van a a hacer análisis de raíz unitaria al **Gasto en consumo final del gobierno general de Chile como % del PIB". Esta variable aparece identificada en los _Indicadores de Desarrollo Mundial_ como [NE.CON.GOVT.ZS](https://datos.bancomundial.org/indicator/NE.CON.GOVT.ZS). Sin embargo, al manejarla en niveles la llamaran $GGOV$ y cuando la manejen en primeras diferencias la llemaran $C1GGOV$.
+Uno de los países latinoamericanos más exitosos en términos de desarrollo económico es Chile, entonces en este apartado de preguntas y en el de la subsección 2.3.3, se va a aprovechar a analizar una variable relevante para el desarrollo de este país. En particular, van a hacer análisis de raíz unitaria al **Gasto en consumo final del gobierno general de Chile como % del PIB**. Esta variable aparece identificada en los _Indicadores de Desarrollo Mundial_ como [NE.CON.GOVT.ZS](https://datos.bancomundial.org/indicator/NE.CON.GOVT.ZS). Sin embargo, al manejarla en niveles la llamaran $GGOV$ y cuando la manejen en primeras diferencias la llamaran $C1GGOV$.
 
 El código que se utiliza para descargar y preparar los datos de esta variable es:
 
