@@ -377,17 +377,44 @@ ggtsdiag(arima1, gof.lag = 30)
 ```
 5. **¿En cuál rezago la prueba de Ljung-Box sobre los residuos estinados tuvó el p-value más alto? ¿Cuánto valía ese p-value (a dos dígitos)?**:
 
-   a) $1$.
+   a) $1$ en $0.89$.
 
-   b) $2$.
+   b) $2$ en $0.19$.
 
-   c) $3$.
+   c) $3$ en $0.24$.
 
-   d) $4$.
+   d) $4$ en $0.23$.
 
 ``` r
-ggtsdiag(arima1, gof.lag = 30)
+ggtsdiag(arima1, gof.lag = 30) 
+
+lb1 <- Box.test(arima1$residuals, lag=1, type="Ljung-Box") # Test de Ljung-Box
+lb2 <- Box.test(arima1$residuals, lag=2, type="Ljung-Box") # Test de Ljung-Box
+lb3 <- Box.test(arima1$residuals, lag=3, type="Ljung-Box") # Test de Ljung-Box
+lb4 <- Box.test(arima1$residuals, lag=4, type="Ljung-Box") # Test de Ljung-Box
+
+lb1$p.value
+lb2$p.value
+lb3$p.value
+lb4$p.value
 ```
+5. **¿Cuáles son los pronósticos del valor de $GGOV$ para 2023 y 2024 a dos dígitos?**:
+
+   a) $14.41 y $14.41$.
+
+   b) $15.12$ y $14.81$.
+
+   c) $14.81$ y $15.12$.
+
+   d) $15.12$ y $15.12$.
+
+``` r
+forecast_GGOV<-forecast(arima1, level = c(95), h = 2)
+summary(forecast_GGOV)
+autoplot(forecast_GGOV)
+```
+
+
 ---
 ---
 
