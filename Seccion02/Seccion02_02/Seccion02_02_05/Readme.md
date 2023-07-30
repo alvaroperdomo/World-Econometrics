@@ -5,62 +5,58 @@
 
 Para el análisis univariado, se ha escogido estudiar la variable más utilizada en los análisis de desarrollo económico: el PIB per cápita a precios constantes de un país en vías de desarrollo. Más específicamente, se va a analizar la evolución del PIB per cápita de Colombia a pesos constantes. En particular, utilizaremos el **PIB per cápita de Colombia a pesos constantes durante el periodo 1960-2019**  para calcular las proyecciones de esta variable durante el periodo 2020-2025 como si no se hubiera presentado la pandemia del Covid 19. Con ello, lo que se busca es hacer un ejercicio contrafactual para analizar cómo se hubiera comportado esta variable, según su comportamiento histórico, si no hubieran ocurrido los eventos que se dieron desde el año 2020, entre los que se destaca la cuarentena que se dio debido a la pandemia del Covid-19.
 
-En esta subsección se van a hacer pruebas de raíz unitaria tanto a la variable **PIB per cápita de Colombia a pesos constantes en niveles** como a la **primera diferencia del PIB per cápita de Colombia a pesos constantes** porque, tal como se mostrara más adelante, esta variable no es estacionaria en niveles, pero si lo va a ser en las primeras diferencias. Posteriormente, en la sección 2.3.3. se desarrolla el resto del análisis univariado.
+En esta subsección se van a hacer pruebas de raíz unitaria tanto a la variable **PIB per cápita de Colombia a pesos constantes en niveles** como a la **primera diferencia del PIB per cápita de Colombia a pesos constantes** porque, tal como se mostrara más adelante, esta variable no es estacionaria en niveles, pero si lo va a ser en las primeras diferencias. Posteriormente, en la sección 2.3.3. se desarrolla el resto del análisis univariado. En lo que resta de la explicación, cuando hagamos referencia al PIB, estaremos haciendo referencia de una forma simplificada al PIB de Colombia a precios constantes.
 
 ## Preparación de los datos y gráficos
 
-Retomamos parte del código de $R$ que se había utilizado en la sección 1.2, solicitando la activación de algunas librerias adicionales: 
+Retomamos el código de $R$ que se había utilizado en la sección 1.2, solicitando la activación de algunas librerias adicionales: 
 ``` r
 rm(list = ls())
 
 library(WDI)         # Esta libreria sirve para trabajar directamente con la base de datos Indicadores de Desarrollo Mundial.
 library(dplyr)       # Esta libreria permite manipular las bases de datos de R de una forma sencilla, por ejemplo utilizando los comandos mutate() y arrange()
-library(ggfortify)   # Esta libreria tienen comando utiles para plantear gráficos de series de tiempo, por ejemplo utilizando el comando autoplot()
+library(ggfortify)   # Esta libreria tienen comando utiles para plantear gráficos de series de tiempo, por ejemplo utilizando ell comando autoplot()
 library(ggplot2)     # Esta librería sirve para construir gráficos interesantes
-library(fUnitRoots)  # Esta libreria sirve para hacer pruebas de raíz unitaria.
 library(urca)        # Esta libreria sirve para hacer pruebas de raíz unitaria.
+library(fUnitRoots)        # Esta libreria sirve para hacer pruebas de raíz unitaria.
 library(forecast)    # Esta libreria sirve para hacer pronósticos.
 
 WDIsearch(string='NY.GDP.PCAP.KN', field='indicator')
 
-dat = WDI(indicator= c(PIBpc = "NY.GDP.PCAP.KN"), country=c('CO'), language = "es")
+# Obtenemos los datos de PIBpc para Colombia desde 1960 hasta 2019
+dat <- WDI(indicator = "NY.GDP.PCAP.KN", country = "CO", start = 1960, end = 2019)
 dat <- dat %>% arrange(year)
 dat <- na.omit(dat)
-dat <- mutate(dat, PIBpc_lag1 = lag(PIBpc, order_by = year), C1PIBpc=PIBpc-PIBpc_lag1, country=NULL, iso2c=NULL, iso3c=NULL)
 
-ggplot(dat, aes(year, PIBpc)) + scale_x_continuous(name="Años", limits=c(1960, 2019)) + geom_line (linewidth=0.2) + theme(plot.caption = element_text(size=7)) + labs(subtitle="1960-2019", y="Pesos constantes", title="PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+PIBpc <- ts(dat$NY.GDP.PCAP.KN, frequency = 1, start = c(1960)) # Creamos la variable PIBpc en formato de serie de tiempo
 
-ggplot(dat, aes(year, C1PIBpc)) + scale_x_continuous(name="Años", limits=c(1961, 2019))  + geom_line (linewidth=0.2) + theme(plot.caption = element_text(size=7)) + labs(subtitle="1961-2019", y="Pesos constantes", title="Cambio en el PIB per cápita real de Colombia", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+C1PIBpc <- diff(PIBpc, differences = 1) # Creamos la variable PIBpc en formato de serie de tiempo
+
+df1 <- data.frame(Año = time(PIBpc), C1PIBpc = as.numeric(PIBpc)) # Convertimos PIBpc a un dataframe
+df2 <- data.frame(Año = time(C1PIBpc), C1PIBpc = as.numeric(C1PIBpc)) # Convertimos C1PIBpc a un dataframe
+
+# Gráfico de PIBpc
+ggplot(df1, aes(x = Año, y = PIBpc)) + 
+  geom_line(linewidth = 0.2) + 
+  labs(subtitle = "1961-2019", y = "Pesos constantes", 
+       title = "PIB per cápita real de Colombia", 
+       caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial") +
+  scale_x_continuous(name = "Años", breaks = seq(1960, 2020, by = 5))
+
+# Gráfico de C1PIBpc
+ggplot(df2, aes(x = Año, y = C1PIBpc)) + 
+  geom_line(linewidth = 0.2) + 
+  labs(subtitle = "1961-2019", y = "Pesos constantes", 
+       title = "Cambio en el PIB per cápita real de Colombia", 
+       caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial") +
+  scale_x_continuous(name = "Años", breaks = seq(1960, 2020, by = 5))
 
 ```
 Obteniendose los siguientes gráficos:
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ed1aee77-0496-46b4-9be0-225a72022b05)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/5e796bd0-2dbe-4bbf-ab59-1e80ae163878)
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/971d2748-1b9c-4d4c-911f-8e3696749ee1)
-
-
-Las siguientes cuatrolineas en $R$, permiten armar cuatro subconjuntos de bases de datos:
-* uno en el cual se encuentre el PIB[^2] para el periodo 1960-2019 (subconjunto PIBpc_) y
-* otro en el cual se encuentre la variación del PIB durante el periodo 1961-2019 (subconjunto C1PIBpc_) [^3]
-* los subconjuntos PIBpc__ y C1PIBpc__ son dos subconjuntos iguales a PIBpc_ y a C1PIBpc_, con la diferencia que además incluyen la variale "year". Estos dos subconjuntos son utilizados para estimar una prueba MCO que se explicara más adelante. 
-
-[^2]: **En lo que resta de esta sección, cuando hagamos referencia al PIB, estaremos haciendo referencia de una forma simplificada al PIB de Colombia a precios constantes** 
-[^3]: **Se toma el periodo desde 1961 porque el dato de la variación del PIB en 1960 no se tiene porque se desconoce el valor del PIB de 1959** 
-
-``` r
-PIBpc__ <- dat[-c(61:63),]
-C1PIBpc__ <- PIBpc__[-c(1),]
-PIBpc_ = subset(PIBpc__, select = c(PIBpc))
-C1PIBpc_ = subset(C1PIBpc__, select = c(C1PIBpc))
-```
-
-Para el análisis de raíz unitaria que viene, se va a llamar (desde la base de datos PIBpc_) a una variable llamada $PIBpc$ que representa una serie de tiempo anual (la del PIB) que va desde 1960 hasta 2019. Por otro lado, se va a llamar (desde la base de datos C1PIBpc_) a una variable llamada $C1PIBpc$ que representa una serie de tiempo anual (la del cambio en el PIB) que va desde 1961 hasta 2019.
-
-``` r
-PIBpc <- ts(PIBpc_, frequency = 1, start = c(1960))
-C1PIBpc <- ts(C1PIBpc_, frequency = 1, start = c(1961))
-```
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/3d4982e4-3a2e-423f-a40f-ce131793293c)
 
 # Análisis de raíz unitaria
 A partir de los dos gráficos de arriba se puede comenzar a inferir que la variable $PIBpc$ no tiene un comportamiento estacionario y que la variable $C1PIBpc$ si lo tiene. Sin embargo, hay que recolectar más evidencia al respecto, para ello primero se visualiza la función de autocorrelación de las variables $PIBpc$ y $C1PIBpc$ utilizando el siguiente comando: 
@@ -901,17 +897,12 @@ dat <- dat %>% arrange(year)
 dat <- na.omit(dat)
 dat <- mutate(dat, GGOV_lag1 = lag(GGOV, order_by = year), C1GGOV=GGOV-GGOV_lag1, country=NULL, iso2c=NULL, iso3c=NULL)
 
-ggplot(dat, aes(year, GGOV)) + scale_x_continuous(name="Años", limits=c(1960, 2022)) + geom_line (linewidth=0.2) + theme(plot.caption = element_text(size=7)) + labs(subtitle="1960-2019", y="Porcentaje", title="Gasto real del Gobierno (%PIB)", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+ggplot(dat, aes(year, GGOV)) + scale_x_continuous(name="Años") + geom_line (linewidth=0.2) + theme(plot.caption = element_text(size=7)) + labs(subtitle="1960-2022", y="Pesos constantes", title="Gasto en el consumo final del gobierno general de Chile como % del PIB", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 
-ggplot(dat, aes(year, C1GGOV)) + scale_x_continuous(name="Años", limits=c(1961, 2022)) + geom_line (linewidth=0.2) + theme(plot.caption = element_text(size=7)) + labs(subtitle="1960-2019", y="Porcentaje", title="Cambio en el gasto real del Gobierno (%PIB)", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+ggplot(dat, aes(year, C1GGOV)) + scale_x_continuous(name="Años")  + geom_line (linewidth=0.2) + theme(plot.caption = element_text(size=7)) + labs(subtitle="1961-2022", y="Pesos constantes", title="Cambio en el gasto en el consumo final del gobierno general de Chile como % del PIB", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 
-GGOV__ <- dat
-C1GGOV__ <- GGOV__[-c(1),]
-GGOV_ = subset(GGOV__, select = c(GGOV))
-C1GGOV_ = subset(C1GGOV__, select = c(C1GGOV))
-
-GGOV <- ts(GGOV_, start=1960, end=2022)
-C1GGOV <- ts(C1GGOV_, start=1961, end=2022)
+PIBpc <- ts(dat$PIBpc, frequency = 1, start = c(1960)) # Creamos la variable PIBpc
+C1PIBpc <- diff(PIBpc, differences = 1) # Creamos la variable C1PIBpc
 ```
 
 1. **Para confirmar que estemos manejando los mismos datos, responda ¿Entre 2015 y 2022, en cuál año se dio el mayor valor de la variable _GGOV_ y en qué valor (a dos dígitos)?:**
