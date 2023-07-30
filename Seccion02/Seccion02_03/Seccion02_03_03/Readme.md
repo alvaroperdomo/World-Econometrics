@@ -284,13 +284,13 @@ ggplot(dat, aes(year, GGOV)) +
   geom_line(linewidth=0.2) + 
   scale_x_continuous(name = "Años") + 
   theme(plot.caption = element_text(size=7)) + 
-  labs(subtitle = "1960-2022", y = "Pesos constantes", title = "Gasto en el consumo final del gobierno general de Chile como % del PIB", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+  labs(subtitle = "1960-2022", y = "%", title = "Gasto en el consumo final del gobierno general de Chile como % del PIB", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 
 ggplot(dat, aes(year, C1GGOV)) + 
   geom_line(linewidth=0.2) + 
   scale_x_continuous(name = "Años") + 
   theme(plot.caption = element_text(size=7)) + 
-  labs(subtitle = "1961-2022", y = "Pesos constantes", title = "Cambio en el gasto en el consumo final del gobierno general de Chile como % del PIB", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
+  labs(subtitle = "1961-2022", y = "%", title = "Cambio en el gasto en el consumo final del gobierno general de Chile como % del PIB", caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial")
 
 GGOV <- ts(dat$GGOV, frequency = 1, start = c(1960)) # Creamos la variable GGOV como serie de tiempo
 C1GGOV <- diff(GGOV, differences = 1) # Creamos la variable C1PIBpc como serie de tiempo 
@@ -315,8 +315,29 @@ pacf_plot <- autoplot(pacf(C1GGOV, plot = FALSE)) # Se calcula la función de au
 pacf_plot + labs(x = "Rezagos", y = "FACP") # Se personalizan las etiquetas de los ejes
 ```
 
-2. ** La variable $C1GGOV$ pareciera no estar correlacionada con su pasado inmediato**:
+2. **La variable $C1GGOV$ pareciera no estar correlacionada con su pasado. Sin embargo, se podría ser más exigente en cuanto al ancho de las bandas de la $FAC$ y la $FACP$ de tal formas que estas sean algo más angostas. y eso lo llevaría a pensar que el modelo de series de tiempo a escoger para analizar $C1GGOV$ sea un $AR(1)$, un $MA(1)$ o un $ARMA(1)$, entonces estime estos tres modelos. ¿Cuál especificación da el $Criterio de Información de Akaike$ y $Criterio Bayesiano de Schwartz$ con los valores más bajos?**:
 
+   a) $AR(1)$.
+
+   b) $AR(1)$ con tendencia en $GGOV$.
+
+   c) $MA(1)$.
+
+   d) $MA(1)$ con tendencia en $GGOV$.
+
+   e) $ARMA(1,1)$.
+
+   f) $ARMA(1,1)$ con tendencia en $GGOV$.
+
+``` r
+arima1<- Arima(PIBpc, order=c(1,1,0))
+arima2<- Arima(PIBpc, order=c(0,1,1))  
+arima3<- Arima(PIBpc, order=c(1,1,1))  
+
+arima1d<- Arima(PIBpc, order=c(1,1,0), include.drift=TRUE)
+arima2d<- Arima(PIBpc, order=c(0,1,1), include.drift=TRUE)  
+arima3d<- Arima(PIBpc, order=c(1,1,1), include.drift=TRUE)  
+```
 ---
 ---
 
