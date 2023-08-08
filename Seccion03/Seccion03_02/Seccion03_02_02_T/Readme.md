@@ -97,6 +97,38 @@ A medida que el tamaño de la muestra crece hacia infinito, la teoría asintóti
 
 El primer paso es generar la serie de residuos $\hat{e}_ t$, y el segundo paso utiliza estos errores generados para estimar una regresión de la forma $\Delta\hat{e} _t=a_1\Delta\hat{e} _{t-1}+\dots$ Entonces, el coeficiente $a_1$ se obtiene estimando una regresión que utiliza los residuos de otra regresión. Por lo tanto, cualquier error introducido por el investigador en el Paso $i$ se lleva al Paso $ii$. 
 
+---
+---
+# Preguntas de selección múltiple
+
+1. ** Sea el modelo $VEC$** 
+
+   $i)$ $\Delta y_t = \alpha_1 + \alpha_y\hat{e}_ {t-1}+\sum_{i=1}\alpha_{11}(i)\Delta y_{t-i}+\sum_{i=1}\alpha_{12}(i)\Delta z_{t-i}+\varepsilon_{yt}$
+
+   $ii)$ $\Delta z_t = \alpha_2 + \alpha_z\hat{e}_ {t-1}+\sum_{i=1}\alpha_{21}(i)\Delta y_{t-i}+\sum_{i=1}\alpha_{22}(i)\Delta z_{t-i}+\varepsilon_{zt}$**
+
+   **La cointegración entre las variables { $y_t$ } y { $z_t$ } esta determinado por:** 
+ 
+   a) La estacionariedad de la variable $\hat{e}_ {t-1}$.
+
+   b) La estacionariedad de las variables $\varepsilon_{yt}$ y $\varepsilon_{zt}$.
+
+   c) El ruido blanco de la variable $\hat{e}_ {t-1}$.
+
+   d) El ruido blanco de las variables $\varepsilon_{yt}$ y $\varepsilon_{zt}$.
+
+2. **¿Por qué se debe evitar esta tentación de utilizar estadísticos $t$ para realizar pruebas de significancia en el vector de cointegración?:**
+ 
+   a) Porque, en general, los coeficientes no tienen una distribución $t$ asintótica.
+
+   b) Porque las variables $y_t$ y $z_t$ son no estacionarias.
+
+   c) Porque las dos innovaciones $\varepsilon_{yt}$  y $\varepsilon_{zt}$  pueden correlacionarse simultáneamente.
+
+   d) Ninguna de las anteriores.
+
+---
+---
 |[Anterior Subsección: 3.2.1.  ¿Qué es y para qué sirve la cointegración?](../Seccion03_02_01_T/Readme.md) | [Subsección: 3.2 - Cointegración y estimación de Modelos _VEC_](../Readme.md) |
 |----------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
 
