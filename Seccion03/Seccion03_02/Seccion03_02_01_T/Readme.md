@@ -3,7 +3,7 @@
 ## SUBSECCIÓN 3.2.1.
 # ¿Qué es y para qué sirve la cointegración?
 
-En los modelos univariados la tendencia estocástica de una serie de tiempo puede eliminarse por diferenciación, y las series estacionarias resultantes se pueden estimar utilizando las técnicas univariadas de Box-Jenkins analizadas previamente en la sección 2. Anteriormente, la práctica convencional era generalizar esta idea a los modelos multivariados y diferenciar todas las variables no estacionarias utilizadas en un análisis de regresión para luego estimar un modelo $VAR$ en diferencias. Sin embargo, hoy en día la forma adecuada de tratar las variables no estacionarias no es tan sencilla en un contexto multivariado. Es bastante posible que haya una combinación lineal de variables integradas que sea estacionaria y que por lo tanto configuren una relación de largo plazo; si esto ocurre se dice que tales variables están **cointegradas**[^1]. 
+En los modelos univariados la tendencia estocástica de una serie de tiempo puede eliminarse por diferenciación, y las series estacionarias resultantes se pueden estimar utilizando las técnicas univariadas de Box-Jenkins analizadas previamente en la sección 2. Anteriormente, la práctica convencional era generalizar esta idea a los modelos multivariados y diferenciar todas las variables no estacionarias utilizadas en un análisis de regresión para luego estimar un modelo $VAR$ en diferencias. Sin embargo, hoy en día la forma adecuada de tratar las variables no estacionarias no es tan sencilla en un contexto multivariado. Es bastante posible que haya una combinación lineal de variables integradas que sea estacionaria y que por lo tanto configuren una relación de largo plazo; si esto ocurre se dice que tales variables están **cointegradas**[^1]. Cuando en un modelo multivariado de series de tiempo hay variables que están cointegradas lo recomendable es estimar un modelo $VEC$ el cual, como se vera en las siguientes subsecciones, no es más que un modelo $VAR$ en diferencias en cual se estima también la relación de largo plazo entre las variables cointegradas.
 
 [^1]: **En cierto sentido, el uso del término equilibrio no es el mejor porque la teoría económica y la econometría usan el término de diferentes maneras. En teoría económica usualmente se habla de equilibrio al referirse a una igualdad entre transacciones deseadas y reales. En econometría el equilibrio hace referencia a cualquier relación a largo plazo entre variables no estacionarias. La cointegración no requiere que la relación a largo plazo sea generada por las fuerzas del mercado o por las reglas de comportamiento de los individuos. Según Engle y Granger (1987) la relación de equilibrio puede ser causal, conductual o simplemente una relación de forma reducida entre variables con tendencias similares.** 
 
@@ -48,6 +48,32 @@ Hay cuatro puntos importantes a tener en cuenta sobre la definición:
 
 Para el análisis de la existencia de cointegración las metodologías más utilizadas son la prueba de Engle y Granger (1987) y la prueba de Johansen (1988). En las siguientes subsecciones se explica cómo funcionan ambas pruebas.
 
+---
+---
+# Preguntas de selección múltiple
+
+1. **¿Si en un modelo multivariado de series de tiempo existen variables que tienen una relación de largo plazo, lo recomendable es estimar un modelo?:**
+ 
+   a) $VAR$ en niveles.
+
+   b) $VAR$ en diferencias.
+
+   c) $VEC$.
+
+   d) Ninguno de los anteriores.
+
+2. **¿Si tenemos un modelo multivariado de series de tiempo, cuál es el máximo de relaciones de cointegración que se podrían establecer?:**
+ 
+   a) 4.
+
+   b) 3.
+
+   c) 2.
+
+   d) 1.
+
+---
+---
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
 | [Subsección: 3.2 - Cointegración y estimación de Modelos _VEC_](../Readme.md) |[Siguiente Subsección: 3.2.2. La Metodología de Engle y Granger (2 variables)](../Seccion03_02_02_T/Readme.md) |
