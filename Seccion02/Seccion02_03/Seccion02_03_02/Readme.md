@@ -15,6 +15,7 @@ El código de $R$ utilizado en la simulación es:
 rm(list = ls())
 
 library(stats) # Esta librería permite generar números aleatorios con distribución normal
+library(ggfortify) # Esta librería permite utilizar el comando autoplot
 
 set.seed(150) # Se establece una semilla para la generación de números aleatorios (puedes usar cualquier número entero)
 
@@ -365,6 +366,116 @@ En ambos modelos se cumplen las pruebas de verificación de los residuos estimad
 
 Por último, note que en la comparación de los valores del _Criterio de Información de Akaike_ y del _Criterio Bayesiano de Schwartz_ de los todos los modelos analizados sugiere que es mucho mejor estimar el **Modelo 1** .
 
+---
+---
+# Preguntas de selección múltiple
+
+Se va a aprovechar este apartado que a partir de simulaciones no siempre es fácil construir un ejemplo que sirva para identificar el modelo $ARMA(p,q)$. En buena parte, eso se debe a que los residuos $\varepsilon_t$ se generan de forma aleatoria, por lo que no se tiene demasiado control sobre la generación de los mismos. Por eso es que generalmente, los ejemplos de identificación se hacen sobre datos reales como se hace en la subsección 2.3.3.
+
+En este ejemplo se va a simular un modelo _MA(1)_ y se va a utilizar la metodología de Box y Jenkins para tratar de identificarlo. Para ello, en _R_:
+* Se generaron $200$ números aleatorios $\varepsilon_t$ distribuidos normalmente con una varianza teórica igual $1$.
+* Comenzando con $t=1$, los valores de $y_t$ se generaron usando la fórmula $y_t=\varepsilon_t-0.7\varepsilon_{t-1}$. 
+
+El código de $R$ utilizado en la simulación es:
+
+rm(list = ls())
+
+library(stats) # Esta librería permite generar números aleatorios con distribución normal
+library(ggfortify) # Esta librería permite utilizar el comando autoplot
+library(forecast) # esta libreria permite utilizar el comando auto.arima
+
+set.seed(50) # Se establece una semilla para la generación de números aleatorios (puedes usar cualquier número entero)
+
+n <- 200 # Se establece la longitud de la secuencia
+
+epsilon <- rnorm(n, mean = 0, sd = 1) # Se crea un vector para almacenar los valores simulados de epsilon(t)
+
+y <- numeric(n) # Se crea un vector para almacenar los valores simulados de y(t)
+
+# Se establece la fórmula para generar los valores de y(t)
+for (t in 2:n) {
+  y[t] <- epsilon[t] - 0.7 * epsilon[t-1]
+}
+
+plot(1:n, y, type = "l", xlab = "t", ylab = "y(t)", col = "blue") # Gráfico de y(t)
+
+```r
+rm(list = ls())
+
+library(stats) # Esta librería permite generar números aleatorios con distribución normal
+library(forecast) # esta libreria permite utilizar el comando auto.arima
+
+set.seed(50) # Se establece una semilla para la generación de números aleatorios (puedes usar cualquier número entero)
+
+n <- 200 # Se establece la longitud de la secuencia
+
+epsilon <- rnorm(n, mean = 0, sd = 1) # Se crea un vector para almacenar los valores simulados de epsilon(t)
+
+y <- numeric(n) # Se crea un vector para almacenar los valores simulados de y(t)
+
+y[1] <- 0 # Se establece y(0) = 0
+
+# Se establece la fórmula para generar los valores de y(t)
+for (t in 2:n) {
+  y[t] <- epsilon[t] - 0.7 * epsilon[t-1]
+}
+
+plot(1:n, y, type = "l", xlab = "t", ylab = "y(t)", col = "blue") # Gráfico de y(t)
+
+```
+El gráfico de $y_t$ esta representado por:
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/91f180f2-e72b-489d-9408-f782f5425a9b)
+
+Halle la $FAC$ y la $FACP$ de $y_t$ y responda a la siguiente pregunta:
+
+1. **Gráfique la $FAC$ y la $FACP$ muestrales de $y_t$. En su orden, ¿cuántos barras, superiores a la del rezago $0$, de ambas funciones se salen por fuera de la banda de confianza?:**
+
+   a) 3 y 4.
+
+   b) 1 y 1.
+
+   c) 0 y 1.
+
+   d) 2 y 2.
+   
+```r
+acf_plot <- autoplot(acf(y, plot = FALSE)) # Se calcula la función de autocorrelación y se genera el gráfico sin mostrarlo
+acf_plot + labs(x = "Rezagos", y = "FAC") # Se personalizan las etiquetas de los ejes
+
+pacf_plot <- autoplot(pacf(y, plot = FALSE)) # Se calcula la función de autocorrelación parcial y se genera el gráfico sin mostrarlo
+pacf_plot + labs(x = "Rezagos", y = "FACP") # Se personalizan las etiquetas de los ejes
+```
+
+De acuerdo a la $FAC$ y a la $FACP$, existen varios modelos potenciales que pueden representar a nuestra simulación. el comando $auto.arima$ sirve para calcular de forma rápida el _Criterio de Información de Akaike_ y el _Criterio Bayesiano de Schwartz_ de diferentes especificaciones de modelos $ARIMA(p,I,q)$. Copie los siguientes comandos, 
+
+ ```r
+auto.arima(y, ic = c("aic"), trace=TRUE, stepwise = FALSE, approximation = FALSE)
+auto.arima(y, ic = c("bic"), trace=TRUE, stepwise = FALSE, approximation = FALSE)
+```
+y responda a las dos preguntas que siguen a continuación:
+
+2. **Según el _Criterio de Información de Akaike_, en su orden, cuales son los dos modelos $ARIMA(p,I,q)$ que mejor se ajustan a los datos simulados:**
+   
+   a) MA(1) sin intercepto y MA(1) con intercepto.
+
+   b) MA(1) con intercepto y MA(1) sin intercepto.
+
+   c) MA(1) sin intercepto y AR(1) sin intercepto.
+
+   d) MA(1) cin intercepto y AR(1) sin intercepto.
+
+3. **Según el _Criterio Bayesiano de Schwartz_, en su orden, cuales son los dos modelos $ARIMA(p,I,q)$ que mejor se ajustan a los datos simulados:**
+   
+   a) MA(1) sin intercepto y MA(1) con intercepto.
+
+   b) MA(1) con intercepto y MA(1) sin intercepto.
+
+   c) MA(1) sin intercepto y AR(1) sin intercepto.
+
+   d) MA(1) cin intercepto y AR(1) sin intercepto.
+---
+---
 | [Subsección 2.3. - Análisis _ARMA_ (La Metodología de Box-Jenkins)](../Readme.md)| [Siguiente Subsección: 2.3.3 Caso de estudio utilizando la base de datos _Indicadores de Desarrollo Mundial_ (segunda parte)](../Seccion02_03_03/Readme.md) |
 |----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
