@@ -515,7 +515,7 @@ Con el comando
 ```r
 ggtsdiag(Modelo_ejemplo, gof.lag = 30) +  labs(subtitle = "Modelo_ejemplo") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo_ejemplo.
 ```
-observe que con el estadistico de Ljung-Box se obtiene que los residuos no están autocorrelacionados
+observe que con el estadistico de Ljung-Box se obtiene que los residuos no están autocorrelacionados.
 
 7. **¿En cuál rezago se obtiene el p-value más bajo del estadístico de Ljung-Box de los residuos estimados y en cuál valor a dos dígitos?:**
 
