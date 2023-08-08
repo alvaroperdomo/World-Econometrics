@@ -105,25 +105,25 @@ Sin embargo, el análisis impulso-respuesta y la descomposición de varianza del
 ---
 # Preguntas de selección múltiple
 
-1. **Sobre cuál tipo de modelo $VAR$ se determinan las funciones impulso-respuesta y la descomposición de varianza del erorr de pronóstico:**
+1. **Sobre cuál tipo de modelo se determinan de forma directa las funciones impulso-respuesta y la descomposición de varianza del erorr de pronóstico:**
  
    a) $VAR$ **_estructural_**.
 
    b) $VAR$ **_estándar_**.
 
-   c) Todos los anteriores.
+   c) $VMA$ **_estructural_**.
+
+   d) $VMA$ **_estándar_**.
+
+2. **¿En un modelo $VAR$, cuál indicador calcula la proporción de los movimientos de una variable debido a sus choques propios y a los choques de las otras variable del modelo?**
+ 
+   a) La descomposición de varianza del error de pronóstico.
+
+   b) La Función Impulso-Respuesta.
+
+   c) La descomposición de Choleski.
 
    d) Ninguno de los anteriores.
-
-2. **Sobre cuál tipo de modelo $VAR$ se determinan las funciones impulso-respuesta y **
- 
-   a) Tienen una mayor probabilidad de aceptar una hipótesis de raíz unitaria cuando esta no existe.
-
-   b) Tienen una mayor probabilidad de aceptar una hipótesis de estacionariedad cuando esta no existe.
-
-   c) Tienen una mayor probabilidad de rechazar una hipótesis de estacionariedad cuando esta existe.
-
-   d) Tienen una mayor probabilidad de rechazar una hipótesis de raíz unitaria cuando esta existe.
 
 ---
 ---
