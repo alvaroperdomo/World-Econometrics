@@ -50,7 +50,7 @@ Después de estimar uno o más modelos Arima, por ejemplo, utilizando los comand
 nombre1<- Arima(PIBpc, order=c(1,1,1))  
 nombre2<- Arima(PIBpc, order=c(0,1,1))
 ```
-La parsimonia se evalua utilizando el _Criterio de Información de Akaike_ (**AIC**) y el _Criterio de Información de Schwartz_ (**BIC**). Para llo, se utilizan los siguientes comandos:
+La parsimonia se evalua utilizando el _Criterio de Información de Akaike_ (**AIC**) y el _Criterio de Información de Schwartz_ (**BIC**). Para ello, se utilizan los siguientes comandos:
 
 ``` r
 AIC(nombre1,nombre2)
@@ -69,10 +69,10 @@ auto.arima(x, ic = c("aicc", "aic", "bic"), stepwise = FALSE, approximation = FA
 |                      | **aic** _Criterio de Información de Akaike_                                                                                                              |
 |                      | **bic** _Criterio Bayesiano de Schwartz_                                                                                                                 |
 | **stepwise**         | Argumento lógico que sólo tiene dos opciones:                                                                                                            |
-|                      | **TRUE** La buscueda del mejor $ARIMA$ se hace con un algoritmo que la acelera (**Opció Predeterminada**)                                                |
+|                      | **TRUE** La buscueda del mejor $ARIMA$ se hace con un algoritmo que la acelera (**Opción Predeterminada**)                                                |
 |                      | **FALSE** La busqueda se hace en todos los modelos                                                                                                       |
 | **approximation**    | Argumento lógico que sólo tiene dos opciones:                                                                                                            |
-|                      | **TRUE** La buscueda del mejor $ARIMA$ se hace con un algoritmo que la acelera (**Opció Predeterminada**)                                                |
+|                      | **TRUE** La buscueda del mejor $ARIMA$ se hace con un algoritmo que la acelera (**Opción Predeterminada**)                                                |
 |                      | **FALSE** La busqueda se hace de forma normal                                                                                                            |
 
 [^2]: **Si no hay inconvenientes computacionales en el calculo de los diferentes modelos _ARIMA_, se recomienda utilizar las opciones **stepwise = FALSE, approximation = FALSE** para un calculo más preciso del modelo más parsimonioso. Por otro lado, el comando _auto.arima_ tiene aún más argumentos que los presentados. Sin embargo los principales son los que se estan presentando.**
@@ -129,23 +129,23 @@ Observe que los pronósticos se trabajaron con el nombre **forecast1**. Usted pu
 
 1. **¿Cuál de los comandos vistos en esta sección permite utilizar el _Criterio de Información de Akaike_ con corrección para muestras pequeña?:**
  
-   a) autoplot.
+   a) _autoplot_.
 
-   b) auto.arima.
+   b) _auto.arima_.
 
-   c) Arima.
+   c) _Arima_.
 
-   d) ggtsdiag.
+   d) _forecast_.
 
-2. **¿Cuál comando permite escoger el número óptimo de rezagos segun el Criterio de Información de Akaike?:**
+2. **¿Con cuál comando se puede graficar la Función de Autocorrelación de los residuos ?:**
  
-   a) _unitrootTest_.
+   a) _autoplot_.
 
-   b) _urdfTest_.
+   b) _ggtsdiag_.
 
-   c) _ur.df_.
+   c) Todos los anteriores.
 
-   d) Todos los anteriores.
+   d) Ninguno de los anteriores.
 
 ---
 ---
