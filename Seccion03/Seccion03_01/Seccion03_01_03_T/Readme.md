@@ -105,7 +105,7 @@ Sin embargo, el análisis impulso-respuesta y la descomposición de varianza del
 ---
 # Preguntas de selección múltiple
 
-1. **Sobre cuál tipo de modelo se determinan de forma directa las funciones impulso-respuesta y la descomposición de varianza del erorr de pronóstico:**
+1. **¿Sobre cuál tipo de modelo se determinan de forma directa las funciones impulso-respuesta y la descomposición de varianza del erorr de pronóstico?:**
  
    a) $VAR$ **_estructural_**.
 
