@@ -8,10 +8,10 @@ En las secciónes previas, casí todo el tiempo hemos estado manejando un $VAR$ 
 
 Siguiendo la notación de la sección 3.1.1. en un $VAR(1)$ **_estándar_** con $2$ variables ( $y_t$ y $z_t$ ) se estiman $9$ parámetros [ $6$ coeficientes ($a_{10}$, $a_{20}$, $a_{11}$, $a_{12}$, $a_{21}$ y $a_{22}$), $\sigma_{e1t}^2$, $\sigma_{e2t}^2$ y $\sigma_{e1t,e2t}$]. Sin embargo, en un $VAR(1)$ **_estructural_** con con $2$ variables ( $y_t$ y $z_t$ ) se necesitan $10$ parámetros [ $2$ interceptos ($a_{10}$ y $a_{20}$), $4$ coeficientes autorregresivos ($\gamma_{11}$, $\gamma_{12}$, $\gamma_{21}$ y $\gamma_{22}$), $2$ coeficientes de retroalimentación ($b_{12}$, $b_{21}$), $\sigma_y$ y $\sigma_z$]. Por lo tanto, a menos que uno esté dispuesto a restringir uno de los parámetros, no es posible identificar el $VAR$ **_estructural_**.
 
-La forma más utilizada para resolver el problema de identificación es **la descomposición de Choleski**, la cual consiste, en el modelo $VAR$ con $2$ parámetros es asumir que uno de los coeficientes de retroalimentación es cero (por ejemplo, asumiendo $b_{12}=0$), de tal forma que una variable no tiene efecto contemporaneo sobre otra variable. En la práctica, ¿cómo decidir cuál es la variable que no tiene un efecto contemporaneo sobre la otra variable? En algunos casos, puede haber una razón teórica. Por lo general, no existe tal conocimiento a priori. Desafortunadamente, no hay una manera simple de evitar el problema; la identificación requiere imponer alguna estructura en el sistema. 
+La forma más utilizada para resolver el problema de identificación es **la descomposición de Choleski**, la cual opera de la siguiente forma en un modelo $VAR$ con $2$ parámetros: se asume que uno de los coeficientes de retroalimentación es cero (por ejemplo, $b_{12}=0$), de tal forma que una variable no tiene efecto contemporaneo sobre la otra variable. En la práctica, ¿cómo decidir cuál es la variable que no tiene un efecto contemporaneo sobre la otra variable? En algunos casos, puede haber una razón teórica. Por lo general, no existe tal conocimiento a priori. Desafortunadamente, no hay una manera simple de evitar el problema; la identificación requiere imponer alguna estructura en el sistema. 
 
 ## La Función Impulso-Respuesta
-Al igual que un proceso autorregresivo tiene una representación de media móvil, un vector autorregresivo $VAR$ puede escribirse como un vector de media móvil $VMA$. Más específicamente, $\eqalign{\mathbf{x_t=\mu+\sum_{i=1}^p A_1^i e_{t-i}}}$ es la representación $VMA$ **_estándar_** del $VAR$ **_estándarl_** $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$ en donde todas las variables incluidas en el vector $\mathbf{x_t}$ se expresan en términos de los valores actuales y pasados de los diferentes tipos de choques incluidos en el vector $\mathbf{e_t}$.[^1] 
+Al igual que un proceso autorregresivo tiene una representación de media móvil, un vector autorregresivo $VAR$ puede escribirse como un vector de media móvil $VMA$. Más específicamente, $\eqalign{\mathbf{x_t=\mu+\sum_{i=1}^p A_1^i e_{t-i}}}$ es la representación $VMA$ **_estándar_** del $VAR$ **_estándar_** $\mathbf{x_t=A_0+A_1x_{t-1}+e_t}$ en donde todas las variables incluidas en el vector $\mathbf{x_t}$ se expresan en términos de los valores actuales y pasados de los diferentes tipos de choques incluidos en el vector $\mathbf{e_t}$.[^1] 
 
 [^1]: **La representación _VMA_ es una característica esencial de la metodología de Sims (1980), ya que permite rastrear la trayectoria en el tiempo de los diversos choques de las variables contenidas en el sistema _VAR_**. 
 
@@ -101,6 +101,32 @@ En la práctica, es útil examinar las descomposiciones de varianza en varios ho
 
 Sin embargo, el análisis impulso-respuesta y la descomposición de varianza del error de pronóstico pueden ser herramientas útiles para examinar las relaciones entre variables económicas. Si las correlaciones entre las diversas innovaciones son pequeñas, es probable que el problema de identificación no sea especialmente importante. Los ordenamientos alernativos deberían producir impulso-respuesta y descomposiciones de varianza similares. Por supuesto, los movimientos contemporáneos de muchas variables económicas están altamente correlacionados.
 
+---
+---
+# Preguntas de selección múltiple
+
+1. **Sobre cuál tipo de modelo $VAR$ se determinan las funciones impulso-respuesta y la descomposición de varianza del erorr de pronóstico:**
+ 
+   a) $VAR$ **_estructural_**.
+
+   b) $VAR$ **_estándar_**.
+
+   c) Todos los anteriores.
+
+   d) Ninguno de los anteriores.
+
+2. **Sobre cuál tipo de modelo $VAR$ se determinan las funciones impulso-respuesta y **
+ 
+   a) Tienen una mayor probabilidad de aceptar una hipótesis de raíz unitaria cuando esta no existe.
+
+   b) Tienen una mayor probabilidad de aceptar una hipótesis de estacionariedad cuando esta no existe.
+
+   c) Tienen una mayor probabilidad de rechazar una hipótesis de estacionariedad cuando esta existe.
+
+   d) Tienen una mayor probabilidad de rechazar una hipótesis de raíz unitaria cuando esta existe.
+
+---
+---
 | [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |[Subsección: 3.1.3.(R) La Función Impulso-Respuesta y la Descomposición de Varianza del Error de Pronóstico en _R_](../Seccion03_01_03_R/Readme.md) |
 |--------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
 
