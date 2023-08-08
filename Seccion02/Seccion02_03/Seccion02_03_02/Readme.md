@@ -457,25 +457,62 @@ y responda a las dos preguntas que siguen a continuación:
 
 2. **Según el _Criterio de Información de Akaike_, en su orden, cuales son los dos modelos $ARIMA(p,I,q)$ que mejor se ajustan a los datos simulados:**
    
-   a) MA(1) sin intercepto y MA(1) con intercepto.
+   a) $MA(1)$ sin intercepto y $MA(1)$ con intercepto.
 
-   b) MA(1) con intercepto y MA(1) sin intercepto.
+   b) $MA(1)$ con intercepto y $MA(1)$ sin intercepto.
 
-   c) MA(1) sin intercepto y AR(1) sin intercepto.
+   c) $MA(1)$ sin intercepto y $AR(1)$ sin intercepto.
 
-   d) MA(1) cin intercepto y AR(1) sin intercepto.
+   d) $MA(1)$ conn intercepto y $AR(1)$ sin intercepto.
 
-3. **Según el _Criterio Bayesiano de Schwartz_, en su orden, cuales son los dos modelos $ARIMA(p,I,q)$ que mejor se ajustan a los datos simulados:**
+4. **Según el _Criterio Bayesiano de Schwartz_, en su orden, cuales son los dos modelos $ARIMA(p,I,q)$ que mejor se ajustan a los datos simulados:**
    
-   a) MA(1) sin intercepto y MA(1) con intercepto.
+   a) $MA(1)$ sin intercepto y $MA(1)$ con intercepto.
 
-   b) MA(1) con intercepto y MA(1) sin intercepto.
+   b) $MA(1)$ con intercepto y $MA(1)$ sin intercepto.
 
-   c) MA(1) sin intercepto y AR(1) sin intercepto.
+   c) $MA(1)$ sin intercepto y $AR(1)$ sin intercepto.
 
-   d) MA(1) cin intercepto y AR(1) sin intercepto.
+   d) $MA(1)$ conn intercepto y $AR(1)$ sin intercepto.
+
+Copie los siguientes comandos para estimar el modelo $MA(1)$ con intercepto ($y_t=a_0+\varepsilon_t+\beta_1\varepsilon_{t-1}$): 
+
+```r
+Arima(y, order=c(0,0,1))
+```
+
+Note que a pesar de que $\beta_1$ es significativo, el intercepto no es significativo porque el valor absoluto de $a_0$ es menor que dos veces su error estándar.
+
+5. **¿A dos digitos, cuál es el valor de $a_0$ y de su error estándar?:**
+
+   a) -0.04 y 0.03.
+
+   b) -0.67 y 0.5.
+
+   c) -0.67 y 0.05.
+
+   d) -0.03 y 0.02.
+
+Copie los siguientes comandos para estimar el modelo $MA(1)$ sin intercepto ($y_t=\varepsilon_t+\beta_1\varepsilon_{t-1}$): 
+
+```r
+Arima(y, order=c(0,0,1), include.mean = FALSE)
+```
+
+6. **¿A dos digitos, cuál es el valor de $\beta_1$ y de su error estándar?:**
+
+   a) -0.65 y 0.05.
+
+   b) -0.67 y 0.05.
+
+   c) -0.71 y 0.03.
+
+   d) -0.70 y 0.01.
+   
 ---
 ---
+
+
 | [Subsección 2.3. - Análisis _ARMA_ (La Metodología de Box-Jenkins)](../Readme.md)| [Siguiente Subsección: 2.3.3 Caso de estudio utilizando la base de datos _Indicadores de Desarrollo Mundial_ (segunda parte)](../Seccion02_03_03/Readme.md) |
 |----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
