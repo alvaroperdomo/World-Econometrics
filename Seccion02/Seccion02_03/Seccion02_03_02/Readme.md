@@ -496,7 +496,8 @@ Note que a pesar de que $\beta_1$ es significativo, el intercepto no es signific
 Copie los siguientes comandos para estimar el modelo $MA(1)$ sin intercepto ($y_t=\varepsilon_t+\beta_1\varepsilon_{t-1}$): 
 
 ```r
-Arima(y, order=c(0,0,1), include.mean = FALSE)
+Modelo_ejemplo <- Arima(y, order=c(0,0,1), include.mean = FALSE)
+summary(Modelo_ejemplo)
 ```
 
 6. **¿A dos digitos, cuál es el valor de $\beta_1$ y de su error estándar?:**
@@ -508,7 +509,29 @@ Arima(y, order=c(0,0,1), include.mean = FALSE)
    c) -0.71 y 0.03.
 
    d) -0.70 y 0.01.
-   
+
+Con el comando 
+
+```r
+ggtsdiag(Modelo_ejemplo, gof.lag = 30) +  labs(subtitle = "Modelo_ejemplo") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo_ejemplo.
+```
+observe que con el estadistico de Ljung-Box se obtiene que los residuos no están autocorrelacionados
+
+6. **¿En cuál rezago se obtiene el p-value más bajo del estadístico de Ljung-Box de los residuos estimados y en cuál valor a dos dígitos?:**
+
+   a) 19 y 0.19.
+
+   b) 19 y 0.30.
+
+   c) 5 y 0.38.
+
+   d) 5 y 0.22.
+
+```r
+Box.test(Modelo_ejemplo$residuals, lag=5, type="Ljung-Box") # Test de Ljung-Box
+Box.test(Modelo_ejemplo$residuals, lag=19, type="Ljung-Box") # Test de Ljung-Box
+```
+
 ---
 ---
 
