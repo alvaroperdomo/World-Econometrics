@@ -447,7 +447,7 @@ Según la descomposición de varianza, más del 80% de la varianza del error de 
 
 ## Pronosticos
 
-Por último, alejandonos del ejercicio original vamos a hacer un pronóstico de 3 años hacia adelante de las variables $GGOV$ y $INVP$. Para ello, operamos el siguiente comando:
+Por último, alejandonos del ejercicio original vamos a hacer un pronóstico de 3 años hacia adelante de las variables $\Delta GGOV$ y $\Delta INVP$. Para ello, operamos el siguiente comando:
 ``` r
 forecast3<-forecast(modeloVAR, level = c(95), h = 3)
 forecast3
