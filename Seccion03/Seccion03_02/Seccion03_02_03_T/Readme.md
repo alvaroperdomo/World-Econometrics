@@ -192,6 +192,33 @@ Utilice los siguientes cuatro pasos cuando implemente el procedimiento Johansen:
 
 5) Finalmente, **las pruebas de impulso-respuesta, descomposición de varianza y causalidad en el modelo de corrección de errores** podrían ayudar a si el modelo estimado parece ser razonable.
 
+---
+---
+# Preguntas de selección múltiple
+
+1. **¿Cuál de las siguientes razones no es una ventaja de la metodología de Johansen sobre la metodología de Engle y Granger?:**
+ 
+   a) Se evita el uso de estimadores de dos pasos.
+
+   b) Se pueden estimar relaciones de cointegración entre variables integradas de ordenes diferentes.
+
+   c) Se pueden estimar y probar la presencia de múltiples vectores de cointegración.
+
+   d) Se permiten probar versiones restringidas de los vectores de cointegración y la velocidad de los parámetros de ajuste.
+
+
+2. **¿Al utilizar la prueba de cointegración de Johansen, cuándo se debe estimar un $VAR$ en diferencias?:**
+ 
+   a) Si $\mathbf{rango(\pi)=0}$.
+
+   b) Si $\mathbf{rango(\pi)=n}$.
+
+   c) Si $\mathbf{rango(\pi)=1}$.
+
+   d) Si $\mathbf{1 \lt rango(\pi) \lt n}$.
+
+---
+---
 | [Subsección: 3.2 - Cointegración y estimación de Modelos _VEC_](../Readme.md) |[Subsección: 3.2.3.(R)  Aplicación en _R_ de la Metodología de Johansen (2 o más variables)](../Seccion03_02_03_R/Readme.md) |
 |-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 
