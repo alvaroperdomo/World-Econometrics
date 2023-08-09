@@ -6,7 +6,7 @@
 La para hacer la prueba de cointegración de Johansen copie el comando:
 
 ``` r
-ca.jo(x, type = c("eigen", "trace"), ecdet = c("none", "const", "trend"), K = 2,spec=c("longrun", "transitory"))
+ca.jo(x, type = c("eigen", "trace"), ecdet = c("none", "const", "trend"), K = 2,spec=c("longrun", "transitory"), dumvar=NULL)
 ```
 
 | **Argumentos**     | **Descripción**                                                                                                                                          | 
@@ -23,8 +23,10 @@ ca.jo(x, type = c("eigen", "trace"), ecdet = c("none", "const", "trend"), K = 2,
 | **spec**           | aquí se pueden escoger dos opciones para hacer la prueba. Sin embargo, en la sección teórica la opción que se desarrollo es  **spec="transitory"** [^1]  |
 |                    |  **"longrun"**                                                                                                                                           |
 |                    |  **"transitory"**                                                                                                                                        |
+| **dumvar**         |  Si este argumento no es **NULL** (**_Opción Predeterminada_**), se incluye una matriz de variables dummy en el $VEC$.[^2]                               |
 
 [^1]: **ANOTACIÓN DE R: Independientemente de la especificación elegida, el poder explicativo también es el mismo.**
+[^2]: **Tenga en cuenta que el número de filas de la matriz que contiene las variables dummy debe ser igual al número de filas de x**
 
 En cuanto a la opción a escoger en el argumento $ecdet$, tenga en cuenta que:
 
@@ -42,9 +44,34 @@ cajorls(x, r = 1, reg.number = NULL)
 |--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **x**              | vector de variables de series de tiempo que incluye las variables endógenas utilizadas en el VEC                                                                     |
 | **r**              | valor que determina el número de vectores de cointegración obtenidos en $\lambda_{max}$ y/o en  $\lambda_{traza}$                                                   |
-| **reg.number**     | El número de la ecuación del VEC que se debe estimar o, si se escoge en NULL ( esta es la **_Opción Predeterminada_** ), se estiman todas las ecuaciones dentro del VEC. |
+| **reg.number**     | El número de la ecuación del $VEC$ que se debe estimar o, si se escoge en $NULL$ ( esta es la **_Opción Predeterminada_** ), se estiman todas las ecuaciones dentro del $VEC$. |
 
+---
+---
+# Preguntas de selección múltiple
 
+1. **¿Cuál de los estadisticos de la prueba de cointegración de Johansen se pueden calcular con el comando _ca.jo(x, type = c("eigen"))_?:**
+ 
+   a) El estadistico $\lambda_{max}$.
+
+   b) el estadistico $\lambda_{traza}$ .
+
+   c) Todos los anteriores.
+
+   d) Ninguno de los anteriores.
+
+2. **¿Con cuál comando se estima el $VEC$?:**
+ 
+   a) _ca.jo_.
+
+   b) _cajorls_.
+
+   c) Todos los anteriores.
+
+   d) Ninguno de los anteriores.
+
+---
+---
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
 
 | [Subsección: 3.2 - Cointegración y estimación de Modelos _VEC_](../Readme.md) |[Subsección: 3.2.3.(T)  La Metodología de Johansen (2 o más variables)](../Seccion03_02_03_T/Readme.md) |
