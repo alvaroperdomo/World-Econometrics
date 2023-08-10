@@ -237,12 +237,13 @@ Observen que con ambas pruebas de Johansen al 5% de significancia:
 En conclusión, combinando los resultados de $r=0$ y de $r=1$, al 5% de significancia en nuestro sistema existe una única relación de largo plazo. Teniendo esta información se procede a estimar un $VEC$ con una única relación de cointegración
 
 ``` r
-cajorls(Johansen_traza_const, r = 1, reg.number = NULL)
+modeloVEC <- cajorls(Johansen_traza_const, r = 1, reg.number = NULL)
+modeloVEC
 ```
 Obteniendo
 
 ``` r
-> cajorls(Johansen_traza_const, r = 1, reg.number = NULL)
+> modeloVEC
 $rlm
 
 Call:
@@ -269,6 +270,88 @@ Esta salida, implica que cada una de las ecuaciones del $VEC$ que se ha estimado
 1) $\Delta PIB_{Brasil,t}=0.06(PIB_{Brasil,t-2}+0.20PIB_{Colombia,t-2}+0.9PIB_{México,t-2}-2251)+0.48\Delta PIB_{Brasil,t-1}-0.25\Delta PIB_{Colombia,t-1}-0.13\Delta PIB_{Mexico,t-1}+\varepsilon_{Brasil,t}$
 2) $\Delta PIB_{Colombia,t}=0.13(PIB_{Brasil,t-2}+0.20PIB_{Colombia,t-2}+0.9PIB_{México,t-2}-2251)+0.22\Delta PIB_{Brasil,t-1}-0.27\Delta PIB_{Colombia,t-1}-0.14\Delta PIB_{Mexico,t-1}+\varepsilon_{Colombia,t}$
 3) $\Delta PIB_{Mexico,t}=0.23(PIB_{Brasil,t-2}+0.20PIB_{Colombia,t-2}+0.9PIB_{México,t-2}-2251)+0.12\Delta PIB_{Brasil,t-1}-0.65\Delta PIB_{Colombia,t-1}-0.02\Delta PIB_{Mexico,t-1}+\varepsilon_{Mexico,t}$
+
+Con el siguiente comando se puede obtener mayor información de la estimación a corto plazo del $VEC$. Sin embargo, como se explico en la sección 3.2.3.(T). 
+``` r
+summary(modeloVEC$rlm)
+```
+
+Dando como resultado:
+
+``` r
+> summary(modeloVEC$rlm)
+Response Brasil.d :
+
+Call:
+lm(formula = Brasil.d ~ ect1 + Brasil.dl1 + Colombia.dl1 + México.dl1 - 
+    1, data = data.mat)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-589.54  -68.49   71.59  197.61  453.24 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)   
+ect1          0.05945    0.04893   1.215  0.22950   
+Brasil.dl1    0.48306    0.14908   3.240  0.00201 **
+Colombia.dl1 -0.25184    0.31626  -0.796  0.42922   
+México.dl1   -0.12567    0.12304  -1.021  0.31145   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 220.8 on 56 degrees of freedom
+Multiple R-squared:  0.1975,	Adjusted R-squared:  0.1402 
+F-statistic: 3.446 on 4 and 56 DF,  p-value: 0.01378
+
+
+Response Colombia.d :
+
+Call:
+lm(formula = Colombia.d ~ ect1 + Brasil.dl1 + Colombia.dl1 + 
+    México.dl1 - 1, data = data.mat)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-556.91  -41.04   22.58   63.66  342.04 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+ect1          0.12813    0.02819   4.545 2.98e-05 ***
+Brasil.dl1    0.22195    0.08590   2.584   0.0124 *  
+Colombia.dl1 -0.27881    0.18222  -1.530   0.1316    
+México.dl1   -0.14988    0.07089  -2.114   0.0390 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 127.2 on 56 degrees of freedom
+Multiple R-squared:  0.3435,	Adjusted R-squared:  0.2966 
+F-statistic: 7.326 on 4 and 56 DF,  p-value: 8.09e-05
+
+
+Response México.d :
+
+Call:
+lm(formula = México.d ~ ect1 + Brasil.dl1 + Colombia.dl1 + México.dl1 - 
+    1, data = data.mat)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-823.56  -63.33   23.19  147.67  417.97 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+ect1          0.23173    0.05450   4.252 8.12e-05 ***
+Brasil.dl1    0.12388    0.16606   0.746   0.4588    
+Colombia.dl1 -0.64707    0.35228  -1.837   0.0715 .  
+México.dl1    0.01999    0.13705   0.146   0.8846    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 246 on 56 degrees of freedom
+Multiple R-squared:  0.2653,	Adjusted R-squared:  0.2129 
+F-statistic: 5.057 on 4 and 56 DF,  p-value: 0.0015
+```
+
 
 | [Subsección: 3.2 - Cointegración y estimación de Modelos _VEC_](../Readme.md) |
 |-------------------------------------------------------------------------------|
