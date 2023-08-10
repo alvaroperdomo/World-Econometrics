@@ -17,7 +17,7 @@ library(tidyr)
 WDIsearch(string='NY.GDP.PCAP.KD', field='indicator') # Se confirma el nombre de la variable que se va a analizar
 
 # Obtenemos los datos de PIBpc para Brasil, Colombia y México desde 1960 hasta 2021 y se convierten en formato de serie de tiempo
-dat <- WDI(indicator = c(PIBpc = "NY.GDP.PCAP.KD"), country = c('BR', 'CO', 'MX'), start = 1960, end = 2021)
+dat <- WDI(indicator = c(PIBpc = "NY.GDP.PCAP.KD"), country = c('BR', 'CO', 'MX'), start = 1960, end = 2021, language = "es")
 dat <-  mutate(dat, iso2c=NULL, iso3c=NULL)
 dat <- dat %>% arrange(country, year)
 dat <- na.omit(dat)
@@ -36,11 +36,12 @@ ggplot(dat, aes(x = year, y = PIBpc, color = country)) +
   ggtitle("PIB per cápita para Brasil, Colombia y México") +
   theme_minimal()
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/b26b3b4b-3105-4b69-8b28-4eef28b7ab83)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/18f451ec-8e64-4260-815c-eb27b8ca8b65)
 
 Previamente, aunque no se muestra en esta sección, se hicieron pruebas de raíz unitaria a la variable PIB_pc de los tres países considerados y se obtuvó que en todos los casos era I(1), entonces, ahora se va a hacer la prueba de cointegración de Johansen para ver si existe una relación de cointegración entre los mismos.
 
 Para el análisis con el estadístico de la traza se utilizan los siguientes comandos de $R$:
+
 ``` r
 selected_order <- VARselect(seriesVEC, lag.max = 10, type = "const") # Se selecciona automáticamente el número de rezagos utilizando el criterio AIC
 selected_order
