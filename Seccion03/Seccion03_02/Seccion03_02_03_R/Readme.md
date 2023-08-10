@@ -48,9 +48,10 @@ cajorls(x, r = 1, reg.number = NULL)
 | **reg.number**     | El número de la ecuación del $VEC$ que se debe estimar o, si se escoge en $NULL$ ( esta es la **_Opción Predeterminada_** ), se estiman todas las ecuaciones dentro del $VEC$. |
 
 Por ejemplo,
+``` r
 vec_rank <- ca.jo(x, type = "trace", ecdet = "const", K = 2)
 cajorls(vec_rank, r = 1, reg.number = NULL)
-
+```
 ---
 ---
 # Preguntas de selección múltiple
