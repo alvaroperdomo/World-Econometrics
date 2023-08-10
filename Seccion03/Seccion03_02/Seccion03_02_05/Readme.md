@@ -241,7 +241,7 @@ cajorls(Johansen_traza_const, r = 1, reg.number = NULL)
 ```
 Obteniendo
 
-$
+``` r
 > cajorls(Johansen_traza_const, r = 1, reg.number = NULL)
 $rlm
 
@@ -262,11 +262,13 @@ Brasil.l2      1.0000000
 Colombia.l2   -0.2038490
 México.l2     -0.9368728
 constant    2251.0183891
-$
+```
 
 Esta salida, implica que cada una de las ecuaciones del $VEC$ que se ha estimado adoptan la siguiente forma:
 
-$\Delta PIB_{Brasil,t}=0.06(PIB_{Brasil,t-2}+0.20PIB_{Colombia,t-2}+0.9PIB_{México,t-2}-2251)+0.48\Delta PIB_{Brasil,t-1}-0.25\Delta PIB_{Colombia,t-1}-0.13\Delta PIB_{Mexico,t-1}
+1) $\Delta PIB_{Brasil,t}=0.06(PIB_{Brasil,t-2}+0.20PIB_{Colombia,t-2}+0.9PIB_{México,t-2}-2251)+0.48\Delta PIB_{Brasil,t-1}-0.25\Delta PIB_{Colombia,t-1}-0.13\Delta PIB_{Mexico,t-1}+\varepsilon_{Brasil,t}$
+2) $\Delta PIB_{Colombia,t}=0.13(PIB_{Brasil,t-2}+0.20PIB_{Colombia,t-2}+0.9PIB_{México,t-2}-2251)+0.22\Delta PIB_{Brasil,t-1}-0.27\Delta PIB_{Colombia,t-1}-0.14\Delta PIB_{Mexico,t-1}+\varepsilon_{Colombia,t}$
+3) $\Delta PIB_{Mexico,t}=0.23(PIB_{Brasil,t-2}+0.20PIB_{Colombia,t-2}+0.9PIB_{México,t-2}-2251)+0.12\Delta PIB_{Brasil,t-1}-0.65\Delta PIB_{Colombia,t-1}-0.02\Delta PIB_{Mexico,t-1}+\varepsilon_{Mexico,t}$
 
 | [Subsección: 3.2 - Cointegración y estimación de Modelos _VEC_](../Readme.md) |
 |-------------------------------------------------------------------------------|
