@@ -25,9 +25,9 @@ ca.jo(x, type = c("eigen", "trace"), ecdet = c("none", "const", "trend"), K = 2,
 |                    |  **"transitory"**                                                                                                                                        |
 | **dumvar**         |  Si este argumento no es **NULL** (**_Opción Predeterminada_**), se incluye una matriz de variables dummy en el $VEC$.[^3]                               |
 
-[^1]: **Tenga en cuenta que _ca.jo_ sólo funciona con K>1**
+[^1]: **Tenga en cuenta que _ca.jo_ sólo funciona con _K>1_. Entonces, si previamente utiliza el comando _VARselect_ para determinar el número de rezagos para la prueba, pero _VARselect_ le reporta que lo óptimo es utilizar un rezago, entonces utilice la segunda mejor opción reportada por el comando.**
 [^2]: **ANOTACIÓN DE _R_: Independientemente de la especificación elegida, el poder explicativo también es el mismo.**
-[^3]: **Tenga en cuenta que el número de filas de la matriz que contiene las variables dummy debe ser igual al número de filas de x**
+[^3]: **Tenga en cuenta que el número de filas de la matriz que contiene las variables dummy debe ser igual al número de filas de _x_**
 
 En cuanto a la opción a escoger en el argumento $ecdet$, tenga en cuenta que:
 
