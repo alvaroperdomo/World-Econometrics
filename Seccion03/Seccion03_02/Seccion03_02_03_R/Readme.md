@@ -11,7 +11,7 @@ ca.jo(x, type = c("eigen", "trace"), ecdet = c("none", "const", "trend"), K = 2,
 
 | **Argumentos**     | **Descripción**                                                                                                                                          | 
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **x**              | vector de variables de series de tiempo que incluye las variables endógenas utilizadas en el VEC                                                         |
+| **x**              | vector de variables de series de tiempo que incluye las variables endógenas utilizadas en el $VEC$                                                       |
 | **type**           | en esta opción se especificael tipo de estadistico de Johanswen que se quiere calcular:                                                                  |
 |                    |  **"eigen"** se calcula el estadistico $\lambda_{max}$                                                                                                   |
 |                    |  **"trace"** se calcula el estadistico $\lambda_{traza}$                                                                                                 |
@@ -43,9 +43,13 @@ cajorls(x, r = 1, reg.number = NULL)
 
 | **Argumentos**     | **Descripción**                                                                                                                                                      | 
 |--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **x**              | vector de variables de series de tiempo que incluye las variables endógenas utilizadas en el VEC                                                                     |
+| **z**              | nombre de la prueba de cointegración de Johansen utilizada en ca.jo                                                                                                  |
 | **r**              | valor que determina el número de vectores de cointegración obtenidos en $\lambda_{max}$ y/o en  $\lambda_{traza}$                                                   |
 | **reg.number**     | El número de la ecuación del $VEC$ que se debe estimar o, si se escoge en $NULL$ ( esta es la **_Opción Predeterminada_** ), se estiman todas las ecuaciones dentro del $VEC$. |
+
+Por ejemplo,
+vec_rank <- ca.jo(x, type = "trace", ecdet = "const", K = 2)
+cajorls(vec_rank, r = 1, reg.number = NULL)
 
 ---
 ---
