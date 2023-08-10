@@ -15,18 +15,19 @@ ca.jo(x, type = c("eigen", "trace"), ecdet = c("none", "const", "trend"), K = 2,
 | **type**           | en esta opción se especificael tipo de estadistico de Johanswen que se quiere calcular:                                                                  |
 |                    |  **"eigen"** se calcula el estadistico $\lambda_{max}$                                                                                                   |
 |                    |  **"trace"** se calcula el estadistico $\lambda_{traza}$                                                                                                 |
-| **ecdet**          | en esta opción se especifica si al VEC se le van a incluir algunas variables exógenas predeterminadas:                                                   |
+| **ecdet**          | en esta opción se especifica si al $VEC$ se le van a incluir algunas variables exógenas predeterminadas:                                                 |
 |                    |  **"none"** VEC sin intercepto en la cointegración                                                                                                       |
 |                    |  **"const"** VEC con intercepto en la cointegración                                                                                                      |
 |                    |  **"trend"** VEC con tendencia en la cointegración                                                                                                       |
-| **K**              | número de rezagos que incluye el VEC                                                                                                                     |
-| **spec**           | aquí se pueden escoger dos opciones para hacer la prueba. Sin embargo, en la sección teórica la opción que se desarrollo es  **spec="transitory"** [^1]  |
+| **K**              | número de rezagos que incluye el $VEC$[^1]                                                                                                               |
+| **spec**           | aquí se pueden escoger dos opciones para hacer la prueba. Sin embargo, en la sección teórica la opción que se desarrollo es  **spec="transitory"** [^2]  |
 |                    |  **"longrun"**                                                                                                                                           |
 |                    |  **"transitory"**                                                                                                                                        |
-| **dumvar**         |  Si este argumento no es **NULL** (**_Opción Predeterminada_**), se incluye una matriz de variables dummy en el $VEC$.[^2]                               |
+| **dumvar**         |  Si este argumento no es **NULL** (**_Opción Predeterminada_**), se incluye una matriz de variables dummy en el $VEC$.[^3]                               |
 
-[^1]: **ANOTACIÓN DE R: Independientemente de la especificación elegida, el poder explicativo también es el mismo.**
-[^2]: **Tenga en cuenta que el número de filas de la matriz que contiene las variables dummy debe ser igual al número de filas de x**
+[^1]: **Tenga en cuenta que _ca.jo_ sólo funciona con K>1**
+[^2]: **ANOTACIÓN DE _R_: Independientemente de la especificación elegida, el poder explicativo también es el mismo.**
+[^3]: **Tenga en cuenta que el número de filas de la matriz que contiene las variables dummy debe ser igual al número de filas de x**
 
 En cuanto a la opción a escoger en el argumento $ecdet$, tenga en cuenta que:
 
