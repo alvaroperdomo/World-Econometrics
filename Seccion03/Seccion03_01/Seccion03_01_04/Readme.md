@@ -546,7 +546,11 @@ Obteniendo los siguientes gráficos
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/2b8852ac-a381-476e-b51f-7d13f3809f52)
 
-
+Dado que el gráfico previo pareciera indicar que $\Delta PIB$ no tiene pendiente para ningún país y potencialmente no tienen intercepto, entonces el $VAR$ a estimar lo escogeremos entre los modelos $VAR$ sin intercepto ni tendencia, y los modelos $VAR$ con intercepto pero sin tendencia. Por lo tanto, el orden de los rezagos del $VAR$ a estimar se va a escoger con los siguientes comandos:
+``` r
+VARselect(diff(seriesVAR),lag.max=10,type="const")
+VARselect(diff(seriesVAR),lag.max=10,type="none")
+```
 :
 | [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |
 |--------------------------------------------------------------|
