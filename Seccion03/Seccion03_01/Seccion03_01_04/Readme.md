@@ -471,7 +471,77 @@ INVP
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/2f6d7218-d82c-45e1-85a5-f5950f23888c)
 
+---
+---
+# Preguntas de selección múltiple
 
+Uno de los acuerdos de libre comercio más importantes es el Tratado de Libre Comercio de América del Norte que firmaron Canadá, Estados Unidos y México el cual entró en vigencia en 1994 y tuvó un nuevo impulso en 2020. Este tratado fortaleció las relaciones económicas de los tres paises. En consecuencia, a partir de un análisis $VAR$ basado en el comportamiento del PIB real de cada uno los tres países se va a analizar cómo es la interrelación entre estas tres economías. La variable que se va a utilizar para el análisis es el PIB a dólares constantes de 2015 (variable NY.GDP.MKTP.KD)
+
+En primera instancia, vamos a limpiar el área de trabajo, llamar las librerías a utilizar y confirmar el nombre de la variable a utilizar 
+``` r
+rm(list = ls())
+
+library(WDI)         # Esta librería sirve para trabajar directamente con la base de datos Indicadores de Desarrollo Mundial.
+library(dplyr)       # Esta librería permite manipular las bases de datos de R de una forma sencilla, por ejemplo utilizando los comandos mutate() y arrange()
+library(tidyr)       # Esta librería permite manipular las bases de datos de R de una forma sencilla, por ejemplo utilizando los comandos spread()
+library(ggplot2)     # Esta librería sirve para construir gráficos interesantes
+library(forecast)    # Esta librería sirve para hacer pronósticos.
+library(vars)        # Esta librería se utiliza para la estimación de los modelos VAR
+
+WDIsearch(string='NY.GDP.MKTP.KD', field='indicator')
+```
+
+Obteniendo
+``` r
+> WDIsearch(string='NY.GDP.MKTP.KD', field='indicator')
+              indicator                                     name
+11416    NY.GDP.MKTP.KD                  GDP (constant 2015 US$)
+11417 NY.GDP.MKTP.KD.87 GDP at market prices (constant 1987 US$)
+11418 NY.GDP.MKTP.KD.ZG                    GDP growth (annual %)
+```
+
+Con el siguiente comando se descarga la información, se renombra como $PIB$ y se construye una base de datos llamada "TLCAN":
+``` r
+TLCAN <- WDI(c(PIB =  "NY.GDP.MKTP.KD"), country = c('CA', 'US', 'MX'), start = 1960, end = 2022, language = "es")
+TLCAN <- TLCAN %>% arrange(year)
+TLCAN <- na.omit(TLCAN)
+TLCAN <-  mutate(TLCAN, iso2c=NULL, iso3c=NULL) # Se renombran las columnas y se seleccionan solo las columnas necesarias
+TLCAN_paises <- spread(TLCAN, key = country, value = PIB) # Se utiliza spread() de tidyr para convertir los datos a formato wide para tener una columna por país
+TLCAN_paises_matrix <- as.matrix(TLCAN_paises[, -1])  # Se convierte TLCAN_paises en una matriz
+```
+
+Los datos del PIB de cada país se establecen como una serie de tiempo:
+``` r
+seriesVAR <- ts(TLCAN_paises_matrix, frequency = 1, start = 1981) # Se crean las variables en formato de serie de tiempo
+```
+
+Previamente, aunque aquí no se muestra, se hicieron pruebas de raíz unitaria y se encontro que el PIB de los tres países no es estacionario, pero su primera diferencia si lo es. 
+
+Por lo tanto, gráficamos las variables en niveles y en primeras diferencias:
+
+ggplot(dat, aes(x = year, y = PIB, color = country)) +
+  geom_line() +
+  labs(x = "Años", y = "Dólares constantes de 2015", color = "País") +
+  ggtitle("PIB para Canadá, Estados Unidos y México") +
+  theme_minimal()
+
+  ``` r
+# Los siguientes comandos sirven para crear una base de datos que incluya en la primera columna los años y en las siguientes la primera diferencia del PIB para cada uno de los países
+first_diff_seriesVAR <- diff(seriesVAR, differences = 1)  # Con este comando se obtienen las primeras diferencias de cada una de las series
+time_index <- time(first_diff_seriesVAR)  # Con este comando se crea la variable que representa los años en la nueva base de datos
+df_diff <- data.frame(time_index, first_diff_seriesVAR)   # Con este comando se crea la base de datos df_diff
+colnames(df_diff) <- c("Año", "Canadá", "Estados Unidos", "México")   # Con este comando se crean los titluos a la base de datos df_diff
+
+ggplot(data = df_diff, aes(x = Año)) +
+  geom_line(aes(y = Brasil, color = "Canadá")) +
+  geom_line(aes(y = Colombia, color = "Estados Unidos")) +
+  geom_line(aes(y = México, color = "México")) +
+  labs(x = "Años", y = "Primeras Diferencias", color = "País") +
+  ggtitle("Primeras diferencias del PIB per cápita para Brasil, Colombia y México") +
+  theme_minimal()
+```
+
+:
 | [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |
 |--------------------------------------------------------------|
 
