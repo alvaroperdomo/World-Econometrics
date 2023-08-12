@@ -519,13 +519,13 @@ Previamente, aunque aquí no se muestra, se hicieron pruebas de raíz unitaria y
 
 Por lo tanto, gráficamos las variables en niveles y en primeras diferencias:
 
+``` r
 ggplot(dat, aes(x = year, y = PIB, color = country)) +
   geom_line() +
   labs(x = "Años", y = "Dólares constantes de 2015", color = "País") +
   ggtitle("PIB para Canadá, Estados Unidos y México") +
   theme_minimal()
 
-  ``` r
 # Los siguientes comandos sirven para crear una base de datos que incluya en la primera columna los años y en las siguientes la primera diferencia del PIB para cada uno de los países
 first_diff_seriesVAR <- diff(seriesVAR, differences = 1)  # Con este comando se obtienen las primeras diferencias de cada una de las series
 time_index <- time(first_diff_seriesVAR)  # Con este comando se crea la variable que representa los años en la nueva base de datos
