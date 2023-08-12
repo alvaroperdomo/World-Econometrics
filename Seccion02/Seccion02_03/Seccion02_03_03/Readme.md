@@ -262,7 +262,7 @@ Durante el año $2020$, a raíz de la cuarentena producto de la pandemia del Cov
 ---
 # Preguntas de selección múltiple
 
-Cómo se comentó en la subsección 2.2.5, en esta sesión de preguntas se va a continuar con el análisis de la variable **Gasto en consumo final del gobierno general de Chile como % del PIB** la cual ya se habia demostrado que es integrada de orden "1". Por lo tanto, van a aplicarle la metodología de Box y Jentins a la primera diferencia de esta variable, la cual se ha denominado como $C1GGOV$
+Cómo se comentó en la subsección 2.2.5, en esta sesión de preguntas se va a continuar con el análisis de la variable **Gasto en consumo final del gobierno general de Chile como % del PIB** la cual ya se habia demostrado que es integrada de orden "1". Por lo tanto, van a aplicarle la metodología de Box y Jenkins a la primera diferencia de esta variable, la cual se ha denominado como $C1GGOV$
 
 Retomen parte del código utilizado en secciones previas para preparar los datos para el análisis:
 
