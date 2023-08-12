@@ -503,9 +503,9 @@ Obteniendo
 Con el siguiente comando se descarga la información, se renombra como $PIB$ y se construye una base de datos llamada "TLCAN":
 ``` r
 TLCAN <- WDI(c(PIB =  "NY.GDP.MKTP.KD"), country = c('CA', 'US', 'MX'), start = 1960, end = 2022, language = "es")
-TLCAN <- TLCAN %>% arrange(year)
+TLCAN <-  mutate(TLCAN, iso2c=NULL, iso3c=NULL) # Se seleccionan solo las columnas necesarias
+TLCAN <- TLCAN %>% arrange(country, year)
 TLCAN <- na.omit(TLCAN)
-TLCAN <-  mutate(TLCAN, iso2c=NULL, iso3c=NULL) # Se renombran las columnas y se seleccionan solo las columnas necesarias
 TLCAN_paises <- spread(TLCAN, key = country, value = PIB) # Se utiliza spread() de tidyr para convertir los datos a formato wide para tener una columna por país
 TLCAN_paises_matrix <- as.matrix(TLCAN_paises[, -1])  # Se convierte TLCAN_paises en una matriz
 ```
@@ -520,7 +520,7 @@ Previamente, aunque aquí no se muestra, se hicieron pruebas de raíz unitaria y
 Por lo tanto, gráficamos las variables en niveles y en primeras diferencias:
 
 ``` r
-ggplot(dat, aes(x = year, y = PIB, color = country)) +
+ggplot(TLCAN, aes(x = year, y = PIB, color = country)) +
   geom_line() +
   labs(x = "Años", y = "Dólares constantes de 2015", color = "País") +
   ggtitle("PIB para Canadá, Estados Unidos y México") +
@@ -533,13 +533,19 @@ df_diff <- data.frame(time_index, first_diff_seriesVAR)   # Con este comando se 
 colnames(df_diff) <- c("Año", "Canadá", "Estados Unidos", "México")   # Con este comando se crean los titluos a la base de datos df_diff
 
 ggplot(data = df_diff, aes(x = Año)) +
-  geom_line(aes(y = Brasil, color = "Canadá")) +
-  geom_line(aes(y = Colombia, color = "Estados Unidos")) +
+  geom_line(aes(y = Canadá, color = "Canadá")) +
+  geom_line(aes(y = Estados Unidos, color = "Estados Unidos")) +
   geom_line(aes(y = México, color = "México")) +
   labs(x = "Años", y = "Primeras Diferencias", color = "País") +
   ggtitle("Primeras diferencias del PIB per cápita para Brasil, Colombia y México") +
   theme_minimal()
 ```
+Obteniendo los siguientes gráficos 
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/52f95756-e7d8-4096-b225-40b977361653)
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/2b8852ac-a381-476e-b51f-7d13f3809f52)
+
 
 :
 | [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |
