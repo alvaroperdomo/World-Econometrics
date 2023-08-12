@@ -542,7 +542,7 @@ ggplot(data = df_diff, aes(x = Año)) +
 ```
 Obteniendo los siguientes gráficos 
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/52f95756-e7d8-4096-b225-40b977361653)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4414f2ff-b790-4236-9554-b9d1800f2479)
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/2b8852ac-a381-476e-b51f-7d13f3809f52)
 
