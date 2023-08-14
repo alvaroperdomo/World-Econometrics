@@ -609,8 +609,20 @@ acf(residuals(modeloVAR)[,3])
 pacf(residuals(modeloVAR)[,3])
 ```
 
+7.Calcule el _p-value_ de la Prueba de Portmanteau y escoja la respuesta correcta: 
 
-:
+   a) 0.9414, entonces se rechaza la hipótesis nula de no autocorrelación de los residuos estimados.
+
+   b) 0.9414, entonces se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
+
+   c) 0.9414, entonces no se rechaza la hipótesis nula de no autocorrelación de los residuos estimados.
+
+   d) 0.9414, entonces no se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
+
+```r
+serial.test(modeloVAR,lags.pt=10)
+```
+
 | [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |
 |--------------------------------------------------------------|
 
