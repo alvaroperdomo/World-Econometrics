@@ -623,7 +623,7 @@ pacf(residuals(modeloVAR)[,3])
 serial.test(modeloVAR,lags.pt=10)
 ```
 
-8.Calcule el _p-value_ de la Prueba de Portmanteau y escoja la respuesta correcta:
+8. Calcule el _p-value_ de la Prueba de Portmanteau y escoja la respuesta correcta:
 
    a) 0.9414, entonces se rechaza la hipótesis nula de no autocorrelación de los residuos estimados.
 
@@ -633,13 +633,23 @@ serial.test(modeloVAR,lags.pt=10)
 
    d) 0.9414, entonces no se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
 
+9. ¿Según la prueba de causalidad de Granger al 10% de significancia, de los países considerados, el $\Delta PIB$ de cuál país afecta el  $\Delta PIB$ de otro país?:
+    
+   a) El de Estados Unidos afecta al de México.
+
+   b) El de Estados Unidos afecta al de Canadá.
+
+   c) El de Canadá afecta al de Estados Unidos.
+
+   d) El de México afecta al de Estados Unidos.
+
 ```r
-grangertest(diff(Canadá) ~ diff(`Estados Unidos`), order = 1, data = df_diff)
-grangertest(diff(Canadá) ~ diff(México), order = 1, data = df_diff)
-grangertest(diff(`Estados Unidos`) ~ diff(Canadá), order = 1, data = df_diff)
-grangertest(diff(`Estados Unidos`) ~ diff(México), order = 1, data = df_diff)
-grangertest(diff(México) ~ diff(Canadá), order = 1, data = df_diff)
-grangertest(diff(México) ~ diff(`Estados Unidos`), order = 1, data = df_diff)
+grangertest(diff(Canadá) ~ diff(`Estados Unidos`), order = 1, data=seriesVAR)
+grangertest(diff(Canadá) ~ diff(México), order = 1, data=seriesVAR)
+grangertest(diff(`Estados Unidos`) ~ diff(Canadá), order = 1, data=seriesVAR)
+grangertest(diff(`Estados Unidos`) ~ diff(México), order = 1, data=seriesVAR)
+grangertest(diff(México) ~ diff(Canadá), order = 1, data=seriesVAR)
+grangertest(diff(México) ~ diff(`Estados Unidos`), order = 1, data=seriesVAR)
 ```
 
 | [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |
