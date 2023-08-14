@@ -130,7 +130,7 @@ Es decir, el modelo $VAR$ más parsimonioso tiene uno o dos rezagos (según el c
 
 Ahora estimamos el $VAR(2)$ con los siguientes comandos:
 ``` r
-modeloVAR<-VAR(diff(seriesVAR),p=1,type="none")
+modeloVAR<-VAR(diff(seriesVAR),p=2,type="none")
 summary(modeloVAR)
 ```
 Obteniendo
@@ -185,8 +185,6 @@ Residual standard error: 1.427 on 46 degrees of freedom
 Multiple R-Squared: 0.3297,	Adjusted R-squared: 0.2714 
 F-statistic: 5.657 on 4 and 46 DF,  p-value: 0.0008661 
 
-
-
 Covariance matrix of residuals:
         GGOV    INVP
 GGOV  0.3330 -0.3077
@@ -198,7 +196,7 @@ GGOV  1.0000 -0.3749
 INVP -0.3749  1.0000
 ```
 
-Observe que en este VAR las cuatro raíces caracteristicas del polinomio que lo resuelven ($0.7304 0.7304 0.4988 0.323$) en valor absoluto son menores que la unidad. Por lo tanto, esto nos lleva a plantear que el $VAR$ es estable [^4]. Por si alcaso, No olvide que las raíces caracteristicas de un $VAR$ que se ha estimado, también se pueden recuperar con el comando
+Observe que en este modelo $VAR$ las cuatro raíces caracteristicas del polinomio que lo resuelven ($0.7304 0.7304 0.4988 0.323$) en valor absoluto son menores que la unidad. Por lo tanto, esto nos lleva a plantear que el $VAR$ es estable [^4]. Por si alcaso, No olvide que las raíces caracteristicas de un $VAR$ que se ha estimado, también se pueden recuperar con el comando
 
 [^4]: **Si hubieramos estimado el _VAR(1)_ en vez del _VAR(2)_, esté hubiera sido más estable con dor raices caracteristicas iguanles a 0.2754.
 
@@ -574,6 +572,44 @@ Dado que al gráficar la variable $\Delta PIB$ de los tres países, esta parecie
 VARselect(diff(seriesVAR),lag.max=10,type="const")
 VARselect(diff(seriesVAR),lag.max=10,type="none")
 ```
+
+5. Estime el modelo $VAR$ más parsimonioso e identifique las tres raíces características del polinomio que lo resuelven. ¿Cuáles son estas raíces?
+
+   a) 0.6170692, 0.2337025 y 0.2337025
+
+   b) 0.9247295, 0.5116255 y 0.5116255
+
+   c) 0.5660535, 0.5492523 y 0.5492523
+
+   d) 0.2900364, 0.2900364 y 0.1871655
+
+``` r
+modeloVAR<-VAR(diff(seriesVAR),p=1,type="const")
+summary(modeloVAR)
+roots(modeloVAR)
+```
+A partir de las raíces características enontradas, observe que el $VAR$ es estable. 
+
+6.Grafique la $FAC$ y la $FACP$ de los residuos y comente: ¿Más alla del rezago $0$, cuántas autocorrelaciones totales y parciales, respectivamente, estan por fuera de la banda de confianza en la $FAC$ y la $FACP$ de la ecuación estimada para los Estados Unidos?
+
+   a) 0 y 0.
+
+   b) 0 y 1.
+
+   c) 1 y 0.
+
+   d) 1 y 1.
+
+```r
+acf(residuals(modeloVAR)[,1])
+pacf(residuals(modeloVAR)[,1])
+acf(residuals(modeloVAR)[,2]) # esta es la FAC a la que hace referencia la pregunta
+pacf(residuals(modeloVAR)[,2]) # esta es la FACP a la que hace referencia la pregunta
+acf(residuals(modeloVAR)[,3])
+pacf(residuals(modeloVAR)[,3])
+```
+
+
 :
 | [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |
 |--------------------------------------------------------------|
