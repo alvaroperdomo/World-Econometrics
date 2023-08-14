@@ -475,7 +475,7 @@ INVP
 ---
 # Preguntas de selección múltiple
 
-Uno de los acuerdos de libre comercio más importantes es el Tratado de Libre Comercio de América del Norte que firmaron Canadá, Estados Unidos y México el cual entró en vigencia en 1994 y tuvó un nuevo impulso en 2020. Este tratado fortaleció las relaciones económicas de los tres paises. En consecuencia, a partir de un análisis $VAR$ basado en el comportamiento del PIB real de cada uno los tres países se va a analizar cómo es la interrelación entre estas tres economías. La variable que se va a utilizar para el análisis es el PIB a dólares constantes de 2015 (variable NY.GDP.MKTP.KD)
+Uno de los acuerdos de libre comercio más importantes es el Tratado de Libre Comercio de América del Norte que firmaron Canadá, Estados Unidos y México el cual entró en vigencia en 1994 y tuvó un nuevo impulso en 2020. Este tratado fortaleció las relaciones económicas de los tres paises. En consecuencia, a partir de un análisis $VAR$ basado en el comportamiento del PIB real de cada uno los tres países se va a analizar cómo es la interrelación entre estas tres economías. La variable que se va a utilizar para el análisis es el **PIB a dólares constantes de 2015 (variable NY.GDP.MKTP.KD en los _Indicadores de Desarrollo Mundial_)**
 
 En primera instancia, vamos a limpiar el área de trabajo, llamar las librerías a utilizar y confirmar el nombre de la variable a utilizar 
 ``` r
@@ -490,15 +490,15 @@ library(vars)        # Esta librería se utiliza para la estimación de los mode
 
 WDIsearch(string='NY.GDP.MKTP.KD', field='indicator')
 ```
+1. ¿Cuál de las siguientes variables no es reportada al copiar los comandos de arriba?
 
-Obteniendo
-``` r
-> WDIsearch(string='NY.GDP.MKTP.KD', field='indicator')
-              indicator                                     name
-11416    NY.GDP.MKTP.KD                  GDP (constant 2015 US$)
-11417 NY.GDP.MKTP.KD.87 GDP at market prices (constant 1987 US$)
-11418 NY.GDP.MKTP.KD.ZG                    GDP growth (annual %)
-```
+   a) NY.GDP.MKTP.KD: PIB a precios dólares constantes de 2015.
+
+   b) NY.GDP.MKTP.KD.00: PIB a precios dólares constantes de 2000.
+
+   c) NY.GDP.MKTP.KD.87: PIB a precios dólares constantes de 1987.
+
+   d) NY.GDP.MKTP.KD.ZG: Crecimiento anual del PIB.
 
 Con el siguiente comando se descarga la información, se renombra como $PIB$ y se construye una base de datos llamada "TLCAN":
 ``` r
@@ -509,15 +509,23 @@ TLCAN <- na.omit(TLCAN)
 TLCAN_paises <- spread(TLCAN, key = country, value = PIB) # Se utiliza spread() de tidyr para convertir los datos a formato wide para tener una columna por país
 TLCAN_paises_matrix <- as.matrix(TLCAN_paises[, -1])  # Se convierte TLCAN_paises en una matriz
 ```
+2. ¿Cuál es el PIB real (a dólares constantes de 2015) de los tres países en 1994?
+
+   a) Canadá: 7.005270e+11, Estados Unidos: 7.260460e+12 y México: 5.670936e+11
+
+   b) Canadá: 9.305451e+11, Estados Unidos: 1.084483e+13 y México: 7.229405e+11
+
+   c) Canadá: 8.780163e+11, Estados Unidos: 9.811055e+12 y México: 6.206751e+11
+
+   d) Canadá: 1.163710e+12, Estados Unidos: 1.375430e+13 y México: 8.764394e+11
 
 Los datos del PIB de cada país se establecen como una serie de tiempo:
 ``` r
 seriesVAR <- ts(TLCAN_paises_matrix, frequency = 1, start = 1981) # Se crean las variables en formato de serie de tiempo
 ```
+No se les va a preguntar sobre el nivel de integración del PIB de los tres países. Sin embargo si hacen pruebas de raíz unitaria van a encontrar que el PIB de los tres países no es estacionario, pero su primera diferencia si lo es. 
 
-Previamente, aunque aquí no se muestra, se hicieron pruebas de raíz unitaria y se encontro que el PIB de los tres países no es estacionario, pero su primera diferencia si lo es. 
-
-Por lo tanto, gráficamos las variables en niveles y en primeras diferencias:
+Les recomiendo gráficar el PIB real de los tres países en niveles y en primeras diferencias para darse una perspectiva de las variables que están manejando. Una forma de hacerlo es utilizando los siguientes comandos:
 
 ``` r
 ggplot(TLCAN, aes(x = year, y = PIB, color = country)) +
@@ -526,7 +534,7 @@ ggplot(TLCAN, aes(x = year, y = PIB, color = country)) +
   ggtitle("PIB para Canadá, Estados Unidos y México") +
   theme_minimal()
 
-# Los siguientes comandos sirven para crear una base de datos que incluya en la primera columna los años y en las siguientes la primera diferencia del PIB para cada uno de los países
+# Los siguientes comandos sirven para crear una base de datos (a la que se ha llamado _df_diff_) que incluya en la primera columna los años y en las siguientes la primera diferencia del PIB para cada uno de los países
 first_diff_seriesVAR <- diff(seriesVAR, differences = 1)  # Con este comando se obtienen las primeras diferencias de cada una de las series
 time_index <- time(first_diff_seriesVAR)  # Con este comando se crea la variable que representa los años en la nueva base de datos
 df_diff <- data.frame(time_index, first_diff_seriesVAR)   # Con este comando se crea la base de datos df_diff
@@ -540,11 +548,15 @@ ggplot(data = df_diff, aes(x = Año)) +
   ggtitle("Primeras diferencias del PIB per cápita para Brasil, Colombia y México") +
   theme_minimal()
 ```
-Obteniendo los siguientes gráficos 
+3. ¿Cuál es la  primera diferencia del PIB real (a dólares constantes de 2015) de los tres países en 1994?
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/4414f2ff-b790-4236-9554-b9d1800f2479)
+   a) Canadá: -22327630623, Estados Unidos: -130897915000 y México: -43004816
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/2b8852ac-a381-476e-b51f-7d13f3809f52)
+   b) Canadá: 40024162643, Estados Unidos: 419994983000 y México: 34039170809
+
+   c) Canadá: 57286567365, Estados Unidos: 538816362000 y México: 41277489385
+
+   d) Canadá: 1443474284, Estados Unidos: 181607993000 y México: 30727042305
 
 Dado que el gráfico previo pareciera indicar que $\Delta PIB$ no tiene pendiente para ningún país y potencialmente no tienen intercepto, entonces el $VAR$ a estimar lo escogeremos entre los modelos $VAR$ sin intercepto ni tendencia, y los modelos $VAR$ con intercepto pero sin tendencia. Por lo tanto, el orden de los rezagos del $VAR$ a estimar se va a escoger con los siguientes comandos:
 ``` r
