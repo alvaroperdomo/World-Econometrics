@@ -548,7 +548,7 @@ ggplot(data = df_diff, aes(x = Año)) +
   ggtitle("Primeras diferencias del PIB per cápita para Brasil, Colombia y México") +
   theme_minimal()
 ```
-3. ¿Cuál es la  primera diferencia del PIB real (a dólares constantes de 2015) de los tres países en 1994?
+3. ¿Cuál es la primera diferencia del PIB real (a dólares constantes de 2015) de los tres países en 1994?
 
    a) Canadá: -22327630623, Estados Unidos: -130897915000 y México: -43004816
 
@@ -558,7 +558,7 @@ ggplot(data = df_diff, aes(x = Año)) +
 
    d) Canadá: 1443474284, Estados Unidos: 181607993000 y México: 30727042305
 
-Dado que el gráfico previo pareciera indicar que $\Delta PIB$ no tiene pendiente para ningún país y potencialmente no tienen intercepto, entonces el $VAR$ a estimar lo escogeremos entre los modelos $VAR$ sin intercepto ni tendencia, y los modelos $VAR$ con intercepto pero sin tendencia. Por lo tanto, el orden de los rezagos del $VAR$ a estimar se va a escoger con los siguientes comandos:
+Dado que el gráfico previo pareciera indicar que $\Delta PIB$ no tiene pendiente para ningún país y potencialmente no tienen intercepto, entonces el $VAR$ a estimar lo escogeremos entre los modelos $VAR$ sin intercepto ni tendencia, y los modelos $VAR$ con intercepto, pero sin tendencia. Por lo tanto, el orden de los rezagos del $VAR$ a estimar se va a escoger con los siguientes comandos:
 ``` r
 VARselect(diff(seriesVAR),lag.max=10,type="const")
 VARselect(diff(seriesVAR),lag.max=10,type="none")
