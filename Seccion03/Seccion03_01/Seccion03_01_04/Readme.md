@@ -558,7 +558,18 @@ ggplot(data = df_diff, aes(x = Año)) +
 
    d) Canadá: 1443474284, Estados Unidos: 181607993000 y México: 30727042305
 
-Dado que el gráfico previo pareciera indicar que $\Delta PIB$ no tiene pendiente para ningún país y potencialmente no tienen intercepto, entonces el $VAR$ a estimar lo escogeremos entre los modelos $VAR$ sin intercepto ni tendencia, y los modelos $VAR$ con intercepto, pero sin tendencia. Por lo tanto, el orden de los rezagos del $VAR$ a estimar se va a escoger con los siguientes comandos:
+Dado que al gráficar la variable $\Delta PIB$ de los tres países, esta pareciera no tener pendiente en ninguno de loa tres casos y potencialmente no tener intercepto, entonces el $VAR$ a estimar se escogera entre los modelos $VAR$ sin intercepto ni tendencia, y los modelos $VAR$ con intercepto, 
+
+4. ¿Según los _Criterios de Información de Akaike_, los _Criterios de Información de Hannan-Quinn_ y los _Criterios Bayesianos de Schwartz_ cuál es el modelo $VAR$ más parsimonioso?
+
+   a) Un modelo $VAR$ con un rezago y con intercepto
+
+   b) Un modelo $VAR$ con dos rezagos y con intercepto
+
+   c) Un modelo $VAR$ con un rezago y sin intercepto
+
+   d) Un modelo $VAR$ con dos rezagos y sin intercepto
+   
 ``` r
 VARselect(diff(seriesVAR),lag.max=10,type="const")
 VARselect(diff(seriesVAR),lag.max=10,type="none")
