@@ -623,6 +623,25 @@ pacf(residuals(modeloVAR)[,3])
 serial.test(modeloVAR,lags.pt=10)
 ```
 
+8.Calcule el _p-value_ de la Prueba de Portmanteau y escoja la respuesta correcta:
+
+   a) 0.9414, entonces se rechaza la hipótesis nula de no autocorrelación de los residuos estimados.
+
+   b) 0.9414, entonces se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
+
+   c) 0.9414, entonces no se rechaza la hipótesis nula de no autocorrelación de los residuos estimados.
+
+   d) 0.9414, entonces no se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
+
+```r
+grangertest(diff(Canadá) ~ diff(`Estados Unidos`), order = 1, data = df_diff)
+grangertest(diff(Canadá) ~ diff(México), order = 1, data = df_diff)
+grangertest(diff(`Estados Unidos`) ~ diff(Canadá), order = 1, data = df_diff)
+grangertest(diff(`Estados Unidos`) ~ diff(México), order = 1, data = df_diff)
+grangertest(diff(México) ~ diff(Canadá), order = 1, data = df_diff)
+grangertest(diff(México) ~ diff(`Estados Unidos`), order = 1, data = df_diff)
+```
+
 | [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |
 |--------------------------------------------------------------|
 
