@@ -13,6 +13,7 @@ library(WDI)
 library(dplyr)
 library(vars)
 library(tidyr) 
+library(ggplot2)
 
 WDIsearch(string='NY.GDP.PCAP.KD', field='indicator') # Se confirma el nombre de la variable que se va a analizar
 
@@ -33,8 +34,9 @@ Un gráfico de los datos en niveles y en primeras diferencias se puede obtener c
 ``` r
 ggplot(dat, aes(x = year, y = PIBpc, color = country)) +
   geom_line() +
-  labs(x = "Años", y = "Dólares constantes de 2015", color = "País") +
-  ggtitle("PIB per cápita para Brasil, Colombia y México") +
+  labs(x = "Años", y = "Dólares constantes de 2015", color = "País", 
+       caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial") +
+  ggtitle("PIB per cápita para Brasil, Colombia y México")
   theme_minimal()
 
 # Los siguientes comandos sirven para crear una base de datos que incluya en la primera columna los años y en las siguientes la primera diferencia de PIBpc para cada uno de los países
