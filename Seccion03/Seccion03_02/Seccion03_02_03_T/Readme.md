@@ -256,6 +256,22 @@ data <- data.frame(y = y[-1], z = z[-1])
 plot(data$y, type = "l", col = "blue", ylab = "Valores", xlab = "Tiempo", main = "Serie con Interceptos de 0.4")
 lines(data$z, col = "red")
 legend("topright", legend = c("y_t", "z_t"), col = c("blue", "red"), lty = 1)
+
+# Generar series y[t] y z[t] con interceptos de 0.1 y -0.1
+for (t in 2:n) {
+  y[t] <- 0.1 - 0.2 * y[t-1] + 0.2 * z[t-1] + epsilon_yt[t] + y[t-1]
+  z[t] <- -0.1 + 0.2 * y[t-1] - 0.2 * z[t-1] + epsilon_zt[t] + z[t-1]
+}
+
+# Crear un data frame con las series generadas
+data <- data.frame(y = y[-1], z = z[-1])
+
+# Graficar las series generadas
+plot(data$y, type = "l", col = "blue", ylab = "Valores", xlab = "Tiempo", main = "Serie con Interceptos de 0.1 y -0.1")
+lines(data$z, col = "red")
+legend("topright", legend = c("y_t", "z_t"), col = c("blue", "red"), lty = 1)
+
+
 ```
 ---
 ---
