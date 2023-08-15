@@ -42,7 +42,9 @@ El rango de $\mathbf{\pi}$ es igual al número de vectores de cointegración. En
 ## ¿Qué criterio utilizar para incluir el intercepto en el modelo multivariado de series de tiempo?
 Hay varias formas de generalizar $\mathbf{\Delta x_t=\pi x_{t-1}+\varepsilon_t}$. Por ejemplo, la ecuación se modifica fácilmente si se considera la presencia de un intercepto; simplemente asuma $\mathbf{\Delta x_t=A_0 + \pi x_{t-1}+\varepsilon_t}$ donde $\mathbf{A_0}={\left\lbrack \matrix{ a_{10} \cr a_{20} \cr \dots \cr a_{n0} } \right\rbrack}$. El efecto de considerar los diversos $a_{i0}$ es que permite la posibilidad de incluir una tendencia lineal en el proceso de generación de datos. Lo ideal es incluir el intercepto si las variables exhiben una tendencia que claramente  aumenta o a disminuye. Aquí, el rango de $\pi$ se puede ver como el número de relaciones de cointegración existentes en los datos sin tendencia. En el largo plazo, $\mathbf{\pi x_{t-1}=0}$ tal que el valor esperado de cada secuencia { $\Delta x_{it}$ } es $a_{i0}$. Al agregar todos estos cambios en el tiempo se obtiene la expresión determinista $a_{i0}t$.
 
-Las tres figuras de abajo ilustran los efectos de incluir un intercepto en el proceso de generación de datos. 
+Las tres figuras de abajo ilustran los efectos de incluir un intercepto en el proceso de generación de datos[^2]. 
+
+[^2]: **Al final de esta subsección se encuentra el código en _R_ utilizado para elaborar los gráficos de esta subsección**
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/61f77162-6c4b-48bd-962b-b30739b38ba5)
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9056163b-4170-4c92-aead-86bd1ccafe00)
@@ -112,11 +114,11 @@ Todo lo que se hace es dividir $a_{10}$ en dos partes y colocar una parte dentro
 
 De los gráficos previos, note que es necesario una constante fuera de la relación de cointegración para capturar los efectos de una tendencia sostenida de las variables a aumentar (o a disminuir). La mayoría de los investigadores incluyen interceptos si los datos se asemejan a los gráficos donde ambos interceptos eran 0.1 o donde los interceptos eran 0.1 y 0.4. De lo contrario, incluyen interceptos en el vector de cointegración o excluyen por completo a los regresores deterministas. 
 
-**Si no está seguro, puede usar los métodos que se describen más adelante para probar si las desviaciones se pueden restringir adecuadamente**. R permite incluir una tendencia de tiempo determinista en el modelo. Claro que es mejor evitar el uso de la tendencia como variable explicativa a menos que tenga una buena razón para incluirla en el modelo.[^2] 
+**Si no está seguro, puede usar los métodos que se describen más adelante para probar si las desviaciones se pueden restringir adecuadamente**. R permite incluir una tendencia de tiempo determinista en el modelo. Claro que es mejor evitar el uso de la tendencia como variable explicativa a menos que tenga una buena razón para incluirla en el modelo.[^3] 
 
 Hasta el momento se analizado el ejenmplo en donde el modelo sólo tiene un proceso autorregresivo de orden $1$, ¿qué se puede decir acerca de los procesos autorregresivos de orden superior? 
 
-[^2]: **Johansen (1994) discute el papel de los regresores deterministas en una relación de cointegración.**
+[^3]: **Johansen (1994) discute el papel de los regresores deterministas en una relación de cointegración.**
 
 ## Componentes autorregresivos de orden superior
 
