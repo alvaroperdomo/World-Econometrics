@@ -5,7 +5,7 @@
 
 Los países que pertenecen a una misma región pueden verse influenciados por choques y tendencias similares. En consecuencia, se han escogido tres países de Latinoamérica (**Brasil, Colombia y México**) para determinar si entre el PIB de estos países existe una relación de largo plazo. La medida del PIB utilizada para hacer el análisis es el **PIB per cápita a dólares constantes de 2015**.
 
-Vamos a preparar la base de datos en $R$:
+Para el análisis, se va a preparar la base de datos en $R$:
 ``` r
 rm(list = ls())
 
@@ -16,7 +16,7 @@ library(tidyr)
 
 WDIsearch(string='NY.GDP.PCAP.KD', field='indicator') # Se confirma el nombre de la variable que se va a analizar
 
-# Obtenemos los datos de PIBpc para Brasil, Colombia y México desde 1960 hasta 2021 y se convierten en formato de serie de tiempo
+# Se obtienen los datos de PIBpc para Brasil, Colombia y México desde 1960 hasta 2021 y se convierten en formato de serie de tiempo
 dat <- WDI(indicator = c(PIBpc = "NY.GDP.PCAP.KD"), country = c('BR', 'CO', 'MX'), start = 1960, end = 2021, language = "es")
 
 dat <-  mutate(dat, iso2c=NULL, iso3c=NULL)
@@ -24,10 +24,9 @@ dat <- dat %>% arrange(country, year)
 dat <- na.omit(dat)
 
 dat <-  mutate(dat, iso2c=NULL, iso3c=NULL) # Se renombran las columnas y se seleccionan solo las columnas necesarias
-PIBpc_paises <- spread(dat, key = country, value = PIBpc) # Se utiliza spread() de tidyr para convertir los datos a formato wide para tener una columna por país
+PIBpc_paises <- spread(dat, key = country, value = PIBpc) # Se utiliza spread() de la libreria tidyr para convertir los datos a formato wide para tener una columna por país
 PIBpc_paises_matrix <- as.matrix(PIBpc_paises[, -1])  # Se convierte PIBpc_paises en una matriz
-seriesVEC <- ts(PIBpc_paises_matrix, frequency = 1, start = 1960) # Se crean las variables en formato de serie de tiempoeriesVEC <- ts(PIBpc_paises_matrix, frequency = 1, start = 1960) # Se crean las variables en formato de serie de tiempo
-
+seriesVEC <- ts(PIBpc_paises_matrix, frequency = 1, start = 1960) # Se crean las variables en formato de serie de tiempo
 ```
 
 Un gráfico de los datos en niveles y en primeras diferencias se puede obtener con el siguiente comando
@@ -38,11 +37,11 @@ ggplot(dat, aes(x = year, y = PIBpc, color = country)) +
   ggtitle("PIB per cápita para Brasil, Colombia y México") +
   theme_minimal()
 
-# Los siguientes comandos sirven oara crear una base de datos que incluya en la primera columna los años y en las siguientes la primera diferencia de PIBpc para cada uno de los países
+# Los siguientes comandos sirven para crear una base de datos que incluya en la primera columna los años y en las siguientes la primera diferencia de PIBpc para cada uno de los países
 first_diff_seriesVEC <- diff(seriesVEC, differences = 1)  # Con este comando se obtienen las primeras diferencias de cada una de las series
 time_index <- time(first_diff_seriesVEC)  # Con este comando se crea la variable que representa los años en la nueva base de datos
 df_diff <- data.frame(time_index, first_diff_seriesVEC)   # Con este comando se crea la base de datos df_diff
-colnames(df_diff) <- c("Año", "Brasil", "Colombia", "México")   # Con este comando se crean los titluos a la base de datos df_diff
+colnames(df_diff) <- c("Año", "Brasil", "Colombia", "México")   # Con este comando se crean los titulos a la base de datos df_diff
 
 ggplot(data = df_diff, aes(x = Año)) +
   geom_line(aes(y = Brasil, color = "Brasil")) +
