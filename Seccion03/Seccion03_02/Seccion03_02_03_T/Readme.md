@@ -5,7 +5,7 @@
 
 La metodología de Johansen se resume en cuatro pasos:
 1) Realice una prueba de todas las variables para evaluar el de integración del modelo
-2) Estime el modelo y determine el núemro de vectores de cointegración
+2) Estime el modelo y determine el número de vectores de cointegración
 3) Analice el(los) vector(es) de cointegración normalizados y la velocidad de los coeficientes de ajuste.
 4) Desarrolle las pruebas de impulso-respuesta, descomposición de varianza y causalidad en el modelo de corrección de errores
 
