@@ -44,10 +44,9 @@ Hay varias formas de generalizar $\mathbf{\Delta x_t=\pi x_{t-1}+\varepsilon_t}$
 
 Las tres figuras de abajo ilustran los efectos de incluir un intercepto en el proceso de generación de datos. 
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/37209b74-f299-444f-a0f0-27c32fa3c440)
-
-
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/61152b61-d2a2-4dab-8f67-133f11dde731)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/61f77162-6c4b-48bd-962b-b30739b38ba5)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9056163b-4170-4c92-aead-86bd1ccafe00)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9f86e779-3f92-4119-b664-f597eeda05cf)
 
 En las figuras, se generan dos secuencias aleatorias, { $\varepsilon_{yt}$ } y { $\varepsilon_{zt}$ }, con $100$ observaciones cada una. Por otro lado, se asume $y_0=z_0=0$, y que los siguientes $100$ valores de las secuencias { $y_t$ } y { $z_t$ } son $\eqalign{ \left\lbrack \matrix{\Delta y_t \cr \Delta z_t} \right\rbrack = \left\lbrack \matrix{-0.2 & 0.2 \cr 0.2 & -0.2} \right\rbrack} \left\lbrack \matrix{y_{t-1} \cr z_{t-1}} \right\rbrack + \left\lbrack \matrix{\varepsilon_{yt} \cr \varepsilon_{zt}} \right\rbrack$ de modo que la relación de cointegración es $y_t=z_t$
 
@@ -91,7 +90,8 @@ La característica interesante de $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + \v
 
 Para resaltar la diferencia entre $\mathbf{\Delta x_t=A_0+ \pi x_{t-1}+\varepsilon_t}$ y $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + \varepsilon_t}$, la figura de abajo ilustra las consecuencias de utilizar $a_{10}=0.1$ y $a_{20}=-0.1$.  
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/217d2e36-944c-493c-8cab-b45d1ff27ff6)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9a5403c8-ef5f-4723-80df-15e71bcc3cbe)
+
 
 Se puede ver que ninguna secuencia contiene una tendencia determinista. De hecho, para los datos que se muestran en la figura, la tendencia desaparecerá siempre que seleccionemos valores de los interceptos manteniendo la relación $a_{10}=-a_{20}$.
 
