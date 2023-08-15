@@ -76,11 +76,11 @@ Si $a_{i0}$ se puede restringir tal que $a_{i0}=s_ia_{10}$, todas las secuencias
 
 $\Delta x_{1t}= (\pi_{11}x_{1(t-1)} + \pi_{12}x_{2(t-1)} + \dots + \pi_{1n}x_{1(t-1)} + a_{10}) + \varepsilon_{1t}$
 
-$\Delta x_{2t}=s_2(\pi_{21}x_{2(t-1)} + \pi_{22}x_{2(t-1)} + \dots + \pi_{2n}x_{2(t-1)} + a_{20}) + \varepsilon_{2t}$
+$\Delta x_{2t}=s_2(\pi_{11}x_{2(t-1)} + \pi_{12}x_{2(t-1)} + \dots + \pi_{1n}x_{2(t-1)} + a_{20}) + \varepsilon_{2t}$
 
 $\dots$
 
-$\Delta x_{nt}=s_n(\pi_{n1}x_{n(t-1)} + \pi_{n2}x_{n(t-1)} + \dots + \pi_{nn}x_{n(t-1)} + a_{20}) + \varepsilon_{nt}$
+$\Delta x_{nt}=s_n(\pi_{11}x_{n(t-1)} + \pi_{12}x_{n(t-1)} + \dots + \pi_{1n}x_{n(t-1)} + a_{20}) + \varepsilon_{nt}$
 
 o en la forma compacta $\mathbf{\Delta x_t= A_0 + \pi^* x_{t-1}^* + \varepsilon_t}$ donde 
 
