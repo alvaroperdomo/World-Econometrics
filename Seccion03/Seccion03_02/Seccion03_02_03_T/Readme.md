@@ -64,11 +64,11 @@ Una forma de incluir una constante en las relaciones de cointegración es restri
 
 $\Delta x_{1t}= (\pi_{11}x_{1(t-1)} + \pi_{12}x_{2(t-1)} + \dots + \pi_{1n}x_{1(t-1)}) + a_{10} + \varepsilon_{1t}$
 
-$\Delta x_{2t}=s_2(\pi_{21}x_{2(t-1)} + \pi_{22}x_{2(t-1)} + \dots + \pi_{2n}x_{2(t-1)}) + a_{20} + \varepsilon_{2t}$
+$\Delta x_{2t}=s_2(\pi_{11}x_{2(t-1)} + \pi_{22}x_{2(t-1)} + \dots + \pi_{2n}x_{2(t-1)}) + a_{20} + \varepsilon_{2t}$
 
 $\dots$
 
-$\Delta x_{nt}=s_n(\pi_{n1}x_{n(t-1)} + \pi_{n2}x_{n(t-1)} + \dots + \pi_{nn}x_{n(t-1)}) + a_{n0} + \varepsilon_{nt}$
+$\Delta x_{nt}=s_n(\pi_{11}x_{n(t-1)} + \pi_{n2}x_{n(t-1)} + \dots + \pi_{nn}x_{n(t-1)}) + a_{n0} + \varepsilon_{nt}$
 
 donde $s_i$ es un escalar tal que $s_i \pi_{1j}= \pi_{ij}$  
 
