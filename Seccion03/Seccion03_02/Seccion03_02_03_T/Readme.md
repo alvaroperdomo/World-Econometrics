@@ -50,9 +50,9 @@ Las tres figuras de abajo ilustran los efectos de incluir un intercepto en el pr
 
 En las figuras, se generan dos secuencias aleatorias, { $\varepsilon_{yt}$ } y { $\varepsilon_{zt}$ }, con $100$ observaciones cada una. Por otro lado, se asume $y_0=z_0=0$, y que los siguientes $100$ valores de las secuencias { $y_t$ } y { $z_t$ } son $\eqalign{ \left\lbrack \matrix{\Delta y_t \cr \Delta z_t} \right\rbrack = \left\lbrack \matrix{-0.2 & 0.2 \cr 0.2 & -0.2} \right\rbrack} \left\lbrack \matrix{y_{t-1} \cr z_{t-1}} \right\rbrack + \left\lbrack \matrix{\varepsilon_{yt} \cr \varepsilon_{zt}} \right\rbrack$ de modo que la relación de cointegración es $y_t=z_t$
 
-* En la figura de la izquierda, puede ver que cada secuencia se asemeja a un proceso aleatorio y que ninguno se aleja demasiado del otro.
+* En la primera figura, puede ver que cada secuencia se asemeja a un proceso aleatorio y que ninguno se aleja demasiado del otro.
 * En la figura del centro se agregan interceptos de manera que $a_{10}=a_{20}=0.1$; ahora cada serie tiende a aumentar $0.1$ unidades en cada período. Además del hecho de que cada secuencia comparte la misma tendencia estocástica, tenga en cuenta que cada una también tiene la misma tendencia de tiempo determinista. El hecho de que cada una tenga la misma tendencia determinista no es el resultado de la equivalencia entre $a_{10}$ y $a_{20}$; ya que $y_t$ y $z_t$ están cointegradas, la solución general a $\mathbf{\Delta x_t=A_0+ \pi x_{t-1}+\varepsilon_t}$ requiere que cada uno tenga la misma tendencia lineal.
-* Para verificar esto, la figura de la derecha establece $a_{10}=0.1$ y $a_{20}=0.4$. De nuevo, las secuencias tienen las mismas tendencias estocásticas y deterministas.
+* Para verificar esto, la última figura establece $a_{10}=0.1$ y $a_{20}=0.4$. De nuevo, las secuencias tienen las mismas tendencias estocásticas y deterministas.
 
 ## El término constante en los vectores de cointegración
 A continuación veremos que manipulando apropiadamente los elementos de $A_0$ es posible incluir una constante en los vectores de cointegración sin necesidad de incluir una tendencia de tiempo determinista al sistema.
@@ -91,7 +91,6 @@ La característica interesante de $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + \v
 Para resaltar la diferencia entre $\mathbf{\Delta x_t=A_0+ \pi x_{t-1}+\varepsilon_t}$ y $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + \varepsilon_t}$, la figura de abajo ilustra las consecuencias de utilizar $a_{10}=0.1$ y $a_{20}=-0.1$.  
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9a5403c8-ef5f-4723-80df-15e71bcc3cbe)
-
 
 Se puede ver que ninguna secuencia contiene una tendencia determinista. De hecho, para los datos que se muestran en la figura, la tendencia desaparecerá siempre que seleccionemos valores de los interceptos manteniendo la relación $a_{10}=-a_{20}$.
 
