@@ -195,6 +195,68 @@ Utilice los siguientes cuatro pasos cuando implemente el procedimiento Johansen:
 
 5) Finalmente, **las pruebas de impulso-respuesta, descomposición de varianza y causalidad en el modelo de corrección de errores** podrían ayudar a si el modelo estimado parece ser razonable.
 
+## Anexo: Código en $R$ de los gráficos
+
+``` r
+library(tseries)
+
+# Establecer la semilla para la generación de números aleatorios (para reproducibilidad)
+set.seed(1224)
+
+# Generar secuencias aleatorias de ruido
+n <- 100
+epsilon_yt <- rnorm(n)
+epsilon_zt <- rnorm(n)
+
+# Inicializar y0 y z0
+y <- numeric(n)
+z <- numeric(n)
+
+# Matriz de coeficientes
+A <- matrix(c(-0.2, 0.2, 0.2, -0.2), nrow = 2, byrow = TRUE)
+
+# Generar series y[t] y z[t] sin interceptos
+for (t in 2:n) {
+  y[t] <- -0.2 * y[t-1] + 0.2 * z[t-1] + epsilon_yt[t] + y[t-1]
+  z[t] <- 0.2 * y[t-1] - 0.2 * z[t-1] + epsilon_zt[t] + z[t-1]
+}
+
+# Crear un data frame con las series generadas
+data <- data.frame(y = y[-1], z = z[-1])
+
+# Graficar las series generadas
+plot(data$y, type = "l", col = "blue", ylab = "Valores", xlab = "Tiempo", main = "Serie sin Interceptos")
+lines(data$z, col = "red")
+legend("topright", legend = c("y_t", "z_t"), col = c("blue", "red"), lty = 1)
+
+# Generar series y[t] y z[t] con interceptos de 0.1
+for (t in 2:n) {
+  y[t] <- 0.1 - 0.2 * y[t-1] + 0.2 * z[t-1] + epsilon_yt[t] + y[t-1]
+  z[t] <- 0.1 + 0.2 * y[t-1] - 0.2 * z[t-1] + epsilon_zt[t] + z[t-1]
+}
+
+# Crear un data frame con las series generadas
+data <- data.frame(y = y[-1], z = z[-1])
+
+# Graficar las series generadas
+plot(data$y, type = "l", col = "blue", ylab = "Valores", xlab = "Tiempo", main = "Serie con Interceptos de 0.1")
+lines(data$z, col = "red")
+legend("topright", legend = c("y_t", "z_t"), col = c("blue", "red"), lty = 1)
+
+# Generar series y[t] y z[t] con interceptos de 0.4
+for (t in 2:n) {
+  y[t] <- 0.4 - 0.2 * y[t-1] + 0.2 * z[t-1] + epsilon_yt[t] + y[t-1]
+  z[t] <- 0.4 + 0.2 * y[t-1] - 0.2 * z[t-1] + epsilon_zt[t] + z[t-1]
+}
+
+# Crear un data frame con las series generadas
+data <- data.frame(y = y[-1], z = z[-1])
+
+# Graficar las series generadas
+plot(data$y, type = "l", col = "blue", ylab = "Valores", xlab = "Tiempo", main = "Serie con Interceptos de 0.4")
+lines(data$z, col = "red")
+legend("topright", legend = c("y_t", "z_t"), col = c("blue", "red"), lty = 1)
+```
 ---
 ---
 # Preguntas de selección múltiple
