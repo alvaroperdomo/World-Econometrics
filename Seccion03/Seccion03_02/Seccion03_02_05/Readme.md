@@ -36,8 +36,9 @@ ggplot(dat, aes(x = year, y = PIBpc, color = country)) +
   geom_line() +
   labs(x = "Años", y = "Dólares constantes de 2015", color = "País", 
        caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial") +
-  ggtitle("PIB per cápita para Brasil, Colombia y México")
-  theme_minimal()
+  ggtitle("PIB per cápita para Brasil, Colombia y México") +
+  scale_x_continuous(name = "Años", breaks = seq(1960, 2020, by = 5)) +
+  theme(plot.caption = element_text(size = 7))  
 
 # Los siguientes comandos sirven para crear una base de datos que incluya en la primera columna los años y en las siguientes la primera diferencia de PIBpc para cada uno de los países
 first_diff_seriesVEC <- diff(seriesVEC, differences = 1)  # Con este comando se obtienen las primeras diferencias de cada una de las series
@@ -49,21 +50,23 @@ ggplot(data = df_diff, aes(x = Año)) +
   geom_line(aes(y = Brasil, color = "Brasil")) +
   geom_line(aes(y = Colombia, color = "Colombia")) +
   geom_line(aes(y = México, color = "México")) +
-  labs(x = "Años", y = "Primeras Diferencias", color = "País") +
+  labs(x = "Años", y = "Primeras Diferencias", color = "País",
+  caption = "Fuente: Construcción propia a partir de los Indicadores de Desarrollo Mundial del Banco Mundial") +
   ggtitle("Primeras diferencias del PIB per cápita para Brasil, Colombia y México") +
-  theme_minimal()
+  scale_x_continuous(name = "Años", breaks = seq(1960, 2020, by = 5)) +
+  theme(plot.caption = element_text(size = 7))  
 ```
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/18f451ec-8e64-4260-815c-eb27b8ca8b65)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/8b84d20b-77bb-402f-a766-1a528d1556a3)
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9350196a-22d2-461c-b375-319bb4d4ca90)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/cd3994c5-6803-4bed-979d-dd81d26928dc)
 
-Según los dos gráficos, los tres PIBpc parecen ser no estacionarios y podría existir alguna tendencia común, pero la misma no se puede confirmar hasta hacer las pruebas de cointegración. 
+Según los dos gráficos de arriba, los tres PIBpc parecen ser no estacionarios y podría existir alguna tendencia común, pero la misma no se puede confirmar hasta hacer las pruebas de cointegración. 
 
 Previamente, aunque no se muestra en esta sección, se hicieron pruebas de raíz unitaria a la variable $PIB_pc$ de los tres países considerados y se obtuvó que en todos los casos eran $I(1)$, entonces, ahora se va a hacer la prueba de cointegración de Johansen para ver si existe una relación de cointegración entre los mismos.
 
 En primera instancia se va a determinar el número óptimo de rezagos a utilizar en el modelo multivariado. Como dentro del ejemplo no se ha formulado una teoría formal que nos determine las variables exógenas que interactuan dentro del sistema, entonces se van a utilizar utilizar las tres opciones que permite el comando $VARselect$ como se ve en la siguiente configuración de comandos [^1]:
 
-[^1]: Observe que en el comando se utilizo la primera diferencia de cada una de las variables porque el _VEC_ es ante todo un _VAR_ en diferencias al que se le incluye la relación de largo plazo y porque los estadísticos de prueba propuestos por Johansen (1988) se basan en la especificación _VEC_.
+[^1]: Observe que en el comando se utilizó la primera diferencia de cada una de las variables porque el _VEC_ es ante todo un _VAR_ en diferencias al que se le incluye la relación de largo plazo y porque los estadísticos de prueba propuestos por Johansen (1988) se basan en la especificación _VEC_.
 
 ``` r
 selected_order1 <- VARselect(first_diff_seriesVEC, lag.max = 8, type = "none") # Se selecciona automáticamente el número de rezagos utilizando el criterio AIC
@@ -148,7 +151,7 @@ SC(n)  3.510957e+01
 FPE(n) 1.285486e+14
 ```
 
-En todos los casos, se puede observar que es mejor utilizar un rezago o en su defecto dos rezagos. Por lo tanto, dado que en $R$ la prueba de Johansen tiene que incluir más de un rezago, entonces se van a hacer lan prueba de Johanhes con dos rezagos. Como la presencia de una constante es suficiente para que series I(1) presenten una tendencia creciente como se ve en los diferentes _IPCpc_ que se encuentran en el primer gráfico de esta sección, entonces se van a hacer las pruebas de Johansen con intercepto, para ello se utilizan los siguientes comandos:
+En todos los casos, se puede observar que es mejor utilizar un rezago o en su defecto dos rezagos. Por lo tanto, dado que en $R$ la prueba de Johansen tiene que incluir más de un rezago, entonces se van a hacer lan prueba de Johanhes con dos rezagos. Como la presencia de una constante es suficiente para que series $I(1)$ presenten una tendencia creciente como se ve en los diferentes _IPCpc_ que se encuentran en el primer gráfico de esta sección, entonces se van a hacer las pruebas de Johansen con intercepto, para ello se utilizan los siguientes comandos:
 
 ``` r
 Johansen_traza_const <- ca.jo(seriesVEC, type = "eigen", ecdet = "const", K = 2)
