@@ -48,7 +48,8 @@ Las tres figuras de abajo ilustran los efectos de incluir un intercepto en el pr
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/61f77162-6c4b-48bd-962b-b30739b38ba5)
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9056163b-4170-4c92-aead-86bd1ccafe00)
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9f86e779-3f92-4119-b664-f597eeda05cf)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ea31a299-4055-43dd-b881-d9b931163b98)
+
 
 En las figuras, se generan dos secuencias aleatorias, { $\varepsilon_{yt}$ } y { $\varepsilon_{zt}$ }, con $100$ observaciones cada una. Por otro lado, se asume $y_0=z_0=0$, y que los siguientes $100$ valores de las secuencias { $y_t$ } y { $z_t$ } son $\eqalign{ \left\lbrack \matrix{\Delta y_t \cr \Delta z_t} \right\rbrack = \left\lbrack \matrix{-0.2 & 0.2 \cr 0.2 & -0.2} \right\rbrack} \left\lbrack \matrix{y_{t-1} \cr z_{t-1}} \right\rbrack + \left\lbrack \matrix{\varepsilon_{yt} \cr \varepsilon_{zt}} \right\rbrack$ de modo que la relación de cointegración es $y_t=z_t$
 
@@ -244,9 +245,10 @@ plot(data$y, type = "l", col = "blue", ylab = "Valores", xlab = "Tiempo", main =
 lines(data$z, col = "red")
 legend("topright", legend = c("y_t", "z_t"), col = c("blue", "red"), lty = 1)
 
+
 # Generar series y[t] y z[t] con interceptos de 0.4
 for (t in 2:n) {
-  y[t] <- 0.4 - 0.2 * y[t-1] + 0.2 * z[t-1] + epsilon_yt[t] + y[t-1]
+  y[t] <- 0.1 - 0.2 * y[t-1] + 0.2 * z[t-1] + epsilon_yt[t] + y[t-1]
   z[t] <- 0.4 + 0.2 * y[t-1] - 0.2 * z[t-1] + epsilon_zt[t] + z[t-1]
 }
 
@@ -254,7 +256,7 @@ for (t in 2:n) {
 data <- data.frame(y = y[-1], z = z[-1])
 
 # Graficar las series generadas
-plot(data$y, type = "l", col = "blue", ylab = "Valores", xlab = "Tiempo", main = "Serie con Interceptos de 0.4")
+plot(data$y, type = "l", col = "blue", ylab = "Valores", xlab = "Tiempo", main = "Serie con Interceptos de 0.1 y 0.4")
 lines(data$z, col = "red")
 legend("topright", legend = c("y_t", "z_t"), col = c("blue", "red"), lty = 1)
 
