@@ -194,7 +194,7 @@ Utilice los siguientes cuatro pasos cuando implemente el procedimiento Johansen:
 
 5) Finalmente, **las pruebas de impulso-respuesta, descomposición de varianza y causalidad en el modelo de corrección de errores** podrían ayudar a si el modelo estimado parece ser razonable.
 
-## Anexo: Código en $R$ de los gráficos
+## Anexo: Código en $R$ de los gráficos de esta subsección
 
 ``` r
 library(tseries)
