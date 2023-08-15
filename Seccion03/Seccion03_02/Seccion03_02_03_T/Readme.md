@@ -42,7 +42,10 @@ El rango de $\mathbf{\pi}$ es igual al número de vectores de cointegración. En
 ## ¿Qué criterio utilizar para incluir el intercepto en el modelo multivariado de series de tiempo?
 Hay varias formas de generalizar $\mathbf{\Delta x_t=\pi x_{t-1}+\varepsilon_t}$. Por ejemplo, la ecuación se modifica fácilmente si se considera la presencia de un intercepto; simplemente asuma $\mathbf{\Delta x_t=A_0 + \pi x_{t-1}+\varepsilon_t}$ donde $\mathbf{A_0}={\left\lbrack \matrix{ a_{10} \cr a_{20} \cr \dots \cr a_{n0} } \right\rbrack}$. El efecto de considerar los diversos $a_{i0}$ es que permite la posibilidad de incluir una tendencia lineal en el proceso de generación de datos. Lo ideal es incluir el intercepto si las variables exhiben una tendencia que claramente  aumenta o a disminuye. Aquí, el rango de $\pi$ se puede ver como el número de relaciones de cointegración existentes en los datos sin tendencia. En el largo plazo, $\mathbf{\pi x_{t-1}=0}$ tal que el valor esperado de cada secuencia { $\Delta x_{it}$ } es $a_{i0}$. Al agregar todos estos cambios en el tiempo se obtiene la expresión determinista $a_{i0}t$.
 
-Las figuras de abajo ilustran los efectos de incluir un intercepto en el proceso de generación de datos. 
+Las tres figuras de abajo ilustran los efectos de incluir un intercepto en el proceso de generación de datos. 
+
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/37209b74-f299-444f-a0f0-27c32fa3c440)
+
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/61152b61-d2a2-4dab-8f67-133f11dde731)
 
