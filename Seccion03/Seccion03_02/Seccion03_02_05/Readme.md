@@ -62,7 +62,7 @@ ggplot(data = df_diff, aes(x = Año)) +
 
 Según los dos gráficos de arriba, los tres PIBpc parecen ser no estacionarios y podría existir alguna tendencia común, pero la misma no se puede confirmar hasta hacer las pruebas de cointegración. 
 
-Previamente, aunque no se muestra en esta sección, se hicieron pruebas de raíz unitaria a la variable $PIB_pc$ de los tres países considerados y se obtuvó que en todos los casos eran $I(1)$, entonces, ahora se va a hacer la prueba de cointegración de Johansen para ver si existe una relación de cointegración entre los mismos.
+Previamente, aunque no se muestra en esta sección, se hicieron pruebas de raíz unitaria a la variable PIBpc de los tres países considerados y se obtuvó que en todos los casos eran $I(1)$, entonces, ahora se va a hacer la prueba de cointegración de Johansen para ver si existe una relación de cointegración entre los mismos.
 
 En primera instancia se va a determinar el número óptimo de rezagos a utilizar en el modelo multivariado. Como dentro del ejemplo no se ha formulado una teoría formal que nos determine las variables exógenas que interactuan dentro del sistema, entonces se van a utilizar utilizar las tres opciones que permite el comando $VARselect$ como se ve en la siguiente configuración de comandos [^1]:
 
