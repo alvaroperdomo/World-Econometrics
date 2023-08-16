@@ -130,7 +130,9 @@ FPE(n)  0.4797369  0.4523829  0.5318560  0.54255717  0.6348628  0.72535827  0.83
 Es decir, el modelo $VAR$ más parsimonioso tiene uno o dos rezagos (según el criterio de información escogido) y no lleva constante. No hay una opción clara acerca de si es mejor con uno o con dos rezagos. Sin embargo, al hacer las pruebas de diagnóstico, la $FAC$ del modelo con un rezago mostraba algunos problemas de autocorrelación de los residuos estimados. Esto no pasaba con el modelo con dos rezagos, entonces se decidio estimar un modelo $VAR(2)$ sin término constante. 
 
 ### Prueba de causalidad de Granger
-La prueba de causalidad de Granger es útil para de una vez establecer el orden de las variables dentro del $VAR$ (de la más exógena a la más endógena) de tal forma que las variables ya esten ordenadas según la descomposiciómn de Choleski para más adelante tener el $VAR$ (o el $VMA$) estructural que vaya a ser utilizado en el cálculo de las funciones imulso-respuesta y de las descomposiciones de varianza. Las relaciones de causalidad, en el sentido de Granger, entre $\Delta GGOV$ y $\Delta INVP$, tomando en cuenta los dos rezagos que va a tener el $VAR$, se obtienen a partir de los comandos:
+La prueba de causalidad de Granger es útil para de una vez establecer el orden de las variables dentro del $VAR$ (de la más exógena a la más endógena) de tal forma que las variables ya esten ordenadas según la descomposición de Choleski y así más adelante tener el $VAR$ estructural (o mejor aún, el $VMA$ estructural) que vaya a ser utilizado en el cálculo de las funciones imulso-respuesta y de las descomposiciones de varianza. 
+
+Las relaciones de causalidad, en el sentido de Granger, entre $\Delta GGOV$ y $\Delta INVP$, tomando en cuenta los dos rezagos que va a tener el $VAR$, se obtienen a partir de los comandos:
 
 ``` r
 grangertest(diff(GGOV) ~ diff(INVP),order=2,data=seriesVAR)
@@ -164,7 +166,7 @@ A partir de la prueba de causalidad de Granger, se revela que es más importante
 
 Ahora estimamos el $VAR(2)$ con los siguientes comandos:
 ``` r
-modeloVAR<-VAR(diff(seriesVAR[, c("GGOV", "INVP")]), p = 2, type = "none")
+modeloVAR<-VAR(diff(seriesVAR[, c("GGOV", "INVP")]), p = 2, type = "none") # El orden de las variables, de una vez, se establece de la más exógena a la más endogena de acuerdo a la descomposición de Choleski
 summary(modeloVAR)
 ```
 Obteniendo
