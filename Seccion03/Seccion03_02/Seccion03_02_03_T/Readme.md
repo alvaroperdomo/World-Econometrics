@@ -46,10 +46,9 @@ Las tres figuras de abajo ilustran los efectos de incluir un intercepto en el pr
 
 [^2]: **Al final de esta subsección se encuentra el código en _R_ utilizado para elaborar los gráficos de esta subsección**
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/61f77162-6c4b-48bd-962b-b30739b38ba5)
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9056163b-4170-4c92-aead-86bd1ccafe00)
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/ea31a299-4055-43dd-b881-d9b931163b98)
-
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/04bd1d8d-b8b4-480d-bb9b-2a8bfeaa7819)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/a5391298-8a60-4323-8c0f-00e0b8e10dd4)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/27150295-09fc-45ec-9634-0d693ab38b97)
 
 En las figuras, se generan dos secuencias aleatorias, { $\varepsilon_{yt}$ } y { $\varepsilon_{zt}$ }, con $100$ observaciones cada una. Por otro lado, se asume $y_0=z_0=0$, y que los siguientes $100$ valores de las secuencias { $y_t$ } y { $z_t$ } son $\eqalign{ \left\lbrack \matrix{\Delta y_t \cr \Delta z_t} \right\rbrack = \left\lbrack \matrix{-0.2 & 0.2 \cr 0.2 & -0.2} \right\rbrack} \left\lbrack \matrix{y_{t-1} \cr z_{t-1}} \right\rbrack + \left\lbrack \matrix{\varepsilon_{yt} \cr \varepsilon_{zt}} \right\rbrack$ de modo que la relación de cointegración es $y_t=z_t$
 
@@ -93,7 +92,7 @@ La característica interesante de $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + \v
 
 Para resaltar la diferencia entre $\mathbf{\Delta x_t=A_0+ \pi x_{t-1}+\varepsilon_t}$ y $\mathbf{\Delta x_t=A_0 + \pi^* x_{t-1}^* + \varepsilon_t}$, la figura de abajo ilustra las consecuencias de utilizar $a_{10}=0.1$ y $a_{20}=-0.1$.  
 
-![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/9a5403c8-ef5f-4723-80df-15e71bcc3cbe)
+![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/665fe99e-9f5e-4c03-bb78-47dd3f4c8c8b)
 
 Se puede ver que ninguna secuencia contiene una tendencia determinista. De hecho, para los datos que se muestran en la figura, la tendencia desaparecerá siempre que seleccionemos valores de los interceptos manteniendo la relación $a_{10}=-a_{20}$.
 
@@ -229,7 +228,7 @@ data <- data.frame(y = y[-1], z = z[-1])
 # Graficar las series generadas
 plot(data$y, type = "l", col = "blue", ylab = "Valores", xlab = "Tiempo", main = "Serie sin Interceptos")
 lines(data$z, col = "red")
-legend("topright", legend = c("y_t", "z_t"), col = c("blue", "red"), lty = 1)
+legend("topright", legend = c("y", "z"), col = c("blue", "red"), lty = 1)
 
 # Generar series y[t] y z[t] con interceptos de 0.1
 for (t in 2:n) {
@@ -243,8 +242,7 @@ data <- data.frame(y = y[-1], z = z[-1])
 # Graficar las series generadas
 plot(data$y, type = "l", col = "blue", ylab = "Valores", xlab = "Tiempo", main = "Serie con Interceptos de 0.1")
 lines(data$z, col = "red")
-legend("topright", legend = c("y_t", "z_t"), col = c("blue", "red"), lty = 1)
-
+legend("topright", legend = c("y", "z"), col = c("blue", "red"), lty = 1)
 
 # Generar series y[t] y z[t] con interceptos de 0.4
 for (t in 2:n) {
@@ -258,7 +256,7 @@ data <- data.frame(y = y[-1], z = z[-1])
 # Graficar las series generadas
 plot(data$y, type = "l", col = "blue", ylab = "Valores", xlab = "Tiempo", main = "Serie con Interceptos de 0.1 y 0.4")
 lines(data$z, col = "red")
-legend("topright", legend = c("y_t", "z_t"), col = c("blue", "red"), lty = 1)
+legend("topright", legend = c("y", "z"), col = c("blue", "red"), lty = 1)
 
 # Generar series y[t] y z[t] con interceptos de 0.1 y -0.1
 for (t in 2:n) {
@@ -272,9 +270,7 @@ data <- data.frame(y = y[-1], z = z[-1])
 # Graficar las series generadas
 plot(data$y, type = "l", col = "blue", ylab = "Valores", xlab = "Tiempo", main = "Serie con Interceptos de 0.1 y -0.1")
 lines(data$z, col = "red")
-legend("topright", legend = c("y_t", "z_t"), col = c("blue", "red"), lty = 1)
-
-
+legend("topright", legend = c("y", "z"), col = c("blue", "red"), lty = 1)
 ```
 ---
 ---
