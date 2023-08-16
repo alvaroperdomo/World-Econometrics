@@ -275,7 +275,7 @@ Esta salida, implica que cada una de las ecuaciones del $VEC$ que se ha estimado
 2) $\Delta PIB_{Colombia,t}=0.13(PIB_{Brasil,t-2}+0.20PIB_{Colombia,t-2}+0.9PIB_{México,t-2}-2251)+0.22\Delta PIB_{Brasil,t-1}-0.27\Delta PIB_{Colombia,t-1}-0.14\Delta PIB_{Mexico,t-1}+\varepsilon_{Colombia,t}$
 3) $\Delta PIB_{Mexico,t}=0.23(PIB_{Brasil,t-2}+0.20PIB_{Colombia,t-2}+0.9PIB_{México,t-2}-2251)+0.12\Delta PIB_{Brasil,t-1}-0.65\Delta PIB_{Colombia,t-1}-0.02\Delta PIB_{Mexico,t-1}+\varepsilon_{Mexico,t}$
 
-Con el siguiente comando se puede obtener mayor información de la estimación a corto plazo del $VEC$. Sin embargo, como se explico en la sección 3.2.3.(T). 
+Con el siguiente comando se puede obtener mayor información de la estimación a corto plazo del $VEC$. 
 ``` r
 summary(modeloVEC$rlm)
 ```
@@ -355,6 +355,13 @@ Residual standard error: 246 on 56 degrees of freedom
 Multiple R-squared:  0.2653,	Adjusted R-squared:  0.2129 
 F-statistic: 5.057 on 4 and 56 DF,  p-value: 0.0015
 ```
+
+Por lo tanto,
+
+* El $PIBpc$ de corto plazo de Brasil está mucho más afectado por su propio comportamiento que por el comportamiento del $PIBpc$ de corto plazo de Colombia y México.
+* EL $PIBpc$ de corto plazo de Colombia se ve afectado tanto por la relación de cointegración como por el $PIBpc$ de corto plazo de Brasil y México.
+* EL $PIBpc$ de corto plazo de México se ve afectado tanto por la relación de cointegración como por el $PIBpc$ de corto plazo de Colombia.
+
 
 
 | [Subsección: 3.2 - Cointegración y estimación de Modelos _VEC_](../Readme.md) |
