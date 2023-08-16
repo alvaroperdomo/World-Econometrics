@@ -64,6 +64,7 @@ Según los dos gráficos de arriba, los tres PIBpc parecen ser no estacionarios 
 
 Previamente, aunque no se muestra en esta sección, se hicieron pruebas de raíz unitaria a la variable $PIBpc$ de los tres países considerados y se obtuvó que en todos los casos eran $I(1)$, entonces, ahora se va a hacer la prueba de cointegración de Johansen para ver si existe una relación de cointegración entre los mismos.
 
+### Selección del número de rezagos dentro del $VEC$
 En primera instancia se va a determinar el número óptimo de rezagos a utilizar en el modelo multivariado. Como dentro del ejemplo no se ha formulado una teoría formal que nos determine las variables exógenas que interactuan dentro del sistema, entonces se van a utilizar utilizar las tres opciones que permite el comando **_VARselect_** como se ve en la siguiente configuración de comandos [^1]:
 
 [^1]: **Observe que en el comando se utilizó la primera diferencia de cada una de las variables porque el _VEC_ es ante todo un _VAR_ en diferencias al que se le incluye la relación de largo plazo y porque los estadísticos de prueba propuestos por Johansen (1988) se basan en la especificación _VEC_.**
@@ -151,7 +152,23 @@ SC(n)  3.510957e+01
 FPE(n) 1.285486e+14
 ```
 
-En todos los casos, se puede observar que es mejor utilizar un rezago o en su defecto dos rezagos. Por lo tanto, dado que en $R$ la prueba de Johansen tiene que incluir más de un rezago, entonces se van a hacer lan prueba de Johanhes con dos rezagos. Como la presencia de una constante es suficiente para que series $I(1)$ presenten una tendencia creciente como se ve en los diferentes _PIBpc_ que se encuentran en el primer gráfico de esta sección, entonces se van a hacer las pruebas de Johansen con intercepto, para ello se utilizan los siguientes comandos:
+En todos los casos, se puede observar que es mejor utilizar un rezago o en su defecto dos rezagos. Por lo tanto, dado que en $R$ la prueba de Johansen tiene que incluir más de un rezago, entonces se van a hacer lan prueba de Johanhes con dos rezagos. 
+
+### Pruebas de Causalidad de Granger
+En la sección 3.2.4.(T) se afirmo que algunos autores consideraban que las pruebas de causalidad de Granger en sistemas cointegrados. Sin embargo, dado que no tenemos elaborado un contexto teótico que nos establezca cuál de los tres $\Delta PIBpc$ analizados es más exógeno o cuál es más endógenos; entonces vamos a apoyarnos en la prueba de causalidad de Granger para establecer ese orden. Para ello se van a utilizar los siguientes comandos:
+``` r
+grangertest(diff(BR) ~ diff(CO),order=2,data=seriesVEC)
+grangertest(diff(CO) ~ diff(BR),order=2,data=seriesVEC)
+
+grangertest(diff(BR) ~ diff(MX),order=2,data=seriesVEC)
+grangertest(diff(MX) ~ diff(BR),order=2,data=seriesVEC)
+
+grangertest(diff(CO) ~ diff(MX),order=2,data=seriesVEC)
+grangertest(diff(MX) ~ diff(CO),order=2,data=seriesVEC)
+```
+
+### Pruebas de Cointegración de Johansen
+Recuerden que ya se había establecido que el número de rezagos para manejar en la prueba de Johansen es de 2 rezagos. Por otro lado, como la presencia de una constante es suficiente para que series $I(1)$ presenten una tendencia creciente como se ve en los diferentes $PIBpc$ que se encuentran en el primer gráfico de esta sección, entonces se van a hacer las pruebas de Johansen con intercepto, para ello se utilizan los siguientes comandos:
 
 ``` r
 Johansen_traza_const <- ca.jo(seriesVEC, type = "eigen", ecdet = "const", K = 2)
