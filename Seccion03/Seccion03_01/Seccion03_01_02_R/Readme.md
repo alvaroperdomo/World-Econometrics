@@ -22,19 +22,7 @@ VARselect(x, lag.max = 10, type = c("const", "trend", "both", "none"), season = 
 | **season**         | se da la opción de incluir variables dummy estacionales centradas dentro del $VAR$                                  |
 | **exogen**         | Se da la opción de incluir variables exógenas adicionales dentro del $VAR$                                          | 
 
-
-## 2) Prueba de estabilidad
-El comando _**roots**_ calcula las raíces caracteristicas del modelo $VAR$ que ha sido previamente estimado.  
-
-``` r
-roots(nombre)
-```
-
-| **Argumentos**     | **Descripción**                                                                                                     | 
-|--------------------|---------------------------------------------------------------------------------------------------------------------|
-| **nombre**         | Nombre del Vector autorregresivo ($VAR$) que ha sido estimado                                                       |
-
-## 3)  Prueba de causalidad de Granger
+## 2)  Prueba de causalidad de Granger
 El siguiente comando cálcula si la variable "x" causa a la variable "y" en el sentido de Granger
 
 ``` r
@@ -44,6 +32,17 @@ grangertest(x, y, order = 1)
 |-----------------------|---------------------------------------------------------------------------------------------------------------------|
 | **x** y **y**         | Nombre de las variables a las cuales se les va a llevar a cabo la prueba                                            |
 | **order**             | Este número específica el orden de los rezagos que se incluirán en la regresión auxiliar.                            |
+
+## 3) Prueba de estabilidad
+El comando _**roots**_ calcula las raíces caracteristicas del modelo $VAR$ que ha sido previamente estimado.  
+
+``` r
+roots(nombre)
+```
+
+| **Argumentos**     | **Descripción**                                                                                                     | 
+|--------------------|---------------------------------------------------------------------------------------------------------------------|
+| **nombre**         | Nombre del Vector autorregresivo ($VAR$) que ha sido estimado                                                       |
 
 
 ## 4)  Pruebas sobre los residuos
