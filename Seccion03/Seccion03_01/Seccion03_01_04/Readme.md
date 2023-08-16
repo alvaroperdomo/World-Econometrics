@@ -86,6 +86,7 @@ Lo más destacable del gráfico de arriba es fuerte caida que tuvó la inversió
 
 ## Estimación del $VAR$ en primeras diferencias
 
+### Selección del número de rezagos
 Dado que el gráfico previo pareciera indicar que $\Delta GGOV$ y $\Delta INVP$ no tienen pendiente y potencialmente no tienen intercepto, entonces el $VAR$ a estimar lo escogeremos entre los modelos $VAR$ sin intercepto ni tendencia, y los modelos $VAR$ con intercepto pero sin tendencia. Por lo tanto, el orden de los rezagos del $VAR$ a estimar se va a escoger con los siguientes comandos:[^3]
 
 [^3]: **Observe que el vector estimado dentro del _VAR_ es _diff(seriesVAR)_. Es decir, las variables de nuestro vector _seriesVAR_ se han incluido en primeras diferencias dentro del _VAR_.**
@@ -128,14 +129,47 @@ FPE(n)  0.4797369  0.4523829  0.5318560  0.54255717  0.6348628  0.72535827  0.83
 
 Es decir, el modelo $VAR$ más parsimonioso tiene uno o dos rezagos (según el criterio de información escogido) y no lleva constante. No hay una opción clara acerca de si es mejor con uno o con dos rezagos. Sin embargo, al hacer las pruebas de diagnóstico, la $FAC$ del modelo con un rezago mostraba algunos problemas de autocorrelación de los residuos estimados. Esto no pasaba con el modelo con dos rezagos, entonces se decidio estimar un modelo $VAR(2)$ sin término constante. 
 
+### Prueba de causalidad de Granger
+La prueba de causalidad de Granger es útil para de una vez establecer el orden de las variables dentro del $VAR$ (de la más exógena a la más endógena) de tal forma que las variables ya esten ordenadas según la descomposiciómn de Choleski para más adelante tener el $VAR$ (o el $VMA$) estructural que vaya a ser utilizado en el cálculo de las funciones imulso-respuesta y de las descomposiciones de varianza. Las relaciones de causalidad, en el sentido de Granger, entre $\Delta GGOV$ y $\Delta INVP$, tomando en cuenta los dos rezagos que va a tener el $VAR$, se obtienen a partir de los comandos:
+
+``` r
+grangertest(diff(GGOV) ~ diff(INVP),order=2,data=seriesVAR)
+grangertest(diff(INVP) ~ diff(GGOV),order=2,data=seriesVAR)
+```
+En donde se llega a
+``` r
+> grangertest(diff(GGOV) ~ diff(INVP),order=2,data=seriesVAR)
+Granger causality test
+
+Model 1: diff(GGOV) ~ Lags(diff(GGOV), 1:2) + Lags(diff(INVP), 1:2)
+Model 2: diff(GGOV) ~ Lags(diff(GGOV), 1:2)
+  Res.Df Df      F  Pr(>F)  
+1     45                    
+2     47 -2 3.3972 0.04226 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> grangertest(diff(INVP) ~ diff(GGOV),order=2,data=seriesVAR)
+Granger causality test
+
+Model 1: diff(INVP) ~ Lags(diff(INVP), 1:2) + Lags(diff(GGOV), 1:2)
+Model 2: diff(INVP) ~ Lags(diff(INVP), 1:2)
+  Res.Df Df      F Pr(>F)
+1     45                 
+2     47 -2 0.6134  0.546
+```
+A partir de la prueba de causalidad de Granger, se revela que es más importante el efecto causal de $\Delta GGOV$ en $\Delta INVP$, que el efecto causal de $\Delta INVP$ en $\Delta GGOV$. Por lo tanto, al establecer las funciones impulso-respuesta se ha estructurado la descomposición de Choleski del $VAR$ estructural de tal forma que $\Delta GGOV$ tiene efectos contemporaneos y rezagados en $\Delta INVP$, pero  $\Delta INVP$ no tiene un efecto contemporaneo en $\Delta GGOV$, sólo efectos rezagados. 
+
+### Estimación del $VAR$
+
 Ahora estimamos el $VAR(2)$ con los siguientes comandos:
 ``` r
-modeloVAR<-VAR(diff(seriesVAR),p=2,type="none")
+modeloVAR<-VAR(diff(seriesVAR[, c("GGOV", "INVP")]), p = 2, type = "none")
 summary(modeloVAR)
 ```
 Obteniendo
 ``` r
-> modeloVAR<-VAR(diff(seriesVAR),p=2,type="none")
+> modeloVAR <- VAR(diff(seriesVAR[, c("GGOV", "INVP")]), p = 2, type = "none")
 > summary(modeloVAR)
 
 VAR Estimation Results:
@@ -196,9 +230,9 @@ GGOV  1.0000 -0.3749
 INVP -0.3749  1.0000
 ```
 
-Observe que en este modelo $VAR$ las cuatro raíces caracteristicas del polinomio que lo resuelven ($0.7304 0.7304 0.4988 0.323$) en valor absoluto son menores que la unidad. Por lo tanto, esto nos lleva a plantear que el $VAR$ es estable [^4]. Por si alcaso, No olvide que las raíces caracteristicas de un $VAR$ que se ha estimado, también se pueden recuperar con el comando
+Observe que en este modelo $VAR$ las cuatro raíces caracteristicas del polinomio que lo resuelven ($0.7304 0.7304 0.4988 0.323$) en valor absoluto son menores que la unidad. Por lo tanto, esto nos lleva a plantear que el $VAR$ es estable [^4]. Por si a caso, No olvide que las raíces caracteristicas de un $VAR$ que se ha estimado, también se pueden recuperar con el comando:
 
-[^4]: **Si hubieramos estimado el _VAR(1)_ en vez del _VAR(2)_, esté hubiera sido más estable con dor raices caracteristicas iguanles a 0.2754.
+[^4]: **Si hubieramos estimado el _VAR(1)_ en vez del _VAR(2)_, esté hubiera sido más estable con dos raices caracteristicas iguanles a 0.2754.
 
 ```r
 roots(modeloVAR)
@@ -240,37 +274,7 @@ Chi-squared = 25.257, df = 32, p-value = 0.7955
 ```
 Es decir, no se rechaza la hipótesis nula de no correlación de los residuos estimados en el $VAR$
 
-## Prueba de causalidad de Granger, funciones impulso-respuesta y análisis de descomposición de varianza
-### Prueba de causalidad de Granger
-Las relaciones de causalidad, en el sentido de Granger, entre $\Delta GGOV$ y $\Delta INVP$, tomando en cuenta los dos rezagos que tiene el $VAR$, se obtienen a partir de los comandos:
-
-``` r
-grangertest(diff(GGOV) ~ diff(INVP),order=2,data=seriesVAR)
-grangertest(diff(INVP) ~ diff(GGOV),order=2,data=seriesVAR)
-```
-En donde se llega a
-``` r
-> grangertest(diff(GGOV) ~ diff(INVP),order=2,data=seriesVAR)
-Granger causality test
-
-Model 1: diff(GGOV) ~ Lags(diff(GGOV), 1:2) + Lags(diff(INVP), 1:2)
-Model 2: diff(GGOV) ~ Lags(diff(GGOV), 1:2)
-  Res.Df Df      F  Pr(>F)  
-1     45                    
-2     47 -2 3.3972 0.04226 *
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-> 
-> grangertest(diff(INVP) ~ diff(GGOV),order=2,data=seriesVAR)
-Granger causality test
-
-Model 1: diff(INVP) ~ Lags(diff(INVP), 1:2) + Lags(diff(GGOV), 1:2)
-Model 2: diff(INVP) ~ Lags(diff(INVP), 1:2)
-  Res.Df Df      F Pr(>F)
-1     45                 
-2     47 -2 0.6134  0.546
-```
-A partir de la prueba de causalidad de Granger, se revela que va es más importante el efecto causal de $\Delta GGOV$ en $\Delta INVP$, que el efecto causal de $\Delta INVP$ en $\Delta GGOV$. Por lo tanto, al establecer las funciones impulso-respuesta se ha estructurado la descomposición de Choleski del $VAR$ de tal forma que $\Delta GGOV$ tiene efectos contemporaneos y rezagados en $\Delta INVP$, pero  $\Delta INVP$ no tiene un efecto contemporaneo en $\Delta GGOV$, sólo efectos rezagados 
+## Funciones impulso-respuesta y análisis de descomposición de varianza
 
 ### Funciones impulso-respuesta
 Vamos a calcular y dibujar funciones impulso-respuesta utilizando los siguientes comandos:
