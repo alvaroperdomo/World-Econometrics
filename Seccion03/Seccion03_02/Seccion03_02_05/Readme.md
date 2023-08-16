@@ -69,10 +69,10 @@ En primera instancia se va a determinar el número óptimo de rezagos a utilizar
 [^1]: **Observe que en el comando se utilizó la primera diferencia de cada una de las variables porque el _VEC_ es ante todo un _VAR_ en diferencias al que se le incluye la relación de largo plazo y porque los estadísticos de prueba propuestos por Johansen (1988) se basan en la especificación _VEC_.**
 
 ``` r
-selected_order1 <- VARselect(first_diff_seriesVEC, lag.max = 8, type = "none") # Se selecciona automáticamente el número de rezagos utilizando el criterio AIC
-selected_order2 <- VARselect(first_diff_seriesVEC, lag.max = 8, type = "const") # Se selecciona automáticamente el número de rezagos utilizando el criterio AIC
-selected_order3 <- VARselect(first_diff_seriesVEC, lag.max = 8, type = "trend") # Se selecciona automáticamente el número de rezagos utilizando el criterio AIC
-selected_order4 <- VARselect(first_diff_seriesVEC, lag.max = 8, type = "both") # Se selecciona automáticamente el número de rezagos utilizando el criterio AIC
+selected_order1 <- VARselect(first_diff_seriesVEC, lag.max = 8, type = "none") 
+selected_order2 <- VARselect(first_diff_seriesVEC, lag.max = 8, type = "const")
+selected_order3 <- VARselect(first_diff_seriesVEC, lag.max = 8, type = "trend") 
+selected_order4 <- VARselect(first_diff_seriesVEC, lag.max = 8, type = "both") 
 
 selected_order1
 selected_order2
