@@ -64,9 +64,9 @@ Según los dos gráficos de arriba, los tres PIBpc parecen ser no estacionarios 
 
 Previamente, aunque no se muestra en esta sección, se hicieron pruebas de raíz unitaria a la variable $PIBpc$ de los tres países considerados y se obtuvó que en todos los casos eran $I(1)$, entonces, ahora se va a hacer la prueba de cointegración de Johansen para ver si existe una relación de cointegración entre los mismos.
 
-En primera instancia se va a determinar el número óptimo de rezagos a utilizar en el modelo multivariado. Como dentro del ejemplo no se ha formulado una teoría formal que nos determine las variables exógenas que interactuan dentro del sistema, entonces se van a utilizar utilizar las tres opciones que permite el comando $VARselect$ como se ve en la siguiente configuración de comandos [^1]:
+En primera instancia se va a determinar el número óptimo de rezagos a utilizar en el modelo multivariado. Como dentro del ejemplo no se ha formulado una teoría formal que nos determine las variables exógenas que interactuan dentro del sistema, entonces se van a utilizar utilizar las tres opciones que permite el comando **_VARselect_** como se ve en la siguiente configuración de comandos [^1]:
 
-[^1]: Observe que en el comando se utilizó la primera diferencia de cada una de las variables porque el _VEC_ es ante todo un _VAR_ en diferencias al que se le incluye la relación de largo plazo y porque los estadísticos de prueba propuestos por Johansen (1988) se basan en la especificación _VEC_.
+[^1]: **Observe que en el comando se utilizó la primera diferencia de cada una de las variables porque el _VEC_ es ante todo un _VAR_ en diferencias al que se le incluye la relación de largo plazo y porque los estadísticos de prueba propuestos por Johansen (1988) se basan en la especificación _VEC_.**
 
 ``` r
 selected_order1 <- VARselect(first_diff_seriesVEC, lag.max = 8, type = "none") # Se selecciona automáticamente el número de rezagos utilizando el criterio AIC
