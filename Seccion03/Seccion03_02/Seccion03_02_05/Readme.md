@@ -151,7 +151,7 @@ SC(n)  3.510957e+01
 FPE(n) 1.285486e+14
 ```
 
-En todos los casos, se puede observar que es mejor utilizar un rezago o en su defecto dos rezagos. Por lo tanto, dado que en $R$ la prueba de Johansen tiene que incluir más de un rezago, entonces se van a hacer lan prueba de Johanhes con dos rezagos. Como la presencia de una constante es suficiente para que series $I(1)$ presenten una tendencia creciente como se ve en los diferentes _IPCpc_ que se encuentran en el primer gráfico de esta sección, entonces se van a hacer las pruebas de Johansen con intercepto, para ello se utilizan los siguientes comandos:
+En todos los casos, se puede observar que es mejor utilizar un rezago o en su defecto dos rezagos. Por lo tanto, dado que en $R$ la prueba de Johansen tiene que incluir más de un rezago, entonces se van a hacer lan prueba de Johanhes con dos rezagos. Como la presencia de una constante es suficiente para que series $I(1)$ presenten una tendencia creciente como se ve en los diferentes _PIBpc_ que se encuentran en el primer gráfico de esta sección, entonces se van a hacer las pruebas de Johansen con intercepto, para ello se utilizan los siguientes comandos:
 
 ``` r
 Johansen_traza_const <- ca.jo(seriesVEC, type = "eigen", ecdet = "const", K = 2)
