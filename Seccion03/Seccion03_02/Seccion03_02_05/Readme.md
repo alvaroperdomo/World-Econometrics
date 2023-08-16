@@ -157,15 +157,76 @@ En todos los casos, se puede observar que es mejor utilizar un rezago o en su de
 ### Pruebas de Causalidad de Granger
 En la sección 3.2.4.(T) se afirmo que Sims, Stock y Watson (1990) consideraban que las pruebas de causalidad de Granger en sistemas cointegrados no eran recomendadas. Sin embargo, dado que no tenemos elaborado un contexto teórico que nos establezca cuál de los tres $\Delta PIBpc$ analizados es más exógeno o cuál es más endógenos; entonces vamos a apoyarnos en la prueba de causalidad de Granger para establecer ese orden. Para ello se van a utilizar los siguientes comandos:
 ``` r
-grangertest(diff(BR) ~ diff(CO),order=2,data=seriesVEC)
-grangertest(diff(CO) ~ diff(BR),order=2,data=seriesVEC)
+grangertest(diff(Brasil) ~ diff(Colombia),order=2,data=seriesVEC)
+grangertest(diff(Colombia) ~ diff(Brasil),order=2,data=seriesVEC)
 
-grangertest(diff(BR) ~ diff(MX),order=2,data=seriesVEC)
-grangertest(diff(MX) ~ diff(BR),order=2,data=seriesVEC)
+grangertest(diff(Brasil) ~ diff(México),order=2,data=seriesVEC)
+grangertest(diff(México) ~ diff(Brasil),order=2,data=seriesVEC)
 
-grangertest(diff(CO) ~ diff(MX),order=2,data=seriesVEC)
-grangertest(diff(MX) ~ diff(CO),order=2,data=seriesVEC)
+grangertest(diff(Colombia) ~ diff(México),order=2,data=seriesVEC)
+grangertest(diff(México) ~ diff(Colombia),order=2,data=seriesVEC)
 ```
+
+Dando como resultado
+``` r
+> grangertest(diff(Brasil) ~ diff(Colombia),order=2,data=seriesVEC)
+Granger causality test
+
+Model 1: diff(Brasil) ~ Lags(diff(Brasil), 1:2) + Lags(diff(Colombia), 1:2)
+Model 2: diff(Brasil) ~ Lags(diff(Brasil), 1:2)
+  Res.Df Df      F Pr(>F)
+1     54                 
+2     56 -2 1.7048 0.1915
+> grangertest(diff(Colombia) ~ diff(Brasil),order=2,data=seriesVEC)
+Granger causality test
+
+Model 1: diff(Colombia) ~ Lags(diff(Colombia), 1:2) + Lags(diff(Brasil), 1:2)
+Model 2: diff(Colombia) ~ Lags(diff(Colombia), 1:2)
+  Res.Df Df      F Pr(>F)
+1     54                 
+2     56 -2 1.5569 0.2201
+> 
+> grangertest(diff(Brasil) ~ diff(México),order=2,data=seriesVEC)
+Granger causality test
+
+Model 1: diff(Brasil) ~ Lags(diff(Brasil), 1:2) + Lags(diff(México), 1:2)
+Model 2: diff(Brasil) ~ Lags(diff(Brasil), 1:2)
+  Res.Df Df      F Pr(>F)
+1     54                 
+2     56 -2 2.0783  0.135
+> grangertest(diff(México) ~ diff(Brasil),order=2,data=seriesVEC)
+Granger causality test
+
+Model 1: diff(México) ~ Lags(diff(México), 1:2) + Lags(diff(Brasil), 1:2)
+Model 2: diff(México) ~ Lags(diff(México), 1:2)
+  Res.Df Df      F Pr(>F)
+1     54                 
+2     56 -2 0.4505 0.6397
+> 
+> grangertest(diff(Colombia) ~ diff(México),order=2,data=seriesVEC)
+Granger causality test
+
+Model 1: diff(Colombia) ~ Lags(diff(Colombia), 1:2) + Lags(diff(México), 1:2)
+Model 2: diff(Colombia) ~ Lags(diff(Colombia), 1:2)
+  Res.Df Df      F  Pr(>F)  
+1     54                    
+2     56 -2 3.5712 0.03495 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> grangertest(diff(México) ~ diff(Colombia),order=2,data=seriesVEC)
+Granger causality test
+
+Model 1: diff(México) ~ Lags(diff(México), 1:2) + Lags(diff(Colombia), 1:2)
+Model 2: diff(México) ~ Lags(diff(México), 1:2)
+  Res.Df Df      F Pr(>F)
+1     54                 
+2     56 -2 1.0161 0.3688
+```
+Tomando en consideración los _p-values_ más bajos se establece que:
+* el $PIBpc$ de México (de manera significativa) explica en el sentido de Granger al $PIBpc$ de Colombia
+* el $PIBpc$ de Colombia (de manera no significativa) explica en el sentido de Granger al $PIBpc$ de Brasil
+* el $PIBpc$ de México (de manera no significativa) explica en el sentido de Granger al $PIBpc$ de Brasil
+Por lo tanto, la variable más exógena es el $PIBpc$ de México, luego el $PIBpc$ de Colombia y por último el $PIBpc$ de Brasil
 
 ### Pruebas de Cointegración de Johansen
 Recuerden que ya se había establecido que el número de rezagos para manejar en la prueba de Johansen es de 2 rezagos. Por otro lado, como la presencia de una constante es suficiente para que series $I(1)$ presenten una tendencia creciente como se ve en los diferentes $PIBpc$ que se encuentran en el primer gráfico de esta sección, entonces se van a hacer las pruebas de Johansen con intercepto, para ello se utilizan los siguientes comandos:
