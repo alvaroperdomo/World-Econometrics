@@ -542,7 +542,7 @@ La variable $C1PIBpc$ es estacionaria porque:
 ****************************************************************************************************************************************************************************
 
 ### Prueba KPSS
-Vamos a aplicar las opciones de rezago de $R$. Sin embargo, no olviden que según Newey y West (1994) la longitud de rezago se debe establecer proporcional a $T^{1/3}$, en decir $60^{1/3}=3.91\sim 4$. Por otro lado, dado que el $PIBpc$ es una variable que presenta tendencia, entonces se decide testear dicha prueba con tendencia; y como el el $C1PIBpc$ es una variable que no presenta tendencia, entonces se decide testear dicha prueba sólo con el intercepto. Los comandos para las dos pruebas son:
+Vamos a aplicar las opciones de rezago de $R$. Sin embargo, no olviden que según [Newey y West (1994)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) la longitud de rezago se debe establecer proporcional a $T^{1/3}$, en decir $60^{1/3}=3.91\sim 4$. Por otro lado, dado que el $PIBpc$ es una variable que presenta tendencia, entonces se decide testear dicha prueba con tendencia; y como el el $C1PIBpc$ es una variable que no presenta tendencia, entonces se decide testear dicha prueba sólo con el intercepto. Los comandos para las dos pruebas son:
 
 ``` r
 PIBpc_1t.kpss <- ur.kpss(PIBpc, type = c("tau"), lags = c("nil"), use.lag = NULL)
@@ -693,10 +693,10 @@ Los resultados de las pruebas $KPSS$ son:
 **Niveles de significancia: **** al 1%, *** al 2.5%, ** al 5% y * al 10%**
 
 La variable $PIBpc$ es no estacionaria porque:
-* Cuando el número de rezagos es el establecido por la formula de Newey y West (1994)= $4$ se obtiene: 0.176 < **0.1955** <0.216, se rechaza la hipótesis nula de estacionariedad al 10%, 5% y 2.5% y 5%, pero no se rechaza al 1%
+* Cuando el número de rezagos es el establecido por la formula de [Newey y West (1994)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias)= $4$ se obtiene: 0.176 < **0.1955** <0.216, se rechaza la hipótesis nula de estacionariedad al 10%, 5% y 2.5% y 5%, pero no se rechaza al 1%
 
 La variable $C1PIBpc$ es estacionaria porque:
-* Cuando el número de rezagos es el establecido por la formula de Newey y West (1994)= $4$ se obtiene: **0.2562**<0.347, no se rechaza la hipótesis nula de estacionariedad al 1%, 2.5%, 5% y 10%.
+* Cuando el número de rezagos es el establecido por la formula de [Newey y West (1994)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias)= $4$ se obtiene: **0.2562**<0.347, no se rechaza la hipótesis nula de estacionariedad al 1%, 2.5%, 5% y 10%.
 
 Por último, se utilizó el comando 
 
@@ -1002,7 +1002,7 @@ summary(C1GGOV_Pc.ers)
 
 5. **Las pruebas $KPSS$ para las variables $GGOV$ y $C1GGOV$ se van a hacer con intercepto y tendencia para la primera, y con intercepto para la segunda. Responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de las pruebas $KPSS$ con $4$ rezagos [^8]?:**
 
-[^8]: **Recuerden que este es el número óptimo de rezagos para una serie de 63 o 62 datos según el criterio de  Newey y West (1994) que se comentó en la sección 2.2.3.(T).**
+[^8]: **Recuerden que este es el número óptimo de rezagos para una serie de 63 o 62 datos según el criterio de  [Newey y West (1994)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) que se comentó en la sección 2.2.3.(T).**
 
    **Primera afirmación: Para la variable $GGOV$ al 1% de significancia se rechaza la hipótesis nula de estacionariedad***
 
