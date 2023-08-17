@@ -129,7 +129,7 @@ El subíndice $P$ indica que $D_P$ es una variable dummy de pulso.
 
 En un proceso de raíz unitaria, un único pulso en la dummy tendrá un efecto permanente en el nivel de la secuencia { $y_t$ }. En $t=51$, el pulso en la dummy es equivalente a un choque $\varepsilon_{t+51}$ de diez unidades adicionales. Por lo tanto, el choque de una sola vez a $D_P(51)$ tiene un efecto permanente en el valor medio de la secuencia para $t \ge 51$. 
 
-El sesgo en las pruebas tradicionales de raíz unitaria, y en particular en la prueba $ADF$ se confirmó en un experimento de Monte Carlo realizado por Perron (1989). Perron generó 10.000 repeticiones de un proceso de la misma naturaleza que $y_t=0.5y_{t-1}+\varepsilon_t+D_L$. Cada replica la formó:
+El sesgo en las pruebas tradicionales de raíz unitaria, y en particular en la prueba $ADF$ se confirmó en un experimento de Monte Carlo realizado por [Perron (1989)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias). Perron generó 10.000 repeticiones de un proceso de la misma naturaleza que $y_t=0.5y_{t-1}+\varepsilon_t+D_L$. Cada replica la formó:
 * generando 100 valores distribuidos normalmente e independientemente para la secuencia { $\varepsilon_t$ }. 
 * Para cada una de las 10.000 series replicadas, utilizó Mínimos Cuadrados Ordinarios para estimar una regresión en la forma de $y_t=a_0+a_1y_{t-1}+e_t$. 
 
@@ -140,7 +140,7 @@ Volviendo a las dos gráficas de arriba, puede haber casos en los que a plena vi
 
 Un procedimiento econométrico para probar las raíces unitarias en presencia de un cambio estructural implica dividir la muestra en dos partes y usar las pruebas $ADF$ en cada una de las partes. El problema con este procedimiento es que los grados de libertad para cada una de las regresiones resultantes disminuyen. 
 
-Perron (1989) desarrolla un procedimiento formal para probar la presencia de raíz unitaria cuando hay un cambio estructural en el período de tiempo $t=\tau+1$. 
+[Perron (1989)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) desarrolla un procedimiento formal para probar la presencia de raíz unitaria cuando hay un cambio estructural en el período de tiempo $t=\tau+1$. 
 
 Considere la hipótesis nula de un salto de una sola vez en el nivel de un proceso de raíz unitaria frente a la hipótesis alternativa de un cambio de una sola vez en el intercepto de un proceso estacionario en tendencia. Formalmente, dejemos que las hipótesis nula y alternativa sean:
 * $H_0: y_t= a_0 + y_{t-1}+ \mu_1 D_P + \varepsilon_t$ donde 
@@ -214,11 +214,11 @@ for (t in 2:n) {
 
 lines(1:n, y_tendencia, col = "red", lwd = 2) # Agregamos y(t) en H1 al gráfico
 ```
-El problema econométrico es determinar si una serie observada se modela mejor con $H_0$ o con $H_1$. La implementación de la técnica de Perron (1989) se divide en cuatro sencillos pasos:
+El problema econométrico es determinar si una serie observada se modela mejor con $H_0$ o con $H_1$. La implementación de la técnica de [Perron (1989)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) se divide en cuatro sencillos pasos:
 
 **PASO 1:** No hay una forma directa de restringir los coeficientes de $H_1$  para obtener $H_0$. Como tal, necesitamos combinar ambas hipótesis de la siguiente manera: $y_t=a_0+a_1y_{t-1}+a_2t+\mu_1 D_P+\mu_2 D_L+ \varepsilon_t$
 
-**PASO 2:** Estime la ecuación formada en el Paso 1. Bajo la hipótesis nula de una raíz unitaria, $a_1=1$. Perron (1989) muestra que, cuando los residuos están idéntica e independientemente distribuidos, la distribución de $a_1$ depende de la proporción $\lambda$ de observaciones que se producen antes del cambio.
+**PASO 2:** Estime la ecuación formada en el Paso 1. Bajo la hipótesis nula de una raíz unitaria, $a_1=1$. [Perron (1989)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) muestra que, cuando los residuos están idéntica e independientemente distribuidos, la distribución de $a_1$ depende de la proporción $\lambda$ de observaciones que se producen antes del cambio.
 #### Sea esta proporción $\lambda = \displaystyle\frac{\tau}{T} $
 
 **PASO 3:** Realice las verificaciones de diagnóstico para determinar si los residuos del Paso 2 están serialmente correlacionados. Si hay correlación serial, use la forma aumentada de la regresión $y_t=a_0+a_1y_{t-1}+a_2t+\mu_1 D_P+\mu_2 D_L+ \displaystyle\sum_{i = 1}^{p} \beta_i \Delta y_{t-i} + \varepsilon_t$
@@ -269,10 +269,10 @@ $H_0: y_t= a_0 + y_{t-1} + \mu_1 D_P + \mu_2 D_L + \varepsilon_t$
 
 $H_1: y_t= a_0 + a_2t + \mu_2 D_L + \mu_3 D_T + \varepsilon_t$
 
-Nuevamente, el procedimiento implica combinar las hipótesis nula y alternativa en una sola ecuación. Considere $H_0: y_t= a_0 + a_1 y_{t-1} + \mu_1 D_P + \mu_2 D_L + \mu_3 D_T + \varepsilon_t$. Compare el estadístico $t$ de la estimación de $a_1$ con el valor crítico calculado por Perron (1989). Si los errores de esta regresión no parecen ser ruido blanco, estime la ecuación en la forma de una prueba aumentada de Dickey-Fuller. El estadístico $t$ para la hipótesis nula $a_1=1$ puede compararse con los valores críticos calculados por Perron (1989)
+Nuevamente, el procedimiento implica combinar las hipótesis nula y alternativa en una sola ecuación. Considere $H_0: y_t= a_0 + a_1 y_{t-1} + \mu_1 D_P + \mu_2 D_L + \mu_3 D_T + \varepsilon_t$. Compare el estadístico $t$ de la estimación de $a_1$ con el valor crítico calculado por [Perron (1989)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias). Si los errores de esta regresión no parecen ser ruido blanco, estime la ecuación en la forma de una prueba aumentada de Dickey-Fuller. El estadístico $t$ para la hipótesis nula $a_1=1$ puede compararse con los valores críticos calculados por [Perron (1989)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias)
 
 ## Prueba de Zivot y Andrews ($ZA$)
-Se debe tener cuidado al usar el procedimiento de Perron, ya que supone que la fecha del cambio estructural es conocida. Zivot y Andrews (1992) muestran que si la escogencia del momento del cambio estructural es erróneo y se aplica la prueba de Perron, entonces aumenta la probabilidad de que se rechace la presencia de raíz unitaria en momentos en que esta realmente existe. Por lo tanto, Zivot y Andrews (1992) proponen una prueba de raíz unitaria que calcula endógenamente el momento del cambio estructural. Ante ello, plantean el siguiente procedimiento:
+Se debe tener cuidado al usar el procedimiento de Perron, ya que supone que la fecha del cambio estructural es conocida. [Zivot y Andrews (1992)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) muestran que si la escogencia del momento del cambio estructural es erróneo y se aplica la prueba de Perron, entonces aumenta la probabilidad de que se rechace la presencia de raíz unitaria en momentos en que esta realmente existe. Por lo tanto, [Zivot y Andrews (1992)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) proponen una prueba de raíz unitaria que calcula endógenamente el momento del cambio estructural. Ante ello, plantean el siguiente procedimiento:
 
 **Paso 1:** Calcule el estadístico $t$ para verificar la hipótesis nula $a_1=0$  (es decir, la hipótesis nula de raíz unitaria) para todos los momentos ($\tau$) y para todos los posibles tipos de cambio estructural (es decir, para los casmbios estructurales en tendencia y pendiente). $\Delta y_t= a_0 + a_1 y_{t-1} + a_2t + \mu_2 D_L + \mu_3 D_T + \displaystyle\sum_{i = 1}^{p} \beta_i \Delta y_{t-i} +  \varepsilon_t$
 
@@ -294,7 +294,7 @@ Se debe tener cuidado al usar el procedimiento de Perron, ya que supone que la f
 
    d) Que la prueba iterativa de Chow no funcione.
 
-2. **¿Cuál es la principal ventaja tiene la prueba de Zivot y Andrews (1992) sobre la prueba de Perron (1989)?:**
+2. **¿Cuál es la principal ventaja tiene la prueba de [Zivot y Andrews (1992)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) sobre la prueba de [Perron (1989)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias)?:**
  
    a) Es más fácil de interpretar porque tiene valores acotados entre $0$ y $1$.
 
