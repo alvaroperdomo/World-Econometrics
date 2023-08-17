@@ -12,7 +12,7 @@ La metodología de Johansen se resume en cuatro pasos:
 El paso (1) ya se analizo en la sección 2.2 por lo cual no se ahondara mucho en esta sección. Los pasos (2) y (3) si seran objeto de análisis de esta sección. El paso (4) es equivalente al análisis que se hizo para el modelo $VAR$ en la sección 3.1.3, por lo cual tampoco se ahondara mucho en esta sección. A continuación, se abordaran los pasos (2) y (3) de la metodología de Johansen a partir de la respuesta a algunas preguntas importantes y al final de la sección se hara un resumen de los cuatro pasos considerados.  
    
 ## ¿En qué supera la metodología de Johansen a la metodología de Engle y Granger?
-Los estimadores de máxima verosimilitud de Johansen (1988): 
+Los estimadores de máxima verosimilitud de [Johansen (1988)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias): 
 * evitan el uso de estimadores de dos pasos,
 * pueden estimar y probar la presencia de múltiples vectores de cointegración, y
 * permiten probar versiones restringidas de los vectores de cointegración y la velocidad de los parámetros de ajuste.[^1] 
@@ -20,13 +20,13 @@ Los estimadores de máxima verosimilitud de Johansen (1988):
 [^1]: **A menudo, es interesante determinar si es posible verificar una teoría probando restricciones en las magnitudes de los coeficientes estimados**
 
 ## ¿Cuáles son las bases de la metodología de Johansen para definir el número de vectores de cointegración de un modelo multivariado de series de tiempo?
-El procedimiento de Johansen (1988) se basa en gran medida en la relación entre el rango de una matriz y sus raíces características. Este no es más que una generalización multivariada de la prueba $DF$ utilizada para analizar la presencia de raíz unitaria en los modelos univariados. 
+El procedimiento de [Johansen (1988)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) se basa en gran medida en la relación entre el rango de una matriz y sus raíces características. Este no es más que una generalización multivariada de la prueba $DF$ utilizada para analizar la presencia de raíz unitaria en los modelos univariados. 
 
 En el caso univariado, es posible ver que la estacionariedad de { $y_t$ } depende de $a_1$; es decir, dados $y_t=a_1y_{t-1}+\varepsilon_t$ o $\Delta y_t=(a_1-1)y_{t-1}+\varepsilon_t$:
 * Si $(a_1-1)=0$, el proceso { $y_t$ } tiene una raíz unitaria.
 * Descartando el caso en el que { $y_t$ } es explosivo, si $(a_1-1)≠0$ podemos concluir que la secuencia { $y_t$ } es estacionaria.
 
-Las tablas de Dickey-Fuller proporcionan los estadísticos apropiados para probar formalmente la hipótesis nula $(a_1-1)=0$.
+Las tablas de Dickey-Fuller proporcionan los estadísticos apropiados para probar formalmente la hipótesis nula $a_1-1)=0$.
 
 Consideremos la generalización al caso multivariado con $n$ variables; asuma que el vector $\mathbf{x_t}$ de $n$ variables, se comporta como $\mathbf{x_t=A_1x_{t-1}+\varepsilon_t}$  así que $\mathbf{\Delta x_t=A_1x_{t-1}-x_{t-1}+\varepsilon_t=(A_1-I)x_{t-1}+\varepsilon_t=\pi x_{t-1}+\varepsilon_t}$ donde 
 * $\mathbf{\varepsilon_t}$ es un vector ( $n\times 1$ ),
@@ -118,7 +118,7 @@ De los gráficos previos, note que es necesario una constante fuera de la relaci
 
 Hasta el momento se analizado el ejenmplo en donde el modelo sólo tiene un proceso autorregresivo de orden $1$, ¿qué se puede decir acerca de los procesos autorregresivos de orden superior? 
 
-[^3]: **Johansen (1994) discute el papel de los regresores deterministas en una relación de cointegración.**
+[^3]: **[Johansen (1994)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) discute el papel de los regresores deterministas en una relación de cointegración.**
 
 ## Componentes autorregresivos de orden superior
 
@@ -142,7 +142,7 @@ Si las variables en $\mathbf{x_t}$ no están cointegradas, $\mathbf{rango(\pi)=0
 
 De manera similar, si $\mathbf{rango(\pi)=1}$, $0 < 𝜆_1 < 1$, entonces $\ln{(1 - \lambda_1)} < 0$ y $\ln{(1 - \lambda_2)} = \ln{(1 - \lambda_3)} = \dots = \ln{(1 - \lambda_n)} = 0$.
 
-En la práctica, solo podemos obtener estimaciones de $\mathbf{\pi}$ y de sus raíces características. La prueba para el número de raíces características que son significativamente diferentes de $1$ se puede realizar utilizando los siguientes dos estadísticos de prueba propuestos por Johansen (1988):
+En la práctica, solo podemos obtener estimaciones de $\mathbf{\pi}$ y de sus raíces características. La prueba para el número de raíces características que son significativamente diferentes de $1$ se puede realizar utilizando los siguientes dos estadísticos de prueba propuestos por [Johansen (1988)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias):
 
 * $\lambda_{traza}(r)=-T\displaystyle\sum_{r+1}^n \ln{(1-\hat{\lambda_i})}$ 
 * $\lambda_{max}(r,r+1)=-T\ln{(1-\hat{\lambda_{r+1}})}$
