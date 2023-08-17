@@ -53,7 +53,7 @@ Sims, Stock y Watson (1990) establecen que no se pueden realizar pruebas de caus
 
 <a href="https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias" target="_blank">Sims, Stock y Watson (1990)</a>, también descartan por razones similares las pruebas de exogeneidad en bloque.
 
-[Abrir en nueva ventana](https://www.example.com "Texto del enlace"){:target="_blank"}
+[Abrir en nueva ventana](https://www.example.com "Texto del enlace" :target="_blank")
 
 
 
