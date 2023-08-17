@@ -7,18 +7,18 @@ Cuando en la ecuación $y_t = a_1 y_{t-1} + \varepsilon_t$ se cumple que $a_1=1$
 
 Para la explicación de la prueba $DF$ note que si resta $y_{t-1}$ a ambos lados de la ecuación $y_t = a_1 y_{t-1} + \varepsilon_t$ se obtiene $\Delta y_t = \gamma y_{t-1} + \varepsilon_t$ donde $\gamma=a_1-1$. Por lo tanto, probar la hipótesis $a_1=1$ es equivalente a probar la hipótesis $\gamma=0$. 
 
-Dickey y Fuller (1979) consideran tres ecuaciones de regresión diferentes que pueden usarse para probar la presencia de una raíz unitaria:
+[Dickey y Fuller (1979)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) consideran tres ecuaciones de regresión diferentes que pueden usarse para probar la presencia de una raíz unitaria:
 1) $\Delta y_t = \gamma y_{t-1} + \varepsilon_t$ **(Modelo de Paseo Aleatorio)**
 2) $\Delta y_t = a_0 + \gamma y_{t-1} + \varepsilon_t$ **(Modelo de Paseo Aleatorio con Intercepto)**
 3) $\Delta y_t = a_0 + \gamma y_{t-1} + a_2t + \varepsilon_t$ **(Modelo de Paseo Aleatorio con Intercepto y Tendencia Lineal)**
 
 La diferencia entre las tres regresiones se refiere a la presencia de los elementos deterministas $a_0$ y $a_2t$. La hipótesis de interés en todas las regresiones es si $\gamma=0$. Cuando esto ocurre, la serie { $y_t$ } contiene una raíz unitaria. 
 
-La prueba $DF$ implica estimar una (o más) de las ecuaciones anteriores utilizando Mínimos Cuadrados Ordinarios para obtener el valor estimado de $\gamma$ y el error estándar asociado. La comparación del estadístico $t$ resultante con el valor apropiado informado en las tablas de Dickey-Fuller (y posteriormente actualizadas por MacKinnon (1996)) permiten determinar si acepta o rechaza la hipótesis nula $\gamma=0$. 
+La prueba $DF$ implica estimar una (o más) de las ecuaciones anteriores utilizando Mínimos Cuadrados Ordinarios para obtener el valor estimado de $\gamma$ y el error estándar asociado. La comparación del estadístico $t$ resultante con el valor apropiado informado en las tablas de Dickey-Fuller (y posteriormente actualizadas por [MacKinnon (1996)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias)) permiten determinar si acepta o rechaza la hipótesis nula $\gamma=0$. 
 
-Los valores críticos de los estadísticos $t$ dependen de si se incluye un intercepto y/o una tendencia temporal en la regresión. En su estudio de Monte Carlo, Dickey y Fuller (1979) encontraron que los valores críticos para $\gamma=0$ dependen de la forma de la regresión y del tamaño de la muestra. A los estadísticos apropiados para usar en $\Delta y_t = \gamma y_{t-1} + \varepsilon_t$, $\Delta y_t = a_0 + \gamma y_{t-1} + \varepsilon_t$ y $\Delta y_t = a_0 + \gamma y_{t-1} + a_2t + \varepsilon_t$ se les llama $\tau$, $\tau_\mu$ y $\tau_\tau$ respectivamente.
+Los valores críticos de los estadísticos $t$ dependen de si se incluye un intercepto y/o una tendencia temporal en la regresión. En su estudio de Monte Carlo, [Dickey y Fuller (1979)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) encontraron que los valores críticos para $\gamma=0$ dependen de la forma de la regresión y del tamaño de la muestra. A los estadísticos apropiados para usar en $\Delta y_t = \gamma y_{t-1} + \varepsilon_t$, $\Delta y_t = a_0 + \gamma y_{t-1} + \varepsilon_t$ y $\Delta y_t = a_0 + \gamma y_{t-1} + a_2t + \varepsilon_t$ se les llama $\tau$, $\tau_\mu$ y $\tau_\tau$ respectivamente.
 
-Dickey y Fuller (1981) proporcionan tres estadísticos $F$ adicionales (llamados $\phi_1$, $\phi_2$  y $\phi_3$) para probar hipótesis conjuntas sobre los coeficientes: 
+[Dickey y Fuller (1981)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) proporcionan tres estadísticos $F$ adicionales (llamados $\phi_1$, $\phi_2$  y $\phi_3$) para probar hipótesis conjuntas sobre los coeficientes: 
 * La hipótesis nula $\gamma=a_0=0$ se prueba usando el estadístico $\phi_1$. 
 * la hipótesis nula $\gamma=a_0=a_2=0$ se prueba usando el estadístico $\phi_2$, y 
 * la hipótesis nula $\gamma=a_2=0$ se prueba usando el estadístico $\phi_3$. 
@@ -55,7 +55,7 @@ Podría parecer razonable probar la hipótesis $\gamma=0$ utilizando el más gen
 
 (2) El estadístico apropiado ($\tau$, $\tau_\mu$ 0 $\tau_\tau$) para la prueba $\gamma=0$ depende de los regresores están incluidos en el modelo. En las tablas de Dickey-Fuller, para un nivel dado de significancia, los intervalos de confianza en torno a $\gamma=0$ se expanden bastante si se incluye en el modelo un intercepto y una tendencia temporal. Esto es diferente del caso en el que { $y_t$ } es estacionario. Cuando { $y_t$ } es estacionario, la distribución del estadístico $t$ no depende de la presencia de otros regresores. Por lo tanto, es importante usar la regresión que imite el proceso real de generación de datos. La omisión inadecuada del intercepto o de la tendencia de tiempo puede hacer que el poder de la prueba sea cero. 
 
-Por otro lado, Campbell y Perron (1991) encuentran los siguientes resultados con respecto a las pruebas de raíz unitaria $DF$ y $ADF$:
+Por otro lado, [Campbell y Perron (1991)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) encuentran los siguientes resultados con respecto a las pruebas de raíz unitaria $DF$ y $ADF$:
 
 (i) Si la regresión estimada incluye regresores deterministas que no están en el proceso real de generación de datos, la potencia de la prueba de raíz unitaria contra una alternativa estacionaria disminuye a medida que se agregan regresores deterministas adicionales. Por lo tanto, no es deseable incluir regresores que no estén en el proceso de generación de datos.
 
