@@ -13,7 +13,7 @@ Asuma que hay $n$ variables $x_{1t}, x_{2t}, \dots, x_{nt}$ integradas del mismo
 
 La desviación del equilibrio a largo plazo, llamado error de equilibrio es $e_t$, por lo tanto $e_t=\mathbf{B x_t}$. **Si el equilibrio es significativo, $e_t$ debe ser estacionario**. 
 
-Engle y Granger (1987) proporcionan la siguiente definición de cointegración: Se dice que los componentes del vector $\mathbf{x_t}$ son cointegrados de orden $d,b$, denotado por $\mathbf{x_t}\sim CI(d,b)$  si 
+[Engle y Granger (1987)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) proporcionan la siguiente definición de cointegración: Se dice que los componentes del vector $\mathbf{x_t}$ son cointegrados de orden $d,b$, denotado por $\mathbf{x_t}\sim CI(d,b)$  si 
 1) Todos los componentes de $\mathbf{x_t}$ son integrados de orden $d$.
 2) Existe un vector $\mathbf{B} = {\left\lbrack \matrix{\beta_1 & \beta_2 & ... & \beta_n} \right\rbrack}$ tal que la combinación lineal $\mathbf{B x_t}=0$  está integrada de orden $(d-b)$ donde $b>0$. El vector $\mathbf{B}$ se llama el vector de cointegración.
 
@@ -46,7 +46,7 @@ Hay cuatro puntos importantes a tener en cuenta sobre la definición:
 
    La razón es que la regresión tradicional o el análisis de series de tiempo se aplica cuando las variables son $I(0)$ y pocas variables económicas están integradas en un orden superior a $1$. 
 
-Para el análisis de la existencia de cointegración las metodologías más utilizadas son la prueba de Engle y Granger (1987) y la prueba de Johansen (1988). En las siguientes subsecciones se explica cómo funcionan ambas pruebas.
+Para el análisis de la existencia de cointegración las metodologías más utilizadas son la prueba de [Engle y Granger (1987)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) y la prueba de [Johansen (1988)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias). En las siguientes subsecciones se explica cómo funcionan ambas pruebas.
 
 ---
 ---
