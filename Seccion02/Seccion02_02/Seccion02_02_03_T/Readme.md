@@ -3,7 +3,7 @@
 ## SUBSECCIÓN 2.2.3. (T)
 # Prueba de Kwiatkowski, Phillips, Schmidt y Shin - KPSS
 
-Dado que la potencia de las pruebas de raíz unitaria no es particularmente alta, también puede ser interesante aplicar pruebas en donde la hipótesis nula es de estacionariedad, para evitar que podamos concluir erróneamente que una serie de tiempo tiene una raíz unitaria debido a las propiedades estadísticas de la prueba $ADF$. Una prueba que toma la estacionariedad como hipótesis nula es la de Kwiatkowski, Phillips, Schmidt y Shin (1992) [ $KPSS$ ]. 
+Dado que la potencia de las pruebas de raíz unitaria no es particularmente alta, también puede ser interesante aplicar pruebas en donde la hipótesis nula es de estacionariedad, para evitar que podamos concluir erróneamente que una serie de tiempo tiene una raíz unitaria debido a las propiedades estadísticas de la prueba $ADF$. Una prueba que toma la estacionariedad como hipótesis nula es la de [Kwiatkowski, Phillips, Schmidt y Shin (1992)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) [ $KPSS$ ]. 
 
 La prueba $KPSS$ se basa en la idea de descomponer una serie de tiempo en la suma de :
 * una tendencia determinística $\delta_t$, 
@@ -18,11 +18,11 @@ En Kwiatkowski, Phillips, Schmidt y Shin (1992), el estadístico de prueba se ca
 * los residuos $\hat{e_t}$ provienen de la regresión auxiliar $y_t= \hat{\tau} + \hat{\delta} t + \hat{e_t}$ y
 * $s^2(l)$ es una estimación de la varianza de largo plazo  $\sigma^2=\displaystyle\lim_{T \to \infty} \displaystyle\frac{E[S_T^2]}{T} $
 
-Siguiendo a Phillips (1987) y Phillips y Perron (1988), $s^2(l)$ se estima como $s^2(l)=\displaystyle\frac{\displaystyle\sum_{t=1}^T\hat{e_t}^2}{T} + \frac{2\displaystyle\sum_{j=1}^lw(j,l)\displaystyle\sum_{t=j+1}^T\hat{e_t}\hat{e_{t-j}}}{T}$ donde:
-* Las ponderaciones $w(j,l)$ se pueden establecer iguales a $w(j,l)=1-\frac{j}{l+1}$ como establecen Newey y West (1987), aunque también son posibles otras ponderaciones. 
-* Según Newey y West (1994), la longitud de rezago $l$ generalmente se debe establecer proporcional a $T^{1/3}$.
+Siguiendo a [Phillips (1987)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) y [Phillips y Perron (1988)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias), $s^2(l)$ se estima como $s^2(l)=\displaystyle\frac{\displaystyle\sum_{t=1}^T\hat{e_t}^2}{T} + \frac{2\displaystyle\sum_{j=1}^lw(j,l)\displaystyle\sum_{t=j+1}^T\hat{e_t}\hat{e_{t-j}}}{T}$ donde:
+* Las ponderaciones $w(j,l)$ se pueden establecer iguales a $w(j,l)=1-\frac{j}{l+1}$ como establecen [Newey y West (1987)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias), aunque también son posibles otras ponderaciones. 
+* Según [Newey y West (1994)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias), la longitud de rezago $l$ generalmente se debe establecer proporcional a $T^{1/3}$.
 
-La distribución asintótica del estadístico de prueba $\hat{\eta}$, tal como se explica en Kwiatkowski, Phillips, Schmidt y Shin (1992) depende de si la serie tiene tendencia o no. Por último, tenga en cuenta que si el estadistico es menor que el valor crítico reportado en las tablas de Kwiatkowski, Phillips, Schmidt y Shin (1992), entoces no se rechaza la hipóteis nula y se afirma que la serie es estacionaria
+La distribución asintótica del estadístico de prueba $\hat{\eta}$, tal como se explica en [Kwiatkowski, Phillips, Schmidt y Shin (1992)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) depende de si la serie tiene tendencia o no. Por último, tenga en cuenta que si el estadistico es menor que el valor crítico reportado en las tablas de [Kwiatkowski, Phillips, Schmidt y Shin (1992)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias), entoces no se rechaza la hipóteis nula y se afirma que la serie es estacionaria
 
 ---
 ---
@@ -40,13 +40,13 @@ La distribución asintótica del estadístico de prueba $\hat{\eta}$, tal como s
 
 2. **¿La prueba $KPSS$ bajo que condición concluye que hay raíz estacionariedad?:**
  
-   a) Cuando el estadístico que se calcula en la prueba es menor que el valor crítico reportado en las tablas de Kwiatkowski, Phillips, Schmidt y Shin (1992).
+   a) Cuando el estadístico que se calcula en la prueba es menor que el valor crítico reportado en las tablas de [Kwiatkowski, Phillips, Schmidt y Shin (1992)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias).
 
    b) Cuando el estadístico que se calcula en la prueba es igual a cero.
 
-   c) Cuando el estadístico que se calcula en la prueba es igual que el valor crítico reportado en las tablas de Kwiatkowski, Phillips, Schmidt y Shin (1992).
+   c) Cuando el estadístico que se calcula en la prueba es igual que el valor crítico reportado en las tablas de [Kwiatkowski, Phillips, Schmidt y Shin (1992)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias).
    
-   d) Cuando el estadístico que se calcula en la prueba es mayor que el valor crítico reportado en las tablas de Kwiatkowski, Phillips, Schmidt y Shin (1992).
+   d) Cuando el estadístico que se calcula en la prueba es mayor que el valor crítico reportado en las tablas de [Kwiatkowski, Phillips, Schmidt y Shin (1992)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias).
 
 3. **¿Si una serie tiene $63$ datos, según Newey y West (1994), cuál es la longitud de rezagos que se debe utilizar en la prueba $KPSS$ ?:**
  
