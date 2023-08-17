@@ -3,7 +3,7 @@
 ## SUBSECCIÓN 3.2.2.
 # La Metodología de Engle y Granger
 
-Para explicar el procedimiento de prueba de Engle y Granger (1987), consideremos el tipo de problema que es usual en los estudios aplicados. Suponga que dos variables, digamos $y_t$ y $z_t$, son integradas de orden $1$ y se desea determinar si existe una relación de equilibrio entre las dos. Para ello, se propone el siguiente procedimiento de tres pasos para determinar si dos variables $I(1)$ están cointegradas de orden $CI(1,1)$:
+Para explicar el procedimiento de prueba de [Engle y Granger (1987)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias), consideremos el tipo de problema que es usual en los estudios aplicados. Suponga que dos variables, digamos $y_t$ y $z_t$, son integradas de orden $1$ y se desea determinar si existe una relación de equilibrio entre las dos. Para ello, se propone el siguiente procedimiento de tres pasos para determinar si dos variables $I(1)$ están cointegradas de orden $CI(1,1)$:
 
 ### 1) De acuerdo a lo aprendido en la sección 2, haga pruebas para conocer el orden de integración de las variables $y_t$ y $z_t$.
    
@@ -27,10 +27,10 @@ Recuerde que:
    * Si no se puede rechazar la hipótesis nula $a_1=0$, se concluye que los residuos tienen una raíz unitaria y por lo tanto, se deduce que las secuencias { $y_t$ } y { $z_t$ } no están cointegradas.
    * En cambio, el rechazo de la hipótesis nula $a_1=0$ implica que la secuencia de residuos es estacionaria. Si se encuentra que { $y_t$ } y { $z_t$ } son $I(1)$ y que los residuos son estacionarios, entonces se puede concluir que las series están cointegradas de orden $(1,1)$.
 
-   Tenga en cuenta que en la mayoría de los estudios aplicados, no es posible utilizar las tablas de Dickey-Fuller para probar la hipótesis nula que acabamos de mencionar. El problema es que la secuencia { $\hat{e}_t$ } se genera a partir de una regresión; donde el investigador no conoce el error real $e_t$, solo el error estimado { $\hat{e}_t$ }. Por ello es que Engle y Granger (1987) propusieron nuevas tablas para hacer los cálculos [^3]. En estas tablas, los valores críticos dependen del tamaño de la muestra y del número de variables utilizadas en el análisis.
+   Tenga en cuenta que en la mayoría de los estudios aplicados, no es posible utilizar las tablas de Dickey-Fuller para probar la hipótesis nula que acabamos de mencionar. El problema es que la secuencia { $\hat{e}_t$ } se genera a partir de una regresión; donde el investigador no conoce el error real $e_t$, solo el error estimado { $\hat{e}_t$ }. Por ello es que [Engle y Granger (1987)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) propusieron nuevas tablas para hacer los cálculos [^3]. En estas tablas, los valores críticos dependen del tamaño de la muestra y del número de variables utilizadas en el análisis.
 
 [^2]: **Los residuos estimados de una regresión tienen media igual a cero, por ello es que no es necesario incluir un intercepto dentro de esta regresión**
-[^3]: **Estas tablas posteriormente fueron actualizadas por MacKinnon (1990).**
+[^3]: **Estas tablas posteriormente fueron actualizadas por [MacKinnon (1990)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias).**
 
 ### 3) Estime el vector de corrección de errores
 
@@ -46,7 +46,7 @@ Recuerde que:
    * $\varepsilon_{yt}$ y $\varepsilon_{zt}$ son  perturbaciones ruido blanco (que pueden estar correlacionadas entre sí), y
    * $\alpha_1$, $\alpha_2$, $\alpha_y$, $\alpha_z$, $\alpha_{11}(i)$, $\alpha_{12}(i)$, $\alpha_{21}(i)$, $\alpha_{22}(i)$ son todos los parámetros.
    
-   Engle y Granger (1987) proponen una forma de sortear las restricciones de ecuaciones cruzadas involucradas en la estimación directa de $I$ y $II$. La magnitud del residuo $\hat{e}_ {t-1}$ es la desviación del equilibrio a largo plazo en el período $t-1$. Por lo tanto, es posible usar los residuos estimados { $\hat{e}_ {t-1}$ } obtenidos en el Paso 2 como una estimación de la expresión $y_{t-1}-\beta_1z_{t-1}$ en $I$ y $II$. Por lo tanto, utilizando los $\hat{e}_{t-1}$ estime el $VEC$ como:
+   [Engle y Granger (1987)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) proponen una forma de sortear las restricciones de ecuaciones cruzadas involucradas en la estimación directa de $I$ y $II$. La magnitud del residuo $\hat{e}_ {t-1}$ es la desviación del equilibrio a largo plazo en el período $t-1$. Por lo tanto, es posible usar los residuos estimados { $\hat{e}_ {t-1}$ } obtenidos en el Paso 2 como una estimación de la expresión $y_{t-1}-\beta_1z_{t-1}$ en $I$ y $II$. Por lo tanto, utilizando los $\hat{e}_{t-1}$ estime el $VEC$ como:
 
    $i)$ $\Delta y_t = \alpha_1 + \alpha_y\hat{e}_ {t-1}+\sum_{i=1}\alpha_{11}(i)\Delta y_{t-i}+\sum_{i=1}\alpha_{12}(i)\Delta z_{t-i}+\varepsilon_{yt}$
 
@@ -73,7 +73,7 @@ Recuerde que:
    
      Sabemos que $\alpha_y$ y/o $\alpha_z$ deberían ser significativamente diferentes de cero si las variables están cointegradas. Después de todo, si $\alpha_y=\alpha_z=0$, no hay corrección de errores y $i$ y $ii$ serían nada más que un $VAR$ en las primeras diferencias. Además, los valores absolutos de estas velocidades de ajuste de los coeficientes no deben ser demasiado grandes. Las estimaciones puntuales deberían implicar que $\Delta y_t$ y $\Delta z_t$ convergen a la relación de equilibrio a largo plazo.
 
-     c) **Al igual que en un análisis $VAR$ tradicional, Lutkepohl y Reimers (1992) muestran que el análisis de los impulso-respuesta y la descomposición de varianza se puede utilizar para obtener información sobre las interacciones entre las variables.**
+     c) **Al igual que en un análisis $VAR$ tradicional, [Lutkepohl y Reimers (1992)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) muestran que el análisis de los impulso-respuesta y la descomposición de varianza se puede utilizar para obtener información sobre las interacciones entre las variables.**
 
      Como cuestión práctica, las dos innovaciones $\varepsilon_{yt}$  y $\varepsilon_{zt}$  pueden correlacionarse simultáneamente si $y_t$ tiene un efecto contemporáneo en $z_t$ y/o si $z_t$ tiene un efecto contemporáneo en $y_t$. Para obtener funciones impulso-respuesta y las descomposiciones de varianza, se debe utilizar algún método, como la descomposición de Choleski, para ortogonalizar las innovaciones. La forma de las funciones impulso-respuesta y los resultados de las descomposiciones de varianza pueden indicar si las respuestas dinámicas de las variables se ajustan a la teoría. Como todas las variables en $i$ y $ii$ son $I(0)$, los impulso-respuesta de $\Delta y_t$ y $\Delta z_t$ deben converger a cero.[^4]
 
@@ -82,7 +82,7 @@ Recuerde que:
 [^4]: **Debe reexaminar los resultados de cada paso si obtiene una función de impulso-respuesta explosiva o que no decae.**
 
 ## Inconvenientes con la Metodología de Engle-Granger
-Aunque el procedimiento de Engle y Granger (1987) se implementa fácilmente, tiene varios defectos importantes. 
+Aunque el procedimiento de [Engle y Granger (1987)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) se implementa fácilmente, tiene varios defectos importantes. 
 
 ### 1) La estimación de la regresión de equilibrio a largo plazo requiere que el investigador coloque una variable en el lado izquierdo y utilice las otras variables como regresores. 
 
