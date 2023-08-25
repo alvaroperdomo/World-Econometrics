@@ -1,6 +1,6 @@
 <div align="center"><a href="https://www.escuelaing.edu.co/es/investigacion-e-innovacion/centro-de-estudios-oikonimia/" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/Centros_%20de_Estudios_Oikonom%C3%ADa.jpg" alt="R.LTWB" width="100%" border="0" /></a></div>
 
-## SUBSECCIÓN 2.3.2
+## SUBSECCIÓN 2.3.2:
 # Estimando un $ARMA$ - Ejemplo simulado 
 
 Una comparación de la función de autocorrelación $FAC$ y la función de autocorrelación parcial $FACP$ muestrales con las de varios procesos $ARMA(p,q)$ teóricos puede sugerir varios modelos plausibles. Por medio de un ejemplo sencillo, vamos a mostrar cómo se identifica el proceso $ARMA(p,q)$ generador de una variable.
