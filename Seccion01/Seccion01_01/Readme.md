@@ -56,7 +56,7 @@ Un proceso estocástico se define como un conjunto de magnitudes aleatorias que 
 
    c) El número de goles que se marcan en las finales de los mundial de fútbol.
 
-   d) El número de días que dura una sequía.
+   d) El número de días que duran las sequías.
 
 ---
 ---  
