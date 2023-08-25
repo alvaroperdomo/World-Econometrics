@@ -2,7 +2,7 @@
 
 ## SUBSECCIÓN 3.1.3. (R):
 
-# Funciones impulso Respuesta en R
+# Funciones Impulso Respuesta en R
 
 Las funciones impulso-respuesta se obtienen utilizando el siguiente comando:[^1]
 
