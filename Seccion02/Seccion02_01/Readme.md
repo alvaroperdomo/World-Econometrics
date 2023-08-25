@@ -114,7 +114,7 @@ Al restar los valores estimados de la secuencia { $y_t$ } de los valores reales 
 
    d) Todos los procesos paseo aleatorio son estacionarios.
 
-2. **¿Qué tipo de transformación se le puede hacer a una serie no estacionaria para intentar volverla estacionarla:**
+2. **¿Qué tipo de transformación se le puede hacer a una serie no estacionaria para intentar volverla estacionarla?**
  
    a) Elevarla al cuadrado.
 
