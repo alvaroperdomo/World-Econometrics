@@ -38,7 +38,7 @@ La distribución asintótica del estadístico de prueba $\hat{\eta}$, tal como s
 
    d) La serie está serialmente correlacionada.
 
-2. **¿La prueba $KPSS$ bajo que condición concluye que hay raíz estacionariedad?:**
+2. **¿La prueba $KPSS$ bajo que condición concluye que hay estacionariedad?:**
  
    a) Cuando el estadístico que se calcula en la prueba es menor que el valor crítico reportado en las tablas de [Kwiatkowski, Phillips, Schmidt y Shin (1992)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias).
 
