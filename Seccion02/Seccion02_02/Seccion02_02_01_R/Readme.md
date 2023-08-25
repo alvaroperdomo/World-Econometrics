@@ -110,7 +110,7 @@ ndiffs(x, alpha = 0.05, test = c("adf"), type = c("level", "trend"), ...)
 
    d) El argumento "_doplot_" en todos los comandos.
 
-2. **¿Cuál comando permite escoger el número óptimo de rezagos segun el Criterio de Información de Akaike?:**
+2. **¿Cuál comando permite escoger el número óptimo de rezagos según el Criterio de Información de Akaike?:**
  
    a) _unitrootTest_.
 
