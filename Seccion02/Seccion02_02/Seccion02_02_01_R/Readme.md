@@ -106,7 +106,7 @@ ndiffs(x, alpha = 0.05, test = c("adf"), type = c("level", "trend"), ...)
 
    b) El argumento "_plot_" en el comando "_ndiffs_".
 
-   c) El argumento "_plot_" en el comando "_urdfTest_".
+   c) El argumento "_doplot_" en el comando "_urdfTest_".
 
    d) El argumento "_doplot_" en todos los comandos.
 
