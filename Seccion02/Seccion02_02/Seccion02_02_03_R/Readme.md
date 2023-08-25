@@ -1,6 +1,6 @@
 <div align="center"><a href="https://www.escuelaing.edu.co/es/investigacion-e-innovacion/centro-de-estudios-oikonimia/" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/Centros_%20de_Estudios_Oikonom%C3%ADa.jpg" alt="R.LTWB" width="100%" border="0" /></a></div>
 
-## SUBSECCIÓN 2.2.3. (R)
+## SUBSECCIÓN 2.2.3. (R):
 # Aplicando la prueba $KPSS$ en $R$
 
 Para llevar a cabo la prueba $KPSS$ ofrecemos tres opciones:
