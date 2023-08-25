@@ -1,6 +1,6 @@
 <div align="center"><a href="https://www.escuelaing.edu.co/es/investigacion-e-innovacion/centro-de-estudios-oikonimia/" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/Centros_%20de_Estudios_Oikonom%C3%ADa.jpg" alt="R.LTWB" width="100%" border="0" /></a></div>
 
-## SUBSECCIÓN 3.2.2.
+## SUBSECCIÓN 3.2.2:
 # La Metodología de Engle y Granger
 
 Para explicar el procedimiento de prueba de [Engle y Granger (1987)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias), consideremos el tipo de problema que es usual en los estudios aplicados. Suponga que dos variables, digamos $y_t$ y $z_t$, son integradas de orden $1$ y se desea determinar si existe una relación de equilibrio entre las dos. Para ello, se propone el siguiente procedimiento de tres pasos para determinar si dos variables $I(1)$ están cointegradas de orden $CI(1,1)$:
