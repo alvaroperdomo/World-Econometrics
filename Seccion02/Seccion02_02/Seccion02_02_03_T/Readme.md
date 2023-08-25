@@ -42,7 +42,7 @@ La distribución asintótica del estadístico de prueba $\hat{\eta}$, tal como s
  
    a) Cuando el estadístico que se calcula en la prueba es menor que el valor crítico reportado en las tablas de [Kwiatkowski, Phillips, Schmidt y Shin (1992)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias).
 
-   b) Cuando el estadístico que se calcula en la prueba es igual a cero.
+   b) Cuando el estadístico que se calcula en la prueba es mayor a cero.
 
    c) Cuando el estadístico que se calcula en la prueba es igual que el valor crítico reportado en las tablas de [Kwiatkowski, Phillips, Schmidt y Shin (1992)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias).
    
