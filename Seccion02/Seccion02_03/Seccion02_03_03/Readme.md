@@ -1,6 +1,6 @@
 <div align="center"><a href="https://www.escuelaing.edu.co/es/investigacion-e-innovacion/centro-de-estudios-oikonimia/" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/Centros_%20de_Estudios_Oikonom%C3%ADa.jpg" alt="R.LTWB" width="100%" border="0" /></a></div>
 
-## SECCIÓN 2.3.3.
+## SECCIÓN 2.3.3:
 # Caso de estudio utilizando la base de datos _Indicadores de Desarrollo Mundial_ (segunda parte)
 
 Vamos a continuar con el ejercicio empírico planteado en la sección 2.2.5. Dado que en la sección 2.2.5 habiamos demostrado que la variable $PIBpc$ es integrada de orden uno, por lo que la variable $C1PIBpc$ es estacionaria. Entonces, vamos a retomar parte del código utilizado en secciones previas para analizar el comportamiento de $C1PIBpc$ y a partir del mismo poder deducir el comportamiento de $PIBpc$:
