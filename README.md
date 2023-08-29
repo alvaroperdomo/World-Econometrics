@@ -43,11 +43,11 @@ Las otras dos secciones del curso comienzan con una explicación general de las 
 
 En todas las secciones, al final de cada una de las subsecciones, se proponen preguntas de selección múltiple. Estas preguntas no son calificables, a menos que este intentando ontener un certificado del curso.
 
-## ¿Cómo obtener un certíficado por haber participado en el curso?
+## ¿Cómo obtener un certíficado, avalado por la Universidad Escuela Colombianade Ingeniería Julio Garavito, por haber participado en el curso?
 
 Si se desea obtener un certificado por haber participado en el curso, se deben seguir dos acciones:
 1) Se debe entrar al botón de abajo llamado "Obtener el certificado" que se encuentra la final de esta página electrónica, se deben seguir las instrucciones y después de hecho el pago se le enviara un link personal e intransferible.
-2) Este link les da acceso a una cuenta en Moodle, en donde puedn responder de forma interactiva todas las preguntas de selección múltiple que les fueron presentadas en Github. estas preguntas son útiles para evaluar si los conceptos principales han sido entendidos de forma apropiada.
+2) Este link les da acceso a una cuenta en Moodle, en donde pueden responder de forma interactiva todas las preguntas de selección allí planteadas (estas preguntas son útiles para evaluar si los conceptos principales han sido entendidos de forma apropiada).Si al responder todas las preguntas obtiene una nota mínima de 70, entonces se procede a tramitar el certificsdo respectivo
 
 ## Contenido de las secciones del curso
 A continuación encontrará información más detallada acerca de cada una de las secciones en que se divide el curso. Si quiere ir a alguna sección en particular, dele _click_ con el mouse al título de la sección respectiva. 
