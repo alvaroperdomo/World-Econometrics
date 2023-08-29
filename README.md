@@ -35,12 +35,21 @@ Es importante que los alumnos además de tener instalados $R$ y [_**RStudio**_](
 Los contenidos presentados en este curso están dirigidos a estudiantes y profesionales de diferentes disciplinas que requieran aprender y/o fortalecer sus conocimientos en análisis de series de tiempo en $R$.
 
 ## Metodología
-La primera sección del curso comienza con la explicación de algunas generalidades el análisis de series de tiempo y de las características principales de la base de datos "_Indicadores de Desarrollo Mundial_". Posteriormente, se explica cómo se puede descargar y manipular esta base directamente desde $RStudio$. Al final de la sección se hace una evaluación donde se formulan preguntas de selección múltiple con respecto a los conceptos vistos en esta y con respecto a un ejercicio que el alumno debe desarrollar en $RStudio$ utilizando los _Indicadores de Desarrollo Mundial_ [^1]. 
+La primera sección del curso comienza con la explicación de algunas generalidades del análisis de series de tiempo y de las características principales de la base de datos "_Indicadores de Desarrollo Mundial_". Posteriormente, se explica cómo se puede descargar y manipular esta base directamente desde $RStudio$. 
 
-[^1]: **Los códigos en _R_ necesarios para el desarrollo del ejercicio serán explicados durante el desarrollo de la sección**
+Las otras dos secciones del curso comienzan con una explicación general de las herramientas econométricas a utilizar, tanto en lo teórico como en su aplicación en $R$. Luego, se desarrollan algunos ejercicios empíricos utilizando la base de datos "_Indicadores de Desarrollo Mundial_".[^1] 
 
-Las otras dos secciones del curso comienzan con una explicación general de las herramientas econométricas a utilizar, tanto en lo teórico como en su aplicación en $R$. Luego, se desarrollan algunos ejercicios y posteriormente se propone un ejercicio empírico para ser realizado por el alumno. Durante el desarrollo de las secciones se harán algunas preguntas de selección múltiple para evaluar si los conceptos principales han sido entendidos de forma apropiada.
+[^1]: **Los códigos en _R_ necesarios para el desarrollo del ejercicio serán explicados durante el desarrollo de las secciones respectivas**
 
+En todas las secciones, al final de cada una de las subsecciones, se proponen preguntas de selección múltiple. Estas preguntas no son calificables, a menos que este intentando ontener un certificado del curso.
+
+## ¿Cómo obtener un certíficado por haber participado en el curso?
+
+Si se desea obtener un certificado por haber participado en el curso, se deben seguir dos acciones:
+1) Se debe entrar al botón de abajo llamado "Obtener el certificado" que se encuentra la final de esta página electrónica, se deben seguir las instrucciones y después de hecho el pago se le enviara un link personal e intransferible.
+2) Este link les da acceso a una cuenta en Moodle, en donde puedn responder de forma interactiva todas las preguntas de selección múltiple que les fueron presentadas en Github. estas preguntas son útiles para evaluar si los conceptos principales han sido entendidos de forma apropiada.
+
+## Contenido de las secciones del curso
 A continuación encontrará información más detallada acerca de cada una de las secciones en que se divide el curso. Si quiere ir a alguna sección en particular, dele _click_ con el mouse al título de la sección respectiva. 
 
 ## [Sección 1 - Las Series de Tiempo, _R_ y los _Indicadores de Desarrollo Mundial_](Seccion01/Readme.md)
