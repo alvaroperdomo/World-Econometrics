@@ -6,30 +6,28 @@
 
 ### Entendiendo un Mundo en Desarrollo: 
 # Análisis Aplicado de Series de Tiempo en $R$
-Keywords: `Econometría` `Series de Tiempo` `Indicadores de Desarrollo Mundial` `Banco Mundial`
+Palabras Clave: `Econometría` `Series de Tiempo` `Indicadores de Desarrollo Mundial` `Banco Mundial`
 #### Duración del curso: 17.5 horas
 
 ### ¡Bienvenido a un emocionante viaje de aprendizaje!
 
-En este curso aprenderás a hacer análisis básicos de series de tiempo en $R$, utilizando $RStudio$ como tu entorno de desarrollo interactivo. Utilizaremos como fuente de información de referencia la base de datos del Banco Mundial "[_Indicadores de Desarrollo Mundial_](https://databank.worldbank.org/source/world-development-indicators)" para explorar las principales técnicas del análisis de series de tiempo de una manera aplicada, utilizando información económica relevante a nivel internacional.
+En este curso aprenderás a hacer análisis básicos de series de tiempo en $R$, utilizando $RStudio$ como tu entorno de desarrollo interactivo. Utilizaremos como fuente de información de referencia la base de datos del Banco Mundial "[_Indicadores de Desarrollo Mundial_](https://databank.worldbank.org/source/world-development-indicators)". Esta base proporciona datos económicos relevantes a nivel internacional, lo que te permitirá aplicar tus conocimientos de una manera práctica y enriquecedora.
 
 ## Objetivos
-Al finalizar el curso podrás 
+Al finalizar el curso estarás preparado para: 
 * Explicar y aplicar los principales fundamentos del análisis de series de tiempo.
-* Estudiar los modelos más relevantes en el análisis de series de tiempo.
-* Explicar la construcción y análisis de modelos de series de tiempo univariados y multivariados.
+* Analizar los modelos más relevantes en el análisis de series de tiempo.
+* Construir y analizar modelos de series de tiempo univariados y multivariados.
 * Realizar análisis de series de tiempo utilizando la base de datos _Indicadores de Desarrollo Mundial_ en $R$.
 
 ## Requisitos
-Se requiere que los alumnos tengan como mínimo conocimientos básicos de $R$ y de probabilidad. No obstante, proporcionaremos códigos completos de $R$ para que el curso sea más accesible a los alumnos.
-
-Además, es importante que los alumnos tengan instalados $R$ y [_**RStudio**_](https://posit.co/download/rstudio-desktop/), así como el paquete de herramientas [_**Rtools**_](https://cran.r-project.org/bin/windows/Rtools/).
+Para aprovechar al máximo este curso, se requiere que los alumnos tengan como mínimo conocimientos básicos de $R$ y de probabilidad. No obstante, hemos simplificado el proceso de aprendizaje al proporcionar códigos completos de $R$ para cada uno de los temas desarrollados en el curso. Además, es fundamental que los alumnos tengan instalados $R$ y [_**RStudio**_](https://posit.co/download/rstudio-desktop/), así como el paquete de herramientas [_**Rtools**_](https://cran.r-project.org/bin/windows/Rtools/).
 
 ## Dirigido a
-Este curso está dirigido a estudiantes y profesionales de diversas disciplinas que deseen aprender y fortalecer sus habilidades en análisis de series de tiempo en $R$. Es especialmente relevante para aquellos interesados en utilizar análisis de datos en contextos económicos y de desarrollo.
+Este curso está diseñado para estudiantes y profesionales de diversas disciplinas que deseen aprender y fortalecer sus habilidades en análisis de series de tiempo en $R$. Es especialmente relevante para aquellos interesados en hacer análisis econométricos de series de tiempo en contextos económicos y de desarrollo.
 
 ## Metodología
-El curso está dividido en tres secciones principales, a través de las cuales el estudiante desarrollará diferentes habilidades computacionales y analíticas, que podrá aplicar en el análisis de estudios de caso propios.
+El curso está dividido en tres secciones principales, a través de las cuales desarrollarás diferentes habilidades computacionales y analíticas que podrás aplicar en el análisis de estudios de caso propios.
 
 | Secciones                                                                                               |   
 |---------------------------------------------------------------------------------------------------------|
@@ -37,17 +35,16 @@ El curso está dividido en tres secciones principales, a través de las cuales e
 | 02. Análisis Univariado de Series de Tiempo                                                             | 
 | 03. Análisis Multivariado de Series de Tiempo                                                           | 
 
+La primera sección comienza con una introducción a las series de tiempo y a la base de datos "Indicadores de Desarrollo Mundial". Aprenderás a descargar y manipular esta base directamente desde $RStudio$. Las secciones posteriores se centran en herramientas econométricas, tanto teóricas como prácticas, y en la realización de ejercicios con la base de datos mencionada.
 
-La primera sección comienza con la explicación de algunas generalidades del análisis de series de tiempo y a la base de datos "Indicadores de Desarrollo Mundial". Aprenderás a descargar y manipular esta base directamente desde RStudio. Las siguientes secciones del curso se centran en herramientas econométricas, tanto teóricas como prácticas, y en la realización de ejercicios con la base de datos mencionada.
-
-Las otras dos secciones del curso comienzan con una explicación general de las herramientas econométricas a utilizar, tanto en lo teórico como en su aplicación en $R$. Luego, se desarrollan algunos ejercicios empíricos utilizando la base de datos "_Indicadores de Desarrollo Mundial_".[^1] 
+Las demás secciones del curso comienzan con una explicación general de las herramientas econométricas a utilizar, tanto en lo teórico como en su aplicación en $R$. A continuación, se desarrollan ejercicios empíricos utilizando la base de datos "_Indicadores de Desarrollo Mundial_".[^1] 
 
 [^1]: **Los códigos en _R_ necesarios para el desarrollo del ejercicio serán explicados durante el desarrollo de las secciones respectivas**
 
-En todas las secciones, al final de cada una de las subsecciones, se proponen preguntas de selección múltiple. Estas preguntas no son calificables, a menos que esté intentando obtener un certificado del curso.
+En todas las secciones, al final de cada subsección, encontrarás preguntas de selección múltiple. Estas preguntas son útiles para evaluar tu comprensión de los conceptos, aunque no son calificables a menos que estés interesado en obtener un certificado del curso.
 
 ## Estructura del curso
-A continuación encontrará información más detallada acerca de cada una de las secciones en que se divide el curso. Si quiere ir a alguna sección en particular, dele _click_ con el mouse al título de la sección respectiva. 
+A continuación, encontrarás información más detallada acerca de cada una de las secciones en que se divide el curso. Si quiere ir a alguna sección en particular, dele _click_ con el mouse al título de la sección respectiva. 
 
 ## [Sección 1 - Las Series de Tiempo, _R_ y los _Indicadores de Desarrollo Mundial_](Seccion01/Readme.md)
 | Subsecciones                                             | Contenido                                                                           | Dedicación,<br> 2.5 horas | 
@@ -85,11 +82,13 @@ A continuación encontrará información más detallada acerca de cada una de la
 | **3.2.4.** Pruebas de hipótesis adicionales para implementar en un modelo $VEC$                        | Teoría y aplicación en $R$                    |                           |
 | **3.2.5.** Caso de estudio de un modelo $VEC$ utilizando la base de datos _Indicadores de Desarrollo Mundial_         | Aplicación en $R$                             |                           | 
 
-## ¿Cómo obtener un certificado, avalado por la Universidad Escuela Colombiana de Ingeniería Julio Garavito, por haber participado en el curso?
+## ¿Cómo obtener un certificado, avalado por la Universidad Escuela Colombiana de Ingeniería Julio Garavito?
 
-Si se desea obtener un certificado por haber participado en el curso, se deben seguir dos acciones:
-1) Se debe entrar al botón de abajo llamado "Obtener el certificado" que se encuentra la final de esta página electrónica, se deben seguir las instrucciones y después de hecho el pago se le enviara un enlace personal e intransferible.
-2) Este enlace le da acceso a una cuenta en Moodle, en donde pueden responder de forma interactiva todas las preguntas de selección allí planteadas (estas preguntas son útiles para evaluar si los conceptos principales han sido entendidos de forma apropiada).Si al responder todas las preguntas obtiene una nota mínima de 70, entonces se procede a tramitar el certificado respectivo
+Si deseas obtener un certificado oficial por haber participado en el curso, sigue estos pasos:
+1) Haz click en el botón "Obtener el certificado" que encontrarás al final de esta página electrónica. Sigue las instrucciones proporcionadas y realiza el pago correspondiente. Una vez completado el proceso, recibirás un enlace personal e intransferible.
+2) Este enlace te dará acceso a una cuenta en Moodle, donde podrás responder de manera interactiva a todas las preguntas de selección planteadas. Estas preguntas están diseñadas para evaluar tu comprensión de los conceptos clave abordados en el curso.
+
+Si logras obtener una nota mínima de 70 al responder todas las preguntas, procederemos a tramitar tu certificado oficial avalado por la Universidad Escuela Colombiana de Ingeniería Julio Garavito.
 
   
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
