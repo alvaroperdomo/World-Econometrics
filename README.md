@@ -46,12 +46,6 @@ Las otras dos secciones del curso comienzan con una explicación general de las 
 
 En todas las secciones, al final de cada una de las subsecciones, se proponen preguntas de selección múltiple. Estas preguntas no son calificables, a menos que este intentando ontener un certificado del curso.
 
-## ¿Cómo obtener un certíficado, avalado por la Universidad Escuela Colombianade Ingeniería Julio Garavito, por haber participado en el curso?
-
-Si se desea obtener un certificado por haber participado en el curso, se deben seguir dos acciones:
-1) Se debe entrar al botón de abajo llamado "Obtener el certificado" que se encuentra la final de esta página electrónica, se deben seguir las instrucciones y después de hecho el pago se le enviara un link personal e intransferible.
-2) Este link les da acceso a una cuenta en Moodle, en donde pueden responder de forma interactiva todas las preguntas de selección allí planteadas (estas preguntas son útiles para evaluar si los conceptos principales han sido entendidos de forma apropiada).Si al responder todas las preguntas obtiene una nota mínima de 70, entonces se procede a tramitar el certificsdo respectivo
-
 ## Estructura del curso
 A continuación encontrará información más detallada acerca de cada una de las secciones en que se divide el curso. Si quiere ir a alguna sección en particular, dele _click_ con el mouse al título de la sección respectiva. 
 
@@ -90,6 +84,12 @@ A continuación encontrará información más detallada acerca de cada una de la
 | **3.2.3.** La Metodología de Johansen (**2 o más variables**): ¿Cómo evaluar la presencia de cointegración? ¿Cómo estimar un Modelo $VEC$?   |  Teoría y aplicación en $R$    |
 | **3.2.4.** Pruebas de hipótesis adicionales para implementar en un modelo $VEC$                        | Teoría y aplicación en $R$                    |                           |
 | **3.2.5.** Caso de estudio de un modelo $VEC$ utilizando la base de datos _Indicadores de Desarrollo Mundial_         | Aplicación en $R$                             |                           | 
+
+## ¿Cómo obtener un certíficado, avalado por la Universidad Escuela Colombianade Ingeniería Julio Garavito, por haber participado en el curso?
+
+Si se desea obtener un certificado por haber participado en el curso, se deben seguir dos acciones:
+1) Se debe entrar al botón de abajo llamado "Obtener el certificado" que se encuentra la final de esta página electrónica, se deben seguir las instrucciones y después de hecho el pago se le enviara un link personal e intransferible.
+2) Este link les da acceso a una cuenta en Moodle, en donde pueden responder de forma interactiva todas las preguntas de selección allí planteadas (estas preguntas son útiles para evaluar si los conceptos principales han sido entendidos de forma apropiada).Si al responder todas las preguntas obtiene una nota mínima de 70, entonces se procede a tramitar el certificsdo respectivo
 
   
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
