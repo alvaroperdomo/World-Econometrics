@@ -370,7 +370,7 @@ Por último, note que en la comparación de los valores del _Criterio de Informa
 ---
 # Preguntas de selección múltiple
 
-En este ejemplo se va a simular un modelo _MA(1)_ y se va a utilizar la metodología de Box y Jenkins para tratar de identificarlo. Para ello, en _R_:
+En esta sección de preguntas se va a simular un modelo _MA(1)_ y se va a utilizar la metodología de Box y Jenkins para tratar de identificarlo. Para ello, en _R_:
 * Se generaron $200$ números aleatorios $\varepsilon_t$ distribuidos normalmente con una varianza teórica igual $1$.
 * Comenzando con $t=1$, los valores de $y_t$ se generaron usando la fórmula $y_t=\varepsilon_t-0.7\varepsilon_{t-1}$. 
 
