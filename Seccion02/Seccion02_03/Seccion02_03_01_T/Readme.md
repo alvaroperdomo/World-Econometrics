@@ -86,7 +86,7 @@ Un problema con el estadístico _Q_ de Box-Pierce es que funciona mal incluso en
 
    c) La prueba de Ljung-Box.
 
-   d) La prieba de Box y Jenkins.
+   d) La prueba de Box y Jenkins.
 
 2. **¿En el análisis se series de tiempo cuál de los siguientes requerimientos se le hace a los residuos de las estimaciones?**
  
