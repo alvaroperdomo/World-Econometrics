@@ -370,34 +370,11 @@ Por último, note que en la comparación de los valores del _Criterio de Informa
 ---
 # Preguntas de selección múltiple
 
-Se va a aprovechar este apartado que a partir de simulaciones no siempre es fácil construir un ejemplo que sirva para identificar el modelo $ARMA(p,q)$. En buena parte, eso se debe a que los residuos $\varepsilon_t$ se generan de forma aleatoria, por lo que no se tiene demasiado control sobre la generación de los mismos. Por eso es que generalmente, los ejemplos de identificación se hacen sobre datos reales como se hace en la subsección 2.3.3.
-
 En este ejemplo se va a simular un modelo _MA(1)_ y se va a utilizar la metodología de Box y Jenkins para tratar de identificarlo. Para ello, en _R_:
 * Se generaron $200$ números aleatorios $\varepsilon_t$ distribuidos normalmente con una varianza teórica igual $1$.
 * Comenzando con $t=1$, los valores de $y_t$ se generaron usando la fórmula $y_t=\varepsilon_t-0.7\varepsilon_{t-1}$. 
 
 El código de $R$ utilizado en la simulación es:
-
-rm(list = ls())
-
-library(stats) # Esta librería permite generar números aleatorios con distribución normal
-library(ggfortify) # Esta librería permite utilizar el comando autoplot
-library(forecast) # esta libreria permite utilizar el comando auto.arima
-
-set.seed(50) # Se establece una semilla para la generación de números aleatorios (puedes usar cualquier número entero)
-
-n <- 200 # Se establece la longitud de la secuencia
-
-epsilon <- rnorm(n, mean = 0, sd = 1) # Se crea un vector para almacenar los valores simulados de epsilon(t)
-
-y <- numeric(n) # Se crea un vector para almacenar los valores simulados de y(t)
-
-# Se establece la fórmula para generar los valores de y(t)
-for (t in 2:n) {
-  y[t] <- epsilon[t] - 0.7 * epsilon[t-1]
-}
-
-plot(1:n, y, type = "l", xlab = "t", ylab = "y(t)", col = "blue") # Gráfico de y(t)
 
 ```r
 rm(list = ls())
