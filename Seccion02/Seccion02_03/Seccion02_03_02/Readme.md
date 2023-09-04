@@ -454,7 +454,7 @@ y responda a las dos preguntas que siguen a continuación:
 
    d) $MA(1)$ con intercepto y $AR(1)$ sin intercepto.
 
-Copie los siguientes comandos para estimar el modelo $MA(1)$ con intercepto ($y_t=a_0+\varepsilon_t+\beta_1\varepsilon_{t-1}$): 
+Copie el siguiente comando para estimar el modelo $MA(1)$ con intercepto ($y_t=a_0+\varepsilon_t+\beta_1\varepsilon_{t-1}$): 
 
 ```r
 Arima(y, order=c(0,0,1))
