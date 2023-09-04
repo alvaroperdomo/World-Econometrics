@@ -35,11 +35,9 @@ El curso está dividido en tres secciones principales, a través de las cuales d
 | 02. Análisis Univariado de Series de Tiempo                                                             | 
 | 03. Análisis Multivariado de Series de Tiempo                                                           | 
 
-La primera sección comienza con una introducción a las series de tiempo y a la base de datos "_Indicadores de Desarrollo Mundial_". Aprenderás a descargar y manipular esta base directamente desde $RStudio$. Las secciones posteriores se centran en herramientas econométricas, tanto teóricas como prácticas, y en la realización de ejercicios con la base de datos mencionada.
+La primera sección comienza con una introducción a las series de tiempo y a la base de datos "_Indicadores de Desarrollo Mundial_". Aprenderás a descargar y manipular esta base directamente desde $RStudio$. Las demás secciones del curso comienzan con una explicación general de las herramientas econométricas a utilizar, tanto en lo teórico como en su aplicación en $R$. A continuación, se desarrollan ejercicios empíricos utilizando la base de datos "_Indicadores de Desarrollo Mundial_".[^1] 
 
-Las demás secciones del curso comienzan con una explicación general de las herramientas econométricas a utilizar, tanto en lo teórico como en su aplicación en $R$. A continuación, se desarrollan ejercicios empíricos utilizando la base de datos "_Indicadores de Desarrollo Mundial_".[^1] 
-
-[^1]: **Los códigos en _R_ necesarios para el desarrollo del ejercicio serán explicados durante el desarrollo de las secciones respectivas**
+[^1]: **Los códigos en _R_ necesarios para el desarrollo de los ejercicios serán explicados durante el desarrollo de las secciones respectivas**
 
 En todas las secciones, al final de cada subsección, encontrarás preguntas de selección múltiple. Estas preguntas son útiles para evaluar tu comprensión de los conceptos, aunque no son calificables a menos que estés interesado en obtener un certificado del curso.
 
