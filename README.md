@@ -86,7 +86,7 @@ Si deseas obtener un certificado oficial por haber participado en el curso, sigu
 1) Haz _click_ en el botón "Obtener el certificado" que encontrarás al final de esta página electrónica. Sigue las instrucciones proporcionadas y realiza el pago correspondiente. Una vez completado el proceso, recibirás un enlace personal e intransferible.
 2) Este enlace te dará acceso a una cuenta en Moodle, donde podrás responder de manera interactiva a todas las preguntas de selección planteadas. Estas preguntas están diseñadas para evaluar tu comprensión de los conceptos clave abordados en el curso.
 
-Si logras obtener una nota mínima de 70 al responder todas las preguntas, procederemos a tramitar tu certificado oficial avalado por la Universidad Escuela Colombiana de Ingeniería Julio Garavito.
+Si logras obtener una nota mínima de $70$ al responder todas las preguntas, procederemos a tramitar tu certificado oficial avalado por la Universidad Escuela Colombiana de Ingeniería Julio Garavito.
 
   
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
