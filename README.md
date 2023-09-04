@@ -9,33 +9,36 @@
 Keywords: `Econometría` `Series de Tiempo` `Indicadores de Desarrollo Mundial` `Banco Mundial`
 #### Duración del curso: 17.5 horas
 
-Bienvenido al curso _Entendiendo un Mundo en Desarrollo: Análisis Aplicado de Series de Tiempo en_ $R$. En este curso aprenderá a hacer análisis básicos de series de tiempo en $R$ utilizando como entorno de desarrollo interactivo al software $RStudio$. Se tomará como referencia, para el análisis empírico, la base de datos del Banco Mundial "[_Indicadores de Desarrollo Mundial_](https://databank.worldbank.org/source/world-development-indicators)", con el fin de aprender las principales técnicas del análisis de series de tiempo de una forma aplicada utilizando la información económica más relevante del contexto internacional.
+### ¡Bienvenido a un emocionante viaje de aprendizaje!
 
-El curso está dividido en tres secciones principales, a través de las cuales el estudiante desarrollará diferentes habilidades computacionales y analíticas, que podrá aplicar en el análisis de estudios de caso propios.
-
-| Secciones                                                                                               |   
-|---------------------------------------------------------------------------------------------------------|
-| 01. Las Series de Tiempo,  $R$ y los _Indicadores de Desarrollo Mundial_                                | 
-| 02. Análisis Univariado de Series de Tiempo                                                             | 
-| 03. Análisis Multivariado de Series de Tiempo                                                           | 
-
+En este curso aprenderás a hacer análisis básicos de series de tiempo en $R$, utilizando $RStudio$ como tu entorno de desarrollo interactivo. Utilizaremos como punto de referencia, para el análisis empírico, la base de datos del Banco Mundial "[_Indicadores de Desarrollo Mundial_](https://databank.worldbank.org/source/world-development-indicators)" para explorar las principales técnicas del análisis de series de tiempo de una manera aplicada, utilizando información económica relevante a nivel internacional.
 
 ## Objetivos
+Al finalizar el curso podras 
 * Explicar y aplicar los principales fundamentos del análisis de series de tiempo.
 * Estudiar los modelos más relevantes en el análisis de series de tiempo.
 * Explicar la construcción y análisis de modelos de series de tiempo univariados y multivariados.
 * Realizar análisis de series de tiempo utilizando la base de datos _Indicadores de Desarrollo Mundial_ en $R$.
 
 ## Requisitos
-Se requiere que los alumnos tengan como mínimo conocimientos básicos de $R$ y de probabilidad. Sin embargo, en el curso se van a proveer códigos completos de $R$ para ser utilizados por parte de los alumnos.
+Se requiere que los alumnos tengan como mínimo conocimientos básicos de $R$ y de probabilidad. No obstante, proporcionaremos códigos completos de $R$ para que el curso sea más accesible a los alumnos.
 
-Es importante que los alumnos además de tener instalados $R$ y [_**RStudio**_](https://posit.co/download/rstudio-desktop/), también tengan instalado el paquete de herramientas [_**Rtools**_](https://cran.r-project.org/bin/windows/Rtools/).
+Además, es importante que los alumnos tengan instalados $R$ y [_**RStudio**_](https://posit.co/download/rstudio-desktop/), así como el paquete de herramientas [_**Rtools**_](https://cran.r-project.org/bin/windows/Rtools/).
 
 ## Dirigido a
-Los contenidos presentados en este curso están dirigidos a estudiantes y profesionales de diferentes disciplinas que requieran aprender y/o fortalecer sus conocimientos en análisis de series de tiempo en $R$.
+Este curso está dirigido a estudiantes y profesionales de diversas disciplinas que deseen aprender y fortalecer sus habilidades en análisis de series de tiempo en $R$. Es especialmente relevante para aquellos interesados en utilizar análisis de datos en contextos económicos y de desarrollo.
 
 ## Metodología
-La primera sección del curso comienza con la explicación de algunas generalidades del análisis de series de tiempo y de las características principales de la base de datos "_Indicadores de Desarrollo Mundial_". Posteriormente, se explica cómo se puede descargar y manipular esta base directamente desde $RStudio$. 
+El curso está dividido en tres secciones principales, a través de las cuales el estudiante desarrollará diferentes habilidades computacionales y analíticas, que podrá aplicar en el análisis de estudios de caso propios.
+
+| Secciones                                                                                               |   
+|---------------------------------------------------------------------------------------------------------|
+| 01. Las Series de Tiempo, $R$ y los _Indicadores de Desarrollo Mundial_                                | 
+| 02. Análisis Univariado de Series de Tiempo                                                             | 
+| 03. Análisis Multivariado de Series de Tiempo                                                           | 
+
+
+La primera sección comienza con la explicación de algunas generalidades del análisis de series de tiempo y a la base de datos "Indicadores de Desarrollo Mundial". Aprenderás a descargar y manipular esta base directamente desde RStudio. Las siguientes secciones del curso se centran en herramientas econométricas, tanto teóricas como prácticas, y en la realización de ejercicios con la base de datos mencionada.
 
 Las otras dos secciones del curso comienzan con una explicación general de las herramientas econométricas a utilizar, tanto en lo teórico como en su aplicación en $R$. Luego, se desarrollan algunos ejercicios empíricos utilizando la base de datos "_Indicadores de Desarrollo Mundial_".[^1] 
 
@@ -49,7 +52,7 @@ Si se desea obtener un certificado por haber participado en el curso, se deben s
 1) Se debe entrar al botón de abajo llamado "Obtener el certificado" que se encuentra la final de esta página electrónica, se deben seguir las instrucciones y después de hecho el pago se le enviara un link personal e intransferible.
 2) Este link les da acceso a una cuenta en Moodle, en donde pueden responder de forma interactiva todas las preguntas de selección allí planteadas (estas preguntas son útiles para evaluar si los conceptos principales han sido entendidos de forma apropiada).Si al responder todas las preguntas obtiene una nota mínima de 70, entonces se procede a tramitar el certificsdo respectivo
 
-## Contenido de las secciones del curso
+## Estructura del curso
 A continuación encontrará información más detallada acerca de cada una de las secciones en que se divide el curso. Si quiere ir a alguna sección en particular, dele _click_ con el mouse al título de la sección respectiva. 
 
 ## [Sección 1 - Las Series de Tiempo, _R_ y los _Indicadores de Desarrollo Mundial_](Seccion01/Readme.md)
