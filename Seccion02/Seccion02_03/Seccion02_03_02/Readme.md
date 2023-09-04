@@ -434,7 +434,7 @@ auto.arima(y, ic = c("bic"), trace=TRUE, stepwise = FALSE, approximation = FALSE
 ```
 y responda a las dos preguntas que siguen a continuación:
 
-2. **Según el _Criterio de Información de Akaike_, en su orden, cuales son los dos modelos $ARIMA(p,I,q)$ que mejor se ajustan a los datos simulados:**
+2. **¿Según el _Criterio de Información de Akaike_, en su orden, cuáles son los dos modelos $ARIMA(p,I,q)$ que mejor se ajustan a los datos simulados?:**
    
    a) $MA(1)$ sin intercepto y $MA(1)$ con intercepto.
 
@@ -444,7 +444,7 @@ y responda a las dos preguntas que siguen a continuación:
 
    d) $MA(1)$ conn intercepto y $AR(1)$ sin intercepto.
 
-4. **Según el _Criterio Bayesiano de Schwartz_, en su orden, cuales son los dos modelos $ARIMA(p,I,q)$ que mejor se ajustan a los datos simulados:**
+4. **¿Según el _Criterio Bayesiano de Schwartz_, en su orden, cuáles son los dos modelos $ARIMA(p,I,q)$ que mejor se ajustan a los datos simulados?:**
    
    a) $MA(1)$ sin intercepto y $MA(1)$ con intercepto.
 
