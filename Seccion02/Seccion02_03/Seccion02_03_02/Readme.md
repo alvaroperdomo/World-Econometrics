@@ -17,6 +17,7 @@ rm(list = ls())
 library(stats) # Esta librería permite generar números aleatorios con distribución normal
 library(ggplot2) # Esta librería permite utilizar acf_plot 
 library(ggfortify) # Esta librería permite utilizar el comando autoplot
+library(forecast) # Esta librería permite utilizar el comando ggtsdiag
 
 set.seed(150) # Se establece una semilla para la generación de números aleatorios (puedes usar cualquier número entero)
 
@@ -383,6 +384,7 @@ rm(list = ls())
 library(stats) # Esta librería permite generar números aleatorios con distribución normal
 library(ggplot2) # Esta librería permite utilizar acf_plot 
 library(forecast) # esta libreria permite utilizar el comando auto.arima
+library(forecast) # Esta librería permite utilizar el comando ggtsdiag
 
 set.seed(50) # Se establece una semilla para la generación de números aleatorios (puedes usar cualquier número entero)
 
