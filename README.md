@@ -21,7 +21,7 @@ Al finalizar el curso estarás preparado para:
 * Realizar análisis de series de tiempo utilizando la base de datos _Indicadores de Desarrollo Mundial_ en $R$.
 
 ## Requisitos
-Para aprovechar al máximo este curso, se requiere que los alumnos tengan como mínimo conocimientos básicos de $R$ y de probabilidad. No obstante, hemos simplificado el proceso de aprendizaje al proporcionar códigos completos de $R$ para cada uno de los temas desarrollados en el curso. Además, es fundamental que los alumnos tengan instalados $R$ y [_**RStudio**_](https://posit.co/download/rstudio-desktop/), así como el paquete de herramientas [_**Rtools**_](https://cran.r-project.org/bin/windows/Rtools/).
+Para aprovechar al máximo este curso, se requiere que los alumnos tengan como mínimo conocimientos básicos de $R$ y de probabilidad. No obstante, hemos simplificado el proceso de aprendizaje al proporcionar códigos completos de $R$ para cada uno de los temas desarrollados. Además, es fundamental que los alumnos tengan instalados $R$ y [_**RStudio**_](https://posit.co/download/rstudio-desktop/), así como el paquete de herramientas [_**Rtools**_](https://cran.r-project.org/bin/windows/Rtools/).
 
 ## Dirigido a
 Este curso está diseñado para estudiantes y profesionales de diversas disciplinas que deseen aprender y fortalecer sus habilidades en análisis de series de tiempo en $R$. Es especialmente relevante para aquellos interesados en hacer análisis econométricos de series de tiempo en contextos económicos y de desarrollo.
