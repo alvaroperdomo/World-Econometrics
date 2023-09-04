@@ -42,7 +42,7 @@ La primera sección comienza con una introducción a las series de tiempo y a la
 En todas las secciones, al final de cada subsección, encontrarás preguntas de selección múltiple. Estas preguntas son útiles para evaluar tu comprensión de los conceptos, aunque no son calificables a menos que estés interesado en obtener un certificado del curso.
 
 ## Estructura del curso
-A continuación, encontrarás información más detallada acerca de cada una de las secciones en que se divide el curso. Si quiere ir a alguna sección en particular, dele _click_ con el mouse al título de la sección respectiva. 
+A continuación, encontrarás información más detallada acerca de cada una de las secciones en que se divide el curso. Si quieres ir a alguna sección en particular, dale _click_ con el mouse al título de la sección respectiva. 
 
 ## [Sección 1 - Las Series de Tiempo, _R_ y los _Indicadores de Desarrollo Mundial_](Seccion01/Readme.md)
 | Subsecciones                                             | Contenido                                                                           | Dedicación,<br> 2.5 horas | 
@@ -83,7 +83,7 @@ A continuación, encontrarás información más detallada acerca de cada una de 
 ## ¿Cómo obtener un certificado, avalado por la Universidad Escuela Colombiana de Ingeniería Julio Garavito?
 
 Si deseas obtener un certificado oficial por haber participado en el curso, sigue estos pasos:
-1) Haz click en el botón "Obtener el certificado" que encontrarás al final de esta página electrónica. Sigue las instrucciones proporcionadas y realiza el pago correspondiente. Una vez completado el proceso, recibirás un enlace personal e intransferible.
+1) Haz _click_ en el botón "Obtener el certificado" que encontrarás al final de esta página electrónica. Sigue las instrucciones proporcionadas y realiza el pago correspondiente. Una vez completado el proceso, recibirás un enlace personal e intransferible.
 2) Este enlace te dará acceso a una cuenta en Moodle, donde podrás responder de manera interactiva a todas las preguntas de selección planteadas. Estas preguntas están diseñadas para evaluar tu comprensión de los conceptos clave abordados en el curso.
 
 Si logras obtener una nota mínima de 70 al responder todas las preguntas, procederemos a tramitar tu certificado oficial avalado por la Universidad Escuela Colombiana de Ingeniería Julio Garavito.
