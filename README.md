@@ -11,7 +11,7 @@ Keywords: `Econometría` `Series de Tiempo` `Indicadores de Desarrollo Mundial` 
 
 ### ¡Bienvenido a un emocionante viaje de aprendizaje!
 
-En este curso aprenderás a hacer análisis básicos de series de tiempo en $R$, utilizando $RStudio$ como tu entorno de desarrollo interactivo. Utilizaremos como punto de referencia, para el análisis empírico, la base de datos del Banco Mundial "[_Indicadores de Desarrollo Mundial_](https://databank.worldbank.org/source/world-development-indicators)" para explorar las principales técnicas del análisis de series de tiempo de una manera aplicada, utilizando información económica relevante a nivel internacional.
+En este curso aprenderás a hacer análisis básicos de series de tiempo en $R$, utilizando $RStudio$ como tu entorno de desarrollo interactivo. Utilizaremos como fuente de información de referencia la base de datos del Banco Mundial "[_Indicadores de Desarrollo Mundial_](https://databank.worldbank.org/source/world-development-indicators)" para explorar las principales técnicas del análisis de series de tiempo de una manera aplicada, utilizando información económica relevante a nivel internacional.
 
 ## Objetivos
 Al finalizar el curso podras 
