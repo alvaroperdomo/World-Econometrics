@@ -127,7 +127,7 @@ Observe que los pronósticos se trabajaron con el nombre **forecast1**. Usted pu
 ---
 # Preguntas de selección múltiple
 
-1. **¿Cuál de los comandos vistos en esta sección permite utilizar el _Criterio de Información de Akaike_ con corrección para muestras pequeña?:**
+1. **¿Cuál de los comandos vistos en esta subsección permite utilizar el _Criterio de Información de Akaike_ con corrección para muestras pequeña?:**
  
    a) _autoplot_.
 
