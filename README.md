@@ -73,7 +73,7 @@ A continuación encontrará información más detallada acerca de cada una de la
 ## [Sección 3 - Análisis Multivariado de Series de Tiempo](Seccion03/Readme.md)
 | Subsecciones                                                                                           | Contenido                                     | Dedicación,<br> 8 horas | 
 |--------------------------------------------------------------------------------------------------------|------------------------------------------------|:-------------------------:|
-| **3.1. Estimación de Modelos $VAR$**                                                                   | **Metododología para estimar un modelo $VAR$** |              4            | 
+| **3.1. Estimación de Modelos $VAR$**                                                                   | **Metodología para estimar un modelo $VAR$**   |              4            | 
 | **3.1.1.** ¿Qué es un modelo $VAR$?, <br> ¿Cómo estimar y hacer pronosticos de un modelo $VAR$ en $R$? | Teoría y aplicación en $R$                    |                           | 
 | **3.1.2.** Pruebas de Hipótesis en Modelos $VAR$                                                       | Teoría y aplicación en $R$                    |                           |                        
 | **3.1.3.** La función impulso-respuesta y la descomposición de varianza del error de pronóstico        | Teoría y aplicación en $R$                    |                           |            
