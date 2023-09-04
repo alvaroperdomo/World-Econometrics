@@ -44,7 +44,7 @@ Las otras dos secciones del curso comienzan con una explicación general de las 
 
 [^1]: **Los códigos en _R_ necesarios para el desarrollo del ejercicio serán explicados durante el desarrollo de las secciones respectivas**
 
-En todas las secciones, al final de cada una de las subsecciones, se proponen preguntas de selección múltiple. Estas preguntas no son calificables, a menos que este intentando ontener un certificado del curso.
+En todas las secciones, al final de cada una de las subsecciones, se proponen preguntas de selección múltiple. Estas preguntas no son calificables, a menos que esté intentando obtener un certificado del curso.
 
 ## Estructura del curso
 A continuación encontrará información más detallada acerca de cada una de las secciones en que se divide el curso. Si quiere ir a alguna sección en particular, dele _click_ con el mouse al título de la sección respectiva. 
