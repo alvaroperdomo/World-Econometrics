@@ -74,7 +74,7 @@ A continuación encontrará información más detallada acerca de cada una de la
 | Subsecciones                                                                                           | Contenido                                     | Dedicación,<br> 8 horas | 
 |--------------------------------------------------------------------------------------------------------|------------------------------------------------|:-------------------------:|
 | **3.1. Estimación de Modelos $VAR$**                                                                   | **Metodología para estimar un modelo $VAR$**   |              4            | 
-| **3.1.1.** ¿Qué es un modelo $VAR$?, <br> ¿Cómo estimar y hacer pronosticos de un modelo $VAR$ en $R$? | Teoría y aplicación en $R$                    |                           | 
+| **3.1.1.** ¿Qué es un modelo $VAR$?, <br> ¿Cómo estimar y hacer pronósticos de un modelo $VAR$ en $R$? | Teoría y aplicación en $R$                    |                           | 
 | **3.1.2.** Pruebas de Hipótesis en Modelos $VAR$                                                       | Teoría y aplicación en $R$                    |                           |                        
 | **3.1.3.** La función impulso-respuesta y la descomposición de varianza del error de pronóstico        | Teoría y aplicación en $R$                    |                           |            
 | **3.1.4** Caso de estudio de un modelo $VAR$ utilizando la base de datos _Indicadores de Desarrollo Mundial_         | Aplicación en $R$               |                           | 
@@ -85,7 +85,7 @@ A continuación encontrará información más detallada acerca de cada una de la
 | **3.2.4.** Pruebas de hipótesis adicionales para implementar en un modelo $VEC$                        | Teoría y aplicación en $R$                    |                           |
 | **3.2.5.** Caso de estudio de un modelo $VEC$ utilizando la base de datos _Indicadores de Desarrollo Mundial_         | Aplicación en $R$                             |                           | 
 
-## ¿Cómo obtener un certíficado, avalado por la Universidad Escuela Colombianade Ingeniería Julio Garavito, por haber participado en el curso?
+## ¿Cómo obtener un certificado, avalado por la Universidad Escuela Colombiana de Ingeniería Julio Garavito, por haber participado en el curso?
 
 Si se desea obtener un certificado por haber participado en el curso, se deben seguir dos acciones:
 1) Se debe entrar al botón de abajo llamado "Obtener el certificado" que se encuentra la final de esta página electrónica, se deben seguir las instrucciones y después de hecho el pago se le enviara un link personal e intransferible.
