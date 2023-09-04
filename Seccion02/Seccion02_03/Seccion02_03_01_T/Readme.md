@@ -90,9 +90,9 @@ Un problema con el estadístico _Q_ de Box-Pierce es que funciona mal incluso en
 
 2. **¿En el análisis se series de tiempo cuál de los siguientes requerimientos se le hace a los residuos de las estimaciones?**
  
-   a) Que esten correlacionados.
+   a) Que estén correlacionados.
 
-   b) Que no esten correlacionados.
+   b) Que no estén correlacionados.
 
    c) Que cumplan el _Criterio de Información de Akaike_.
 
