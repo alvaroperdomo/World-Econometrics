@@ -462,7 +462,7 @@ Arima(y, order=c(0,0,1))
 
 Note que a pesar de que $\beta_1$ es significativo, el intercepto no es significativo porque el valor absoluto de $a_0$ es menor que dos veces su error estándar.
 
-4. **¿A dos digitos, cuál es el valor de $a_0$ y de su error estándar?:**
+4. **¿A dos dígitos, cuál es el valor de $a_0$ y de su error estándar?:**
 
    a) -0.04 y 0.03.
 
@@ -479,7 +479,7 @@ Modelo_ejemplo <- Arima(y, order=c(0,0,1), include.mean = FALSE)
 summary(Modelo_ejemplo)
 ```
 
-5. **¿A dos digitos, cuál es el valor de $\beta_1$ y de su error estándar?:**
+5. **¿A dos dígitos, cuál es el valor de $\beta_1$ y de su error estándar?:**
 
    a) -0.65 y 0.05.
 
@@ -494,7 +494,7 @@ Con el comando
 ```r
 ggtsdiag(Modelo_ejemplo, gof.lag = 30) +  labs(subtitle = "Modelo_ejemplo") # Con este comando se pueden hacer pruebas sobre los residuos del Modelo_ejemplo.
 ```
-observe que con el estadistico de Ljung-Box se obtiene que los residuos no están autocorrelacionados.
+observe que con el estadístico de Ljung-Box se obtiene que los residuos no están autocorrelacionados.
 
 6. **¿En cuál rezago se obtiene el p-value más bajo del estadístico de Ljung-Box de los residuos estimados y en cuál valor a dos dígitos?:**
 
