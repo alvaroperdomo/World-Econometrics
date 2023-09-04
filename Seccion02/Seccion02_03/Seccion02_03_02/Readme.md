@@ -406,7 +406,7 @@ El gráfico de $y_t$ esta representado por:
 
 Halle la $FAC$ y la $FACP$ de $y_t$ y responda a la siguiente pregunta:
 
-1. **Gráfique la $FAC$ y la $FACP$ muestrales de $y_t$. En su orden, ¿cuántos barras, superiores a la del rezago $0$, de ambas funciones se salen por fuera de la banda de confianza?:**
+1. **Grafique la $FAC$ y la $FACP$ muestrales de $y_t$. En su orden, ¿cuántos barras, superiores a la del rezago $0$, de ambas funciones se salen por fuera de la banda de confianza?:**
 
    a) 3 y 4.
 
