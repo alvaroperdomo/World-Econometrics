@@ -88,8 +88,8 @@ A continuación encontrará información más detallada acerca de cada una de la
 ## ¿Cómo obtener un certificado, avalado por la Universidad Escuela Colombiana de Ingeniería Julio Garavito, por haber participado en el curso?
 
 Si se desea obtener un certificado por haber participado en el curso, se deben seguir dos acciones:
-1) Se debe entrar al botón de abajo llamado "Obtener el certificado" que se encuentra la final de esta página electrónica, se deben seguir las instrucciones y después de hecho el pago se le enviara un link personal e intransferible.
-2) Este link les da acceso a una cuenta en Moodle, en donde pueden responder de forma interactiva todas las preguntas de selección allí planteadas (estas preguntas son útiles para evaluar si los conceptos principales han sido entendidos de forma apropiada).Si al responder todas las preguntas obtiene una nota mínima de 70, entonces se procede a tramitar el certificsdo respectivo
+1) Se debe entrar al botón de abajo llamado "Obtener el certificado" que se encuentra la final de esta página electrónica, se deben seguir las instrucciones y después de hecho el pago se le enviara un enlace personal e intransferible.
+2) Este enlace le da acceso a una cuenta en Moodle, en donde pueden responder de forma interactiva todas las preguntas de selección allí planteadas (estas preguntas son útiles para evaluar si los conceptos principales han sido entendidos de forma apropiada).Si al responder todas las preguntas obtiene una nota mínima de 70, entonces se procede a tramitar el certificado respectivo
 
   
 <div align="center"><a href="https://enlace-academico.escuelaing.edu.co/psc/FORMULARIO/EMPLOYEE/SA/c/EC_LOCALIZACION_RE.LC_FRM_ADMEDCO_FL.GBL" target="_blank"><img src="https://github.com/alvaroperdomo/World-Econometrics/blob/main/.icons/IconCEHBotonCertificado.png" alt="World-Econometrics" width="260" border="0" /></a></div>
