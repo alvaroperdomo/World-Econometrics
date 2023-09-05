@@ -77,7 +77,7 @@ Sin embargo, en un modelo de orden superior, puede haber un gran número de coef
 
 1. **En el modelo $VAR$ _estructural_ el vector de términos de error $\mathbf{e_t}$ se caracteriza por que cada uno de sus elementos:**
  
-   a) Son heterocedasticos.
+   a) Son heterocedásticos.
 
    b) Son paseo aleatorio.
 
