@@ -90,7 +90,7 @@ normality.test(nombre, multivariate.only={FALSE, TRUE})
 ---
 # Preguntas de selección múltiple
 
-1. **En el comando _**VARselect**_ ¿cuál es el número de rezagos con el que de forma predeterminada comienza la prueba de escogencia del _VAR_ más parsimonioso:**
+1. **En el comando _**VARselect**_ ¿cuál es el número de rezagos con el que de forma predeterminada comienza la prueba de escogencia del _VAR_ más parsimonioso?:**
  
    a) $0$.
 
@@ -100,7 +100,7 @@ normality.test(nombre, multivariate.only={FALSE, TRUE})
 
    d) Ninguno de los anteriores.
  
-2. **¿Cuál argumento se utiliza, en el comando que hace la prueba Portmanteau Multivariada, para escoger el número de Rezagos a utilizar en la prueba:**
+2. **¿Cuál argumento se utiliza, en el comando que hace la prueba Portmanteau Multivariada, para escoger el número de rezagos a utilizar en la prueba?:**
 
    a) lags.pt.
 
