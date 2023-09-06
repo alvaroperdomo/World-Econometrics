@@ -36,6 +36,31 @@ fevd(nombre, n.ahead=10, ...)
 | **nombre**         | Nombre del Vector autorregresivo (VAR) que ha sido estimado                                                         |
 | **n.ahead**        | Número de periodos para los cuales se va a calcular la descomposición de varianza                                   |
 
+--
+---
+# Preguntas de selección múltiple
+
+1. **En el comando _**irf**_ ¿A cual variable, esta predeterminado, que se le calcule la función impulso-resppuesta?:**
+ 
+   a) A la primera del _VAR_:
+
+   b) A la última del _VAR_.
+
+   c) A ninguna.
+
+   d) A todas.
+ 
+2. **¿Para que sirve la opción _n.ahead_ en el comando _fevd_?:**
+
+   a) Para colocar el nombre del VAR al cual se le va a calcular la descomposición de varianza
+
+   b) Para determinar el número de periodos para los cuales se va a calcular la descomposición de varianza
+
+   c) Para calcular la descomposición de varianza de los datos ortogonalizados.
+
+   d) Para determinar el nombre de la variable a la cual se le va a calcular la descomposición de varianza.
+---
+---
 | [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |[Subsección: 3.1.3.(T) La Función Impulso-Respuesta y la Descomposición de Varianza del Error de Pronóstico](../Seccion03_01_03_T/Readme.md) |
 |--------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
 
