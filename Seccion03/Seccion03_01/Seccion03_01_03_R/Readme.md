@@ -42,13 +42,13 @@ fevd(nombre, n.ahead=10, ...)
 
 1. **En el comando _**irf**_ ¿A cual variable, esta predeterminado, que se le calcule la función impulso-respuesta?:**
  
-   a) A la primera del _VAR_:
+   a) A la primera variable del _VAR_:
 
-   b) A la última del _VAR_.
+   b) A la última variable del _VAR_.
 
-   c) A ninguna.
+   c) A ninguna variable.
 
-   d) A todas.
+   d) A todas las variables.
  
 2. **¿Para que sirve la opción _n.ahead_ en el comando _fevd_?:**
 
