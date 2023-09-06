@@ -40,7 +40,7 @@ fevd(nombre, n.ahead=10, ...)
 ---
 # Preguntas de selección múltiple
 
-1. **En el comando _**irf**_ ¿A cual variable, esta predeterminado, que se le calcule la función impulso-resppuesta?:**
+1. **En el comando _**irf**_ ¿A cual variable, esta predeterminado, que se le calcule la función impulso-respuesta?:**
  
    a) A la primera del _VAR_:
 
