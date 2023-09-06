@@ -65,7 +65,7 @@ Observe que los pronósticos se trabajaron con el nombre **forecast1**. Usted pu
 
    d) Ninguno de los anteriores.
  
-2. **¿Cuáles criterios de información se puden utilizar para estimar un $VAR$ más parsimonioso?:**
+2. **¿Cuáles criterios de información se pueden utilizar para estimar un $VAR$ más parsimonioso?:**
 
    a) El Criterio de Información de Akaike.
 
