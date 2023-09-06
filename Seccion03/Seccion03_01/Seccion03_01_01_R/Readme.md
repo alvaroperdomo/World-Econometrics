@@ -55,7 +55,7 @@ Observe que los pronósticos se trabajaron con el nombre **forecast1**. Usted pu
 ---
 # Preguntas de selección múltiple
 
-1. **En el comando $VAR-4 ¿cuál es el número de rezagos que se estiman de forma predeterminada?:**
+1. **En el comando $VAR$ ¿cuál es el número de rezagos que se estiman de forma predeterminada?:**
  
    a) $0$.
 
