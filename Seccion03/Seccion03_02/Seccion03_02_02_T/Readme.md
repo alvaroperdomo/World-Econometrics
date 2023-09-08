@@ -121,9 +121,9 @@ El primer paso es generar la serie de residuos $\hat{e}_ t$, y el segundo paso u
  
    a) Porque, en general, los coeficientes no tienen una distribución $t$ asintótica.
 
-   b) Porque las variables $y_t$ y $z_t$ son no estacionarias.
+   b) Porque las variables que conforman el vector de cointegración son no estacionarias.
 
-   c) Porque las dos innovaciones $\varepsilon_{yt}$  y $\varepsilon_{zt}$  pueden correlacionarse simultáneamente.
+   c) Porque las innovaciones  de las variables que conforman el vector de cointegración pueden correlacionarse simultáneamente.
 
    d) Ninguna de las anteriores.
 
