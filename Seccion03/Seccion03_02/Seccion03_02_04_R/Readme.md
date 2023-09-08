@@ -37,15 +37,15 @@ plotres(nombre)
 
    d) Ninguno de los anteriores.
  
-2. **¿Cuál argumento se utiliza, en el comando que hace la prueba Portmanteau Multivariada, para escoger el número de rezagos a utilizar en la prueba?:**
+2. **¿Cuál comando permite ver el gráfico de la FAC y de la FACP para verificar que los mismos no esten correlacionados?:**
 
-   a) lags.pt.
+   a) grafVEC.
 
-   b) order.
+   b) VARorder.
 
-   c) lags.
+   c) plotres.
 
-   d) lagmax.
+   d) Ninguno de los anteriores.
 ---
 ---
 
