@@ -62,7 +62,7 @@ Para el análisis de la existencia de cointegración las metodologías más util
 
    d) Ninguno de los anteriores.
 
-2. **¿Si tenemos un modelo multivariado de series de tiempo, cuál es el máximo de relaciones de cointegración que se podrían establecer?:**
+2. **¿Si tenemos un modelo multivariado de series de tiempo conformado por 4 variables no estacionarias, cuál es el máximo de relaciones de cointegración que se podrían establecer?:**
  
    a) 4.
 
