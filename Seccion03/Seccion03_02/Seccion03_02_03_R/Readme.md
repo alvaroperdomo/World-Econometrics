@@ -56,7 +56,7 @@ cajorls(vec_rank, r = 1, reg.number = NULL)
 ---
 # Preguntas de selección múltiple
 
-1. **¿Cuál de los estadisticos de la prueba de cointegración de Johansen se pueden calcular con el comando _ca.jo(x, type = c("eigen"))_?:**
+1. **¿Cuál de los estadísticos de la prueba de cointegración de Johansen se pueden calcular con el comando _ca.jo(x, type = c("eigen"))_?:**
  
    a) El estadístico $\lambda_{max}$.
 
