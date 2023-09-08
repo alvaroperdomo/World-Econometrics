@@ -105,7 +105,7 @@ El primer paso es generar la serie de residuos $\hat{e}_ t$, y el segundo paso u
 
    $i)$ $\Delta y_t = \alpha_1 + \alpha_y\hat{e}_ {t-1}+\sum_{i=1}\alpha_{11}(i)\Delta y_{t-i}+\sum_{i=1}\alpha_{12}(i)\Delta z_{t-i}+\varepsilon_{yt}$
 
-   $ii)$ $\Delta z_t = \alpha_2 + \alpha_z\hat{e}_ {t-1}+\sum_{i=1}\alpha_{21}(i)\Delta y_{t-i}+\sum_{i=1}\alpha_{22}(i)\Delta z_{t-i}+\varepsilon_{zt}$**
+   $ii)$ $\Delta z_t = \alpha_2 + \alpha_z\hat{e}_ {t-1}+\sum_{i=1}\alpha_{21}(i)\Delta y_{t-i}+\sum_{i=1}\alpha_{22}(i)\Delta z_{t-i}+\varepsilon_{zt}$
 
    **La cointegración entre las variables $y_t$ y $z_t$ esta determinado por:** 
  
