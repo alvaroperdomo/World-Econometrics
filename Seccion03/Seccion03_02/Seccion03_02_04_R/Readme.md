@@ -37,7 +37,7 @@ plotres(nombre)
 
    d) Ninguno de los anteriores.
  
-2. **¿Cuál comando permite ver el gráfico de la $FAC$ y de la $FACP$ para verificar que los mismos no esten correlacionados?:**
+2. **¿Cuál comando permite ver el gráfico de la $FAC$ y de la $FACP$ para verificar que los mismos no estén correlacionados?:**
 
    a) grafVEC.
 
