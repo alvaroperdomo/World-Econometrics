@@ -23,6 +23,32 @@ plotres(nombre)
 |--------------------|------------------------------------------------------------------------|
 | **nombre**         | nombre del $VEC$ que se estimó  con el comando "ca.jo"                 |
 
+---
+---
+# Preguntas de selección múltiple
+
+1. **En el comando _**VARselect**_ ¿cuál es el número de rezagos con el que de forma predeterminada comienza la prueba de escogencia del _VAR_ más parsimonioso?:**
+ 
+   a) $0$.
+
+   b) $5$.
+
+   c) $10$.
+
+   d) Ninguno de los anteriores.
+ 
+2. **¿Cuál argumento se utiliza, en el comando que hace la prueba Portmanteau Multivariada, para escoger el número de rezagos a utilizar en la prueba?:**
+
+   a) lags.pt.
+
+   b) order.
+
+   c) lags.
+
+   d) lagmax.
+---
+---
+
 | [Subsección: 3.2 - Cointegración y estimación de Modelos _VEC_](../Readme.md) |[Subsección: 3.2.4.(T)  Pruebas de Hipótesis Adicionales de Modelos _VEC_](../Seccion03_02_04_T/Readme.md) |
 |-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
 
