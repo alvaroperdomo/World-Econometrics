@@ -27,7 +27,7 @@ plotres(nombre)
 ---
 # Preguntas de selección múltiple
 
-1. **En el comando _**VARselect**_ ¿cuál es el número de rezagos con el que de forma predeterminada comienza la prueba de escogencia del _VAR_ más parsimonioso?:**
+1. **¿En el comando _**VARorder**_ ¿cuál es el número máximo de rezagos utilizado en la prueba?:**
  
    a) $0$.
 
