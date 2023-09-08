@@ -52,7 +52,7 @@ Para el análisis de la existencia de cointegración las metodologías más util
 ---
 # Preguntas de selección múltiple
 
-1. **¿Si en un modelo multivariado de series de tiempo existen variables que tienen una relación de largo plazo, lo recomendable es estimar un modelo?:**
+1. **¿Si en un modelo multivariado de series de tiempo existen variables no estacionarias que tienen una relación de largo plazo, lo recomendable es estimar un modelo?:**
  
    a) $VAR$ en niveles.
 
