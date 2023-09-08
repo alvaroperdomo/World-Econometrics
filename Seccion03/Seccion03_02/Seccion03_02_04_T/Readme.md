@@ -53,7 +53,7 @@ Por lo tanto, un valor grande de $\hat{\lambda_{r+1}^* }$ [y en consecuencia de 
 ---
 # Preguntas de selección múltiple
 
-1. **¿Por qué Sims, Stock y Watson (1990) recomiendan no hacer pruebas de causalidad de Granger y de exogeneidad en en los modelos los $VEC$?**
+1. **¿Por qué Sims, Stock y Watson (1990) recomiendan no hacer pruebas de causalidad de Granger y de exogeneidad en los modelos los $VEC$?**
  
    a) Porque un modelo $VEC$ se basa en un modelo $VAR$ en primeras diferencias.
 
