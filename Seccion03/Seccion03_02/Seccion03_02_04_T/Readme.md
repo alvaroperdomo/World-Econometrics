@@ -59,7 +59,7 @@ Por lo tanto, un valor grande de $\hat{\lambda_{r+1}^* }$ [y en consecuencia de 
 
    b) Porque estas pruebas se basan en la prueba $F$ estándar.
 
-   c) Porque el $VEC$ puede incluir series que no esten contegradas.
+   c) Porque el $VEC$ puede incluir series que no estén cointegradas.
 
    d) Todas las anteriores.
  
