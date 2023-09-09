@@ -883,6 +883,8 @@ library(WDI)
 library(dplyr)
 library(ggfortify)
 library(ggplot2)
+library(urca)              # Esta libreria sirve para hacer pruebas de raíz unitaria.
+library(fUnitRoots)        # Esta libreria sirve para hacer pruebas de raíz unitaria.
 
 WDIsearch(string='NE.CON.GOVT.ZS', field='indicator')
 
