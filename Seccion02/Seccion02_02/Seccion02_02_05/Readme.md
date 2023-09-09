@@ -937,9 +937,9 @@ autoplot(acf(C1GGOV, plot = FALSE))
 
 3. **Las pruebas $ADF$ para las variables $GGOV$ y $C1GGOV$ se van a hacer con intercepto y tendencia para la primera, y sin intercepto ni tendencia para la segunda. Responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de las pruebas $ADF$?:**
 
-   **Primera afirmación: Para la variable $GGOV$, sin importar si se utiliza el Criterio de Información de Akaike o el Criterio Bayesiano de Schwartz, al 10% de significancia no se rechaza la hipótesis nula de raíz unitaria***
+   **Primera afirmación: Para la variable $GGOV$, sin importar si se utiliza el Criterio de Información de Akaike o el Criterio Bayesiano de Schwartz, al 10% de significancia no se rechaza la hipótesis nula de raíz unitaria**
 
-   **Segunda afirmación: Para la variable $C1GGOV$, sin importar si se utiliza el Criterio de Información de Akaike o el Criterio Bayesiano de Schwartz, al 1% de significancia se rechaza la hipótesis nula de raíz unitaria***
+   **Segunda afirmación: Para la variable $C1GGOV$, sin importar si se utiliza el Criterio de Información de Akaike o el Criterio Bayesiano de Schwartz, al 1% de significancia se rechaza la hipótesis nula de raíz unitaria**
 
    a) La primera y la segunda afirmación son verdaderas.
 
