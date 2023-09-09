@@ -920,13 +920,13 @@ C1GGOV <- diff(GGOV, differences = 1) # Creamos la variable C1PIBpc como serie d
 
    d) 2015: 15.24.
 
-2. **¿Gráfique las $FAC$ de $GGOV$ y $C1GGOV$ y responda cuál de las siguientes afirmaciones es errónea?:**
+2. **¿Grafique las $FAC$ de $GGOV$ y $C1GGOV$ y responda cuál de las siguientes afirmaciones es errónea?:**
 
    a) El decrecimiento moderado de la $FAC$ de $GGOV$ da una idea de raíz unitaria en esta variable.
 
    b) El comportamiento de la $FAC$ de $C1GGOV$ da una idea de estacionariedad en esta variable.
 
-   c) El decrecimiento moderado de la $FAC$ de $GGOV$ da una idea no estacionariedad en esta variable.
+   c) El decrecimiento moderado de la $FAC$ de $GGOV$ da una idea de estacionariedad en esta variable.
 
    d) El comportamiento de la $FAC$ de $C1GGOV$ da una idea de integración de orden $0$ en esta variable.
 
