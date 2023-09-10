@@ -317,13 +317,13 @@ pacf_plot + labs(x = "Rezagos", y = "FACP") # Se personalizan las etiquetas de l
 
 2. **La variable $C1GGOV$ pareciera ser ruido blanco. Sin embargo, este resultado se podría contrastar con la posibilidad de que la variable $C1GGOV$ sea un $AR(1)$, un $MA(1)$ o un $ARMA(1,1)$, entonces estime estos los cuatro modelos. ¿Cuál es la mejor especificación según el $Criterio de Información de Akaike$ y según el $Criterio Bayesiano de Schwartz$?**:
 
-   a) $AR(1)$ [$ARMA(1,0)$].
+   a) $AR(1)$ [ $ARMA(1,0)$ ].
    
-   b) $MA(1)$ [$ARMA(0,1)$].
+   b) $MA(1)$ [ $ARMA(0,1)$ ].
 
    c) $ARMA(1,1)$.
 
-   d) Ruido blanco [$ARMA(0,0)$].
+   d) Ruido blanco [ $ARMA(0,0)$ ].
 
 ``` r
 arima1<- Arima(GGOV, order=c(0,1,0))
@@ -358,13 +358,13 @@ summary(arima4m)
 
 3. **Según el comando auto.arima cuál debería ser la especificación escogida?**:
 
-   a) $AR(1)$ [$ARMA(1,0)$].
+   a) $AR(1)$ [ $ARMA(1,0)$ ].
    
-   b) $MA(1)$ [$ARMA(0,1)$].
+   b) $MA(1)$ [ $ARMA(0,1)$ ].
 
    c) $ARMA(1,1)$.
 
-   d) Ruido blanco [$ARMA(0,0)$].
+   d) Ruido blanco [ $ARMA(0,0)$ ].
 
 ``` r
 auto.arima(GGOV, stepwise = FALSE, approximation = FALSE, ic="aic")
