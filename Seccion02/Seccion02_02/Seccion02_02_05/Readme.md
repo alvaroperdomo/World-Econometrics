@@ -18,8 +18,8 @@ library(dplyr)       # Esta libreria permite manipular las bases de datos de R d
 library(ggfortify)   # Esta libreria tienen comando utiles para plantear gráficos de series de tiempo, por ejemplo utilizando ell comando autoplot()
 library(ggplot2)     # Esta librería sirve para construir gráficos interesantes
 library(urca)        # Esta libreria sirve para hacer pruebas de raíz unitaria.
-library(fUnitRoots)        # Esta libreria sirve para hacer pruebas de raíz unitaria.
-library(forecast)    # Esta libreria sirve para hacer pronósticos.
+library(fUnitRoots)  # Esta libreria sirve para hacer pruebas de raíz unitaria.
+library(forecast)    # Esta libreria sirve para utilizar el comando ndiffs.
 
 WDIsearch(string='NY.GDP.PCAP.KN', field='indicator')
 
@@ -885,7 +885,7 @@ library(ggfortify)
 library(ggplot2)
 library(urca)        # Esta libreria sirve para hacer pruebas de raíz unitaria.
 library(fUnitRoots)  # Esta libreria sirve para hacer pruebas de raíz unitaria.
-library(forecast)    # Esta libreria sirve para hacer pronósticos.
+library(forecast)    # Esta libreria sirve para utilizar el comando ndiffs.
 
 WDIsearch(string='NE.CON.GOVT.ZS', field='indicator')
 
