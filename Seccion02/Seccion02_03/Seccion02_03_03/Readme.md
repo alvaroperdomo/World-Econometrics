@@ -297,7 +297,7 @@ C1GGOV <- diff(GGOV, differences = 1) # Creamos la variable C1PIBpc como serie d
 
 ```
 
-1. **Grafiquen la $FAC$ y $FACP$ muestrales de la variable $C1GGOV$. En su orden, ¿cuántos barras, superiores a la del rezago $0$, de ambas funciones se salen por fuera de la banda de confianza?**:
+1. **Grafiquen la $FAC$ y $FACP$ muestrales de la variable $C1GGOV$. En su orden, ¿cuántas barras, superiores a la del rezago $0$, de ambas funciones se salen por fuera de la banda de confianza?**:
  
    a) 0 y 0.
 
