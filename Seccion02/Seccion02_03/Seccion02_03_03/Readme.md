@@ -336,7 +336,14 @@ arima3<- Arima(GGOV, order=c(1,1,1))
 
 arima1d<- Arima(GGOV, order=c(1,1,0), include.drift=TRUE)
 arima2d<- Arima(GGOV, order=c(0,1,1), include.drift=TRUE)  
-arima3d<- Arima(GGOV, order=c(1,1,1), include.drift=TRUE)  
+arima3d<- Arima(GGOV, order=c(1,1,1), include.drift=TRUE)
+
+summary(arima1)
+summary(arima2)
+summary(arima3)
+summary(arima1d)
+summary(arima2d) 
+summary(arima3d)
 ```
 
 3. **Según el comando auto.arima cuál debería ser la especificación escogida?**:
