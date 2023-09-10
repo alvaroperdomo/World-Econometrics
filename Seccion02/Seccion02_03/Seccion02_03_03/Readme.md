@@ -315,19 +315,15 @@ pacf_plot <- autoplot(pacf(C1GGOV, plot = FALSE)) # Se calcula la función de au
 pacf_plot + labs(x = "Rezagos", y = "FACP") # Se personalizan las etiquetas de los ejes
 ```
 
-2. **La variable $C1GGOV$ pareciera no estar correlacionada con su pasado. Sin embargo, se podría ser más exigente en cuanto al ancho de las bandas de la $FAC$ y la $FACP$ de tal forma que estas sean algo más angostas. y eso llevaría a pensar que el modelo de series de tiempo a escoger para analizar $C1GGOV$ sea un $AR(1)$, un $MA(1)$ o un $ARMA(1,1)$, entonces estime estos tres modelos. ¿Cuál es la mejor especificación según el $Criterio de Información de Akaike$ y $Criterio Bayesiano de Schwartz$?**:
+2. **La variable $C1GGOV$ ser ruido blanco. Sin embargo, este resultado se podría contrastar con la posibilidad de que la variable $C1GGOV$ sea un $AR(1)$, un $MA(1)$ o un $ARMA(1,1)$, entonces estime estos los cuatro modelos. ¿Cuál es la mejor especificación según el $Criterio de Información de Akaike$ y según el $Criterio Bayesiano de Schwartz$?**:
 
-   a) $AR(1)$.
+   a) $AR(1)$ [$ARMA(1,0)$].
+   
+   b) $MA(1)$ [$ARMA(0,1)$].
 
-   b) $AR(1)$ con tendencia en $GGOV$.
+   c) $ARMA(1,1)$.
 
-   c) $MA(1)$.
-
-   d) $MA(1)$ con tendencia en $GGOV$.
-
-   e) $ARMA(1,1)$.
-
-   f) $ARMA(1,1)$ con tendencia en $GGOV$.
+   d) Ruido blanco [$ARMA(0,0)$].
 
 ``` r
 arima1<- Arima(GGOV, order=c(1,1,0))
@@ -348,22 +344,18 @@ summary(arima3d)
 
 3. **Según el comando auto.arima cuál debería ser la especificación escogida?**:
 
+   a) $AR(1)$ [$ARMA(1,0)$].
+   
+   b) $MA(1)$ [$ARMA(0,1)$].
+
+   c) $ARMA(1,1)$.
+
+   d) Ruido blanco [$ARMA(0,0)$].
+
 ``` r
 auto.arima(GGOV, stepwise = FALSE, approximation = FALSE, ic="aic")
 auto.arima(GGOV, stepwise = FALSE, approximation = FALSE, ic="bic")
 ```
-
-   a) $AR(1)$.
-
-   b) $AR(1)$ con tendencia en $GGOV$.
-
-   c) $MA(1)$.
-
-   d) $MA(1)$ con tendencia en $GGOV$.
-
-   e) $ARMA(1,1)$.
-
-   f) $ARMA(1,1)$ con tendencia en $GGOV$.
 
 4. **Utilizando el comando ggtsdiag, gráfique las pruebas de diagnóstico sobre los errores estimados del modelo escogido y responda ¿En cuál año los residuos estandarizados tuvieron un valor más bajo.**:
 
