@@ -971,9 +971,9 @@ ndiffs(GGOV, alpha = 0.05, test = c("adf"), type = c("trend"))
 
 4. **Las pruebas $ADF-GLS$ para las variables $GGOV$ y $C1GGOV$ se van a hacer con intercepto y tendencia para la primera, y con intercepto para la segunda. Responda ¿cuál de las siguientes afirmaciones es correcta según los resultados de las pruebas $ADF-GLS$ a un rezago?:**
 
-   **Primera afirmación: Para la variable $GGOV$, sin importar si se utiliza la opción type("DF-GLS) o la opción type("P-test"), al 10% de significancia no se rechaza la hipótesis nula de raíz unitaria***
+   **Primera afirmación: Para la variable $GGOV$, sin importar si se utiliza la opción type("DF-GLS) o la opción type("P-test"), al 10% de significancia no se rechaza la hipótesis nula de raíz unitaria**
 
-   **Segunda afirmación: Para la variable $C1GGOV$, sin importar si se utiliza la opción type("DF-GLS) o la opción type("P-test"), al 1% de significancia se rechaza la hipótesis nula de raíz unitaria***
+   **Segunda afirmación: Para la variable $C1GGOV$, sin importar si se utiliza la opción type("DF-GLS) o la opción type("P-test"), al 1% de significancia se rechaza la hipótesis nula de raíz unitaria**
 
 
    a) La primera y la segunda afirmación son verdaderas.
@@ -1007,9 +1007,9 @@ summary(C1GGOV_Pc.ers)
 
 [^8]: **Recuerden que este es el número óptimo de rezagos para una serie de 63 o 62 datos según el criterio de  [Newey y West (1994)](https://github.com/alvaroperdomo/World-Econometrics/tree/main/Referencias) que se comentó en la sección 2.2.3.(T).**
 
-   **Primera afirmación: Para la variable $GGOV$ al 1% de significancia se rechaza la hipótesis nula de estacionariedad***
+   **Primera afirmación: Para la variable $GGOV$ al 1% de significancia se rechaza la hipótesis nula de estacionariedad**
 
-   **Segunda afirmación: Para la variable $C1GGOV$ al 10% de significancia no se rechaza la hipótesis nula de estacionariedad***
+   **Segunda afirmación: Para la variable $C1GGOV$ al 10% de significancia no se rechaza la hipótesis nula de estacionariedad**
 
    a) La primera y la segunda afirmación son verdaderas.
 
