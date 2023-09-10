@@ -315,7 +315,7 @@ pacf_plot <- autoplot(pacf(C1GGOV, plot = FALSE)) # Se calcula la función de au
 pacf_plot + labs(x = "Rezagos", y = "FACP") # Se personalizan las etiquetas de los ejes
 ```
 
-2. **La variable $C1GGOV$ pareciera no estar correlacionada con su pasado. Sin embargo, se podría ser más exigente en cuanto al ancho de las bandas de la $FAC$ y la $FACP$ de tal forma que estas sean algo más angostas. y eso llevaría a pensar que el modelo de series de tiempo a escoger para analizar $C1GGOV$ sea un $AR(1)$, un $MA(1)$ o un $ARMA(1,1)$, entonces estime estos tres modelos. ¿Cuál especificación da el $Criterio de Información de Akaike$ y $Criterio Bayesiano de Schwartz$ con los valores más bajos?**:
+2. **La variable $C1GGOV$ pareciera no estar correlacionada con su pasado. Sin embargo, se podría ser más exigente en cuanto al ancho de las bandas de la $FAC$ y la $FACP$ de tal forma que estas sean algo más angostas. y eso llevaría a pensar que el modelo de series de tiempo a escoger para analizar $C1GGOV$ sea un $AR(1)$, un $MA(1)$ o un $ARMA(1,1)$, entonces estime estos tres modelos. ¿Cuál es la mejor especificación según el $Criterio de Información de Akaike$ y $Criterio Bayesiano de Schwartz$?**:
 
    a) $AR(1)$.
 
