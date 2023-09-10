@@ -315,7 +315,7 @@ pacf_plot <- autoplot(pacf(C1GGOV, plot = FALSE)) # Se calcula la función de au
 pacf_plot + labs(x = "Rezagos", y = "FACP") # Se personalizan las etiquetas de los ejes
 ```
 
-2. **La variable $C1GGOV$ ser ruido blanco. Sin embargo, este resultado se podría contrastar con la posibilidad de que la variable $C1GGOV$ sea un $AR(1)$, un $MA(1)$ o un $ARMA(1,1)$, entonces estime estos los cuatro modelos. ¿Cuál es la mejor especificación según el $Criterio de Información de Akaike$ y según el $Criterio Bayesiano de Schwartz$?**:
+2. **La variable $C1GGOV$ pareciera ser ruido blanco. Sin embargo, este resultado se podría contrastar con la posibilidad de que la variable $C1GGOV$ sea un $AR(1)$, un $MA(1)$ o un $ARMA(1,1)$, entonces estime estos los cuatro modelos. ¿Cuál es la mejor especificación según el $Criterio de Información de Akaike$ y según el $Criterio Bayesiano de Schwartz$?**:
 
    a) $AR(1)$ [$ARMA(1,0)$].
    
