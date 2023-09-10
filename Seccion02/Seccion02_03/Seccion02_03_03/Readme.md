@@ -372,24 +372,7 @@ auto.arima(C1GGOV, stepwise = FALSE, approximation = FALSE, ic="aic")
 auto.arima(C1GGOV, stepwise = FALSE, approximation = FALSE, ic="bic")
 ```
 
-4. **Utilizando el comando ggtsdiag, grafique las pruebas de diagnóstico sobre los errores estimados del modelo escogido y responda ¿En cuál año los residuos estandarizados tuvieron un p-valor más bajo.**:
-
-   a) $1960$.
-
-   b) $1980$.
-
-   c) $1990$.
-
-   d) $2000$.
-
-   e) $2010$.
-
-   f) $2020$.
-
-``` r
-ggtsdiag(arima1, gof.lag = 30)
-```
-5. **¿En cuál rezago la prueba de Ljung-Box sobre los residuos estinados tuvó el p-value más alto? ¿Cuánto valía ese p-value (a dos dígitos)?**:
+4. **Utilizando el comando ggtsdiag, grafique las pruebas de diagnóstico sobre los errores estandarizados estimados del modelo escogido y responda ¿En cuál rezago la prueba de Ljung-Box sobre los residuos estimados tuvó el p-value más alto? ¿Cuánto valía ese p-value (a dos dígitos)?**:
 
    a) $1$ en $0.89$.
 
@@ -412,7 +395,7 @@ lb2$p.value
 lb3$p.value
 lb4$p.value
 ```
-6. **¿Cuáles son los pronósticos del valor de $GGOV$ para 2023 y 2024 a dos dígitos?**:
+5. **¿Cuáles son los pronósticos del valor de $GGOV$ para 2023 y 2024 a dos dígitos?**:
 
    a) $14.41$ y $14.41$.
 
