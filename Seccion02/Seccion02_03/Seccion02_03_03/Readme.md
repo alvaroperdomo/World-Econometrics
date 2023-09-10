@@ -357,7 +357,7 @@ auto.arima(GGOV, stepwise = FALSE, approximation = FALSE, ic="aic")
 auto.arima(GGOV, stepwise = FALSE, approximation = FALSE, ic="bic")
 ```
 
-4. **Utilizando el comando ggtsdiag, gráfique las pruebas de diagnóstico sobre los errores estimados del modelo escogido y responda ¿En cuál año los residuos estandarizados tuvieron un valor más bajo.**:
+4. **Utilizando el comando ggtsdiag, grafique las pruebas de diagnóstico sobre los errores estimados del modelo escogido y responda ¿En cuál año los residuos estandarizados tuvieron un p-valor más bajo.**:
 
    a) $1960$.
 
@@ -397,7 +397,7 @@ lb2$p.value
 lb3$p.value
 lb4$p.value
 ```
-5. **¿Cuáles son los pronósticos del valor de $GGOV$ para 2023 y 2024 a dos dígitos?**:
+6. **¿Cuáles son los pronósticos del valor de $GGOV$ para 2023 y 2024 a dos dígitos?**:
 
    a) $14.41$ y $14.41$.
 
@@ -429,6 +429,9 @@ autoplot(forecast_GGOV)
 
 </div>
 
+La variable C1GGOV pareciera ser ruido blanco. Sin embargo, este resultado se podría contrastar con la posibilidad de que la variable C1GGOV sea un AR(1), un MA(1) o un ARMA(1,1), entonces estime estos cuatro modelos. 
+
+¿Cuál es la mejor especificación según el Criterio de Información de Akaike y según el Criterio Bayesiano de Schwartz ?:
 
 
 
