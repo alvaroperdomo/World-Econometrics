@@ -326,20 +326,34 @@ pacf_plot + labs(x = "Rezagos", y = "FACP") # Se personalizan las etiquetas de l
    d) Ruido blanco [$ARMA(0,0)$].
 
 ``` r
-arima1<- Arima(GGOV, order=c(1,1,0))
-arima2<- Arima(GGOV, order=c(0,1,1))  
-arima3<- Arima(GGOV, order=c(1,1,1))  
+arima1<- Arima(GGOV, order=c(0,1,0))
+arima2<- Arima(GGOV, order=c(1,1,0))
+arima3<- Arima(GGOV, order=c(0,1,1))  
+arima4<- Arima(GGOV, order=c(1,1,1))  
 
-arima1d<- Arima(GGOV, order=c(1,1,0), include.drift=TRUE)
-arima2d<- Arima(GGOV, order=c(0,1,1), include.drift=TRUE)  
-arima3d<- Arima(GGOV, order=c(1,1,1), include.drift=TRUE)
+arima1d<- Arima(GGOV, order=c(0,1,0), include.drift=TRUE)
+arima2d<- Arima(GGOV, order=c(1,1,0), include.drift=TRUE)
+arima3d<- Arima(GGOV, order=c(0,1,1), include.drift=TRUE)  
+arima4d<- Arima(GGOV, order=c(1,1,1), include.drift=TRUE)
+
+arima1m<- Arima(GGOV, order=c(0,1,0), include.mean=TRUE)
+arima2m<- Arima(GGOV, order=c(1,1,0), include.mean=TRUE)
+arima3m<- Arima(GGOV, order=c(0,1,1), include.mean=TRUE)  
+arima4m<- Arima(GGOV, order=c(1,1,1), include.mean=TRUE)
 
 summary(arima1)
 summary(arima2)
 summary(arima3)
+summary(arima4)
 summary(arima1d)
 summary(arima2d) 
 summary(arima3d)
+summary(arima4d)
+summary(arima1m)
+summary(arima2m) 
+summary(arima3m)
+summary(arima4m)
+
 ```
 
 3. **Según el comando auto.arima cuál debería ser la especificación escogida?**:
