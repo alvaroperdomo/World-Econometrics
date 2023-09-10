@@ -407,7 +407,7 @@ lb9$p.value
 ```
 5. **¿Cuáles son los pronósticos del valor de $GGOV$ para 2023 y 2024 a dos dígitos?**:
 
-   a) $14.41$ y $14.41$.
+   a) $14.40$ y $14.40$.
 
    b) $15.12$ y $14.81$.
 
