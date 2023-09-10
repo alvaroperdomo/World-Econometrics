@@ -389,11 +389,21 @@ lb1 <- Box.test(arima1$residuals, lag=1, type="Ljung-Box") # Test de Ljung-Box
 lb2 <- Box.test(arima1$residuals, lag=2, type="Ljung-Box") # Test de Ljung-Box
 lb3 <- Box.test(arima1$residuals, lag=3, type="Ljung-Box") # Test de Ljung-Box
 lb4 <- Box.test(arima1$residuals, lag=4, type="Ljung-Box") # Test de Ljung-Box
+lb5 <- Box.test(arima1$residuals, lag=5, type="Ljung-Box") # Test de Ljung-Box
+lb6 <- Box.test(arima1$residuals, lag=6, type="Ljung-Box") # Test de Ljung-Box
+lb7 <- Box.test(arima1$residuals, lag=7, type="Ljung-Box") # Test de Ljung-Box
+lb8 <- Box.test(arima1$residuals, lag=8, type="Ljung-Box") # Test de Ljung-Box
+lb9 <- Box.test(arima1$residuals, lag=9, type="Ljung-Box") # Test de Ljung-Box
 
 lb1$p.value
 lb2$p.value
 lb3$p.value
 lb4$p.value
+lb5$p.value
+lb6$p.value
+lb7$p.value
+lb8$p.value
+lb9$p.value
 ```
 5. **¿Cuáles son los pronósticos del valor de $GGOV$ para 2023 y 2024 a dos dígitos?**:
 
