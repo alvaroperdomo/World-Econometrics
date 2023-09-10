@@ -368,8 +368,8 @@ summary(arima4m)
    d) Ruido blanco [ $ARMA(0,0)$ ].
 
 ``` r
-auto.arima(GGOV, stepwise = FALSE, approximation = FALSE, ic="aic")
-auto.arima(GGOV, stepwise = FALSE, approximation = FALSE, ic="bic")
+auto.arima(C1GGOV, stepwise = FALSE, approximation = FALSE, ic="aic")
+auto.arima(C1GGOV, stepwise = FALSE, approximation = FALSE, ic="bic")
 ```
 
 4. **Utilizando el comando ggtsdiag, grafique las pruebas de diagnóstico sobre los errores estimados del modelo escogido y responda ¿En cuál año los residuos estandarizados tuvieron un p-valor más bajo.**:
