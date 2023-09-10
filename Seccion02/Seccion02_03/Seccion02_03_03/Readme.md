@@ -374,13 +374,13 @@ auto.arima(C1GGOV, stepwise = FALSE, approximation = FALSE, ic="bic")
 
 4. **Utilizando el comando ggtsdiag, grafique las pruebas de diagnóstico sobre los errores estandarizados estimados del modelo escogido y responda ¿En cuál rezago la prueba de Ljung-Box sobre los residuos estimados tuvó el p-value más alto? ¿Cuánto valía ese p-value (a dos dígitos)?**:
 
-   a) $1$ en $0.89$.
+   a) $2$ en $0.14$.
 
-   b) $2$ en $0.19$.
+   b) $4$ en $0.15$.
 
-   c) $3$ en $0.24$.
+   c) $6$ en $0.15$.
 
-   d) $4$ en $0.23$.
+   d) $9$ en $0.15$.
 
 ``` r
 ggtsdiag(arima1, gof.lag = 30) 
