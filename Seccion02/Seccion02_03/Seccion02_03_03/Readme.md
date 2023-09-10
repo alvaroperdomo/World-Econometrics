@@ -14,7 +14,7 @@ library(ggfortify)   # Esta libreria tienen comando utiles para plantear gráfic
 library(ggplot2)     # Esta librería sirve para construir gráficos interesantes
 library(fUnitRoots)  # Esta libreria sirve para hacer pruebas de raíz unitaria.
 library(urca)        # Esta libreria sirve para hacer pruebas de raíz unitaria.
-library(forecast)    # Esta libreria sirve para hacer pronósticos.
+library(forecast)    # Esta libreria sirve para estimar los Arima y para hacer pronósticos.
 
 WDIsearch(string='NY.GDP.PCAP.KN', field='indicator')
 
@@ -271,6 +271,7 @@ library(WDI)
 library(dplyr)
 library(ggfortify)
 library(ggplot2)
+library(forecast)  
 
 WDIsearch(string='NE.CON.GOVT.ZS', field='indicator')
 
