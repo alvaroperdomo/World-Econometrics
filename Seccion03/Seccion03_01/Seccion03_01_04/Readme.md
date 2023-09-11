@@ -576,8 +576,8 @@ Dado que al graficar la variable $\Delta PIB$ de los tres países, esta parecier
    d) Un modelo $VAR$ con dos rezagos y sin intercepto
    
 ``` r
-VARselect(diff(seriesVAR),lag.max=10,type="const")
-VARselect(diff(seriesVAR),lag.max=10,type="none")
+VARselect(diff(seriesVAR),lag.max=5,type="const")
+VARselect(diff(seriesVAR),lag.max=5,type="none")
 ```
 
 5. Estime el modelo $VAR$ más parsimonioso e identifique las tres raíces características del polinomio que lo resuelven. ¿Cuáles son estas raíces?
