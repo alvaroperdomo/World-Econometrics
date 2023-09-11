@@ -14,14 +14,17 @@ irf(nombre, impulse = NULL, response = NULL, n.ahead = 10, ortho = TRUE, ci=0.95
 | **Argumentos**     | **Descripción**                                                                                                     | 
 |--------------------|---------------------------------------------------------------------------------------------------------------------|
 | **nombre**         | Nombre del Vector autorregresivo (VAR) que ha sido estimado                                                         |
-| **impulse**        | variable o vector de variables a las que se les genera el impulso (**_Opción Predeterminada es "all"_**)            |
-| **response**       | variable o vector de variables a las que se les evalua la respuesta  (**_Opción Predeterminada es "all"_**)         |
+| **impulse**        | variable o vector de variables a las que se les genera el impulso (**_Opción Predeterminada es NULL_**)             |
+|                    | * La opción **NULL** específica el vector de todas las variables del VAR                                            | 
+| **response**       | variable o vector de variables a las que se les evalua la respuesta  (**_Opción Predeterminada es NULL_**)          |
+|                    | * La opción **NULL** específica el vector de todas las variables del VAR                                            | 
 | **ortho**          | Se calculan los coeficientes impulso-respuesta ortogonalizados (**_Opción Predeterminada es "TRUE"_**), cuando:     | 
 |                    | * **TRUE**: El choque (es decir, el impulso) es de una desviación estándar                                          | 
 |                    | * **FALSE**: El choque (es decir, el impulso) es unitario                                                           | 
 | **ci**             | Intervalo de condianza (**_Opción Predeterminada es 0.95_**)                                                        | 
 
 ``` r
+irf(modelo,impulse=NULL, response=NULL)
 modelo.irf<-irf(modelo,impulse="x", response="y")
 modelo.irf2<-irf(modelo,impulse="x", response="x")
 plot(modelo.irf)
