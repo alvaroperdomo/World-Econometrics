@@ -563,74 +563,9 @@ ggplot(data = df_diff, aes(x = Año)) +
 
    d) Canadá: 1443474284, Estados Unidos: 181607993000 y México: 30727042305
 
-Dado que al graficar la variable $\Delta PIB$ de los tres países, esta pareciera no tener pendiente en ninguno de los tres casos y potencialmente no tener intercepto, entonces el $VAR$ a estimar se escogerá entre los modelos $VAR$ sin intercepto ni tendencia, y los modelos $VAR$ con intercepto, 
+Antes de estimar el modelo VAR, para de una vez tener ordenadas las variables para el cálculo de las funciones impulso-respuesta y de las descomposiciones de varianza de los errores de pronóstico, vamos a hacer la prueba de causalidad de Granger.
 
-4. ¿Según los _Criterios de Información de Akaike_, los _Criterios de Información de Hannan-Quinn_ y los _Criterios Bayesianos de Schwartz_ cuál es el modelo $VAR$ más parsimonioso?
-
-   a) Un modelo $VAR$ con un rezago y con intercepto
-
-   b) Un modelo $VAR$ con dos rezagos y con intercepto
-
-   c) Un modelo $VAR$ con un rezago y sin intercepto
-
-   d) Un modelo $VAR$ con dos rezagos y sin intercepto
-   
-``` r
-VARselect(diff(seriesVAR),lag.max=5,type="const")
-VARselect(diff(seriesVAR),lag.max=5,type="none")
-```
-
-5. Estime el modelo $VAR$ más parsimonioso e identifique las tres raíces características del polinomio que lo resuelven. ¿Cuáles son estas raíces?
-
-   a) 0.6170692, 0.2337025 y 0.2337025
-
-   b) 0.9247295, 0.5116255 y 0.5116255
-
-   c) 0.5660535, 0.5492523 y 0.5492523
-
-   d) 0.2900364, 0.2900364 y 0.1871655
-
-``` r
-modeloVAR<-VAR(diff(seriesVAR),p=1,type="const")
-summary(modeloVAR)
-roots(modeloVAR)
-```
-A partir de las raíces características encontradas, observe que el $VAR$ es estable. 
-
-6.Grafique la $FAC$ y la $FACP$ de los residuos y comente: ¿Más allá del rezago $0$, cuántas autocorrelaciones totales y parciales, respectivamente, están por fuera de la banda de confianza en la $FAC$ y la $FACP$ de la ecuación estimada para los Estados Unidos?
-
-   a) 0 y 0.
-
-   b) 0 y 1.
-
-   c) 1 y 0.
-
-   d) 1 y 1.
-
-```r
-acf(residuals(modeloVAR)[,1])
-pacf(residuals(modeloVAR)[,1])
-acf(residuals(modeloVAR)[,2]) # esta es la FAC a la que hace referencia la pregunta
-pacf(residuals(modeloVAR)[,2]) # esta es la FACP a la que hace referencia la pregunta
-acf(residuals(modeloVAR)[,3])
-pacf(residuals(modeloVAR)[,3])
-```
-
-7. Calcule el _p-value_ de la Prueba de Portmanteau y escoja la respuesta correcta:
-
-   a) 0.968, entonces se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
-
-   b) 0.968, entonces se rechaza la hipótesis nula de no autocorrelación de los residuos estimados.
-
-   c) 0.968, entonces no se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
-
-   d)  0.968, entonces no se rechaza la hipótesis nula de no autocorrelación de los residuos estimados.
-
-```r
-serial.test(modeloVAR,lags.pt=10)
-```
-
-8. ¿Según la prueba de causalidad de Granger al 10% de significancia, de los países considerados, la primera diferencia del PIB de cuál país afecta a la primera diferencia de otro país?:
+4. ¿Según la prueba de causalidad de Granger al 10% de significancia, de los países considerados, la primera diferencia del PIB de cuál país afecta a la primera diferencia de otro país?:
     
    a) La de Estados Unidos afecta a la de México.
 
@@ -652,6 +587,79 @@ grangertest(diff(`Estados Unidos`) ~ diff(México), order = 1, data=seriesVAR)
 grangertest(diff(México) ~ diff(Canadá), order = 1, data=seriesVAR)
 grangertest(diff(México) ~ diff(`Estados Unidos`), order = 1, data=seriesVAR)
 ```
+A partir de los resultados de la prueba de Granger, se establece el nuevo orden de las variables en el VAR utilizando los soguientes comandos.
+
+```r
+nueva_matriz <- TLCAN_paises_matrix[, c("Estados Unidos", "Canadá", "México")]
+seriesVAR <- ts(nueva_matriz, frequency = 1, start = 1981) # Se crean las variables en formato de serie de tiempo
+```
+Dado que al graficar la variable $\Delta PIB$ de los tres países, esta pareciera no tener pendiente en ninguno de los tres casos y potencialmente no tener intercepto, entonces el $VAR$ a estimar se escogerá entre los modelos $VAR$ sin intercepto ni tendencia, y los modelos $VAR$ con intercepto, 
+
+5. ¿Según los _Criterios de Información de Akaike_, los _Criterios de Información de Hannan-Quinn_ y los _Criterios Bayesianos de Schwartz_ cuál es el modelo $VAR$ más parsimonioso?
+
+   a) Un modelo $VAR$ con un rezago y con intercepto
+
+   b) Un modelo $VAR$ con dos rezagos y con intercepto
+
+   c) Un modelo $VAR$ con un rezago y sin intercepto
+
+   d) Un modelo $VAR$ con dos rezagos y sin intercepto
+   
+``` r
+VARselect(diff(seriesVAR),lag.max=5,type="const")
+VARselect(diff(seriesVAR),lag.max=5,type="none")
+```
+
+6. Estime el modelo $VAR$ más parsimonioso e identifique las tres raíces características del polinomio que lo resuelven. ¿Cuáles son estas raíces?
+
+   a) 0.6170692, 0.2337025 y 0.2337025
+
+   b) 0.9247295, 0.5116255 y 0.5116255
+
+   c) 0.5660535, 0.5492523 y 0.5492523
+
+   d) 0.2900364, 0.2900364 y 0.1871655
+
+``` r
+modeloVAR<-VAR(diff(seriesVAR),p=1,type="const")
+summary(modeloVAR)
+roots(modeloVAR)
+```
+A partir de las raíces características encontradas, observe que el $VAR$ es estable. 
+
+7.Grafique la $FAC$ y la $FACP$ de los residuos y comente: ¿Más allá del rezago $0$, cuántas autocorrelaciones totales y parciales, respectivamente, están por fuera de la banda de confianza en la $FAC$ y la $FACP$ de la ecuación estimada para los Estados Unidos?
+
+   a) 0 y 0.
+
+   b) 0 y 1.
+
+   c) 1 y 0.
+
+   d) 1 y 1.
+
+```r
+acf(residuals(modeloVAR)[,1])
+pacf(residuals(modeloVAR)[,1])
+acf(residuals(modeloVAR)[,2]) # esta es la FAC a la que hace referencia la pregunta
+pacf(residuals(modeloVAR)[,2]) # esta es la FACP a la que hace referencia la pregunta
+acf(residuals(modeloVAR)[,3])
+pacf(residuals(modeloVAR)[,3])
+```
+
+8. Calcule el _p-value_ de la Prueba de Portmanteau y escoja la respuesta correcta:
+
+   a) 0.968, entonces se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
+
+   b) 0.968, entonces se rechaza la hipótesis nula de no autocorrelación de los residuos estimados.
+
+   c) 0.968, entonces no se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
+
+   d)  0.968, entonces no se rechaza la hipótesis nula de no autocorrelación de los residuos estimados.
+
+```r
+serial.test(modeloVAR,lags.pt=10)
+```
+
 
 | [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |
 |--------------------------------------------------------------|
