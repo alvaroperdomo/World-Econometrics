@@ -610,15 +610,17 @@ VARselect(diff(seriesVAR),lag.max=5,type="const")
 VARselect(diff(seriesVAR),lag.max=5,type="none")
 ```
 
-6. Estime el modelo $VAR$ más parsimonioso e identifique las tres raíces características del polinomio que lo resuelven. ¿Cuáles son estas raíces?
+Aunque el modelo $VAR$ con intercepto fue más parsimonioso, el resto del análisis lo vamos a hacer con el modelo $VAR$ sin intercepto porque sus resultados se acoplan bastante bien a la lógica teórica de un Tratado de Libre Comercio y porque con el modelo $VAR$ con intercepto no dan resultados interesantes.
 
-   a) 0.6170692, 0.2337025 y 0.2337025
+6. Estime el modelo $VAR$ con un rezago y sin intercepto e identifique las tres raíces características del polinomio que lo resuelven. ¿Cuáles son estas raíces?
+
+   a) 0.2900364, 0.2900364 y 0.1871655
 
    b) 0.9247295, 0.5116255 y 0.5116255
 
    c) 0.5660535, 0.5492523 y 0.5492523
 
-   d) 0.2900364, 0.2900364 y 0.1871655
+   d) 0.6170692 0.2337025 0.2337025
 
 ``` r
 modeloVAR<-VAR(diff(seriesVAR),p=1,type="const")
@@ -627,7 +629,7 @@ roots(modeloVAR)
 ```
 A partir de las raíces características encontradas, observe que el $VAR$ es estable. 
 
-7.Grafique la $FAC$ y la $FACP$ de los residuos y comente: ¿Más allá del rezago $0$, cuántas autocorrelaciones totales y parciales, respectivamente, están por fuera de la banda de confianza en la $FAC$ y la $FACP$ de la ecuación estimada para los Estados Unidos?
+7.Grafique la $FAC$ y la $FACP$ de los residuos y comente: ¿Más allá del rezago $0$, cuántas autocorrelaciones totales y parciales, respectivamente, están por fuera de la banda de confianza en la $FAC$ y la $FACP$ de la ecuación estimada para Canadá?
 
    a) 0 y 0.
 
@@ -648,19 +650,19 @@ pacf(residuals(modeloVAR)[,3])
 
 8. Calcule el _p-value_ de la Prueba de Portmanteau y escoja la respuesta correcta:
 
-   a) 0.968, entonces se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
+   a) 0.9857, entonces se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
 
-   b) 0.968, entonces se rechaza la hipótesis nula de no autocorrelación de los residuos estimados.
+   b) 0.9857, entonces se rechaza la hipótesis nula de no autocorrelación de los residuos estimados.
 
-   c) 0.968, entonces no se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
+   c) 0.9857, entonces no se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
 
-   d)  0.968, entonces no se rechaza la hipótesis nula de no autocorrelación de los residuos estimados.
+   d)  0.9857, entonces no se rechaza la hipótesis nula de no autocorrelación de los residuos estimados.
 
 ```r
 serial.test(modeloVAR,lags.pt=10)
 ```
 
-9. Calcule las funciones impulso-respuesta asumiendo choques unitarios. ¿Cuál es la única función impulso-respuesta estadísticamentente significativa asumiendo un intervalos de confianza de 0.9?:
+9. Calcule las funciones impulso-respuesta asumiendo choques unitarios. ¿Cuál ede las siguientes afirmaciones es falsa?:
  
    a) Un choque unitario en la variación del PIB de Canadá tiene un impacto negativo a un rezago sobre la variación del PIB de Estados Unidos.
 
@@ -673,9 +675,9 @@ serial.test(modeloVAR,lags.pt=10)
 ```r
 irf(modeloVAR,impulse=NULL, response=NULL, ci=0.9, ortho=FALSE)
 
-modelo.irf1<-irf(modeloVAR,impulse="Estados.Unidos", response=NULL, ci=0.9, ortho=FALSE)
-modelo.irf2<-irf(modeloVAR, impulse="Canadá", response = NULL, ci=0.9, ortho=FALSE)
-modelo.irf3<-irf(modeloVAR,impulse="México", response=NULL, ci=0.9, ortho=FALSE)
+modelo.irf1<-irf(modeloVAR,impulse="Estados.Unidos", response=NULL, ortho=FALSE)
+modelo.irf2<-irf(modeloVAR, impulse="Canadá", response = NULL, ortho=FALSE)
+modelo.irf3<-irf(modeloVAR,impulse="México", response=NULL, ortho=FALSE)
 
 plot(modelo.irf1)
 plot(modelo.irf2)
