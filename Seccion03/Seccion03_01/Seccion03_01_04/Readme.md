@@ -587,11 +587,11 @@ grangertest(diff(`Estados Unidos`) ~ diff(México), order = 1, data=seriesVAR)
 grangertest(diff(México) ~ diff(Canadá), order = 1, data=seriesVAR)
 grangertest(diff(México) ~ diff(`Estados Unidos`), order = 1, data=seriesVAR)
 ```
-A partir de los resultados de la prueba de Granger, se establece el nuevo orden de las variables en el VAR utilizando los soguientes comandos.
+A partir de los resultados de la prueba de Granger, se establece el nuevo orden de las variables en el VAR utilizando los siguientes comandos.
 
 ```r
 nueva_matriz <- TLCAN_paises_matrix[, c("Estados Unidos", "Canadá", "México")]
-seriesVAR <- ts(nueva_matriz, frequency = 1, start = 1981) # Se crean las variables en formato de serie de tiempo
+seriesVAR <- ts(nueva_matriz, frequency = 1, start = 1981) # Se reescriben las variables en formato de serie de tiempo
 ```
 Dado que al graficar la variable $\Delta PIB$ de los tres países, esta pareciera no tener pendiente en ninguno de los tres casos y potencialmente no tener intercepto, entonces el $VAR$ a estimar se escogerá entre los modelos $VAR$ sin intercepto ni tendencia, y los modelos $VAR$ con intercepto, 
 
@@ -660,6 +660,7 @@ pacf(residuals(modeloVAR)[,3])
 serial.test(modeloVAR,lags.pt=10)
 ```
 
+9. Calcule la función impulso-respuesta:
 
 | [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |
 |--------------------------------------------------------------|
