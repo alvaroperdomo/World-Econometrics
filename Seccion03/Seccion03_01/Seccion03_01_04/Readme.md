@@ -595,9 +595,9 @@ modeloVAR<-VAR(diff(seriesVAR),p=1,type="const")
 summary(modeloVAR)
 roots(modeloVAR)
 ```
-A partir de las raíces características enontradas, observe que el $VAR$ es estable. 
+A partir de las raíces características encontradas, observe que el $VAR$ es estable. 
 
-6.Grafique la $FAC$ y la $FACP$ de los residuos y comente: ¿Más alla del rezago $0$, cuántas autocorrelaciones totales y parciales, respectivamente, estan por fuera de la banda de confianza en la $FAC$ y la $FACP$ de la ecuación estimada para los Estados Unidos?
+6.Grafique la $FAC$ y la $FACP$ de los residuos y comente: ¿Más allá del rezago $0$, cuántas autocorrelaciones totales y parciales, respectivamente, están por fuera de la banda de confianza en la $FAC$ y la $FACP$ de la ecuación estimada para los Estados Unidos?
 
    a) 0 y 0.
 
@@ -616,39 +616,29 @@ acf(residuals(modeloVAR)[,3])
 pacf(residuals(modeloVAR)[,3])
 ```
 
-7.Calcule el _p-value_ de la Prueba de Portmanteau y escoja la respuesta correcta: 
+7. Calcule el _p-value_ de la Prueba de Portmanteau y escoja la respuesta correcta:
 
-   a) 0.9414, entonces se rechaza la hipótesis nula de no autocorrelación de los residuos estimados.
+   a) 0.968, entonces se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
 
-   b) 0.9414, entonces se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
+   b) 0.968, entonces se rechaza la hipótesis nula de no autocorrelación de los residuos estimados.
 
-   c) 0.9414, entonces no se rechaza la hipótesis nula de no autocorrelación de los residuos estimados.
+   c) 0.968, entonces no se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
 
-   d) 0.9414, entonces no se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
+   d)  0.968, entonces no se rechaza la hipótesis nula de no autocorrelación de los residuos estimados.
 
 ```r
 serial.test(modeloVAR,lags.pt=10)
 ```
 
-8. Calcule el _p-value_ de la Prueba de Portmanteau y escoja la respuesta correcta:
-
-   a) 0.9414, entonces se rechaza la hipótesis nula de no autocorrelación de los residuos estimados.
-
-   b) 0.9414, entonces se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
-
-   c) 0.9414, entonces no se rechaza la hipótesis nula de no autocorrelación de los residuos estimados.
-
-   d) 0.9414, entonces no se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
-
-9. ¿Según la prueba de causalidad de Granger al 10% de significancia, de los países considerados, el $\Delta PIB$ de cuál país afecta el  $\Delta PIB$ de otro país?:
+8. ¿Según la prueba de causalidad de Granger al 10% de significancia, de los países considerados, la primera diferencia del PIB de cuál país afecta a la primera diferencia de otro país?:
     
-   a) El de Estados Unidos afecta al de México.
+   a) La de Estados Unidos afecta a la de México.
 
-   b) El de Estados Unidos afecta al de Canadá.
+   b) La de Estados Unidos afecta a la de Canadá.
 
-   c) El de Canadá afecta al de Estados Unidos.
+   c) La de Canadá afecta a la de Estados Unidos.
 
-   d) El de México afecta al de Estados Unidos.
+   d) La de México afecta a la de Estados Unidos.
 
 ```r
 grangertest(diff(Canadá) ~ diff(`Estados Unidos`), order = 1, data=seriesVAR)
