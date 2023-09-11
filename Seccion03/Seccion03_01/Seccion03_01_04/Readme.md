@@ -638,7 +638,11 @@ serial.test(modeloVAR,lags.pt=10)
 
    c) La de Canadá afecta a la de Estados Unidos.
 
-   d) La de México afecta a la de Estados Unidos.
+   d) La de Canadá afecta a la de México.
+
+   e) La de México afecta a la de Estados Unidos.
+   
+   f) La de México afecta a la de Canadá.
 
 ```r
 grangertest(diff(Canadá) ~ diff(`Estados Unidos`), order = 1, data=seriesVAR)
