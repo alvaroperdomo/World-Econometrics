@@ -563,7 +563,7 @@ ggplot(data = df_diff, aes(x = Año)) +
 
    d) Canadá: 1443474284, Estados Unidos: 181607993000 y México: 30727042305
 
-Dado que al gráficar la variable $\Delta PIB$ de los tres países, esta pareciera no tener pendiente en ninguno de loa tres casos y potencialmente no tener intercepto, entonces el $VAR$ a estimar se escogera entre los modelos $VAR$ sin intercepto ni tendencia, y los modelos $VAR$ con intercepto, 
+Dado que al graficar la variable $\Delta PIB$ de los tres países, esta pareciera no tener pendiente en ninguno de los tres casos y potencialmente no tener intercepto, entonces el $VAR$ a estimar se escogerá entre los modelos $VAR$ sin intercepto ni tendencia, y los modelos $VAR$ con intercepto, 
 
 4. ¿Según los _Criterios de Información de Akaike_, los _Criterios de Información de Hannan-Quinn_ y los _Criterios Bayesianos de Schwartz_ cuál es el modelo $VAR$ más parsimonioso?
 
