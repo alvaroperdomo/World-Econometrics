@@ -660,7 +660,7 @@ pacf(residuals(modeloVAR)[,3])
 serial.test(modeloVAR,lags.pt=10)
 ```
 
-9. Calcule las funciones impulso-respuesta:
+9. Al momento de calcular las funciones impulso-respuesta no se apreció un efecto claro independiente entre las variables que conforman el VAR. Por lo tanto, calcule las funciones impulso-respuesta no ortogonalizadas con  :
 
 | [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |
 |--------------------------------------------------------------|
