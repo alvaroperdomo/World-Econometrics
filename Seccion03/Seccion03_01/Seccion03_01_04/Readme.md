@@ -682,6 +682,17 @@ modelo.irf3<-irf(modeloVAR,impulse="México", response=NULL, ortho=FALSE)
 plot(modelo.irf1)
 plot(modelo.irf2)
 plot(modelo.irf3)
+
+10. Calcule la descomposición de varianza del error de pronóstico del VAR que se estimó y responda la siguiente pregunta: ¿Cuál de las siguientes afirmaciones es falsa?:
+
+   a) Después de 10 periodos, más del 70% de la varianza del error de la primera diferencia del PIB de Estados Unidos es explicado por su propio comportamiento.
+
+   b) Después de 10 periodos, más del 68% de la varianza del error de la primera diferencia del PIB de Canadá es explicado por su el comportamiento de la primera diferencia del PIB de Estados Unidos
+
+   c) Después de 10 periodos, más del 47% de la varianza del error de la primera diferencia del PIB de México es explicado por su el comportamiento de la primera diferencia del PIB de Estados Unidos
+
+   d) Después de 10 periodos, más del 40% de la varianza del error de la primera diferencia del PIB de México es explicado por su propio comportamiento.
+
 ```
 
 | [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |
