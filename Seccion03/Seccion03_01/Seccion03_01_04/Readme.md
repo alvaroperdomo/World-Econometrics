@@ -546,11 +546,12 @@ colnames(df_diff) <- c("Año", "Canadá", "Estados Unidos", "México")   # Con e
 
 ggplot(data = df_diff, aes(x = Año)) +
   geom_line(aes(y = Canadá, color = "Canadá")) +
-  geom_line(aes(y = Estados Unidos, color = "Estados Unidos")) +
+  geom_line(aes(y = `Estados Unidos`, color = "Estados Unidos")) +
   geom_line(aes(y = México, color = "México")) +
-  labs(x = "Años", y = "Primeras Diferencias", color = "País") +
-  ggtitle("Primeras diferencias del PIB per cápita para Brasil, Colombia y México") +
+  labs(x = "Año", y = "Primera Diferencia del PIB", color = "País") +
+  ggtitle("Primera Diferencia del PIB para Canadá, Estados Unidos y México") +
   theme_minimal()
+
 ```
 3. ¿Cuál es la primera diferencia del PIB real (a dólares constantes de 2015) de los tres países en 1994?
 
