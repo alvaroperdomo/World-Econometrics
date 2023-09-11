@@ -660,7 +660,27 @@ pacf(residuals(modeloVAR)[,3])
 serial.test(modeloVAR,lags.pt=10)
 ```
 
-9. Al momento de calcular las funciones impulso-respuesta no se apreció un efecto claro independiente entre las variables que conforman el VAR. Por lo tanto, calcule las funciones impulso-respuesta no ortogonalizadas con  :
+9. Calcule las funciones impulso-respuesta asumiendo choques unitarios. ¿Cuál es la única función impulso-respuesta estadísticamentente significativa asumiendo un intervalos de confianza de 0.9?:
+ 
+   a) Un choque unitario en la variación del PIB de Canadá tiene un impacto negativo a un rezago sobre la variación del PIB de Estados Unidos.
+
+   b) El impacto a un rezago de la variación del PIB de Estados Unidos Sobre la variación del PIB de Estados Unidos
+
+   c) .
+
+   d) .
+
+```r
+irf(modeloVAR,impulse=NULL, response=NULL, ci=0.9, ortho=FALSE)
+
+modelo.irf1<-irf(modeloVAR,impulse="Estados.Unidos", response=NULL, ci=0.9, ortho=FALSE)
+modelo.irf2<-irf(modeloVAR, impulse="Canadá", response = NULL, ci=0.9, ortho=FALSE)
+modelo.irf3<-irf(modeloVAR,impulse="México", response=NULL, ci=0.9, ortho=FALSE)
+
+plot(modelo.irf1)
+plot(modelo.irf2)
+plot(modelo.irf3)
+```
 
 | [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |
 |--------------------------------------------------------------|
