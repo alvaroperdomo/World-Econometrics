@@ -479,7 +479,7 @@ INVP
 ---
 # Preguntas de selección múltiple
 
-Uno de los acuerdos de libre comercio más importantes es el Tratado de Libre Comercio de América del Norte que firmaron Canadá, Estados Unidos y México el cual entró en vigencia en 1994 y tuvó un nuevo impulso en 2020. Este tratado fortaleció las relaciones económicas de los tres paises. En consecuencia, a partir de un análisis $VAR$ basado en el comportamiento del PIB real de cada uno los tres países se va a analizar cómo es la interrelación entre estas tres economías. La variable que se va a utilizar para el análisis es el **PIB a dólares constantes de 2015 (variable NY.GDP.MKTP.KD en los _Indicadores de Desarrollo Mundial_)**
+Uno de los acuerdos de libre comercio más importantes es el Tratado de Libre Comercio de América del Norte que firmaron Canadá, Estados Unidos y México el cual entró en vigencia en 1994 y tuvo un nuevo impulso en 2020. Este tratado fortaleció las relaciones económicas de los tres países. En consecuencia, a partir de un análisis $VAR$ basado en el comportamiento del PIB real de cada uno los tres países se va a analizar cómo es la interrelación entre estas tres economías. La variable que se va a utilizar para el análisis es el **PIB a dólares constantes de 2015 (variable NY.GDP.MKTP.KD en los _Indicadores de Desarrollo Mundial_)**
 
 En primera instancia, vamos a limpiar el área de trabajo, llamar las librerías a utilizar y confirmar el nombre de la variable a utilizar 
 ``` r
