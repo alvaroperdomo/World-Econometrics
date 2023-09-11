@@ -509,8 +509,8 @@ Con el siguiente comando se descarga la información, se renombra como $PIB$ y s
 TLCAN <- WDI(c(PIB =  "NY.GDP.MKTP.KD"), country = c('CA', 'US', 'MX'), start = 1960, end = 2022, language = "es")
 TLCAN <-  mutate(TLCAN, iso2c=NULL, iso3c=NULL) # Se seleccionan solo las columnas necesarias
 TLCAN <- TLCAN %>% arrange(country, year)
-TLCAN <- na.omit(TLCAN)
 TLCAN_paises <- spread(TLCAN, key = country, value = PIB) # Se utiliza spread() de tidyr para convertir los datos a formato wide para tener una columna por país
+TLCAN_paises <- na.omit(TLCAN_paises)  # Se eliminan las filas en las que todos los poises no tienen información
 TLCAN_paises_matrix <- as.matrix(TLCAN_paises[, -1])  # Se convierte TLCAN_paises en una matriz
 ```
 2. ¿Cuál es el PIB real (a dólares constantes de 2015) de los tres países en 1994?
