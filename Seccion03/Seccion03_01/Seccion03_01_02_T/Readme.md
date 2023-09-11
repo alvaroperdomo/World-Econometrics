@@ -85,7 +85,7 @@ Si se cumple la condición de estabilidad, podemos escribir la solución particu
 ## Prueba de Causalidad de Granger y Prueba de Exogeneidad
 Una prueba de causalidad establece si los rezagos de una variable entran en la ecuación de otra variable. En un modelo de dos ecuaciones con $p$ rezagos, { $y_t$ } no causa en el sentido de Granger a { $z_t$ } si y solo si todos los coeficientes del polinomio $A_{21}$ son nulos. Por lo tanto, si { $y_t$ } no mejora el rendimiento de pronóstico de { $z_t$ }, entonces { $y_t$ } no causa en el sentido de Granger a { $z_t$ }. 
 
-Si todas las variables en el $VAR(p)$ son estacionarias, la forma directa de probar la causalidad de Granger es usar una prueba $F$ estándar de la restricción $a_21(1)=a_21(2)=a_21(3)= \dots = a_21(p)=0$. Es sencillo generalizar esta noción al caso de $n$ variables
+Si todas las variables en el $VAR(p)$ son estacionarias, la forma directa de probar la causalidad de Granger es usar una prueba $F$ estándar de la restricción $a_{21}(1)=a_{21}(2)=a_{21}(3)= \dots = a_{21}(p)=0$. Es sencillo generalizar esta noción al caso de $n$ variables
 
 $$ {\left\lbrack \matrix{ x_{1t} \cr x_{2t} \cr \dots \cr x_{nt} } \right\rbrack} = \left\lbrack \matrix{ A_{10} \cr A_{20} \cr \dots \cr A_{n0} } \right\rbrack + \left\lbrack \matrix{A_{11} & A_{12} & \dots & A_{1n} \cr A_{21} & A_{22} & \dots & A_{2n} \cr \dots & \dots & \dots & \dots \cr A_{n1} & A_{n2} & \dots & A_{nn} } \right\rbrack  \left\lbrack \matrix{ x_{1(t-1)} \cr x_{2(t-1)} \cr \dots \cr x_{n(t-1)} } \right\rbrack + \left\lbrack \matrix{ e_{1t} \cr e_{2t} \cr \dots \cr e_{nt} } \right\rbrack
 $$
