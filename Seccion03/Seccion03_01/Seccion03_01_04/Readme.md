@@ -660,7 +660,7 @@ pacf(residuals(modeloVAR)[,3])
 serial.test(modeloVAR,lags.pt=10)
 ```
 
-9. Calcule la función impulso-respuesta:
+9. Calcule las funciones impulso-respuesta:
 
 | [Subsección: 3.1. Estimación de Modelos _VAR_](../Readme.md) |
 |--------------------------------------------------------------|
