@@ -16,9 +16,10 @@ irf(nombre, impulse = NULL, response = NULL, n.ahead = 10, ortho = TRUE, ci=0.95
 | **nombre**         | Nombre del Vector autorregresivo (VAR) que ha sido estimado                                                         |
 | **impulse**        | variable o vector de variables a las que se les genera el impulso (**_Opción Predeterminada es "all"_**)            |
 | **response**       | variable o vector de variables a las que se les evalua la respuesta  (**_Opción Predeterminada es "all"_**)         |
-| **ortho**          | Se calculan los coeficientes impulso-respuesta ortogonalizados (**_Opción Predeterminada es "TRUE"_**)              | 
+| **ortho**          | Se calculan los coeficientes impulso-respuesta ortogonalizados (**_Opción Predeterminada es "TRUE"_**)[^2]          | 
 | **ci**             | Intervalo de condianza (**_Opción Predeterminada es 0.95_**)                                                        | 
 
+[^2]: **La ortogonalización implica que los efectos de los shocks en una variable se descomponen de manera que sean independientes de los efectos de los shocks en las demás variables del sistema. Esto permite una interpretación más clara de cómo un shock en una variable en particular afecta a todas las demás, ya que elimina la influencia directa de los shocks en las otras variables. En resumen, los coeficientes de respuesta al impulso ortogonalizados proporcionan una representación de cómo las variables en un sistema VAR responden a los shocks en otras variables, teniendo en cuenta las relaciones de causalidad entre ellas y asegurando que los efectos sean mutuamente independientes, lo que facilita la interpretación y el análisis de la dinámica del sistema.**
 
 ``` r
 modelo.irf<-irf(modelo,impulse="x", response="y")
