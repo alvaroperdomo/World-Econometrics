@@ -9,7 +9,7 @@ Las funciones impulso-respuesta se obtienen utilizando el siguiente comando:[^1]
 [^1]:A este comandos se le pueden incluir más argumentos, pero sólo nos vamos a enfocar en los que se colocan a continuación:
 
 ``` r
-irf(nombre, impulse = NULL, response = NULL, n.ahead = 10, ortho = TRUE)
+irf(nombre, impulse = NULL, response = NULL, n.ahead = 10, ortho = TRUE, ci=0.95)
 ```
 | **Argumentos**     | **Descripción**                                                                                                     | 
 |--------------------|---------------------------------------------------------------------------------------------------------------------|
@@ -17,6 +17,7 @@ irf(nombre, impulse = NULL, response = NULL, n.ahead = 10, ortho = TRUE)
 | **impulse**        | variable o vector de variables a las que se les genera el impulso (**_Opción Predeterminada es "all"**)             |
 | **response**       | variable o vector de variables a las que se les evalua la respuesta  (**_Opción Predeterminada es "all"**)          |
 | **ortho=TRUE**     | Se calculan los coeficientes impulso-respuesta ortogonalizados                                                      | 
+| **ci**             | Intervalo de condianza (**_Opción Predeterminada es 0.95**)                                                         | 
 
 
 ``` r
