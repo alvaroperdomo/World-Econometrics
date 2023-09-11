@@ -529,7 +529,7 @@ seriesVAR <- ts(TLCAN_paises_matrix, frequency = 1, start = 1981) # Se crean las
 ```
 No se les va a preguntar sobre el nivel de integración del PIB de los tres países. Sin embargo si hacen pruebas de raíz unitaria van a encontrar que el PIB de los tres países no es estacionario, pero su primera diferencia si lo es. 
 
-Les recomiendo gráficar el PIB real de los tres países en niveles y en primeras diferencias para darse una perspectiva de las variables que están manejando. Una forma de hacerlo es utilizando los siguientes comandos:
+Les recomiendo graficar el PIB real de los tres países en niveles y en primeras diferencias para darse una perspectiva de las variables que están manejando. Una forma de hacerlo es utilizando los siguientes comandos:
 
 ``` r
 ggplot(TLCAN, aes(x = year, y = PIB, color = country)) +
