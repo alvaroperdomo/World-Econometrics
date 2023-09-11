@@ -662,15 +662,15 @@ pacf(residuals(modeloVAR)[,3])
 serial.test(modeloVAR,lags.pt=10)
 ```
 
-9. Calcule las funciones impulso-respuesta asumiendo choques unitarios. ¿Cuál ede las siguientes afirmaciones es falsa?:
+9. Calcule las funciones impulso-respuesta asumiendo choques unitarios. ¿Cuál de las siguientes afirmaciones es falsa?:
  
-   a) Un choque unitario en la variación del PIB de Canadá tiene un impacto negativo a un rezago sobre la variación del PIB de Estados Unidos.
+   a) Un choque unitario en la variación del PIB de Estados Unidos tiene un impacto positivo de dos periodos sobre la variación del PIB de Estados Unidos, Canadá y México.
 
-   b) El impacto a un rezago de la variación del PIB de Estados Unidos Sobre la variación del PIB de Estados Unidos
+   b) Un choque unitario en la variación del PIB de México tiene un impacto negativo en el segundo periodo sobre la variación del PIB de Estados Unidos
 
-   c) .
+   c) Un choque unitario en la variación del PIB de Canadá tiene un impacto positivo de un periodo sobre la variación del PIB de México.
 
-   d) .
+   d) Un choque unitario en la variación del PIB de Canadá no tiene un impacto ni positivo ni negativo sobre la variación del PIB de Estados Unidos.
 
 ```r
 irf(modeloVAR,impulse=NULL, response=NULL, ci=0.9, ortho=FALSE)
