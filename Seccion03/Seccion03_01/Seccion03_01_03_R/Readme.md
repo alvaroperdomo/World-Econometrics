@@ -16,8 +16,8 @@ irf(nombre, impulse = NULL, response = NULL, n.ahead = 10, ortho = TRUE, ci=0.95
 | **nombre**         | Nombre del Vector autorregresivo (VAR) que ha sido estimado                                                         |
 | **impulse**        | variable o vector de variables a las que se les genera el impulso (**_Opción Predeterminada es "all"_**)            |
 | **response**       | variable o vector de variables a las que se les evalua la respuesta  (**_Opción Predeterminada es "all"_**)         |
-| **ortho=TRUE**     | Se calculan los coeficientes impulso-respuesta ortogonalizados                                                      | 
-| **ci**             | Intervalo de condianza (**_Opción Predeterminada es 0.95_**)                                                         | 
+| **ortho**          | Se calculan los coeficientes impulso-respuesta ortogonalizados (**_Opción Predeterminada es "TRUE"_**)              | 
+| **ci**             | Intervalo de condianza (**_Opción Predeterminada es 0.95_**)                                                        | 
 
 
 ``` r
