@@ -43,10 +43,10 @@ Al calcularla observe que al copiar _Matriz_A_ $R$ nos reporta
 [3,]    0    1
 ```
 
-Posteriormente se copia,
+Posteriormente se utliza el comando _alrtest_ así:
 
 ``` r
-Vecrest <-alrtest(z = Johansen_traza_const, A = Matriz_A, r = 1)
+Vecrest <-alrtest(z = nombre, A = Matriz_A, r = 1)
 summary(VECrest1)
 ```
 
@@ -60,7 +60,12 @@ The p-value of the test statistic is: "NÚMERO"
 
 Si este valor es menor al 5% (1% ó 10%) entonces se rechaza la hipótesis nula de exogeneidad débil, en caso contrario no se rechaza.
 
-> 
+| **Argumentos**     | **Descripción**                                                        | 
+|--------------------|------------------------------------------------------------------------|
+| **nombre**         | nombre del $VEC$ que se estimó  con el comando "ca.jo"                 |
+| **r**              | número de vectores de cointegración que tiene el $VEC$ original        |
+
+
 ## 4) Funciones impulso-respuesta y análisis de descomposición de varianza
 Para calcular las funciones impulso-respuesta y los análisis de dedescomposición de varianza, primero se tiene que transformar el modelo $VEC$ en su equivalente modelo $VAR$ utilizando el comando _vec2var_ así:
 ``` r
