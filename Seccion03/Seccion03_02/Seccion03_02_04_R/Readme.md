@@ -23,6 +23,59 @@ plotres(nombre)
 |--------------------|------------------------------------------------------------------------|
 | **nombre**         | nombre del $VEC$ que se estimó  con el comando "ca.jo"                 |
 
+## 3) Análisis de exogeneidad débil sobre las variables endógenas modelo $VEC$
+
+Primero se tiene que crear una matriz en donde se recree la presencia de la endógeneidad. Por ejemplo, asuma que esta estimando un modelo "VEC" con tres variables y queremos saber si la segunda variable es exógena, entonces proponemos la siguiente matriz (2x3) que hemos llamada Matriz_A: [^1]
+[^1]: La matriz para probar la exogeneidad de la primera variable es Matriz_1 <- t(matrix(c(0, 0, 1, 0, 0, 1), nrow = 2, ncol = 3)). La matriz para probar la exogeneidad de la tercera variable es Matriz_1 <- t(matrix(c(1, 0, 0, 1, 0, 0), nrow = 2, ncol = 3))
+
+
+``` r
+Matriz_A <- t(matrix(c(1, 0, 0, 0, 0, 1), nrow = 2, ncol = 3))
+
+```
+Al calcularla observe que al copiar _Matriz_A_ $R$ nos reporta
+
+``` r
+> Matriz_A
+     [,1] [,2]
+[1,]    1    0
+[2,]    0    0
+[3,]    0    1
+```
+
+Posteriormente se copia,
+
+``` r
+Vecrest <-alrtest(z = Johansen_traza_const, A = Matriz_A, r = 1)
+summary(VECrest1)
+```
+
+Y se observa el p-value del estadístico en:
+
+``` r
+The value of the likelihood ratio test statistic:
+"NÚMERO" distributed as chi square with "NÚMERO" df.
+The p-value of the test statistic is: "NÚMERO"
+```
+
+Si este valor es menor al 5% (1% ó 10%) entonces se rechaza la hipótesis nula de exogeneidad débil, en caso contrario no se rechaza.
+
+> 
+## 4) Funciones impulso-respuesta y análisis de descomposición de varianza
+Para calcular las funciones impulso-respuesta y los análisis de dedescomposición de varianza, primero se tiene que transformar el modelo $VEC$ en su equivalente modelo $VAR$ utilizando el comando _vec2var_ así:
+``` r
+nombre_VAR <- vec2var(nombre_VEC, r = 1)
+```
+
+| **Argumentos**     | **Descripción**                                                        | 
+|--------------------|------------------------------------------------------------------------|
+| **nombre_VAR**     | nombre que va a tener el modelo $VAR$                                  |
+| **nombre_VEC**     | nombre del $VEC$ que se estimó  con el comando "ca.jo"                 |
+| **r**              | número de vectores de cointegración que tiene el $VEC$ original        |
+
+Posteriormente, ya teniendo la representación $VAR$ se hace el mismo tipo de análisis que se explico en la sección 3.1.4.(R).
+
+
 ---
 ---
 # Preguntas de selección múltiple
