@@ -259,7 +259,7 @@ Obteniendo
 Test type: maximal eigenvalue statistic (lambda max) , without linear trend and constant in cointegration 
 
 Eigenvalues (lambda):
-[1] 3.609066e-01 1.557082e-01 1.365868e-01 1.165734e-15
+[1] 3.609066e-01 1.557082e-01 1.365868e-01 1.221245e-15
 
 Values of teststatistic and critical values of test:
 
@@ -271,19 +271,19 @@ r = 0  | 26.86 19.77 22.00 26.81
 Eigenvectors, normalised to first column:
 (These are the cointegration relations)
 
-               Brasil.l2 Colombia.l2     México.l2     constant
-Brasil.l2      1.0000000  1.00000000     1.0000000    1.0000000
-Colombia.l2   -0.2038490 -0.01083704     0.1165442   -2.1236065
-México.l2     -0.9368728 -0.88057748    -2.4600664    0.3728696
-constant    2251.0183891 46.24876879 11319.3262099 -794.1163357
+                México.l2  Colombia.l2     Brasil.l2     constant
+México.l2       1.0000000   1.00000000  1.000000e+00     1.000000
+Colombia.l2     0.2175845   0.01230674 -4.737442e-02    -5.695307
+Brasil.l2      -1.0673808  -1.13561842 -4.064931e-01     2.681903
+constant    -2402.6937213 -52.52095359 -4.601228e+03 -2129.743048
 
 Weights W:
 (This is the loading matrix)
 
-           Brasil.l2 Colombia.l2    México.l2      constant
-Brasil.d   0.0594471 -0.11333814 -0.002495242 -1.466808e-15
-Colombia.d 0.1281260 -0.02215754 -0.009571822  1.669879e-15
-México.d   0.2317326 -0.02503930  0.023735743  2.430908e-15
+             México.l2 Colombia.l2    Brasil.l2      constant
+México.d   -0.21710400  0.02204905 -0.058391502  4.130565e-16
+Colombia.d -0.12003776  0.01951143  0.023547318  2.668445e-16
+Brasil.d   -0.05569437  0.09980301  0.006138462 -7.402360e-16
 
 > summary(Johansen_eigen_const)
 
@@ -294,7 +294,7 @@ México.d   0.2317326 -0.02503930  0.023735743  2.430908e-15
 Test type: trace statistic , without linear trend and constant in cointegration 
 
 Eigenvalues (lambda):
-[1] 3.609066e-01 1.557082e-01 1.365868e-01 1.165734e-15
+[1] 3.609066e-01 1.557082e-01 1.365868e-01 1.221245e-15
 
 Values of teststatistic and critical values of test:
 
@@ -306,19 +306,19 @@ r = 0  | 45.83 32.00 34.91 41.07
 Eigenvectors, normalised to first column:
 (These are the cointegration relations)
 
-               Brasil.l2 Colombia.l2     México.l2     constant
-Brasil.l2      1.0000000  1.00000000     1.0000000    1.0000000
-Colombia.l2   -0.2038490 -0.01083704     0.1165442   -2.1236065
-México.l2     -0.9368728 -0.88057748    -2.4600664    0.3728696
-constant    2251.0183891 46.24876879 11319.3262099 -794.1163357
+                México.l2  Colombia.l2     Brasil.l2     constant
+México.l2       1.0000000   1.00000000  1.000000e+00     1.000000
+Colombia.l2     0.2175845   0.01230674 -4.737442e-02    -5.695307
+Brasil.l2      -1.0673808  -1.13561842 -4.064931e-01     2.681903
+constant    -2402.6937213 -52.52095359 -4.601228e+03 -2129.743048
 
 Weights W:
 (This is the loading matrix)
 
-           Brasil.l2 Colombia.l2    México.l2      constant
-Brasil.d   0.0594471 -0.11333814 -0.002495242 -1.466808e-15
-Colombia.d 0.1281260 -0.02215754 -0.009571822  1.669879e-15
-México.d   0.2317326 -0.02503930  0.023735743  2.430908e-15
+             México.l2 Colombia.l2    Brasil.l2      constant
+México.d   -0.21710400  0.02204905 -0.058391502  4.130565e-16
+Colombia.d -0.12003776  0.01951143  0.023547318  2.668445e-16
+Brasil.d   -0.05569437  0.09980301  0.006138462 -7.402360e-16
 ```
 
 Observen que con ambas pruebas de Johansen al 5% de significancia:
