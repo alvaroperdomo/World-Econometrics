@@ -155,7 +155,7 @@ FPE(n) 1.285486e+14
 En todos los casos, se puede observar que es mejor utilizar un rezago o en su defecto dos rezagos. Por lo tanto, dado que en $R$ la prueba de Johansen tiene que incluir más de un rezago, entonces se van a hacer lan prueba de Johanhes con dos rezagos. 
 
 ### Pruebas de Causalidad de Granger
-En la sección 3.2.4.(T) se afirmo que Sims, Stock y Watson (1990) consideraban que las pruebas de causalidad de Granger en sistemas cointegrados no eran recomendadas. Sin embargo, dado que no tenemos elaborado un contexto teórico que nos establezca cuál de los tres $\Delta PIBpc$ analizados es más exógeno o cuál es más endógenos; entonces vamos a apoyarnos en la prueba de causalidad de Granger para establecer ese orden. Para ello se van a utilizar los siguientes comandos:
+En la sección 3.2.4.(T) se afirmo que Sims, Stock y Watson (1990) consideraban que las pruebas de causalidad de Granger en sistemas cointegrados no eran recomendadas. Sin embargo, dado que no tenemos elaborado un contexto teórico que nos establezca cuál de los tres $\Delta PIBpc$ analizados es más exógeno o cuál es más endógeno; entonces vamos a apoyarnos en la prueba de causalidad de Granger para establecer ese orden. Para ello se van a utilizar los siguientes comandos:
 ``` r
 grangertest(diff(Brasil) ~ diff(Colombia),order=2,data=seriesVEC)
 grangertest(diff(Colombia) ~ diff(Brasil),order=2,data=seriesVEC)
@@ -226,7 +226,16 @@ Tomando en consideración los _p-values_ más bajos se establece que:
 * el $PIBpc$ de México (de manera significativa) explica en el sentido de Granger al $PIBpc$ de Colombia
 * el $PIBpc$ de Colombia (de manera no significativa) explica en el sentido de Granger al $PIBpc$ de Brasil
 * el $PIBpc$ de México (de manera no significativa) explica en el sentido de Granger al $PIBpc$ de Brasil
+
 Por lo tanto, la variable más exógena es el $PIBpc$ de México, luego el $PIBpc$ de Colombia y por último el $PIBpc$ de Brasil
+
+Establecemos el nuevo orden del VAR, para de una vez tenerlos listos para cuando se calculen las funciones impulso respuesta y la descomposición de varianza del error de pronóstico:
+
+``` r
+nueva_matriz <- PIBpc_paises_matrix[, c("México", "Colombia", "Brasil")]
+seriesVEC <- ts(nueva_matriz, frequency = 1, start = 1960) # Se reescriben las variables en formato de serie de tiempo
+```
+
 
 ### Pruebas de Cointegración de Johansen
 Recuerden que ya se había establecido que el número de rezagos para manejar en la prueba de Johansen es de 2 rezagos. Por otro lado, como la presencia de una constante es suficiente para que series $I(1)$ presenten una tendencia creciente como se ve en los diferentes $PIBpc$ que se encuentran en el primer gráfico de esta sección, entonces se van a hacer las pruebas de Johansen con intercepto, para ello se utilizan los siguientes comandos:
