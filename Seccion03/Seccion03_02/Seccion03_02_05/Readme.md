@@ -371,35 +371,35 @@ Dando como resultado:
 
 ``` r
 > summary(modeloVEC$rlm)
-Response Brasil.d :
+Response México.d :
 
 Call:
-lm(formula = Brasil.d ~ ect1 + Brasil.dl1 + Colombia.dl1 + México.dl1 - 
-    1, data = data.mat)
+lm(formula = México.d ~ ect1 + México.dl1 + Colombia.dl1 + 
+    Brasil.dl1 - 1, data = data.mat)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--589.54  -68.49   71.59  197.61  453.24 
+-823.56  -63.33   23.19  147.67  417.97 
 
 Coefficients:
-             Estimate Std. Error t value Pr(>|t|)   
-ect1          0.05945    0.04893   1.215  0.22950   
-Brasil.dl1    0.48306    0.14908   3.240  0.00201 **
-Colombia.dl1 -0.25184    0.31626  -0.796  0.42922   
-México.dl1   -0.12567    0.12304  -1.021  0.31145   
+             Estimate Std. Error t value Pr(>|t|)    
+ect1         -0.21710    0.05106  -4.252 8.12e-05 ***
+México.dl1    0.01999    0.13705   0.146   0.8846    
+Colombia.dl1 -0.64707    0.35228  -1.837   0.0715 .  
+Brasil.dl1    0.12388    0.16606   0.746   0.4588    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 220.8 on 56 degrees of freedom
-Multiple R-squared:  0.1975,	Adjusted R-squared:  0.1402 
-F-statistic: 3.446 on 4 and 56 DF,  p-value: 0.01378
+Residual standard error: 246 on 56 degrees of freedom
+Multiple R-squared:  0.2653,	Adjusted R-squared:  0.2129 
+F-statistic: 5.057 on 4 and 56 DF,  p-value: 0.0015
 
 
 Response Colombia.d :
 
 Call:
-lm(formula = Colombia.d ~ ect1 + Brasil.dl1 + Colombia.dl1 + 
-    México.dl1 - 1, data = data.mat)
+lm(formula = Colombia.d ~ ect1 + México.dl1 + Colombia.dl1 + 
+    Brasil.dl1 - 1, data = data.mat)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
@@ -407,10 +407,10 @@ Residuals:
 
 Coefficients:
              Estimate Std. Error t value Pr(>|t|)    
-ect1          0.12813    0.02819   4.545 2.98e-05 ***
-Brasil.dl1    0.22195    0.08590   2.584   0.0124 *  
-Colombia.dl1 -0.27881    0.18222  -1.530   0.1316    
+ect1         -0.12004    0.02641  -4.545 2.98e-05 ***
 México.dl1   -0.14988    0.07089  -2.114   0.0390 *  
+Colombia.dl1 -0.27881    0.18222  -1.530   0.1316    
+Brasil.dl1    0.22195    0.08590   2.584   0.0124 *  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
@@ -419,28 +419,29 @@ Multiple R-squared:  0.3435,	Adjusted R-squared:  0.2966
 F-statistic: 7.326 on 4 and 56 DF,  p-value: 8.09e-05
 
 
-Response México.d :
+Response Brasil.d :
 
 Call:
-lm(formula = México.d ~ ect1 + Brasil.dl1 + Colombia.dl1 + México.dl1 - 
+lm(formula = Brasil.d ~ ect1 + México.dl1 + Colombia.dl1 + Brasil.dl1 - 
     1, data = data.mat)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--823.56  -63.33   23.19  147.67  417.97 
+-589.54  -68.49   71.59  197.61  453.24 
 
 Coefficients:
-             Estimate Std. Error t value Pr(>|t|)    
-ect1          0.23173    0.05450   4.252 8.12e-05 ***
-Brasil.dl1    0.12388    0.16606   0.746   0.4588    
-Colombia.dl1 -0.64707    0.35228  -1.837   0.0715 .  
-México.dl1    0.01999    0.13705   0.146   0.8846    
+             Estimate Std. Error t value Pr(>|t|)   
+ect1         -0.05569    0.04584  -1.215  0.22950   
+México.dl1   -0.12567    0.12304  -1.021  0.31145   
+Colombia.dl1 -0.25184    0.31626  -0.796  0.42922   
+Brasil.dl1    0.48306    0.14908   3.240  0.00201 **
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 246 on 56 degrees of freedom
-Multiple R-squared:  0.2653,	Adjusted R-squared:  0.2129 
-F-statistic: 5.057 on 4 and 56 DF,  p-value: 0.0015
+Residual standard error: 220.8 on 56 degrees of freedom
+Multiple R-squared:  0.1975,	Adjusted R-squared:  0.1402 
+F-statistic: 3.446 on 4 and 56 DF,  p-value: 0.01378
+
 ```
 
 Por lo tanto,
