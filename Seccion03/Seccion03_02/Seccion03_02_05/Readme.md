@@ -450,6 +450,152 @@ Por lo tanto,
 * EL $PIBpc$ de corto plazo de Colombia se ve afectado tanto por la relación de cointegración como por el $PIBpc$ de corto plazo de Brasil y México.
 * El $PIBpc$ de corto plazo de Brasil está mucho más afectado por su propio comportamiento que por el comportamiento del $PIBpc$ de corto plazo de Colombia y México.
 
+Estos resultados parecen indicar de que el $PIBpc$ de corto plazo de Brasil fuera exógeno dentro del sistema. En consecuencia vamos a hacer pruebas de exogeneidad débil a cada uno de los $PIBpc$ de corto plazo, para ello utilizaremos el siguiente código:[^1]
+
+[^1]: **La matriz A1 representa al PIB de Brasil exógeno dentro del sistema VEC, la matriz A2 representa al PIB de Colombia exógeno dentro del sistema VEC y la matriz A32 representa al PIB de Colombia exógeno dentro del sistema VEC**
+
+```r
+A1 <- t(matrix(c(1, 0, 0, 1, 0, 0), nrow = 2, ncol = 3))
+A2 <- t(matrix(c(1, 0, 0, 0, 0, 1), nrow = 2, ncol = 3))
+A3 <- t(matrix(c(0, 0, 1, 0, 0, 1), nrow = 2, ncol = 3))
+
+VECrest1 <- (alrtest(z = Johansen_traza_const, A = A1, r = 1))
+summary(VECrest1)
+VECrest2 <- (alrtest(z = Johansen_traza_const, A = A2, r = 1))
+summary(VECrest2)
+VECrest3 <- (alrtest(z = Johansen_traza_const, A = A3, r = 1))
+summary(VECrest3)
+```
+
+Obteniendo:
+```r
+> summary(VECrest1)
+
+###################### 
+# Johansen-Procedure # 
+###################### 
+
+Estimation and testing under linear restrictions on beta 
+
+The VECM has been estimated subject to: 
+beta=H*phi and/or alpha=A*psi
+
+     [,1] [,2]
+[1,]    1    0
+[2,]    0    1
+[3,]    0    0
+
+Eigenvalues of restricted VAR (lambda):
+[1] 0.3497 0.1367 0.0000 0.0000
+
+The value of the likelihood ratio test statistic:
+1.05 distributed as chi square with 1 df.
+The p-value of the test statistic is: 0.31 
+
+Eigenvectors, normalised to first column
+of the restricted VAR:
+
+                     [,1]
+RK.México.l2       1.0000
+RK.Colombia.l2     0.1970
+RK.Brasil.l2      -1.0703
+RK.constant    -2194.0809
+
+Weights W of the restricted VAR:
+
+        [,1]
+[1,] -0.2178
+[2,] -0.1134
+[3,]  0.0000
+
+> VECrest2 <- (alrtest(z = Johansen_traza_const, A = A2, r = 1))
+> summary(VECrest2)
+
+###################### 
+# Johansen-Procedure # 
+###################### 
+
+Estimation and testing under linear restrictions on beta 
+
+The VECM has been estimated subject to: 
+beta=H*phi and/or alpha=A*psi
+
+     [,1] [,2]
+[1,]    1    0
+[2,]    0    0
+[3,]    0    1
+
+Eigenvalues of restricted VAR (lambda):
+[1] 0.2117 0.1489 0.0000 0.0000
+
+The value of the likelihood ratio test statistic:
+12.59 distributed as chi square with 1 df.
+The p-value of the test statistic is: 0 
+
+Eigenvectors, normalised to first column
+of the restricted VAR:
+
+                     [,1]
+RK.México.l2       1.0000
+RK.Colombia.l2     0.1122
+RK.Brasil.l2      -0.9423
+RK.constant    -2314.2595
+
+Weights W of the restricted VAR:
+
+        [,1]
+[1,] -0.1979
+[2,]  0.0000
+[3,]  0.1095
+
+> VECrest3 <- (alrtest(z = Johansen_traza_const, A = A3, r = 1))
+> summary(VECrest3)
+
+###################### 
+# Johansen-Procedure # 
+###################### 
+
+Estimation and testing under linear restrictions on beta 
+
+The VECM has been estimated subject to: 
+beta=H*phi and/or alpha=A*psi
+
+     [,1] [,2]
+[1,]    0    0
+[2,]    1    0
+[3,]    0    1
+
+Eigenvalues of restricted VAR (lambda):
+[1] 0.2258 0.1538 0.0000 0.0000
+
+The value of the likelihood ratio test statistic:
+11.5 distributed as chi square with 1 df.
+The p-value of the test statistic is: 0 
+
+Eigenvectors, normalised to first column
+of the restricted VAR:
+
+                    [,1]
+RK.México.l2      1.0000
+RK.Colombia.l2    0.3034
+RK.Brasil.l2     -1.4254
+RK.constant    -685.2594
+
+Weights W of the restricted VAR:
+
+        [,1]
+[1,]  0.0000
+[2,] -0.0549
+[3,]  0.0087
+```
+
+La siguiente tabla resume los resultados de la prueba de exogeneidad débil:
+
+| Variable exógena    | Estadístico de la prueba | P-Value |¿La variable es débilmente exógena |
+|:-------------------:|:------------------------:|:--------|:---------------------------------:|
+| $PIB_{Brasil,t}$    |$1.05$                    |$0.31$   | Si                                |
+| $PIB_{Colombia,t}$  |$12.59$                   |$0$      | No                                |
+| $PIB_{México,t}$    |$11.50$                   |$0$      | No                                |
 
 
 | [Subsección: 3.2 - Cointegración y estimación de Modelos _VEC_](../Readme.md) |
