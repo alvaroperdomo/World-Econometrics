@@ -341,19 +341,19 @@ Call:
 lm(formula = substitute(form1), data = data.mat)
 
 Coefficients:
-              Brasil.d  Colombia.d  México.d
-ect1           0.05945   0.12813     0.23173
-Brasil.dl1     0.48306   0.22195     0.12388
-Colombia.dl1  -0.25184  -0.27881    -0.64707
-México.dl1    -0.12567  -0.14988     0.01999
+              México.d  Colombia.d  Brasil.d
+ect1          -0.21710  -0.12004    -0.05569
+México.dl1     0.01999  -0.14988    -0.12567
+Colombia.dl1  -0.64707  -0.27881    -0.25184
+Brasil.dl1     0.12388   0.22195     0.48306
 
 
 $beta
-                    ect1
-Brasil.l2      1.0000000
-Colombia.l2   -0.2038490
-México.l2     -0.9368728
-constant    2251.0183891
+                     ect1
+México.l2       1.0000000
+Colombia.l2     0.2175845
+Brasil.l2      -1.0673808
+constant    -2402.6937213
 ```
 
 Esta salida, implica que cada una de las ecuaciones del $VEC$ que se ha estimado adoptan la siguiente forma:
