@@ -26,7 +26,7 @@ plotres(nombre)
 ## 3) Análisis de exogeneidad débil sobre las variables endógenas modelo $VEC$
 
 Primero se tiene que crear una matriz en donde se recree la presencia de la endógeneidad. Por ejemplo, asuma que esta estimando un modelo "VEC" con tres variables y queremos saber si la segunda variable es exógena, entonces proponemos la siguiente matriz (2x3) que hemos llamada Matriz_A: [^1]
-[^1]: La matriz para probar la exogeneidad de la primera variable es Matriz_1 <- t(matrix(c(0, 0, 1, 0, 0, 1), nrow = 2, ncol = 3)). La matriz para probar la exogeneidad de la tercera variable es Matriz_1 <- t(matrix(c(1, 0, 0, 1, 0, 0), nrow = 2, ncol = 3))
+[^1]: **La matriz para probar la exogeneidad de la primera variable es Matriz_1 <- t(matrix(c(0, 0, 1, 0, 0, 1), nrow = 2, ncol = 3)). La matriz para probar la exogeneidad de la tercera variable es Matriz_1 <- t(matrix(c(1, 0, 0, 1, 0, 0), nrow = 2, ncol = 3))**
 
 
 ``` r
