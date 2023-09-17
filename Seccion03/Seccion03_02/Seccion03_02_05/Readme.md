@@ -446,9 +446,9 @@ F-statistic: 3.446 on 4 and 56 DF,  p-value: 0.01378
 
 Por lo tanto,
 
-* El $PIBpc$ de corto plazo de Brasil está mucho más afectado por su propio comportamiento que por el comportamiento del $PIBpc$ de corto plazo de Colombia y México.
 * EL $PIBpc$ de corto plazo de Colombia se ve afectado tanto por la relación de cointegración como por el $PIBpc$ de corto plazo de Brasil y México.
 * EL $PIBpc$ de corto plazo de México se ve afectado tanto por la relación de cointegración como por el $PIBpc$ de corto plazo de Colombia.
+* El $PIBpc$ de corto plazo de Brasil está mucho más afectado por su propio comportamiento que por el comportamiento del $PIBpc$ de corto plazo de Colombia y México.
 
 
 
