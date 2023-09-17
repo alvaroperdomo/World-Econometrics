@@ -1202,6 +1202,12 @@ Es decir, en el modelo estimado, después de 10 periodos:
 * El 59% de la varianza del error de pronóstico de la variable $PIB_{Colombia,t}$ es explicada por misma la variable, el 38% por la variable $PIB_{Brasil,t}$ y el 3% por la variable $PIB_{México,t}$
 * El 81% de la varianza del error de pronóstico de la variable $PIB_{Brasil,t}$ es explicada por misma la variable, el 17% por la variable $PIB_{Colombia,t}$ y el 2% por la variable $PIB_{México,t}$
 
+---
+---
+# Preguntas de selección múltiple
+
+
+
 
 | [Subsección: 3.2 - Cointegración y estimación de Modelos _VEC_](../Readme.md) |
 |-------------------------------------------------------------------------------|
