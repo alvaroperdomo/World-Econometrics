@@ -1139,7 +1139,9 @@ $Brasil
 
 ![image](https://github.com/alvaroperdomo/World-Econometrics/assets/127871747/49606d96-7a36-4b63-800f-f4d31ca42f74)
 
+En consecuencia, según las funciones impulso-respuesta:
 
+* un choque de una desviación estándar en $PIB_{Brasil,t}$ tiene un impacto positivo permanente en $PIB_{Brasil,t}$, $PIB_{México,t}$ y $PIB_{Colombia,t}$ 
 
 ```r
 Desc_var<-fevd(vec_modelo, n.ahead=10)
