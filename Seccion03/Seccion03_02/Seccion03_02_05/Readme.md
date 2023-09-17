@@ -592,11 +592,30 @@ Weights W of the restricted VAR:
 La siguiente tabla resume los resultados de la prueba de exogeneidad débil:
 
 | Variable exógena    | Estadístico de la prueba | P-Value |¿La variable es débilmente exógena |
-|:-------------------:|:------------------------:|:--------|:---------------------------------:|
+|:-------------------:|:------------------------:|:-------:|:---------------------------------:|
 | $PIB_{Brasil,t}$    |$1.05$                    |$0.31$   | Si                                |
 | $PIB_{Colombia,t}$  |$12.59$                   |$0$      | No                                |
 | $PIB_{México,t}$    |$11.50$                   |$0$      | No                                |
 
+Es decir, se podría sacar a Brasil de la relación de cointegración y sólo hacer el análisis con Colombia y México.
+
+```r
+vec_modelo <- vec2var(Johansen_traza_const, r = 1)
+
+modelo.irf1<-irf(vec_modelo ,impulse="México", response=NULL)
+modelo.irf2<-irf(vec_modelo,impulse="Colombia", response=NULL)
+modelo.irf3<-irf(vec_modelo,impulse="Brasil", response=NULL)
+modelo.irf1
+modelo.irf2
+modelo.irf3
+
+plot(modelo.irf1)
+plot(modelo.irf2)
+plot(modelo.irf3)
+
+Desc_var<-fevd(vec_modelo, n.ahead=10)
+Desc_var
+```
 
 | [Subsección: 3.2 - Cointegración y estimación de Modelos _VEC_](../Readme.md) |
 |-------------------------------------------------------------------------------|
