@@ -79,7 +79,7 @@ nombre_VAR <- vec2var(nombre_VEC, r = 1)
 | **nombre_VEC**     | nombre del $VEC$ que se estimó  con el comando "ca.jo"                 |
 | **r**              | número de vectores de cointegración que tiene el $VEC$ original        |
 
-Posteriormente, ya teniendo la representación $VAR$ se hace el mismo tipo de análisis que se explico en la sección 3.1.4.(R).
+Posteriormente, ya teniendo la representación $VAR$ se hace el mismo tipo de análisis que se explico en la [subsección 3.1.4.(R)](.../.../Seccion03_01_04/Readme.md).
 
 
 ---
