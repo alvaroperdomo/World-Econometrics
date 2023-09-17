@@ -46,8 +46,8 @@ Al calcularla observe que al copiar _Matriz_A_ $R$ nos reporta
 Posteriormente se utliza el comando _alrtest_ así:
 
 ``` r
-Vecrest <-alrtest(z = nombre, A = Matriz_A, r = 1)
-summary(VECrest1)
+new_nombre <-alrtest(z = nombre, A = Matriz_A, r = 1)
+summary(new_nombre)
 ```
 
 Y se observa el p-value del estadístico en:
@@ -62,6 +62,7 @@ Si este valor es menor al 5% (1% ó 10%) entonces se rechaza la hipótesis nula 
 
 | **Argumentos**     | **Descripción**                                                        | 
 |--------------------|------------------------------------------------------------------------|
+| **new_nombre**     | nombre del $VEC$ restrinjido que se va a estimar                       |
 | **nombre**         | nombre del $VEC$ que se estimó  con el comando "ca.jo"                 |
 | **r**              | número de vectores de cointegración que tiene el $VEC$ original        |
 
