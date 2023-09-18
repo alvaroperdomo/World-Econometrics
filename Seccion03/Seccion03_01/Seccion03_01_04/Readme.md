@@ -618,13 +618,13 @@ y responda a la siguiente pregunta:
 
 6. ¿Cuál es el resultado de la prueba de la prueba de la razón de verosimilitud?
 
-   a) El p-Value es 7.315e-06 por lo que no se rechaza la hipótesis nula de que el modelo restringido del $VAR$ con un rezago y con intercepto es la mejor opción
+   a) El p-Value de la prueba es 7.315e-06 por lo que no se rechaza la hipótesis nula de que el modelo restringido del $VAR$ con un rezago y con intercepto es la mejor opción
 
-   b) El p-Value es 7.315e-06 por lo que se rechaza la hipótesis nula de que el modelo restringido del $VAR$ con un rezago y con intercepto es la mejor opción
+   b) El p-Valuede la prueba es 7.315e-06 por lo que se rechaza la hipótesis nula de que el modelo restringido del $VAR$ con un rezago y con intercepto es la mejor opción
 
-   c) El p-Value es 7.315e-06 por lo que no se rechaza la hipótesis nula de que el modelo restringido del $VAR$ con un rezago y sin intercepto es la mejor opción
+   c) El p-Value de la prueba es 7.315e-06 por lo que no se rechaza la hipótesis nula de que el modelo restringido del $VAR$ con un rezago y sin intercepto es la mejor opción
 
-   d) El p-Value es 7.315e-06 por lo que se rechaza la hipótesis nula de que el modelo restringido del $VAR$ con un rezago y sin intercepto es la mejor opción
+   d) El p-Value de la prueba es 7.315e-06 por lo que se rechaza la hipótesis nula de que el modelo restringido del $VAR$ con un rezago y sin intercepto es la mejor opción
 
 ``` r
 > lrtest(VAR(diff(seriesVAR),p=1,type="none"), VAR(diff(seriesVAR),p=1,type="const"))
