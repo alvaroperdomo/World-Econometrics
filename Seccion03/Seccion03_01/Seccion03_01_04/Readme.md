@@ -127,13 +127,10 @@ FPE(n)  0.4797369  0.4523829  0.5318560  0.54255717  0.6348628  0.72535827  0.83
 |$\text{Criterio Bayesiano de Schwartz}$: SC          |1 rezago                                     | -0.5691693  |1 rezago                                     | -0.4819802  | 
 
 
-Es decir, el modelo $VAR$ más parsimonioso tiene uno o dos rezagos (según el criterio de información escogido) y no lleva constante. No hay una opción clara acerca de si es mejor con uno o con dos rezagos. Por ejemplo, al hacer la prueba de la razón de verosimilitud:
+Es decir, el modelo $VAR$ más parsimonioso tiene uno o dos rezagos (según el criterio de información escogido) y no lleva constante. No hay una opción clara acerca de si es mejor con uno o con dos rezagos. Sin embargo, al hacer las pruebas de diagnóstico, la $FAC$ del modelo con un rezago mostraba algunos problemas de autocorrelación de los residuos estimados. Esto no pasaba con el modelo con dos rezagos, entonces se decidio estimar un modelo $VAR(2)$ sin término constante. 
 
-``` r
-lrtest(VAR(diff(seriesVAR), p = 2, type = "none"), VAR(diff(seriesVAR), p = 2, type = "const"))
-```
+Por cierto, la prueba de la razón de verosimilitud también muestra una preferencia por no introducir el intercepto:
 
-Se obtiene:
 ``` r
 > lrtest(VAR(diff(seriesVAR), p = 2, type = "none"), VAR(diff(seriesVAR), p = 2, type = "const"))
 Likelihood ratio test
@@ -146,7 +143,7 @@ Model 2: VAR(y = diff(seriesVAR), p = 2, type = "const")
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 ```
-Por lo que al 1% y 5% no se rechaza la hipótesis nula de que es mejor el modelo restringido (es decir, el que no tiene intercepto) y al 10% si se rechaza esta hipótesis nula. Sin embargo, al hacer las pruebas de diagnóstico, la $FAC$ del modelo con un rezago mostraba algunos problemas de autocorrelación de los residuos estimados. Esto no pasaba con el modelo con dos rezagos, entonces se decidio estimar un modelo $VAR(2)$ sin término constante. 
+Note que al 1% y 5% no se rechaza la hipótesis nula de que es mejor el modelo restringido (es decir, el que no tiene intercepto). 
 
 ### Prueba de causalidad de Granger
 La prueba de causalidad de Granger es útil para de una vez establecer el orden de las variables dentro del $VAR$ (de la más exógena a la más endógena) de tal forma que las variables ya esten ordenadas según la descomposición de Choleski y así más adelante tener el $VAR$ estructural (o mejor aún, el $VMA$ estructural) que vaya a ser utilizado en el cálculo de las funciones imulso-respuesta y de las descomposiciones de varianza. 
