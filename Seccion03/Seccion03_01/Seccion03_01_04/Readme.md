@@ -610,9 +610,35 @@ VARselect(diff(seriesVAR),lag.max=5,type="const")
 VARselect(diff(seriesVAR),lag.max=5,type="none")
 ```
 
-Aunque el modelo $VAR$ con intercepto fue más parsimonioso, el resto del análisis lo vamos a hacer con el modelo $VAR$ sin intercepto porque sus resultados se acoplan bastante bien a la lógica teórica de un Tratado de Libre Comercio y porque con el modelo $VAR$ con intercepto no dan resultados interesantes.
+Aunque el modelo $VAR$ con un rezago y con intercepto fue más parsimonioso, el resto del análisis lo vamos a hacer con el modelo $VAR$ con un rezago y sin intercepto porque sus resultados se acoplan bastante bien a la lógica teórica de un Tratado de Libre Comercio y porque con el modelo $VAR$ con intercepto no dan resultados interesantes. De todas formas, se puede analizar, la prueba de la razón de verosimilitud para ver cuál modelo es mejor utilizar. Para ello, utilice los siguientes comandos .   
+``` r
+lrtest(VAR(diff(seriesVAR),p=1,type="none"), VAR(diff(seriesVAR),p=1,type="const"))
+```
+y responda a la siguiente pregunta:
 
-6. Estime el modelo $VAR$ con un rezago y sin intercepto e identifique las tres raíces características del polinomio que lo resuelven. ¿Cuáles son estas raíces?
+6. ¿Cuál es el resultado de la prueba de la prueba de la razón de verosimilitud?
+
+   a) El p-Value es 7.315e-06 por lo que no se rechaza la hipótesis nula de que el modelo restringido del $VAR$ con un rezago y con intercepto es la mejor opción
+
+   b) El p-Value es 7.315e-06 por lo que se rechaza la hipótesis nula de que el modelo restringido del $VAR$ con un rezago y con intercepto es la mejor opción
+
+   c) El p-Value es 7.315e-06 por lo que no se rechaza la hipótesis nula de que el modelo restringido del $VAR$ con un rezago y sin intercepto es la mejor opción
+
+   d) El p-Value es 7.315e-06 por lo que se rechaza la hipótesis nula de que el modelo restringido del $VAR$ con un rezago y sin intercepto es la mejor opción
+
+``` r
+> lrtest(VAR(diff(seriesVAR),p=1,type="none"), VAR(diff(seriesVAR),p=1,type="const"))
+Likelihood ratio test
+
+Model 1: VAR(y = diff(seriesVAR), p = 1, type = "none")
+Model 2: VAR(y = diff(seriesVAR), p = 1, type = "const")
+  #Df  LogLik Df Chisq Pr(>Chisq)    
+1   9 -3109.3                        
+2  12 -3096.1  3 26.55  7.315e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+```
+7. Estime el modelo $VAR$ con un rezago y sin intercepto e identifique las tres raíces características del polinomio que lo resuelven. ¿Cuáles son estas raíces?
 
    a) 0.2900364, 0.2900364 y 0.1871655
 
@@ -629,7 +655,7 @@ roots(modeloVAR)
 ```
 A partir de las raíces características encontradas, observe que el $VAR$ es estable. 
 
-7.Grafique la $FAC$ y la $FACP$ de los residuos y comente: ¿Más allá del rezago $0$, cuántas autocorrelaciones totales y parciales, respectivamente, están por fuera de la banda de confianza en la $FAC$ y la $FACP$ de la ecuación estimada para Canadá?
+8.Grafique la $FAC$ y la $FACP$ de los residuos y comente: ¿Más allá del rezago $0$, cuántas autocorrelaciones totales y parciales, respectivamente, están por fuera de la banda de confianza en la $FAC$ y la $FACP$ de la ecuación estimada para Canadá?
 
    a) 0 y 0.
 
@@ -648,7 +674,7 @@ acf(residuals(modeloVAR)[,3])
 pacf(residuals(modeloVAR)[,3])
 ```
 
-8. Calcule el _p-value_ de la Prueba de Portmanteau y escoja la respuesta correcta:
+9. Calcule el _p-value_ de la Prueba de Portmanteau y escoja la respuesta correcta:
 
    a) 0.9857, entonces se rechaza la hipótesis nula de autocorrelación de los residuos estimados.
 
@@ -662,7 +688,7 @@ pacf(residuals(modeloVAR)[,3])
 serial.test(modeloVAR,lags.pt=10)
 ```
 
-9. Calcule las funciones impulso-respuesta asumiendo choques unitarios. ¿Cuál de las siguientes afirmaciones es falsa?:
+10. Calcule las funciones impulso-respuesta asumiendo choques unitarios. ¿Cuál de las siguientes afirmaciones es falsa?:
  
    a) Un choque unitario en la variación del PIB de Estados Unidos tiene un impacto positivo de dos periodos sobre la variación del PIB de Estados Unidos, Canadá y México.
 
@@ -683,7 +709,7 @@ plot(modelo.irf1)
 plot(modelo.irf2)
 plot(modelo.irf3)
 
-10. Calcule la descomposición de varianza del error de pronóstico del VAR que se estimó y responda la siguiente pregunta: ¿Cuál de las siguientes afirmaciones es falsa?:
+11. Calcule la descomposición de varianza del error de pronóstico del VAR que se estimó y responda la siguiente pregunta: ¿Cuál de las siguientes afirmaciones es falsa?:
 
    a) Después de 10 periodos, más del 70% de la varianza del error de la primera diferencia del PIB de Estados Unidos es explicado por su propio comportamiento.
 
