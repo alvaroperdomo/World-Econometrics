@@ -44,7 +44,7 @@ lrtest(modeloR, modelo)
 | **modelo**            | Nombre del modelo sin restringir                                                                                    |
 | **modeloR**           | Número de modelo restringid                                                                                         |
 
-Cuando una variable se excluye en el modelo restringido o se incluye como variable exogena, entonces se est haciendo una prueba de exogeneidad en bloque.
+Cuando una variable se excluye en el modelo restringido o se incluye como variable exogena, entonces se esta haciendo una prueba de exogeneidad en bloque.
 
 ## 4) Prueba de estabilidad
 El comando _**roots**_ calcula las raíces caracteristicas del modelo $VAR$ que ha sido previamente estimado.  
