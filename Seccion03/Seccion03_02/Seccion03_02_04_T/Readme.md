@@ -26,7 +26,7 @@ Generalizando la prueba de razón de verosimilitud, como en el caso de cualquier
 
 Alternativamente, al igual que en los modelos $VAR$, puede usar el **Criterio de Información de Akaike multivariado** o el **Criterio Bayesiano de Schwartz multivariado** para determinar la longitud del rezago. Si desea probar la longitud del rezago para una sola ecuación, una prueba $F$ es apropiada. 
 
-## Los interceptos en los modelos VEC
+## Los interceptos en los modelos $VEC$
 
 En la prueba de Johansen, es importante determinar correctamente la forma de los regresores deterministas. Por ejemplo, los valores críticos de los estadísticos $\lambda_{traza}$ y $\lambda_{max}$ son más pequeños sin ningún tipo de regresores deterministas y más grandes con un intercepto en el vector de cointegración. 
 
