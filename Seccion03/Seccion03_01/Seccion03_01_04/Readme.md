@@ -623,7 +623,7 @@ Aunque el modelo $VAR$ con intercepto fue más parsimonioso, el resto del análi
    d) 0.6170692 0.2337025 0.2337025
 
 ``` r
-modeloVAR<-VAR(diff(seriesVAR),p=1,type="const")
+modeloVAR<-VAR(diff(seriesVAR),p=1,type="none")
 summary(modeloVAR)
 roots(modeloVAR)
 ```
