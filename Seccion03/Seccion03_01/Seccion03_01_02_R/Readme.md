@@ -31,9 +31,22 @@ grangertest(x, y, order = 1)
 | **Argumentos**        | **Descripción**                                                                                                     | 
 |-----------------------|---------------------------------------------------------------------------------------------------------------------|
 | **x** y **y**         | Nombre de las variables a las cuales se les va a llevar a cabo la prueba                                            |
-| **order**             | Este número específica el orden de los rezagos que se incluirán en la regresión auxiliar.                            |
+| **order**             | Este número específica el orden de los rezagos que se incluirán en la regresión auxiliar.                           |
 
-## 3) Prueba de estabilidad
+## 3) Prueba de exogeneidad
+El comando _**lrtest**_ permite hacer pruebas de razon de verosimilitud entre dos modelos donde uno de los modelos es una versión restringida del otro modelo. El comando se utiliza de la siguiente forma:
+
+``` r
+lrtest(modeloR, modelo)
+```
+| **Argumentos**        | **Descripción**                                                                                                     | 
+|-----------------------|---------------------------------------------------------------------------------------------------------------------|
+| **modelo**            | Nombre del modelo sin restringir                                                                                    |
+| **modeloR**           | Número de modelo restringid                                                                                         |
+
+Cuando una variable se excluye en el modelo restringido o se incluye como variable exogena, entonces se est haciendo una prueba de exogeneidad en bloque.
+
+## 4) Prueba de estabilidad
 El comando _**roots**_ calcula las raíces caracteristicas del modelo $VAR$ que ha sido previamente estimado.  
 
 ``` r
@@ -45,7 +58,7 @@ roots(nombre)
 | **nombre**         | Nombre del Vector autorregresivo ($VAR$) que ha sido estimado                                                       |
 
 
-## 4)  Pruebas sobre los residuos
+## 5)  Pruebas sobre los residuos
 #### a)  Gráficos de la $FAC$ y de la $FACP$ de los residuos estimados
 Para visualizar la $FAC$ y la $FACP$ copie los siguientes comandos: [^1]
 [^1]: **A estos dos comandos se le pueden incluir más argumentos, pero para llevar a cabo las pruebas sobre los residuos del $VAR$, con los que aquí se utilizan es suficiente.**
