@@ -5,7 +5,7 @@
 </div>
 
 ### Entendiendo un Mundo en Desarrollo: 
-# Análisis Aplicado de Series de Tiempo en $R$
+# Análisis Aplicado de Series de Tiempo en _R_
 Palabras Clave: `Econometría` `Series de Tiempo` `Indicadores de Desarrollo Mundial` `Banco Mundial`
 #### Duración del curso: 17.5 horas
 
